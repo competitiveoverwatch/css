@@ -3,9 +3,14 @@
     "version": "1.0.0",
     "description": "CSS for /r/CompetitiveOverwatch subreddit",
     "scripts": {
-        "css":"mkdir dist && cssmin src/main-test.css > dist/main.css",
-        "imagemin": "imagemin src/images-export/* -o dist/images/",
-        "build": "npm run css && npm run imagemin"
+        "min-naut": "cssmin naut/Naut\\ 4\\ -\\ Main\\ CSS\\ File.css > dist/1-naut-min.css",
+        "min-css": "cssmin src/main.css > dist/2-main-min.css",
+        "concat-css": "concat-cli -f dist/*.css -o dist/main.css",
+        "clean-tmp-css": "rimraf dist/*-min.css",
+
+        "build:img": "imagemin src/images-export/* -o dist/images/",
+        "build:css": "npm run min-naut && npm run min-css && npm run concat-css && npm run clean-tmp-css",
+        "build": "mkdir dist && npm run build:css && npm run build:img"
     },
     "repository": {
         "type": "git",
@@ -18,6 +23,8 @@
     "homepage": "https://github.com/sebj/r-CompetitiveOverwatch-CSS#readme",
     "devDependencies": {
         "cssmin": "latest",
-        "imagemin-cli": "latest"
+        "concat-cli": "latest",
+        "imagemin-cli": "latest",
+        "rimraf": "latest"
     }
 }
