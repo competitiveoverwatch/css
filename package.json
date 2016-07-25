@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "CSS for /r/CompetitiveOverwatch subreddit",
     "scripts": {
+        "css":"mkdir dist && cssmin src/main-test.css > dist/main.css",
         "imagemin": "imagemin src/images-export/* -o dist/images/",
-        "":"",
-        "build": "npm run imagemin"
+        "build": "npm run css && npm run imagemin"
     },
     "repository": {
         "type": "git",
