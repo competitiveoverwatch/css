@@ -1,0 +1,23 @@
+{
+    "name": "competitiveoverwatch-css",
+    "version": "1.0.0",
+    "description": "CSS for /r/CompetitiveOverwatch subreddit",
+    "scripts": {
+        "imagemin": "imagemin src/images-export/* -o dist/images/",
+        "":"",
+        "build": "npm run imagemin"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sebj/r-CompetitiveOverwatch-CSS.git"
+    },
+    "author": "Seb Jachec",
+    "bugs": {
+        "url": "https://github.com/sebj/r-CompetitiveOverwatch-CSS/issues"
+    },
+    "homepage": "https://github.com/sebj/r-CompetitiveOverwatch-CSS#readme",
+    "devDependencies": {
+        "cssmin": "latest",
+        "imagemin-cli": "latest"
+    }
+}
