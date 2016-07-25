@@ -1,5 +1,6 @@
 {
     "name": "competitiveoverwatch-css",
+    "private": true,
     "version": "1.0.0",
     "description": "CSS for /r/CompetitiveOverwatch subreddit",
     "repository": {
@@ -15,6 +16,7 @@
         "cssmin": "latest",
         "concat-cli": "latest",
         "imagemin-cli": "latest",
+        "mkdirp": "latest",
         "replace": "latest",
         "rimraf": "latest"
     },
@@ -25,10 +27,12 @@
         "combine-css": "concat-cli -f dist/*.css -o dist/main.css",
 
         "clean-tmp-css": "rimraf dist/1-naut.css && rimraf dist/2-main.css",
+        "build-complete": "echo '\nBuild complete.' && du -h dist/main.css && echo '\n'",
 
         "build:img": "imagemin src/images-export/* -o dist/images/",
         "build:css": "npm run min-naut && npm run trim-naut && npm run min-css && npm run combine-css",
-        "build:all": "mkdir dist && npm run build:css && npm run build:img && npm run clean-tmp-css",
+        "build:all": "mkdirp dist && npm run build:css && npm run build:img && npm run clean-tmp-css && npm run build-complete",
+        
         "build": "npm run build:all -s"
     }
 }
