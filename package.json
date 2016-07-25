@@ -2,16 +2,6 @@
     "name": "competitiveoverwatch-css",
     "version": "1.0.0",
     "description": "CSS for /r/CompetitiveOverwatch subreddit",
-    "scripts": {
-        "min-naut": "cssmin naut/Naut\\ 4\\ -\\ Main\\ CSS\\ File.css > dist/1-naut-min.css",
-        "min-css": "cssmin src/main.css > dist/2-main-min.css",
-        "concat-css": "concat-cli -f dist/*.css -o dist/main.css",
-        "clean-tmp-css": "rimraf dist/*-min.css",
-
-        "build:img": "imagemin src/images-export/* -o dist/images/",
-        "build:css": "npm run min-naut && npm run min-css && npm run concat-css && npm run clean-tmp-css",
-        "build": "mkdir dist && npm run build:css && npm run build:img"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sebj/r-CompetitiveOverwatch-CSS.git"
@@ -25,6 +15,20 @@
         "cssmin": "latest",
         "concat-cli": "latest",
         "imagemin-cli": "latest",
+        "replace": "latest",
         "rimraf": "latest"
+    },
+    "scripts": {
+        "min-naut": "cssmin naut/Naut\\ 4\\ -\\ Main\\ CSS\\ File.css > dist/1-naut.css",
+        "trim-naut": "for i in $(cat src/blacklist.css); do sed -i '' \"s/${i}//g\" dist/1-naut.css; done",
+        "min-css": "cssmin src/main.css > dist/2-main.css",
+        "combine-css": "concat-cli -f dist/*.css -o dist/main.css",
+
+        "clean-tmp-css": "rimraf dist/1-naut.css && rimraf dist/2-main.css",
+
+        "build:img": "imagemin src/images-export/* -o dist/images/",
+        "build:css": "npm run min-naut && npm run trim-naut && npm run min-css && npm run combine-css",
+        "build:all": "mkdir dist && npm run build:css && npm run build:img && npm run clean-tmp-css",
+        "build": "npm run build:all -s"
     }
 }
