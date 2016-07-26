@@ -13,11 +13,11 @@
         "min-naut": "cssmin naut/Naut\\ 4\\ -\\ Main\\ CSS\\ File.css > dist/1-naut.css",
         "trim-naut": "for i in $(cat src/blacklist.css); do sed -i '' \"s/${i}//g\" dist/1-naut.css; done",
         "min-css": "cssmin src/main.css > dist/2-main.css",
-        "combine-css": "concat-cli -f dist/*.css -o dist/main.css",
+        "combine-css": "concat-cli -f dist/*.css -o dist/final.css",
 
         "clean": "rimraf dist && mkdirp dist",
         "clean-tmp-css": "rimraf dist/1-naut.css && rimraf dist/2-main.css",
-        "build-complete": "echo '\nBuild complete.' && du -h dist/main.css && echo '\n' && open dist",
+        "build-complete": "echo '\nBuild complete.' && du -h dist/final.css && echo '\n' && open dist/final.css",
 
         "build:img": "imagemin src/images-export/* -o dist/images/",
         "build:css": "npm run min-naut && npm run trim-naut && npm run min-css && npm run combine-css",
