@@ -9,4 +9,5 @@
 * Clone the repo
 * `git submodule update --init`
 * `npm install`
-* `npm run build` to 'build' the minified CSS and images to `dist`
+* `npm run build` to build
+* Minified CSS and images in `dist`

@@ -1770,7 +1770,7 @@ body:not(.loggedin) .commentarea .menuarea {
 body.res .comments-page .side .linkinfo .score {
 	margin-bottom: 6px;
 }
-.linkinfo .totalvotes, .linkinfo .upvotes, .linkinfo .downvotes {
+.side .linkinfo .totalvotes, .side .linkinfo .upvotes, .side .linkinfo .downvotes {
 	font-size: 100%;
 	margin-right: 6px;
 	opacity: .8;
@@ -2280,7 +2280,7 @@ dt {
 .res-nightmode .side #moderation_tools .title h1, .res-nightmode .linkflairlabel, .res-nightmode .md h1,
 .res-nightmode .combined-search-page .search-result-group .search-header-label,
 .res-nightmode .submit-page .roundfield .title, .res-nightmode .gold-accent.comment-visits-box,
-.res-nightmode .commentarea .panestack-title .title, .link .entry .tagline a {
+.res-nightmode .commentarea .panestack-title .title, .res-nightmode .link .entry .tagline a {
 	color: #FFF;
 }
 
