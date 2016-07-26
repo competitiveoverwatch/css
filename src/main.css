@@ -394,6 +394,10 @@ body.res #search #searchexpando {
 	top: 360px;
 }
 
+.res-nightmode .morelink:hover a {
+	color: #FFF;
+}
+
 /* Colored glow only if not in RES night mode */
 body:not(.res-nightmode) .morelink:hover {
 	box-shadow: 0 0 8px rgba(57,209,255,.2);
@@ -950,11 +954,14 @@ body:not(.listing-page) .side .md>ol {
 
 .side:after {
 	border: none;
-	color: #bbb;
+	color: #BBB;
 	content: "THIS SUBREDDIT USES A MODIFIED /R/NAUT THEME";
 	font-size: 11px;
 	margin: 16px auto 0 -16px;
 	padding: 0;
+}
+.res-nightmode .side:after {
+	color: #555;
 }
 
 .sidecontentbox a.helplink {
@@ -1119,6 +1126,9 @@ body.listing-page>.content {
 .content .thing .title:visited, .content .thing.visited .title {
 	color: #4B5A63;
 }
+.res-nightmode .content .thing .title:visited, .res-nightmode .content .thing.visited .title {
+	color: #CCC;
+}
 
 .listing-page .link {
 	background: #FFF;
@@ -1175,6 +1185,9 @@ body.listing-page>.content {
 .link .score {
 	color: #AAA;
 	margin: 0 -100% 1px -100%;
+}
+.res-nightmode .link .score {
+	color: #888;
 }
 
 .link .score.likes {
@@ -1650,6 +1663,11 @@ body:not(.loggedin) .commentarea .menuarea {
 	padding: 4px 20px 4px 12px;
 }
 
+.res-nightmode .gold-accent.comment-visits-box select {
+	background: #333;
+	color: #FFF;
+}
+
 .comment .entry .tagline .userattrs {
 	margin-left: 1px;
 }
@@ -1730,6 +1748,16 @@ body:not(.loggedin) .commentarea .menuarea {
 	padding: 10px 16px;
 	visibility: visible;
 	width: 320px;
+}
+
+/* For RES */
+body.res .comments-page .side .linkinfo .score {
+	margin-bottom: 6px;
+}
+.linkinfo .totalvotes, .linkinfo .upvotes, .linkinfo .downvotes {
+	font-size: 100%;
+	margin-right: 6px;
+	opacity: .8;
 }
 
 .comments-page .side .titlebox {
@@ -1830,6 +1858,10 @@ body:not(.loggedin) .commentarea .menuarea {
 	line-height: 48px;
 	padding: 0;
 	width: 50%;
+}
+.res-nightmode .submit-page #newlink.submit.content .tabmenu.formtab a {
+	background: #333;
+	color: #EEE;
 }
 .submit-page #newlink.submit.content .tabmenu.formtab li:first-child a {
 	border-radius: 4px 0 0 0;
@@ -2198,11 +2230,11 @@ dt {
 	background: #242729;
 }
 
-.res-nightmode .submit-link:after,.res-nightmode #sr-header-area,
-.res-nightmode #header-bottom-right,.res-nightmode .side .linkinfo,
-.res-nightmode .comments-page .link,.res-nightmode #search input[type=text],
-.res-nightmode .listing-page .link,.res-nightmode #header .tabmenu li a,.res-nightmode .commentarea>.sitetable>.comment,
-.res-nightmode .commentarea>.usertext {
+.res-nightmode .submit-link:after, .res-nightmode #sr-header-area,
+.res-nightmode #header-bottom-right, .res-nightmode .side .linkinfo,
+.res-nightmode .comments-page .link, .res-nightmode #search input[type=text],
+.res-nightmode .listing-page .link, .res-nightmode #header .tabmenu li a, .res-nightmode .commentarea>.sitetable>.comment,
+.res-nightmode .commentarea>.usertext, .res-nightmode #REScommentNavToggle {
 	background: none !important;
 }
 
@@ -2226,14 +2258,14 @@ dt {
 	opacity: .9;
 }
 
-.res-nightmode .submit-link:before,.res-nightmode .morelink a,
-.res-nightmode .side .titlebox .md h1,
+.res-nightmode .submit-link:before, .res-nightmode .morelink a,
+.res-nightmode .side .titlebox .md h1, .res-nightmode .sidecontentbox .title h1
 .res-nightmode .side .titlebox h1.redditname a,
-.res-nightmode .side #moderation_tools .title h1,.res-nightmode .linkflairlabel,.res-nightmode .md h1,
+.res-nightmode .side #moderation_tools .title h1, .res-nightmode .linkflairlabel, .res-nightmode .md h1,
 .res-nightmode .combined-search-page .search-result-group .search-header-label,
 .res-nightmode .submit-page .roundfield .title, .res-nightmode .gold-accent.comment-visits-box,
-.res-nightmode .commentarea .panestack-title .title {
-	color:#FFF;
+.res-nightmode .commentarea .panestack-title .title, .link .entry .tagline a {
+	color: #FFF;
 }
 
 .res-nightmode .side .md>ol {
