@@ -339,10 +339,20 @@ body .btn, body button, .btn:hover, button:hover {
 	font-weight: bold;
 	height: auto;
 	margin-top: -2px;
-	padding: 18px 0px 8px 16px;
-	letter-spacing: -.5px;
+	padding: 16px 0 8px 8px;
+	letter-spacing: -.4px;
 	line-height: normal;
 	text-transform: uppercase;
+}
+
+/* Different padding for RES */
+body.res #search #searchexpando {
+	padding: 16px 0 16px 8px;
+}
+
+/* Extra dropdown boxes RES adds */
+#search #searchexpando select {
+	margin-left: 8px;
 }
 
 .sidebox.submit {
@@ -1183,7 +1193,7 @@ body.listing-page>.content {
 .arrow.downmod {
 	width: 32px;
 }
-.arrow.down:hover:after{
+.arrow.down:after, .arrow.down:hover:after {
 	display: none;
 }
 
@@ -2199,17 +2209,21 @@ dt {
 .res-nightmode .listing-page .sitetable>.thing:after {
 	display:none;
 }
-.res-nightmode .arrow.up {
+.res-nightmode .arrow.up, .res-nightmode .arrow.up:hover {
 	background-position: 0 -80px;
 }
 .res-nightmode .arrow.upmod {
 	background-position: -32px -78px;
 }
-.res-nightmode .arrow.down {
+.res-nightmode .arrow.down, .res-nightmode .arrow.down:hover {
 	background-position: -64px -80px;
 }
-.res-nightmode .arrow.downmod{
+.res-nightmode .arrow.downmod {
 	background-position: 0 -100px;
+}
+
+.res-nightmode .arrow.up:hover, .res-nightmode .arrow.down:hover {
+	opacity: .9;
 }
 
 .res-nightmode .submit-link:before,.res-nightmode .morelink a,

@@ -1,6 +1,4 @@
-# [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS
-
-**The CSS and images for [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch)**
+# [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS & Images
 
 ###Notes
 * CSS is based on the latest version of [Naut](https://github.com/Axel--/Naut-for-reddit), kept as a submodule (`naut`)
