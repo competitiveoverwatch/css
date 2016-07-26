@@ -450,6 +450,16 @@ body:not(.res-nightmode) .morelink:hover {
 	text-align: center;
 }
 
+.leavemoderator {
+	display: block;
+	font-size: 11px;
+	height: 22px;
+}
+
+.leavemoderator:first-letter, .leavemoderator a {
+	text-transform: uppercase;
+}
+
 .res-sr-style-toggle {
 	margin-top: 10px;
 }
@@ -665,6 +675,9 @@ div.titlebox span.number:after {
 .side .md h2:hover, .side .md h3:hover, .side .md h4:hover, .side .md h5:hover {
 	opacity: .9;
 }
+.side .md h2:hover, .side .md h3:hover, .side .md h4:hover, .side .md h5:hover {
+	opacity: .8;
+}
 
 .side .md h2 a, .side .md h3 a, .side .md h4 a, .side .md h5 a {
 	color: #FFF;
@@ -704,6 +717,9 @@ div.titlebox span.number:after {
 
 .side .md h2 {
 	background: #3C3C3C;
+}
+.res-nightmode .side .md h2 {
+	background: #444;
 }
 
 .side .md h2 a:before {
@@ -2259,8 +2275,8 @@ dt {
 }
 
 .res-nightmode .submit-link:before, .res-nightmode .morelink a,
-.res-nightmode .side .titlebox .md h1, .res-nightmode .sidecontentbox .title h1
-.res-nightmode .side .titlebox h1.redditname a,
+.res-nightmode .side .titlebox .md h1, .res-nightmode .sidecontentbox .title h1,
+.res-nightmode .side .titlebox h1.redditname a, .res-nightmode .side h1,
 .res-nightmode .side #moderation_tools .title h1, .res-nightmode .linkflairlabel, .res-nightmode .md h1,
 .res-nightmode .combined-search-page .search-result-group .search-header-label,
 .res-nightmode .submit-page .roundfield .title, .res-nightmode .gold-accent.comment-visits-box,

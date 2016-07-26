@@ -17,7 +17,7 @@
 
         "clean": "rimraf dist && mkdirp dist",
         "clean-tmp-css": "rimraf dist/1-naut.css && rimraf dist/2-main.css",
-        "build-complete": "echo '\nBuild complete.' && du -h dist/main.css && echo '\n'",
+        "build-complete": "echo '\nBuild complete.' && du -h dist/main.css && echo '\n' && open dist",
 
         "build:img": "imagemin src/images-export/* -o dist/images/",
         "build:css": "npm run min-naut && npm run trim-naut && npm run min-css && npm run combine-css",
