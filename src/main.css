@@ -1250,10 +1250,14 @@ body.listing-page>.content {
 	color: #27B062 !important;
 }
 
+.gilded-icon {
+	margin-left: 4px;
+}
+
 .gilded-icon:before {
-	height: 17px;
-	background-position: -72px -190px;
-	vertical-align: -2px;
+	height: 19px;
+	background-position: -72px -188px;
+	vertical-align: 0;
 }
 
 .link .usertext .md {
