@@ -2047,7 +2047,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .search-page .content {
-	margin: 53px auto 0;
+	margin: 0 auto;
 	min-width: 750px;
 	padding: 0;
 	width: 80%;
@@ -2069,12 +2069,33 @@ body.res.comments-page .side .linkinfo .score {
 	font-size: .9em;
 }
 
+.search-page .searchpane {
+	top: -29px;
+	z-index: 2;
+}
+
 .search-page .searchpane.raisedbox label {
 	background: #F2F2F3;
 	color: #555;
 	font-size: 11px;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+/* RES 'refine' button */
+ul.res-search-tabs li {
+	background: none;
+	margin-top: -4px;
+	text-align: right;
+	text-transform: uppercase;
+	width: 100%;
+}
+ul.res-search-tabs li.res-search-tab-active a {
+	border: none;
+}
+
+.combined-search-page #previoussearch .res-search-pane {
+	margin-top: 8px;
 }
 
 dt {
