@@ -814,11 +814,6 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	z-index: 1;
 }
 
-/* Second link */
-.side .md h6+h6 {
-	top: 123px;
-}
-
 @media (max-width: 1360px) {
 	.side .md h6 {
 		right: 16px;
@@ -834,7 +829,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	background: rgba(255,255,255,.94);
 	border: 1px solid rgba(255,255,255,.4);
 	border-radius: 4px;
-	padding: 6px 12px;
+	padding: 6px 18px;
 	text-decoration: none;
 }
 
@@ -842,6 +837,14 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	background: #FFF;
 	border: 1px solid #FFF;
 	color: #222;
+}
+
+/* Second link */
+.side .md h6+h6 {
+	top: 123px;
+}
+.side .md h6+h6 a {
+	padding: 6px 16px;
 }
 
 .side .md>ul {
@@ -1732,8 +1735,11 @@ body:not(.loggedin) .commentarea .menuarea {
 	text-transform: uppercase;
 }
 
-.comments-page .side,.res.comments-page .side {
-	margin-top: 322px;
+.comments-page .side {
+	margin-top: 308px;
+}
+.res.comments-page .side {
+	margin-top: 328px;
 }
 
 .comments-page .side .linkinfo {
@@ -1767,7 +1773,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 /* For RES */
-body.res .comments-page .side .linkinfo .score {
+body.res.comments-page .side .linkinfo .score {
 	margin-bottom: 6px;
 }
 .side .linkinfo .totalvotes, .side .linkinfo .upvotes, .side .linkinfo .downvotes {
