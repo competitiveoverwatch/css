@@ -2014,7 +2014,7 @@ body.res.comments-page .side .linkinfo .score {
 
 .search-page #search {
 	left: 16px;
-	top: -103px;
+	top: -56px;
 	width: 100%;
 }
 
@@ -2047,10 +2047,18 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .search-page .content {
-	margin: 0 auto;
+	margin: 56px auto;
 	min-width: 750px;
 	padding: 0;
 	width: 80%;
+}
+
+/* RES Alignment */
+.res.search-page .content {
+	margin: 0 auto;
+}
+.res.search-page #search {
+	top: -103px;
 }
 
 .combined-search-page .search-result-group .search-header-label {
