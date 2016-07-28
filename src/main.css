@@ -1430,6 +1430,10 @@ body.listing-page>.content {
 	position: relative;
 }
 
+.res .commentarea .thing {
+	border-radius: 4px !important;
+}
+
 .commentarea>.sitetable>.comment.collapsed {
 	padding: 10px 16px 16px
 }
