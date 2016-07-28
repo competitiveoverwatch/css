@@ -2083,7 +2083,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 /* RES 'refine' button */
-ul.res-search-tabs li {
+#previoussearch ul.res-search-tabs li {
 	background: none;
 	margin-top: -4px;
 	text-align: right;
@@ -2209,6 +2209,11 @@ dt {
 
 .search-result-body {
 	margin-top: 12px;
+	padding-right: 0;
+}
+
+.search-result-body .md {
+	max-width: none;
 }
 
 /* Footer */
