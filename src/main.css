@@ -115,7 +115,7 @@ body,
 
 .separator, .user, .user .userkarma, #header-bottom-right a, #RESSettingsButton {
 	color: #FFF;
-	font-size: 9px;
+	font-size: 10px;
 	opacity: .7;
 	text-transform: uppercase;
 }
