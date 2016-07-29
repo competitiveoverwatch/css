@@ -1085,6 +1085,12 @@ body.listing-page>.content {
 .thing:not(.stickied) .thumbnail.self, .search-result:not(.stickied) .thumbnail.self {
 	background-position: -91px -98px;
 }
+.over18.link .thumbnail {
+	background-position: -161px -98px !important;
+}
+.nsfw-stamp {
+	margin-right: 8px;
+}
 .linkflair-Question .thumbnail {
 	background-position: -91px -154px !important;
 }
