@@ -142,6 +142,10 @@ body,
 	top: -2px;
 }
 
+#header-bottom-right a:hover, #header-bottom-right .gearIcon:hover {
+	opacity: 1;
+}
+
 #header-img.default-header, #header-img {
 	background-position: -78px 0;
 	bottom: -3px;
@@ -976,11 +980,15 @@ body:not(.listing-page) .side .md>ol {
 	color: #BBB;
 	content: "THIS SUBREDDIT USES A MODIFIED /R/NAUT THEME";
 	font-size: 11px;
-	margin: 16px auto 0 -16px;
+	margin: 14px auto 0 -16px;
 	padding: 0;
 }
 .res-nightmode .side:after {
 	color: #555;
+}
+
+.sidecontentbox li {
+	margin-top: 3px;
 }
 
 .sidecontentbox a.helplink {
@@ -1455,12 +1463,12 @@ body.listing-page>.content {
 }
 
 .commentarea .child .thing {
-	padding-left: 20px;
+	padding-left: 16px !important;
 	position: relative;
 }
 
 .commentarea>.sitetable>.comment {
-	padding-left: 20px;
+	padding-left: 16px !important;
 	position: relative;
 }
 
@@ -1665,7 +1673,7 @@ body:not(.loggedin) .commentarea .menuarea {
 	display: none;
 }
 .comments-page #header .pagename a {
-	top: -79px;
+	top: -78px;
 }
 
 .comment-permalink-page .infobar {
