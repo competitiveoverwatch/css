@@ -565,10 +565,10 @@ div.titlebox span.number:after {
 }
 
 .titlebox .fancy-toggle-button .active.add:hover {
-    background: #FFCA4E;
-    box-shadow: 0 0 8px rgba(255,202,78,.2);
-    color: #000;
-    opacity: .9;
+	background: #FFCA4E;
+	box-shadow: 0 0 8px rgba(255,202,78,.2);
+	color: #000;
+	opacity: .9;
 }
 .titlebox .fancy-toggle-button a {
 	color: #FFF;
@@ -986,16 +986,16 @@ body:not(.listing-page) .side .md>ol {
 .sidecontentbox a.helplink {
 	background: #1CBEF0;
 	border-radius: 3px;
-    color: #FFF;
-    display: block;
-    float: none;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: -.2px;
-    margin: 0 0 14px;
-    padding: 8px 16px;
-    text-align: center;
-    text-transform: uppercase;
+	color: #FFF;
+	display: block;
+	float: none;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: -.2px;
+	margin: 0 0 14px;
+	padding: 8px 16px;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 .sidecontentbox a.helplink:hover {
@@ -1149,14 +1149,22 @@ body.listing-page>.content {
 	color: #CCC;
 }
 
-.listing-page .link {
+.listing-page .link, .listing-page .comment {
 	background: #FFF;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
 	padding: 16px 16px 14px;
 }
 
-.listing-page .link:nth-of-type(1) {
+.listing-page .comment .parent {
+	margin-bottom: 8px;
+}
+
+.listing-page .link:nth-of-type(1), .listing-page .comment:nth-of-type(1) {
 	border-radius: 4px 4px 0 0;
+}
+
+.listing-page .sitetable .usertext .md {
+	max-width: none;
 }
 
 .link.last-clicked {
@@ -1396,6 +1404,32 @@ body.listing-page>.content {
 	font-size: 12px;
 }
 
+/* Top page bar */
+.top-page .menuarea {
+	background: #FFF;
+	border-radius: 4px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.14);
+	margin: 0 0 16px 0;
+	padding: 14px 16px 12px;
+}
+
+/* Gilded page infobar ('Gildings in this subreddit have paid for..') */
+.listing-page .reddit-infobar.gold-accent {
+	background: #FFF;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+	margin-top: 0;
+	padding: 8px 16px;
+	width: 100%;
+}
+.listing-page .reddit-infobar.gold-accent p {
+	font-size: 13px;
+}
+.listing-page .reddit-infobar.gold-accent p:first-letter {
+	text-transform: uppercase;
+}
+
 .comments-page .link .flat-list {
 	margin-top: 15px;
 }
@@ -1604,16 +1638,16 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .flair.flair-verified {
-    background: #27B062;
-    border-radius: 2px;
-    color: #FFF;
-    display: inline-block;
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: bold;
-    margin: 0 4px;
-    padding: 2px 6px;
-    text-transform: uppercase;
+	background: #27B062;
+	border-radius: 2px;
+	color: #FFF;
+	display: inline-block;
+	font-family: inherit;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 0 4px;
+	padding: 2px 6px;
+	text-transform: uppercase;
 }
 
 .link .entry {
