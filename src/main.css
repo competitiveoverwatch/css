@@ -1079,14 +1079,14 @@ body.listing-page>.content {
 }
 
 /* Post thumbnails */
-.stickied .thumbnail {
-	background-position: -91px -42px;
+.stickied .thumbnail, .linkflair-Megathread .thumbnail {
+	background-position: -91px -42px !important;
 }
 .thing:not(.stickied) .thumbnail.self, .search-result:not(.stickied) .thumbnail.self {
 	background-position: -91px -98px;
 }
 .over18.link .thumbnail {
-	background-position: -161px -98px !important;
+	background-position: -162px -98px !important;
 }
 .nsfw-stamp {
 	margin-right: 8px;
@@ -1114,6 +1114,9 @@ body.listing-page>.content {
 }
 .linkflair-Casting .thumbnail {
 	background-position: -301px -266px !important;
+}
+.linkflair-eSports .thumbnail {
+	background-position: 5px -322px !important;
 }
 
 .thumbnail.default, a.thumbnail[href*="reddit.com"] {
