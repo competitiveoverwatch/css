@@ -830,7 +830,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 
 .side .md h6 a {
-	background: rgba(255,255,255,.94);
+	background: rgba(255,255,255,.95);
 	border: 1px solid rgba(255,255,255,.4);
 	border-radius: 4px;
 	padding: 6px 18px;
