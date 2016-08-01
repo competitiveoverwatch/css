@@ -911,7 +911,7 @@ body:not(.listing-page) .side .md>ol {
 	text-shadow: none;
 	transition: all .24s cubic-bezier(.4,0,.2,1);
 	visibility: hidden;
-	width: 132px;
+	width: 144px;
 	z-index: 1;
 }
 
