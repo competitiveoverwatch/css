@@ -1574,6 +1574,10 @@ body.listing-page>.content {
 	text-transform: uppercase;
 }
 
+.comment-permalink-page .commentarea .menuarea {
+	margin-top: 14px;
+}
+
 body:not(.loggedin) .commentarea .menuarea {
 	margin: 0 0 8px;
 }
@@ -1693,10 +1697,9 @@ body:not(.loggedin) .commentarea .menuarea {
 	max-width: none;
 }
 
-/* TOOD: Test then uncomment 
 .comments-page #header .tabmenu li:first-child {
 	display: none;
-}*/
+}
 
 .comments-page #header .pagename a {
 	top: -78px;
@@ -1708,17 +1711,26 @@ body:not(.loggedin) .commentarea .menuarea {
 	box-shadow: 0 1px 4px rgba(0,0,0,.14);
 	color: #333;
 	font-size: 14px;
-	margin: 6px 0 10px 0;
+	margin: 13px 0 10px 0;
 	padding: 14px 16px;
 }
 
+.comment-permalink-page .infobar a {
+	display: inline-block;
+}
+.comment-permalink-page .infobar a:first-letter {
+	text-transform: uppercase;
+}
 .comment-permalink-page .infobar a:hover {
 	color: #24A0ED;
 }
+.comment-permalink-page .infobar a:last-child {
+
+}
 
 .comment-permalink-page .infobar p {
-	display: inline-block;
-	margin-left: 4px;
+	display: block;
+	margin-top: 2px;
 }
 .comment-permalink-page .infobar p:first-letter {
 	text-transform: uppercase;
@@ -1767,6 +1779,12 @@ body:not(.loggedin) .commentarea .menuarea {
 .res-nightmode .gold-accent.comment-visits-box select {
 	background: #333;
 	color: #FFF;
+}
+
+.res #REScommentNavToggle {
+	background: none;
+	height: 16px;
+	margin-bottom: 6px;
 }
 
 .comment .entry .tagline .userattrs {
