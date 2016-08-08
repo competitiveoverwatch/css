@@ -1547,7 +1547,7 @@ body.listing-page>.content {
 }
 
 .commentarea>.usertext textarea:not(:focus) {
-	background-position: 0 50%;
+	background-position: 0 0;
 	background-color: #FFF;
 	border: 1px solid rgba(0,0,0,.05);
 }
@@ -1555,6 +1555,13 @@ body.listing-page>.content {
 .commentarea>.usertext textarea:focus {
 	background: #FFF;
 	border: 1px solid #1CBEF0;
+}
+
+.RESSubscriptionButton {
+	cursor: default;
+	margin-top: 20px;
+	padding: 3px 14px;
+	text-transform: uppercase;
 }
 
 .commentarea .panestack-title {
@@ -1588,6 +1595,10 @@ body:not(.loggedin) .commentarea .menuarea {
 
 .commentarea .menuarea .toggle a {
 	font-size: 11px;
+}
+
+.res .commentarea>.usertext {
+	margin-top: -90px;
 }
 
 /* Comment page buttons */
