@@ -1597,12 +1597,12 @@ body:not(.loggedin) .commentarea .menuarea {
 	font-size: 11px;
 }
 
-.res.comments-page .sitetable .thing {
-	border-radius: 4px;
+.res.comments-page .thing {
+	border-radius: 4px !important;
 }
 
 .res .commentarea .panestack-title {
-	padding-top: 0;
+	padding-top: 10px;
 }
 
 .res .commentarea>.usertext {
