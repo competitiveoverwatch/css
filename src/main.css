@@ -1802,7 +1802,14 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .comment .child {
-	margin-left: 24px;
+	margin-left: 16px;
+}
+
+.deepthread a {
+	display: inline-block;
+}
+.deepthread a:first-letter {
+	text-transform: capitalize;
 }
 
 .new-comment .usertext-body {
