@@ -2468,8 +2468,13 @@ dt {
 }
 
 /* Wiki */
-.wiki-page body>.content {
+.wiki-page>.content {
 	margin-top: 8px;
+}
+
+.wiki-page .wiki-page-content {
+	margin-top: 16px;
+	padding-top: 1px;
 }
 
 .wiki-page .wikititle {
@@ -2491,7 +2496,7 @@ dt {
 }
 
 .wiki-page .pageactions .wikiaction, .wiki-page .pageactions .wikiaction-current {
-	padding: 0 8px;
+	padding: 0 16px;
 }
 
 .wiki-page .pageactions .wikiaction-current {
