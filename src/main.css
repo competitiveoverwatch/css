@@ -2466,3 +2466,48 @@ dt {
 .res-nightmode .commentarea>.usertext textarea:focus {
 	background: #444;
 }
+
+/* Wiki */
+.wiki-page body>.content {
+	margin-top: 8px;
+}
+
+.wiki-page .wikititle {
+	display: inline-block;
+	padding: 0 32px;
+}
+
+.wiki-page .wikititle, .wiki-page .pageactions {
+	background: #FFF;
+	border-radius: 4px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.24);
+	height: 42px;
+	line-height: 42px;
+	text-transform: uppercase;
+}
+
+.wiki-page .pageactions {
+	padding: 0;
+}
+
+.wiki-page .pageactions .wikiaction, .wiki-page .pageactions .wikiaction-current {
+	padding: 0 8px;
+}
+
+.wiki-page .pageactions .wikiaction-current {
+	border-bottom: none;
+	font-weight: bold;
+}
+
+.wiki-page-content .md h1, .wiki-page-content .md h6 {
+	font-size: 20px;
+	font-weight: 800;
+}
+
+.wiki-page-content .md h1:after {
+	display: none;
+}
+
+.wiki-page .toggle-source {
+	text-transform: uppercase;
+}
