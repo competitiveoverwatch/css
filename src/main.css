@@ -24,17 +24,39 @@ body,
 
 /* "My Subreddits" dropdown */
 
+.res #srDropdownContainer a {
+	cursor: default;
+    visibility: hidden;
+}
+.res #srDropdownContainer a:after {
+	content: "≡";
+	font-size: 19px;
+	margin-left: -64px;
+	visibility: visible;
+}
+
+.res #srList {
+	background: #FFF;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.24);
+}
+.res #srList tr {
+	border-bottom-color: #EEE;
+}
+
+/* Reposition 3-bar icon */
 #sr-header-area .dropdown.srdrop .selected:after {
 	cursor: default;
-	margin: 0 0 0 -78px;
+	margin: 0 0 0 -76px;
 }
 
 #sr-header-area .drop-choices.srdrop.inuse a:first-child {
 	border-radius: 2px 2px 0 0;
 }
 
-.srdrop .choice.bottom-option {
-	border-top: 1px solid #555;
+#sr-header-area .drop-choices .choice.bottom-option {
+	border-top: 1px solid #EEE;
 	font-style: normal;
 }
 
@@ -43,11 +65,11 @@ body,
 	background: transparent;
 	font-size: 10px;
 }
-#sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .separator, #sr-header-area .dropdown.srdrop .selected {
+#sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .dropdown.srdrop .selected {
 	color: rgba(255,255,255,.24);
 }
 
-#sr-header-area:hover .sr-bar a, #sr-header-area:hover #sr-more-link, #sr-header-area:hover .seperator, #sr-header-area:hover .dropdown.srdrop .selected {
+#sr-header-area:hover .sr-bar a, #sr-header-area:hover #sr-more-link, #sr-header-area:hover .seperator, #sr-header-area:hover .dropdown.srdrop .selected, .res #RESShortcuts {
 	color: rgba(255,255,255,.4);
 }
 
@@ -64,11 +86,11 @@ body,
 	margin-right: 38px;
 }
 
-#sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .separator, #sr-header-area .dropdown.srdrop .selected {
+#sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .dropdown.srdrop .selected {
 	background: none;
 }
 
-.separator, .user, .user .userkarma, #header-bottom-right a, #RESSettingsButton {
+.user, .user .userkarma, #header-bottom-right a, #RESSettingsButton {
 	color: #FFF;
 	font-size: 10px;
 	opacity: .7;
@@ -135,8 +157,7 @@ body,
 	width: 710px;
 }
 
-#header .separator {
-	color: transparent;
+#header .separator, .res #header .srSep {
 	visibility: hidden;
 }
 
@@ -1032,7 +1053,7 @@ body.listing-page>.content {
 .organic-listing {
 	border-radius: 4px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
-    margin-bottom: 16px;
+	margin-bottom: 16px;
 }
 .organic-listing .link, .organic-listing .link.compressed, .organic-listing .link.promotedlink {
 	border: none;
@@ -2354,8 +2375,8 @@ dt {
 	margin-left: 2px
 }
 
-.side #moderation_tools .title .collapse-button {
-	cursor: default;
+.sidecontentbox.collapsible .title {
+	cursor: text;
 }
 
 .linefield, .linefield.mobile,.linefield .usertext-edit,.linefield .usertext-edit input,.linefield .usertext-edit textarea {
