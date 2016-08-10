@@ -23,59 +23,14 @@ body,
 }
 
 /* "My Subreddits" dropdown */
-#sr-header-area .drop-choices.srdrop {
-	border-radius: 2px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.24);
-	opacity: 0;
-	top: 14px!important;
-	transition: all .2s cubic-bezier(.4,0,.2,1);
-	visibility: hidden;
-}
 
-#sr-header-area .drop-choices.srdrop.inuse {
-	opacity: 1;
-	top: 23px!important;
-	visibility: visible;
-}
-
-#sr-header-area .dropdown.srdrop {
+#sr-header-area .dropdown.srdrop .selected:after {
 	cursor: default;
-	padding-left: 8px;
-}
-
-#sr-header-area .selected.title {
-	width: 12px;
-	visibility: hidden;
-}
-
-#sr-header-area .selected.title:before {
-	color: rgba(255,255,255,.4);
-	content: "≡";
-	cursor: default;
-	display: inline-block;
-	font-size: 19px;
-	margin: 0 8px 0 0;
-	visibility: visible;
-}
-
-#sr-header-area .dropdown.srdrop:hover .selected.title:before {
-	color: #FFF;
+	margin: 0 0 0 -78px;
 }
 
 #sr-header-area .drop-choices.srdrop.inuse a:first-child {
 	border-radius: 2px 2px 0 0;
-}
-
-#sr-header-area .drop-choices a.choice {
-	border: none;
-	color: #777;
-	padding: 3px 12px;
-	transition: none;
-}
-
-#sr-header-area .drop-choices a.choice:hover {
-	background: #EEE;
-	color: #222;
 }
 
 .srdrop .choice.bottom-option {
@@ -1589,12 +1544,12 @@ body:not(.loggedin) .commentarea .menuarea {
 	margin: 0 0 8px;
 }
 
-.commentarea .menuarea form.toggle {
+.commentarea .menuarea .toggle {
 	margin-left: 16px;
 }
 
 .commentarea .menuarea .toggle a {
-	font-size: 11px;
+	font-size: 12px;
 }
 
 .res.comments-page .thing {
@@ -1670,6 +1625,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .comments-page .commentarea>.usertext {
+	box-shadow: 0 1px 4px rgba(0,0,0,.12);
 	padding-bottom: 8px !important;
 }
 
@@ -1854,6 +1810,10 @@ body:not(.loggedin) .commentarea .menuarea {
 	font-size: 11px;
 	padding: 0 1px;
 	text-transform: uppercase;
+}
+
+.titlebox .bottom {
+	display: none;
 }
 
 .comments-page .side {
@@ -2392,6 +2352,10 @@ dt {
 
 #moderation_tools a {
 	margin-left: 2px
+}
+
+.side #moderation_tools .title .collapse-button {
+	cursor: default;
 }
 
 .linefield, .linefield.mobile,.linefield .usertext-edit,.linefield .usertext-edit input,.linefield .usertext-edit textarea {
