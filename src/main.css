@@ -26,7 +26,7 @@ body,
 
 .res #srDropdownContainer a {
 	cursor: default;
-    visibility: hidden;
+	visibility: hidden;
 }
 .res #srDropdownContainer a:after {
 	content: "≡";
@@ -90,7 +90,11 @@ body,
 	background: none;
 }
 
-.user, .user .userkarma, #header-bottom-right a, #RESSettingsButton {
+.separator, .user {
+	color: #FFF;
+}
+
+.user, .user a, .user span, #RESSettingsButton, #header-bottom-right a {
 	color: #FFF;
 	font-size: 10px;
 	opacity: .7;
@@ -1660,9 +1664,17 @@ body:not(.loggedin) .commentarea .menuarea {
 	color: #98ABBA;
 }
 
+RESUserTag a {
+	vertical-align: middle;
+}
+
 /* Remove '- ' before flair */
 .flair:before {
 	display: none;
+}
+
+.flair, .link .flair {
+	margin-left: 4px;
 }
 
 .flair-verified:before {
@@ -1681,6 +1693,107 @@ body:not(.loggedin) .commentarea .menuarea {
 	padding: 2px 6px;
 	text-transform: uppercase;
 }
+
+.flair.flair-moderator {
+	opacity: .9;
+}
+
+
+.titlebox .tagline a.author {
+	display: inline-block;
+}
+/* User flairs for teams */
+.flair.flair-fan {
+	background: url(%%user-flairs%%) 0 0 no-repeat;
+	display: none;
+	font-size: 0;
+	height: 22px;
+	width: 22px;
+	vertical-align: middle;
+}
+.flair.flair-fan:not([title=""]):hover {
+	background: none;
+	font-size: 12px;
+	line-height: 20px;
+	width: auto;
+}
+
+.comments-page .flair.flair-fan, .side .flair.flair-fan {
+	display: inline-block;
+}
+
+.flair-fan.flair-cloud9 {
+	background-position: 0 -22px;
+	width: 32px;
+}
+.flair-fan.flair-reunited {
+	background-position: 0 -44px;
+}
+.flair-fan.flair-misfits {
+	background-position: 0 -66px;
+	width: 20px;
+}
+.flair-fan.flair-creation {
+	background-position: -22px 0;
+	width: 24px;
+}
+.flair-fan.flair-rogue {
+	background-position: -31px -22px;
+	height: 24px;
+	width: 19px;
+}
+.flair-fan.flair-complexity {
+	background-position: -22px -46px;
+	width: 23px;
+}
+.flair-fan.flair-fnatic {
+	background-position: -22px -68px;
+	width: 26px;
+}
+.flair-fan.flair-nrg {
+	background-position: -44px 0;
+}
+.flair-fan.flair-luminosity {
+	background-position: -51px -22px;
+}
+.flair-fan.flair-invictus {
+	background-position: -49px -44px;
+}
+.flair-fan.flair-untitled-spreadsheet {
+	background-position: -48px -66px;
+}
+.flair-fan.flair-nip {
+	background-position: -68px 0;
+}
+.flair-fan.flair-anox {
+	background-position: -72px -22px;
+}
+.flair-fan.flair-nga {
+	background-position: -73px -44px;
+	width: 36px;
+}
+.flair-fan.flair-liquid {
+	background-position: -70px -66px;
+}
+.flair-fan.flair-melty {
+	background-position: 0 -90px;
+}
+.flair-fan.flair-mig {
+	background-position: -22px -90px;
+}
+.flair-fan.flair-northern-gaming {
+	background-position: -44px -90px;
+	width: 23px;
+}
+.flair-fan.flair-immortals {
+	background-position: -67px -90px;
+}
+
+.flairselector .flairoptionpane ul li.flairsample-right {
+	height: 24px;
+	padding: 0 4px !important;
+}
+
 
 .link .entry {
 	max-width: none;
@@ -2092,8 +2205,8 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page .footer-parent {
-	display:block;
-	margin-top:1px;
+	display: block;
+	margin-top: 1px;
 }
 
 /* Search Page */
@@ -2326,7 +2439,7 @@ dt {
 /* Footer */
 
 .footer-parent {
-	background: #242729;
+	background: #342444;
 	height: auto;
 	padding: 32px 0;
 }
