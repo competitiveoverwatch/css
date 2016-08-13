@@ -1703,15 +1703,15 @@ RESUserTag a {
 	display: inline-block;
 }
 /* User flairs for teams */
-.flair.flair-fan {
-	background: url(%%user-flairs%%) 0 0 no-repeat;
+.flair-fan {
+	background: url(%%user-flairs%%) no-repeat;
 	display: none;
 	font-size: 0;
 	height: 22px;
 	width: 22px;
 	vertical-align: middle;
 }
-.flair.flair-fan:not([title=""]):hover {
+.flair-fan:not([title=""]):hover {
 	background: none;
 	font-size: 12px;
 	line-height: 20px;
@@ -1722,78 +1722,104 @@ RESUserTag a {
 	display: inline-block;
 }
 
-.flair-fan.flair-cloud9 {
+.flair-c9 {
 	background-position: 0 -22px;
 	width: 32px;
 }
-.flair-fan.flair-reunited {
+.flair-reunited {
 	background-position: 0 -44px;
 }
-.flair-fan.flair-misfits {
+.flair-misfits {
 	background-position: 0 -66px;
 	width: 20px;
 }
-.flair-fan.flair-creation {
+.flair-creation {
 	background-position: -22px 0;
 	width: 24px;
 }
-.flair-fan.flair-rogue {
+.flair-rogue {
 	background-position: -31px -22px;
 	height: 24px;
 	width: 19px;
 }
-.flair-fan.flair-complexity {
+.flair-col {
 	background-position: -22px -46px;
 	width: 23px;
 }
-.flair-fan.flair-fnatic {
+.flair-fnc {
 	background-position: -22px -68px;
 	width: 26px;
 }
-.flair-fan.flair-nrg {
-	background-position: -44px 0;
+.flair-nrg {
+	background-position: -46px 0;
 }
-.flair-fan.flair-luminosity {
+.flair-luminosity {
 	background-position: -51px -22px;
 }
-.flair-fan.flair-invictus {
-	background-position: -49px -44px;
+.flair-invictus {
+	background-position: -48px -44px;
+	width: 23px;
 }
-.flair-fan.flair-untitled-spreadsheet {
+.flair-spreadsheet {
 	background-position: -48px -66px;
 }
-.flair-fan.flair-nip {
+.flair-nip {
 	background-position: -68px 0;
 }
-.flair-fan.flair-anox {
+.flair-anox {
 	background-position: -72px -22px;
 }
-.flair-fan.flair-nga {
+.flair-nga {
 	background-position: -73px -44px;
 	width: 36px;
 }
-.flair-fan.flair-liquid {
+.flair-liquid {
 	background-position: -70px -66px;
 }
-.flair-fan.flair-melty {
+.flair-melty {
 	background-position: 0 -90px;
 }
-.flair-fan.flair-mig {
+.flair-mig {
 	background-position: -22px -90px;
 }
-.flair-fan.flair-northern-gaming {
+.flair-northern-gaming {
 	background-position: -44px -90px;
 	width: 23px;
 }
-.flair-fan.flair-immortals {
+.flair-immortals {
 	background-position: -67px -90px;
 }
 
+.flairselector.drop-choices.active {
+	left: unset !important;
+	right: 336px;
+}
 .flairselector .flairoptionpane ul li.flairsample-right {
 	height: 24px;
-	padding: 0 4px !important;
+	padding: 0 0 0 4px !important;
 }
 
+.flairselector form .flairselection:before {
+	display: none;
+}
+
+.flairselector form .flairselection .flairremove {
+	display: inline-block;
+}
+
+.flairselector .customizer {
+	display: inline-block;
+	width: auto;
+}
+.flairselector .customizer input {
+	width: auto;
+}
+
+.flairselector form button {
+	display: inline-block;
+	float: none;
+	margin-left: 16px;
+}
 
 .link .entry {
 	max-width: none;
