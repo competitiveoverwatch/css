@@ -1691,11 +1691,19 @@ RESUserTag a {
 	opacity: .9;
 }
 
+.flair.flair-verified.flair-ama {
+	background: #FFA328;
+}
+
+
+.moderator .flairtoggle, .moderator .side .tagline {
+	display: none;
+}
 
 .titlebox .tagline a.author {
 	display: inline-block;
 }
-/* User flairs for teams */
+/* User flairs for teams 
 .flair-fan {
 	background: url(%%user-flairs%%) no-repeat;
 	display: none;
@@ -1784,7 +1792,7 @@ RESUserTag a {
 }
 .flair-immortals {
 	background-position: -67px -90px;
-}
+}*/
 
 .flairselector.drop-choices.active {
 	left: unset !important;
