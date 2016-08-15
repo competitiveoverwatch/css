@@ -104,20 +104,16 @@ body,
 .beta-hint a {
 	background-position: -32px -18px;
 }
-
 #modmail.nohavemail {
 	background-position: -16px -1px;
 }
-
 #modmail.havemail {
 	background-position: -16px -17px;
 }
-
 #header-bottom-right a.pref-lang {
 	background-position: -32px -1px;
 	top: -2px;
 }
-
 .loggedin .logout a {
 	background-position: -48px -1px;
 	top: -2px;
@@ -191,7 +187,7 @@ body,
 	border: 1px solid transparent;
 	border-radius: 4px;
 	display: inline-block;
-	margin: 1px 2px!important;
+	margin: 1px 2px !important;
 	transition: background .1s cubic-bezier(.4,0,.2,1);
 }
 
@@ -227,29 +223,26 @@ body,
 }
 
 #header .tabmenu li:hover a {
-	color:rgba(0,0,0,.9);
-	text-shadow:none;
+	color: rgba(0,0,0,.9);
+	text-shadow: none;
 }
 
 /* Styles for most buttons */
 button {
-	border-radius: 4px!important;
-	cursor: pointer!important;
+	border-radius: 4px !important;
+	cursor: pointer !important;
 }
 
-.morelink, .submit-page #newlink.submit.content ul.tabmenu.formtab,
-.submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
+.morelink, .submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
 	background: #1CBEF0;
 }
 
 body .btn, body button, .btn:hover, button:hover {
 	box-shadow: none;
 }
-
 .morelink:hover, .btn:hover, body button:hover {
 	background: #39D1FF;
 }
-
 .morelink:active , .btn:active , body button:active {
 	background: #0288D1;
 }
@@ -1718,7 +1711,7 @@ RESUserTag a {
 	width: auto;
 }
 
-.comments-page .flair.flair-fan, .side .flair.flair-fan {
+.comments-page .flair-fan, .side .flair-fan {
 	display: inline-block;
 }
 
@@ -1728,6 +1721,7 @@ RESUserTag a {
 }
 .flair-reunited {
 	background-position: 0 -44px;
+	width: 23px;
 }
 .flair-misfits {
 	background-position: 0 -66px;
@@ -1740,11 +1734,11 @@ RESUserTag a {
 .flair-rogue {
 	background-position: -31px -22px;
 	height: 24px;
-	width: 19px;
+	width: 21px;
 }
 .flair-col {
-	background-position: -22px -46px;
-	width: 23px;
+	background-position: -23px -46px;
+	height: 21px;
 }
 .flair-fnc {
 	background-position: -22px -68px;
@@ -1752,6 +1746,7 @@ RESUserTag a {
 }
 .flair-nrg {
 	background-position: -46px 0;
+	width: 30px;
 }
 .flair-luminosity {
 	background-position: -51px -22px;
@@ -1764,10 +1759,11 @@ RESUserTag a {
 	background-position: -48px -66px;
 }
 .flair-nip {
-	background-position: -68px 0;
+	background-position: -76px 0;
 }
 .flair-anox {
 	background-position: -72px -22px;
+	width: 21px;
 }
 .flair-nga {
 	background-position: -73px -44px;
@@ -1782,7 +1778,7 @@ RESUserTag a {
 .flair-mig {
 	background-position: -22px -90px;
 }
-.flair-northern-gaming {
+.flair-northern {
 	background-position: -44px -90px;
 	width: 23px;
 }
@@ -1926,6 +1922,11 @@ RESUserTag a {
 
 .comment .entry .tagline .userattrs {
 	margin-left: 1px;
+}
+
+.comment .score {
+	color: inherit;
+	font-weight: normal;
 }
 
 .comment .score: before {
@@ -2087,7 +2088,7 @@ body.res.comments-page .side .linkinfo .score {
 	width: 700px;
 }
 
-.submit-page form, .submit-page .roundfield, .submit-page .formtabs-content, .submit-page .roundfield input[type=text], .submit-page .roundfield input[type=url], .submit-page .roundfield textarea {
+.submit-page .roundfield, .submit-page .formtabs-content, body.submit-page .roundfield input, .submit-page .roundfield textarea {
 	width: 100%
 }
 
@@ -2117,7 +2118,6 @@ body.res.comments-page .side .linkinfo .score {
 
 .submit-page #newlink.submit.content ul.tabmenu.formtab {
 	background: none;
-	border-radius: 0;
 	box-shadow: none;
 }
 
@@ -2133,10 +2133,10 @@ body.res.comments-page .side .linkinfo .score {
 	background: #333;
 	color: #EEE;
 }
-.submit-page #newlink.submit.content .tabmenu.formtab li:first-child a {
+.submit-page .tabmenu li:first-child a {
 	border-radius: 4px 0 0 0;
 }
-.submit-page #newlink.submit.content .tabmenu.formtab li:last-child a {
+.submit-page .tabmenu li:last-child a {
 	border-radius: 0 4px 0 0;
 }
 
@@ -2150,7 +2150,7 @@ body.res.comments-page .side .linkinfo .score {
 	padding-top: 5px;
 }
 
-.submit-page .roundfield .roundfield-content {
+.submit-page .roundfield-content {
 	margin-top: 4px;
 }
 
@@ -2184,22 +2184,10 @@ body.res.comments-page .side .linkinfo .score {
 	width: 100%;
 }
 
-.submit-page .content input[type=text], .submit-page .content input[type=url], .submit-page .content textarea {
+body.submit-page .content input, .submit-page .content textarea {
 	border: none;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #CCC;
 	padding-left: 0;
-}
-
-.submit-page #url-field button {
-	background: #888;
-	transition: background .2s cubic-bezier(.4,0,.2,1);
-}
-
-.submit-page #url-field button:hover {
-	background: #999;
-}
-.submit-page #url-field button:active {
-	background: #777;
 }
 
 .submit-page .roundfield label {
@@ -2207,7 +2195,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .content.submit .info-notice {
-	background: none;
+	background: 0;
 	box-shadow: none;
 	margin-top: 32px;
 	padding: 0;
@@ -2225,7 +2213,6 @@ body.res.comments-page .side .linkinfo .score {
 .submit-page #newlink.submit.content .btn:hover {
 	box-shadow: none;
 }
-
 .submit-page #newlink.submit.content .btn:after {
 	display: none;
 }
@@ -2286,7 +2273,6 @@ body.res.comments-page .side .linkinfo .score {
 
 .search-page .content {
 	margin: 56px auto;
-	min-width: 750px;
 	padding: 0;
 	width: 80%;
 }
@@ -2465,10 +2451,11 @@ dt {
 /* Footer */
 
 .footer-parent {
-	background: #342444;
+	background: #2E223A;
 	height: auto;
 	padding: 32px 0;
 }
+.res-nightmode .footer-parent {background:#000}
 
 .footer {
 	background: none;
@@ -2567,9 +2554,8 @@ dt {
 }
 
 .res-nightmode .submit-link:before, .res-nightmode .morelink a,
-.res-nightmode .side .titlebox .md h1, .res-nightmode .sidecontentbox .title h1,
-.res-nightmode .side .titlebox h1.redditname a, .res-nightmode .side h1,
-.res-nightmode .side #moderation_tools .title h1, .res-nightmode .linkflairlabel, .res-nightmode .md h1,
+.res-nightmode .side .md h1, .res-nightmode .sidecontentbox .title h1,
+.res-nightmode .side h1.redditname a, .res-nightmode .side #moderation_tools .title h1, .res-nightmode .linkflairlabel, .res-nightmode .md h1,
 .res-nightmode .combined-search-page .search-result-group .search-header-label,
 .res-nightmode .submit-page .roundfield .title, .res-nightmode .gold-accent.comment-visits-box,
 .res-nightmode .commentarea .panestack-title .title, .res-nightmode .link .entry .tagline a {
@@ -2577,7 +2563,7 @@ dt {
 }
 
 .res-nightmode .side .md>ol {
-	background: none!important;
+	background: none !important;
 	border: none;
 }
 
