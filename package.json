@@ -11,7 +11,7 @@
     },
     "scripts": {
         "min-naut": "cssmin naut/Naut\\ 4\\ -\\ Main\\ CSS\\ File.css > dist/1-naut.css",
-        "trim-naut": "for i in $(cat src/blacklist.css); do sed -i '' \"s/${i}//g\" dist/1-naut.css; done",
+        "trim-naut": "while read -r line; do sed -i '' 's|'\"$line\"'||g' dist/1-naut.css; done < src/blacklist.css",
         "min-css": "cssmin src/main.css > dist/2-main.css",
         "combine-css": "concat-cli -f dist/*.css -o dist/final.css",
 
