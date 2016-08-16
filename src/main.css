@@ -205,7 +205,7 @@ body,
 }
 
 #header .tabmenu li a {
-	color: #FFF;
+	color: rgba(255,255,255,.9);
 	font-family: "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	font-size: 12px;
 	font-weight: bold;

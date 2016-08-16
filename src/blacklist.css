@@ -1,4 +1,4 @@
-background-image:url\(%%sidebarimg%%\);
-background-image:url\(%%footer%%\);
-background-image:url\(%%faq%%\);
+background-image:url(%%sidebarimg%%);
+background-image:url(%%footer%%);
+background-image:url(%%faq%%);
 \.listing-page \.tabmenu li>a\[href\$="\/controversial\/"\],\.wiki-page \.tabmenu li>a\[href\$="\/controversial\/"\],
