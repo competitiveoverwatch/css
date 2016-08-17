@@ -95,8 +95,8 @@ body,
 }
 
 .user, .user a, .user span, #RESSettingsButton, #header-bottom-right a {
-	color: #FFF;
-	font-size: 10px;
+	color: #FFF !important;
+	font-size: 10px !important;
 	opacity: .7;
 	text-transform: uppercase;
 }
@@ -1078,33 +1078,16 @@ body.listing-page>.content {
 .nsfw-stamp {
 	margin-right: 8px;
 }
-.linkflair-Question .thumbnail {
-	background-position: -91px -154px !important;
-}
-.linkflair-AdviceTips .thumbnail {
-	background-position: -65px -210px !important;
-}
-.linkflair-PSA .thumbnail {
-	background-position: -162px -154px !important;
-}
-.linkflair-Event .thumbnail {
-	background-position: 4px -210px !important;
-}
-.linkflair-Guide .thumbnail {
-	background-position: 4px -266px !important;
-}
-.linkflair-Video .thumbnail {
-	background-position: -371px -210px !important;
-}
-.linkflair-SubredditMeta .thumbnail {
-	background-position: -135px -266px !important;
-}
-.linkflair-Casting .thumbnail {
-	background-position: -301px -266px !important;
-}
-.linkflair-eSports .thumbnail {
-	background-position: 5px -322px !important;
-}
+.linkflair-Question .thumbnail {background-position: -91px -154px !important}
+.linkflair-AdviceTips .thumbnail {background-position: -65px -210px !important}
+.linkflair-PSA .thumbnail {background-position: -162px -154px !important}
+.linkflair-Event .thumbnail {background-position: 4px -210px !important}
+.linkflair-Guide .thumbnail {background-position: 4px -266px !important}
+.linkflair-Video .thumbnail {background-position: -371px -210px !important}
+.linkflair-SubredditMeta .thumbnail {background-position: -135px -266px !important}
+.linkflair-Casting .thumbnail {background-position: -301px -266px !important}
+.linkflair-eSports .thumbnail {background-position: 5px -322px !important}
+.linkflair-eSports.linkflair-Spoiler .thumbnail {background-position: -65px -322px !important}
 
 .thumbnail.default, a.thumbnail[href*="reddit.com"] {
 	background-position:-162px -42px;
@@ -1251,6 +1234,10 @@ body.listing-page>.content {
 	font-weight: bold;
 }
 
+.thing.link.self .domain {
+	display: none;
+}
+
 .thing.link .domain a {
 	font-size: 11px;
 }
@@ -1297,17 +1284,16 @@ body.listing-page>.content {
 	opacity:.9;
 }
 
-.content .linkflair-SubredditMeta .linkflairlabel { background: #5D6779 }
-.content .linkflair-Discussion .linkflairlabel { background: #24A0ED }
-.content .linkflair-PSA .linkflairlabel { background: #E53935 }
-.content .linkflair-eSports .linkflairlabel { background: #3949AB }
-.content .linkflair-Megathread .linkflairlabel { background: #27B062 }
-.content .linkflair-Event .linkflairlabel { background: #DC143C }
-.content .linkflair-Guide .linkflairlabel { background: #B338C2 }
-.content .linkflair-Question .linkflairlabel { background: #738491 }
-.content .linkflair-Casting .linkflairlabel { background: #673AB7 }
-.content .linkflair-Video .linkflairlabel { background: #FF5500 }
-.content .linkflair-AdviceTips .linkflairlabel { background: #FFAB19 }
+.linkflair-Discussion .linkflairlabel { background: #24A0ED }
+.linkflair-PSA .linkflairlabel { background: #E53935 }
+.linkflair-eSports .linkflairlabel { background: #3949AB }
+.linkflair-Megathread .linkflairlabel { background: #27B062 }
+.linkflair-Event .linkflairlabel { background: #DC143C }
+.linkflair-Guide .linkflairlabel { background: #B338C2 }
+.linkflair-Question .linkflairlabel, .linkflair-SubredditMeta .linkflairlabel { background: #738491 }
+.linkflair-Casting .linkflairlabel { background: #673AB7 }
+.linkflair-Video .linkflairlabel { background: #FF5500 }
+.linkflair-AdviceTips .linkflairlabel { background: #FFAB19 }
 
 .expando {
 	margin:8px 0 4px 0;
@@ -1661,6 +1647,10 @@ RESUserTag a {
 	vertical-align: middle;
 }
 
+.flair {
+	cursor: default;
+}
+
 /* Remove '- ' before flair */
 .flair:before {
 	display: none;
@@ -1670,12 +1660,12 @@ RESUserTag a {
 	margin-left: 4px;
 }
 
-.flair-verified:before {
+.flair-moderator:before {
 	display:none;
 }
 
-.flair.flair-verified {
-	background: #27B062;
+.flair.flair-moderator {
+	background: rgba(39,176,98,.9);
 	border-radius: 2px;
 	color: #FFF;
 	display: inline-block;
@@ -1687,12 +1677,35 @@ RESUserTag a {
 	text-transform: uppercase;
 }
 
-.flair.flair-moderator {
-	opacity: .9;
+.flair-verified:before {
+	background: url(%%spritesheet%%) -122px 0 no-repeat;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    margin: 0 8px 0 0;
+    visibility: visible;
+    width: 16px;
+    vertical-align: middle;
 }
 
-.flair.flair-verified.flair-ama {
-	background: #FFA328;
+.flair-verified {
+	height: 16px;
+	vertical-align: middle;
+    visibility: hidden;
+    width: 16px;
+}
+
+.flair-verified.flair-ama {
+	color: #ffA328;
+	font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    visibility: visible;
+    width: auto;
+}
+.flair-verified.flair-ama:before {
+	margin: 0 4px 0 0;
+	vertical-align: top;
 }
 
 
@@ -1703,7 +1716,7 @@ RESUserTag a {
 .titlebox .tagline a.author {
 	display: inline-block;
 }
-/* User flairs for teams 
+/* User flairs for teams */
 .flair-fan {
 	background: url(%%user-flairs%%) no-repeat;
 	display: none;
@@ -1792,7 +1805,7 @@ RESUserTag a {
 }
 .flair-immortals {
 	background-position: -67px -90px;
-}*/
+}
 
 .flairselector.drop-choices.active {
 	left: unset !important;
@@ -1941,8 +1954,10 @@ RESUserTag a {
 	display: none;
 }
 
-.comment .likes .score.likes, .comments-page .comment time {
+
+.comment .likes .score, .comments-page .comment time {
 	margin-left: 2px;
+	vertical-align: middle;
 }
 
 .comment .child, .comment .showreplies {
