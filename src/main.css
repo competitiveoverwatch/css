@@ -1950,7 +1950,7 @@ RESUserTag a {
 }
 
 
-.comment .likes .score, .comments-page .comment time {
+.comment .score, .comments-page .comment time {
 	margin-left: 2px;
 	vertical-align: middle;
 }
