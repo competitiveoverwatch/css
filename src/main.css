@@ -1229,23 +1229,18 @@ body.listing-page>.content {
 	opacity: .9;
 }
 
-.thing.link.stickied .entry li .comments, .thing.link.stickied a.title {
-	color: #1B7428;
-	font-weight: bold;
-}
-
-.thing.link.self .domain {
+.link.self .domain {
 	display: none;
 }
 
-.thing.link .domain a {
+.link .domain a {
 	font-size: 11px;
 }
 
-.thing.link.stickied .buttons a {
+.thing.link.stickied li a {
 	color: #B3BBC1 !important;
 }
-.thing.link.stickied .buttons a:hover {
+.thing.link.stickied li a:hover {
 	color: #27B062 !important;
 }
 
@@ -1679,29 +1674,29 @@ RESUserTag a {
 
 .flair-verified:before {
 	background: url(%%spritesheet%%) -122px 0 no-repeat;
-    content: "";
-    display: inline-block;
-    height: 16px;
-    margin: 0 8px 0 0;
-    visibility: visible;
-    width: 16px;
-    vertical-align: middle;
+	content: "";
+	display: inline-block;
+	height: 16px;
+	margin: 0 8px 0 0;
+	visibility: visible;
+	width: 16px;
+	vertical-align: middle;
 }
 
 .flair-verified {
 	height: 16px;
 	vertical-align: middle;
-    visibility: hidden;
-    width: 16px;
+	visibility: hidden;
+	width: 16px;
 }
 
 .flair-verified.flair-ama {
 	color: #ffA328;
 	font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    visibility: visible;
-    width: auto;
+	font-weight: bold;
+	line-height: 16px;
+	visibility: visible;
+	width: auto;
 }
 .flair-verified.flair-ama:before {
 	margin: 0 4px 0 0;
