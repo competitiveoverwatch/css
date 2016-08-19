@@ -110,6 +110,12 @@ body,
 #modmail.havemail {
 	background-position: -16px -17px;
 }
+#mail.havemail:before {
+	background: #E53935;
+	border-radius: 4px;
+	content: "You have new messages";
+	text-transform: none;
+}
 #header-bottom-right a.pref-lang {
 	background-position: -32px -1px;
 	top: -2px;
@@ -218,7 +224,7 @@ body,
 
 #header .tabmenu li:hover {
 	background: #FFCA4F;
-	border: 1px solid transparent;
+	border: 1px solid rgba(255,255,255,.1);
 	box-shadow: 0 0 6px rgba(255,202,79,.4);
 }
 
@@ -786,7 +792,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	position: absolute;
 	right: 0;
 	text-decoration: none;
-	top: 85px;
+	top: 65px;
 	width: 336px;
 	z-index: 1;
 }
@@ -803,9 +809,10 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 
 .side .md h6 a {
-	background: rgba(255,255,255,.95);
-	border: 1px solid rgba(255,255,255,.4);
+	background: #ffca4f;
+	border: 1px solid rgba(255,255,255,.1);
 	border-radius: 4px;
+	box-shadow: 0 0 6px rgba(255,202,79,.4);
 	padding: 6px 18px;
 	text-decoration: none;
 }
@@ -816,11 +823,15 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	color: #222;
 }
 
-/* Second link */
+/* Next links */
 .side .md h6+h6 {
-	top: 123px;
+	top: 103px;
 }
-.side .md h6+h6 a {
+.side .md h6+h6+6 {
+	top: 141px;
+}
+
+.side .md h6+h6 a, .side .md h6+h6+6 a {
 	padding: 6px 16px;
 }
 
@@ -1948,7 +1959,6 @@ RESUserTag a {
 .comment .score: before {
 	display: none;
 }
-
 
 .comment .score, .comments-page .comment time {
 	margin-left: 2px;
