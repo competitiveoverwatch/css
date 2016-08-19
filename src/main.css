@@ -212,9 +212,7 @@ body,
 
 #header .tabmenu li a {
 	color: rgba(255,255,255,.9);
-	font-family: "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
-	font-size: 12px;
-	font-weight: bold;
+	font: bold 12px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	letter-spacing: .5px;
 	margin: 0 auto;
 	padding: 0 20px;
@@ -348,9 +346,7 @@ body.res #search #searchexpando {
 }
 
 .submit-link:before {
-	font-family: "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
-	font-size: 14px;
-	font-weight: bold;
+	font: bold 14px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
 	color: #696969;
 	content: "SUBMIT CONTENT";
 	position: absolute;
@@ -593,9 +589,7 @@ div.titlebox span.number:after {
 }
 
 .morelink a {
-	font-family: "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
-	font-size: 14px;
-	font-weight: bold;
+	font: bold 14px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	letter-spacing: -.4px;
 }
 
@@ -611,9 +605,7 @@ div.titlebox span.number:after {
 .side .titlebox h1.redditname, .sidecontentbox .title h1  {
 	color: #686868;
 	display: inline-block;
-	font-family: "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
-	font-size: 14px;
-	font-weight: bold;
+	font: bold 14px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
 	letter-spacing: -.4px;
 	transform: scaleY(1.2);
 	-webkit-transform: scaleY(1.2);
@@ -645,10 +637,7 @@ div.titlebox span.number:after {
 /* Links for Discord, Twitch, calendar and 'Bible' */
 .side .md h2, .side .md h3, .side .md h4, .side .md h5 {
 	border-radius: 4px;
-	font-family: "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: bold;
+	font: normal bold 14px "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
 	height: 38px;
 	padding: 7px 0;
 	transform: none;
@@ -676,7 +665,7 @@ div.titlebox span.number:after {
 	text-decoration: none;
 }
 
-.side .md h2 a:before, .side .md h3 a:before, .side .md h4 a:before, .side .md h5 a:before {
+.side .md h2 a:before, .side .md h3 a:before, .side .md h4 a:before {
 	content: "";
 	display: inline-block;
 	margin-right: 10px;
@@ -750,14 +739,15 @@ div.titlebox span.number:after {
 	width: 20px;
 	vertical-align: bottom;
 }
+
 .side .md h5 {
 	background: #FF8C00;
+	border-radius: 4px 4px 0 0;
 	margin-top: -1px;
 }
-.side .md h5 a:before {
-	background: url(%%sidebar-bible-icon-1x%%);
-	height: 24px;
-	width: 24px;
+.side .md h5+h5 {
+	border-radius: 0 0 4px 4px;
+	margin-top: -3px;
 }
 
 /* Retina/@2x icons */
@@ -809,8 +799,8 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 
 .side .md h6 a {
-	background: #ffca4f;
-	border: 1px solid rgba(255,255,255,.1);
+	background: rgba(255,255,255,.94);
+	border: 1px solid rgba(255,255,255,.4);
 	border-radius: 4px;
 	box-shadow: 0 0 6px rgba(255,202,79,.4);
 	padding: 6px 18px;
@@ -818,8 +808,8 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 
 .side .md h6 a:hover {
-	background: #FFF;
-	border: 1px solid #FFF;
+	background: #ffCA4f;
+	border: 1px solid rgba(255,255,255,.1);
 	color: #222;
 }
 
@@ -827,7 +817,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 .side .md h6+h6 {
 	top: 103px;
 }
-.side .md h6+h6+6 {
+.side .md h6+h6+h6 {
 	top: 141px;
 }
 
@@ -860,8 +850,7 @@ body:not(.listing-page) .side .md>ol {
 	border-radius: 4px;
 	color: #FFF;
 	cursor: default;
-	font-family: "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
-	font-size: 12px;
+	font: 12px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	left: 82%;
 	left: calc(100% - 352px);
 	letter-spacing: .5px;
@@ -998,10 +987,8 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .sidecontentbox .more {
-	font-family: "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
-	font-size: 11px;
+	font: bold 11px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	text-transform: uppercase;
-	font-weight: bold;
 	letter-spacing: -.5px;
 	margin-top: 8px;
 	text-align: left;
@@ -1307,9 +1294,7 @@ body.listing-page>.content {
 
 .md h1 {
 	color: #525252;
-	font-family: "Roboto","Lato","Helvetica Neue","Franklin Gothic","Candara","Helvetica","Verdana","Arial",sans-serif;
-	font-size: 16px;
-	font-weight: 800;
+	font: 800 16px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Candara","Helvetica","Verdana","Arial",sans-serif;
 	letter-spacing: -.5px;
 	margin-top: 1em;
 	transform: scaleY(1.2);
