@@ -9,7 +9,7 @@ body,
 .commentarea>.usertext textarea, .comments-page .link .usertext .md,
 .comment-permalink-page .infobar, .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select ,
 .entry .tagline, .usertext .bottom-area, .combined-search-page .search-result .search-result-meta,
-.footer .flat-vert.title {
+.footer .flat-vert.title, .comment .score {
 	font-family:"Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Helvetica","Arial",sans-serif
 }
 
@@ -46,9 +46,17 @@ body,
 }
 
 /* Reposition 3-bar icon */
+#sr-header-area .dropdown.srdrop .selected {
+	visibility: hidden;
+	width: 13px;
+}
+
 #sr-header-area .dropdown.srdrop .selected:after {
+	content: "≡";
+	font-size: 15px;
 	cursor: default;
 	margin: 0 0 0 -76px;
+	visibility: visible;
 }
 
 #sr-header-area .drop-choices.srdrop.inuse a:first-child {
@@ -296,7 +304,7 @@ body .btn, body button, .btn:hover, button:hover {
 	background: white;
 	border-radius: 4px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
-	margin: 190px 16px 156px 0;
+	margin: 186px 16px 156px 0;
 	padding: 0 16px;
 }
 .side .spacer {
@@ -310,7 +318,8 @@ body .btn, body button, .btn:hover, button:hover {
 }
 
 #search input[type=text] {
-	border-radius: 4px
+	border-radius: 4px;
+	height: 38px;
 }
 
 #search #searchexpando {
@@ -351,7 +360,7 @@ body.res #search #searchexpando {
 	content: "SUBMIT CONTENT";
 	position: absolute;
 	text-align: center;
-	top: 328px;
+	top: 324px;
 	transform: scaleY(1.4);
 	-webkit-transform: scaleY(1.4);
 	width: 320px;
@@ -364,13 +373,13 @@ body.res #search #searchexpando {
 	content: "";
 	height: 100px;
 	position: absolute;
-	top: 312px;
+	top: 308px;
 	width: 320px;
 	z-index: -1;
 }
 
 .morelink {
-	top: 360px;
+	top: 356px;
 }
 
 .res-nightmode .morelink:hover a {
@@ -408,7 +417,7 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 .side .titlebox h1.redditname {
-	margin: 32px 0 0;
+	margin: 10px 0 0;
 	position: static;
 	text-align: center;
 	text-transform: uppercase;
@@ -777,12 +786,12 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 
 /* Announcement/stickied links */
 .side .md h6 {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: bold;
 	position: absolute;
 	right: 0;
 	text-decoration: none;
-	top: 65px;
+	top: 67px;
 	width: 336px;
 	z-index: 1;
 }
@@ -815,10 +824,10 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 
 /* Next links */
 .side .md h6+h6 {
-	top: 103px;
+	top: 105px;
 }
 .side .md h6+h6+h6 {
-	top: 141px;
+	top: 143px;
 }
 
 .side .md h6+h6 a, .side .md h6+h6+6 a {
@@ -1235,8 +1244,12 @@ body.listing-page>.content {
 	font-size: 11px;
 }
 
+.thing.link.stickied a {
+	color: #27B062 !important
+}
+
 .thing.link.stickied li a {
-	color: #B3BBC1 !important;
+	color: #A3ABB1 !important;
 }
 .thing.link.stickied li a:hover {
 	color: #27B062 !important;
@@ -1377,6 +1390,7 @@ a[href="#s"]::after {
 	border-radius: 2px;
 	color: #222;
 	content: attr(title);
+	padding: 2px;
 	visibility: visible;
 }
 a[href="#s"]:hover::after, a[href="#s"]:active::after {
@@ -1722,12 +1736,12 @@ RESUserTag a {
 
 /*.moderator .flairtoggle, .moderator .side .tagline {
 	display: none;
-}*/
+}
 
 .titlebox .tagline a.author {
 	display: inline-block;
 }
-/* User flairs for teams */
+/*User flairs for teams 
 .flair-fan {
 	background: url(%%user-flairs%%) no-repeat;
 	display: none;
@@ -1847,7 +1861,7 @@ RESUserTag a {
 	display: inline-block;
 	float: none;
 	margin-left: 16px;
-}
+}*/
 
 .link .entry {
 	max-width: none;
@@ -2484,7 +2498,7 @@ dt {
 /* Footer */
 
 .footer-parent {
-	background: #2E223A;
+	background: #23182D;
 	height: auto;
 	padding: 32px 0;
 }
