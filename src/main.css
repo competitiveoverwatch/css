@@ -1363,6 +1363,26 @@ body.listing-page>.content {
 	padding: 8px 12px;
 }
 
+/* Spoiler tags */
+a[href="#s"] {
+	cursor: default;
+	display: inline-block;
+	visibility: hidden;
+}
+a[href="#s"]:hover {
+	text-decoration: none !important;
+}
+a[href="#s"]::after {
+	background: #222;
+	border-radius: 2px;
+	color: #222;
+	content: attr(title);
+	visibility: visible;
+}
+a[href="#s"]:hover::after, a[href="#s"]:active::after {
+	color: white;
+}
+
 .nav-buttons {
 	background: rgba(255,255,255,.82);
 	border-radius: 0 0 4px 4px;
@@ -1700,9 +1720,9 @@ RESUserTag a {
 }
 
 
-.moderator .flairtoggle, .moderator .side .tagline {
+/*.moderator .flairtoggle, .moderator .side .tagline {
 	display: none;
-}
+}*/
 
 .titlebox .tagline a.author {
 	display: inline-block;
