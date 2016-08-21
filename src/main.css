@@ -161,14 +161,14 @@ body,
 /* Logo */
 #header .pagename a {
 	background: url(%%redditname%%)  no-repeat center / contain;
-	height: 85px;
+	height: 79px;
 	left: 0;
 	margin: 0 auto;
 	position: absolute;
 	right: 0;
 	text-indent: -9999px;
 	top: -78px;
-	width: 710px;
+	width: 581px;
 }
 
 #header .separator, .res #header .srSep {
@@ -791,7 +791,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	position: absolute;
 	right: 0;
 	text-decoration: none;
-	top: 67px;
+	top: 64px;
 	width: 336px;
 	z-index: 1;
 }
@@ -824,10 +824,10 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 
 /* Next links */
 .side .md h6+h6 {
-	top: 105px;
+	top: 102px;
 }
 .side .md h6+h6+h6 {
-	top: 143px;
+	top: 140px;
 }
 
 .side .md h6+h6 a, .side .md h6+h6+6 a {
@@ -2281,7 +2281,7 @@ body.submit-page .content input, .submit-page .content textarea {
 
 .search-page #header .pagename a {
 	display: block;
-	top: 24px;
+	top: 26px;
 }
 
 .search-page #search {
