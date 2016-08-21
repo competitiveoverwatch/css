@@ -811,7 +811,6 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	background: rgba(255,255,255,.94);
 	border: 1px solid rgba(255,255,255,.4);
 	border-radius: 4px;
-	box-shadow: 0 0 6px rgba(255,202,79,.4);
 	padding: 6px 18px;
 	text-decoration: none;
 }
@@ -819,6 +818,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 .side .md h6 a:hover {
 	background: #ffCA4f;
 	border: 1px solid rgba(255,255,255,.1);
+	box-shadow: 0 0 6px rgba(255,202,79,.4);
 	color: #222;
 }
 
