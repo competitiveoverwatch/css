@@ -274,8 +274,9 @@ body .btn, body button, .btn:hover, button:hover {
 }
 
 .sponsorshipbox {
-	border-radius: 0;
+	border-radius: 2px !important;
 	box-shadow: none;
+	margin-top: -4px;
 	overflow: hidden;
 }
 
@@ -354,15 +355,18 @@ body.res #search #searchexpando {
 	display:none
 }
 
-.submit-link:before {
+.submit-link:before, .titlebox:before {
 	font: bold 14px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
 	color: #696969;
-	content: "SUBMIT CONTENT";
-	position: absolute;
 	text-align: center;
-	top: 324px;
 	transform: scaleY(1.4);
 	-webkit-transform: scaleY(1.4);
+}
+
+.submit-link:before {
+	content: "SUBMIT CONTENT";
+	position: absolute;
+	top: 324px;
 	width: 320px;
 }
 
@@ -398,30 +402,18 @@ body:not(.res-nightmode) .morelink:hover {
 	padding: 0;
 }
 
-.side .titlebox h1.redditname a {
-	color: #444;
-	font-size: 0;
-}
-
-.side .titlebox h1.redditname a:before {
-	content: "COMPETITIVE OVERWATCH";
-	font-size: 20px;
-}
-
-.titlebox:before, .side .titlebox h1.redditname:before {
-	display: none;
+.titlebox:before {
+    content: "SUBREDDIT INFORMATION";
+    font-size: 15px;
+    margin-top: 48px;
 }
 
 .side .titlebox {
-	margin-top: -34px;
+	margin-top: -33px;
 }
 
-.side .titlebox h1.redditname {
-	margin: 10px 0 0;
-	position: static;
-	text-align: center;
-	text-transform: uppercase;
-	width: 100%;
+.side .titlebox h1.redditname, .side .titlebox h1.redditname:before {
+	display: none;
 }
 
 .titlebox span.subscribers {
@@ -611,7 +603,7 @@ div.titlebox span.number:after {
 	font-size: 11px;
 }
 
-.side .titlebox h1.redditname, .sidecontentbox .title h1  {
+.sidecontentbox .title h1  {
 	color: #686868;
 	display: inline-block;
 	font: bold 14px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
@@ -898,6 +890,10 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol ol li:first-child a {
+	display: none;
+}
+
+.side .md>ol ol li:nth-child(2) a {
 	border-radius: 4px 4px 0 0;
 }
 
@@ -937,6 +933,39 @@ body:not(.listing-page) .side .md>ol {
 .side .md>ol li a:hover {
 	background: #EEE;
 	color: #222;
+}
+
+[lang$="00"] .linkflair-AdviceTips {display: none}
+[lang$="01"] .linkflair-Casting {display: none}
+[lang$="02"] .linkflair-Discussion {display: none}
+[lang$="03"] .linkflair-eSports {display: none}
+[lang$="04"] .linkflair-Event {display: none}
+[lang$="05"] .linkflair-Guide {display: none}
+[lang$="06"] .linkflair-PSA {display: none}
+[lang$="07"] .linkflair-Question {display: none}
+[lang$="08"] .linkflair-SubredditMeta {display: none}
+[lang$="09"] .linkflair-Video {display: none}
+
+/* Hide whichever filter is currently being used */
+[lang$="00"] .side ol a[href*="00"] {display: none}
+[lang$="01"] .side ol a[href*="01"] {display: none}
+[lang$="02"] .side ol a[href*="02"] {display: none}
+[lang$="03"] .side ol a[href*="03"] {display: none}
+[lang$="04"] .side ol a[href*="04"] {display: none}
+[lang$="05"] .side ol a[href*="05"] {display: none}
+[lang$="06"] .side ol a[href*="06"] {display: none}
+[lang$="07"] .side ol a[href*="07"] {display: none}
+[lang$="08"] .side ol a[href*="08"] {display: none}
+[lang$="09"] .side ol a[href*="09"] {display: none}
+
+/* Show 'none' filter option if filter active */
+[lang^="ow"] .side .md>ol ol li:first-child a {
+	border-radius: 4px 4px 0 0;
+	border-bottom: 1px solid #DDD;
+	display: block;
+}
+[lang^="ow"] .side .md>ol ol li:nth-child(2) a {
+	border-radius: 0;
 }
 
 
@@ -1736,12 +1765,12 @@ RESUserTag a {
 
 /*.moderator .flairtoggle, .moderator .side .tagline {
 	display: none;
-}
+}*/
 
 .titlebox .tagline a.author {
 	display: inline-block;
 }
-/*User flairs for teams 
+/* User flairs for teams */
 .flair-fan {
 	background: url(%%user-flairs%%) no-repeat;
 	display: none;
@@ -1773,9 +1802,9 @@ RESUserTag a {
 	background-position: 0 -66px;
 	width: 20px;
 }
-.flair-creation {
+.flair-dig {
 	background-position: -22px 0;
-	width: 24px;
+	width: 19px;
 }
 .flair-rogue {
 	background-position: -31px -22px;
@@ -1791,7 +1820,7 @@ RESUserTag a {
 	width: 26px;
 }
 .flair-nrg {
-	background-position: -46px 0;
+	background-position: -41px 0;
 	width: 30px;
 }
 .flair-luminosity {
@@ -1801,11 +1830,12 @@ RESUserTag a {
 	background-position: -48px -44px;
 	width: 23px;
 }
-.flair-spreadsheet {
+.flair-storm {
 	background-position: -48px -66px;
+	width: 31px;
 }
 .flair-nip {
-	background-position: -76px 0;
+	background-position: -71px 0;
 }
 .flair-anox {
 	background-position: -72px -22px;
@@ -1861,7 +1891,7 @@ RESUserTag a {
 	display: inline-block;
 	float: none;
 	margin-left: 16px;
-}*/
+}
 
 .link .entry {
 	max-width: none;
@@ -2564,6 +2594,10 @@ dt {
 }
 .linefield .md {
 	max-width:none
+}
+
+.res .RESshortcutside {
+	margin-top: 2px;
 }
 
 /* RES night mode */
