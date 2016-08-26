@@ -3413,6 +3413,12 @@ body #newlink-with-image-upload .file-upload-button {
 .flair-faze {
     background-position: -44px -90px;
 }
+.flair-freecs {
+    background-position: -66px -90px;
+}
+.flair-sodi {
+    background-position: -88px -90px;
+}
 
 .flairselector.drop-choices.active {
     left: unset !important;
