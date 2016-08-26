@@ -3,25 +3,20 @@
     "private": true,
     "devDependencies": {
         "cssmin": "latest",
-        "concat-cli": "latest",
         "imagemin-cli": "latest",
         "mkdirp": "latest",
         "replace": "latest",
         "rimraf": "latest"
     },
     "scripts": {
-        "min-naut": "cssmin naut/Naut\\ 4\\ -\\ Main\\ CSS\\ File.css > dist/1-naut.css",
-        "trim-naut": "while read -r line; do sed -i '' 's|'\"$line\"'||g' dist/1-naut.css; done < src/blacklist.css",
-        "min-css": "cssmin src/main.css > dist/2-main.css",
-        "combine-css": "concat-cli -f dist/*.css -o dist/final.css",
+        "min-css": "cssmin src/main.css > dist/final.css",
 
         "clean": "rimraf dist && mkdirp dist",
-        "clean-tmp-css": "rimraf dist/1-naut.css && rimraf dist/2-main.css",
         "build-complete": "echo '\nBuild complete.' && du -h dist/final.css && echo '\n' && open dist",
 
         "build:img": "imagemin src/images-export/* -o dist/images/",
-        "build:css": "npm run min-naut && npm run trim-naut && npm run min-css && npm run combine-css",
-        "build:all": "npm run clean && npm run build:css && npm run build:img && npm run clean-tmp-css && npm run build-complete",
+        "build:css": "npm run min-css",
+        "build:all": "npm run clean && npm run build:css && npm run build:img && npm run build-complete",
         
         "build": "npm run build:all -s"
     }
