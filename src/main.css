@@ -115,21 +115,18 @@ a {
     transition: all 0.15s ease;
 }
 
-#sr-header-area:hover .sr-bar a, #sr-header-area:hover #sr-more-link, #sr-header-area:hover .seperator, #sr-header-area:hover .dropdown.srdrop .selected, .res #RESShortcuts {
-    color: rgba(255,255,255,.4);
-}
-
 #sr-header-area:hover .sr-bar a,
 #sr-header-area:hover #sr-more-link,
 #sr-header-area:hover .seperator,
 #sr-header-area:hover .dropdown.srdrop .selected {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,.4);
 }
 
 #sr-header-area .sr-bar a:hover, #sr-more-link:hover, #sr-header-area .dropdown.srdrop .selected:hover {
     background: none;
     border: none;
     color: #FFF;
+    cursor: pointer;
     text-decoration: none;
     transition: all 0.15s ease;
 }
@@ -149,18 +146,18 @@ a.random.choice {
     width: 13px;
 }
 
-                #sr-header-area .dropdown.srdrop .selected:hover {text-decoration: underline;}
+#sr-header-area .dropdown.srdrop .selected:hover {text-decoration: underline;}
 
-                #sr-header-area .dropdown.srdrop .selected:after {
-                    content: "▼";
-                    cursor: default;
-                    display: inline-block;
-                    font-size: 15px;
-                    margin: 0 0 0 -76px;
-                    visibility: visible;
-                }
+#sr-header-area .dropdown.srdrop .selected:after {
+    content: "≡";
+    cursor: default;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 0 0 -76px;
+    visibility: visible;
+}
 
-                #sr-header-area .dropdown.srdrop .selected:hover:after { text-decoration: none }
+#sr-header-area .dropdown.srdrop .selected:hover:after { text-decoration: none }
 
 
 /* My Subreddits Dropdown */
