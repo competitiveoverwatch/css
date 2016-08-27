@@ -1748,7 +1748,7 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 .titlebox .tagline a.flairselectbtn {
-    color: #24a0ed;
+    color: #24A0ED;
 }
 
 .leavemoderator, .titlebox .tagline a.author, .titlebox form.toggle.leavecontributor-button {display: none;}
@@ -1759,7 +1759,7 @@ body:not(.res-nightmode) .morelink:hover {
 
 /* Sidebar Description */
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol {
-    color: #292f34;
+    color: #292F34;
     font: 13px/1.45 Lato,arial,sans-serif;
 }
 
@@ -1992,7 +1992,7 @@ body:not(.listing-page) .side .md>ol {
     list-style-type: none;
     padding: 8px 16px;
     position: absolute;
-    top: 182px;
+    top: 183px;
     text-shadow: 0 1px 4px rgba(0,0,0,.1);
     transition: background .18s cubic-bezier(.4,0,.2,1), color .18s cubic-bezier(.4,0,.2,1);
     z-index: 1;
@@ -4479,6 +4479,60 @@ a[href="#s"]::after {
 a[href="#s"]:hover::after, a[href="#s"]:active::after {
     color: white;
 }
+
+/* Hero tags */
+.md a[href^="#hero-"] {
+    background: url(%%tags-heroes%%);
+    display: inline-block;
+    font-size: 0;
+    height: 28px;
+    width: 28px;
+}
+.md a[href="#hero-genji"] {background-position: 0 0}
+.md a[href="#hero-mccree"] {background-position: -28px 0}
+.md a[href="#hero-pharah"] {background-position: -56px 0}
+.md a[href="#hero-reaper"] {background-position: -84px 0}
+.md a[href="#hero-soldier"] {background-position: -112px 0}
+.md a[href="#hero-tracer"] {background-position: -140px 0}
+.md a[href="#hero-bastion"] {background-position: 0 -28px}
+.md a[href="#hero-hanzo"] {background-position: -28px -28px}
+.md a[href="#hero-junkrat"] {background-position: -56px -28px}
+.md a[href="#hero-mei"] {background-position: -84px -28px}
+.md a[href="#hero-torbjorn"] {background-position: -112px -28px}
+.md a[href="#hero-widowmaker"] {background-position: -140px -28px}
+.md a[href="#hero-dva"] {background-position: 0 -56px}
+.md a[href="#hero-reinhardt"] {background-position: -28px -56px}
+.md a[href="#hero-roadhog"] {background-position: -56px -56px}
+.md a[href="#hero-winston"] {background-position: -84px -56px}
+.md a[href="#hero-zarya"] {background-position: -112px -56px}
+.md a[href="#hero-ana"] {background-position: 0 -84px}
+.md a[href="#hero-lucio"] {background-position: -28px -84px}
+.md a[href="#hero-mercy"] {background-position: -56px -84px}
+.md a[href="#hero-symmetra"] {background-position: -84px -84px}
+.md a[href="#hero-zenyatta"] {background-position: -112px -84px}
+
+/* Map tags */
+.md a[href*="#map-"] {
+    background: url(%%tags-maps%%);
+    display: inline-block;
+    font-size: 0;
+    height: 79px;
+    width: 110px;
+}
+.md a[href="#map-hanamura"] {background-position: 0 0}
+.md a[href="#map-anubis"] {background-position: -110px 0}
+.md a[href="#map-volskaya"] {background-position: -220px 0}
+.md a[href="#map-dorado"] {background-position: 0 -79px}
+.md a[href="#map-route66"] {background-position: -110px -79px}
+.md a[href="#map-gibraltar"] {background-position: -220px -79px}
+.md a[href="#map-hollywood"] {background-position: 0 -158px}
+.md a[href="#map-kingsrow"] {background-position: -110px -158px}
+.md a[href="#map-numbani"] {background-position: -220px -158px}
+.md a[href="#map-eichenwalde"] {background-position: -330px -158px}
+.md a[href="#map-ilios"] {background-position: 0 -237px}
+.md a[href="#map-lijiang"] {background-position: -110px -237px}
+.md a[href="#map-nepal"] {background-position: -220px -237px}
+
 
 .nav-buttons {
     background: rgba(255,255,255,.82);
