@@ -1913,7 +1913,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 
 /* Announcement/stickied links */
 .side .md h6 {
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: bold;
     position: absolute;
     right: 0;
@@ -3328,7 +3328,7 @@ body #newlink-with-image-upload .file-upload-button {
 }
 /* User flairs for teams */
 .flair-fan {
-    background: url(%%user-flairs%%) no-repeat;
+    background: url(%%flairs-teams%%) no-repeat;
     display: none;
     font-size: 0;
     height: 22px;
@@ -3348,11 +3348,10 @@ body #newlink-with-image-upload .file-upload-button {
 
 .flair-c9 {
     background-position: 0 -22px;
-    width: 32px;
+    width: 31px;
 }
 .flair-reunited {
     background-position: 0 -44px;
-    width: 23px;
 }
 .flair-misfits {
     background-position: 0 -66px;
@@ -3399,6 +3398,7 @@ body #newlink-with-image-upload .file-upload-button {
 }
 .flair-nga {
     background-position: -73px -44px;
+    height: 23px;
     width: 36px;
 }
 .flair-liquid {
@@ -3418,11 +3418,72 @@ body #newlink-with-image-upload .file-upload-button {
 }
 .flair-sodi {
     background-position: -88px -90px;
+    width: 25px;
+}
+
+/* User flairs for ranks */
+.flair-rank {
+    background: url(%%flairs-ranks%%) no-repeat;
+    display: none;
+    font-size: 0;
+    vertical-align: middle;
+}
+.flair-rank:not([title=""]):hover {
+    background: none;
+    font-size: 12px;
+    line-height: 20px;
+    width: auto;
+}
+.comments-page .flair-rank, .side .flair-rank {
+    display: inline-block;
+}
+
+.flair-bronze {
+    height: 18px;
+    width: 24px;
+}
+.flair-silver {
+    background-position: -24px 0;
+    width: 24px;
+    height: 22px;
+}
+.flair-gold {
+    background-position: -48px 0;
+    width: 24px;
+    height: 24px;
+}
+.flair-platinum {
+    background-position: -72px 0;
+    width: 23px;
+    height: 23px;
+
+}
+.flair-diamond {
+    background-position: 0 -24px;
+    width: 28px;
+    height: 22px;
+
+}
+.flair-master {
+    background-position: -28px -25px;
+    height: 25px;
+    width: 32px;
+}
+.flair-grandmaster {
+    background-position: -61px -25px;
+    width: 32px;
+    height: 24px;
+}
+.flair-top {
+    background-position: -93px -24px;
+    width: 30px;
+    height: 25px;
 }
 
 .flairselector.drop-choices.active {
     left: unset !important;
     right: 336px;
+    width: 500px !important;
 }
 .flairselector .flairoptionpane ul li.flairsample-right {
     height: 24px;
