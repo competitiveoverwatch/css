@@ -3958,7 +3958,7 @@ body .btn, body button, .btn:hover, button:hover {
 
 /* Link color */
 .thing .title.loggedin.click, .thing .title.click, .link .entry .buttons li a.comments,.link .entry .buttons li a.flairselectbtn, .link .entry .buttons li a:hover, .titlebox .tagline a.flairselectbtn, .md a,
-.wiki-page .wiki-page-content .md.wiki h4, .sidebox.create .morelink a, a, .usertext .bottom-area a.reddiquette,
+.wiki-page .wiki-page-content .md.wiki h4, .sidebox.create .morelink a, a, 
 .wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title, 
 .combined-search-page .search-result a, .combined-search-page .search-result a>mark, .combined-search-page .search-result .search-comments, 
 .flairselector h2, .linefield .title, body .content .sitetable .link .title a:hover, .link .entry .tagline a:hover, .comment .author:hover, .md a:visited {color:#24A0ED;}
@@ -4483,9 +4483,11 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 /* Hero tags */
 .md a[href^="#hero-"] {
     background: url(%%tags-heroes%%);
+    cursor: default;
     display: inline-block;
     font-size: 0;
     height: 28px;
+    pointer-events: none;
     width: 28px;
 }
 .md a[href="#hero-genji"] {background-position: 0 0}
@@ -4514,9 +4516,11 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 /* Map tags */
 .md a[href*="#map-"] {
     background: url(%%tags-maps%%);
+    cursor: default;
     display: inline-block;
     font-size: 0;
     height: 79px;
+    pointer-events: none;
     width: 110px;
 }
 .md a[href="#map-hanamura"] {background-position: 0 0}
