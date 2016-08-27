@@ -1776,7 +1776,6 @@ body:not(.res-nightmode) .morelink:hover {
     font: normal bold 14px/1.43 "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
     height: 38px;
     padding: 7px 0;
-    transform: none;
     width: 100%;
 }
 
@@ -1913,7 +1912,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 
 /* Announcement/stickied links */
 .side .md h6 {
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: bold;
     position: absolute;
     right: 0;
@@ -1984,7 +1983,7 @@ body:not(.listing-page) .side .md>ol {
     background: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
-    color: #FFF;
+    color: rgba(255,255,255,.9);
     cursor: default;
     font: 12px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
     left: 82%;
