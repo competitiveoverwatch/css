@@ -118,7 +118,7 @@ a {
 #sr-header-area:hover .sr-bar a,
 #sr-header-area:hover #sr-more-link,
 #sr-header-area:hover .seperator,
-#sr-header-area:hover .dropdown.srdrop .selected {
+#sr-header-area:hover .dropdown.srdrop .selected, .res #RESShortcuts {
     color: rgba(255,255,255,.4);
 }
 
@@ -3610,7 +3610,6 @@ body #newlink-with-image-upload .file-upload-button {
             color: rgba(255, 255, 255, 0.45)!important;
             top: 1px !important;
         }
-                        .res #RESShortcuts { color: #E0E0E0 }
 
     /* Pinheader */
     .pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%headerimg%%);background-position: 50% 0%;}
