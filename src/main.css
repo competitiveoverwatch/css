@@ -3831,7 +3831,7 @@ body #newlink-with-image-upload .file-upload-button {
 
 /* Shadows and cards */
 body.listing-page>.content, body.other-discussions-page>.content, .comments-page .link, .commentarea>.sitetable>.comment, #images, .combined-search-page>.content, 
-.stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo, #ad-frame, #ad_main,
+.stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo, #ad-frame,
 .wiki-page .wiki-page-content, .linefield, .submit-page .roundfield, .login-form-side {
     background: #fff;
     padding: 16px;
