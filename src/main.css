@@ -118,8 +118,12 @@ a {
 #sr-header-area:hover .sr-bar a,
 #sr-header-area:hover #sr-more-link,
 #sr-header-area:hover .seperator,
-#sr-header-area:hover .dropdown.srdrop .selected, .res #RESShortcuts {
+#sr-header-area:hover .dropdown.srdrop .selected {
     color: rgba(255,255,255,.4);
+}
+
+.res #RESShortcuts {
+    color: rgba(255,255,255,.25);
 }
 
 #sr-header-area .sr-bar a:hover, #sr-more-link:hover, #sr-header-area .dropdown.srdrop .selected:hover {
@@ -737,9 +741,7 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
                 }
 
                     .link .entry .tagline .userattrs a.moderator {background: #27b062;}
-
-
-                                        .RESUserTagImage::after { display: none }
+                    
                 .RESUserTagImage {
                                                 vertical-align: top;
                     height: 10px;
@@ -2131,6 +2133,11 @@ body:not(.listing-page) .side .md>ol {
 
 
 /* Ads */
+#ad_main_top {
+    width: 288px;
+    height: 266px;
+}
+
 #ad-frame, #ad_main {
     width: 320px;
     height: 290px;
@@ -4600,12 +4607,12 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
     width: 100% !important
 }
 
-.commentarea .usertext-edit, .commentarea .md {
-    max-width:none;
+.commentarea .usertext-edit {
+    max-width: none;
 }
 
 .commentarea .usertext-edit.md-container .md {
-    margin-top:7px;
+    margin-top: 7px;
 }
 
 .RESSubscriptionButton {
@@ -4744,7 +4751,6 @@ RESUserTag a {
     border: none;
     margin-top: 12px;
     padding: 0 16px;
-    max-width: none;
 }
 
 .comments-page #header .tabmenu li:first-child {
