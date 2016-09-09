@@ -742,19 +742,19 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 
                     .link .entry .tagline .userattrs a.moderator {background: #27b062;}
                     
-                .RESUserTagImage {
-                                                vertical-align: top;
-                    height: 10px;
-                                                width: 16px;
-                    background-image: url(%%spritesheet%%);
-                    background-position: -32px -101px;
-                    opacity: 0.25;
-                    margin-left: 2px;
-                    transition: opacity 0.15s ease;
-                    margin-top: 2px;
-                }
+.RESUserTagImage {
+    background-image: url(%%spritesheet%%);
+    background-position: -32px -99px;
+    height: 10px;
+    margin-left: 2px;
+    margin-top: 2px;
+    opacity: 0.25;
+    transition: opacity 0.15s ease;
+    vertical-align: top;
+    width: 15px;
+}
 
-                    .RESUserTagImage:hover {opacity: 1;}
+.RESUserTagImage:hover {opacity: 1;}
 
 
             /* Comment / Share / Report */
