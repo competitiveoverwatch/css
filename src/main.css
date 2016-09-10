@@ -1802,7 +1802,7 @@ body:not(.res-nightmode) .morelink:hover {
 /* Links for Discord, Twitch, calendar and 'Bible' */
 .side .md h2, .side .md h3, .side .md h4, .side .md h5 {
     border-radius: 4px;
-    font: normal bold 14px/1.43 "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
+    font: normal bold 14px/1.7 "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
     height: 38px;
     padding: 7px 0;
     width: 100%;
@@ -3634,30 +3634,33 @@ body #newlink-with-image-upload .file-upload-button {
     display: none;
 }
 
-    /* Bunch of RES (Reddit Enhancement Suite) Fixes */
-    .res .link .tagline a.voteWeight {background-color: transparent !important;}
-    .res .thing .tagline .author.moderator {background-color: #27b062 !important;padding: 1px 4px;border-radius: 1px;}
-    #header-bottom-right #userbarToggle + * {margin-left: 0px !important;}
+/* Bunch of RES (Reddit Enhancement Suite) Fixes */
+.res .link .tagline a.voteWeight {background-color: transparent !important;}
+.res .thing .tagline .author.moderator {background-color: #27b062 !important;padding: 1px 4px;border-radius: 1px;}
+#header-bottom-right #userbarToggle + * {margin-left: 0px !important;}
 
-    .res .srSep {color: rgba(255,255,255,0.45);}
-    .res #RESShortcutsViewport {margin-right:381px;}
-    .res #RESShortcutsEditContainer {margin-right:312px;}
-        .res #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
-            background-color: transparent!important;
-            color: rgba(255, 255, 255, 0.45)!important;
-            top: 1px !important;
-        }
+.res .srSep {color: rgba(255,255,255,0.45);}
 
-    /* Pinheader */
-    .pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%headerimg%%);background-position: 50% 0%;}
-    .pinHeader-sub #header-bottom-left, .pinHeader-subanduser #header-bottom-left {margin-top: 0px;}
+.res #RESShortcutsViewport {margin-right:370px;}
 
-    .pinHeader-header:before {display: none !important;}
-    .pinHeader-header .content {margin-top: 12px !important;}
-    .pinHeader-header .side {margin-top: 164px;}
-    .pinHeader-header.res.comments-page .side {margin-top: 290px;}
-    .pinHeader-header #header {top: 0px;background-image: url(%%headerimg%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
-    .res.search-page #header .tabmenu {display: none !important;}
+.res #RESShortcutsEditContainer {margin-right:295px;}
+
+.res #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
+    background-color: transparent!important;
+    color: rgba(255, 255, 255, 0.45)!important;
+    top: 1px !important;
+}
+
+/* Pinheader */
+.pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%headerimg%%);background-position: 50% 0%;}
+.pinHeader-sub #header-bottom-left, .pinHeader-subanduser #header-bottom-left {margin-top: 0px;}
+
+.pinHeader-header:before {display: none !important;}
+.pinHeader-header .content {margin-top: 12px !important;}
+.pinHeader-header .side {margin-top: 164px;}
+.pinHeader-header.res.comments-page .side {margin-top: 290px;}
+.pinHeader-header #header {top: 0px;background-image: url(%%headerimg%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
+.res.search-page #header .tabmenu {display: none !important;}
 
     .res #header-bottom-right {
         top: 1px;
@@ -3943,9 +3946,14 @@ body,
 .user, .user a, .user span, #RESSettingsButton, #header-bottom-right a {
     color: #FFF !important;
     font-size: 10px !important;
-    opacity: .7;
+    opacity: .6;
     text-transform: uppercase;
 }
+
+.user, .user a, .user span {
+    opacity: .75 !important;
+}
+
 #header-bottom-right a.pref-lang {
     background-position: -32px -1px;
     top: -2px;
