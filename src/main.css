@@ -2448,7 +2448,7 @@ body:not(.listing-page) .side .md>ol {
     font: 12px Arial, sans-serif;
 }
 
-.comment .expand {
+.comments-page .comment .expand {
     background: rgba(0,0,0,.01);
     border-radius: 4px 0 0 4px;
     bottom: 0;
@@ -2460,7 +2460,7 @@ body:not(.listing-page) .side .md>ol {
     transition: background .2s cubic-bezier(.4,0,.2,1), color .2s cubic-bezier(.4,0,.2,1);
 }
 
-.comment .expand:hover {
+.comments-page .comment .expand:hover {
     background: #0288D1;
     color: #FFF;
     text-decoration: none;
