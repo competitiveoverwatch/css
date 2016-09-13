@@ -3310,9 +3310,10 @@ body #newlink-with-image-upload .file-upload-button {
 }
 
 .flair.flair-moderator {
-    background: rgba(39,176,98,.8);
+    background: rgba(39,176,98,.2);
+    border: 1px #27B062;
     border-radius: 2px;
-    color: #FFF;
+    color: rgb(27, 150, 80);
     display: inline-block;
     font-family: inherit;
     font-size: 10px;
