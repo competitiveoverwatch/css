@@ -373,7 +373,6 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 #header .pagename a {
     background: url(%%redditname%%)  no-repeat center / contain;
     color: #FFF;
-    display: inline-block;
     height: 79px;
     left: 0;
     line-height: 42px;
@@ -2098,16 +2097,16 @@ body:not(.listing-page) .side .md>ol {
     color: #222;
 }
 
-[lang$="00"] .linkflair-AdviceTips {display: none}
-[lang$="01"] .linkflair-Casting {display: none}
-[lang$="02"] .linkflair-Discussion {display: none}
-[lang$="03"] .linkflair-eSports {display: none}
-[lang$="04"] .linkflair-Event {display: none}
-[lang$="05"] .linkflair-Guide {display: none}
-[lang$="06"] .linkflair-PSA {display: none}
-[lang$="07"] .linkflair-Question {display: none}
-[lang$="08"] .linkflair-SubredditMeta {display: none}
-[lang$="09"] .linkflair-Video {display: none}
+[lang$="00"] .listing-page .linkflair-AdviceTips {display: none}
+[lang$="01"] .listing-page .linkflair-Casting {display: none}
+[lang$="02"] .listing-page .linkflair-Discussion {display: none}
+[lang$="03"] .listing-page .linkflair-eSports {display: none}
+[lang$="04"] .listing-page .linkflair-Event {display: none}
+[lang$="05"] .listing-page .linkflair-Guide {display: none}
+[lang$="06"] .listing-page .linkflair-PSA {display: none}
+[lang$="07"] .listing-page .linkflair-Question {display: none}
+[lang$="08"] .listing-page .linkflair-SubredditMeta {display: none}
+[lang$="09"] .listing-page .linkflair-Video {display: none}
 
 /* Hide whichever filter is currently being used */
 [lang$="00"] .side ol a[href*="00"] {display: none}
@@ -3791,7 +3790,6 @@ body #newlink-with-image-upload .file-upload-button {
 
         /* Gear dropdown */
         .gearIcon {
-            background: url(%%spritesheet%%) -64px 0px !important;
             position: relative;
             top: 2px;
             transition: all 0.25s ease;
