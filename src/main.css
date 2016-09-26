@@ -1963,7 +1963,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 @keyframes banner-sticky-from-left {
     0% {
         opacity: 0;
-        right: 60px;
+        right: 50px;
     }
     100% {
         opacity: 1;
@@ -1973,7 +1973,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 @-webkit-keyframes banner-sticky-from-left {
     0% {
         opacity: 0;
-        right: 60px;
+        right: 50px;
     }
     100% {
         opacity: 1;
@@ -2016,9 +2016,9 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 
 .hot-page .side .md h6 {
-    animation: .6s ease-in-out .2s forwards banner-sticky-from-left;
+    animation: .5s ease-in-out .2s forwards banner-sticky-from-left;
     opacity: 0;
-    right: 180px;
+    right: 50px;
 }
 
 @media (max-width: 1360px) {
@@ -2027,7 +2027,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
         width: auto;
     }
     .hot-page .side .md h6 {
-        animation: .6s ease-in-out .2s forwards banner-sticky-from-right;
+        animation: .55s ease-in-out .2s forwards banner-sticky-from-right;
         opacity: 0;
         right: -403px;
     }
@@ -2041,7 +2041,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 
 .side .md h6 a {
-    background: rgba(255,255,255,.94);
+    background: rgba(255,255,255,.98);
     border: 1px solid rgba(255,255,255,.4);
     border-radius: 4px;
     padding: 6px 18px;
@@ -3544,6 +3544,9 @@ body #newlink-with-image-upload .file-upload-button {
     font-size: 12px;
     line-height: 20px;
     width: auto;
+}
+.comments-page .flair-rank {
+    font-size: 0;
 }
 .comments-page .flair-rank, .side .flair-rank {
     display: inline-block;
