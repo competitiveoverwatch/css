@@ -3532,6 +3532,8 @@ body #newlink-with-image-upload .file-upload-button {
 }
 .flair-method {
 	background-position: -93px 0;
+	height: 21px;
+	width: 21px;
 }
 
 /* User flairs for ranks */
