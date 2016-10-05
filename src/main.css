@@ -3447,6 +3447,7 @@ body #newlink-with-image-upload .file-upload-button {
 	background: none;
 	font-size: 12px;
 	line-height: 20px;
+	top: 1px;
 	width: auto;
 }
 
