@@ -1470,7 +1470,7 @@ ul.report-reasons {
 	margin-top: 12px;
 	order: 0;
 	text-align: center;
-	z-index: 100;
+	z-index: 1;
 }
 
 div.titlebox span.word {
@@ -1780,6 +1780,10 @@ body:not(.res-nightmode) .morelink:hover {
 	margin-top: -33px;
 }
 
+[lang^="ow"] .titlebox {
+	margin-top: -17px;
+}
+
 .titlebox>* {
 	order: 3;
 	width: 100%;
@@ -2086,7 +2090,7 @@ body:not(.listing-page) .side .md>ol {
 	background: transparent;
 	border: 1px solid transparent;
 	border-radius: 4px;
-	color: rgba(255,255,255,.9);
+	color: #FFF;
 	cursor: default;
 	font: 12px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	left: 82%;
@@ -3371,7 +3375,7 @@ body #newlink-with-image-upload .file-upload-button {
 }
 
 .link .flair {
-	font-size: 12px;
+	font-size: 0;
 }
 
 .flair, .link .flair {
@@ -3427,6 +3431,23 @@ body #newlink-with-image-upload .file-upload-button {
 .flair-verified.flair-ama:before {
 	margin: 0 4px 0 0;
 	vertical-align: top;
+}
+
+
+.flair-extra-life {
+	background: url(%%flairs-misc%%) no-repeat;
+	font-size: 0;
+	height: 22px;
+	position: relative;
+	top: -2px;
+	width: 24px;
+	vertical-align: middle;
+}
+.flair-extra-life:not([title=""]):hover {
+	background: none;
+	font-size: 12px;
+	line-height: 20px;
+	width: auto;
 }
 
 
@@ -3977,7 +3998,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 
 /* Global fonts */
 body,
-.side, .linkinfo, .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol,
+.side, .linkinfo, .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol ol li a,
 .link .title, .content .linkflairlabel, .entry .buttons li a,
 .commentarea>.usertext textarea, .comments-page .link .usertext .md,
 .comment-permalink-page .infobar, .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select ,
