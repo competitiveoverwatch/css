@@ -443,6 +443,7 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 
 #header .tabmenu li {
 	display: inline-block;
+	margin: 0;
 }
 
 #header .tabmenu li a {
@@ -1719,7 +1720,9 @@ div.titlebox span.number:after {
 
 .morelink .nub {display: none;}
 
-.submit-link:before {
+/* Higher specificity to override */
+.side .submit-link:before {
+	color: #626262;
 	content: "SUBMIT CONTENT";
 	position: absolute;
 	top: 318px;
@@ -1788,6 +1791,11 @@ body:not(.res-nightmode) .morelink:hover {
 .titlebox .tagline {
 	font-size: 12px;
 	margin: 0 0 12px;
+	visibility: hidden;
+}
+
+.titlebox .tagline * {
+	visibility: visible;
 }
 
 .titlebox .tagline a.flairselectbtn {
@@ -1822,7 +1830,7 @@ body:not(.res-nightmode) .morelink:hover {
 
 /* Links for Discord, Twitch, calendar and 'Bible' */
 .side .md h2, .side .md h3, .side .md h4, .side .md h5 {
-	margin: 0 !important;
+	margin: 0 0 4px;
 }
 
 .side .md h2 a, .side .md h3 a, .side .md h4 a, .side .md h5 a {
@@ -1832,8 +1840,8 @@ body:not(.res-nightmode) .morelink:hover {
 	display: inline-block;
 	font: normal bold 13px/34px "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
 	height: 34px;
-	margin: 8px auto;
-	text-align: center;
+	margin: 0;
+	padding-left: 16px;
 	transition: opacity .1s ease-in-out;
 	width: 100%;
 }
@@ -1847,7 +1855,7 @@ body:not(.res-nightmode) .morelink:hover {
 	color: #FFF !important;
 }
 
-.side .md h2 a:before, .side .md h3 a:before, .side .md h4 a:before {
+.side .md h2 a:before, .side .md h3 a:before, .side .md h4 a:before, .side .md h5 a:before {
 	content: "";
 	display: inline-block;
 	margin-right: 10px;
@@ -1855,9 +1863,12 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 /* Discord */
+.side .md h2 {
+	margin-top: 1px;
+}
+
 .side .md h2 a {
 	background: #3C3C3C;
-	margin: 4px 0 -1px;
 }
 .res-nightmode .side .md h2 a {
 	background: #444;
@@ -1874,7 +1885,6 @@ body:not(.res-nightmode) .morelink:hover {
 .side .md h3 a {
 	background: #1CBEF0;
 	font: inherit;
-	margin-top: -1px;
 	transition: none;
 }
 .side .titlebox .md h3 a:hover {
@@ -1882,22 +1892,17 @@ body:not(.res-nightmode) .morelink:hover {
 	box-shadow: none;
 }
 .side .md h3 a:before {
-	background: url(%%sidebar-date-icon-1x%%);
+	/*background: url(%%sidebar-date-icon-1x%%);
 	height: 24px;
 	margin-right: 8px;
 	margin-top: -1px;
-	width: 24px;
+	width: 24px;*/
 }
 
 /* Twitch */
-.side .titlebox .md h4 {
-	margin-top: -6px !important;
-}
-
-.side .titlebox .md h4 a {
+.side .md h4 a {
 	background: #6441A5;
 	color: #FFF;
-	margin-top: 11px;
 }
 .side .md h4 a:before {
 	background: url(%%sidebar-twitch-icon-1x%%);
@@ -1909,18 +1914,29 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 /* Competitive Bible and Pro Players' Settings */
-.side .titlebox .md h5 {
-    margin-top: -3px !important;
+.side .md h5+h5 {
+	margin: -3px auto 4px;
 }
 
 .side .md h5 a {
 	background: #FF8C00;
 	border-radius: 4px 4px 0 0;
-	margin-top: -1px;
 }
 .side .md h5+h5 a {
 	border-radius: 0 0 4px 4px;
-	margin: -3px auto 4px;
+}
+
+.side .md h5 a:before {
+	background: url(%%sidebar-bible-icon-1x%%);
+	height: 24px;
+	left: -2px;
+	position: relative;
+	top: -6px;
+	width: 20px;
+	vertical-align: bottom;
+}
+.side .md h5+h5 a:before {
+	background: url(%%sidebar-bible-icon-1x%%);
 }
 
 /* Retina/@2x icons */
@@ -1932,7 +1948,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 		background-size: 21px 24px;
 	}
 	.side .md h3 a:before {
-		background: url(%%sidebar-date-icon-2x%%);
+		/*background: url(%%sidebar-date-icon-2x%%);*/
 		background-size: 24px 24px;
 	}
 	.side .md h4 a:before {
@@ -2633,7 +2649,7 @@ body.comments-page > .content {margin-top: 8px;}
 .side .md h1, .submit-link:before, .titlebox:before, .sidecontentbox .title h1 {
 	color: #545454;
 	cursor: default;
-	font: 800 italic 17px/28px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Candara","Helvetica","Verdana","Arial",sans-serif;
+	font: 600 17px/28px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Candara","Helvetica","Verdana","Arial",sans-serif;
 	letter-spacing: -.5px;
 	text-align: center;
 	text-transform: uppercase;
