@@ -446,6 +446,7 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 }
 
 #header .tabmenu li a {
+	background: none;
 	border: 1px solid transparent;
 	border-radius: 4px;
 	color: rgba(255,255,255,.9);
@@ -1453,7 +1454,7 @@ ul.report-reasons {
 	background: #FFF;
 	border-radius: 4px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
-	margin: 186px 16px 156px 0;
+	margin: 184px 16px 156px 0;
 	padding: 0 16px;
 	width: 320px;
 }
@@ -1488,16 +1489,10 @@ div.titlebox span.word {
 div.titlebox span.number:after {
 	content: " climbing the ladder";
 }
-.titlebox .users-online .number {
-	font-style: italic;
-}
 .titlebox .users-online .number:after {
 	content: " falling off it";
 }
 
-.titlelebox .word {
-	display: none;
-}
 .titlebox .users-online, .titlebox .number {
 	cursor: text;
 }
@@ -1510,7 +1505,7 @@ div.titlebox span.number:after {
 	cursor: pointer;
 	display: block;
 	font-size: 10px;
-	margin: 12px auto 0;
+	margin: 8px auto 0;
 	text-transform: uppercase;
 	width: 288px;
 	z-index: 100;
@@ -1693,8 +1688,8 @@ div.titlebox span.number:after {
 	padding: 0px 0px;
 	position: absolute;
 	text-align: center;
-	top: 356px;
-	transition: background .2s ease-in-out,color .2s ease-in-out;
+	top: 354px;
+	transition: background .2s ease-in-out, color .2s ease-in-out;
 	width: 135px;
 }
 
@@ -1724,18 +1719,12 @@ div.titlebox span.number:after {
 
 .morelink .nub {display: none;}
 
-.submit-link:before, .titlebox:before {
-	font: bold 14px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
-	color: #696969;
-	text-align: center;
-	transform: scaleY(1.4);
-	-webkit-transform: scaleY(1.4);
-}
-
 .submit-link:before {
 	content: "SUBMIT CONTENT";
 	position: absolute;
-	top: 324px;
+	top: 318px;
+	transform: scaleY(1.3);
+	-webkit-transform: scaleY(1.3);
 	width: 320px;
 }
 
@@ -1744,7 +1733,7 @@ div.titlebox span.number:after {
 	border-radius: 4px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
 	content: "";
-	height: 100px;
+	height: 98px;
 	position: absolute;
 	top: 308px;
 	width: 320px;
@@ -1780,7 +1769,7 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 [lang^="ow"] .titlebox {
-	margin-top: -17px;
+	margin-top: -19px;
 }
 
 .titlebox>* {
@@ -1789,10 +1778,11 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 .titlebox:before {
+	background: #F4F4F4;
 	content: "SUBREDDIT INFORMATION";
 	display: block;
-	margin: 14px 0 0;
-	width: 100%;
+	margin: 16px -16px 0 -16px;
+	width: 320px;
 }
 
 .titlebox .tagline {
@@ -1816,11 +1806,13 @@ body:not(.res-nightmode) .morelink:hover {
 	font: 13px/1.45 Lato,arial,sans-serif;
 }
 
-.side .titlebox .md h1 {
-	color: #565656;
+.side .submit-link:before, .side .titlebox:before {
 	font-size: 16px;
-	line-height: 18px;
-	margin: 14px 0 -8px !important;
+}
+
+.side .md h1 {
+	background: #F4F4F4;
+	margin: 14px -16px 12px !important;
 }
 
 /* For rules items */
@@ -1838,8 +1830,8 @@ body:not(.res-nightmode) .morelink:hover {
 	box-shadow: none;
 	color: #FFF;
 	display: inline-block;
-	font: normal bold 14px/38px "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
-	height: 38px;
+	font: normal bold 13px/34px "Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
+	height: 34px;
 	margin: 8px auto;
 	text-align: center;
 	transition: opacity .1s ease-in-out;
@@ -1898,6 +1890,10 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 /* Twitch */
+.side .titlebox .md h4 {
+	margin-top: -6px !important;
+}
+
 .side .titlebox .md h4 a {
 	background: #6441A5;
 	color: #FFF;
@@ -1912,14 +1908,19 @@ body:not(.res-nightmode) .morelink:hover {
 	vertical-align: bottom;
 }
 
-.side .md h5  a {
+/* Competitive Bible and Pro Players' Settings */
+.side .titlebox .md h5 {
+    margin-top: -3px !important;
+}
+
+.side .md h5 a {
 	background: #FF8C00;
 	border-radius: 4px 4px 0 0;
 	margin-top: -1px;
 }
 .side .md h5+h5 a {
 	border-radius: 0 0 4px 4px;
-	margin-top: -6px;
+	margin: -3px auto 4px;
 }
 
 /* Retina/@2x icons */
@@ -2049,8 +2050,6 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 
 .side .md>ul {
 	font-size: 12px;
-	margin-top: 20px;
-	padding-left: 16px;
 }
 
 .side .md ul>li {
@@ -2190,23 +2189,15 @@ body:not(.listing-page) .side .md>ol {
 }
 
 
-.md hr {border: solid 1px #e5e5e5;}
+.md hr {border: solid 1px #E5E5E5;}
 
 
 
 
 /* Mod Box */
-.side #moderation_tools .title h1 {
-	text-transform: capitalize;
-	color: #4D5763;
-}
 
-.side #moderation_tools .title .collapse-button,  {
-	color: #4D5763;
-	vertical-align: middle;
-	text-align: center;
-	border-radius: 1px;
-	border: 1px solid #d8d8d8;
+.side #moderation_tools .title .collapse-button {
+	display: none;
 }
 
 .side .sidecontentbox .content {
@@ -2220,6 +2211,8 @@ body:not(.listing-page) .side .md>ol {
 
 
 /* Ads */
+
+/* Top in sidebar */
 #ad_main_top {
 	width: 288px;
 	height: 266px;
@@ -2229,6 +2222,7 @@ body:not(.listing-page) .side .md>ol {
 	height: 286px;
 }
 
+/* Lower in sidebar */
 #ad_main {
 	width: 288px;
 	margin: -16px 0 0 !important;
@@ -2241,11 +2235,6 @@ body:not(.listing-page) .side .md>ol {
 	max-width: 320px;
 	overflow: hidden;
 	padding: 0 0 0 0 !important;
-}
-
-#ad_sponsorship {
-	margin: 0;
-	height: 120px;
 }
 
 /* Create Community */
@@ -2629,7 +2618,7 @@ body.comments-page > .content {margin-top: 8px;}
 .md blockquote {
 	background: rgba(0,0,0,.04);
 	border-radius: 1px;
-	border-left: 2px solid #edf1f3;
+	border-left: 2px solid #EDF1F3;
 	color: #738491;
 	margin-left: 1px;
 	padding: 8px;
@@ -2641,28 +2630,34 @@ body.comments-page > .content {margin-top: 8px;}
 	color: #292F34;
 }
 
-.md h1 {
-	color: #525252;
-	font: 800 16px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Candara","Helvetica","Verdana","Arial",sans-serif;
+.side .md h1, .submit-link:before, .titlebox:before, .sidecontentbox .title h1 {
+	color: #545454;
+	cursor: default;
+	font: 800 italic 17px/28px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Candara","Helvetica","Verdana","Arial",sans-serif;
 	letter-spacing: -.5px;
-	margin-top: 1em;
+	text-align: center;
+	text-transform: uppercase;
 	transform: scaleY(1.2);
 	-webkit-transform: scaleY(1.2);
 	word-spacing: 1px;
-	text-transform: uppercase;
 }
 
-.md h1:after {
+.md h1 {
+	margin-top: 1em;
+}
+
+/*.md h1:after {
 	border-bottom: 2px solid #EEE;
 	content: "";
 	display: block;
+	margin-top: 1px;
 	-webkit-transform: scaleY(.833);
 	transform: scaleY(.833);
-}
+}*/
 
 .md h3 {
-	color: #292f34;
-	margin: 16px 0 0 0;
+	color: #292F34;
+	margin: 16px 0 0;
 }
 
 /* Deleted comment */
@@ -2709,7 +2704,7 @@ body.comments-page > .content {margin-top: 8px;}
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 296px;
+	margin-top: 295px;
 }
 .res.comments-page .side {
 	margin-top: 324px;
@@ -2723,7 +2718,7 @@ body.comments-page > .content {margin-top: 8px;}
 	margin-left: -16px;
 	padding: 16px 16px 0;
 	position: absolute;
-	top: 424px;
+	top: 422px;
 	width: 320px;
 }
 
@@ -3174,179 +3169,149 @@ body #newlink-with-image-upload .file-upload-button {
 				.searchfacets .facet.count {color: #98abba;font-weight: normal;}
 					.searchfacets .facet.count:hover {text-decoration: none;}
 
-			.search-page .morelink {top: 384px;}
-			.search-page .side {margin-top: 264px;}
 
 
 
 
+/* Wiki Page */
+.wiki-page .wikititle {
+	background: #fff;
+	padding: 9px 16px 10px;
+	border-radius: 2px;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
+	font: 16px arial, sans-serif;
+	text-transform: capitalize;
+	margin: 0;
+}
 
-		/* Wiki Page */
-		.wiki-page .wikititle {
-			background: #fff;
-			padding: 9px 16px 10px;
-			border-radius: 2px;
-			box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
-			font: 16px arial, sans-serif;
-			text-transform: capitalize;
-			margin: 0;
+.wiki-page .pageactions {
+	background: #fff;
+	margin-left: 16px;
+	border-radius: 2px;
+	padding: 0px 16px;
+	border: none;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
+}
+
+	.wiki-page .pageactions .wikiaction {
+		margin: 0;
+		background: transparent;
+		border-radius: 0px;
+		padding: 10px 16px 11px;
+		color: #98abba;
+	}
+
+		.wiki-page .pageactions .wikiaction-current {
+			padding: 10px 16px 9px;
+			border-bottom: 2px solid #24a0ed;
+			color: #24a0ed;
 		}
 
-		.wiki-page .pageactions {
-			background: #fff;
-			margin-left: 16px;
-			border-radius: 2px;
-			padding: 0px 16px;
-			border: none;
-			box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
+			.wiki-page .pageactions .wikiaction:hover, .wiki-page .pageactions .wikiaction-current:hover {background: rgba(0,0,0,0.05);}
+
+.wiki-page .wiki-page-content {
+	margin: 16px 0px 16px 0px;
+	background: #fff;
+	padding: 8px 0;
+}
+
+	.wiki-page .wiki-page-content .wiki>.toc>ul {
+		border: none;
+	}
+
+	.wiki-page .wiki-page-content .wiki.md {
+		color: #292f34;
+	}
+		.wiki-page .wiki-page-content .wiki.md h2 {color: #292f34;}
+
+
+		.wiki-page .wiki-page-content hr {
+			border-style: solid;
+			border-color: #edf1f3
 		}
 
-			.wiki-page .pageactions .wikiaction {
-				margin: 0;
-				background: transparent;
-				border-radius: 0px;
-				padding: 10px 16px 11px;
-				color: #98abba;
-			}
+		.wiki-page .wiki-page-content em {color: #98abba;}
 
-				.wiki-page .pageactions .wikiaction-current {
-					padding: 10px 16px 9px;
-					border-bottom: 2px solid #24a0ed;
-					color: #24a0ed;
-				}
+/* Subreddit Settings Page + Flair Page + Stylesheet Page */
+.linefield, .linefield.mobile {
+	background: #fff;
+	color: #98abba;
+	margin: 0 0 16px 0;
+	width: 528px;
+	border: none;
+}
 
-					.wiki-page .pageactions .wikiaction:hover, .wiki-page .pageactions .wikiaction-current:hover {background: rgba(0,0,0,0.05);}
+	.linefield .title {
+		color: #24a0ed;
+		text-transform: capitalize;
+		padding: 0;
+	}
 
-		.wiki-page .wiki-page-content {
-			margin: 16px 0px 16px 0px;
-			background: #fff;
-			padding: 8px 0;
-		}
+	.linefield .linefield-content {padding: 0;}
 
-			.wiki-page .wiki-page-content .wiki>.toc>ul {
-				border: none;
-			}
+		.linefield .title:first-letter, .linefield label:first-letter {text-transform: capitalize;}
+		.usertext .bottom-area a {color: #98abba;}
+		.usertext .bottom-area a:hover {color: #24a0ed;}
 
-			.wiki-page .wiki-page-content .wiki.md {
-				color: #292f34;
-			}
-				.wiki-page .wiki-page-content .wiki.md h2 {color: #292f34;}
+.pretty-form {padding-top: 24px;}
+.fancy-settings h1, .create-promotion h1 { color: rgba(255,255,255,.8);}
+.fancy-settings h1 strong {color: rgba(255,255,255,1);}
 
+.tabpane-content {
+	border: none;
+}
 
-				.wiki-page .wiki-page-content hr {
-					border-style: solid;
-					border-color: #edf1f3
-				}
+.tabpane-content .flairrow a.author {color: #98abba;}
+.tabpane-content .tagline a {color: #292f34;}
 
-				.wiki-page .wiki-page-content em {color: #98abba;}
+.tabpane-content .thing .title {overflow: visible;}
 
-		/* Subreddit Settings Page + Flair Page + Stylesheet Page */
-		.linefield, .linefield.mobile {
-			background: #fff;
-			color: #98abba;
-			margin: 0 0 16px 0;
-			width: 528px;
-			border: none;
-		}
-
-			.linefield .title {
-				color: #24a0ed;
-				text-transform: capitalize;
-				padding: 0;
-			}
-
-			.linefield .linefield-content {padding: 0;}
-
-				.linefield .title:first-letter, .linefield label:first-letter {text-transform: capitalize;}
-				.usertext .bottom-area a {color: #98abba;}
-				.usertext .bottom-area a:hover {color: #24a0ed;}
-
-		.pretty-form {padding-top: 24px;}
-		.fancy-settings h1, .create-promotion h1 { color: rgba(255,255,255,.8);}
-					 .fancy-settings h1 strong {color: rgba(255,255,255,1);}
-
-		.tabmenu {
-			border-bottom: 1px solid #edf1f3;
-			margin-bottom: 12px;
-		}
-
-			.tabmenu li {
-				margin: 0px !important;
-			}
-
-				.tabmenu li a {
-					background: none;
-					color: #292f34;
-					font-size: 14px;
-				}
-
-				.tabmenu li.selected a {
-					color: #24a0ed;
-					background: none;
-					border: none;
-				}
+.fancy-settings .pretty-form {padding-top: 0px;}
 
 
-		.tabpane-content {
-			border: none;
-		}
+/* Stylesheet page */
+.stylesheet-customize-container .pretty-form {
+	padding-top: 0;
+	padding: 8px 0;
+	margin-bottom: 16px;
+}
 
-			.tabpane-content .flairrow {
+.stylesheet-customize-container .pretty-form .sheets {margin-right: 0;}
 
-			}
+.stylesheet-customize-container h2 {display: none;}
 
-				.tabpane-content .flairrow a.author {color: #98abba;}
-				.tabpane-content .tagline a {color: #292f34;}
+.sheets .btn.right {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
 
-				.tabpane-content .thing .title {overflow: visible;}
+pre {
+	overflow: hidden;
+}
 
-		.fancy-settings .pretty-form {padding-top: 0px;}
+#images {
+	padding: 8px 0;
+	background: #fff;
+	position: relative;
+	overflow: auto;
+	height: inherit;
+}
 
+#images #image-upload {
+	margin: 0em 0em 4em;
+}
 
-		/* Stylesheet page */
-		.stylesheet-customize-container .pretty-form {
-			padding-top: 0;
-			padding: 8px 0;
-			margin-bottom: 16px;
-		}
-
-			.stylesheet-customize-container .pretty-form .sheets {margin-right: 0;}
-
-			.stylesheet-customize-container h2 {display: none;}
-
-			.sheets .btn.right {
-				background: transparent;
-				border: none;
-				box-shadow: none;
-				padding: 0;
-			}
-
-			pre {
-				overflow: hidden;
-			}
-
-
-			#images {
-				padding: 8px 0;
-				background: #fff;
-				position: relative;
-				overflow: auto;
-				height: inherit;
-			}
-
-				#images #image-upload {
-					margin: 0em 0em 4em;
-				}
-
-		#images:after {
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 800px;
-			left: 0px;
-			bottom: -1200px;
-			z-index: 100;
-		}
+#images:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 800px;
+	left: 0px;
+	bottom: -1200px;
+	z-index: 100;
+}
 
 /* Flairs */
 .flair {
@@ -4230,12 +4195,10 @@ body:not(.res-nightmode) .titlebox .subscribers .number{
 }
 
 .sidecontentbox .title h1  {
-	color: #686868;
-	display: inline-block;
-	font: bold 14px "Roboto","Lato","Helvetica Neue","Franklin Gothic","Helvetica","Arial",sans-serif;
-	letter-spacing: -.4px;
-	transform: scaleY(1.2);
-	-webkit-transform: scaleY(1.2);
+	background: #F4F4F4;
+	display: block;
+	font-size: 16px;
+	margin: 0 -16px;
 }
 
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul {
@@ -4244,15 +4207,6 @@ body:not(.res-nightmode) .titlebox .subscribers .number{
 
 .titlebox form.toggle, .leavemoderator {
 	padding: 0;
-}
-
-.side .titlebox .md h1:after {
-	border-bottom: 2px solid #EEE;
-	content: "";
-	display: block;
-	margin-top: 1px;
-	transform: scaleY(.833);
-	-webkit-transform: scaleY(.833);
 }
 
 
@@ -4267,6 +4221,10 @@ body:not(.res-nightmode) .titlebox .subscribers .number{
 .side .entry .gadget small {
 	display: inline-block;
 	margin-top: 4px;
+}
+
+.sidecontentbox {
+	margin-top: -14px;
 }
 
 .sidecontentbox li {
