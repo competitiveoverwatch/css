@@ -371,7 +371,7 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 }
 
 #header .pagename a {
-	background: url(%%redditname%%)  no-repeat center / contain;
+	background: url(%%redditname%%) no-repeat center / contain;
 	color: #FFF;
 	height: 79px;
 	left: 0;
@@ -382,6 +382,14 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 	text-indent: -9999px;
 	top: -78px;
 	width: 581px;
+}
+
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), 
+only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	#header .pagename a {
+		background: url(%%redditname-2x%%) no-repeat center / contain;
+	}
 }
 
 /* Slowly scale logo up on hot page only */
@@ -1874,14 +1882,14 @@ body:not(.res-nightmode) .morelink:hover {
 	background: #444;
 }
 .side .md h2 a:before {
-	background: url(%%sidebar-discord-icon-1x%%);
+	background: url(%%sidebar-discord-1x%%);
 	height: 24px;
 	position: relative;
 	top: -2px;
 	width: 21px;
 }
 
-/* Calendar */
+/* Twitter */
 .side .md h3 a {
 	background: #1CBEF0;
 	font: inherit;
@@ -1892,11 +1900,11 @@ body:not(.res-nightmode) .morelink:hover {
 	box-shadow: none;
 }
 .side .md h3 a:before {
-	/*background: url(%%sidebar-date-icon-1x%%);
+	background: url(%%sidebar-date-1x%%);
 	height: 24px;
 	margin-right: 8px;
 	margin-top: -1px;
-	width: 24px;*/
+	width: 24px;
 }
 
 /* Twitch */
@@ -1905,7 +1913,7 @@ body:not(.res-nightmode) .morelink:hover {
 	color: #FFF;
 }
 .side .md h4 a:before {
-	background: url(%%sidebar-twitch-icon-1x%%);
+	background: url(%%sidebar-twitch-1x%%);
 	height: 20px;
 	position: relative;
 	top: -9px;
@@ -1927,36 +1935,43 @@ body:not(.res-nightmode) .morelink:hover {
 }
 
 .side .md h5 a:before {
-	background: url(%%sidebar-bible-icon-1x%%);
-	height: 24px;
+	background: url(%%sidebar-bible-1x%%);
+	height: 22px;
 	left: -2px;
 	position: relative;
-	top: -6px;
+	top: -7px;
 	width: 20px;
 	vertical-align: bottom;
 }
 .side .md h5+h5 a:before {
-	background: url(%%sidebar-bible-icon-1x%%);
+	background: url(%%sidebar-settings-1x%%);
+	height: 21px;
+	top: -9px;
+	width: 23px;
 }
 
-/* Retina/@2x icons */
+/* Retina/HiDPI */
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), 
 only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 
 	.side .md h2 a:before {
-		background: url(%%sidebar-discord-icon-2x%%);
+		background: url(%%sidebar-discord-2x%%);
 		background-size: 21px 24px;
 	}
 	.side .md h3 a:before {
-		/*background: url(%%sidebar-date-icon-2x%%);*/
+		/*background: url(%%sidebar-date-2x%%);*/
 		background-size: 24px 24px;
 	}
 	.side .md h4 a:before {
-		background: url(%%sidebar-twitch-icon-2x%%);
+		background: url(%%sidebar-twitch-2x%%);
 		background-size: 20px 20px;
 	}
 	.side .md h5 a:before {
-		background: url(%%sidebar-bible-icon-2x%%);
+		background: url(%%sidebar-bible-2x%%);
+		background-size: 24px 24px;
+	}
+	.side .md h5+h5 a:before {
+		background: url(%%sidebar-settings-2x%%);
 		background-size: 24px 24px;
 	}
 }
@@ -2372,7 +2387,7 @@ body.comments-page > .content {margin-top: 8px;}
 }
 
 .commentarea>.usertext textarea:not(:focus) {
-	background: #FFF url(%%commentboxbg%%) no-repeat 0 0;
+	background: #FFF url(%%commentbox%%) no-repeat 0 0;
 	border: 1px solid rgba(0,0,0,.05);
 }
 
@@ -3419,6 +3434,15 @@ pre {
 	width: auto;
 }
 
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), 
+only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	.flair-extra-life {
+		background: url(%%flairs-misc-2x%%) no-repeat;
+		background-size: 24px 22px;
+	}
+}
+
 
 /*.moderator .flairtoggle, .moderator .side .tagline {
 	display: none;
@@ -3441,6 +3465,21 @@ pre {
 	font-size: 12px;
 	line-height: 20px;
 	width: auto;
+}
+
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), 
+only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	.flair-fan {
+		background: url(%%flairs-teams-2x%%) no-repeat;
+		background-size: 114px 116px;
+	}
+	.flair-faze {
+		width: 21px;
+	}
+	.flair-col {
+		width: 23px;
+	}
 }
 
 .comments-page .flair-fan, .side .flair-fan {
@@ -3539,6 +3578,19 @@ pre {
 	line-height: 20px;
 	width: auto;
 }
+
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), 
+only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	.flair-rank {
+		background: url(%%flairs-ranks-2x%%) no-repeat;
+		background-size: 122px 51px;
+	}
+	.flair-platinum {
+		width: 24px;
+	}
+}
+
 .comments-page .flair-rank {
 	font-size: 0;
 }
@@ -5356,7 +5408,7 @@ dt {
 }
 
 .res-nightmode .commentarea>.usertext textarea:not(:focus) {
-	background: url(%%commentboxbg-night%%) no-repeat;
+	background: url(%%commentbox-night%%) no-repeat;
 	background-color: #333;
 }
 
