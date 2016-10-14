@@ -2273,10 +2273,24 @@ body:not(.listing-page) .side .md>ol {
 	display: none;
 }
 
-.sidebox .spacer {display: none;}
+.sidebox .spacer {
+	display: none;
+}
 
 /* Recently viewed links */
-.gadget .midcol {width: 38px;}
+.gadget .midcol {
+	margin-left: -8px;
+	width: 33px;
+}
+
+.gadget .reddit-entry .linkflairlabel {
+	display: none;
+}
+
+.gadget .reddit-entry {
+	margin-left: 29px;
+	padding-top: 2px;
+}
 
 /* Credits */
 .side:after {
@@ -3385,53 +3399,35 @@ pre {
 	text-transform: uppercase;
 }
 
-.flair-verified:before {
-	background: url(%%spritesheet%%) -122px 0 no-repeat;
-	content: "";
-	display: inline-block;
-	height: 16px;
-	margin: 0 8px 0 0;
-	visibility: visible;
-	width: 16px;
-	vertical-align: middle;
-}
-
 .flair-verified {
-	height: 16px;
-	vertical-align: middle;
-	visibility: hidden;
-	width: 16px;
-}
-
-.flair-verified.flair-ama {
-	color: #ffA328;
+	color: #FFA328;
 	font-size: 11px;
 	font-weight: bold;
+	height: 16px;
 	line-height: 16px;
-	visibility: visible;
-	width: auto;
-}
-.flair-verified.flair-ama:before {
-	margin: 0 4px 0 0;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
-
-.flair-extra-life {
+.flair-extra-life:before {
 	background: url(%%flairs-misc%%) no-repeat;
-	font-size: 0;
+	content: "";
 	height: 22px;
 	position: relative;
 	top: -2px;
 	width: 24px;
 	vertical-align: middle;
 }
+.flair-extra-life {
+	opacity: 0;
+	visibility: hidden;
+}
 .flair-extra-life:not([title=""]):hover {
 	background: none;
-	font-size: 12px;
 	line-height: 20px;
+	opacity: 1;
 	top: 1px;
 	width: auto;
+	visibility: visible;
 }
 
 /* Retina/HiDPI */
@@ -3604,40 +3600,38 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 }
 .flair-silver {
 	background-position: -24px 0;
-	width: 24px;
 	height: 22px;
+	width: 24px;
 }
 .flair-gold {
 	background-position: -48px 0;
-	width: 24px;
 	height: 24px;
+	width: 24px;
 }
 .flair-platinum {
 	background-position: -72px 0;
-	width: 23px;
 	height: 23px;
-
+	width: 23px;
 }
 .flair-diamond {
 	background-position: 0 -24px;
-	width: 28px;
 	height: 22px;
-
+	width: 28px;
 }
 .flair-master {
-	background-position: -28px -25px;
+	background-position: -93px -24px;
 	height: 25px;
-	width: 32px;
+	width: 30px;
 }
 .flair-grandmaster {
 	background-position: -61px -25px;
-	width: 32px;
 	height: 24px;
+	width: 32px;
 }
 .flair-top {
-	background-position: -93px -24px;
-	width: 30px;
+	background-position: -28px -25px;
 	height: 25px;
+	width: 32px;
 }
 
 .flairselector.drop-choices.active {
