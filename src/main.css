@@ -586,7 +586,7 @@ body >.content .link .rank, .rank-spacer {
 }
 
 
-/* Thumbnails */
+/* Post Thumbnails */
 .thumbnail {
 	width: 80px;
 	height: 56px;
@@ -603,26 +603,54 @@ body >.content .link .rank, .rank-spacer {
 	top: 50%;
 }
 
-.stickied .thumbnail, .thumbnail.default, .thumbnail.self, .over18.link .thumbnail {width: 80px; height: 56px;}
+.stickied .thumbnail, .thumbnail.default, .thumbnail.self, .over18.link .thumbnail {
+	height: 56px;
+	width: 80px;
+}
 
-.thumbnail.default          {background: url(%%spritesheet%%) -176px -48px;}
-.thumbnail.self             {background: url(%%spritesheet%%) -96px -104px;}
-.stickied .thumbnail        {background: url(%%spritesheet%%) -96px -48px;}
-.over18.link .thumbnail     {background: url(%%spritesheet%%) -176px -104px !important;}
-	.over18.link .thumbnail img {display: none;}
+.thumbnail.default, a.thumbnail[href*="reddit.com"] {
+	background: url(%%spritesheet%%) -162px -42px;
+	background-repeat:no-repeat;
+}
+.thumbnail.self {
+	background: url(%%spritesheet%%) -96px -104px;
+}
+.stickied .thumbnail {
+	background: url(%%spritesheet%%) -96px -48px;
+}
+.over18.link .thumbnail {
+	background: url(%%spritesheet%%) -162 -98px !important;
+}
+.nsfw-stamp {
+	margin-right: 8px;
+}
+.over18.link .thumbnail img, a.thumbnail[href*="reddit.com"] img {
+	display: none;
+}
 
-
-a.thumbnail[href*="reddit.com"]     {background: url(%%spritesheet%%) -176px -160px;}
-a.thumbnail[href*="reddit.com"] img {display: none;}
-
+.stickied .thumbnail, .linkflair-Megathread .thumbnail {
+	background-position: -91px -42px !important;
+}
+.thing:not(.stickied) .thumbnail.self, .search-result:not(.stickied) .thumbnail.self {
+	background-position: -91px -98px;
+}
+.linkflair-Question .thumbnail {background-position: -91px -154px !important}
+.linkflair-AdviceTips .thumbnail {background-position: -65px -210px !important}
+.linkflair-PSA .thumbnail {background-position: -162px -154px !important}
+.linkflair-Event .thumbnail {background-position: 4px -210px !important}
+.linkflair-Guide .thumbnail {background-position: 4px -266px !important}
+.linkflair-Video .thumbnail {background-position: -371px -210px !important}
+.linkflair-SubredditMeta .thumbnail {background-position: -135px -266px !important}
+.linkflair-Casting .thumbnail {background-position: -301px -266px !important}
+.linkflair-eSports .thumbnail {background-position: 5px -322px !important}
+.linkflair-eSports.linkflair-Spoiler .thumbnail {background-position: -65px -322px !important}
 
 /* Inner Post Area */
 .link .entry {
 	padding: 0;
 	margin: 0;
-	max-width: 960px;
+	max-width: none;
 }
-
 
 /* Submission Title */
 .link .title {
@@ -634,10 +662,9 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 
 body .content .sitetable .link .title a:hover {color: #24a0ed;}
 
-
 /*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#24a0ed;}
 /*Visited  */   .content .thing .title:visited, .content .thing.visited .title {color: #738491;}
-/*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#24a0ed;}
+/*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#24A0ED;}
 
 /* Domain */
 .link .domain {visibility: hidden;}
@@ -3516,14 +3543,15 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .flair-nga {
 	background-position: -73px -44px;
-	height: 23px;
+	height: 22px;
 	width: 36px;
 }
 .flair-liquid {
 	background-position: -77px -66px;
 }
-.flair-melty {
-	background-position: 0 -90px;
+.flair-lunatic-hai {
+	background-position: 0 -96px;
+	height: 20px;
 }
 .flair-faze {
 	background-position: -44px -90px;
@@ -3676,7 +3704,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Footer */
 .footer-parent {
-	background: #001844;
+	background: #011736;
 	height: auto;
 	margin-top: 192px;
 	padding: 32px 0;
@@ -4843,10 +4871,6 @@ body:not(.loggedin) .commentarea .menuarea {
 
 RESUserTag a {
 	vertical-align: middle;
-}
-
-.link .entry {
-	max-width: none;
 }
 
 .comments-page .link .usertext .md {
