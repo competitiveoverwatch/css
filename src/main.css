@@ -15,13 +15,13 @@ a {
 }
 
 ::-moz-selection {
-	background: #0079d3;
+	background: #0079D3;
 	text-shadow: none;
 	color: #fff;
 }
 
 ::selection {
-	background: #0079d3;
+	background: #0079D3;
 	text-shadow: none;
 	color: #FFF;
 }
@@ -33,7 +33,7 @@ a {
 body .content .text, body .content textarea, body .content input[type=text], body .content input[type=password],
  .side .spacer input, body .content input[type=url] {
 	background: #fff;
-	border: 1px solid #c3cfd6;
+	border: 1px solid #C3CFD6;
 	color: #738491;
 	box-shadow: none;
 	transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
@@ -47,12 +47,12 @@ body .content .text:hover, body .content textarea:hover, body .content input[typ
 
 body .content .text:focus, body .content textarea:focus, body .content input[type=text]:focus, body .content input[type=password]:focus,
 .side .spacer input:active, body .content input[type=url]:focus {
-	border-color: #24a0ed;
-	color: #292f34;
+	border-color: #24A0ED;
+	color: #292F34;
 }
 
 body .btn, body button, .c-btn-primary {
-	margin: 4px 16px 4px 0px;
+	margin: 4px 16px 4px 0;
 	padding: 2px 18px;
 	background: #0079d3;
 	border: none;
@@ -63,21 +63,20 @@ body .btn, body button, .c-btn-primary {
 	cursor: default;
 	height: 32px;
 	font-size: 12px;
-
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
 	transition: box-shadow .2s ease-in-out, background .2s ease-in-out, color .2s ease-in-out;
 }
 
 .btn:hover, button:hover, .c-btn-primary:hover {
-	color: #fff;
-	background: #158be2;
+	color: #FFF;
+	background: #158BE2;
 	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
 }
 
 .btn:active, button:active, .c-btn-primary:active {
-	color: #fff;
-	background: #0066b2;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
+	color: #FFFF;
+	background: #0066B2;
+	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
 }
 
 .c-btn-primary:active { margin-top: 4px }
@@ -88,7 +87,7 @@ body .btn, body button, .c-btn-primary {
 	background: url(%%headerimg%%) 30% 0 / cover no-repeat;
 	border: none;
 	height: 238px;
-	margin: 0px;
+	margin: 0;
 	z-index: 1;
 }
 /* Retina/HiDPI */
@@ -98,6 +97,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	#header {
 		background: url(%%headerimg-2x%%) 30% 0 / cover no-repeat;
 	}
+}
+
+#header .hover a:hover {
+	text-decoration: none;
 }
 
 /* Subreddits Bar */
@@ -212,7 +215,7 @@ a.random.choice {
 #header-bottom-right {
 	position: absolute;
 	top:0px;
-	right: 0px;
+	right: 0;
 	width: auto;
 	max-width: 300px;
 	height: 24px;
@@ -221,9 +224,12 @@ a.random.choice {
 	padding: 5px 8px 4px 2px;
 }
 
-body:not(.loggedin) #header-bottom-right {max-width: 340px;}
-#header-bottom-right a {color: rgba(255,255,255,0.7);}
-	#header-bottom-right a:hover {text-decoration: underline;}
+body:not(.loggedin) #header-bottom-right {
+	max-width: 340px;
+}
+#header-bottom-right a {
+	color: rgba(255,255,255,0.7);
+}
 
 .beta-hint a {
 	margin-left: -16px;
@@ -244,14 +250,13 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 	color: #FFF;
 }
 
-
 #mail, #modmail {
 	width: 16px;
 	height: 14px;
 	background-image: url(%%spritesheet%%) !important;
 	background-repeat: no-repeat !important;
 	background-color: transparent;
-	transition: all 0.25s ease;
+	transition: all 0.25s ease-in-out;
 }
 
 
@@ -290,13 +295,13 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 	z-index: 100;
 	background: #E53935 url(%%spritesheet%%) 269px -120px no-repeat;
 	border-radius: 3px;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
 	color: #fff;
 	width: 300px;
 	height: 48px;
 	left: 32px;
 	content: "You have new messages";
-	text-indent: 0px;
+	text-indent: 0;
 	font: 14px arial, sans-serif;
 	line-height: 1;
 	transform:translateY(112px);
@@ -305,12 +310,12 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 
 #mail.havemail:hover:before {
 	background-color: #ec5b5b;
-	box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.48);
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.48);
 }
 
 #mail.havemail:active:before {
 	background-color: #c73d3d;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.76);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.76);
 }
 
 
@@ -326,7 +331,7 @@ body:not(.loggedin) #header-bottom-right {max-width: 340px;}
 	height: 14px;
 	display: inline-block;
 	text-indent: -9999px;
-	margin: 0px;
+	margin: 0;
 	position: relative;
 	top: -1px;
 	transition: all 0.25s ease;
@@ -487,7 +492,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 /* Body Content - Frontpage */
 body >.content {
 	margin: 16px 352px 64px 16px;
-	padding: 0px;
+	padding: 0;
 	padding-top: 8px !important;
 }
 
@@ -529,7 +534,7 @@ body >.content .link .rank, .rank-spacer {
 }
 
 .arrow {
-	margin: 0px;
+	margin: 0;
 	background-image: url(%%spritesheet%%) !important;
 	width: 33px;
 	border-radius: 2px;
@@ -621,21 +626,18 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 
 /* Submission Title */
 .link .title {
-	margin: 0px;
+	margin: 0;
 	font: 16px Arial,sans-serif;
 	transition: all 0.15s ease;
 	overflow: visible;
 }
 
-				body .content .sitetable .link .title a:hover {color: #24a0ed;}
+body .content .sitetable .link .title a:hover {color: #24a0ed;}
 
 
-				/*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#24a0ed;}
-				/*Visited  */   .content .thing .title:visited, .content .thing.visited .title {color: #738491;}
-				/*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#24a0ed;}
-
-
-
+/*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#24a0ed;}
+/*Visited  */   .content .thing .title:visited, .content .thing.visited .title {color: #738491;}
+/*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#24a0ed;}
 
 /* Domain */
 .link .domain {visibility: hidden;}
@@ -667,7 +669,7 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 .expando-button, .expando-button.image, .expando-button.video-muted {
 	position: relative;
 	top: -1px;
-	margin: 2px 6px 2px 0px !important;
+	margin: 2px 6px 2px 0 !important;
 	width: 16px !important;
 	height: 16px !important;
 	border-radius: 2px;
@@ -722,9 +724,9 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 	margin-bottom: -12px;
 	padding-left: 0;
 	background-color: transparent;
-	border: 0px solid;
+	border: 0 solid;
 	border-top: 1px solid #EDF1F3;
-	border-radius: 0px;
+	border-radius: 0;
 	color: #292F34;
 }
 
@@ -818,7 +820,7 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 
 .nsfw-stamp acronym {
 	background: #ea4876;
-	border-radius: 0px;
+	border-radius: 0;
 	color:#fff;
 	cursor: help;
 	padding: 2px 3px;
@@ -846,7 +848,7 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 	padding: 24px;
 	background: #fff;
 	z-index: 100;
-	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
 	border: none;
 	border-radius: 2px;
 }
@@ -861,11 +863,11 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 		.action-form .reason-prompt:first-letter {text-transform: capitalize;}
 
 		.action-form .reason-prompt li {
-			padding: 4px 4px 4px 0px;
+			padding: 4px 4px 4px 0;
 			display: block;
 		}
 			.action-form li label {
-				padding: 4px 4px 4px 0px;
+				padding: 4px 4px 4px 0;
 				cursor: pointer;
 				display: block;
 				color: #4D5763;
@@ -888,7 +890,7 @@ a.thumbnail[href*="reddit.com"] img {display: none;}
 	padding: 1px 6px 1px 6px;
 	height: 18px;
 	border-radius: 1px;
-	border: 0px solid;
+	border: 0 solid;
 	color: #fff;
 	font: normal normal bold 13px Arial, sans-serif;
 	cursor: default;
@@ -1011,8 +1013,8 @@ ul.report-reasons {
 					.link.promotedlink.promoted .thumbnail img {
 						max-height: none;
 						max-width: none;
-						min-width: 0px;
-						min-height: 0px;
+						min-width: 0;
+						min-height: 0;
 
 					}
 
@@ -1020,9 +1022,9 @@ ul.report-reasons {
 					background: #fff!important;
 					padding: 0;
 					position: relative;
-					margin-bottom: 0px;
+					margin-bottom: 0;
 					border: none;
-					border-radius: 2px 2px 0px 0px;
+					border-radius: 2px 2px 0 0;
 				}
 					.organic-listing .link, .organic-listing .link.compressed, .organic-listing .link.promotedlink {
 						padding: 16px;
@@ -1048,11 +1050,11 @@ ul.report-reasons {
 			.link.compressed { margin-bottom: 0; padding-top: 0; padding-bottom: 0 }
 
 										.link.compressed .score { margin: 0 3px 0 0 }
-				.link.compressed .entry {padding: 9px 32px 9px 0px;}
+				.link.compressed .entry {padding: 9px 32px 9px 0;}
 				.link.compressed .title {margin: 0 }
 				body>.content .link.compressed .midcol {
 					height: auto;
-					margin: 8px 4px 0px 0px;
+					margin: 8px 4px 0 0;
 				}
 
 			/* Flair Selector */
@@ -1065,7 +1067,7 @@ ul.report-reasons {
 				width: 250px !important;
 				border: none;
 				border-radius: 2px;
-				box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
+				box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
 			}
 
 				.flairselector.drop-choices.active {border: none;}
@@ -1086,18 +1088,18 @@ ul.report-reasons {
 				}
 
 					.flairselector .flairoptionpane ul li {
-						padding: 0px !important;
+						padding: 0 !important;
 					}
 
 						.flairoptionpane ul li .linkflair {
 							text-align: left;
-							padding: 0px;
+							padding: 0;
 						}
 
 							.flairoptionpane ul li .linkflair:hover, .flairselector li:hover {background-color: #F5F8F9;border: 0px solid;}
 
 							.flairoptionpane ul li .linkflair span.linkflairlabel {
-								margin: 8px 0px;
+								margin: 8px 0;
 								line-height: 1.35;
 								margin-right: 6px;
 							}
@@ -1129,7 +1131,7 @@ ul.report-reasons {
 						}
 
 						.flairselector form .flairselection .flairremove {
-							padding: 4px 0px;
+							padding: 4px 0;
 							margin-bottom: 8px;
 							visibility: hidden;
 							display: block !important;
@@ -1176,12 +1178,12 @@ ul.report-reasons {
 				}
 
 					.flairselector .flairoptionpane ul li {
-						margin: 4px 0px;
+						margin: 4px 0;
 					}
 
 						.flairselector li.selected {border: none;background-color: transparent;}
 						.flairselector .flairoptionpane ul li.flairsample-right {
-							padding: 5px 0px !important;
+							padding: 5px 0 !important;
 							border: none;
 						}
 
@@ -1193,7 +1195,7 @@ ul.report-reasons {
 
 			/* Unvotable Message */
 			.unvotable-message {
-				border: 0px solid;
+				border: 0 solid;
 				color: #738491;
 			}
 
@@ -1201,7 +1203,7 @@ ul.report-reasons {
 
 			/* RES Selection */
 			.res .RES-keyNav-activeElement {
-				outline: 0px dashed #EEEEEE !important;
+				outline: 0 dashed #EEEEEE !important;
 				transition: all 0.15s ease;
 			}
 
@@ -1225,8 +1227,8 @@ ul.report-reasons {
 							.res .commentarea .thing.collapsed {padding-bottom: 16px !important;}
 
 							.res .commentarea .entry .flat-list {
-								margin-bottom: 0px;
-								padding-bottom: 0px;
+								margin-bottom: 0;
+								padding-bottom: 0;
 							}
 
 							.res .comment .entry {margin-bottom: 16px;}
@@ -1235,9 +1237,9 @@ ul.report-reasons {
 			/* RES Tag dialog + RES Tag */
 			.userTagLink.hasTag, #userTaggerPreview {
 				font-size: 11px !important;
-				border-radius: 0px !important;
-				border: 0px solid !important;
-				margin-top: 0px !important;
+				border-radius: 0 !important;
+				border: 0 solid !important;
+				margin-top: 0 !important;
 				margin-left: 4px !important;
 			}
 
@@ -1253,7 +1255,7 @@ ul.report-reasons {
 					border-bottom: 1px solid #EDEDED;
 					height: 36px;
 					padding: 8px;
-					margin: 0px;
+					margin: 0;
 				}
 
 				.livePreview .md {
@@ -1328,8 +1330,6 @@ ul.report-reasons {
 				box-shadow: 0px 2px 3px #DDD;
 			}
 
-				.guider_content {}
-
 					.guider_content h1 {color: #4F8EF7;}
 
 					.guider_button {
@@ -1341,8 +1341,6 @@ ul.report-reasons {
 					}
 
 						.guider_button:hover {background-color: rgba(79, 142, 247, 0.75);}
-
-					.guider_close {}
 
 						.x_button {
 							transition: all 0.25s ease;
@@ -1407,40 +1405,40 @@ ul.report-reasons {
 
 
 
-		/* Noresults image */
-		#noresults {
-			margin: 0;
-			width: 100%;
-			height: 416px;
-			background: transparent url(%%noresults%%) no-repeat 50% 50%;
-			text-indent: -9999px;
-			font-size: 0px;
-			display: block;
-		}
+/* Noresults image */
+#noresults {
+	margin: 0;
+	width: 100%;
+	height: 416px;
+	background: transparent url(%%noresults%%) no-repeat 50% 50%;
+	text-indent: -9999px;
+	font-size: 0px;
+	display: block;
+}
 
-		/* Next Page */
-		.nav-buttons {
-			padding: 16px 16px 16px 0;
-			color: #738491;
-		}
+/* Next Page */
+.nav-buttons {
+	padding: 16px 16px 16px 0;
+	color: #738491;
+}
 
-			.nav-buttons .nextprev {
-				color: #738491;
-				font-size: 14px;
-			}
+.nav-buttons .nextprev {
+	color: #738491;
+	font-size: 14px;
+}
 
-				.nav-buttons .nextprev a {
-					border: 0px;
-					padding: 8px 16px;
-					background-color: transparent;
-					border: 1px solid #edf1f3;
-					transition: background-color 0.15s ease;
-				}
+.nav-buttons .nextprev a {
+	border: 1px solid rgba(0,0,0,.06);
+	margin-left: 6px;
+	padding: 8px 16px;
+	background-color: transparent;
+	transition: background-color 0.15s ease;
+}
 
-					.nav-buttons .nextprev a:hover {
-						text-decoration: none;
-						background-color: rgba(0,0,0,0.05);
-					}
+.nav-buttons .nextprev a:hover {
+	text-decoration: none;
+	background-color: rgba(0,0,0,0.05);
+}
 
 /* Sidebar */
 .side {
@@ -1885,9 +1883,9 @@ body:not(.res-nightmode) .morelink:hover {
 }
 .side .md h3 a:before {
 	background: url(%%sidebar-twitter-1x%%);
-	height: 20px;
+	height: 18px;
 	margin: -4px 8px 0 -2px;
-	width: 24px;
+	width: 22px;
 }
 
 /* Twitch */
@@ -1944,7 +1942,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	}
 	.side .md h3 a:before {
 		background: url(%%sidebar-twitter-2x%%);
-		background-size: 24px 20px;
+		background-size: 22px 18px;
 	}
 	.side .md h4 a:before {
 		background: url(%%sidebar-twitch-2x%%);
@@ -2027,7 +2025,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .side .md h6+h6 {top: 102px}
 .side .md h6+h6+h6 {top: 140px}
 
-.side .md h6+h6 a, .side .md h6+h6+6 a {
+.side .md h6+h6 a, .side .md h6+h6+h6 a {
 	padding: 6px 16px;
 }
 
@@ -2354,6 +2352,15 @@ body.comments-page > .content {margin-top: 8px;}
 .commentarea>.usertext textarea:not(:focus) {
 	background: #FFF url(%%commentbox%%) no-repeat 0 0;
 	border: 1px solid rgba(0,0,0,.05);
+}
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.commentarea>.usertext textarea:not(:focus) {
+		background: #FFF url(%%commentbox-2x%%) no-repeat 0 0;
+		background-size: 300px 102px;
+	}
 }
 
 .commentarea>.usertext textarea:focus {
@@ -3057,11 +3064,6 @@ body #newlink-with-image-upload .file-upload-button {
 					}
 
 				/* Subreddits */
-				.combined-search-page .content > div:nth-of-type(2) {
-
-				}
-
-					.combined-search-page .content > div:nth-of-type(2) .search-result-group-header  {}
 
 					.combined-search-page .search-result-listing .search-result-subreddit {
 						display: inline-block;
@@ -3072,7 +3074,7 @@ body #newlink-with-image-upload .file-upload-button {
 						padding: 16px;
 						border-radius: 2px;
 						vertical-align: top;
-						border: 1px solid #edf1f3;
+						border: 1px solid #EDF1F3;
 						overflow: hidden;
 					}
 
@@ -3085,8 +3087,6 @@ body #newlink-with-image-upload .file-upload-button {
 							.combined-search-page .search-result-subreddit .search-result-meta {padding: 4px 0;}
 
 							.search-result-subreddit .search-result-meta span.search-time {display: none;}
-
-							.combined-search-page .content > div:nth-of-type(2) .nav-buttons {}
 
 
 				/* Item */
@@ -3283,7 +3283,7 @@ pre {
 
 #images {
 	padding: 8px 0;
-	background: #fff;
+	background: #FFF;
 	position: relative;
 	overflow: auto;
 	height: inherit;
@@ -3308,7 +3308,7 @@ pre {
 	background: transparent;
 	border: none;
 	border-radius: 0px;
-	color: #98abba;
+	color: #98ABBA;
 	cursor: default;
 	font: normal 12px arial, sans-serif;
 	margin-right: inherit;
@@ -3922,10 +3922,6 @@ height: inherit;
 			#RESSearchMenuItem:hover {
 				background-color: #667df0;
 			}
-
-		.toggleButton {
-
-		}
 
 			.toggleButton .toggleOn, .toggleButton .toggleOff  {
 				text-transform: lowercase;
@@ -4646,11 +4642,6 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 	text-transform: uppercase;
 }
 
-.nav-buttons .nextprev a {
-	border: 1px solid rgba(0,0,0,.06);
-	margin-left: 6px;
-}
-
 .link .flat-list {
 	margin-top: 6px;
 }
@@ -4836,8 +4827,6 @@ body:not(.loggedin) .commentarea .menuarea {
 RESUserTag a {
 	vertical-align: middle;
 }
-
-
 
 .link .entry {
 	max-width: none;
@@ -5382,8 +5371,16 @@ dt {
 }
 
 .res-nightmode .commentarea>.usertext textarea:not(:focus) {
-	background: url(%%commentbox-night%%) no-repeat;
-	background-color: #333;
+	background: #333 url(%%commentbox-night%%) no-repeat;
+}
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.res-nightmode .commentarea>.usertext textarea:not(:focus) {
+		background: #333 url(%%commentbox-night-2x%%) no-repeat 0 0;
+		background-size: 300px 102px;
+	}
 }
 
 .res-nightmode .commentarea>.usertext textarea:focus {
