@@ -1886,8 +1886,8 @@ body:not(.res-nightmode) .morelink:hover {
 }
 .side .md h3 a:before {
 	background: url(%%sidebar-twitter-1x%%);
-	height: 24px;
-	margin: -4px 8px 0 -3px;
+	height: 20px;
+	margin: -4px 8px 0 -2px;
 	width: 24px;
 }
 
@@ -1944,7 +1944,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 	}
 	.side .md h3 a:before {
 		background: url(%%sidebar-twitter-2x%%);
-		background-size: 24px 24px;
+		background-size: 20px 24px;
 	}
 	.side .md h4 a:before {
 		background: url(%%sidebar-twitch-2x%%);
@@ -2128,11 +2128,11 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol ol li:nth-child(2) a {
-	border-radius: 4px 4px 0 0;
+	border-radius: 2px 2px 0 0;
 }
 
 .side .md>ol ol li:last-child a {
-	border-radius: 0 0 4px 4px;
+	border-radius: 0 0 2px 2px;
 }
 
 .side .md>ol li a {
@@ -3458,7 +3458,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 .flair-fan:not([title=""]):hover {
 	background: none;
 	font-size: 12px;
-	line-height: 20px;
+	line-height: 22px;
 	width: auto;
 }
 
@@ -3570,7 +3570,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device
 .flair-rank:not([title=""]):hover {
 	background: none;
 	font-size: 12px;
-	line-height: 20px;
+	line-height: 19px;
 	width: auto;
 }
 
