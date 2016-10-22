@@ -4539,7 +4539,7 @@ body.listing-page>.content {
 }
 
 .res-nightmode .linkflairlabel {
-	opacity:.9;
+	opacity: .9;
 }
 
 .linkflair-Discussion .linkflairlabel { background: #24A0ED }
@@ -4552,6 +4552,10 @@ body.listing-page>.content {
 .linkflair-Casting .linkflairlabel { background: #673AB7 }
 .linkflair-Video .linkflairlabel { background: #FF5500 }
 .linkflair-AdviceTips .linkflairlabel { background: #FFAB19 }
+
+.stickied .linkflairlabel {
+	background: #27B062;
+}
 
 .expando {
 	margin: 6px 0 4px;
@@ -5050,7 +5054,7 @@ body.submit-page .roundfield input:not([type=checkbox]),
 	text-transform: uppercase;
 }
 
-#newlink-with-image-upload .image-upload-drop-target {
+body #newlink-with-image-upload .image-upload-drop-target {
 	border: none;
 	border-radius: 2px;
 }
