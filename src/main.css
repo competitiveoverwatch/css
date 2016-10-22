@@ -122,8 +122,8 @@ body:not(.loggedin) #sr-header-area .width-clip {right: 340px;}
 
 #sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .separator, #sr-header-area .dropdown.srdrop .selected {
 	background: none;
-	color: rgba(255, 255, 255, .24);
-	transition: color .12s ease-in-out;
+	color: rgba(255, 255, 255, .28);
+	transition: color .1s ease-in-out;
 }
 
 #sr-header-area:hover .sr-bar a,
@@ -142,7 +142,7 @@ body:not(.loggedin) #sr-header-area .width-clip {right: 340px;}
 	border: none;
 	color: #FFF;
 	cursor: pointer;
-	transition: all 0.15s ease-in-out;
+	transition: all 0.14s ease-in-out;
 }
 
 a.random.choice {
@@ -349,24 +349,18 @@ body:not(.loggedin) #header-bottom-right {
 
 /* Snoo */
 #header-img.default-header, #header-img {
-	background: url(%%spritesheet%%) -78px 0;
+	background: url(%%spritesheet%%) -79px 0;
 	bottom: -2px;
 	font-size: 0;
 	height: 40px;
 	left: 27px;
-	margin: 0 8px 0 0;
-	opacity: .3;
-	padding-left: 42px;
+	opacity: .28;
 	position: absolute;
-	transition: opacity .15s ease-in-out;
-	vertical-align: top;
-	width: 0;
-	z-index: 99;
+	transition: opacity .14s ease-in-out;
+	width: 42px;
 }
-
 #header-img.default-header:hover, #header-img:hover {
-	background-position: -78px 0;
-	opacity: 1;
+	opacity: .9;
 }
 
 /* Reddit Name */
@@ -590,7 +584,7 @@ body >.content .link .rank, .rank-spacer {
 	height: 56px; /* To override Reddit setting height */
 }
 
-.thumbnail.outbound {
+.thing:not(.stickied) .thumbnail.outbound {
 	background: none !important;
 	border-radius: 0;
 	margin: 2px 6px 0;
@@ -603,15 +597,16 @@ body >.content .link .rank, .rank-spacer {
 	max-width: 80px;
 }
 
+.stickied .thumbnail img {
+	display: none;
+}
+
 .nsfw-stamp {
 	margin-right: 8px;
 }
 .over18.link .thumbnail img, a.thumbnail[href*="reddit.com"] img {
 	display: none;
 }
-
-/*Generic link */
-.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: url(%%spritesheet%%) -162px -42px }
 
 .thumbnail.self { background: #24A0ED url(%%spritesheet%%) -97px -112px }
 .over18.link .thumbnail { background: #757575 url(%%spritesheet%%) -162 -98px }
@@ -624,10 +619,13 @@ body >.content .link .rank, .rank-spacer {
 .linkflair-Video .thumbnail { background: #FF5500 url(%%spritesheet%%) -207px -112px }
 .linkflair-SubredditMeta .thumbnail { background-color: #738491 }
 .linkflair-Casting .thumbnail { background: #673AB7 url(%%spritesheet%%) -209px -169px }
-.linkflair-eSports .thumbnail { background-color: #3949AB }a
+.linkflair-eSports .thumbnail { background-color: #3949AB }
 .linkflair-eSports.linkflair-Spoiler .thumbnail { background: #3949AB url(%%spritesheet%%) -153px -56px }
 
 .linkflair-Megathread .thumbnail, .stickied .thumbnail { background: transparent url(%%spritesheet%%) -121px 0 !important }
+
+/*Generic link */
+.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: transparent url(%%spritesheet%%) -97px -56px }
 
 /* Inner Post Area */
 .link .entry {
@@ -2014,7 +2012,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .side .md h6 a {
 	background: rgba(255,255,255,.98);
 	border: 1px solid rgba(255,255,255,.4);
-	border-radius: 3px;
+	border-radius: 2px;
 	padding: 6px 18px;
 	text-decoration: none;
 }
@@ -2278,7 +2276,7 @@ body.comments-page > .content {margin-top: 8px;}
 
 .commentarea .menuarea {margin: 0 0 0 0px;padding-left: 16px;}
 
-.commentarea .menuarea span.dropdown-title.lightdrop {color: #98abba;}
+.commentarea .menuarea span.dropdown-title.lightdrop {color: #98ABBA;}
 .commentarea .menuarea span.dropdown-title.lightdrop:first-letter {text-transform: capitalize;}
 
 .commentarea .menuarea .dropdown.lightdrop .selected {
@@ -2442,13 +2440,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .gilded-icon:before {
-	background: url(%%spritesheet%%) -72px -188px;
-	height: 19px;
+	background: url(%%spritesheet%%) -177px 0;
+	height: 16px;
 	width: 16px;
-	vertical-align: 0;
+	vertical-align: bottom;
 }
-
-.user-gilded>.entry .gilded-icon:before { width: 16px; }
 
 /* Comments */
 .commentarea .sitetable {
@@ -4295,6 +4291,13 @@ body:not(.res-nightmode) .titlebox .subscribers .number{
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
 	margin: 0 0 16px;
 	padding: 16px;
+}
+
+.listing-page .dropdown-title.lightdrop {
+	text-transform: uppercase;
+}
+.listing-page .dropdown.lightdrop {
+	text-transform: capitalize;
 }
 
 .dropdown.lightdrop .selected {
