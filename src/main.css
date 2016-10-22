@@ -81,7 +81,6 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 
 .c-btn-primary:active { margin-top: 4px }
 
-
 /* Header */
 #header {
 	background: url(%%headerimg%%) 30% 0 / cover no-repeat;
@@ -208,7 +207,6 @@ a.random.choice {
 	border-top: 1px solid #EEE;
 	font-style: normal;
 }
-
 
 
 /* User Bar */
@@ -405,14 +403,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 @keyframes logo {
-	0% {
-		transform: scale(.94);
-	}
-	100% {
-		transform: scale(1);
-	}
+	0% { transform: scale(.94); }
+	100% { transform: scale(1);	}
 }
-
 
 /* Tabmenu (hot/new/top) */
 #header-bottom-left {
@@ -509,10 +502,10 @@ body >.content .link .rank, .rank-spacer {
 
 /* Voting Arrows */
 .link .midcol {
-	width: 32px !important;
-	margin: 0 16px 0 0;
-	overflow: visible;
 	height: 56px;
+	overflow: visible;
+	margin: 0 10px 0;
+	width: 32px !important;
 
 }
 .link .score {
@@ -588,39 +581,28 @@ body >.content .link .rank, .rank-spacer {
 
 /* Post Thumbnails */
 .thumbnail {
-	width: 80px;
+	border-radius: 28px;
 	height: 56px;
-	margin: 0 16px 0 0;
+	margin: 2px 25px 0 7px;
+	width: 56px;
+}
+.thumbnail.self {
+	height: 56px; /* To override Reddit setting height */
+}
+
+.thumbnail.outbound {
+	background: none !important;
+	border-radius: 0;
+	margin: 2px 6px 0;
+	width: 80px;
 }
 
 .thumbnail img {
 	border-radius: 3px;
 	min-height: 56px;
-	min-width: 80px;
-	max-width: none;
-	position: relative;
-	transform: translateY(-50%);
-	top: 50%;
+	max-width: 80px;
 }
 
-.stickied .thumbnail, .thumbnail.default, .thumbnail.self, .over18.link .thumbnail {
-	height: 56px;
-	width: 80px;
-}
-
-.thumbnail.default, a.thumbnail[href*="reddit.com"] {
-	background: url(%%spritesheet%%) -162px -42px;
-	background-repeat:no-repeat;
-}
-.thumbnail.self {
-	background: url(%%spritesheet%%) -96px -104px;
-}
-.stickied .thumbnail {
-	background: url(%%spritesheet%%) -96px -48px;
-}
-.over18.link .thumbnail {
-	background: url(%%spritesheet%%) -162 -98px !important;
-}
 .nsfw-stamp {
 	margin-right: 8px;
 }
@@ -628,22 +610,24 @@ body >.content .link .rank, .rank-spacer {
 	display: none;
 }
 
-.stickied .thumbnail, .linkflair-Megathread .thumbnail {
-	background-position: -91px -42px !important;
-}
-.thing:not(.stickied) .thumbnail.self, .search-result:not(.stickied) .thumbnail.self {
-	background-position: -91px -98px;
-}
-.linkflair-Question .thumbnail {background-position: -91px -154px !important}
-.linkflair-AdviceTips .thumbnail {background-position: -65px -210px !important}
-.linkflair-PSA .thumbnail {background-position: -162px -154px !important}
-.linkflair-Event .thumbnail {background-position: 4px -210px !important}
-.linkflair-Guide .thumbnail {background-position: 4px -266px !important}
-.linkflair-Video .thumbnail {background-position: -371px -210px !important}
-.linkflair-SubredditMeta .thumbnail {background-position: -135px -266px !important}
-.linkflair-Casting .thumbnail {background-position: -301px -266px !important}
-.linkflair-eSports .thumbnail {background-position: 5px -322px !important}
-.linkflair-eSports.linkflair-Spoiler .thumbnail {background-position: -65px -322px !important}
+/*Generic link */
+.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: url(%%spritesheet%%) -162px -42px }
+
+.thumbnail.self { background: #24A0ED url(%%spritesheet%%) -97px -112px }
+.stickied .thumbnail { background: url(%%spritesheet%%) -96px -48px }
+.over18.link .thumbnail { background: #757575 url(%%spritesheet%%) -162 -98px }
+
+.linkflair-Question .thumbnail { background: #738491 url(%%spritesheet%%) -153px -113px }
+.linkflair-AdviceTips .thumbnail { background: #FFAB19 url(%%spritesheet%%) -153px -169px }
+.linkflair-PSA .thumbnail { background: #E53935 url(%%spritesheet%%) -153px -56px }
+.linkflair-Event .thumbnail { background: #DC143C url(%%spritesheet%%) -209px 0 no-repeat }
+.linkflair-Guide .thumbnail { background: #B338C2 url(%%spritesheet%%) -209px -56px }
+.linkflair-Video .thumbnail { background: #FF5500 url(%%spritesheet%%) -207px -112px }
+.linkflair-SubredditMeta .thumbnail { background-color: #738491 }
+.linkflair-Casting .thumbnail { background: #673AB7 url(%%spritesheet%%) -209px -169px }
+.linkflair-eSports .thumbnail { background-color: #3949AB }a
+.linkflair-eSports.linkflair-Spoiler .thumbnail { background: #3949AB url(%%spritesheet%%) -153px -56px }
+.linkflair-Megathread .thumbnail { background: url(%%spritesheet%%) -121px 0 }
 
 /* Inner Post Area */
 .link .entry {
@@ -757,7 +741,6 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 	color: #292F34;
 }
 
-
 /* Submitted X ago by.. */
 .entry .tagline {
 	color: #98ABBA;
@@ -767,16 +750,15 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 
 .link .entry .tagline a {color: #292F34;}
 
-.link .entry .tagline:first-letter {text-transform: capitalize;}
-.link .entry .tagline time {cursor: help;}
-.edited-timestamp[title]:after {font-size: 100%;}
-.link .entry .tagline a:hover {color: #24A0ED;text-decoration: none;}
-.link .entry .tagline a.author {margin-right: inherit;}
+.link .entry .tagline:first-letter {text-transform: capitalize}
+.edited-timestamp[title]:after {font-size: 100%}
+.link .entry .tagline a:hover {text-decoration: none}
+.link .entry .tagline a.author {margin-right: inherit}
 
-.link .entry .tagline .userattrs {visibility: hidden;}
+.link .entry .tagline .userattrs {visibility: hidden}
 .link .entry .tagline .userattrs a {
 	border-radius: 2px;
-	color: #fff !important;
+	color: #FFF !important;
 	cursor: help;
 	display: inline-block;
 	font-size: 11px;
@@ -2016,13 +1998,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 		width: auto;
 	}
 	.hot-page .side .md h6 {
-		animation: .55s ease-in-out .2s forwards banner-sticky-from-right;
+		animation: .55s ease-in-out .25s forwards banner-sticky-from-right;
 		opacity: 0;
 		right: -403px;
 	}
 	/* Slide in one-by-one when from right, as left edges do not line up */
-	.hot-page .side .md h6+h6 {animation-delay: .35s}
-	.hot-page .side .md h6+h6+h6 {animation-delay: .45s}
+	.hot-page .side .md h6+h6 {animation-delay: .4s}
+	.hot-page .side .md h6+h6+h6 {animation-delay: .5s}
 }
 
 .side .md h6 a, .side .md h6 a:visited {
@@ -3151,7 +3133,10 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 
 						.combined-search-page .search-result .search-comments {color: #24a0ed;}
 
-						.combined-search-page .search-result.has-thumbnail>.thumbnail {
+						.search-result.has-thumbnail>.thumbnail {
+							-webkit-flex: 0 0 56px;
+							flex: 0 0 56px;
+							width: 70px;
 							margin-left: 0px;
 							margin-right: 16px;
 						}
@@ -4341,35 +4326,6 @@ body.listing-page>.content {
 	border-radius: 3px 3px 0 0;
 }
 
-/* Post thumbnails */
-.stickied .thumbnail, .linkflair-Megathread .thumbnail {
-	background-position: -91px -42px !important;
-}
-.thing:not(.stickied) .thumbnail.self, .search-result:not(.stickied) .thumbnail.self {
-	background-position: -91px -98px;
-}
-.over18.link .thumbnail {
-	background-position: -162px -98px !important;
-}
-.nsfw-stamp {
-	margin-right: 8px;
-}
-.linkflair-Question .thumbnail {background-position: -91px -154px !important}
-.linkflair-AdviceTips .thumbnail {background-position: -65px -210px !important}
-.linkflair-PSA .thumbnail {background-position: -162px -154px !important}
-.linkflair-Event .thumbnail {background-position: 4px -210px !important}
-.linkflair-Guide .thumbnail {background-position: 4px -266px !important}
-.linkflair-Video .thumbnail {background-position: -371px -210px !important}
-.linkflair-SubredditMeta .thumbnail {background-position: -135px -266px !important}
-.linkflair-Casting .thumbnail {background-position: -301px -266px !important}
-.linkflair-eSports .thumbnail {background-position: 5px -322px !important}
-.linkflair-eSports.linkflair-Spoiler .thumbnail {background-position: -65px -322px !important}
-
-.thumbnail.default, a.thumbnail[href*="reddit.com"] {
-	background-position:-162px -42px;
-	background-repeat:no-repeat;
-}
-
 /* Set post flair */
 .flairselector {
 	border-radius: 3px;
@@ -5456,17 +5412,17 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Animations from Naut */
 @keyframes toast {
-  0%    {transform:translateY(76px); opacity: 0;}
-  20%   {transform:translateY(76px); opacity: 0;}
-  25%   {transform:translateY(-8px); opacity: 1;}
-  27%   {transform:translateY(00px); opacity: 1;}
-  92%   {transform:translateY(00px); opacity: 1;}
-  97%   {transform:translateY(16px); opacity: 1;}
-  100%  {transform:translateY(76px); opacity: 0;}
+  0%    { transform:translateY(76px); opacity: 0; }
+  20%   { transform:translateY(76px); opacity: 0; }
+  25%   { transform:translateY(-8px); opacity: 1; }
+  27%   { transform:translateY(00px); opacity: 1; }
+  92%   { transform:translateY(00px); opacity: 1; }
+  97%   { transform:translateY(16px); opacity: 1; }
+  100%  { transform:translateY(76px); opacity: 0; }
 }
 
 @keyframes upvote{
-   0%   {transform:scale(0,0); opacity:1; }
+   0%   { transform:scale(0,0); opacity:1; }
    45%  { opacity:1; }
-   98%  {opacity: 0;}
-   100% {transform:scale(1.5,1.5); opacity: 0;}
+   98%  { opacity: 0; }
+   100% { transform:scale(1.5,1.5); opacity: 0; }
