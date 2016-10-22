@@ -614,7 +614,6 @@ body >.content .link .rank, .rank-spacer {
 .thumbnail.default, a.thumbnail[href*="reddit.com"] { background: url(%%spritesheet%%) -162px -42px }
 
 .thumbnail.self { background: #24A0ED url(%%spritesheet%%) -97px -112px }
-.stickied .thumbnail { background: url(%%spritesheet%%) -96px -48px }
 .over18.link .thumbnail { background: #757575 url(%%spritesheet%%) -162 -98px }
 
 .linkflair-Question .thumbnail { background: #738491 url(%%spritesheet%%) -153px -113px }
@@ -627,7 +626,8 @@ body >.content .link .rank, .rank-spacer {
 .linkflair-Casting .thumbnail { background: #673AB7 url(%%spritesheet%%) -209px -169px }
 .linkflair-eSports .thumbnail { background-color: #3949AB }a
 .linkflair-eSports.linkflair-Spoiler .thumbnail { background: #3949AB url(%%spritesheet%%) -153px -56px }
-.linkflair-Megathread .thumbnail { background: url(%%spritesheet%%) -121px 0 }
+
+.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: transparent url(%%spritesheet%%) -121px 0 !important }
 
 /* Inner Post Area */
 .link .entry {
