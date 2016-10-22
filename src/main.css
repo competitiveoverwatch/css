@@ -355,6 +355,7 @@ body:not(.loggedin) #header-bottom-right {
 	height: 40px;
 	left: 27px;
 	opacity: .28;
+	padding-left: 42px;
 	position: absolute;
 	transition: opacity .14s ease-in-out;
 	width: 42px;
