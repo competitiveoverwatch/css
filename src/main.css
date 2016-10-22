@@ -471,7 +471,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 #header .tabmenu li:first-of-type a {
 	border-radius: 2px 0 0 2px;
 }
-#header .tabmenu li:last-of-type a {
+.listing-page .tabmenu li>a[href$="/wiki/"], .wiki-page .tabmenu li>a[href$="/wiki/"] {
 	border-radius: 0 2px 2px 0;
 }
 
@@ -1003,10 +1003,10 @@ ul.report-reasons {
 	color: #27B062 !important;
 }
 
-.thing.link.stickied li a {
+.thing.link.stickied .buttons li a {
 	color: #A3ABB1 !important;
 }
-.thing.link.stickied li a:hover {
+.thing.link.stickied .buttons li a:hover {
 	color: #27B062 !important;
 }
 
@@ -2857,7 +2857,7 @@ body.res.comments-page .side .linkinfo .score {
 .submit-page #newlink.submit.content form .spacer+.spacer {margin: 0;}
 
 .submit-page .formtabs-content {
-	margin-top: 84px;
+	margin-top: 126px;
 }
 
 .submit-page .tabmenu {
@@ -2893,10 +2893,10 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page .tabmenu li:first-child a {
-	border-radius: 2px 0 0 0;
+	border-radius: 3px 0 0 0;
 }
 .submit-page .tabmenu li:last-child a {
-	border-radius: 0 2px 0 0;
+	border-radius: 0 3px 0 0;
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a {
@@ -2968,8 +2968,8 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 body #newlink-with-image-upload .file-upload-button {
-		padding-right: 18px;
-		line-height: 29px;
+	padding-right: 18px;
+	line-height: 29px;
 }
 
 #new-link-image-input {
@@ -5012,25 +5012,20 @@ body.submit-page .roundfield input:not([type=checkbox]),
 }
 
 .submit-page .submit_text.enabled.roundfield {
-	background: #FFCA4F;
+	background: #439BDA;
 	border-radius: 0 0 3px 3px;
 	box-shadow: none;
-	color: #271100;
+	color: #FFF;
 	padding: 16px;
 	position: absolute;
 	top: 318px;
 	width: 700px;
 }
 
-.submit-page .submit_text.enabled.roundfield .md {
-	color: rgba(0,0,0,.9);
-	font-size: 13px;
-}
-
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a, .submit-page #newlink.submit.content .tabmenu.formtab a:hover {
-	background: #FFCA4F;
+	background: #439BDA;
 	border-bottom: none;
-	color: #271100;
+	color: #FFF;
 }
 
 .submit-page .roundfield-content {
@@ -5055,10 +5050,19 @@ body.submit-page .roundfield input:not([type=checkbox]),
 	text-transform: uppercase;
 }
 
+#newlink-with-image-upload .image-upload-drop-target {
+	border: none;
+	border-radius: 2px;
+}
+
 #newlink-with-image-upload .file-upload-button, #newlink-with-image-upload .file-upload-button:hover {
 	background: #555;
 	border-radius: 3px;
 	box-shadow: none;
+}
+
+#newlink-with-image-upload .file-drop-label {
+	cursor: default;
 }
 
 .usertext .bottom-area {
@@ -5078,6 +5082,8 @@ body.submit-page .content input, .submit-page .content textarea {
 }
 
 .submit-page #newlink.submit.content .btn {
+	background: #439BDA;
+	font-weight: 600;
 	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
@@ -5085,6 +5091,7 @@ body.submit-page .content input, .submit-page .content textarea {
 
 .submit-page #newlink.submit.content .btn:hover {
 	box-shadow: none;
+	opacity: .9;
 }
 .submit-page #newlink.submit.content .btn:after {
 	display: none;
