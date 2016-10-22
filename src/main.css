@@ -3180,65 +3180,6 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 .searchfacets .facet.count {color: #98abba;font-weight: normal;}
 .searchfacets .facet.count:hover {text-decoration: none;}
 
-/* Wiki Page */
-.wiki-page .wikititle {
-	background: #fff;
-	padding: 9px 16px 10px;
-	border-radius: 2px;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
-	font: 16px arial, sans-serif;
-	text-transform: capitalize;
-	margin: 0;
-}
-
-.wiki-page .pageactions {
-	background: #fff;
-	margin-left: 16px;
-	border-radius: 2px;
-	padding: 0px 16px;
-	border: none;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
-}
-
-	.wiki-page .pageactions .wikiaction {
-		margin: 0;
-		background: transparent;
-		border-radius: 0px;
-		padding: 10px 16px 11px;
-		color: #98abba;
-	}
-
-		.wiki-page .pageactions .wikiaction-current {
-			padding: 10px 16px 9px;
-			border-bottom: 2px solid #24a0ed;
-			color: #24a0ed;
-		}
-
-			.wiki-page .pageactions .wikiaction:hover, .wiki-page .pageactions .wikiaction-current:hover {background: rgba(0,0,0,0.05);}
-
-.wiki-page .wiki-page-content {
-	margin: 16px 0px 16px 0px;
-	background: #fff;
-	padding: 8px 0;
-}
-
-	.wiki-page .wiki-page-content .wiki>.toc>ul {
-		border: none;
-	}
-
-	.wiki-page .wiki-page-content .wiki.md {
-		color: #292f34;
-	}
-		.wiki-page .wiki-page-content .wiki.md h2 {color: #292f34;}
-
-
-		.wiki-page .wiki-page-content hr {
-			border-style: solid;
-			border-color: #edf1f3
-		}
-
-		.wiki-page .wiki-page-content em {color: #98abba;}
-
 /* Subreddit Settings Page + Flair Page + Stylesheet Page */
 .linefield, .linefield.mobile {
 	background: #fff;
@@ -4008,13 +3949,10 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
 }
 
-
-
 /* Experimental Toast Animation */
 #mail.havemail:before {
 	animation: 8s ease toast;
 }
-
 #mail.havemail:hover:before {
    animation-play-state: paused;
 }
@@ -5312,7 +5250,7 @@ dt {
 	text-decoration: underline;
 }
 
-.search-result .userattrs a.moderator:hover{
+.search-result .userattrs a.moderator:hover {
 	text-decoration: none;
 }
 
@@ -5400,10 +5338,6 @@ dt {
 	border: none;
 }
 
-.res-nightmode .side .titlebox .md h1:after {
-	border-bottom-color: #444;
-}
-
 .res-nightmode .search-page .search-result {
 	border: none;
 }
@@ -5433,19 +5367,26 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background: #444;
 }
 
-/* Wiki */
+/* Wiki Page */
 .wiki-page>.content {
 	margin-top: 8px;
 }
 
 .wiki-page .wiki-page-content {
-	margin-top: 16px;
-	padding-top: 1px;
+	background: #FFF;
+	margin: 16px 0 16px;
+	padding: 1px 0 8px;
 }
 
 .wiki-page .wikititle {
+	background: #FFF;
+	border-radius: 2px;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
 	display: inline-block;
+	font-size: 16px;
+	margin: 0;
 	padding: 0 32px;
+	text-transform: capitalize;
 }
 
 .wiki-page .wikititle, .wiki-page .pageactions {
@@ -5458,16 +5399,30 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .wiki-page .pageactions {
+	background: #FFF;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
+	margin-left: 16px;
 	padding: 0;
 }
 
-.wiki-page .pageactions .wikiaction, .wiki-page .pageactions .wikiaction-current {
+.wiki-page .pageactions .wikiaction {
+	background: transparent;
+	border-radius: 0px;
+	color: #98ABBA;
+	margin: 0;
 	padding: 0 16px;
 }
 
 .wiki-page .pageactions .wikiaction-current {
-	border-bottom: none;
+	color: #24A0ED;
 	font-weight: bold;
+	padding: 0 16px;
+}
+
+.wiki-page .pageactions .wikiaction:hover, .wiki-page .pageactions .wikiaction-current:hover {
+	background: rgba(0,0,0,0.05);
 }
 
 .wiki-page-content .md h1, .wiki-page-content .md h6 {
@@ -5475,12 +5430,28 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	font-weight: 800;
 }
 
-.wiki-page-content .md h1:after {
-	display: none;
-}
-
 .wiki-page .toggle-source {
 	text-transform: uppercase;
+}
+
+.wiki-page .wiki-page-content .wiki>.toc>ul {
+	border: none;
+}
+
+.wiki-page .wiki-page-content .wiki.md {
+	color: #292F34;
+}
+.wiki-page .wiki-page-content .wiki.md h2 {
+	color: #292F34;
+}
+
+.wiki-page .wiki-page-content hr {
+	border-style: solid;
+	border-color: #EDF1F3
+}
+
+.wiki-page .wiki-page-content em {
+	color: #98ABBA;
 }
 
 /* Animations from Naut */
