@@ -2139,27 +2139,27 @@ body:not(.listing-page) .side .md>ol {
 	color: #222;
 }
 
-[lang$="00"] .listing-page .linkflair-AdviceTips {display: none}
-[lang$="01"] .listing-page .linkflair-Casting {display: none}
-[lang$="02"] .listing-page .linkflair-Discussion {display: none}
-[lang$="03"] .listing-page .linkflair-eSports {display: none}
-[lang$="04"] .listing-page .linkflair-Event {display: none}
-[lang$="05"] .listing-page .linkflair-Guide {display: none}
-[lang$="06"] .listing-page .linkflair-PSA {display: none}
-[lang$="07"] .listing-page .linkflair-Question {display: none}
-[lang$="08"] .listing-page .linkflair-SubredditMeta {display: none}
+[lang$="00"] .listing-page .linkflair-AdviceTips,
+[lang$="01"] .listing-page .linkflair-Casting,
+[lang$="02"] .listing-page .linkflair-Discussion,
+[lang$="03"] .listing-page .linkflair-eSports,
+[lang$="04"] .listing-page .linkflair-Event,
+[lang$="05"] .listing-page .linkflair-Guide,
+[lang$="06"] .listing-page .linkflair-PSA,
+[lang$="07"] .listing-page .linkflair-Question,
+[lang$="08"] .listing-page .linkflair-SubredditMeta,
 [lang$="09"] .listing-page .linkflair-Video {display: none}
 
 /* Hide whichever filter is currently being used */
-[lang$="00"] .side ol a[href*="00"] {display: none}
-[lang$="01"] .side ol a[href*="01"] {display: none}
-[lang$="02"] .side ol a[href*="02"] {display: none}
-[lang$="03"] .side ol a[href*="03"] {display: none}
-[lang$="04"] .side ol a[href*="04"] {display: none}
-[lang$="05"] .side ol a[href*="05"] {display: none}
-[lang$="06"] .side ol a[href*="06"] {display: none}
-[lang$="07"] .side ol a[href*="07"] {display: none}
-[lang$="08"] .side ol a[href*="08"] {display: none}
+[lang$="00"] .side ol a[href*="00"],
+[lang$="01"] .side ol a[href*="01"],
+[lang$="02"] .side ol a[href*="02"],
+[lang$="03"] .side ol a[href*="03"],
+[lang$="04"] .side ol a[href*="04"],
+[lang$="05"] .side ol a[href*="05"],
+[lang$="06"] .side ol a[href*="06"],
+[lang$="07"] .side ol a[href*="07"],
+[lang$="08"] .side ol a[href*="08"],
 [lang$="09"] .side ol a[href*="09"] {display: none}
 
 /* Show 'none' filter option if filter active */
@@ -2172,17 +2172,9 @@ body:not(.listing-page) .side .md>ol {
 	border-radius: 0;
 }
 
-
 .md hr {border: solid 1px #E5E5E5;}
 
-
-
-
 /* Mod Box */
-
-.side #moderation_tools .title .collapse-button {
-	display: none;
-}
 
 .side .sidecontentbox .content {
 	border: none;
@@ -2193,6 +2185,14 @@ body:not(.listing-page) .side .md>ol {
 	background: none;
 }
 
+.sidecontentbox .collapse-button {
+	display: none;
+}
+
+/* Wiki Box */
+#wikiactions a {
+	text-transform: capitalize;
+}
 
 /* Ads */
 
@@ -3906,10 +3906,10 @@ height: inherit;
 				/* Toggle on */
 				.moduleToggle.enabled .toggleOn, .toggleButton.enabled .toggleOn,
 				.moduleToggle:not(.enabled) .toggleOff, .toggleButton:not(.enabled) .toggleOff {
-					background-color: #fff;
+					background-color: #FFF;
 					color: #516AE8;
 					font-weight: bolder;
-					border: 1px solid #fff;
+					border: 1px solid #FFF;
 					transition: all 0.15s ease;
 					border-radius: 2px;
 				}
@@ -3925,7 +3925,7 @@ height: inherit;
 body.listing-page>.content, body.other-discussions-page>.content, .comments-page .link, .commentarea>.sitetable>.comment, #images, .combined-search-page>.content, 
 .stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo, #ad-frame,
 .wiki-page .wiki-page-content, .linefield, .submit-page .roundfield, .login-form-side {
-	background: #fff;
+	background: #FFF;
 	padding: 16px;
 	border-radius: 2px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
@@ -5335,54 +5335,45 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .wiki-page .wiki-page-content {
 	background: #FFF;
 	margin: 16px 0 16px;
-	padding: 1px 0 8px;
+	padding: 1px 16px 16px;
 }
 
 .wiki-page .wikititle {
-	background: #FFF;
-	border-radius: 2px;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
-	display: inline-block;
-	font-size: 16px;
-	margin: 0;
-	padding: 0 32px;
-	text-transform: capitalize;
-}
-
-.wiki-page .wikititle, .wiki-page .pageactions {
-	background: #FFF;
-	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.24);
-	height: 42px;
-	line-height: 42px;
-	text-transform: uppercase;
+	display: none;
 }
 
 .wiki-page .pageactions {
 	background: #FFF;
 	border: none;
-	border-radius: 2px;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
-	margin-left: 16px;
-	padding: 0;
-}
-
-.wiki-page .pageactions .wikiaction {
-	background: transparent;
-	border-radius: 0px;
-	color: #98ABBA;
+	border-radius: 3px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, .14);
+	height: 38px;
+	line-height: 38px;
 	margin: 0;
-	padding: 0 16px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.wiki-page .pageactions .wikiaction {
+	border-radius: 0;
+	color: #439BDA;
+	margin: 0;
+	padding: 0 22px;
 }
 
 .wiki-page .pageactions .wikiaction-current {
-	color: #24A0ED;
+	background: #439BDA;
+	color: #FFF;
 	font-weight: bold;
-	padding: 0 16px;
 }
 
-.wiki-page .pageactions .wikiaction:hover, .wiki-page .pageactions .wikiaction-current:hover {
-	background: rgba(0,0,0,0.05);
+.wiki-page .pageactions a:first-child {
+	border-radius: 3px 0 0 3px;
+}
+
+.wiki-page .pageactions .wikiaction:hover {
+	background: none;
+	border-bottom: 2px solid #439BDA;
+	line-height: 37px;
 }
 
 .wiki-page-content .md h1, .wiki-page-content .md h6 {
@@ -5412,6 +5403,17 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .wiki-page .wiki-page-content em {
 	color: #98ABBA;
+}
+
+/* Bottom page info */
+.wiki-page .wiki-page-content>em {
+	display: block;
+	font-size: 11px;
+	margin-top: 16px;
+}
+
+.wiki-page .wiki-page-content>em, .wiki-page .wiki-page-content>em *:not(.author):not(.flair) {
+	text-transform: uppercase;
 }
 
 /* Animations from Naut */
