@@ -83,7 +83,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 
 /* Header */
 #header {
-	background: url(%%headerimg%%) 30% 0 / cover no-repeat;
+	background: url(%%header%%) 30% 0 / cover no-repeat;
 	border: none;
 	height: 238px;
 	margin: 0;
@@ -94,7 +94,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	#header {
-		background: url(%%headerimg-2x%%) 30% 0 / cover no-repeat;
+		background: url(%%header-2x%%) 30% 0 / cover no-repeat;
 	}
 }
 
@@ -3707,14 +3707,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Pinheader */
-.pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%headerimg%%);background-position: 50% 0%;}
+.pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%header%%);background-position: 50% 0%;}
 .pinHeader-sub #header-bottom-left, .pinHeader-subanduser #header-bottom-left {margin-top: 0px;}
 
 .pinHeader-header:before {display: none !important;}
 .pinHeader-header .content {margin-top: 12px !important;}
 .pinHeader-header .side {margin-top: 164px;}
 .pinHeader-header.res.comments-page .side {margin-top: 290px;}
-.pinHeader-header #header {top: 0px;background-image: url(%%headerimg%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
+.pinHeader-header #header {top: 0px;background-image: url(%%header%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
 .res.search-page #header .tabmenu {display: none !important;}
 
 .res #header-bottom-right {
