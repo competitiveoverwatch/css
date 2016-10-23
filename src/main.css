@@ -5364,7 +5364,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .wiki-page .pageactions .wikiaction-current {
 	background: #439BDA;
 	color: #FFF;
-	line-height: 34px;
 }
 
 .wiki-page .pageactions a:first-child {
