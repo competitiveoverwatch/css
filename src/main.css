@@ -5356,6 +5356,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .wiki-page .pageactions .wikiaction {
 	border-radius: 0;
 	color: #439BDA;
+	font-weight: bold;
 	margin: 0;
 	padding: 0 22px;
 }
@@ -5363,7 +5364,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .wiki-page .pageactions .wikiaction-current {
 	background: #439BDA;
 	color: #FFF;
-	font-weight: bold;
+	line-height: 34px;
 }
 
 .wiki-page .pageactions a:first-child {
@@ -5373,7 +5374,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .wiki-page .pageactions .wikiaction:hover {
 	background: none;
 	border-bottom: 2px solid #439BDA;
-	line-height: 37px;
+	line-height: 34px;
 }
 
 .wiki-page-content .md h1, .wiki-page-content .md h6 {
