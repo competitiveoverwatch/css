@@ -747,12 +747,15 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 .entry .tagline {
 	color: #98ABBA;
 	font-size: 12px;
+}
+
+.link .entry .tagline {
 	left: -56px;
-	margin-top: 5px;
+	margin-top: 5px;	
 	position: relative;
 	visibility: hidden;
 }
-.entry .tagline * {
+.link .entry .tagline * {
 	visibility: visible;
 }
 
