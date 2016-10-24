@@ -748,7 +748,7 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 	color: #98ABBA;
 	font-size: 12px;
 	left: -56px;
-	margin-top: 3px;
+	margin-top: 5px;
 	position: relative;
 	visibility: hidden;
 }
@@ -815,7 +815,7 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 /* Comment / Share / Report */
 .link .flat-list {
 	padding: 0;
-	margin-top: 5px;
+	margin-top: 7px;
 }
 
 .entry .buttons li {line-height: normal;}
