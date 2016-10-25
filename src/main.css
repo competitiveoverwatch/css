@@ -104,11 +104,16 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Subreddits Bar */
 #sr-header-area {
-	background: transparent;
+	background: rgba(28, 34, 72, 0.8);
 	border: none;
+	border-radius: 1px;
 	font-size: 10px;
 	height: 24px;
+	left: 16px;
 	line-height: 23px;
+	position: absolute;
+	right: 16px;
+	top: 8px;
 }
 
 #sr-header-area .width-clip {right: 302px;}
@@ -172,23 +177,24 @@ a.random.choice {
 /* My Subreddits Dropdown */
 #sr-header-area .drop-choices.srdrop {
 	border: none;
-	border-radius: 2px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.24);
+	border-radius: 1px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .24);
 	cursor: default;
 	opacity: 0;
-	top: 14px !important;
+	top: 15px !important;
 	transition: all .2s ease-in-out;
 	visibility: hidden;
 }
 
 #sr-header-area .drop-choices.srdrop.inuse {
 	opacity: 1;
-	top: 23px !important;
+	left: -4px !important;
+	top: 24px !important;
 	visibility: visible;
 }
 
 #sr-header-area .drop-choices.srdrop.inuse a:first-child {
-	border-radius: 2px 2px 0 0;
+	border-radius: 1px 1px 0 0;
 }
 
 #sr-header-area .drop-choices a.choice {
@@ -208,25 +214,34 @@ a.random.choice {
 	font-style: normal;
 }
 
-
 /* User Bar */
 #header-bottom-right {
-	position: absolute;
-	top:0px;
-	right: 0;
-	width: auto;
-	max-width: 300px;
-	height: 24px;
 	background: none;
-	font-size: 11px;
-	padding: 5px 8px 4px 2px;
+	height: 24px;
+	max-width: 300px;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+	width: auto;
 }
 
 body:not(.loggedin) #header-bottom-right {
 	max-width: 340px;
 }
+
 #header-bottom-right a {
-	color: rgba(255,255,255,0.7);
+	opacity: .7;
+	transition: opacity .12s ease-in-out;
+}
+#header-bottom-right a:hover {
+	opacity: 1;
+}
+
+.user {
+	visibility: hidden;
+}
+.user * {
+	visibility: visible;
 }
 
 .beta-hint a {
@@ -237,15 +252,17 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 .user .userkarma {
-	font-weight: normal;
-	color: rgba(255,255,255,0.4);
+	background: rgba(255, 255, 255, .7);
 	border: none;
-	font-size: 9px;
-	transition: all 0.15s ease;
+	border-radius: 2px;
+	color: rgba(0, 0, 0, .7);
+	cursor: default;
+	margin-right: 2px;
+	padding: 1px 4px;
+	transition: background .12s ease-in-out;
 }
-
-.separator, .user {
-	color: #FFF;
+.user .userkarma:hover {
+	background: rgba(255, 255, 255, .9);
 }
 
 #mail, #modmail {
@@ -254,9 +271,8 @@ body:not(.loggedin) #header-bottom-right {
 	background-image: url(%%spritesheet%%) !important;
 	background-repeat: no-repeat !important;
 	background-color: transparent;
-	transition: all 0.25s ease-in-out;
+	transition: all .2s ease-in-out;
 }
-
 
 #mail {
 	top: -2px;
@@ -4003,14 +4019,8 @@ body,
 
 
 .user, .user a, .user span, #RESSettingsButton, #header-bottom-right a {
-	color: #FFF !important;
-	font-size: 10px !important;
-	opacity: .6;
+	color: #FFF;
 	text-transform: uppercase;
-}
-
-.user, .user a, .user span {
-	opacity: .75 !important;
 }
 
 #header-bottom-right a.pref-lang {
