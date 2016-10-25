@@ -2746,10 +2746,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 295px;
+	margin-top: 293px;
 }
 .res.comments-page .side {
-	margin-top: 324px;
+	margin-top: 322px;
 }
 
 .comments-page .side .linkinfo {
@@ -2764,33 +2764,54 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 320px;
 }
 
-.comments-page .side .linkinfo .date {color: #98abba;}
-.comments-page .side .linkinfo .date:first-letter{text-transform: capitalize;}
+.comments-page .side .linkinfo .date span {
+	display: none;
+}
+
+.comments-page .side .linkinfo .date {
+	color: #98ABBA;
+}
+.comments-page .side .linkinfo .date:first-letter {
+	text-transform: capitalize;
+}
+
+.comments-page .side .linkinfo time:before {
+	content: "Submitted ";
+}
 
 .comments-page .side .linkinfo .score {
-	color: #292f34;
-	margin-top: 8px;
+	color: #555;
+	font-size: 13px;
+	margin-top: 5px;
 }
 
-.linkinfo .score .number {
+.linkinfo .score .number, .linkinfo .score .word {
 	font-size: 14px;
-}
-
-.linkinfo .score .word {
-	font-size: 14px;
+	font-weight: normal;
 }
 
 .comments-page .side .linkinfo .shortlink {
-	font-size: 90%;
-	margin-top: -2px;
+	margin-top: -6px;
 	visibility: hidden;
 }
+
+.comments-page .side .linkinfo .shortlink:before {
+	bottom: 10px;
+	color: #98ABBA;
+    content: "Share: ";
+    font-size: 13px;
+    position: absolute;
+    visibility: visible;
+}
+
 .comments-page .side .linkinfo .shortlink input {
 	background: rgba(0,0,0,.03);
 	border: none;
 	border-radius: 0 0 3px 3px;
+	font-family: inherit;
+	font-size: 13px;
 	margin: 0 -16px;
-	padding: 10px 16px;
+	padding: 10px 16px 10px 56px;
 	visibility: visible;
 	width: 320px;
 }
@@ -4897,18 +4918,9 @@ body:not(.res) .comments-page .side .titlebox {
 	margin-top: 100px;
 }
 
-.comments-page .side .linkinfo .score {
-	color: #555;
-	margin-top: 4px;
-}
-
 .linkinfo .shortlink {
 	font-size: 90%;
 	margin-top: 8px;
-}
-
-.linkinfo .shortlink input {
-	width: 192px;
 }
 
 .titlebox .tagline:after {
