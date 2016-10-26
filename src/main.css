@@ -128,7 +128,7 @@ body:not(.loggedin) #sr-header-area .width-clip {right: 340px;}
 #sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .separator, #sr-header-area .dropdown.srdrop .selected {
 	background: none;
 	color: rgba(255, 255, 255, .28);
-	transition: color .1s ease-in-out;
+	transition: color .08s ease-in-out;
 }
 
 #sr-header-area:hover .sr-bar a,
@@ -1713,7 +1713,6 @@ div.titlebox span.number:after {
 
 /* Submit Button */
 .morelink {
-	background: #0079d3;
 	height: 36px;
 	border: none;
 	border-radius: 3px;
@@ -1728,23 +1727,13 @@ div.titlebox span.number:after {
 }
 
 .morelink a {
-	color: #FFF;
+	color: rgba(255, 255, 255, .96);
 	font: bold 14px/2.57 "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 	letter-spacing: -.4px;
 }
 
-.morelink:hover {
-	background: #158be2;
-	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)
-}
-
-.res-nightmode .morelink:hover a {
+.morelink:over a {
 	color: #FFF;
-}
-
-.morelink:active {
-	background: #0066b2;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
 }
 
 .sidebox.submit.submit-text .morelink {margin-left: 168px;}
@@ -1775,11 +1764,6 @@ div.titlebox span.number:after {
 	z-index: -1;
 }
 
-/* Colored glow only if not in RES night mode */
-body:not(.res-nightmode) .morelink:hover {
-	box-shadow: 0 0 8px rgba(57,209,255,.2);
-}
-
 
 /* Login form */
 .login-form-side {
@@ -1792,7 +1776,6 @@ body:not(.res-nightmode) .morelink:hover {
 .login-form-side input[type=text] {margin-left: 0px; margin-right: 16px;}
 
 .login-form-side button.btn {margin-right: -3px;}
-
 
 
 /* Titlebox "Info" */
@@ -2808,6 +2791,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background: rgba(0,0,0,.03);
 	border: none;
 	border-radius: 0 0 3px 3px;
+	color: #98ABBA;
 	font-family: inherit;
 	font-size: 13px;
 	margin: 0 -16px;
@@ -4070,23 +4054,21 @@ button {
 	cursor: pointer !important;
 }
 
-.morelink, .submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
-	background: #1CBEF0;
+/* Background colour for most buttons (matches navigation item selected state) */
+.morelink, .morelink:hover, .submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
+	background: #4794E0;
 }
 
 body .btn, body button, .btn:hover, button:hover {
 	box-shadow: none;
 }
 .morelink:hover, .btn:hover, body button:hover {
-	background: #39D1FF;
-}
-.morelink:active , .btn:active , body button:active {
-	background: #0288D1;
+	opacity: .9;
 }
 
 /* Link color */
 .thing .title.loggedin.click, .thing .title.click, .link .entry .buttons li a.comments,.link .entry .buttons li a:hover, .titlebox .tagline a.flairselectbtn, .md a,
-.wiki-page .wiki-page-content .md.wiki h4, .sidebox.create .morelink a, a, 
+.wiki-page .wiki-page-content .md.wiki h4, a, 
 .wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title, 
 .combined-search-page .search-result a, .combined-search-page .search-result a>mark, .combined-search-page .search-result .search-comments, 
 .flairselector h2, .linefield .title, body .content .sitetable .link .title a:hover, .link .entry .tagline a:hover, .comment .author:hover, .md a:visited {color:#24A0ED;}
