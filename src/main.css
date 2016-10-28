@@ -779,6 +779,13 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 
 .link .entry .tagline time, .link .entry .tagline span {cursor:default}
 
+.link .entry .tagline time {
+	display: inline-block;
+}
+.link .entry .tagline time:first-letter {
+	text-transform: uppercase;
+}
+
 .edited-timestamp[title]:after {font-size: 100%}
 
 .link .entry .tagline a:hover {text-decoration: none}
@@ -869,20 +876,17 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 }
 
 .nsfw-stamp acronym {
-	background: #ea4876;
+	background: #EA4876;
 	border-radius: 0;
-	color:#fff;
-	cursor: help;
+	color: #FFF;
 	padding: 2px 3px;
 	position: relative;
 	top: -1px;
 }
 
-
 .link .entry .buttons li a.comments {
-	color: #24a0ed;
+	color: #24A0ED;
 	font-weight: bold !important;
-	transition: all 0.25s ease-in-out !important;
 }
 
 .link .entry li .comments:hover {
@@ -896,7 +900,7 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 	left: 40%;
 	margin: 0;
 	padding: 24px;
-	background: #fff;
+	background: #FFF;
 	z-index: 100;
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
 	border: none;
@@ -1328,14 +1332,13 @@ ul.report-reasons {
 
 				.toggleButton {
 					line-height: 0.8;
-
 				}
 
 					.toggleButton .toggleOn {
 						border-radius: 0px;
 						border: 1px solid #4F8EF7;
 						background-color: #4F8EF7;
-						color: #fff;
+						color: #FFF;
 						text-transform: capitalize;
 					}
 
@@ -1358,9 +1361,8 @@ ul.report-reasons {
 		}
 
 			.dropdown.lightdrop .selected {
-				color: #292f34;
+				color: #292F34;
 				text-decoration: none;
-				cursor: pointer;
 				padding: 8px 12px;
 				border: 1px solid #edf1f3;
 				border-radius: 2px;
@@ -1499,12 +1501,11 @@ ul.report-reasons {
 
 /* Subscibers & Here right now */
 .titlebox span.subscribers {
-	color: #555;
-	display: block;
-	font-size: 12px;
-	margin-top: 12px;
+	color: #333;
+	font-size: 13px;
+	margin: 12px 0 0 42px;
 	order: 0;
-	text-align: center;
+	width: auto;
 	z-index: 1;
 }
 
@@ -1512,19 +1513,22 @@ div.titlebox span.word {
 	display: none;
 }
 .titlebox .users-online {
-	display: block;
-	margin: 8px auto 2px;
+	color: #AAA;
+	font-size: 12px;
+	margin: 13px 0 0 4px;
 	order: 0;
-	text-align: center;
+	width: auto;
 }
 .titlebox .users-online:before {
 	display: none;
 }
 div.titlebox span.number:after {
-	content: " climbing the ladder";
+	content: " climbing the ladder,";
+	cursor: default;
 }
 .titlebox .users-online .number:after {
 	content: " falling off it";
+	cursor: default;
 }
 
 .titlebox .users-online, .titlebox .number {
@@ -1534,7 +1538,6 @@ div.titlebox span.number:after {
 
 /* Subscribe Button */
 .titlebox .fancy-toggle-button {
-	border: 1px solid rgba(0,0,0,.05);
 	border-radius: 3px;
 	cursor: pointer;
 	display: block;
@@ -1805,7 +1808,7 @@ div.titlebox span.number:after {
 
 .titlebox .tagline {
 	font-size: 12px;
-	margin: 0 0 12px;
+	margin: 2px 0 12px;
 	visibility: hidden;
 }
 
@@ -3224,8 +3227,8 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 	.linefield .linefield-content {padding: 0;}
 
 		.linefield .title:first-letter, .linefield label:first-letter {text-transform: capitalize;}
-		.usertext .bottom-area a {color: #98abba;}
-		.usertext .bottom-area a:hover {color: #24a0ed;}
+		.usertext .bottom-area a {color: #98ABBA;}
+		.usertext .bottom-area a:hover {color: #24A0ED;}
 
 .pretty-form {padding-top: 24px;}
 .fancy-settings h1, .create-promotion h1 { color: rgba(255,255,255,.8);}
@@ -3235,7 +3238,7 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 	border: none;
 }
 
-.tabpane-content .flairrow a.author {color: #98abba;}
+.tabpane-content .flairrow a.author {color: #98ABBA;}
 .tabpane-content .tagline a {color: #292f34;}
 
 .tabpane-content .thing .title {overflow: visible;}
@@ -3297,7 +3300,7 @@ pre {
 	height: 36px;
 	padding: 0 16px;
 	text-transform: uppercase;
-	transition: box-shadow .2s cubic-bezier(.4,0,1,1),background .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+	transition: box-shadow .14s cubic-bezier(.4,0,1,1),background .14s cubic-bezier(.4,0,.2,1),color .14s cubic-bezier(.4,0,.2,1);
 }
 
 .subreddit-rules-page .subreddit-rule-buttons button:hover, .subreddit-rules-page .subreddit-rule-add-form-buttons button:hover, .subreddit-rules-page .form-buttons button:hover, .subreddit-rule-delete-confirmation button:hover {
@@ -3420,7 +3423,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }*/
 
 .titlebox .tagline a.author {
+	color: #292F34;
 	display: inline-block;
+	font-weight: bold;
+	margin-right: 0;
 }
 /* User flairs for teams */
 .flair-fan {
@@ -4056,7 +4062,7 @@ button {
 
 /* Background colour for most buttons (matches navigation item selected state) */
 .morelink, .morelink:hover, .submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
-	background: #4794E0;
+	background: #439BDA;
 }
 
 body .btn, body button, .btn:hover, button:hover {
@@ -4131,18 +4137,6 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	border-radius: 3px;
 }
 
-body:not(.res-nightmode) .titlebox .subscribers .number{
-	color: #5D5D5D;
-}
-
-.titlebox .subscribers .number {
-	font-size: 14px;
-}
-
-.titlebox .users-online .number {
-	color: #888;
-}
-
 .titlebox .users-online .number:before {
 	display: none;
 }
@@ -4180,8 +4174,8 @@ body:not(.res-nightmode) .titlebox .subscribers .number{
 	top: 58px;
 }
 
-.titlebox .fancy-toggle-button:hover {
-	opacity: .9;
+.hover-bubble.multi-selector label:hover {
+	background: none;
 }
 
 .titlebox .fancy-toggle-button a:hover, .titlebox .fancy-toggle-button a:active {
@@ -4190,27 +4184,27 @@ body:not(.res-nightmode) .titlebox .subscribers .number{
 
 /* Subscribed to subreddit */
 .subscriber .titlebox .fancy-toggle-button {
-	background: rgba(0,0,0,.01);
-	transition: background .2s ease-in-out;
+	background: rgba(0, 0, 0, .03);
+	transition: background .1s ease-in-out;
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
-	color: #ADADAD;
+	color: #AAA;
 	text-transform: uppercase;
-}
-
-.subscriber .titlebox .fancy-toggle-button:hover {
-	background: rgba(0,0,0,.06)
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove:hover, .subscriber .titlebox .fancy-toggle-button .active.remove:active {
 	background: none;
-	color: #333;
+	color: #BBB;
+}
+
+.titlebox .fancy-toggle-button:hover {
+	opacity: .9;
 }
 
 /* "Show my flair on this subreddit" toggle */
 .side .titlebox .toggle {
-	font-size: 11px;
+	font-size: 12px;
 	order: 2;
 }
 
@@ -4742,28 +4736,20 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .usertext button.save {
-	background: #0079D3;
 	font-size: 11px;
-	transition: background .2s ease-in-out, opacity .2s ease-in-out;
+	transition: opacity .1s ease-in-out;
 }
 .usertext button.save:hover {
 	opacity: .9;
 }
 
-.usertext button.save:active {
-	background: #0172C5;
-}
-
 .usertext button.cancel {
 	background: #A9A9A9;
-	transition: background .2s ease-in-out;
+	transition: background .1s ease-in-out;
 }
 
 .usertext button.cancel:hover {
 	background: #BBB;
-}
-.usertext button.cancel:active {
-	background: #999;
 }
 
 .siteTable .usertext button {
@@ -4875,14 +4861,25 @@ RESUserTag a {
 }
 
 .side .titlebox form.flairtoggle {
-	margin-top: 3px;
+	margin-top: 10px;
 }
 
 .side .titlebox .tagline a.flairselectbtn {
-	color: #585858;
+	background: #EEE;
+	border-radius: 2px;
+	color: #777;
+	cursor: default;
 	font-size: 11px;
-	padding: 0 1px;
+	font-weight: bold;
+	padding: 2px 8px;
+	position: absolute;
+	right: 32px;
 	text-transform: uppercase;
+	transition: opacity .09s ease-in-out;
+}
+.side .titlebox .tagline a.flairselectbtn:hover {
+	opacity: .8;
+	text-decoration: none;
 }
 
 .titlebox .bottom {
