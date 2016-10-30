@@ -765,13 +765,14 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 	font-size: 12px;
 }
 
-.link .entry .tagline {
+/* For English languages (en-gb/en-us/en) */
+[lang^=en] .link .entry .tagline {
 	left: -56px;
 	margin-top: 5px;	
 	position: relative;
 	visibility: hidden;
 }
-.link .entry .tagline * {
+[lang^=en] .link .entry .tagline * {
 	visibility: visible;
 }
 
@@ -782,19 +783,19 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 .link .entry .tagline time {
 	display: inline-block;
 }
-.link .entry .tagline time:first-letter {
+[lang^=en] .link .entry .tagline time:first-letter {
 	text-transform: uppercase;
 }
 
 .edited-timestamp[title]:after {font-size: 100%}
 
 .link .entry .tagline a:hover {text-decoration: none}
-.link .entry .tagline a.author:before {
+[lang^=en] .link .entry .tagline a.author:before {
 	content: "by ";
 	color: #98ABBA !important;
-	font-weight:normal;
+	font-weight: normal;
 }
-.link .entry .tagline a.author {
+[lang^=en] .link .entry .tagline a.author {
 	margin-left: -15px;
 	margin-right: inherit;
 }
