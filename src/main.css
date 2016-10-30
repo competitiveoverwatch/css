@@ -2873,10 +2873,15 @@ body.res.comments-page .side .linkinfo .score {
 	bottom: 0;
 }
 
-.submit-page .side, .submit-page .content h1, #suggested-reddits {display: none;}
+.submit-page .content.md-container .md ul {
+	padding-left: 32px;
+}
+
+.submit-page .side, .submit-page .content h1 {
+	display: none;
+}
 
 .submit-page #newlink.submit.content {
-	width: 524px;
 	margin: 0 auto;
 }
 
@@ -2937,9 +2942,8 @@ body.res.comments-page .side .linkinfo .score {
 .submit-page .formtabs-content {border-top: 0px;padding-top: 0;}
 
 .submit-page .roundfield {
-	padding: 16px;
-	width: 524px;
-	border:none;
+	border: none;
+	position: relative;
 }
 
 .submit-page .roundfield span.title {
@@ -2964,7 +2968,7 @@ body.res.comments-page .side .linkinfo .score {
 	background: 0;
 	border: none;
 	box-shadow: none;
-	margin-top: 32px;
+	margin-top: 18px;
 	margin-bottom: 0;
 	padding: 0;
 }
@@ -2973,9 +2977,16 @@ body.res.comments-page .side .linkinfo .score {
 	text-transform: uppercase;
 }
 
+.content.submit .info-notice a {
+	font-weight: normal;
+	text-decoration: none;
+}
+
 #items-required {
+	color: rgba(255, 0, 0, .9);
+	font-size: 12px;
 	padding-bottom: 0px !important;
-	padding-top: 15px;
+	padding-top: 8px;
 }
 
 .submit-page #newlink.submit.content .btn {
@@ -3005,6 +3016,20 @@ body #newlink-with-image-upload .file-upload-button {
 #new-link-image-input > div:first-of-type {
 	display: inline-block;
 	padding-right: 16px;
+}
+
+/* Hide choose a subreddit */
+.submit-page #reddit-field {
+	display: none;
+}
+
+/* Hide the title of the box which has 'Send replies to my inbox' */
+.formtabs-content>div:nth-last-of-type(2) .title {
+	display: none;
+}
+/* ..and shuffle checkbox up */
+.formtabs-content>div:nth-last-of-type(2) .roundfield-content {
+	margin: -6px 0 -2px;
 }
 
 /* Search Page */
@@ -3206,20 +3231,20 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 .searchfacets h4.title:first-letter {text-transform: capitalize;}
 
 .searchfacets .list {margin: 0;}
-.searchfacets .facet.count {color: #98abba;font-weight: normal;}
+.searchfacets .facet.count {color: #98ABBA;font-weight: normal;}
 .searchfacets .facet.count:hover {text-decoration: none;}
 
 /* Subreddit Settings Page + Flair Page + Stylesheet Page */
 .linefield, .linefield.mobile {
-	background: #fff;
-	color: #98abba;
+	background: #FFF;
+	color: #98ABBA;
 	margin: 0 0 16px 0;
 	width: 528px;
 	border: none;
 }
 
 	.linefield .title {
-		color: #24a0ed;
+		color: #24A0ED;
 		text-transform: capitalize;
 		padding: 0;
 	}
@@ -3227,7 +3252,6 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 	.linefield .linefield-content {padding: 0;}
 
 		.linefield .title:first-letter, .linefield label:first-letter {text-transform: capitalize;}
-		.usertext .bottom-area a {color: #98ABBA;}
 		.usertext .bottom-area a:hover {color: #24A0ED;}
 
 .pretty-form {padding-top: 24px;}
@@ -4926,7 +4950,10 @@ body.submit-page .roundfield input:not([type=checkbox]),
 }
 
 .submit-page label[for=sendreplies] {
-	text-transform: capitalize;
+	display: inline-block;
+}
+.submit-page label[for=sendreplies]:first-letter {
+	text-transform: uppercase;
 }
 
 .submit-page .submit_text.enabled.roundfield {
@@ -4985,6 +5012,9 @@ body #newlink-with-image-upload .image-upload-drop-target {
 
 .usertext .bottom-area {
 	font-weight: bold;
+	position: absolute;
+	right: 18px;
+	top: 18px;
 	text-transform: uppercase;
 	width: 100%;
 }
