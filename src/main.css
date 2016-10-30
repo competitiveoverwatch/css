@@ -4058,6 +4058,10 @@ body,
 	text-transform: uppercase;
 }
 
+.user a {
+	margin-left: 12px;
+}
+
 #header-bottom-right a.pref-lang {
 	background-position: -32px -1px;
 	top: -2px;
@@ -4165,15 +4169,24 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	display: none;
 }
 
-/* Popup box to add sub to a multireddit when hovering on subscribe button */
+/* Popup box to add sub to a multireddit when hovering on subscribe button, beta popup */
 .hover-bubble {
 	box-shadow: 0 1px 6px rgba(0,0,0,.24);
 }
 
-.hover-bubble.multi-selector {
+.hover-bubble {
+	border: none;
 	border-radius: 2px;
 	font-size: 11px;
 	padding: 11px 4px;
+}
+#beta-help {
+	font-size: 10px;
+	margin-left: 8px;
+}
+
+.hover-bubble a {
+	font-weight: normal;
 }
 
 .hover-bubble.multi-selector .title a {
@@ -5012,11 +5025,14 @@ body #newlink-with-image-upload .image-upload-drop-target {
 
 .usertext .bottom-area {
 	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.submit-page .usertext .bottom-area {
 	position: absolute;
 	right: 18px;
 	top: 18px;
-	text-transform: uppercase;
-	width: 100%;
 }
 
 body.submit-page .content input, .submit-page .content textarea {
