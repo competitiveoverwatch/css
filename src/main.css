@@ -116,10 +116,16 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	top: 8px;
 }
 
-#sr-header-area .width-clip {right: 302px;}
-body:not(.loggedin) #sr-header-area .width-clip {right: 340px;}
+#sr-header-area .width-clip {
+	right: 302px;
+}
+body:not(.loggedin) #sr-header-area .width-clip {
+	right: 340px;
+}
 
-#sr-header-area .sr-list {margin-right: 38px;}
+#sr-header-area .sr-list {
+	margin-right: 44px;
+}
 
 #sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .dropdown.srdrop .selected {
 	background: none;
@@ -129,13 +135,6 @@ body:not(.loggedin) #sr-header-area .width-clip {right: 340px;}
 	background: none;
 	color: rgba(255, 255, 255, .28);
 	transition: color .08s ease-in-out;
-}
-
-#sr-header-area:hover .sr-bar a,
-#sr-header-area:hover #sr-more-link,
-#sr-header-area:hover .seperator,
-#sr-header-area:hover .dropdown.srdrop .selected {
-	color: rgba(255, 255, 255, .32);
 }
 
 .res #RESShortcuts {
@@ -514,7 +513,7 @@ body >.content .link .rank, .rank-spacer {
 .link .midcol {
 	height: 56px;
 	overflow: visible;
-	margin: 0 10px 0 0;
+	margin: 3px 10px 0 0;
 	width: 32px !important;
 
 }
@@ -537,27 +536,30 @@ body >.content .link .rank, .rank-spacer {
 }
 
 .arrow {
-	margin: 0;
 	background-image: url(%%spritesheet%%) !important;
-	width: 33px;
 	border-radius: 2px;
-	transition: background-color 0.25s ease;
+	cursor: default;
+	margin: 0;
+	opacity: .8;
+	transition: background-color 0.2s ease-in-out;
+	width: 33px;
 }
 
 .arrow:hover {
-	opacity: .9;
+	opacity: 1;
 }
 
 /* Upvotes */
 .arrow.up {
 	height: 20px;
 	background-position: -0px -80px;
-	transition: background-color 0.25s ease;
+	transition: background-color 0.2s ease-in-out;
 }
 
 .arrow.upmod {
 	height: 20px;
 	background-position: -32px -78px;
+	opacity: 1 !important;
 	position: relative;
 	width: 32px;
 }
@@ -571,7 +573,7 @@ body >.content .link .rank, .rank-spacer {
 	opacity: 1;
 	z-index:100;
 	content: " ";
-	background:#ff5500;
+	background:#FF5500;
 	border-radius: 28px;
 	animation: upvote 0.35s ease-out forwards;
 }
@@ -580,11 +582,12 @@ body >.content .link .rank, .rank-spacer {
 .arrow.down {
 	height: 20px;
 	background-position: -64px -80px;
-	transition: background-color 0.25s ease;
+	transition: background-color 0.2s ease-in-out;
 }
 .arrow.downmod {
 	height: 20px;
 	background-position: -0px -100px;
+	opacity: 1 !important;
 	width: 32px;
 }
 
@@ -658,7 +661,7 @@ body >.content .link .rank, .rank-spacer {
 
 body .content .sitetable .link .title a:hover {color: #24a0ed;}
 
-/*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#24a0ed;}
+/*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#057ED6;}
 /*Visited  */   .content .thing .title:visited, .content .thing.visited .title {color: #738491}
 /*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#24A0ED}
 
@@ -851,12 +854,9 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 	color: rgba(163, 171, 177, .5);
 	font-size: 12px;
 	font-weight: normal;
-	padding: 2px 6px;
-	transition: color .08s ease-in-out;
-}
-
-.link:hover .entry .buttons li a {
-	color: rgb(163, 171, 177);
+	margin: 2px 6px;
+	padding: 0;
+	transition: color .05s ease-in-out;
 }
 
 .link .entry .buttons li a:hover {
@@ -886,7 +886,6 @@ body .content .sitetable .link .title a:hover {color: #24a0ed;}
 }
 
 .link .entry .buttons li a.comments {
-	color: #24A0ED;
 	font-weight: bold !important;
 }
 
@@ -1256,10 +1255,10 @@ ul.report-reasons {
 			/* RES Selection */
 			.res .RES-keyNav-activeElement {
 				outline: 0 dashed #EEEEEE !important;
-				transition: all 0.15s ease;
+				transition: all .15s ease-in-out;
 			}
 
-				.res .entry {transition: all 0.10s ease;}
+				.res .entry {transition: all 0.10s ease-in-out;}
 
 				div.RES-keyNav-activeElement,
 				div.commentarea div.RES-keyNav-activeElement.entry div.noncollapsed {
@@ -1374,64 +1373,73 @@ ul.report-reasons {
 				.dropdown.lightdrop .selected:after {content: " ▼";}
 				.drop-choices.lightdrop {margin-top: 8px;}
 
-			/* RES Popup */
-			.guider {
-				border: none;
-				box-shadow: 0px 2px 3px #DDD;
-			}
+/* RES Popup */
+.guider {
+	border: none;
+	box-shadow: 0px 2px 3px #DDD;
+}
 
-					.guider_content h1 {color: #4F8EF7;}
+.guider_content h1 {color: #4F8EF7;}
 
-					.guider_button {
-						font-size: 11px;
-						border: none;
-						background-image: none;
-						background-color: #4F8EF7;
-						transition: all 0.15s ease;
-					}
+.guider_button {
+	font-size: 11px;
+	border: none;
+	background-image: none;
+	background-color: #4F8EF7;
+	transition: all 0.15s ease;
+}
 
-						.guider_button:hover {background-color: rgba(79, 142, 247, 0.75);}
+.guider_button:hover {background-color: rgba(79, 142, 247, 0.75);}
 
-						.x_button {
-							transition: all 0.25s ease;
-							box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.00);
-						}
+.x_button {
+	transition: box-shadow .2s ease-in-out;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0);
+}
 
-							.x_button:hover {box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);}
+.x_button:hover {box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);}
 
-		/* Infobar (Default yellow announcement bar) */
-		.content .infobar {
-			margin: 0px 0px 16px 0px;
-			padding: 8px 16px;
-			line-height: 26px;
-			border: none;
-			background-color: #0079d3;
-			color: #fff;
-			border-radius: 2px;
-		}
+/* Infobar (Default yellow announcement bar) */
+.content .infobar {
+	background-color: #0079D3;
+	border: none;
+	border-radius: 2px;
+	color: #FFF;
+	line-height: 26px;
+	margin: 0 0 16px 0;
+	padding: 8px 16px;
+}
 
-			.infobar .md {color: #fff;}
+.infobar .md {color: #FFF;}
 
-			.content .infobar:first-letter {text-transform: capitalize;}
+.content .infobar:first-letter {text-transform: capitalize;}
 
-			/* Welcome infobar */
-			.content .infobar.welcome {line-height: inherit;height: 86px;}
-				.content .infobar.welcome h1 {color: #4d5763;}
+/* Welcome infobar */
+.content .infobar.welcome {
+	line-height: inherit;
+	height: 86px;
+}
 
-			.commentarea .infobar {
-				line-height: 18px;
-				margin: 8px 0 16px 0;
-			}
+.content .infobar.welcome h1 {
+	color: #4D5763;
+}
 
-				.commentarea .infobar a {color: rgba(0,0,0,0.64);font-weight: bold;}
+.commentarea .infobar {
+	line-height: 18px;
+	margin: 8px 0 16px 0;
+}
+
+.commentarea .infobar a {
+	color: rgba(0,0,0,0.64);
+	font-weight: bold;
+}
 
 /* Updated Reddit Infobar */
 .reddit-infobar.with-icon {
-	background: #fff;
+	background: #FFF;
 	border: none;
-	border-radius: 2px;
+	border-radius: 3px;
 	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
-	margin: 0 0 16px;
+	margin: 0 0 8px;
 
 }
 
@@ -1770,11 +1778,6 @@ div.titlebox span.number:after {
 
 
 /* Login form */
-.login-form-side {
-	border: none;
-	box-shadow: none;
-	padding: 0;
-}
 
 .login-form-side input[type=text], .login-form-side input[type=password] {width: 136px;margin: 0;}
 .login-form-side input[type=text] {margin-left: 0px; margin-right: 16px;}
@@ -2481,7 +2484,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .commentarea .thing {
 	margin: 0 0 12px 0;
-	padding: 8px 16px 8px 0;
 }
 
 .res .commentarea .thing {
@@ -2491,15 +2493,15 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .commentarea .child .thing {
 	box-shadow: none;
 	padding: 4px 4px 4px 16px;
-	margin: 12px 0 0 0;
+	margin: 8px 0 0 0;
 	position: relative;
 }
 
 .commentarea .comment .midcol {
 	margin-top: 2px;
-	width: 32px;
-	margin-right: 6px;
+	margin-right: 4px;
 	overflow: visible;
+	width: 32px;
 }
 
 .comment .child, .comment .showreplies {
@@ -2516,6 +2518,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .comment .midcol .arrow {
 	margin-left: 0;
 	margin-bottom: 4px;
+	opacity: 0.4;
+	transition: opacity .1s ease-in-out;
+}
+.comment .midcol .arrow:hover {
+	opacity: 1;
 }
 
 .comment .entry .tagline {
@@ -2524,25 +2531,25 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comments-page .comment .expand {
-	background: rgba(0,0,0,.01);
+	background: rgba(0, 0, 0, .01);
 	border-radius: 3px 0 0 3px;
 	bottom: 0;
+	cursor: default;
 	font-size: 10px;
 	left: 0;
 	padding: 4px;
 	position: absolute;
 	top: 0;
-	transition: background .2s ease-in-out, color .2s ease-in-out;
+	transition: background .06s ease-in-out, color .06s ease-in-out;
 }
 
 .comments-page .comment .expand:hover {
-	background: #0288D1;
+	background: #555;
 	color: #FFF;
 	text-decoration: none;
 }
 
 .commentarea>.sitetable>.comment {
-	padding-left: 16px !important;
 	position: relative;
 }
 
@@ -2577,24 +2584,23 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comment .author {
-	color: #292f34;
+	color: #292F34;
 	margin-right: 0;
 	font-weight: bold;
 }
 
 .comment .author:hover {
-	color: #24a0ed;
+	color: #24A0ED;
 	text-decoration: none;
 }
 
 .tagline .moderator, .green {
-	color: #27b062 !important;
+	color: #27B062 !important;
 	font-weight: bold;
 }
 
 .tagline .submitter {
 	font-weight: bold;
-	color: #24a0ed;
 }
 
 
@@ -2604,7 +2610,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	border-radius: 1px;
 	background-color: #4F8EF7 !important;
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-	transition: all 0.15s ease;
+	transition: all 0.15s ease-in-out;
 }
 .res .thing .tagline .author.submitter:hover {
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -2703,25 +2709,24 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Reply / Share / report */
 .comment .flat-list li a {
-	color: #98abba;
-	font-weight: normal;
+	color: #98ABBA;
 	font-size: 11px;
 }
 
 .comment .flat-list li a:hover {
-	color: #24a0ed;
+	color: #057ED6;
 	text-decoration: none;
 }
 
 .comment .flat-list li a[onclick*="reply"] {
-	color: #24a0ed;
+	color: #057ED6;
 	font-weight: bold;
 	font-size: 11px;
 }
 
 
 .deepthread a {
-	color: #24a0ed;
+	color: #057ED6;
 	display: inline-block;
 }
 .deepthread a:first-letter {
@@ -3999,11 +4004,11 @@ height: inherit;
 /* Shadows and cards */
 body.listing-page>.content, body.other-discussions-page>.content, .comments-page .link, .commentarea>.sitetable>.comment, #images, .combined-search-page>.content, 
 .stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo, #ad-frame,
-.wiki-page .wiki-page-content, .linefield, .submit-page .roundfield, .login-form-side {
+.wiki-page .wiki-page-content, .linefield, .submit-page .roundfield {
 	background: #FFF;
 	padding: 16px;
 	border-radius: 2px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
 }
 
 /* Experimental Toast Animation */
@@ -4106,14 +4111,10 @@ body .btn, body button, .btn:hover, button:hover {
 .wiki-page .wiki-page-content .md.wiki h4, a, 
 .wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title, 
 .combined-search-page .search-result a, .combined-search-page .search-result a>mark, .combined-search-page .search-result .search-comments, 
-.flairselector h2, .linefield .title, body .content .sitetable .link .title a:hover, .link .entry .tagline a:hover, .comment .author:hover, .md a:visited {color:#24A0ED;}
-
-.thing .title.loggedin, .thing .title {
-	color: #057ED6;
-}
+.flairselector h2, .linefield .title, body .content .sitetable .link .title a:hover, .link .entry .tagline a:hover, .comment .author:hover, .md a:visited {color:#057ED6;}
 
 .author {
-	color: #292F34;
+	color: #057ED6;
 }
 
 /* Different padding for RES */
@@ -4492,6 +4493,7 @@ body.listing-page>.content {
 	letter-spacing: -.2px;
 	margin-top: 1px;
 	max-width: none;
+	opacity: .9;
 	padding: 2px 6px;
 	text-transform: uppercase;
 }
@@ -4885,11 +4887,11 @@ RESUserTag a {
 }
 
 .comment .child {
-	margin-left: 16px;
+	margin-left: 18px;
 }
 
 .new-comment .usertext-body {
-	border: 1px solid rgba(0,0,0,.06);
+	border: 1px solid rgba(0, 0, 0, .06);
 	border-radius: 2px;
 	margin: 2px 0;
 }
