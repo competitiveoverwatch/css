@@ -157,6 +157,7 @@ a.random.choice {
 }
 
 #sr-header-area .dropdown.srdrop .selected {
+	cursor: default !important;
 	margin: 0 12px 0 8px;
 	padding: 0;
 	background: none;
@@ -166,7 +167,6 @@ a.random.choice {
 
 #sr-header-area .dropdown.srdrop .selected:after {
 	content: "≡";
-	cursor: default;
 	display: inline-block;
 	font-size: 15px;
 	margin: 0 0 0 -76px;
