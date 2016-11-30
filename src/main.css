@@ -4640,6 +4640,131 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .md a[href="#map-lijiang"] {background-position: -110px -237px}
 .md a[href="#map-nepal"] {background-position: -220px -237px}
 
+/* Checkmark tags */
+.md a[href*="#check-"] {
+	background: url(%%tags-check%%);
+	cursor: default;
+	display: inline-block;
+	font-size: 0;
+	height: 12px;
+	pointer-events: none;
+	width: 12px;
+	background-size: 24px 12px;
+}
+.md a[href="#check-yes"] {background-position: 0 0}
+.md a[href="#check-no"] {background-position: -12px 0}
+
+/* Team tags */
+.md a[href*="#team-"] {
+	background: url(%%flairs-teams%%);
+	cursor: default;
+	display: inline-block;
+	font-size: 0;
+	height: 22px;
+	pointer-events: none;
+	width: 22px;
+}
+.md a[href="#team-envyus"] {background-position: 0 0}
+.md a[href="#team-dignitas"] {background-position: -22px 0; width: 19px}
+.md a[href="#team-nrg"] {background-position: -41px 0; width: 30px}
+.md a[href="#team-nip"] {background-position:  -71px 0}
+.md a[href="#team-method"] {background-position:  -93px 0; height: 21px; width: 21px}
+.md a[href="#team-cloud9"] {background-position: 0 -22px; width: 31px}
+.md a[href="#team-rogue"] {background-position: -31px -22px; height: 24px; width: 19px}
+.md a[href="#team-luminosity"] {background-position: -50px -22px}
+.md a[href="#team-anox"] {background-position: -72px -22px; width: 21px}
+.md a[href="#team-reunited"] {background-position: 0 -44px}
+.md a[href="#team-col"] {background-position: -32px -46px; height: 20px; width: 23px}
+.md a[href="#team-invictus"] {background-position: -48px -44px; width: 23px}
+.md a[href="#team-nga"] {background-position: -73px -44px; height: 22x; width: 31px}
+.md a[href="#team-misfits"] {background-position: 0 -66px; width: 20px}
+.md a[href="#team-fnatic"] {background-position: -22px -68px; width: 24px}
+.md a[href="#team-tempo"] {background-position: -46px -66px; width: 31px}
+.md a[href="#team-liquid"] {background-position: -77px -66px}
+.md a[href="#team-lunatic"] {background-position: 0 -96px; height: 20px}
+.md a[href="#team-freecs-red"] {background-position: -22px -90px}
+.md a[href="#team-faze"] {background-position: -44px -90px}
+.md a[href="#team-freecs-blue"] {background-position: -66px -90px}
+.md a[href="#team-immortals"] {background-position: -86px -90px}
+
+/* Flag tags */
+.md a[href*="#flags-"] {
+	background: url(%%tags-flags%%);
+	cursor: default;
+	display: inline-block;
+	font-size: 0;
+	height: 11px;
+	pointer-events: none;
+	width: 16px;
+}
+.md a[href="#flags-ad"] {background-position: -16px 0}
+.md a[href="#flags-al"] {background-position: -32px 0}
+.md a[href="#flags-at"] {background-position: -48px 0}
+.md a[href="#flags-ar"] {background-position: -112px -77px}
+.md a[href="#flags-au"] {background-position: -80px -66px}
+.md a[href="#flags-ba"] {background-position: -64px 0}
+.md a[href="#flags-be"] {background-position: -80px 0}
+.md a[href="#flags-bg"] {background-position: -96px 0}
+.md a[href="#flags-br"] {background-position: -112px -66px}
+.md a[href="#flags-by"] {background-position: -112px 0}
+.md a[href="#flags-ca"] {background-position: 0 -11px}
+.md a[href="#flags-ch"] {background-position: -16px -11px}
+.md a[href="#flags-cn"] {background-position: -16px -77px}
+.md a[href="#flags-cz"] {background-position: -32px -11px}
+.md a[href="#flags-da"] {background-position: -64px -11px}
+.md a[href="#flags-dk"] {background-position: -64px -11px}
+.md a[href="#flags-de"] {background-position: -48px -11px}
+.md a[href="#flags-ec"] {background-position: -80px -11px}
+.md a[href="#flags-ee"] {background-position: -96px -11px}
+.md a[href="#flags-en"] {background-position: -48px -22px}
+.md a[href="#flags-es"] {background-position: -112px -11px}
+.md a[href="#flags-eu"] {background-position: -0px -77px}
+.md a[href="#flags-fi"] {background-position: 0 -22px}
+.md a[href="#flags-fo"] {background-position: -16px -22px}
+.md a[href="#flags-fr"] {background-position: -32px -22px}
+.md a[href="#flags-gb"] {background-position: -48px -22px}
+.md a[href="#flags-gf"] {background-position: -64px -22px}
+.md a[href="#flags-gi"] {background-position: -80px -22px}
+.md a[href="#flags-gr"] {background-position: -96px -22px}
+.md a[href="#flags-hr"] {background-position: -112px -22px}
+.md a[href="#flags-hu"] {background-position: 0 -33px}
+.md a[href="#flags-ie"] {background-position: -16px -33px}
+.md a[href="#flags-in"] {background-position: -64px -77px}
+.md a[href="#flags-is"] {background-position: -32px -33px}
+.md a[href="#flags-it"] {background-position: -48px -33px}
+.md a[href="#flags-ko"] {background-position: -48px -77px}
+.md a[href="#flags-kz"] {background-position: -96px -66px}
+.md a[href="#flags-li"] {background-position: -64px -33px}
+.md a[href="#flags-lt"] {background-position: -80px -33px}
+.md a[href="#flags-lu"] {background-position: -96px -33px}
+.md a[href="#flags-lv"] {background-position: -112px -33px}
+.md a[href="#flags-mc"] {background-position: 0 -44px}
+.md a[href="#flags-md"] {background-position: -16px -44px}
+.md a[href="#flags-me"] {background-position: -32px -44px}
+.md a[href="#flags-mk"] {background-position: -48px -44px}
+.md a[href="#flags-mn"] {background-position: -32px -77px}
+.md a[href="#flags-mt"] {background-position: -64px -44px}
+.md a[href="#flags-mx"] {background-position: -80px -44px}
+.md a[href="#flags-nl"] {background-position: -96px -44px}
+.md a[href="#flags-no"] {background-position: -112px -44px}
+.md a[href="#flags-nz"] {background-position: -96px -77px}
+.md a[href="#flags-pl"] {background-position: 0 -55px}
+.md a[href="#flags-pt"] {background-position: -16px -55px}
+.md a[href="#flags-ro"] {background-position: -32px -55px}
+.md a[href="#flags-rs"] {background-position: -48px -55px}
+.md a[href="#flags-ru"] {background-position: -64px -55px}
+.md a[href="#flags-sg"] {background-position: -32px -88px}
+.md a[href="#flags-si"] {background-position: -96px -55px}
+.md a[href="#flags-sk"] {background-position: -112px -55px}
+.md a[href="#flags-sm"] {background-position: 0 -66px}
+.md a[href="#flags-se"] {background-position: -80px -55px}
+.md a[href="#flags-sv"] {background-position: -16px -88px}
+.md a[href="#flags-tn"] {background-position: 0px -88px}
+.md a[href="#flags-tr"] {background-position: -16px -66px}
+.md a[href="#flags-ua"] {background-position: -32px -66px}
+.md a[href="#flags-ue"] {background-position: -80px -77px}
+.md a[href="#flags-us"] {background-position: -48px -66px}
+.md a[href="#flags-va"] {background-position: -64px -66px}
 
 .nav-buttons {
 	background: rgba(255,255,255,.82);
