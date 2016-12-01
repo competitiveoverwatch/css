@@ -654,7 +654,7 @@ body >.content .link .rank, .rank-spacer {
 
 /* Submission Title */
 .link .title {
-	font-size: 15px;
+	font-size: 16px;
 	margin: 0;
 	overflow: visible;
 }
@@ -770,7 +770,7 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 
 /* For English languages (en-gb/en-us/en) */
 [lang^=en] .link .entry .tagline {
-	left: -54px;
+	left: -52px;
 	margin-top: 5px;	
 	position: relative;
 	visibility: hidden;
