@@ -4700,82 +4700,60 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 
 /* Flag tags */
 .md a[href*="#flags-"] {
-	background: url(%%tags-flags%%);
-	cursor: default;
-	display: inline-block;
-	font-size: 0;
-	height: 11px;
-	pointer-events: none;
-	width: 16px;
+	background:url(%%flags-all%%);
+	cursor:default;
+	display:inline-block;
+	font-size:;
+	height:15px;
+	pointer-events:none;
+	width:21px;
 }
-.md a[href="#flags-ad"] {background-position: -16px 0}
-.md a[href="#flags-al"] {background-position: -32px 0}
-.md a[href="#flags-at"] {background-position: -48px 0}
-.md a[href="#flags-ar"] {background-position: -112px -77px}
-.md a[href="#flags-au"] {background-position: -80px -66px}
-.md a[href="#flags-ba"] {background-position: -64px 0}
-.md a[href="#flags-be"] {background-position: -80px 0}
-.md a[href="#flags-bg"] {background-position: -96px 0}
-.md a[href="#flags-br"] {background-position: -112px -66px}
-.md a[href="#flags-by"] {background-position: -112px 0}
-.md a[href="#flags-ca"] {background-position: 0 -11px}
-.md a[href="#flags-ch"] {background-position: -16px -11px}
-.md a[href="#flags-cn"] {background-position: -16px -77px}
-.md a[href="#flags-cz"] {background-position: -32px -11px}
-.md a[href="#flags-da"] {background-position: -64px -11px}
-.md a[href="#flags-dk"] {background-position: -64px -11px}
-.md a[href="#flags-de"] {background-position: -48px -11px}
-.md a[href="#flags-ec"] {background-position: -80px -11px}
-.md a[href="#flags-ee"] {background-position: -96px -11px}
-.md a[href="#flags-en"] {background-position: -48px -22px}
-.md a[href="#flags-es"] {background-position: -112px -11px}
-.md a[href="#flags-eu"] {background-position: -0px -77px}
-.md a[href="#flags-fi"] {background-position: 0 -22px}
-.md a[href="#flags-fo"] {background-position: -16px -22px}
-.md a[href="#flags-fr"] {background-position: -32px -22px}
-.md a[href="#flags-gb"] {background-position: -48px -22px}
-.md a[href="#flags-gf"] {background-position: -64px -22px}
-.md a[href="#flags-gi"] {background-position: -80px -22px}
-.md a[href="#flags-gr"] {background-position: -96px -22px}
-.md a[href="#flags-hr"] {background-position: -112px -22px}
-.md a[href="#flags-hu"] {background-position: 0 -33px}
-.md a[href="#flags-ie"] {background-position: -16px -33px}
-.md a[href="#flags-in"] {background-position: -64px -77px}
-.md a[href="#flags-is"] {background-position: -32px -33px}
-.md a[href="#flags-it"] {background-position: -48px -33px}
-.md a[href="#flags-ko"] {background-position: -48px -77px}
-.md a[href="#flags-kz"] {background-position: -96px -66px}
-.md a[href="#flags-li"] {background-position: -64px -33px}
-.md a[href="#flags-lt"] {background-position: -80px -33px}
-.md a[href="#flags-lu"] {background-position: -96px -33px}
-.md a[href="#flags-lv"] {background-position: -112px -33px}
-.md a[href="#flags-mc"] {background-position: 0 -44px}
-.md a[href="#flags-md"] {background-position: -16px -44px}
-.md a[href="#flags-me"] {background-position: -32px -44px}
-.md a[href="#flags-mk"] {background-position: -48px -44px}
-.md a[href="#flags-mn"] {background-position: -32px -77px}
-.md a[href="#flags-mt"] {background-position: -64px -44px}
-.md a[href="#flags-mx"] {background-position: -80px -44px}
-.md a[href="#flags-nl"] {background-position: -96px -44px}
-.md a[href="#flags-no"] {background-position: -112px -44px}
-.md a[href="#flags-nz"] {background-position: -96px -77px}
-.md a[href="#flags-pl"] {background-position: 0 -55px}
-.md a[href="#flags-pt"] {background-position: -16px -55px}
-.md a[href="#flags-ro"] {background-position: -32px -55px}
-.md a[href="#flags-rs"] {background-position: -48px -55px}
-.md a[href="#flags-ru"] {background-position: -64px -55px}
-.md a[href="#flags-sg"] {background-position: -32px -88px}
-.md a[href="#flags-si"] {background-position: -96px -55px}
-.md a[href="#flags-sk"] {background-position: -112px -55px}
-.md a[href="#flags-sm"] {background-position: 0 -66px}
-.md a[href="#flags-se"] {background-position: -80px -55px}
-.md a[href="#flags-sv"] {background-position: -16px -88px}
-.md a[href="#flags-tn"] {background-position: 0px -88px}
-.md a[href="#flags-tr"] {background-position: -16px -66px}
-.md a[href="#flags-ua"] {background-position: -32px -66px}
-.md a[href="#flags-ue"] {background-position: -80px -77px}
-.md a[href="#flags-us"] {background-position: -48px -66px}
-.md a[href="#flags-va"] {background-position: -64px -66px}
+.md a[href="#flags-au"] {background-position: -21px -15px}
+.md a[href="#flags-be"] {background-position: -168px -15px}
+.md a[href="#flags-br"] {background-position: -168px -30px}
+.md a[href="#flags-bs"] {background-position: -189px -30px}
+.md a[href="#flags-by"] {background-position: -63px -45px}
+.md a[href="#flags-ca"] {background-position: -105px -45px}
+.md a[href="#flags-cn"] {background-position: -105px -60px}
+.md a[href="#flags-de"] {background-position: -84px -75px}
+.md a[href="#flags-dk"] {background-position: -126px -75px}
+.md a[href="#flags-es"] {background-position: -84px -390px}
+.md a[href="#flags-eu"] {background-position: -63px -90px}
+.md a[href="#flags-fi"] {background-position: -84px -90px}
+.md a[href="#flags-fr"] {background-position: -189px -90px}
+.md a[href="#flags-gb"] {background-position: -21px -105px}
+.md a[href="#flags-hu"] {background-position: -189px -135px}
+.md a[href="#flags-is"] {background-position: -168px -150px}
+.md a[href="#flags-it"] {background-position: -189px -150px}
+.md a[href="#flags-jp"] {background-position: -63px -165px}
+.md a[href="#flags-kr"] {background-position: -21px -180px}
+.md a[href="#flags-lt"] {background-position: -63px -195px}
+.md a[href="#flags-lv"] {background-position: -105px -195px}
+.md a[href="#flags-nl"] {background-position: -105px -240px}
+.md a[href="#flags-no"] {background-position: -126px -240px}
+.md a[href="#flags-pt"] {background-position: -63px -270px}
+.md a[href="#flags-ro"] {background-position: -168px -270px}
+.md a[href="#flags-ru"] {background-position: 0px -285px}
+.md a[href="#flags-se"] {background-position: -147px -285px}
+.md a[href="#flags-th"] {background-position: -21px -330px}
+.md a[href="#flags-ua"] {background-position: -84px -345px}
+.md a[href="#flags-us"] {background-position: -126px -345px}
+.md a[href="#flags-ww"] {background-position: -189px -360px}
+.md a[href="#flags-?-ow"] {background-position: -42px -390px}
+
+/* Result Background */
+.md a[href^="#resultbg"] {
+  	box-sizing: border-box;
+  	border-radius: 5px;
+  	text-align: center;
+  	vertical-align: middle;
+  	color: white !important;
+  	background-color: gray;
+  	font-size: 1.3em;
+  	cursor:default;
+	display:inline-block;
+	pointer-events:none;
+}
 
 .nav-buttons {
 	background: rgba(255,255,255,.82);
