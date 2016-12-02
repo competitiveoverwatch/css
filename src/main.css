@@ -4654,16 +4654,25 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 /* Checkmark tags */
 .md a[href*="#check-"] {
 	background: url(%%tags-check%%);
+	background-size: 24px 12px;
+	border-radius: 100%;
+	border: 2px solid transparent;
+	box-sizing: content-box;
 	cursor: default;
 	display: inline-block;
 	font-size: 0;
 	height: 12px;
 	pointer-events: none;
 	width: 12px;
-	background-size: 24px 12px;
 }
-.md a[href="#check-yes"] {background-position: 0 0}
-.md a[href="#check-no"] {background-position: -12px 0}
+.md a[href="#check-yes"] {
+	background-position: 0 0;
+	border-color: #8FBE0E;
+}
+.md a[href="#check-no"] {
+	background-position: -12px 0;
+	border-color: #B14042;
+}
 
 /* Team tags */
 .md a[href*="#team-"] {
