@@ -2359,7 +2359,7 @@ body.comments-page > .content {margin-top: 8px;}
 
 .commentarea>.usertext {
 	background: #FAFAFA;
-	margin: -58px 0 16px;
+	margin: -60px 0 16px;
 	padding: 64px 16px 16px !important;
 	overflow: visible;
 }
@@ -2730,13 +2730,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 293px;
+	margin-top: 286px;
 }
 .res.comments-page .side {
-	margin-top: 322px;
+	margin-top: 315px;
 }
 
-.comments-page .side .linkinfo {
+.linkinfo {
 	background: #fff;
 	border-radius: 3px;
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.14);
@@ -2744,7 +2744,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-left: -16px;
 	padding: 16px 16px 0;
 	position: absolute;
-	top: 422px;
+	top: 404px;
 	width: 320px;
 }
 
@@ -4630,6 +4630,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 /* Map tags */
 .md a[href*="#map-"] {
 	background: url(%%tags-maps%%);
+	border-radius: 1px;
 	cursor: default;
 	display: inline-block;
 	font-size: 0;
@@ -4665,14 +4666,8 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 	pointer-events: none;
 	width: 12px;
 }
-.md a[href="#check-yes"] {
-	background-position: 0 0;
-	border-color: #8FBE0E;
-}
-.md a[href="#check-no"] {
-	background-position: -12px 0;
-	border-color: #B14042;
-}
+.md a[href="#check-yes"] {background-position: 0 0; border-color: #8FBE0E}
+.md a[href="#check-no"] {background-position: -12px 0; border-color: #B14042}
 
 /* Team tags */
 .md a[href*="#team-"] {
@@ -4886,7 +4881,7 @@ body:not(.loggedin) .commentarea .menuarea {
 	margin: 0 0 8px;
 }
 
-.commentarea .menuarea .toggle {
+.commentarea .menuarea form.toggle {
 	margin-left: 16px;
 }
 
