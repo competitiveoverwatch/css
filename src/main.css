@@ -3133,7 +3133,7 @@ body #newlink-with-image-upload .file-upload-button {
 search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 
 .combined-search-page .search-result-subreddit .search-result-body {
-	padding: 0px;
+	padding: 0;
 }
 
 .combined-search-page .search-result-subreddit .search-result-meta {padding: 4px 0;}
@@ -4099,7 +4099,7 @@ body.res #search #searchexpando {
 }
 
 body.listing-page>.content, body.other-discussions-page>.content, .comments-page .link, .commentarea>.sitetable>.comment, #images, .combined-search-page>.content, .sponsorshipbox, .commentarea>.usertext, .stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo, #ad-frame, #ad_main, .wiki-page .wiki-page-content, .linefield, .submit-page .roundfield, .login-form-side {
-	border-radius: 3px;
+	border-radius: 1px;
 }
 
 /* Popup box to add sub to a multireddit when hovering on subscribe button, beta popup */

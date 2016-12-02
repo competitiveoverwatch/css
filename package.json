@@ -12,7 +12,7 @@
         "min-css": "cssmin src/main.css > dist/final.css",
 
         "clean": "rimraf dist && mkdirp dist",
-        "build-complete": "echo '\nBuild complete.' && du -h dist/final.css && echo '\n' && open dist",
+        "build-complete": "echo '\nBuild complete.\n' && du -h dist/final.css && du -hs dist/images && echo '\n' && open dist",
 
         "build:img": "imagemin src/images-export/* -o dist/images/",
         "build:css": "npm run min-css",
