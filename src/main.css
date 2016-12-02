@@ -4703,7 +4703,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 	background:url(%%flags-all%%);
 	cursor:default;
 	display:inline-block;
-	font-size:;
+	font-size: 0;
 	height:15px;
 	pointer-events:none;
 	width:21px;
@@ -4740,20 +4740,6 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .md a[href="#flags-us"] {background-position: -126px -345px}
 .md a[href="#flags-ww"] {background-position: -189px -360px}
 .md a[href="#flags-?-ow"] {background-position: -42px -390px}
-
-/* Result Background */
-.md a[href^="#resultbg"] {
-  	box-sizing: border-box;
-  	border-radius: 5px;
-  	text-align: center;
-  	vertical-align: middle;
-  	color: white !important;
-  	background-color: gray;
-  	font-size: 1.3em;
-  	cursor:default;
-	display:inline-block;
-	pointer-events:none;
-}
 
 .nav-buttons {
 	background: rgba(255,255,255,.82);
