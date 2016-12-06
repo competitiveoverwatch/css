@@ -45,7 +45,8 @@
 
 **Portions of `main.css` and `spritesheet` are licensed under the MIT License:**
 
-```The MIT License (MIT)
+```
+The MIT License (MIT)
 
 Copyright (c) 2016 Axel Schoterman
 
@@ -70,7 +71,8 @@ SOFTWARE.
 
 **`flags-all` and `flags-all-2x` are licensed under the MIT License:**
 
-```The MIT License (MIT)
+```
+The MIT License (MIT)
 
 Copyright (c) 2016 Bowtie AB
 
