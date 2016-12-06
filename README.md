@@ -24,6 +24,7 @@
 ###License
 * The following are licensed under the MIT License – see [LICENSE](LICENSE):
     - CSS in `src/main.css`
+
     – PSD files and PNG files with the following names (not including file extension):
         + `commentbox-2x`
         + `commentbox-night-2x`
@@ -41,7 +42,7 @@
 
 **Portions of `main.css` and `spritesheet` are licensed under the MIT License:**
 
-`The MIT License (MIT)
+```The MIT License (MIT)
 
 Copyright (c) 2016 Axel Schoterman
 
@@ -61,11 +62,12 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.```
+SOFTWARE.
+```
 
 **`flags-all` and `flags-all-2x` are licensed under the MIT License:**
 
-`The MIT License (MIT)
+```The MIT License (MIT)
 
 Copyright (c) 2016 Bowtie AB
 
@@ -85,11 +87,12 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.`
+SOFTWARE.
+```
 
 **`sidebar-bible-1x`, `sidebar-bible-2x`, `sidebar-settings-1x` and `sidebar-settings-2x` are licensed under the Apache License 2.0:**
 
-`
+```
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -290,4 +293,5 @@ SOFTWARE.`
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.`
+   limitations under the License.
+```
