@@ -3383,14 +3383,26 @@ pre {
 	font-weight: bold;
 	margin-right: 0;
 }
-/* User flairs for teams */
-.flair-fan {
+/* User flairs for teams and in-post tags for team icons */
+.flair-fan, .md a[href*="#team-"] {
 	background: url(%%flairs-teams%%) no-repeat;
-	display: none;
 	font-size: 0;
 	height: 22px;
 	width: 22px;
 	vertical-align: middle;
+}
+
+/* Team tags */
+.md a[href*="#team-"] {
+	cursor: default;
+	display: inline-block;
+	pointer-events: none;
+}
+/* Individual team tags share same background-position/height/width as team flair icons below*/
+
+/* Team flairs */
+.flair-fan {
+	display: none;
 }
 .flair-fan:not([title=""]):hover {
 	background: none;
@@ -3419,118 +3431,118 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: inline-block;
 }
 
-.flair-c9 {
+.flair-c9, .md a[href*="c9"] {
 	background-position: 0 -22px;
 	width: 31px;
 }
-.flair-reunited {
+.flair-reunited, .md a[href*="reunited"] {
 	background-position: 0 -44px;
 }
-.flair-misfits {
+.flair-misfits, .md a[href*="misfits"] {
 	background-position: 0 -66px;
 	width: 20px;
 }
-.flair-dig {
+.flair-dig, .md a[href*="dig"] {
 	background-position: -22px 0;
 	width: 19px;
 }
-.flair-rogue {
+.flair-rogue, .md a[href*="rogue"] {
 	background-position: -31px -22px;
 	height: 24px;
 	width: 19px;
 }
-.flair-col {
+.flair-col, .md a[href*="col"] {
 	background-position: -23px -46px;
 	height: 14px;
 }
-.flair-fnc {
+.flair-fnc, .md a[href*="fnc"] {
 	background-position: -22px -60px;
 	width: 22px;
 }
-.flair-nrg {
+.flair-nrg, .md a[href*="nrg"] {
 	background-position: -41px 0;
 	width: 30px;
 }
-.flair-luminosity {
+.flair-luminosity, .md a[href*="luminosity"] {
 	background-position: -50px -22px;
 	height: 21px;
 }
-.flair-invictus {
+.flair-invictus, .md a[href*="invictus"] {
 	background-position: -48px -44px;
 	width: 23px;
 }
-.flair-storm {
+.flair-storm, .md a[href*="storm"] {
 	background-position: -44px -66px;
 	height: 19px;
 	width: 26px;
 }
-.flair-nip {
+.flair-nip, .md a[href*="nip"] {
 	background-position: -71px 0;
 }
-.flair-anox {
+.flair-anox, .md a[href*="anox"] {
 	background-position: -72px -22px;
 	width: 21px;
 }
-.flair-nga {
+.flair-nga, .md a[href*="nga"] {
 	background-position: -73px -44px;
 	height: 22px;
 	width: 36px;
 }
-.flair-liquid {
+.flair-liquid, .md a[href*="liquid"] {
 	background-position: -77px -66px;
 }
-.flair-lunatic-hai {
+.flair-lunatic-hai, .md a[href*="lunatic-hai"] {
 	background-position: 0 -89px;
 	height: 21px;
 }
-.flair-faze {
+.flair-faze, .md a[href*="faze"] {
 	background-position: -44px -88px;
 	height: 15px;
 }
-.flair-freecs-red {
+.flair-freecs-red, .md a[href*="freecs-red"] {
 	background-position: -22px -82px;
 	height: 12px;
 }
-.flair-freecs-blue {
+.flair-freecs-blue, .md a[href*="freecs-blue"] {
 	background-position: -66px -90px;
 }
-.flair-immortals {
+.flair-immortals, .md a[href*="immortals"] {
 	background-position: -89px -88px;
 	height:  21px;
 	width: 21px;
 }
-.flair-method {
+.flair-method, .md a[href*="method"] {
 	background-position: -93px 0;
 	height: 21px;
 	width: 21px;
 }
-.flair-luxury-watch-red {
+.flair-luxury-watch-red, .md a[href*="luxury-watch-red"] {
 	background-position: 0 -110px;
 	height: 21px;
 }
-.flair-vici {
+.flair-vici, .md a[href*="vici"] {
 	background-position: -23px -97px;
 	height: 20px;
 }
-.flair-kongdoo-panthera {
+.flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] {
 	background-position: -44px -104px;
 	height: 17px;
 }
-.flair-ldlc {
+.flair-ldlc, .md a[href*="ldlc"] {
 	background-position: -67px -114px;
 	height: 23px;
 	width: 21px;
 }
-.flair-rise {
+.flair-rise, .md a[href*="rise"] {
 	background-position: -88px -109px;
 	height: 20px;
 	width: 30px;
 }
-.flair-kongdoo-uncia {
+.flair-kongdoo-uncia, .md a[href*="kongdoo-uncia"] {
 	background-position: -94px -22px;
 	height: 17px;
 }
-.flair-kingdom {
+.flair-kingdom, .md a[href*="kingdom"] {
 	background-position: -22px -117px;
 	width: 23px;
 }
@@ -4584,40 +4596,6 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 }
 .md a[href="#check-yes"] {background-position: 0 0; border-color: #8FBE0E}
 .md a[href="#check-no"] {background-position: -12px 0; border-color: #B14042}
-
-/* Team tags */
-.md a[href*="#team-"] {
-	background: url(%%flairs-teams%%);
-	cursor: default;
-	display: inline-block;
-	font-size: 0;
-	height: 22px;
-	pointer-events: none;
-	vertical-align: middle;
-	width: 22px;
-}
-.md a[href="#team-envyus"] {background-position: 0 0}
-.md a[href="#team-dignitas"] {background-position: -22px 0; width: 19px}
-.md a[href="#team-nrg"] {background-position: -41px 0; width: 30px}
-.md a[href="#team-nip"] {background-position:  -71px 0}
-.md a[href="#team-method"] {background-position:  -93px 0; height: 21px; width: 21px}
-.md a[href="#team-cloud9"] {background-position: 0 -22px; width: 31px}
-.md a[href="#team-rogue"] {background-position: -31px -22px; height: 24px; width: 19px}
-.md a[href="#team-luminosity"] {background-position: -50px -22px}
-.md a[href="#team-anox"] {background-position: -72px -22px; width: 21px}
-.md a[href="#team-reunited"] {background-position: 0 -44px}
-.md a[href="#team-col"] {background-position: -32px -46px; height: 20px; width: 23px}
-.md a[href="#team-invictus"] {background-position: -48px -44px; width: 23px}
-.md a[href="#team-nga"] {background-position: -73px -44px; height: 22x; width: 31px}
-.md a[href="#team-misfits"] {background-position: 0 -66px; width: 20px}
-.md a[href="#team-fnatic"] {background-position: -22px -68px; width: 24px}
-.md a[href="#team-tempo"] {background-position: -46px -66px; width: 31px}
-.md a[href="#team-liquid"] {background-position: -77px -66px}
-.md a[href="#team-lunatic"] {background-position: 0 -96px; height: 20px}
-.md a[href="#team-freecs-red"] {background-position: -22px -90px}
-.md a[href="#team-faze"] {background-position: -44px -90px}
-.md a[href="#team-freecs-blue"] {background-position: -66px -90px}
-.md a[href="#team-immortals"] {background-position: -86px -90px}
 
 /* Flag tags */
 .md a[href*="#flags-"] {

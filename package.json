@@ -13,7 +13,7 @@
 
         "css-complete": "du -h dist/final.css",
         "img-complete": "du -h dist/images",
-        "build-complete": "echo && run-s img-complete css-complete && echo \"\nBuild complete.\" && open dist",
+        "build-complete": "echo && run-s -s img-complete css-complete && echo \"\nBuild complete.\" && open dist",
 
         "build:css": "cssmin src/main.css > dist/final.css",
         "build:img": "imagemin src/images-export/* -o dist/images/",
