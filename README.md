@@ -1,6 +1,6 @@
 # [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS & Images
 
-###Usage/Building
+###Building
 * Clone the repo
 * `npm install`
 * `npm run build` to minify images and CSS
