@@ -5,7 +5,9 @@
 * `npm install`
 * `npm run build` to minify images and CSS
     - Alternatively, `npm run build-css`/`npm run build-img` individually
+* Find minified CSS in `dist/final.css` and compressed images in `dist/images`
 
+###Structure
 * CSS: `src/main.css`
 * Raw image files (PSDs): `src/images-psd`
 * Exported image files (JPG/PNG): `src/images-export`
