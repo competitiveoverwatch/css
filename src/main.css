@@ -4449,7 +4449,7 @@ body.listing-page>.content {
 	vertical-align: middle;
 }*/
 
-.content .linkflairlabel {
+.linkflairlabel {
 	background: none;
 	border: none;
 	color: #98ABBA;
@@ -4470,6 +4470,18 @@ body.listing-page>.content {
 
 .stickied .linkflairlabel {
 	display: none;
+}
+
+.linkflair-mod .linkflairlabel {		
+	background: #27B062;		
+	color: #FFF;		
+}
+.linkflair-mod a {
+	color: #27B062 !important;
+}	
+
+.linkflair-mod .thumbnail.default, .linkflair-mod .thumbnail.self {
+	background: url(%%spritesheet%%) -96px -48px !important;
 }
 
 /*.sitetable .linkflairlabel {
