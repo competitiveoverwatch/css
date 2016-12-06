@@ -7,7 +7,7 @@
 ###Usage/Building
 * Clone the repo
 * `npm install`
-* `npm run build` to build
+* `npm run build` to build (or `npm run build-css`/`npm run build-img`)
 * Find minified CSS and images in `dist`
 
 ###3rd Party Image Sources

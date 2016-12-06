@@ -5,19 +5,24 @@
         "cssmin": "latest",
         "imagemin-cli": "latest",
         "mkdirp": "latest",
-        "replace": "latest",
+        "npm-run-all": "latest",
         "rimraf": "latest"
     },
     "scripts": {
-        "min-css": "cssmin src/main.css > dist/final.css",
-
         "clean": "rimraf dist && mkdirp dist",
-        "build-complete": "echo '\nBuild complete.\n' && du -h dist/final.css && du -hs dist/images && echo '\n' && open dist",
 
+        "css-complete": "du -h dist/final.css",
+        "img-complete": "du -h dist/images",
+        "build-complete": "echo && run-s img-complete css-complete && echo \"\nBuild complete.\" && open dist",
+
+        "build:css": "cssmin src/main.css > dist/final.css",
         "build:img": "imagemin src/images-export/* -o dist/images/",
-        "build:css": "npm run min-css",
-        "build:all": "npm run clean && npm run build:css && npm run build:img && npm run build-complete",
+        "build:all": "npm-run-all clean -p build:css build:img -s build-complete",
         
-        "build": "npm run build:all -s"
+        "build": "npm run build:all -s",
+        "build-css": "run-s -s build:css css-complete && open dist/final.css",
+        "build-img": "run-s -s build:img img-complete",
+
+        "test": "copy-paste copy('test')"
     }
 }

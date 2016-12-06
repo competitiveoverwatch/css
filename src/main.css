@@ -3373,51 +3373,6 @@ pre {
 	font-size: 11px;
 }
 
-.flair-extra-life {
-	color: rgba(152, 171, 186, 0);
-	height: 21px;
-	position: relative;
-	transition: 0.18s color ease-in-out;
-	vertical-align: middle;
-	visibility: hidden;
-	width: 24px;
-}
-.flair-extra-life:before {
-	background: url(%%flairs-misc%%) no-repeat;
-	content: "";
-	display: inline-block;
-	height: 21px;
-	position: absolute;
-	top: -3px;
-	transition: 0.18s opacity ease-in-out;
-	vertical-align: middle;
-	visibility: visible;
-	width: 24px;
-}
-.flair-extra-life:not([title=""]):hover {
-	top: 3px;
-	color: #98ABBA;
-	font-size: 12px;
-	opacity: 1;
-	position: relative;
-	visibility: visible;
-}
-.flair-extra-life:not([title=""]):hover:before {
-	opacity: 0;
-	visibility: hidden;
-}
-
-/* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-	.flair-extra-life {
-		background: url(%%flairs-misc-2x%%) no-repeat;
-		background-size: 24px 22px;
-	}
-}
-
-
 /*.moderator .flairtoggle, .moderator .side .tagline {
 	display: none;
 }*/
@@ -3450,7 +3405,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.flair-fan {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 114px 116px;
+		background-size: 118px 138px;
 	}
 	.flair-faze {
 		width: 21px;
@@ -3486,11 +3441,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .flair-col {
 	background-position: -23px -46px;
-	height: 20px;
+	height: 14px;
 }
 .flair-fnc {
-	background-position: -22px -68px;
-	width: 24px;
+	background-position: -22px -60px;
+	width: 22px;
 }
 .flair-nrg {
 	background-position: -41px 0;
@@ -3498,14 +3453,16 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .flair-luminosity {
 	background-position: -50px -22px;
+	height: 21px;
 }
 .flair-invictus {
 	background-position: -48px -44px;
 	width: 23px;
 }
 .flair-storm {
-	background-position: -46px -66px;
-	width: 31px;
+	background-position: -44px -66px;
+	height: 19px;
+	width: 26px;
 }
 .flair-nip {
 	background-position: -71px 0;
@@ -3523,25 +3480,59 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: -77px -66px;
 }
 .flair-lunatic-hai {
-	background-position: 0 -96px;
-	height: 20px;
+	background-position: 0 -89px;
+	height: 21px;
 }
 .flair-faze {
-	background-position: -44px -90px;
+	background-position: -44px -88px;
+	height: 15px;
 }
 .flair-freecs-red {
-	background-position: -22px -90px;
+	background-position: -22px -82px;
+	height: 12px;
 }
 .flair-freecs-blue {
 	background-position: -66px -90px;
 }
 .flair-immortals {
-	background-position: -88px -90px;
+	background-position: -89px -88px;
+	height:  21px;
+	width: 21px;
 }
 .flair-method {
 	background-position: -93px 0;
 	height: 21px;
 	width: 21px;
+}
+.flair-luxury-watch-red {
+	background-position: 0 -110px;
+	height: 21px;
+}
+.flair-vici {
+	background-position: -23px -97px;
+	height: 20px;
+}
+.flair-kongdoo-panthera {
+	background-position: -44px -104px;
+	height: 17px;
+}
+.flair-ldlc {
+	background-position: -67px -114px;
+	height: 23px;
+	width: 21px;
+}
+.flair-rise {
+	background-position: -88px -109px;
+	height: 20px;
+	width: 30px;
+}
+.flair-kongdoo-uncia {
+	background-position: -94px -22px;
+	height: 17px;
+}
+.flair-kingdom {
+	background-position: -22px -117px;
+	width: 23px;
 }
 
 /* User flairs for ranks */
