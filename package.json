@@ -13,7 +13,7 @@
 
         "css-complete": "du -h dist/final.css",
         "img-complete": "du -h dist/images",
-        "build-complete": "echo && run-s -s img-complete css-complete && echo \"\nBuild complete.\" && open dist",
+        "build-complete": "echo && run-s -s img-complete css-complete && echo \"\n✔ Build complete\" && open dist",
 
         "build:css": "cssmin src/main.css > dist/final.css",
         "build:img": "imagemin src/images-export/* -o dist/images/",
@@ -21,8 +21,6 @@
         
         "build": "npm run build:all -s",
         "build-css": "run-s -s build:css css-complete && open dist/final.css",
-        "build-img": "run-s -s build:img img-complete",
-
-        "test": "copy-paste copy('test')"
+        "build-img": "run-s -s build:img img-complete"
     }
 }
