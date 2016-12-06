@@ -26,9 +26,8 @@
 
 ###License
 * The following are licensed under the MIT License – see [LICENSE](LICENSE):
-    - CSS in `src/main.css`
-
-    – PSD files and PNG files with the following names (not including file extension):
+    * CSS in `src/main.css`
+    * PSD files and PNG files with the following names (not including file extension):
         + `commentbox-2x`
         + `commentbox-night-2x`
         + `commentbox-night`
