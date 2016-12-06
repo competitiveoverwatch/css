@@ -1,13 +1,17 @@
 # [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS & Images
 
-* CSS in `src/main.css`
-* Raw image files (PSDs) in `src/images-psd`
-* Exported image files (JPG/PNG) in `src/images-export`
-
 ###Usage/Building
 * Clone the repo
 * `npm install`
-* `npm run build` to minify images and CSS (or `npm run build-css`/`npm run build-img` individually)
+* `npm run build` to minify images and CSS
+    - Alternatively, `npm run build-css`/`npm run build-img` individually
+
+* CSS: `src/main.css`
+* Raw image files (PSDs): `src/images-psd`
+* Exported image files (JPG/PNG): `src/images-export`
+
+###Notes
+* The CSS was originally based on [Naut](https://github.com/Axel--/Naut-for-reddit), but is now in the process of being merged in to free up file space (based on Reddit's CSS size limit of 100 KB) and remove reliance on that dependency
 
 ###3rd Party Image Sources
 * Main spritesheet – [Naut](https://github.com/Axel--/Naut-for-reddit/blob/master/PSD/spritesheet.psd) with heavy customisations
@@ -17,9 +21,6 @@
     - Settings – [`tv` from Google's Material Design Icons](https://material.io/icons/#ic_tv)
     - [Twitch](https://www.twitch.tv/p/brand-assets)
     - [Twitter](https://brand.twitter.com/en.html)
-
-###Notes
-* The CSS was originally based on [Naut](https://github.com/Axel--/Naut-for-reddit), but is now in the process of being merged in to remove the dependency and free up file space (based on Reddit's CSS size limit of 100 KB)
 
 ###License
 * The following are licensed under the MIT License – see [LICENSE](LICENSE):
