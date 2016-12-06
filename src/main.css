@@ -332,7 +332,6 @@ body:not(.loggedin) #header-bottom-right {
 }
 #mail.havemail {
 	background-position: 0 -17px;
-	opacity: 1;
 }
 
 #modmail.nohavemail {
@@ -340,6 +339,9 @@ body:not(.loggedin) #header-bottom-right {
 }
 #modmail.havemail {
 	background-position: -16px -17px;
+}
+
+#header-bottom-right .havemail {
 	opacity: 1;
 }
 
@@ -816,7 +818,7 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 
 /* For English languages (en-gb/en-us/en) */
 [lang^=en] .link .entry .tagline {
-	left: -52px;
+	left: -51px;
 	margin-top: 5px;	
 	position: relative;
 	visibility: hidden;
@@ -917,7 +919,6 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 }
 
 .link .entry .buttons li a:hover {
-	color: #24A0ED;
 	text-decoration: none;
 }
 
@@ -995,29 +996,6 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 	font: normal 13px Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	transition: all 0.15s ease;
 }
-
-/* Linkflairs */
-.linkflairlabel {
-	padding: 1px 6px 1px 6px;
-	height: 18px;
-	border-radius: 1px;
-	border: 0 solid;
-	color: #fff;
-	font: normal normal bold 13px Arial, sans-serif;
-	cursor: default;
-	vertical-align: middle;
-	position: relative;
-	top: -2px;
-	background: #738491;
-}
-
-.linkflair-mod .linkflairlabel {
-	background: #27b062;
-	color: #fff;
-}
-
-.linkflair-mod a {color: #27b062!important;}
-.linkflair-mod .thumbnail.default, .linkflair-mod .thumbnail.self {background: url(%%spritesheet%%) -96px -48px !important;}
 
 
 /* Reported & Spam/Remove/Approves */
@@ -2750,6 +2728,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	font-size: 11px;
 }
 
+.link .entry .buttons .approve-button a:hover {
+	color: #27B062;
+}
+.link .entry .buttons .remove-button a:hover {
+	color: #E53935;
+}
+
 .deepthread a {
 	color: #057ED6;
 	display: inline-block;
@@ -4449,6 +4434,8 @@ body.listing-page>.content {
 /* Link flairs
 .content .linkflairlabel {
 	border-radius: 2px;
+	border: none;
+	cursor: default;
 	font-size: 10px;
 	height: auto;
 	letter-spacing: -.2px;
@@ -4456,18 +4443,26 @@ body.listing-page>.content {
 	max-width: none;
 	opacity: .9;
 	padding: 2px 6px;
+	position: relative;
+	top: -2px;
 	text-transform: uppercase;
+	vertical-align: middle;
 }*/
 
 .content .linkflairlabel {
 	background: none;
+	border: none;
 	color: #98ABBA;
-	font-size: 14px;
+	cursor: default;
+	font-size: 15px;
 	font-weight: normal;
 	height: auto;
 	margin: 0 4px 0 0;
 	max-width: none;
 	padding: 0;
+	position: relative;
+	top: -2px;
+	vertical-align: middle;
 }
 .content .linkflairlabel:after {
 	content: ": ";
