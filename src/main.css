@@ -391,14 +391,16 @@ body:not(.loggedin) #header-bottom-right {
 #header-bottom-right a.pref-lang, .loggedin .logout a {
 	background-position: -32px -0px;
 	background-image: url(%%spritesheet%%);
-	width: 16px;
-	height: 14px;
 	display: inline-block;
-	text-indent: -9999px;
+	height: 14px;
 	margin: 0;
+	overflow: hidden;
 	position: relative;
+	text-indent: 100%;
 	top: -1px;
 	transition: all 0.25s ease;
+	white-space: nowrap;
+	width: 16px;
 }
 
 .loggedin .logout a {
@@ -442,10 +444,12 @@ body:not(.loggedin) #header-bottom-right {
 	left: 0;
 	line-height: 42px;
 	margin: 0 auto;
+	overflow: hidden;
 	position: absolute;
 	right: 0;
-	text-indent: -9999px;
+	text-indent: 100%;
 	top: -78px;
+	white-space: nowrap;
 	width: 581px;
 }
 
@@ -1489,7 +1493,9 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	font-size: 0px;
 	height: 219px;
 	margin: 0;
-	text-indent: -9999px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
 	width: 100%;
 }
 /* Retina/HiDPI */
@@ -2731,7 +2737,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .link .entry .buttons .approve-button a:hover {
 	color: #27B062;
 }
-.link .entry .buttons .remove-button a:hover {
+.link .entry .buttons .remove-button a:hover, .link .entry .buttons .del-button a:hover {
 	color: #E53935;
 }
 
