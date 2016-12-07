@@ -2,6 +2,7 @@
     "name": "competitiveoverwatch-css",
     "private": true,
     "devDependencies": {
+    	"copy-paste-cli": "latest",
         "cssmin": "latest",
         "imagemin-cli": "latest",
         "mkdirp": "latest",
@@ -11,7 +12,7 @@
     "scripts": {
         "clean": "rimraf dist && mkdirp dist",
 
-        "css-complete": "du -h dist/final.css",
+        "css-complete": "du -h dist/final.css && echo && cat dist/final.css | copy-paste copy",
         "img-complete": "du -h dist/images",
         "build-complete": "echo && run-s -s img-complete css-complete && echo \"\n✔ Build complete\" && open dist",
 
@@ -20,7 +21,7 @@
         "build:all": "npm-run-all clean -p build:css build:img -s build-complete",
         
         "build": "npm run build:all -s",
-        "build-css": "run-s -s build:css css-complete && open dist/final.css",
+        "build-css": "run-s -s build:css css-complete",
         "build-img": "run-s -s build:img img-complete"
     }
 }
