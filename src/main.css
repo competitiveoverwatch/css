@@ -222,7 +222,7 @@ a.random.choice {
 #sr-header-area .drop-choices.srdrop {
 	border: none;
 	border-radius: 1px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, .24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .24);
 	cursor: default;
 	opacity: 0;
 	top: 15px !important;
@@ -369,7 +369,7 @@ body:not(.loggedin) #header-bottom-right {
 	font: 14px arial, sans-serif;
 	line-height: 1;
 	transform:translateY(112px);
-	transition: background 0.25s ease, box-shadow 0.25s ease;
+	transition: background 0.25s ease, box-shadow 0.25s ease-in-out;
 }
 
 #mail.havemail:hover:before {
@@ -398,7 +398,7 @@ body:not(.loggedin) #header-bottom-right {
 	position: relative;
 	text-indent: 100%;
 	top: -1px;
-	transition: all 0.25s ease;
+	transition: all 0.25s ease-in-out;
 	white-space: nowrap;
 	width: 16px;
 }
@@ -889,7 +889,7 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 	margin-left: 2px;
 	margin-top: 2px;
 	opacity: 0.25;
-	transition: opacity 0.15s ease;
+	transition: opacity 0.15s ease-in-out;
 	vertical-align: top;
 	width: 16px;
 }
@@ -924,6 +924,10 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 
 .link .entry .buttons li a:hover {
 	text-decoration: none;
+}
+
+.marknsfw-button a {
+	text-transform: uppercase;
 }
 
 .entry .buttons li.nsfw-stamp {
@@ -996,9 +1000,9 @@ body .content .sitetable .link .title a:hover {color: #24A0ED;}
 /* RES L+C */
 .link .entry .buttons li .redditSingleClick {
 	padding: 0 1px;
-	color: #98abba;
+	color: #98ABBA;
 	font: normal 13px Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	transition: all 0.15s ease;
+	transition: all 0.15s ease-in-out;
 }
 
 
@@ -1017,7 +1021,7 @@ a.pretty-button[class] {
 	border: none;
 	color: #fff;
 	line-height: 16px;
-	transition: background-color 0.25s ease;
+	transition: background-color 0.25s ease-in-out;
 	border-radius: 0;
 	text-transform: uppercase;
 }
@@ -1107,7 +1111,7 @@ ul.report-reasons {
 	background: #FFF !important;
 	border: none;
 	border-radius: 1px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
 	padding: 0;
 	position: relative;
 	margin-bottom: 16px;
@@ -1187,7 +1191,7 @@ body>.content .link.compressed .midcol {
 	padding: 0;
 }
 
-.flairoptionpane ul li .linkflair:hover, .flairselector li:hover {background-color: #F5F8F9;border: 0px solid;}
+.flairoptionpane ul li .linkflair:hover, .flairselector li:hover {background-color: #F5F8F9;border: 0 solid;}
 
 .flairoptionpane ul li .linkflair span.linkflairlabel {
 	margin: 8px 0;
@@ -1198,7 +1202,7 @@ body>.content .link.compressed .midcol {
 .flairoptionpane ul li .linkflair a.title {
 	font-size: 18px !important;
 	opacity: 100 !important;
-	color: #24a0ed !important;
+	color: #24A0ED !important;
 }
 
 .flairselector form {
@@ -1211,7 +1215,7 @@ body>.content .link.compressed .midcol {
 .flairselector form .flairselection .linkflair a.title {
 	font-size: 18px !important;
 	opacity: 100 !important;
-	color: #24a0ed !important;
+	color: #24A0ED !important;
 	cursor: default;
 }
 
@@ -1224,7 +1228,7 @@ body>.content .link.compressed .midcol {
 .flairselector form .flairselection .flairremove a {
 	visibility: visible;
 	opacity: 100 !important;
-	color: #24a0ed !important;
+	color: #24A0ED !important;
 	margin-left: -4px;
 	text-transform: capitalize;
 }
@@ -1353,7 +1357,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	line-height: 19px;
 	height: 22px;
 	width: 22px;
-	transition: all 0.15s ease;
+	transition: all 0.15s ease-in-out;
 }
 
 .RESCloseButton:hover {
@@ -1371,7 +1375,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 }
 
 .toggleButton .toggleOn {
-	border-radius: 0px;
+	border-radius: 0;
 	border: 1px solid #4F8EF7;
 	background-color: #4F8EF7;
 	color: #FFF;
@@ -1379,7 +1383,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 }
 
 .toggleButton .toggleOff {
-	border-radius: 0px;
+	border-radius: 0;
 	border: 1px solid #D7D9DC;
 	background-color: transparent;
 	text-transform: capitalize;
@@ -1403,7 +1407,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 /* RES Popup */
 .guider {
 	border: none;
-	box-shadow: 0px 2px 3px #DDD;
+	box-shadow: 0 2px 3px #DDD;
 }
 
 .guider_content h1 {color: #4F8EF7;}
@@ -1413,17 +1417,17 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	border: none;
 	background-image: none;
 	background-color: #4F8EF7;
-	transition: all 0.15s ease;
+	transition: all 0.15s ease-in-out;
 }
 
 .guider_button:hover {background-color: rgba(79, 142, 247, 0.75);}
 
 .x_button {
 	transition: box-shadow .2s ease-in-out;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
 }
 
-.x_button:hover {box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);}
+.x_button:hover {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);}
 
 /* Infobar (Default yellow announcement bar) */
 .content .infobar {
@@ -1465,7 +1469,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	background: #FFF;
 	border: none;
 	border-radius: 3px;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
 	margin: 0 0 8px;
 
 }
@@ -1490,7 +1494,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 #noresults {
 	background: url(%%noresults%%) no-repeat 50% 50%;
 	display: block;
-	font-size: 0px;
+	font-size: 0;
 	height: 219px;
 	margin: 0;
 	overflow: hidden;
@@ -1523,7 +1527,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-left: 6px;
 	padding: 8px 16px;
 	background-color: transparent;
-	transition: background-color 0.15s ease;
+	transition: background-color 0.15s ease-in-out;
 }
 
 .nav-buttons .nextprev a:hover {
@@ -1535,7 +1539,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .side {
 	background: #FFF;
 	border-radius: 1px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
 	margin: 166px 16px 156px 0;
 	padding: 0 16px;
 	width: 320px;
@@ -1596,12 +1600,12 @@ div.titlebox span.number:after {
 	background-image: none !important;
 	padding: 0 12px;
 	text-transform: capitalize;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
 	transition: box-shadow .15s ease-in-out,background .15s ease-in-out,color .15s ease-in-out, padding .15s ease-in-out, margin 0.2s ease-in-out;
 }
 
 .titlebox .fancy-toggle-button .active:hover {box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);}
-.titlebox .fancy-toggle-button .active:active {box-shadow: 0px 0px 0px rgba(0,0,0,0.0);}
+.titlebox .fancy-toggle-button .active:active {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
 
 /* Subscribe */
 .titlebox .fancy-toggle-button .active.add {
@@ -1665,9 +1669,9 @@ div.titlebox span.number:after {
 
 #search input[type=text] {
 	background: #fff;
-	border: 0px solid;
+	border: 0 solid;
 	border-radius: 1px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
 	font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Helvetica","Arial",sans-serif;
 	height: 38px;
 	padding: 0 42px 0 16px;
@@ -1676,29 +1680,24 @@ div.titlebox span.number:after {
 	width: 320px;
 }
 
-#search input[type=text]:hover {
-	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)
-}
-
 #search input[type=text]:focus {
-	border-radius: 1px 1px 0px 0px;
+	background: #FFF;
+	border-radius: 1px 1px 0 0;
 }
 
-#search input[type=text]:focus:hover {box-shadow: 0px 1px 5px rgba(0,0,0,0.24) !important;}
-
-#search input[type="text"]:-moz-placeholder {
+#search input[type=text]:-moz-placeholder {
 	font-size: 14px;
 	text-transform: capitalize;
 	top: 1px;
 	position: relative;
 }
-#search input[type="text"]::-webkit-input-placeholder {
+#search input[type=text]::-webkit-input-placeholder {
 	font-size: 14px;
 	text-transform: capitalize;
 	top: 1px;
 	position: relative;
 }
-#search input[type="text"]:-ms-input-placeholder {
+#search input[type=text]:-ms-input-placeholder {
 	font-size: 14px;
 	text-transform: capitalize;
 	top: 1px;
@@ -1726,10 +1725,10 @@ div.titlebox span.number:after {
 
 /* Expando */
 #search #searchexpando {
-	background: #F0F1F2;
+	background: #FFF;
 	border: none;
-	border-radius: 0px 0px 1px 1px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+	border-radius: 0 0 1px 1px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
 	color: #444;
 	font-size: 11px;
 	height: auto;
@@ -1792,7 +1791,7 @@ div.titlebox span.number:after {
 .submit-link:after {
 	background: #FFF;
 	border-radius: 1px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
 	content: "";
 	height: 80px;
 	position: absolute;
@@ -1808,7 +1807,7 @@ div.titlebox span.number:after {
 }
 
 .login-form-side input[type=text], .login-form-side input[type=password] {width: 136px;margin: 0;}
-.login-form-side input[type=text] {margin-left: 0px; margin-right: 16px;}
+.login-form-side input[type=text] {margin-left: 0; margin-right: 16px;}
 
 .login-form-side button.btn {margin-right: -3px;}
 
@@ -1830,7 +1829,7 @@ div.titlebox span.number:after {
 }
 
 .titlebox:before {
-	content: "SUBREDDIT INFORMATION";
+	content: "INFORMATION";
 	display: block;
 	margin-top: 16px;
 	width: 320px;
@@ -1852,7 +1851,7 @@ div.titlebox span.number:after {
 
 .leavemoderator, .titlebox .tagline a.author, .titlebox form.toggle.leavecontributor-button {display: none;}
 .titlebox form.flairtoggle {line-height: 2;}
-.titlebox form.toggle.sr_style_toggle {padding-bottom: 0px;display: block;background-color: transparent;}
+.titlebox form.toggle.sr_style_toggle {padding-bottom: 0;display: block;background-color: transparent;}
 .titlebox form.toggle.sr_style_toggle label {position: relative;top: -3px;}
 
 
@@ -2129,7 +2128,7 @@ body:not(.listing-page) .side .md>ol {
 
 .side .md>ol li ol {
 	border-radius: 2px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.24);
+	box-shadow: 0 1px 2px rgba(0,0,0,.24);
 	font-size: 14px;
 	font-weight: normal;
 	list-style-type: none;
@@ -2229,7 +2228,7 @@ body:not(.listing-page) .side .md>ol {
 
 .side .sidecontentbox .content {
 	border: none;
-	padding: 8px 0px;
+	padding: 8px 0;
 }
 
 .icon-menu a {
@@ -2299,7 +2298,7 @@ body:not(.listing-page) .side .md>ol {
 /* Credits */
 .side:after {
 	color: #BBB;
-	content: "THIS SUBREDDIT USES A MODIFIED /R/NAUT THEME";
+	content: "CSS THEME BASED ON /R/NAUT";
 	display: block;
 	font: 11px Lato,arial,sans-serif;
 	margin: 14px auto 0 -16px;
@@ -2316,17 +2315,17 @@ body:not(.listing-page) .side .md>ol {
 /* Comments Page */
 body.comments-page > .content {margin-top: 8px;}
 
-.comments-page .link .usertext .md {margin-bottom: 0px;}
+.comments-page .link .usertext .md {margin-bottom: 0;}
 
 .commentarea .panestack-title {
-	margin: 10px 0 0 0px;
+	margin: 10px 0 0 0;
 	border-bottom: 0;
 	padding-left: 16px;
 }
 
 .commentarea .panestack-title .title {color:  #4D5763;}
 
-.commentarea .menuarea {margin: 0 0 0 0px;padding-left: 16px;}
+.commentarea .menuarea {margin: 0 0 0 0;padding-left: 16px;}
 
 .commentarea .menuarea span.dropdown-title.lightdrop {color: #98ABBA;}
 .commentarea .menuarea span.dropdown-title.lightdrop:first-letter {text-transform: capitalize;}
@@ -2335,11 +2334,11 @@ body.comments-page > .content {margin-top: 8px;}
 	cursor: pointer;
 	text-decoration: none;
 	background-image: none;
-	padding-right: 0px;
+	padding-right: 0;
 	font-weight: normal;
-	color: #98abba;
+	color: #98ABBA;
 	border: none;
-	padding-left: 0px;
+	padding-left: 0;
 }
 
 .commentarea .menuarea .dropdown.lightdrop .selected:hover {color: #4F8EF7;}
@@ -2349,20 +2348,20 @@ body.comments-page > .content {margin-top: 8px;}
 .drop-choices.lightdrop {
 	border: none;
 	z-index: 1001;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.14);
 }
 
 .drop-choices a.choice {
 	padding: 12px 24px 12px 12px;
-	transition: all 0.1s ease;
-	border-bottom: 1px solid #edf1f3;
+	transition: all 0.1s ease-in-out;
+	border-bottom: 1px solid #EDF1F3;
 }
 
 .drop-choices form:last-of-type a.choice {border-bottom: none;}
 
 .drop-choices a.choice:hover {
-	background-color: #0079d3;
-	color: #fff;
+	background-color: #0079D3;
+	color: #FFF;
 }
 
 .commentarea .menuarea .toggle a, .help-hoverable {
@@ -2370,7 +2369,7 @@ body.comments-page > .content {margin-top: 8px;}
 	font-weight: normal;
 }
 
-.commentarea .menuarea .toggle a:hover, .help-hoverable:hover {color: #24a0ed;}
+.commentarea .menuarea .toggle a:hover, .help-hoverable:hover {color: #24A0ED;}
 
 .help-hoverable {
 	font-size: x-small;
@@ -2384,7 +2383,7 @@ body.comments-page > .content {margin-top: 8px;}
 }
 
 .usertext button {
-	margin: 4px 16px 8px 0px;
+	margin: 4px 16px 8px 0;
 }
 
 .commentarea .usertext-edit {
@@ -2500,7 +2499,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Comments */
 .commentarea .sitetable {
-	margin: 0px;
+	margin: 0;
 	box-shadow: none;
 }
 
@@ -2629,11 +2628,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding: 1px 4px;
 	border-radius: 1px;
 	background-color: #4F8EF7 !important;
-	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 	transition: all 0.15s ease-in-out;
 }
 .res .thing .tagline .author.submitter:hover {
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	background-color: #4F8EF7 !important;
 }
 
@@ -2763,7 +2762,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .linkinfo {
 	background: #fff;
 	border-radius: 3px;
-	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
 	border: none;
 	margin-left: -16px;
 	padding: 16px 16px 0;
@@ -2861,7 +2860,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .read-next .read-next-link {height: inherit;}
-.read-next .read-next-header-title {top: 0px;line-height: inherit;}
+.read-next .read-next-header-title {top: 0;line-height: inherit;}
 
 .read-next .read-next-list {padding: 8px 16px;}
 
@@ -2956,7 +2955,7 @@ body.res.comments-page .side .linkinfo .score {
 
 .submit-page #newlink.submit.content .tabmenu.formtab a:hover {color: #fff;}
 
-.submit-page .formtabs-content {border-top: 0px;padding-top: 0;}
+.submit-page .formtabs-content {border-top: 0;padding-top: 0;}
 
 .submit-page .roundfield {
 	border: none;
@@ -3002,7 +3001,7 @@ body.res.comments-page .side .linkinfo .score {
 #items-required {
 	color: rgba(255, 0, 0, .9);
 	font-size: 12px;
-	padding-bottom: 0px !important;
+	padding-bottom: 0 !important;
 	padding-top: 8px;
 }
 
@@ -3018,7 +3017,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content .btn:hover {
-	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.48);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.48);
 }
 
 body #newlink-with-image-upload .file-upload-button {
@@ -3067,7 +3066,7 @@ body #newlink-with-image-upload .file-upload-button {
 	position: absolute;
 	top: -128px;
 	left: 36px;
-	padding: 0px;
+	padding: 0;
 }
 
 .search-page #search input[type=text] {
@@ -3098,8 +3097,8 @@ body #newlink-with-image-upload .file-upload-button {
 	padding: 12px;
 	background: #f9f9f9;
 	z-index: -1;
-	border-radius: 0px 0px 2px 2px;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0px 4px 0 rgba(0,0,0,.12);
+	border-radius: 0 0 2px 2px;
+	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
 	cursor: pointer;
 	margin-top: -2px;
 }
@@ -3113,7 +3112,7 @@ body #newlink-with-image-upload .file-upload-button {
 	height: 24px;
 	background: url(%%spritesheet%%) -49px -168px no-repeat;
 	overflow: hidden;
-	font-size: 0px;
+	font-size: 0;
 }
 
 #previoussearch #moresearchinfo {
@@ -3125,7 +3124,7 @@ body #newlink-with-image-upload .file-upload-button {
 /* New search results */
 .search-result-group {
 	max-width: none;
-	min-width: 0px;
+	min-width: 0;
 	padding: 0;
 }
 
@@ -3186,13 +3185,13 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 }
 
 .combined-search-page .search-result .search-result-header .search-title {
-	color: #24a0ed;
+	color: #24A0ED;
 }
 
 .combined-search-page .search-result .search-result-meta {color: #738491;}
 
 .combined-search-page .search-result a, .combined-search-page .search-result a>mark {
-	color: #24a0ed;
+	color: #24A0ED;
 }
 
 .combined-search-page .search-result-subreddit .search-subscribe-button {
@@ -3203,7 +3202,7 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 .combined-search-page .search-result-subreddit .search-subscribe-button .add,
 .combined-search-page .search-result-subreddit .search-subscribe-button .add:active
  {
-	background: #0079d3;
+	background: #0079D3;
 	border: none;
 	border-radius: 2px;
 }
@@ -3211,17 +3210,17 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 .combined-search-page .search-result-subreddit .search-subscribe-button .remove,
 .combined-search-page .search-result-subreddit .search-subscribe-button .remove:active {
 	background: transparent;
-	border: 1px solid #98abba;
+	border: 1px solid #98ABBA;
 	color: #738491;
 }
 
-.combined-search-page .search-result .search-comments {color: #24a0ed;}
+.combined-search-page .search-result .search-comments {color: #24A0ED;}
 
 .search-result.has-thumbnail>.thumbnail {
 	-webkit-flex: 0 0 56px;
 	flex: 0 0 56px;
 	width: 70px;
-	margin-left: 0px;
+	margin-left: 0;
 	margin-right: 16px;
 }
 
@@ -3280,7 +3279,7 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 
 .tabpane-content .thing .title {overflow: visible;}
 
-.fancy-settings .pretty-form {padding-top: 0px;}
+.fancy-settings .pretty-form {padding-top: 0;}
 
 
 /* Stylesheet page */
@@ -3322,7 +3321,7 @@ pre {
 	position: absolute;
 	width: 100%;
 	height: 800px;
-	left: 0px;
+	left: 0;
 	bottom: -1200px;
 	z-index: 100;
 }
@@ -3358,12 +3357,12 @@ pre {
 .flair {
 	background: transparent;
 	border: none;
-	border-radius: 0px;
+	border-radius: 0;
 	color: #98ABBA;
 	cursor: default;
 	font: normal 12px arial, sans-serif;
 	margin-right: inherit;
-	padding-left: 0px;
+	padding-left: 0;
 
 }
 
@@ -3661,7 +3660,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 /* Comments (/r/.../comments) */
 .listing-page .comment {
 	background: #fff;
-	margin-left: 0px;
+	margin-left: 0;
 	padding: 12px 0;
 }
 
@@ -3684,7 +3683,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .footer-parent {
 	background: #011736;
 	height: auto;
-	margin-top: 192px;
+	margin-top: 128px;
 	padding: 32px 0;
 }
 
@@ -3694,7 +3693,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .footer {
 	background: none;
-	border: 0px solid;
+	border: none;
 	border-radius: 2px;
 	line-height: 1.6;
 	margin: 0 auto 16px auto;
@@ -3747,7 +3746,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 /* Bunch of RES (Reddit Enhancement Suite) Fixes */
 .res .link .tagline a.voteWeight {background-color: transparent !important;}
 .res .thing .tagline .author.moderator {background-color: #27b062 !important;padding: 1px 4px;border-radius: 1px;}
-#header-bottom-right #userbarToggle + * {margin-left: 0px !important;}
+#header-bottom-right #userbarToggle + * {margin-left: 0 !important;}
 
 .res .srSep {color: rgba(255,255,255,0.45);}
 
@@ -3763,26 +3762,26 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Pinheader */
 .pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%header%%);background-position: 50% 0%;}
-.pinHeader-sub #header-bottom-left, .pinHeader-subanduser #header-bottom-left {margin-top: 0px;}
+.pinHeader-sub #header-bottom-left, .pinHeader-subanduser #header-bottom-left {margin-top: 0;}
 
 .pinHeader-header:before {display: none !important;}
 .pinHeader-header .content {margin-top: 12px !important;}
 .pinHeader-header .side {margin-top: 164px;}
 .pinHeader-header.res.comments-page .side {margin-top: 290px;}
-.pinHeader-header #header {top: 0px;background-image: url(%%header%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
+.pinHeader-header #header {top: 0;background-image: url(%%header%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
 .res.search-page #header .tabmenu {display: none !important;}
 
 .res #header-bottom-right {
 top: 1px;
-border-radius: 0px;
+border-radius: 0;
 height: 18px;
-padding: 0px 8px 0px 0px;
+padding: 0 8px 0 0;
 }
 
 .res #userbarToggle {
 	background-color: transparent;
 	color: rgba(255, 255, 255, 0.45);
-	border-radius: 0px;
+	border-radius: 0;
 	border: none;
 	left: -32px;
 }
@@ -3805,7 +3804,7 @@ padding: 0px 8px 0px 0px;
 	overflow: hidden;
 	max-height: 15px;
 	background-color: #FAFAFA;
-	transition: all 0.35s ease;
+	transition: all 0.35s ease-in-out;
 }
 
 .res #REScommentNavToggle:hover {
@@ -3833,7 +3832,7 @@ margin-top: 5px;
 
 html.res-commentBoxes .comment {
 margin-left: 0 !important;
-margin-right: 0px !important;
+margin-right: 0 !important;
 }
 
 .res .commentarea .thing {border: none !important; border-radius: 2px !important; }
@@ -3846,8 +3845,8 @@ border: none;
 color: #4D5763;
 text-transform: uppercase;
 text-decoration: none;
-border-radius: 0px;
-padding: 4px 6px 4px 0px;
+border-radius: 0;
+padding: 4px 6px 4px 0;
 margin: 2px 6px 2px -4px;
 text-align: left;
 width: auto;
@@ -3855,15 +3854,15 @@ width: auto;
 
 .res .RESshortcutside:hover, .res .RESDashboardToggle:hover {
 	background-color: transparent;
-	color: #24a0ed;
+	color: #24A0ED;
 }
 
 .res #progressIndicator {
 width: inherit;
-border-radius: 0px;
+border-radius: 0;
 border: none;
 padding: 16px;
-margin: 16px 0px 16px 0px;
+margin: 16px 0 16px 0;
 color: #b3b3b3;
 background-color: #fff;
 height: inherit;
@@ -3874,17 +3873,17 @@ height: inherit;
 }
 
 .res .NERPageMarker {
-	border-radius: 0px;
+	border-radius: 0;
 	border: none;
 	background-color: #fff;
-	padding: 16px 0px;
-	margin: 0px;
+	padding: 16px 0;
+	margin: 0;
 }
 
-.res .sitetable .sitetable {margin-right: 0px;}
+.res .sitetable .sitetable {margin-right: 0;}
 
 .res #search #searchexpando {
-	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 	height: auto;
 }
 
@@ -3894,7 +3893,7 @@ height: inherit;
 
 .res h1.hover.redditname {overflow: visible !important;}
 
-.res .commentarea .panestack-title {margin-top: 0px;padding-top: 12px;}
+.res .commentarea .panestack-title {margin-top: 0;padding-top: 12px;}
 
 .res .comment.collapsed a.expand:after {display: none;}
 
@@ -3902,19 +3901,19 @@ height: inherit;
 .gearIcon {
 	position: relative;
 	top: 2px;
-	transition: all .25s ease;
+	transition: all .25s ease-in-out;
 }
 
 #RESMainGearOverlay {
 	background-color: #516ae8;
-	top: 0px !important;
+	top: 0 !important;
 	height: 26px !important;
-	border-radius: 0px !important;
+	border-radius: 0 !important;
 }
 
 .RESDropdownList {
 	border-color: #4258ca;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
 	margin-top: 4px;
 	margin-right: 8px;
 }
@@ -3923,7 +3922,7 @@ height: inherit;
 	background-color: #516AE8;
 	color: #FFF;
 	border-color: #4258CA;
-	transition: all .15s ease;
+	transition: all .15s ease-in-out;
 }
 
 .RESDropdownList li:first-letter {text-transform: capitalize;}
@@ -3955,7 +3954,7 @@ height: inherit;
 	background-color: transparent;
 	color: rgba(255,255,255,0.6);
 	border: 1px solid #4258ca;
-	transition: all 0.15s ease;
+	transition: all 0.15s ease-in-out;
 	border-radius: 2px;
 }
 /* Toggle on */
@@ -3965,14 +3964,14 @@ height: inherit;
 	color: #516AE8;
 	font-weight: bolder;
 	border: 1px solid #FFF;
-	transition: all 0.15s ease;
+	transition: all 0.15s ease-in-out;
 	border-radius: 2px;
 }
 
 .markdownEditor .edit-btn:not(.btn-macro) {
-	border: 0px solid !important;
+	border: 0 solid !important;
 	border-radius: 1px;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Shadows and cards */
@@ -3982,7 +3981,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	background: #FFF;
 	padding: 16px;
 	border-radius: 2px;
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .14);
 }
 
 /* Experimental Toast Animation */
@@ -4026,7 +4025,7 @@ body,
 	background: #FFF;
 	border: none;
 	border-radius: 2px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.24);
+	box-shadow: 0 1px 2px rgba(0,0,0,.24);
 }
 .res #srList tr {
 	border-bottom-color: #EEE;
@@ -4322,7 +4321,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	background: #FFF;
 	border: none;
 	border-radius:3px;
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .14);
 	margin: 0 0 16px;
 	padding: 16px;
 }
@@ -4387,7 +4386,7 @@ body.listing-page>.content {
 
 .listing-page .link, .listing-page .comment {
 	background: #FFF;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
 	padding: 16px 16px 12px;
 }
 
@@ -4691,7 +4690,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .md a[href="#flags-no"] {background-position: -126px -240px}
 .md a[href="#flags-pt"] {background-position: -63px -270px}
 .md a[href="#flags-ro"] {background-position: -168px -270px}
-.md a[href="#flags-ru"] {background-position: 0px -285px}
+.md a[href="#flags-ru"] {background-position: 0 -285px}
 .md a[href="#flags-se"] {background-position: -147px -285px}
 .md a[href="#flags-th"] {background-position: -21px -330px}
 .md a[href="#flags-ua"] {background-position: -84px -345px}
@@ -4702,7 +4701,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .nav-buttons {
 	background: rgba(255,255,255,.82);
 	border-radius: 0 0 3px 3px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px rgba(0,0,0,.14);
 	padding-left: 16px;
 	text-transform: uppercase;
 }
@@ -4718,7 +4717,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 	border: 0;
 	border-radius: 3px;
 	color: #738491;
-	box-shadow: 0 1px 4px rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px rgba(0,0,0,.14);
 	margin: 0 0 16px 0;
 	overflow: visible;
 	padding: 14px 16px 12px;
@@ -4729,7 +4728,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 	background: #FFF;
 	border: none;
 	border-radius: 3px;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
 	margin-top: 0;
 	padding: 8px 16px;
 	width: 100%;
@@ -4866,7 +4865,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .comments-page .commentarea>.usertext {
-	box-shadow: 0 1px 4px rgba(0,0,0,.12);
+	box-shadow: 0 1px 2px rgba(0,0,0,.12);
 	padding-bottom: 8px !important;
 }
 
@@ -4901,7 +4900,7 @@ RESUserTag a {
 .comment-permalink-page .infobar {
 	background: #FFF;
 	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(0,0,0,.14);
+	box-shadow: 0 1px 2px rgba(0,0,0,.14);
 	color: #333;
 	font-size: 14px;
 	margin: 13px 0 10px 0;
@@ -5466,7 +5465,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background: #FFF;
 	border: none;
 	border-radius: 3px;
-	box-shadow: 0px 1px 4px rgba(0, 0, 0, .14);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .14);
 	height: 38px;
 	line-height: 38px;
 	margin: 0;

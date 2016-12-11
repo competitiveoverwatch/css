@@ -4,17 +4,20 @@
     "devDependencies": {
     	"copy-paste-cli": "latest",
         "cssmin": "latest",
+        "echo-cli": "latest",
         "imagemin-cli": "latest",
+        "minicat": "latest",
         "mkdirp": "latest",
         "npm-run-all": "latest",
+        "open-cli": "latest",
         "rimraf": "latest"
     },
     "scripts": {
         "clean": "rimraf dist && mkdirp dist",
 
-        "css-complete": "du -h dist/final.css && echo && cat dist/final.css | copy-paste copy",
+        "css-complete": "du -h dist/final.css && echo-cli && minicat dist/final.css | copy-paste copy",
         "img-complete": "du -h dist/images",
-        "build-complete": "echo && run-s -s img-complete css-complete && echo \"\n✔ Build complete\" && open dist",
+        "build-complete": "echo-cli && run-s -s img-complete css-complete && echo-cli '\n✔ Build complete' && opn dist",
 
         "build:css": "cssmin src/main.css > dist/final.css",
         "build:img": "imagemin src/images-export/* -o dist/images/",
