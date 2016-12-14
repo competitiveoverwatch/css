@@ -389,7 +389,7 @@ body:not(.loggedin) #header-bottom-right {
 
 /* preferences & logout icons */
 #header-bottom-right a.pref-lang, .loggedin .logout a {
-	background-position: -32px -0px;
+	background-position: -32px 0;
 	background-image: url(%%spritesheet%%);
 	display: inline-block;
 	height: 14px;
@@ -603,7 +603,7 @@ body >.content .link .rank, .rank-spacer {
 /* Upvotes */
 .arrow.up {
 	height: 20px;
-	background-position: -0px -80px;
+	background-position: 0 -80px;
 	transition: background-color 0.2s ease-in-out;
 }
 
@@ -637,7 +637,7 @@ body >.content .link .rank, .rank-spacer {
 }
 .arrow.downmod {
 	height: 20px;
-	background-position: -0px -100px;
+	background-position: 0 -100px;
 	opacity: 1 !important;
 	width: 32px;
 }

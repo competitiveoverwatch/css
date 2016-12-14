@@ -17,7 +17,7 @@
 
         "css-complete": "du -h dist/final.css && echo-cli && minicat dist/final.css | copy-paste copy",
         "img-complete": "du -h dist/images",
-        "build-complete": "echo-cli && run-s -s img-complete css-complete && echo-cli '\n✔ Build complete' && opn dist",
+        "build-complete": "echo-cli && run-s -s img-complete css-complete && echo-cli '\n✔ Build complete' && open-cli dist",
 
         "build:css": "cssmin src/main.css > dist/final.css",
         "build:img": "imagemin src/images-export/* -o dist/images/",
