@@ -1,27 +1,23 @@
 {
-    "name": "competitiveoverwatch-css",
+    "name": "r-competitiveoverwatch-css",
     "private": true,
     "devDependencies": {
-    	"copy-paste-cli": "latest",
+        "chalk-cli": "latest",
+        "copy-paste-cli": "latest",
         "cssmin": "latest",
         "imagemin-cli": "latest",
         "npm-run-all": "latest",
-        "open-cli": "latest",
         "shx": "latest"
     },
     "scripts": {
-        "clean": "shx rm -rf dist && shx mkdir -p dist",
+        "css": "cssmin source/styles.css > compiled/final.css",
+        "postcss": "du -h compiled/final.css && shx cat compiled/final.css | copy-paste copy && shx echo",
 
-        "css-complete": "du -h dist/final.css && shx echo && shx cat dist/final.css | copy-paste copy",
-        "img-complete": "du -h dist/images",
-        "build-complete": "shx echo && run-s -s img-complete css-complete && shx echo '\n✔ Build complete' && open-cli dist",
-
-        "build:css": "cssmin src/main.css > dist/final.css",
-        "build:img": "imagemin src/images-export/* -o dist/images/",
-        "build:all": "npm-run-all clean -p build:css build:img -s build-complete",
+        "preimg": "shx rm -rf compiled/images && shx mkdir -p compiled/images",
+        "img": "imagemin 'source/images exported'/* -o compiled/images/",
+        "postimg": "du -h compiled/images",
         
-        "build": "npm run build:all -s",
-        "build-css": "run-s -s build:css css-complete",
-        "build-img": "run-s -s build:img img-complete"
+        "prebuild": "shx mkdir -p compiled",
+        "build": "run-s -s css img && shx echo && chalk green '✔ Build complete'"
     }
 }
