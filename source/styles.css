@@ -187,7 +187,7 @@ body:not(.loggedin) #sr-header-area .width-clip {
 	border: none;
 	color: #FFF;
 	cursor: pointer;
-	transition: all 0.14s ease-in-out;
+	transition: color 0.14s ease-in-out;
 }
 
 #sr-more-link:hover {
@@ -1372,7 +1372,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	line-height: 19px;
 	height: 22px;
 	width: 22px;
-	transition: all 0.15s ease-in-out;
+	transition: border 0.15s ease-in-out;
 }
 
 .RESCloseButton:hover {
@@ -1432,7 +1432,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	border: none;
 	background-image: none;
 	background-color: #4F8EF7;
-	transition: all 0.15s ease-in-out;
+	transition: background 0.15s ease-in-out;
 }
 
 .guider_button:hover {background-color: rgba(79, 142, 247, 0.75);}
@@ -2046,7 +2046,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	right: 50px;
 }
 
-@media (max-width: 1360px) {
+@media only screen and (max-width: 1360px) {
 	.side .md h6 {
 		right: 16px;
 		width: auto;
@@ -2169,7 +2169,7 @@ body:not(.listing-page) .side .md>ol {
 	width: 100%;
 }
 
-@media (max-width: 1302px) {
+@media only screen and (max-width: 1302px) {
 	.side .md>ol {
 		left: initial;
 		right: 16px;
@@ -2360,6 +2360,7 @@ body.comments-page > .content {margin-top: 8px;}
 .drop-choices a.choice {
 	padding: 12px 24px 12px 12px;
 	transition: all 0.1s ease-in-out;
+	transition-property: background, color;
 	border-bottom: 1px solid #EDF1F3;
 }
 
@@ -2631,15 +2632,16 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* RES Fixes */
 .res .thing .tagline .author.submitter {
-	padding: 1px 4px;
-	border-radius: 1px;
 	background-color: #4F8EF7 !important;
+	border-radius: 1px;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	padding: 1px 4px;
+	transition-property: background, box-shadow;
 	transition: all 0.15s ease-in-out;
 }
 .res .thing .tagline .author.submitter:hover {
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	background-color: #4F8EF7 !important;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .comment .score {
@@ -2907,10 +2909,6 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content form .spacer+.spacer {margin: 0;}
-
-.submit-page .formtabs-content {
-	margin-top: 126px;
-}
 
 .submit-page .tabmenu {
 	margin-top: 0;
@@ -3806,10 +3804,10 @@ padding: 0 8px 0 0;
 }
 
 .res #REScommentNavToggle {
+	background-color: #FAFAFA;
+	max-height: 15px;
 	max-width: 98px;
 	overflow: hidden;
-	max-height: 15px;
-	background-color: #FAFAFA;
 	transition: all 0.35s ease-in-out;
 }
 
@@ -3823,22 +3821,22 @@ padding: 0 8px 0 0;
 }
 
 .res .content .RESBigEditorPop {
-background-color: rgba(0, 0, 0, 0);
-line-height: inherit;
-font: 11px verdana,arial,sans-serif;
-box-shadow: none;
-font-weight: normal;
-color: #4D5763;
-border: none;
-padding: 0;
-height: inherit;
-margin-left: 4px;
-margin-top: 5px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	box-shadow: none;
+	color: #4D5763;
+	font-weight: normal;
+	font: 11px verdana,arial,sans-serif;
+	height: inherit;
+	line-height: inherit;
+	margin-left: 4px;
+	margin-top: 5px;
+	padding: 0;
 }
 
 html.res-commentBoxes .comment {
-margin-left: 0 !important;
-margin-right: 0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
 }
 
 .res .commentarea .thing {border: none !important; border-radius: 2px !important; }
@@ -3846,16 +3844,16 @@ margin-right: 0 !important;
 .res .titlebox .tagline {margin-top: 6px;}
 
 .res .RESshortcutside, .res .RESDashboardToggle {
-background-image: none !important;
-border: none;
-color: #4D5763;
-text-transform: uppercase;
-text-decoration: none;
-border-radius: 0;
-padding: 4px 6px 4px 0;
-margin: 2px 6px 2px -4px;
-text-align: left;
-width: auto;
+	background-image: none !important;
+	border-radius: 0;
+	border: none;
+	color: #4D5763;
+	margin: 2px 6px 2px -4px;
+	padding: 4px 6px 4px 0;
+	text-align: left;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: auto;
 }
 
 .res .RESshortcutside:hover, .res .RESDashboardToggle:hover {
@@ -3864,14 +3862,14 @@ width: auto;
 }
 
 .res #progressIndicator {
-width: inherit;
-border-radius: 0;
-border: none;
-padding: 16px;
-margin: 16px 0 16px 0;
-color: #b3b3b3;
-background-color: #fff;
-height: inherit;
+	background-color: #fff;
+	border-radius: 0;
+	border: none;
+	color: #b3b3b3;
+	height: inherit;
+	margin: 16px 0 16px 0;
+	padding: 16px;
+	width: inherit;
 }
 
 .res #progressIndicator h2 {
@@ -3929,6 +3927,7 @@ height: inherit;
 	color: #FFF;
 	border-color: #4258CA;
 	transition: all .15s ease-in-out;
+	transition-property: background, color;
 }
 
 .RESDropdownList li:first-letter {text-transform: capitalize;}
@@ -3936,18 +3935,18 @@ height: inherit;
 .RESDropdownList a, .RESDropdownList a:visited { color: #fff;}
 
 .RESDropdownList li:hover, .RESDropdownList li a:hover {
-	color: #fff;
-	background-color: #667df0;
+	color: #FFF;
+	background-color: #667DF0;
 }
 
 #RESSearchMenuItem {
-	border: 1px solid #4258ca;
+	border: 1px solid #4258CA;
 	border-radius: 1px;
-	background-color: #667df0;
+	background-color: #667dF0;
 }
 
 #RESSearchMenuItem:hover {
-	background-color: #667df0;
+	background-color: #667DF0;
 }
 
 .toggleButton .toggleOn, .toggleButton .toggleOff  {
@@ -5032,15 +5031,18 @@ body.submit-page .roundfield input:not([type=checkbox]),
 	text-transform: uppercase;
 }
 
-.submit-page .submit_text.enabled.roundfield {
-	background: #439BDA;
-	border-radius: 0 0 3px 3px;
-	box-shadow: none;
-	color: #FFF;
-	padding: 16px;
-	position: absolute;
-	top: 318px;
-	width: 700px;
+@media only screen and (min-device-width: 737px) {
+	.submit-page .submit_text.enabled.roundfield {
+		border-radius: 0 0 3px 3px;
+		box-shadow: none;
+		position: absolute;
+		top: 318px;
+		width: 700px;
+	}
+
+	.submit-page .formtabs-content {
+	margin-top: 126px;
+}
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a, .submit-page #newlink.submit.content .tabmenu.formtab a:hover {
