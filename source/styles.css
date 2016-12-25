@@ -366,7 +366,7 @@ body:not(.loggedin) #header-bottom-right {
 	left: 32px;
 	content: "You have new messages";
 	text-indent: 0;
-	font: 14px arial, sans-serif;
+	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	line-height: 1;
 	transform:translateY(112px);
 	transition: background 0.25s ease, box-shadow 0.25s ease-in-out;
@@ -497,7 +497,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	border: none;
 	color: #4399DE;
 	display: inline-block;
-	font: normal 12px/40px "Futura","Open Sans","century gothic","Lato","arial",sans-serif;
+	font: normal 12px/40px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
 	letter-spacing: .6px;
 	padding: 0 22px;
@@ -1012,7 +1012,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 .link .entry .buttons li .redditSingleClick {
 	padding: 0 1px;
 	color: #98ABBA;
-	font: normal 13px Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font: normal 13px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	transition: all 0.15s ease-in-out;
 }
 
@@ -1677,7 +1677,7 @@ div.titlebox span.number:after {
 	border: 0 solid;
 	border-radius: 1px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
-	font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 38px;
 	padding: 0 42px 0 16px;
 	top: 254px;
@@ -1761,7 +1761,7 @@ div.titlebox span.number:after {
 	background: #439BDA;
 	border-radius: 0 0 0 1px;
 	color: rgba(255, 255, 255, .7);
-	font: normal 13px/36px "Helvetica Neue","Helvetica","Arial",sans-serif;
+	font: normal 13px/36px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 36px;
 	letter-spacing: 0;
 	transition: background .12s ease-in-out, color .12s ease-in-out;
@@ -1851,10 +1851,6 @@ div.titlebox span.number:after {
 	visibility: visible;
 }
 
-.titlebox .tagline a.flairselectbtn {
-	color: #057ED6;
-}
-
 .leavemoderator, .titlebox .tagline a.author, .titlebox form.toggle.leavecontributor-button {display: none;}
 .titlebox form.flairtoggle {line-height: 2;}
 .titlebox form.toggle.sr_style_toggle {padding-bottom: 0;display: block;background-color: transparent;}
@@ -1864,10 +1860,10 @@ div.titlebox span.number:after {
 /* Sidebar Description */
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol {
 	color: #292F34;
-	font: 13px/1.45 Lato,arial,sans-serif;
+	font: 13px/1.45 Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.side .submit-link:before, .side .titlebox:before {
+.side .submit-link:before {
 	font-size: 16px;
 }
 
@@ -1892,7 +1888,7 @@ div.titlebox span.number:after {
 	box-shadow: none;
 	color: #FFF;
 	display: inline-block;
-	font: normal bold 13px/32px "Open Sans","Roboto","Lato","Helvetica Neue","Candara","Verdana","Helvetica","Arial",sans-serif;
+	font: normal bold 13px/32px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 32px;
 	margin: 0;
 	padding-left: 16px;
@@ -2111,7 +2107,7 @@ body:not(.listing-page) .side .md>ol {
 	border-radius: 2px;
 	color: #4399DE;
 	cursor: default;
-	font: 12px "Futura","Open Sans","century gothic","Lato","arial",sans-serif;
+	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
 	left: 78%;
 	left: calc(100% - 336px);
@@ -2122,9 +2118,6 @@ body:not(.listing-page) .side .md>ol {
 	top: 184px;
 	transition: background .18s ease-in-out, color .18s ease-in-out;
 	z-index: 1;
-}
-.side .md>ol>li {
-	font-weight: bold;
 }
 
 .side .md>ol>li:after {
@@ -2306,7 +2299,7 @@ body:not(.listing-page) .side .md>ol {
 	color: #BBB;
 	content: "CSS THEME BASED ON /R/NAUT";
 	display: block;
-	font: 11px Lato,arial,sans-serif;
+	font: 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: 14px auto 0 -16px;
 	padding: 0;
 	position: absolute;
@@ -2555,7 +2548,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .comment .entry .tagline {
 	color: #98ABBA;
-	font: 12px Arial, sans-serif;
+	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .comments-page .comment .expand {
@@ -2696,7 +2689,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .side .md h1, .submit-link:before, .titlebox:before, .sidecontentbox .title h1 {
 	color: #545454;
-	font: 500 18px "Helvetica Neue","Verdana","Helvetica","Arial",sans-serif;
+	font: 500 18px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	letter-spacing: .8px;
 	text-align: center;
 	text-transform: uppercase;
@@ -3014,7 +3007,7 @@ body.res.comments-page .side .linkinfo .score {
 	margin-top: 16px;
 	cursor: pointer;
 	text-transform: capitalize;
-	font: 17px Lato, arial, sans-serif;
+	font: 17px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	padding: 16px;
 	margin-bottom: 48px;
 }
@@ -3141,7 +3134,7 @@ body #newlink-with-image-upload .file-upload-button {
 .search-header-label {
 	text-transform: capitalize;
 	color: #738491;
-	font: 18px Lato, Arial, sans-serif;
+	font: 18px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	padding-bottom: 2px;
 }
 
@@ -3335,7 +3328,7 @@ pre {
 	border: none;
 	border-radius: 2px;
 	color: #FFF;
-	font: 700 14px Lato,arial,sans-serif;
+	font: 700 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 36px;
 	padding: 0 16px;
 	text-transform: uppercase;
@@ -3363,7 +3356,7 @@ pre {
 	border-radius: 0;
 	color: #98ABBA;
 	cursor: default;
-	font: normal 12px arial, sans-serif;
+	font: normal 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin-right: inherit;
 	padding-left: 0;
 
@@ -3409,7 +3402,7 @@ pre {
 	bottom: -2px;
 	color: #27B062;
 	content: "✓";
-	font: 900 15px "Open Sans", Roboto, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 900 15px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	position: relative;
 }
 
@@ -3826,7 +3819,7 @@ padding: 0 8px 0 0;
 	box-shadow: none;
 	color: #4D5763;
 	font-weight: normal;
-	font: 11px verdana,arial,sans-serif;
+	font: 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: inherit;
 	line-height: inherit;
 	margin-left: 4px;
@@ -4086,7 +4079,7 @@ body .btn, body button, .btn:hover, button:hover {
 }
 
 /* Link color */
-.thing .title.loggedin.click, .thing .title.click, .link .entry .buttons li a.comments,.link .entry .buttons li a:hover, .titlebox .tagline a.flairselectbtn, .md a,
+.thing .title.loggedin.click, .thing .title.click, .link .entry .buttons li a.comments,.link .entry .buttons li a:hover, .md a,
 .wiki-page .wiki-page-content .md.wiki h4, a, 
 .wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title, 
 .combined-search-page .search-result a, .combined-search-page .search-result a>mark, .combined-search-page .search-result .search-comments, 
@@ -4204,7 +4197,6 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
 	color: #888;
-	text-transform: uppercase;
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove:hover {
@@ -4277,7 +4269,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 }
 
 .sidecontentbox .more {
-	font: bold 11px "Lato","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font: bold 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;;
 	text-transform: uppercase;
 	letter-spacing: -.5px;
 	margin-top: 8px;
@@ -4973,8 +4965,11 @@ RESUserTag a {
 	padding: 2px 8px;
 	position: absolute;
 	right: 32px;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	transition: opacity .09s ease-in-out;
+}
+.side .titlebox .tagline a.flairselectbtn:after {
+	content: " Flair";
 }
 .side .titlebox .tagline a.flairselectbtn:hover {
 	opacity: .7;
@@ -5151,7 +5146,7 @@ body.submit-page .content input, .submit-page .content textarea {
 }
 
 .search-page #search input[type=text] {
-	font: 16px Arial, sans-serif;
+	font: 16px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	max-width: none;
 	padding-right: 38px;
 	width: 100%;
