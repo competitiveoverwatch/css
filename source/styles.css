@@ -570,7 +570,7 @@ body >.content .link .rank, .rank-spacer {
 .link .midcol {
 	height: 56px;
 	overflow: visible;
-	margin: 3px 10px 0 0;
+	margin: 0 10px 0 0;
 	width: 32px !important;
 
 }
@@ -578,7 +578,7 @@ body >.content .link .rank, .rank-spacer {
 	color: #AAA;
 	font-size: 12px;
 	line-height: 16px;
-	margin: 0 -100% 1px -100%;
+	margin: 1px -100% 2px -100%;
 	text-align: center;
 }
 .res-nightmode .link .score {
@@ -829,7 +829,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 	color: #98ABBA;
 	display: inline-block;
 	font-size: 12px;
-	margin-top: 1px;
+	margin-top: 3px;
 	overflow: hidden;
 }
 
@@ -839,7 +839,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 
 /* For English languages (en-gb/en-us/en) */
 [lang^=en] .link .entry .tagline {
-    margin: 5px 0 0 -56px;
+    margin-left: -57px;
 	visibility: hidden;
 }
 [lang^=en] .link .entry .tagline * {
@@ -912,7 +912,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 /* Comment / Share / Report */
 .link .flat-list {
 	padding: 0;
-	margin-top: 5px;
+	margin-top: 8px;
 }
 
 .entry .buttons li {
@@ -920,7 +920,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 }
 
 .entry .buttons li a {
-	color: rgba(163, 171, 177, .3);
+	color: rgba(152, 171, 186, .3);
 	font-size: 12px;
 	font-weight: normal;
 	margin: 2px 8px;
@@ -2128,7 +2128,7 @@ body:not(.listing-page) .side .md>ol {
 .side .md>ol li ol {
 	border-radius: 2px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.24);
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: normal;
 	list-style-type: none;
 	margin: 6px 0 0 -18px;
@@ -3387,7 +3387,7 @@ pre {
 	font-family: inherit;
 	font-size: 10px;
 	margin: 0 4px;
-	padding: 1px 6px;
+	padding: 2px 4px;
 	text-transform: uppercase;
 }
 
@@ -3413,7 +3413,6 @@ pre {
 .titlebox .tagline a.author {
 	color: #292F34;
 	display: inline-block;
-	font-weight: bold;
 	margin-right: 0;
 }
 /* User flairs for teams and in-post tags for team icons */
@@ -4260,8 +4259,10 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	margin: -4px 0 14px 0;
 	padding: 8px 16px;
 	text-align: center;
-	text-transform: uppercase;
 	transition: opacity .1s ease-in-out;
+}
+.sidecontentbox a.helplink:first-letter {
+	text-transform: capitalize;
 }
 
 .sidecontentbox a.helplink:hover {
@@ -4269,7 +4270,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 }
 
 .sidecontentbox .more {
-	font: bold 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+	font: bold 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-transform: uppercase;
 	letter-spacing: -.5px;
 	margin-top: 8px;
