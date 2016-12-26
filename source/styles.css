@@ -3767,7 +3767,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .pinHeader-header #header {top: 0;background-image: url(%%header%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
 .res.search-page #header .tabmenu {display: none !important;}
 
-.res #header-bottom-right {
+body.res #header-bottom-right {
 top: 1px;
 border-radius: 0;
 height: 18px;
