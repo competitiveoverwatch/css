@@ -523,10 +523,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 #header .tabmenu li:first-of-type a {
-	border-radius: 2px 0 0 2px;
+	border-radius: 1px 0 0 1px;
 }
 .listing-page .tabmenu li>a[href$="/wiki/"], .wiki-page .tabmenu li>a[href$="/wiki/"] {
-	border-radius: 0 2px 2px 0;
+	border-radius: 0 1px 1px 0;
 }
 
 #header .tabmenu li.selected a {
@@ -544,13 +544,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Body Content - Frontpage */
 body >.content {
-	animation: 0.6s fadein;
+	animation: 0.6s content-fadein 0.1s;
 	margin: 16px 352px 64px 16px;
 	padding: 0;
 	padding-top: 8px !important;
 }
 
-@keyframes fadein {
+@keyframes content-fadein {
   0%   {opacity:0;transform:translateY(48px);}
   100% {opacity:1;transform:translateY(0);}
 }
@@ -2014,11 +2014,15 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Announcement/stickied links */
+@keyframes header-stickies {
+	0% { opacity: 0; right: -320px; }
+	100% { opacity: 1; right: 16px; }
+}
+
 .side .md blockquote {
-	background: rgba(30, 54, 98, 0.7);
-	border-radius: 2px;
+	animation: .55s ease-in-out header-stickies .2s;
 	border: 0;
-	padding-left: 16px;
+	padding: 0;
 	position: absolute;
 	right: 16px;
 	top: 54px;
@@ -2026,10 +2030,30 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	z-index: 100;
 }
 
-.side .md blockquote a, .side .md blockquote a:visited {
+.side .md blockquote a {
 	display: block;
+	padding: 10px 16px;
+	transition: all .1s ease-in-out;
+	transition-property: background, color;
+}
+
+.side .md blockquote a, .side .md blockquote a:visited {
+	background: rgba(30, 54, 98, 0.68);
 	color: rgba(255, 255, 255, 0.9);
-	margin: 12px 0;
+}
+
+.side .md blockquote a:first-child {
+	border-radius: 1px 1px 0 0;
+}
+.side .md blockquote a:last-child {
+	border-radius: 0 0 1px 1px;
+}
+
+/* Higher specificity due to existing text decoration rule on `.side .md p a:hover` */
+.side .md blockquote p a:hover {
+	background: #FFF;
+	color: rgba(0,0,0,.9);
+	text-decoration: none;
 }
 
 
@@ -2052,7 +2076,7 @@ body:not(.listing-page) .side .md>ol {
 
 .side .md>ol {
 	background: rgba(67, 155, 218, .1);
-	border-radius: 2px;
+	border-radius: 1px;
 	color: #4399DE;
 	cursor: default;
 	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -2063,7 +2087,7 @@ body:not(.listing-page) .side .md>ol {
 	list-style-type: none;
 	padding: 12px 18px;
 	position: absolute;
-	top: 184px;
+	top: 181px;
 	transition: background .18s ease-in-out, color .18s ease-in-out;
 	z-index: 1;
 }
@@ -2074,7 +2098,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li ol {
-	border-radius: 2px;
+	border-radius: 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.24);
 	font-size: 13px;
 	font-weight: normal;
@@ -2095,11 +2119,11 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol ol li:nth-child(2) a {
-	border-radius: 2px 2px 0 0;
+	border-radius: 1px 1px 0 0;
 }
 
 .side .md>ol ol li:last-child a {
-	border-radius: 0 0 2px 2px;
+	border-radius: 0 0 1px 1px;
 }
 
 .side .md>ol li a {
@@ -2121,7 +2145,7 @@ body:not(.listing-page) .side .md>ol {
 
 .side .md>ol:hover {
 	background: #FFF;
-	color: rgba(0,0,0,.8);
+	color: rgba(0,0,0,.9);
 	text-shadow: none;
 }
 
