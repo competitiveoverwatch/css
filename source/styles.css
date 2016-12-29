@@ -2013,77 +2013,25 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	}
 }
 
-@keyframes banner-sticky-from-left {
-	0% { opacity: 0; right: 50px; }
-	100% { opacity: 1; right: 0; }
-}
-
-@keyframes banner-sticky-from-right {
-	0% { opacity: 0; right: -403px; }
-	100% { opacity: 1; right: 16px; }
-}
-
 /* Announcement/stickied links */
-.side .md h6 {
-	font-size: 13px;
-	font-weight: bold;
-	opacity: 1;
-	position: absolute;
-	right: 0;
-	text-decoration: none;
-	top: 60px;
-	width: 336px;
-	z-index: 1;
-}
-
-.hot-page .side .md h6 {
-	animation: .5s ease-in-out .2s forwards banner-sticky-from-left;
-	opacity: 0;
-	right: 50px;
-}
-
-@media only screen and (max-width: 1360px) {
-	.side .md h6 {
-		right: 16px;
-		width: auto;
-	}
-	.hot-page .side .md h6 {
-		animation: .55s ease-in-out .25s forwards banner-sticky-from-right;
-		opacity: 0;
-		right: -403px;
-	}
-	/* Slide in one-by-one when from right, as left edges do not line up */
-	.hot-page .side .md h6+h6 {animation-delay: .4s}
-	.hot-page .side .md h6+h6+h6 {animation-delay: .5s}
-}
-
-.side .md h6 a, .side .md h6 a:visited {
-	color: #FFF;
-}
-
-.side .md h6 a {
-	background: rgba(67, 155, 218, .8);
-	border: 1px solid transparent;
+.side .md blockquote {
+	background: rgba(30, 54, 98, 0.7);
 	border-radius: 2px;
-	padding: 6px 18px;
-	text-decoration: none;
-	transition: background .05s ease-in-out, color .05s ease-in-out, box-shadow .05s ease-in-out, border .05s ease-in-out;
+	border: 0;
+	padding-left: 16px;
+	position: absolute;
+	right: 16px;
+	top: 54px;
+	width: 320px;
+	z-index: 100;
 }
 
-.side .md h6 a:hover {
-	background: #439BDA;
-	border: 1px solid rgba(255,255,255,.08);
-	box-shadow: 0 0 6px rgba(57,209,255,.2);
-	color: #FFF;
+.side .md blockquote a, .side .md blockquote a:visited {
+	display: block;
+	color: rgba(255, 255, 255, 0.9);
+	margin: 12px 0;
 }
 
-/* Next links */
-.side .md h6+h6 {top: 98px}
-.side .md h6+h6+h6 {top: 136px}
-
-.side .md h6+h6 a, .side .md h6+h6+h6 a {
-	padding: 6px 16px;
-}
 
 .side .md>ul {
 	font-size: 12px;
