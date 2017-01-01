@@ -342,14 +342,14 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 #header-bottom-right .havemail {
-	opacity: 1;
+	opacity: 1 !important;
 }
 
 .message-count {
-	background: #f50;
+	background: #F50;
 	position: relative;
 	top: -1px;
-	color: #fff !important;
+	color: #FFF !important;
 }
 
 #mail.havemail:before {
@@ -1878,12 +1878,12 @@ div.titlebox span.number:after {
 	margin-left: -16px;
 }
 
-/* Links for Discord, Twitch, calendar and 'Bible' */
-.side .md h2, .side .md h3, .side .md h4, .side .md h5 {
+/* Links for Twitter and Discord */
+.side .md h2, .side .md h3 {
 	margin: 0 0 2px;
 }
 
-.side .md h2 a, .side .md h3 a, .side .md h4 a, .side .md h5 a {
+.side .md h2 a, .side .md h3 a {
 	border-radius: 2px;
 	box-shadow: none;
 	color: #FFF;
@@ -1896,16 +1896,16 @@ div.titlebox span.number:after {
 	width: 100%;
 }
 
-.side .md h2 a:hover, .side .md h3 a:hover, .side .md h4 a:hover, .side .md h5 a:hover {
+.side .md h2 a:hover, .side .md h3 a:hover {
 	opacity: .91;
 	text-decoration: none;
 }
 
-.side .md h2 a:visited, .side .md h3 a:visited, .side .md h4 a:visited, .side .md h5 a:visited  {
+.side .md h2 a:visited, .side .md h3 a:visited {
 	color: #FFF !important;
 }
 
-.side .md h2 a:before, .side .md h3 a:before, .side .md h4 a:before, .side .md h5 a:before {
+.side .md h2 a:before, .side .md h3 a:before {
 	content: "";
 	display: inline-block;
 	margin-right: 10px;
@@ -1943,49 +1943,6 @@ div.titlebox span.number:after {
 	width: 22px;
 }
 
-/* Twitch */
-.side .md h4 a {
-	background: #6441A5;
-	color: #FFF;
-}
-.side .md h4 a:before {
-	background: url(%%sidebar-twitch-1x%%);
-	height: 20px;
-	position: relative;
-	top: -7px;
-	width: 20px;
-	vertical-align: bottom;
-}
-
-/* Competitive Bible and Pro Players' Settings */
-.side .md h5+h5 {
-	margin: -1px auto 0;
-}
-
-.side .md h5 a {
-	background: #FF8C00;
-	border-radius: 2px 2px 0 0;
-}
-.side .md h5+h5 a {
-	border-radius: 0 0 2px 2px;
-}
-
-.side .md h5 a:before {
-	background: url(%%sidebar-bible-1x%%);
-	height: 22px;
-	left: -2px;
-	position: relative;
-	top: -7px;
-	width: 20px;
-	vertical-align: bottom;
-}
-.side .md h5+h5 a:before {
-	background: url(%%sidebar-settings-1x%%);
-	height: 21px;
-	top: -9px;
-	width: 23px;
-}
-
 /* Retina/HiDPI */
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -1999,18 +1956,29 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 		background: url(%%sidebar-twitter-2x%%);
 		background-size: 22px 18px;
 	}
-	.side .md h4 a:before {
-		background: url(%%sidebar-twitch-2x%%);
-		background-size: 20px 20px;
-	}
-	.side .md h5 a:before {
-		background: url(%%sidebar-bible-2x%%);
-		background-size: 24px 24px;
-	}
-	.side .md h5+h5 a:before {
-		background: url(%%sidebar-settings-2x%%);
-		background-size: 24px 24px;
-	}
+}
+
+/* Events */
+.side .md h4 {
+	display: block;
+	position: relative;
+}
+
+.side .md p+h4 {
+	margin-top: 16px;
+}
+
+.side .md h4 a {
+	display: block;
+	padding-right: 32px;
+}
+.side .md h4 a:after {
+	content: "→";
+	position: absolute;
+	right: 0;
+}
+.side .md h4 a:hover {
+	text-decoration: underline;
 }
 
 /* Announcement/stickied links */
