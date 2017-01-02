@@ -1965,7 +1965,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .side .md p+h4 {
-	margin-top: 16px;
+	margin-top: 12px;
 }
 
 .side .md h4 a {
@@ -1979,6 +1979,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .side .md h4 a:hover {
 	text-decoration: underline;
+}
+
+.side .md h4+p {
+	margin-top: -6px;
 }
 
 /* Announcement/stickied links */
@@ -3389,7 +3393,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.flair-fan {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 118px 138px;
+		background-size: 118px 153px;
 	}
 	.flair-faze {
 		width: 21px;
@@ -3517,6 +3521,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .flair-kingdom, .md a[href*="kingdom"] {
 	background-position: -22px -117px;
 	width: 23px;
+}
+.flair-clg, .md a[href*="clg"] {
+	background-position: 0 -138px;
+	height: 16px;
 }
 
 /* User flairs for ranks */

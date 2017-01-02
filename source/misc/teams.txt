@@ -27,3 +27,4 @@ fan ldlc
 fan rise
 fan invictus
 fan method
+fan clg
