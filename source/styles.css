@@ -543,7 +543,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 
 /* Body Content - Frontpage */
-body >.content {
+body:not(.submit-page)>.content {
 	animation: 0.6s content-fadein 0.1s;
 	margin: 16px 352px 64px 16px;
 	padding: 0;
@@ -1969,7 +1969,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .side .md h4 a {
-	display: block;
 	padding-right: 32px;
 }
 .side .md h4 a:after {
@@ -2496,16 +2495,16 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comments-page .comment .expand {
-	background: rgba(0, 0, 0, .01);
-	border-radius: 3px 0 0 3px;
+	background: rgba(0, 0, 0, .02);
+	border-radius: 1px 0 0 1px;
 	bottom: 0;
 	cursor: default;
-	font-size: 10px;
+	font-size: 0;
 	left: 0;
-	padding: 4px;
 	position: absolute;
 	top: 0;
-	transition: background .06s ease-in-out, color .06s ease-in-out;
+	transition: background .06s ease-in-out;
+	width: 16px;
 }
 
 .comments-page .comment .expand:hover {
@@ -2522,16 +2521,20 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding: 10px 16px 16px
 }
 
+.comment.collapsed .score, .comments-page .comment.collapsed time {
+	vertical-align: bottom;
+}
+
 .comment.collapsed .tagline :not(.expand), .comment.collapsed .tagline a :not(.expand), .comment.collapsed .search-result-meta :not(.expand), .comment.collapsed .search-result-meta a :not(.expand) {
 	font-style: normal
 }
 
-.comment-collapsed .numchildren {
+.comment.collapsed a.numchildren {
 	color: #98ABBA;
 }
 
 .comment.collapsed a.expand:after {
-	content: "ah ";
+	content: "";
 	position: absolute;
 	display: block;
 	width: calc(100% - 368px);
@@ -2822,11 +2825,11 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page .content {
-	margin: 24px auto 0 auto;
+	margin: -58px auto 0 auto;
 }
 
 .submit-page #header .pagename a {
-	top: -120px;
+	top: -126px;
 }
 
 .submit-page #header-img.default-header, .submit-page #header-img {
@@ -2854,24 +2857,44 @@ body.res.comments-page .side .linkinfo .score {
 .submit-page #newlink.submit.content ul.tabmenu.formtab {
 	background: 0;
 	border: none;
-	border-radius: 2px;
+	border-radius: 1px;
 	padding: 0;
 	position: relative;
+	z-index: 99;
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab a {
-	background: #FFF;
+	background: rgba(67, 155, 218, .1);
 	border: none;
-	color: #888;
+	color: #4399DE;
 	display: inline-block;
 	font-size: 16px;
-	font-weight: bold;
-	line-height: 48px;
-	padding: 0;
+	line-height: 42px;
 	text-align: center;
 	text-transform: uppercase;
-	transition: background 0.12s ease-in-out, color 0.12s ease-in-out;
+	transition: all 0.12s ease-in-out;
 	width: 50%;
+}
+
+.submit-page #newlink.submit.content .tabmenu.formtab a:before {
+	border-bottom: 2px solid #4399de;
+	bottom: 0;
+	content: "";
+	display: block;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	transform: scaleX(.45);
+	transition: transform .14s ease-in-out, opacity .14s ease-in-out
+}
+.submit-page #newlink.submit.content .tabmenu.formtab li:last-child a:before {
+	left: 50%;
+}
+
+.submit-page #newlink.submit.content .tabmenu.formtab li:not(.selected) a:hover:before {
+	opacity: 1;
+	transform: scaleX(1);
 }
 
 .res-nightmode .submit-page #newlink.submit.content .tabmenu.formtab a {
@@ -2880,20 +2903,19 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page .tabmenu li:first-child a {
-	border-radius: 3px 0 0 0;
+	border-radius: 1px 0 0 0;
 }
 .submit-page .tabmenu li:last-child a {
-	border-radius: 0 3px 0 0;
+	border-radius: 0 1px 0 0;
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a {
+	background: #439BDA;
+	border-bottom: 2px solid #5AEAFF;
+	color: #FFF;
 	font-size: 16px;
-	background: none;
-	color: #fff;
-	border-bottom: 4px solid;
+	line-height: 40px;
 }
-
-.submit-page #newlink.submit.content .tabmenu.formtab a:hover {color: #fff;}
 
 .submit-page .formtabs-content {border-top: 0;padding-top: 0;}
 
@@ -2915,7 +2937,6 @@ body.res.comments-page .side .linkinfo .score {
 	background: #0079D3;
 }
 
-.submit_text.enabled.roundfield .md {color: #fff;}
 .submit_text ol, .submit_text ul {margin-left: -1em;}
 
 .submit-page .infobar {display: none !important;}
@@ -2946,18 +2967,24 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content .btn {
-	width: 100%;
-	height: auto;
-	margin-top: 16px;
+	background: #439BDA;
 	cursor: pointer;
-	text-transform: capitalize;
 	font: 17px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding: 16px;
+	height: auto;
+	letter-spacing: 1px;
 	margin-bottom: 48px;
+	margin-top: 16px;
+	padding: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
 }
-
 .submit-page #newlink.submit.content .btn:hover {
-	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.48);
+	box-shadow: none;
+	opacity: .9;
+}
+.submit-page #newlink.submit.content .btn:after {
+	display: none;
 }
 
 body #newlink-with-image-upload .file-upload-button {
@@ -3321,7 +3348,7 @@ pre {
 }
 
 .link .flair-moderator {
-	font-size: 10px;
+	font-size: 11px;
 }
 
 .flair-moderator {
@@ -3329,10 +3356,9 @@ pre {
 	border-radius: 1px;
 	color: #FFF;
 	font-family: inherit;
-	font-size: 10px;
+	font-size: 11px;
 	margin: 0 4px;
 	padding: 2px 4px;
-	text-transform: uppercase;
 }
 
 .flair-verified {
@@ -3393,7 +3419,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.flair-fan {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 118px 153px;
+		background-size: 118px 145px;
 	}
 	.flair-faze {
 		width: 21px;
@@ -3493,12 +3519,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 21px;
 }
 .flair-luxury-watch-red, .md a[href*="luxury-watch-red"] {
-	background-position: 0 -110px;
+	background-position: 0 -109px;
 	height: 21px;
 }
 .flair-vici, .md a[href*="vici"] {
 	background-position: -23px -97px;
-	height: 20px;
+	height: 19px;
 }
 .flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] {
 	background-position: -44px -104px;
@@ -3518,13 +3544,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: -94px -22px;
 	height: 17px;
 }
-.flair-kingdom, .md a[href*="kingdom"] {
+.flair-renegades, .md a[href*="renegades"] {
 	background-position: -22px -117px;
-	width: 23px;
+	width: 21px;
+	height: 20px;
 }
 .flair-clg, .md a[href*="clg"] {
-	background-position: 0 -138px;
-	height: 16px;
+	background-position: 0 -130px;
+	height: 15px;
 }
 
 /* User flairs for ranks */
@@ -4977,22 +5004,17 @@ body.submit-page .roundfield input:not([type=checkbox]),
 
 @media only screen and (min-device-width: 737px) {
 	.submit-page .submit_text.enabled.roundfield {
-		border-radius: 0 0 3px 3px;
-		box-shadow: none;
+		background: #FFF;
+		border-radius: 0 0 1px 1px;
+		padding-top: 8px;
 		position: absolute;
-		top: 318px;
+		top: 254px;
 		width: 700px;
 	}
 
 	.submit-page .formtabs-content {
-	margin-top: 126px;
-}
-}
-
-.submit-page #newlink.submit.content .tabmenu.formtab .selected a, .submit-page #newlink.submit.content .tabmenu.formtab a:hover {
-	background: #439BDA;
-	border-bottom: none;
-	color: #FFF;
+		margin-top: 156px;
+	}
 }
 
 .submit-page .roundfield-content {
@@ -5051,22 +5073,6 @@ body.submit-page .content input, .submit-page .content textarea {
 
 .submit-page .roundfield label {
 	font-size: 14px;
-}
-
-.submit-page #newlink.submit.content .btn {
-	background: #439BDA;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-.submit-page #newlink.submit.content .btn:hover {
-	box-shadow: none;
-	opacity: .9;
-}
-.submit-page #newlink.submit.content .btn:after {
-	display: none;
 }
 
 .submit-page .footer-parent {

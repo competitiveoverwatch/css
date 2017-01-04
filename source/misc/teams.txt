@@ -2,12 +2,12 @@ fan envy
 fan c9
 fan misfits
 fan nip
-fan faze
 fan fnc
+fan faze
 fan rogue
 fan col
-fan lunatic-hai
 fan immortals
+fan lunatic-hai
 fan freecs-blue
 fan luxury-watch-red
 fan kongdoo-panthera
@@ -17,10 +17,10 @@ fan freecs-red
 fan nrg
 fan storm
 fan kongdoo-uncia
+fan renegades
 fan dig
-fan kingdom
-fan nga
 fan anox
+fan nga
 fan liquid
 fan vici
 fan ldlc
