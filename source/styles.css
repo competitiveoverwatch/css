@@ -5104,14 +5104,14 @@ body.submit-page .content input, .submit-page .content textarea {
 	display: none;
 }
 
-.search-page .content {
+body.search-page .content {
 	margin: 56px auto;
 	padding: 0;
 	width: 80%;
 }
 
 /* RES Alignment */
-.res.search-page .content {
+body.res.search-page .content {
 	margin: 0 auto;
 }
 .res.search-page #search {
