@@ -1593,10 +1593,7 @@ div.titlebox span.number:after {
 /* Subscribe Button */
 .titlebox .fancy-toggle-button {
 	border-radius: 2px;
-	display: block;
-	font-size: 10px;
 	margin: 8px 0 0 auto;
-	text-transform: uppercase;
 	width: auto;
 	z-index: 100;
 }
@@ -1607,20 +1604,17 @@ div.titlebox span.number:after {
 }
 
 .titlebox .fancy-toggle-button .active {
-	display: block;
-	border: none;
-	height: 32px;
+	background: none;
 	border-radius: 2px;
-	line-height: 30px;
-	background-image: none !important;
+	border: none;
+	display: block;
+	font-size: 11px;
+	height: auto;
+	line-height: 22px;
 	padding: 0 12px;
 	text-transform: capitalize;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
-	transition: box-shadow .15s ease-in-out,background .15s ease-in-out,color .15s ease-in-out, padding .15s ease-in-out, margin 0.2s ease-in-out;
+	transition: background .08s ease-in-out,color .08s ease-in-out, padding .08s ease-in-out, margin 0.2s ease-in-out;
 }
-
-.titlebox .fancy-toggle-button .active:hover {box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);}
-.titlebox .fancy-toggle-button .active:active {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
 
 /* Subscribe */
 .titlebox .fancy-toggle-button .active.add {
@@ -1631,7 +1625,7 @@ div.titlebox span.number:after {
 	font-size: 13px;
 	text-align: center;
 	text-transform: uppercase;
-	transition: opacity .15s ease-in-out;
+	transition: opacity .08s ease-in-out;
 }
 
 .titlebox .fancy-toggle-button .active.add:hover {
@@ -1644,18 +1638,8 @@ div.titlebox span.number:after {
 
 /* Unsubscribe */
 .titlebox .fancy-toggle-button .active.remove {
-	background: none;
-	border: none;
-	box-shadow: none;
 	color: #FFF;
-	font-size: 11px;
-	height: auto;
-	line-height: 22px;
-	margin: auto;
-	text-align: center;
 }
-
-.titlebox .fancy-toggle-button .active.remove:hover {background:rgba(0,0,0,0.32);}
 
 .hover-bubble.multi-selector {right: 346px !important;margin-top: -56px;border: none;}
 .hover-bubble.anchor-right:before {
@@ -4165,12 +4149,12 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 
 /* Subscribed to subreddit */
 .subscriber .titlebox .fancy-toggle-button {
-	background: rgba(0, 0, 0, .03);
-	transition: background .1s ease-in-out;
+	background: #F4F4F4;
+	transition: background .08s ease-in-out;
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
-	color: #888;
+	color: #555;
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove:hover {
@@ -4182,7 +4166,6 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	opacity: .9;
 }
 
-/* "Show my flair on this subreddit" toggle */
 .side .titlebox .toggle {
 	font-size: 12px;
 	order: 2;
@@ -4925,10 +4908,6 @@ RESUserTag a {
 
 .side .titlebox form.toggle.sr_style_toggle label {
 	position: static;
-}
-
-.side .titlebox form.flairtoggle {
-	margin-top: 10px;
 }
 
 .side .titlebox .tagline a.flairselectbtn {
