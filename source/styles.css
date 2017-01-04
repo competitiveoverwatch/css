@@ -1937,7 +1937,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 @keyframes event-link-arrow {
-	0% { opacity: 0; right: 32px; }
+	0% { opacity: 0; right: 24px; }
 	100% { opacity: 1; right: 0; }
 }
 
