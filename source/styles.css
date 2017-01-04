@@ -1896,25 +1896,6 @@ div.titlebox span.number:after {
 	vertical-align: middle;
 }
 
-/* Discord */
-.side .md h2 {
-	margin-top: 1px;
-}
-
-.side .md h2 a {
-	background: #3C3C3C;
-}
-.res-nightmode .side .md h2 a {
-	background: #444;
-}
-.side .md h2 a:before {
-	background: url(%%sidebar-discord-1x%%);
-	height: 24px;
-	position: relative;
-	top: -2px;
-	width: 21px;
-}
-
 /* Twitter */
 .side .md h3 a {
 	background: #1CBEF0;
@@ -1931,11 +1912,6 @@ div.titlebox span.number:after {
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-
-	.side .md h2 a:before {
-		background: url(%%sidebar-discord-2x%%);
-		background-size: 21px 24px;
-	}
 	.side .md h3 a:before {
 		background: url(%%sidebar-twitter-2x%%);
 		background-size: 22px 18px;
@@ -3521,7 +3497,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .flair-rise, .md a[href*="rise"] {
 	background-position: -88px -109px;
-	height: 20px;
+	height: 19px;
 	width: 30px;
 }
 .flair-kongdoo-uncia, .md a[href*="kongdoo-uncia"] {
@@ -3536,6 +3512,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .flair-clg, .md a[href*="clg"] {
 	background-position: 0 -130px;
 	height: 15px;
+}
+.flair-world-elite, .md a[href*="world-elite"] {
+	background-position: -88px -130px;
+	height: 14px;
+	width: 24px;
 }
 
 /* User flairs for ranks */
@@ -4567,6 +4548,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .md a[href="#hero-mercy"] {background-position: -56px -84px}
 .md a[href="#hero-symmetra"] {background-position: -84px -84px}
 .md a[href="#hero-zenyatta"] {background-position: -112px -84px}
+.md a[href="#hero-sombra"] {background-position: -140px -56px}
 
 /* Map tags */
 .md a[href*="#map-"] {
@@ -4588,10 +4570,12 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .md a[href="#map-hollywood"] {background-position: 0 -158px}
 .md a[href="#map-kingsrow"] {background-position: -110px -158px}
 .md a[href="#map-numbani"] {background-position: -220px -158px}
-.md a[href="#map-eichenwalde"] {background-position: -330px -158px}
+.md a[href="#map-eichenwalde"] {background-position: -330px 0}
 .md a[href="#map-ilios"] {background-position: 0 -237px}
 .md a[href="#map-lijiang"] {background-position: -110px -237px}
 .md a[href="#map-nepal"] {background-position: -220px -237px}
+.md a[href="#map-antarctica"] {background-position: -330px -79px}
+.md a[href="#map-oasis"] {background-position: -330px -158px}
 
 /* Checkmark tags */
 .md a[href*="#check-"] {

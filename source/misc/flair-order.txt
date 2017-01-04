@@ -12,6 +12,7 @@ fan freecs-blue
 fan luxury-watch-red
 fan kongdoo-panthera
 fan luminosity
+fan world-elite
 fan reunited
 fan freecs-red
 fan nrg
@@ -28,3 +29,11 @@ fan rise
 fan invictus
 fan method
 fan clg
+rank bronze
+rank silver
+rank gold
+rank platinum
+rank diamond
+rank master
+rank grandmaster
+rank top
