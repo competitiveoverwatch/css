@@ -1215,9 +1215,7 @@ body>.content .link.compressed .midcol {
 }
 
 .flairoptionpane ul li .linkflair a.title {
-	font-size: 18px !important;
-	opacity: 100 !important;
-	color: #057ED6 !important;
+	display: none;
 }
 
 .flairselector form {
@@ -4324,7 +4322,9 @@ body.listing-page>.content {
 }
 
 .flairoptionpane ul li .linkflair span.linkflairlabel {
-	margin: 4px 6px 4px 0;
+	font-size: 15px;
+	margin: 0;
+	vertical-align: initial;
 }
 
 .content .thing .title:visited, .content .thing.visited .title {
