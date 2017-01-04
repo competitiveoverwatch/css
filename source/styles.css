@@ -4609,13 +4609,22 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 
 /* Flag tags */
 .md a[href*="#flag-"] {
-	background:url(%%flag-all%%);
+	background:url(%%flags-all%%);
 	cursor:default;
 	display:inline-block;
 	font-size: 0;
 	height:15px;
 	pointer-events:none;
 	width:21px;
+}
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.md a[href*="#flag-"] {
+		background:url(%%flags-all-2x%%);
+		background-size: 210px 406px;
+	}
 }
 .md a[href="#flag-au"] {background-position: -21px -15px}
 .md a[href="#flag-be"] {background-position: -168px -15px}
