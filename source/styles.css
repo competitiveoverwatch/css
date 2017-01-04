@@ -3406,7 +3406,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: inline-block;
 }
 
-.flair-c9, .md a[href*="c9"] {
+.flair-cloud-9, .md a[href*="cloud-9"] {
 	background-position: 0 -22px;
 	width: 31px;
 }
@@ -3417,7 +3417,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: 0 -66px;
 	width: 20px;
 }
-.flair-dig, .md a[href*="dig"] {
+.flair-dignitas, .md a[href*="dignitas"] {
 	background-position: -22px 0;
 	width: 19px;
 }
@@ -3426,11 +3426,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 24px;
 	width: 19px;
 }
-.flair-col, .md a[href*="col"] {
+.flair-complexity, .md a[href*="complexity"] {
 	background-position: -23px -46px;
 	height: 14px;
 }
-.flair-fnc, .md a[href*="fnc"] {
+.flair-fnatic, .md a[href*="fnatic"] {
 	background-position: -22px -60px;
 	width: 22px;
 }
@@ -3446,12 +3446,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: -48px -44px;
 	width: 23px;
 }
-.flair-storm, .md a[href*="storm"] {
+.flair-tempo-storm, .md a[href*="tempo-storm"] {
 	background-position: -44px -66px;
 	height: 19px;
 	width: 26px;
 }
-.flair-nip, .md a[href*="nip"] {
+.flair-ninjas-in-pyjamas, .md a[href*="ninjas-in-pyjamas"] {
 	background-position: -71px 0;
 }
 .flair-anox, .md a[href*="anox"] {
@@ -3495,7 +3495,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: 0 -109px;
 	height: 21px;
 }
-.flair-vici, .md a[href*="vici"] {
+.flair-vici-gaming, .md a[href*="vici-gaming"] {
 	background-position: -23px -97px;
 	height: 19px;
 }
@@ -3526,7 +3526,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: 0 -130px;
 	height: 15px;
 }
-.flair-world-elite, .md a[href*="world-elite"] {
+.flair-world-elite-white, .md a[href*="world-elite-white"] {
 	background-position: -88px -130px;
 	height: 14px;
 	width: 24px;
@@ -4543,7 +4543,7 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 .md a[href="#hero-mccree"] {background-position: -28px 0}
 .md a[href="#hero-pharah"] {background-position: -56px 0}
 .md a[href="#hero-reaper"] {background-position: -84px 0}
-.md a[href="#hero-soldier"] {background-position: -112px 0}
+.md a[href="#hero-soldier-76"] {background-position: -112px 0}
 .md a[href="#hero-tracer"] {background-position: -140px 0}
 .md a[href="#hero-bastion"] {background-position: 0 -28px}
 .md a[href="#hero-hanzo"] {background-position: -28px -28px}
@@ -4575,19 +4575,19 @@ a[href="#s"]:hover::after, a[href="#s"]:active::after {
 	width: 110px;
 }
 .md a[href="#map-hanamura"] {background-position: 0 0}
-.md a[href="#map-anubis"] {background-position: -110px 0}
-.md a[href="#map-volskaya"] {background-position: -220px 0}
+.md a[href="#map-template-of-anubis"] {background-position: -110px 0}
+.md a[href="#map-volskaya-industries"] {background-position: -220px 0}
 .md a[href="#map-dorado"] {background-position: 0 -79px}
-.md a[href="#map-route66"] {background-position: -110px -79px}
-.md a[href="#map-gibraltar"] {background-position: -220px -79px}
+.md a[href="#map-route-66"] {background-position: -110px -79px}
+.md a[href="#map-watchpoint-gibraltar"] {background-position: -220px -79px}
 .md a[href="#map-hollywood"] {background-position: 0 -158px}
-.md a[href="#map-kingsrow"] {background-position: -110px -158px}
+.md a[href="#map-kings-row"] {background-position: -110px -158px}
 .md a[href="#map-numbani"] {background-position: -220px -158px}
 .md a[href="#map-eichenwalde"] {background-position: -330px 0}
 .md a[href="#map-ilios"] {background-position: 0 -237px}
-.md a[href="#map-lijiang"] {background-position: -110px -237px}
+.md a[href="#map-lijiang-tower"] {background-position: -110px -237px}
 .md a[href="#map-nepal"] {background-position: -220px -237px}
-.md a[href="#map-antarctica"] {background-position: -330px -79px}
+.md a[href="#map-ecopoint-antarctica"] {background-position: -330px -79px}
 .md a[href="#map-oasis"] {background-position: -330px -158px}
 
 /* Checkmark tags */
