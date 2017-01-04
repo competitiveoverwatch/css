@@ -2267,16 +2267,16 @@ body.comments-page > .content {margin-top: 8px;}
 	color: #FFF;
 }
 
-.commentarea .menuarea .toggle a, .help-hoverable {
+.help-hoverable {
+	display: none;
+}
+
+.commentarea .menuarea .toggle a {
 	color: #98ABBA;
 	font-weight: normal;
 }
 
-.commentarea .menuarea .toggle a:hover, .help-hoverable:hover {color: #24A0ED;}
-
-.help-hoverable {
-	font-size: x-small;
-}
+.commentarea .menuarea .toggle a:hover {color: #24A0ED;}
 
 .commentarea>.usertext {
 	background: #FAFAFA;
