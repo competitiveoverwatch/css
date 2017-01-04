@@ -1919,6 +1919,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Events */
+.side .md h1 a:hover {
+	text-decoration: underline;
+}
+
 .side .md h4 {
 	display: block;
 	position: relative;
@@ -1931,6 +1935,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .side .md h4 a {
 	padding-right: 32px;
 }
+
+@keyframes event-link-arrow {
+	0% { opacity: 0; right: 32px; }
+	100% { opacity: 1; right: 0; }
+}
+
 .side .md h4 a:after {
 	content: "→";
 	position: absolute;
@@ -1938,6 +1948,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .side .md h4 a:hover {
 	text-decoration: underline;
+}
+.side .md h4 a:hover:after {
+	animation: 0.35s event-link-arrow ease-in-out;
 }
 
 .side .md h4+p {
