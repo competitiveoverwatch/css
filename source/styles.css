@@ -1213,6 +1213,9 @@ body>.content .link.compressed .midcol {
 	line-height: 1.35;
 	margin-right: 6px;
 }
+.flairoptionpane ul li .linkflair span.linkflairlabel:after {
+	display: none;
+}
 
 .flairoptionpane ul li .linkflair a.title {
 	display: none;
@@ -2671,16 +2674,16 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 286px;
+	margin-top: 275px;
 }
 .res.comments-page .side {
-	margin-top: 315px;
+	margin-top: 304px;
 }
 
 .linkinfo {
-	background: #fff;
-	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+	background: #FFF;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
 	border: none;
 	margin-left: -16px;
 	padding: 16px 16px 0;
