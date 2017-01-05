@@ -1954,7 +1954,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .side .md h4 a {
-	padding-right: 32px;
+	display: block;
+	height: auto;
+	padding-right: 24px;
+	width: 100%;
 }
 
 @keyframes event-link-arrow {
@@ -1964,6 +1967,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .side .md h4 a:after {
 	content: "→";
+	pointer-events: none;
 	position: absolute;
 	right: 0;
 }
