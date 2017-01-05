@@ -1637,6 +1637,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .res .titlebox span.subscribers {
 	margin-top: 10px;
+	text-align: center;
 	width: 100%;
 }
 
@@ -3822,6 +3823,14 @@ body.res #header-bottom-right {
 	max-width: 100%;
 }
 
+.res #REScommentNavToggle span {
+	margin-right: 2px;
+}
+
+.res .commentNavSortType {
+	font-weight: normal;
+}
+
 .res .commentarea>.usertext {
 	margin-top: -76px;
 	padding-top: 80px !important;
@@ -4941,9 +4950,9 @@ RESUserTag a {
 }
 
 .new-comment .usertext-body {
-	border: 1px solid rgba(0, 0, 0, .06);
-	border-radius: 2px;
-	margin: 2px 0;
+	border: none;
+	border-radius: 1px;
+	margin: 0;
 }
 
 .side .titlebox form.toggle.sr_style_toggle label {
