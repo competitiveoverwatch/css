@@ -180,6 +180,10 @@ body:not(.loggedin) #sr-header-area .width-clip {
 
 .res #RESShortcuts {
 	color: rgba(255, 255, 255, .25);
+	display: inline-block;
+}
+.res #RESShortcuts:first-letter {
+	text-transform: uppercase;
 }
 
 #sr-header-area .sr-bar a:hover, #sr-more-link:hover, #sr-header-area .dropdown.srdrop .selected:hover {
@@ -485,11 +489,19 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: block;
 	text-align: center;
 }
+.res #header .tabmenu {
+	margin-top: -4px;
+}
 
 #header .tabmenu li {
 	display: inline-block;
 	margin: 0;
 	position: relative;
+}
+
+.res-toggle-filterline-visibility {
+	bottom: -16px;
+	height: 40px;
 }
 
 #header .tabmenu li a {
@@ -3746,10 +3758,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .res.search-page #header .tabmenu {display: none !important;}
 
 body.res #header-bottom-right {
-top: 1px;
-border-radius: 0;
-height: 18px;
-padding: 0 8px 0 0;
+	top: 3px;
 }
 
 .res #userbarToggle {
@@ -3872,10 +3881,11 @@ html.res-commentBoxes .comment {
 .res .comment.collapsed a.expand:after {display: none;}
 
 /* Gear dropdown */
-.gearIcon {
-	position: relative;
-	top: 2px;
-	transition: all .25s ease-in-out;
+.gearIcon:after {
+	color: rgba(255, 255, 255, .4);
+}
+.gearIcon:hover:after {
+	color: #FFF;
 }
 
 #RESMainGearOverlay {
@@ -4424,7 +4434,7 @@ body.listing-page>.content {
 	font-weight: normal;
 	height: auto;
 	line-height: 16px;
-	margin: 0 4px 0 0;
+	margin: 1px 4px 0 0;
 	max-width: none;
 	padding: 0;
 	vertical-align: top;
