@@ -3364,8 +3364,8 @@ pre {
 
 .flair-verified:before {
 	bottom: -2px;
-	color: #27B062;
-	content: "✓";
+	color: #FA9F29;
+	content: "✔";
 	font: 900 15px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	position: relative;
 }
