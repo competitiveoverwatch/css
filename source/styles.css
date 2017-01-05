@@ -1992,6 +1992,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .side .md h4 {
 	display: block;
+	font-size: 16px;
 	position: relative;
 }
 
@@ -3447,7 +3448,7 @@ pre {
 .flair-fan:not([title=""]):hover {
 	background: none;
 	font-size: 12px;
-	line-height: 22px;
+	line-height: 12px;
 	width: auto;
 }
 
@@ -3494,6 +3495,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .flair-complexity, .md a[href*="complexity"] {
 	background-position: -23px -46px;
 	height: 14px;
+	width: 23px;
 }
 .flair-fnatic, .md a[href*="fnatic"] {
 	background-position: -22px -60px;
@@ -4514,7 +4516,7 @@ body.listing-page>.content {
 .md ol {
 	background: rgba(0,0,0,.03);
 	border-radius: 2px;
-	padding: 6px 16px;
+	padding: 6px 16px 6px 32px;
 }
 
 /* Table inside a post */
