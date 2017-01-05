@@ -156,6 +156,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	line-height: 24px;
 	padding-top: 2px;
 }
+.res #sr-header-area {
+	overflow: visible;
+}
 
 #sr-header-area .width-clip {
 	right: 302px;
@@ -179,8 +182,9 @@ body:not(.loggedin) #sr-header-area .width-clip {
 }
 
 .res #RESShortcuts {
-	color: rgba(255, 255, 255, .25);
+	color: rgba(255, 255, 255, .3);
 	display: inline-block;
+	font-size: 11px;
 }
 .res #RESShortcuts:first-letter {
 	text-transform: uppercase;
@@ -357,33 +361,35 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 #mail.havemail:before {
-	position: fixed;
-	padding: 16px 24px;
-	bottom: 24px;
-	z-index: 100;
+	animation: 8s ease toast;
 	background: #E53935 url(%%spritesheet%%) 269px -120px no-repeat;
-	border-radius: 3px;
-	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
-	color: #fff;
-	width: 300px;
+	border-radius: 1px;
+	bottom: 24px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+	color: #FFF;
+	content: "NEW MESSAGES";
+	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 48px;
 	left: 32px;
-	content: "You have new messages";
-	text-indent: 0;
-	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	line-height: 1;
+	padding: 16px 24px;
+	position: fixed;
+	text-indent: 0;
 	transform:translateY(112px);
 	transition: background 0.25s ease, box-shadow 0.25s ease-in-out;
+	width: 300px;
+	z-index: 100;
 }
 
 #mail.havemail:hover:before {
-	background-color: #ec5b5b;
-	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.48);
+	animation-play-state: paused;
+	background-color: #EC5B5B;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.24);
 }
 
 #mail.havemail:active:before {
-	background-color: #c73d3d;
-	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.76);
+	background-color: #C73D3D;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.36);
 }
 
 
@@ -391,7 +397,7 @@ body:not(.loggedin) #header-bottom-right {
 	top: -3px;
 }
 
-/* preferences & logout icons */
+/* Preferences & logout icons */
 #header-bottom-right a.pref-lang, .loggedin .logout a {
 	background-position: -32px 0;
 	background-image: url(%%spritesheet%%);
@@ -489,8 +495,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: block;
 	text-align: center;
 }
-.res #header .tabmenu {
+.res:not(.comments-page) #header .tabmenu {
 	margin-top: -4px;
+	margin-left: -64px;
 }
 
 #header .tabmenu li {
@@ -871,11 +878,26 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 
 .edited-timestamp[title]:after {font-size: 100%}
 
+.res .res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]:after {
+	display: inline-block;
+	font-size: 100%;
+	margin-left: 2px;
+	text-transform: capitalize;
+}
+
 .link .entry .tagline a:hover {text-decoration: none}
+
+.res .res-userHighlight .tagline .author.moderator {
+	font-weight: normal;
+}
+
 [lang^=en] .link .entry .tagline a.author:before {
 	content: "by ";
 	color: #98ABBA !important;
 	font-weight: normal;
+}
+[lang^=en] .res .link .entry .tagline a.author.moderator:before {
+	display: none;
 }
 [lang^=en] .link .entry .tagline a.author {
 	margin-left: -15px;
@@ -1021,13 +1043,18 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 .action-form input[name="other_reason"] {padding: 8px;}
 
 /* RES L+C */
-.link .entry .buttons li .redditSingleClick {
-	padding: 0 1px;
-	color: #98ABBA;
-	font: normal 13px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	transition: all 0.15s ease-in-out;
+.res .thing.link .redditSingleClick:after {
+	content: "L+C";
 }
 
+.link .entry .buttons li .redditSingleClick {
+	cursor: pointer;
+	font: normal 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.res .redditSingleClick:after {
+	color: #98ABBA;
+	font-weight: normal;
+}
 
 /* Reported & Spam/Remove/Approves */
 body .content .thing.spam {background-color: #FFE9E6;}
@@ -1282,14 +1309,12 @@ body>.content .link.compressed .midcol {
 .flairselector form .flairselection .flairremove a:hover {text-decoration: underline !important;}
 .flairselector .customizer {
 	display: inline-block;
-	margin: 8px 0;
+	width: 82%; /*TODO: Sort out flair selector layout properly*/;
 }
 
 .flairselector .customizer input {
-	width: auto;
+	width: 100%;
 }
-
-.flairselector .customizer input[type='text'] { width: 100% }
 
 .flairselector form button {
 	margin: 0 0 0 16px;
@@ -1297,6 +1322,12 @@ body>.content .link.compressed .midcol {
 
 .flairselector .title {
 	display: none;
+}
+
+.flairselector .status {
+	display: block;
+	margin: 4px;
+	text-transform: capitalize;
 }
 
 .flairselector .error {text-align: left;}
@@ -1342,18 +1373,15 @@ body>.content .link.compressed .midcol {
 .unvotable-message:first-letter {text-transform: capitalize;}
 
 /* RES Selection */
-.res .RES-keyNav-activeElement {
-	outline: 0 dashed #EEEEEE !important;
-	transition: all .15s ease-in-out;
+.res .entry {
+	transition: all .25s ease-in-out;
 }
-
-.res .entry {transition: all 0.10s ease-in-out;}
 
 div.RES-keyNav-activeElement,
 div.commentarea div.RES-keyNav-activeElement.entry div.noncollapsed {
-	background-color: transparent !important;
+	background: none;
 	padding-left: 8px !important;
-	border-left: 3px solid #C2C2C2;
+	border-left: 2px solid rgba(152, 171, 186, .3);
 }
 
 div.commentarea div.RES-keyNav-activeElement .md {
@@ -1605,6 +1633,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	order: 0;
 	width: auto;
 	z-index: 1;
+}
+
+.res .titlebox span.subscribers {
+	margin-top: 10px;
+	width: 100%;
 }
 
 div.titlebox span.word {
@@ -2326,7 +2359,7 @@ body.comments-page > .content {margin-top: 8px;}
 	font-weight: normal;
 }
 
-.commentarea .menuarea .toggle a:hover {color: #24A0ED;}
+.commentarea .menuarea .toggle a:hover {color: #057ED6;}
 
 .commentarea>.usertext {
 	background: #FAFAFA;
@@ -2430,12 +2463,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .res-nightmode .gold-accent.comment-visits-box select {
 	background: #333;
 	color: #FFF;
-}
-
-.res #REScommentNavToggle {
-	background: none;
-	height: 16px;
-	margin: 24px 0 7px;
 }
 
 /* Gilding */
@@ -2568,7 +2595,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comment .author:hover {
-	color: #24A0ED;
+	color: #057ED6;
 	text-decoration: none;
 }
 
@@ -2609,7 +2636,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .comment .usertext .md {color: #292f34;}
 
 .md a, .md a:visited  {
-	color:#24A0ED;
+	color:#057ED6;
 }
 
 .md code {
@@ -3162,13 +3189,13 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 }
 
 .combined-search-page .search-result .search-result-header .search-title {
-	color: #24A0ED;
+	color: #057ED6;
 }
 
 .combined-search-page .search-result .search-result-meta {color: #738491;}
 
 .combined-search-page .search-result a, .combined-search-page .search-result a>mark {
-	color: #24A0ED;
+	color: #057ED6;
 }
 
 .combined-search-page .search-result-subreddit .search-subscribe-button {
@@ -3191,7 +3218,7 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 	color: #738491;
 }
 
-.combined-search-page .search-result .search-comments {color: #24A0ED;}
+.combined-search-page .search-result .search-comments {color: #057ED6;}
 
 .search-result.has-thumbnail>.thumbnail {
 	-webkit-flex: 0 0 56px;
@@ -3233,7 +3260,7 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 }
 
 .linefield .title {
-	color: #24A0ED;
+	color: #057ED6;
 	text-transform: capitalize;
 	padding: 0;
 }
@@ -3241,7 +3268,7 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 .linefield .linefield-content {padding: 0;}
 
 .linefield .title:first-letter, .linefield label:first-letter {text-transform: capitalize;}
-.usertext .bottom-area a:hover {color: #24A0ED;}
+.usertext .bottom-area a:hover {color: #057ED6;}
 
 .pretty-form {padding-top: 24px;}
 .fancy-settings h1, .create-promotion h1 { color: rgba(255,255,255,.8);}
@@ -3783,11 +3810,12 @@ body.res #header-bottom-right {
 }
 
 .res #REScommentNavToggle {
-	background-color: #FAFAFA;
-	max-height: 15px;
+	color: #98ABBA;
+	height: 16px;
+	margin: 24px 0 7px;
 	max-width: 98px;
 	overflow: hidden;
-	transition: all 0.35s ease-in-out;
+	transition: max-width 0.35s ease-in-out;
 }
 
 .res #REScommentNavToggle:hover {
@@ -3800,16 +3828,13 @@ body.res #header-bottom-right {
 }
 
 .res .content .RESBigEditorPop {
-	background-color: rgba(0, 0, 0, 0);
-	border: none;
-	box-shadow: none;
-	color: #4D5763;
+	background: none;
+	color: #AEBFCC;
 	font-weight: normal;
-	font: 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 10px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: inherit;
 	line-height: inherit;
-	margin-left: 4px;
-	margin-top: 5px;
+	margin-left: 6px;
 	padding: 0;
 }
 
@@ -3823,21 +3848,19 @@ html.res-commentBoxes .comment {
 .res .titlebox .tagline {margin-top: 6px;}
 
 .res .RESshortcutside, .res .RESDashboardToggle {
-	background-image: none !important;
-	border-radius: 0;
+	background: none;
 	border: none;
 	color: #4D5763;
-	margin: 2px 6px 2px -4px;
-	padding: 4px 6px 4px 0;
-	text-align: left;
-	text-decoration: none;
-	text-transform: uppercase;
+	cursor: default;
+	font-size: 11px;
+	margin: 0;
+	padding: 4px 8px;
+	text-transform: capitalize;
 	width: auto;
 }
 
 .res .RESshortcutside:hover, .res .RESDashboardToggle:hover {
-	background-color: transparent;
-	color: #24A0ED;
+	color: #057ED6;
 }
 
 .res #progressIndicator {
@@ -3881,32 +3904,36 @@ html.res-commentBoxes .comment {
 .res .comment.collapsed a.expand:after {display: none;}
 
 /* Gear dropdown */
-.gearIcon:after {
+.res .gearIcon:after {
 	color: rgba(255, 255, 255, .4);
+	text-shadow: none;
+	transition: color .1s ease-in-out;
 }
 .gearIcon:hover:after {
 	color: #FFF;
 }
 
 #RESMainGearOverlay {
-	background-color: #516ae8;
+	background-color: #516AE8;
 	top: 0 !important;
 	height: 26px !important;
 	border-radius: 0 !important;
 }
 
-.RESDropdownList {
-	border-color: #4258ca;
-	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
+.res .RESDropdownList {
+	border: none;
+	border-radius: 1px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
 	margin-top: 4px;
 	margin-right: 8px;
 }
 
-.RESDropdownList li {
-	background-color: #516AE8;
-	color: #FFF;
-	border-color: #4258CA;
-	transition: all .15s ease-in-out;
+.res .RESDropdownList li {
+	background-color: #FFF;
+	color: #333;
+	border: none;
+	font-weight: normal;
+	transition: all .05s ease-in-out;
 	transition-property: background, color;
 }
 
@@ -3914,15 +3941,8 @@ html.res-commentBoxes .comment {
 
 .RESDropdownList a, .RESDropdownList a:visited { color: #fff;}
 
-.RESDropdownList li:hover, .RESDropdownList li a:hover {
-	color: #FFF;
-	background-color: #667DF0;
-}
-
-#RESSearchMenuItem {
-	border: 1px solid #4258CA;
-	border-radius: 1px;
-	background-color: #667dF0;
+.res .RESDropdownList li:hover, .res .RESDropdownList li a:hover {
+	background: #EEE;
 }
 
 #RESSearchMenuItem:hover {
@@ -3930,33 +3950,52 @@ html.res-commentBoxes .comment {
 }
 
 .toggleButton .toggleOn, .toggleButton .toggleOff  {
-	text-transform: lowercase;
+	text-transform: uppercase;
 }
 
 /* Toggle off  */
-.moduleToggle:not(.enabled) .toggleOn, .toggleButton:not(.enabled) .toggleOn,
-.moduleToggle.enabled .toggleOff, .toggleButton.enabled .toggleOff {
-	background-color: transparent;
-	color: rgba(255,255,255,0.6);
-	border: 1px solid #4258ca;
-	transition: all 0.15s ease-in-out;
-	border-radius: 2px;
+.res .moduleToggle:not(.enabled) .toggleOn, .res .toggleButton:not(.enabled) .toggleOn,
+.res .moduleToggle.enabled .toggleOff, .res .toggleButton.enabled .toggleOff {
+	background: #DDD;
+	color: #000;
+	border: none;
+	transition: all .08s ease-in-out;
+	border-radius: 1px;
 }
 /* Toggle on */
-.moduleToggle.enabled .toggleOn, .toggleButton.enabled .toggleOn,
-.moduleToggle:not(.enabled) .toggleOff, .toggleButton:not(.enabled) .toggleOff {
-	background-color: #FFF;
-	color: #516AE8;
+.res .moduleToggle.enabled .toggleOn, .res .toggleButton.enabled .toggleOn,
+.res .moduleToggle:not(.enabled) .toggleOff, .res .toggleButton:not(.enabled) .toggleOff {
+	background-color: #439BDA;
+	color: #FFF;
 	font-weight: bolder;
-	border: 1px solid #FFF;
-	transition: all 0.15s ease-in-out;
-	border-radius: 2px;
+	border: none;
+	transition: all .08s ease-in-out;
+	border-radius: 1px;
 }
 
 .markdownEditor .edit-btn:not(.btn-macro) {
 	border: 0 solid !important;
 	border-radius: 1px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.res-icon {
+	margin-left: 4px;
+	position: relative;
+	top: -3px;
+}
+
+.res .RESMenuItemButton {
+	right: 12px;
+}
+
+.res .RESMenuItemButton:hover {
+	background: none;
+}
+
+#RESAnnouncementMenuItem .RESMenuItemButton {
+	right: 15px;
+	top: 9px;
 }
 
 /* Shadows and cards */
@@ -3967,14 +4006,6 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	padding: 16px;
 	border-radius: 2px;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .14);
-}
-
-/* Experimental Toast Animation */
-#mail.havemail:before {
-	animation: 8s ease toast;
-}
-#mail.havemail:hover:before {
-   animation-play-state: paused;
 }
 
 /* Global fonts */
@@ -3989,8 +4020,8 @@ body,
 }
 
 /* Floating messages, etc. bar for RES */
-.res-floater-visibleAfterScroll {
-	right: 16px;
+.res .res-floater-visibleAfterScroll {
+	right: 32px;
 }
 
 /* "My Subreddits" dropdown */
@@ -4181,6 +4212,9 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	background: #F4F4F4;
 	transition: background .08s ease-in-out;
 }
+.res .subscriber .titlebox .fancy-toggle-button {
+	background: none;
+}
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
 	color: #555;
@@ -4335,8 +4369,8 @@ body.listing-page>.content {
 
 /* Set post flair */
 .flairselector {
-	border-radius: 3px;
-	box-shadow: 0 4px 8px rgba(0,0,0,.12);
+	border-radius: 1px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.12);
 	margin-left: -215px;
 	padding: 16px !important;
 	position: fixed;
@@ -4724,10 +4758,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-top: 7px;
 }
 
-.RESSubscriptionButton {
+.res .RESSubscriptionButton {
+	background: none;
+	border: none;
+	color: #333;
 	cursor: default;
-	margin-top: 20px;
-	padding: 3px 14px;
+	padding: 2px 4px;
 	text-transform: uppercase;
 }
 
