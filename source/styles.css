@@ -891,7 +891,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 	font-weight: normal;
 }
 
-[lang^=en] .link .entry .tagline a.author:before {
+[lang^=en] .link:not(.promotedlink) .entry .tagline a.author:before {
 	content: "by ";
 	color: #98ABBA !important;
 	font-weight: normal;
@@ -1176,9 +1176,9 @@ ul.report-reasons {
 	transform: none;
 }
 .organic-listing .link, .organic-listing .link.compressed, .organic-listing .link.promotedlink {
-	padding: 16px;
-	background: transparent;
-	border-radius: 3px;
+	background: none;
+	box-shadow: none;
+	padding: 16px 16px 12px;
 }
 
 .organic-listing .flat-list {
@@ -1186,20 +1186,19 @@ ul.report-reasons {
 }
 
 .organic-listing .help {
-	margin-bottom: 20px;
-	margin-right: 16px;
 	color: #98ABBA;
 	cursor: default;
+	margin-bottom: 20px;
+	margin-right: 16px;
 	text-transform: uppercase;
 }
 
 .organic-listing .sponsored-tagline {
-	margin-bottom: 20px;
-	margin-right: 28px;
 	color: #98ABBA;
-	cursor: default;
 	font-weight: normal;
-	text-transform: uppercase;
+	margin-bottom: 16px;
+	margin-right: -52px;
+	text-transform: capitalize;
 }
 
 /* Compressed post */
@@ -4867,7 +4866,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .comments-page:not(.comment-permalink-page) .thing:not(.comment) {
-	border-radius: 3px 3px 0 0;
+	border-radius: 1px 1px 0 0;
 }
 
 .comments-page .commentarea>.usertext {
