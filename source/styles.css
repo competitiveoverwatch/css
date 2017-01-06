@@ -4551,24 +4551,26 @@ body.listing-page>.content {
 }
 
 /* Spoiler tags */
-a[href="#s"] {
-	cursor: default;
-	display: inline-block;
-	visibility: hidden;
+.md a[href="/s"] {
+	background: #333;
+    color: transparent !important;
+    cursor: default;
+    transition: all 0s 9999s;
+    /* Entire spoiler tag hinges on delayed transition.
+    Without it, as soon as the left click button is released,
+    it's back to being hidden. */
 }
-a[href="#s"]:hover {
+.md a[href="/s"]:hover {
 	text-decoration: none !important;
 }
-a[href="#s"]::after {
-	background: #222;
-	border-radius: 2px;
-	color: #222;
-	content: attr(title);
-	padding: 1px 2px;
-	visibility: visible;
-}
-a[href="#s"]:hover::after, a[href="#s"]:active::after {
-	color: white;
+.md a[href="/s"]:active {
+	background: none;
+    color: inherit !important;
+    cursor: default;
+    display: inline;
+    padding: 0;
+    pointer-events: none;
+    transition: all 0s 0s;
 }
 
 /* Hero tags */
