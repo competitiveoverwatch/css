@@ -2737,12 +2737,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 @keyframes reply-button {
-	0% { content: "." }
-	50% { content: ".." }
-	100% { content: "..." }
+	0% { content: "" }
+	33.33% { content: "."; opacity: 1; }
+	66.66% { content: ".."; opacity: .5; }
+	100% { content: "..."; opacity: .1; }
 }
 .comment .flat-list li a[onclick*="reply"]:hover:after {
-	animation: 2s reply-button .1s linear infinite;
+	animation: 1s reply-button .1s ease-out;
 	content: "";
 }
 
