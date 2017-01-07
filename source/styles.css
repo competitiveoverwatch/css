@@ -641,17 +641,17 @@ body >.content .link .rank, .rank-spacer {
 }
 
 .arrow.upmod:focus:after {
-	position: absolute;
-	left:2px;
-	bottom: -3px;
-	width: 28px;
-	height: 28px;
-	opacity: 1;
-	z-index:100;
-	content: " ";
-	background:#FF5500;
-	border-radius: 28px;
 	animation: upvote 0.35s ease-out forwards;
+	background:#FFA328;
+	border-radius: 28px;
+	bottom: -3px;
+	content: " ";
+	height: 28px;
+	left: 2px;
+	opacity: 1;
+	position: absolute;
+	width: 28px;
+	z-index: 100;
 }
 
 /* downvotes */
@@ -676,6 +676,7 @@ body >.content .link .rank, .rank-spacer {
 	width: 56px;
 }
 .thumbnail.self {
+	background: #24A0ED url(%%spritesheet%%) -97px -112px;
 	height: 56px; /* To override Reddit setting height */
 }
 
@@ -696,14 +697,10 @@ body >.content .link .rank, .rank-spacer {
 	display: none;
 }
 
-.nsfw-stamp {
-	margin-right: 8px;
-}
 .over18.link .thumbnail img, a.thumbnail[href*="reddit.com"] img {
 	display: none;
 }
 
-.thumbnail.self { background: #24A0ED url(%%spritesheet%%) -97px -112px }
 .over18.link .thumbnail { background: #757575 url(%%spritesheet%%) -162 -98px }
 
 .linkflair-Question .thumbnail { background: #738491 url(%%spritesheet%%) -153px -113px }
@@ -995,6 +992,7 @@ body:not(.res) .expando-button {
 .nsfw-stamp {
 	border-radius: 0;
 	border: 0;
+	margin-right: 8px;
 	padding: 0;
 }
 
@@ -1007,8 +1005,8 @@ body:not(.res) .expando-button {
 	top: -1px;
 }
 
-.link .entry .buttons li a.comments {
-	font-weight: bold !important;
+.link .entry .buttons li a.comments:hover {
+	font-weight: bold;
 }
 
 .link .entry li .comments:hover {
@@ -1123,10 +1121,10 @@ ul.report-reasons {
 
 /* Last Clicked */
 .link.last-clicked {
-	background: rgba(0,0,0,0.04);
+	background: #FFF;
 	border: none;
-	left: -16px;
-	margin-right: -32px;
+	left: 0;
+	margin: 0 auto;
 	padding-left: 16px;
 }
 
@@ -1149,7 +1147,7 @@ ul.report-reasons {
 
 /* Sticky Comment */
 .stickied.comment>.entry a {
-	color: #27B062 !important
+	color: #27B062 !important;
 }
 
 /* Ad */
@@ -1251,6 +1249,7 @@ body>.content .link.compressed .midcol {
 }
 
 .flairselector .flairoptionpane ul li {
+	margin: 4px 0;
 	padding: 0 !important;
 }
 
@@ -1262,9 +1261,10 @@ body>.content .link.compressed .midcol {
 .flairoptionpane ul li .linkflair:hover, .flairselector li:hover {background-color: #F5F8F9;border: 0 solid;}
 
 .flairoptionpane ul li .linkflair span.linkflairlabel {
-	margin: 8px 0;
+	font-size: 15px;
 	line-height: 1.35;
-	margin-right: 6px;
+	margin: 0;
+	vertical-align: initial;
 }
 .flairselector ul li .linkflair .linkflairlabel:after {
 	display: none;
@@ -1342,21 +1342,12 @@ body>.content .link.compressed .midcol {
 
 .flairselector .error {text-align: left;}
 .flairselector .error:first-letter {text-transform: capitalize;}
-.flairselector .error:after {
-	display: block;
-	color: #b3b3b3;
-	content: "Go to /r/.../about/flair";
-}
 
 .flairselector img {
 	position: relative;
 	left: 50%;
 	margin-left: -9px;
 	opacity: 0.5;
-}
-
-.flairselector .flairoptionpane ul li {
-	margin: 4px 0;
 }
 
 .flairselector li.selected {
@@ -1399,6 +1390,8 @@ div.commentarea div.RES-keyNav-activeElement .md {
 }
 
 .res .commentarea .thing {
+	border: none !important;
+	border-radius: 2px !important;
 	padding: 14px 16px 8px 8px !important;
 }
 
@@ -1488,7 +1481,12 @@ div.commentarea div.RES-keyNav-activeElement .md {
 
 .dropdown.lightdrop .selected:hover {background-color: rgba(0,0,0,0.05);}
 .dropdown.lightdrop .selected:after {content: " ▼";}
-.drop-choices.lightdrop {margin-top: 8px;}
+.drop-choices.lightdrop {
+	border: none;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.14);
+	margin-top: 8px;
+	z-index: 1001;
+}
 
 /* RES Popup */
 .guider {
@@ -1599,8 +1597,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Next Page */
 .nav-buttons {
-	padding: 16px 16px 16px 0;
+	background: rgba(255,255,255,.82);
+	border-radius: 0 0 3px 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.14);
 	color: #738491;
+	padding-left: 16px;
+	padding: 16px 16px 16px 0;
+	text-transform: uppercase;
 }
 
 .nav-buttons .nextprev {
@@ -1753,28 +1756,26 @@ div.titlebox span.number:after {
 }
 
 #search input[type=text]:-moz-placeholder {
+	color:#B3B3B3;
 	font-size: 14px;
 	text-transform: capitalize;
 	top: 1px;
 	position: relative;
 }
-#search input[type=text]::-webkit-input-placeholder {
+#search input[type=text]:-webkit-input-placeholder {
+	color:#B3B3B3;
 	font-size: 14px;
 	text-transform: capitalize;
 	top: 1px;
 	position: relative;
 }
 #search input[type=text]:-ms-input-placeholder {
+	color:#B3B3B3;
 	font-size: 14px;
 	text-transform: capitalize;
 	top: 1px;
 	position: relative;
 }
-
-#search input[type=text]::-webkit-input-placeholder {color:#B3B3B3;}
-#search input[type=text]:-moz-placeholder {color:#B3B3B3;}
-#search input[type=text]::-moz-placeholder {color:#B3B3B3;}
-#search input[type=text]:-ms-input-placeholder {color:#B3B3B3;}
 
 #search input[type=submit] {
 	height: 32px;
@@ -1850,6 +1851,7 @@ div.titlebox span.number:after {
 .side .submit-link:before {
 	color: #626262;
 	content: "SUBMIT CONTENT";
+	font-size: 16px;
 	position: absolute;
 	top: 319px;
 	width: 320px;
@@ -1922,10 +1924,6 @@ div.titlebox span.number:after {
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol {
 	color: #292F34;
 	font: 13px/1.45 Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
-.side .submit-link:before {
-	font-size: 16px;
 }
 
 /* For rules items */
@@ -2312,17 +2310,42 @@ body:not(.listing-page) .side .md>ol {
 /* Comments Page */
 body.comments-page > .content {margin-top: 8px;}
 
-.comments-page .link .usertext .md {margin-bottom: 0;}
+.comments-page .link .usertext .md {
+	background: none;
+	border: none;
+	margin-bottom: 0;
+	margin-top: 12px;
+	padding: 0 16px;
+}
 
 .commentarea .panestack-title {
 	margin: 10px 0 0 0;
 	border-bottom: 0;
+	margin-top: 14px;
 	padding-left: 16px;
 }
 
-.commentarea .panestack-title .title {color:  #4D5763;}
+.commentarea .panestack-title .title {
+	color: #555;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: -.5px;
+	text-transform: uppercase;
+}
 
-.commentarea .menuarea {margin: 0 0 0 0;padding-left: 16px;}
+.commentarea .menuarea {
+	margin: 8px 0 0;
+	padding-left: 16px;
+	text-transform: uppercase;
+}
+
+.comment-permalink-page .commentarea .menuarea {
+	margin-top: 14px;
+}
+
+body:not(.loggedin) .commentarea .menuarea {
+	margin: 0 0 8px;
+}
 
 .commentarea .menuarea span.dropdown-title.lightdrop {color: #98ABBA;}
 .commentarea .menuarea span.dropdown-title.lightdrop:first-letter {text-transform: capitalize;}
@@ -2340,13 +2363,6 @@ body.comments-page > .content {margin-top: 8px;}
 
 .commentarea .menuarea .dropdown.lightdrop .selected:hover {color: #4F8EF7;}
 .commentarea .menuarea .dropdown.lightdrop .selected:after {content: "▼"}
-
-
-.drop-choices.lightdrop {
-	border: none;
-	z-index: 1001;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.14);
-}
 
 .drop-choices a.choice {
 	padding: 12px 24px 12px 12px;
@@ -2380,13 +2396,9 @@ body.comments-page > .content {margin-top: 8px;}
 	overflow: visible;
 }
 
-.usertext button {
-	margin: 4px 16px 8px 0;
-}
-
 .commentarea .usertext-edit {
 	width: 100%;
-	max-width: 504px;
+	max-width: none;
 }
 
 .commentarea>.usertext textarea {
@@ -2421,7 +2433,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .usertext .bottom-area {
-	width: 504px;
+	text-transform: uppercase;
+	width: 100%;
 }
 .usertext .bottom-area a.reddiquette {
 	color: #AEBFCC;
@@ -2439,13 +2452,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .gold-accent.comment-visits-box {
-	background: #edf1f3;
+	background: none;
 	border-radius: 2px;
 	margin: 0 0 12px 0;
-}
-
-.gold-accent.comment-visits-box {
-	background: none;
 }
 
 .gold-accent.comment-visits-box .title {
@@ -2497,10 +2506,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .commentarea .thing {
 	margin: 0 0 12px 0;
-}
-
-.res .commentarea .thing {
-	border-radius: 3px !important;
 }
 
 .commentarea .child .thing {
@@ -2567,7 +2572,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .commentarea>.sitetable>.comment.collapsed {
-	padding: 10px 16px 16px
+	padding: 10px 16px 16px;
 }
 
 .comment.collapsed .score, .comments-page .comment.collapsed time {
@@ -2575,7 +2580,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comment.collapsed .tagline :not(.expand), .comment.collapsed .tagline a :not(.expand), .comment.collapsed .search-result-meta :not(.expand), .comment.collapsed .search-result-meta a :not(.expand) {
-	font-style: normal
+	font-style: normal;
 }
 
 .comment.collapsed a.numchildren {
@@ -2725,15 +2730,35 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .comment .flat-list li a[onclick*="reply"] {
 	color: #057ED6;
-	font-weight: bold;
 	font-size: 11px;
+}
+.comment .flat-list li a[onclick*="reply"]:hover {
+	font-weight: bold;
+}
+
+@keyframes reply-button {
+	0% { content: "." }
+	50% { content: ".." }
+	100% { content: "..." }
+}
+.comment .flat-list li a[onclick*="reply"]:hover:after {
+	animation: 2s reply-button .1s linear infinite;
+	content: "";
 }
 
 .thing .entry .buttons .approve-button a:hover {
 	color: #27B062;
 }
-.thing .entry .buttons .remove-button a:hover, .thing .entry .buttons .del-button a:hover {
+.thing .entry .buttons .remove-button a:hover,
+.thing .entry .buttons .del-button a:hover,
+.thing .entry .buttons .report-button a:hover,
+.thing .entry .buttons .lock-button a:hover,
+.thing .entry .buttons .marknsfw-button a:hover {
 	color: #E53935;
+}
+
+.thing .entry .buttons .give-gold-button a:hover {
+	color: #FA9F29;
 }
 
 .deepthread a {
@@ -2868,9 +2893,9 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #header-bottom-left {
+	left: 0;
+	margin-left: auto;
 	top: 208px;
-	left: 50%;
-	margin-left: -262px;
 }
 
 .submit-page .content {
@@ -2895,6 +2920,7 @@ body.res.comments-page .side .linkinfo .score {
 
 .submit-page #newlink.submit.content {
 	margin: 0 auto;
+	width: 700px;
 }
 
 .submit-page #newlink.submit.content form .spacer+.spacer {margin: 0;}
@@ -3065,14 +3091,23 @@ body #newlink-with-image-upload .file-upload-button {
 }
 
 /* Search Page */
-.search-page #header .pagename a {display: none;}
-.search-page #header {height: 156px;}
-.search-page #header-bottom-left {top: 56px;}
+.search-page #header .pagename a {
+	display: block;
+	top: 26px;
+}
+.search-page #header {
+	height: 238px;
+}
+.search-page #header-bottom-left {
+	top: 56px;
+}
 
 .search-page .searchpane {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	top: -29px;
+	z-index: 2;
 }
 .raisedbox h4 {
 	display: none;
@@ -3080,14 +3115,18 @@ body #newlink-with-image-upload .file-upload-button {
 
 .search-page #search {
 	position: absolute;
-	top: -128px;
-	left: 36px;
+	top: -56px;
+	left: 16px;
 	padding: 0;
+	width: 100%;
 }
 
 .search-page #search input[type=text] {
+	font: 16px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	max-width: none;
 	min-width: 320px;
-	width: 320px;
+	padding-right: 38px;
+	width: 100%;
 }
 
 .combined-search-page .search-submit-button {
@@ -3121,20 +3160,21 @@ body #newlink-with-image-upload .file-upload-button {
 
 
 .search-page #previoussearch p a#search_showmore {
+	background: url(%%spritesheet%%) -47px -163px no-repeat;
+	font-size: 0;
+	height: 24px;
+	left: 100.6%;
+	overflow: hidden;
 	position: absolute;
-	left: 324px;
 	top: 8px;
 	width: 22px;
-	height: 24px;
-	background: url(%%spritesheet%%) -49px -168px no-repeat;
-	overflow: hidden;
-	font-size: 0;
 }
 
 #previoussearch #moresearchinfo {
+	border: none;
 	margin: 0;
 	max-width: none;
-	border: none;
+	padding: 10px 16px;
 }
 
 /* New search results */
@@ -3182,15 +3222,21 @@ body #newlink-with-image-upload .file-upload-button {
 	overflow: hidden;
 }
 
-search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
+search-result.search-result-subreddit:nth-of-type(3n) {
+	margin-right: -20px;
+}
 
 .combined-search-page .search-result-subreddit .search-result-body {
 	padding: 0;
 }
 
-.combined-search-page .search-result-subreddit .search-result-meta {padding: 4px 0;}
+.combined-search-page .search-result-subreddit .search-result-meta {
+	padding: 4px 0;
+}
 
-.search-result-subreddit .search-result-meta span.search-time {display: none;}
+.search-result-subreddit .search-result-meta span.search-time {
+	display: inline-block;
+}
 
 
 /* Item */
@@ -3241,7 +3287,8 @@ search-result.search-result-subreddit:nth-of-type(3n) {margin-right: -20px;}
 }
 
 .combined-search-page .search-result-group footer .nav-buttons {
-	margin: 0 0 16px 0;
+	box-shadow: none;
+	margin: -24px 0 16px;
 }
 
 .nextprev, .next-suggestions {color: #738491;}
@@ -3393,7 +3440,7 @@ pre {
 .side .flair:before {margin-left: 0;}
 
 .flair-moderator:before {
-	display:none;
+	display: none;
 }
 
 .link .flair-moderator {
@@ -3697,7 +3744,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .listing-page .comment .parent {
-	margin-bottom: 4px;
+	margin-bottom: 8px;
 }
 
 .listing-page .comment .title {
@@ -3844,7 +3891,7 @@ body.res #header-bottom-right {
 }
 
 .res .commentarea>.usertext {
-	margin-top: -76px;
+	margin-top: -90px;
 	padding-top: 80px !important;
 }
 
@@ -3863,8 +3910,6 @@ html.res-commentBoxes .comment {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
-
-.res .commentarea .thing {border: none !important; border-radius: 2px !important; }
 
 .res .titlebox .tagline {margin-top: 6px;}
 
@@ -4095,11 +4140,6 @@ body,
 	top: 160px;
 }
 
-.submit-page #header-bottom-left {
-	left: 0;
-	margin-left: auto;
-}
-
 /* Styles for most buttons */
 button {
 	border-radius: 2px !important;
@@ -4261,7 +4301,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 }
 
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul {
-	line-height: 1.4
+	line-height: 1.4;
 }
 
 .titlebox form.toggle, .leavemoderator {
@@ -4360,7 +4400,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 .controversial-page .menuarea {
 	background: #FFF;
 	border: none;
-	border-radius:3px;
+	border-radius: 3px;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .14);
 	margin: 0 0 16px;
 	padding: 16px;
@@ -4404,21 +4444,6 @@ body.listing-page>.content {
 	font-size: 16px;
 }
 
-.flairselector .error:after {
-	display: none;
-}
-
-.flairoptionpane ul li .linkflair a.title {
-	font-size: 15px !important;
-	padding: 0;
-}
-
-.flairoptionpane ul li .linkflair span.linkflairlabel {
-	font-size: 15px;
-	margin: 0;
-	vertical-align: initial;
-}
-
 .content .thing .title:visited, .content .thing.visited .title {
 	color: #4B5A63;
 }
@@ -4432,22 +4457,12 @@ body.listing-page>.content {
 	padding: 16px 16px 12px;
 }
 
-.listing-page .comment .parent {
-	margin-bottom: 8px;
-}
-
 .listing-page .link:nth-of-type(1), .listing-page .comment:nth-of-type(1) {
 	border-radius: 1px 1px 0 0;
 }
 
 .listing-page .sitetable .usertext .md {
 	max-width: none;
-}
-
-.link.last-clicked {
-	background: #FFF;
-	left: 0;
-	margin: 0 auto;
 }
 
 .listing-page .sitetable>.thing:nth-last-child(2) {
@@ -4462,7 +4477,7 @@ body.listing-page>.content {
 }
 
 .hot-page .stickied {
-	margin-bottom: 16px!important
+	margin-bottom: 16px !important;
 }
 
 .hot-page .stickied+div+.stickied {
@@ -4664,13 +4679,13 @@ body.listing-page>.content {
 
 /* Flag tags */
 .md a[href*="#flag-"] {
-	background:url(%%flags-all%%);
-	cursor:default;
-	display:none;
+	background: url(%%flags-all%%);
+	cursor: default;
+	display: none;
 	font-size: 0;
-	height:15px;
-	pointer-events:none;
-	width:21px;
+	height: 15px;
+	pointer-events: none;
+	width: 21px;
 }
 /* Retina/HiDPI */
 @media only screen and (min--moz-device-pixel-ratio: 2),
@@ -4713,14 +4728,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .md a[href="#flag-us"] {background-position: -126px -345px; display: inline-block;}
 .md a[href="#flag-ww"] {background-position: -189px -360px; display: inline-block;}
 .md a[href="#flag-?-ow"] {background-position: -42px -390px; display: inline-block;}
-
-.nav-buttons {
-	background: rgba(255,255,255,.82);
-	border-radius: 0 0 3px 3px;
-	box-shadow: 0 1px 2px rgba(0,0,0,.14);
-	padding-left: 16px;
-	text-transform: uppercase;
-}
 
 .flat-list form {
 	color: #A3ABB1;
@@ -4770,11 +4777,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comments-page .entry form .usertext-edit.md-container, .comments-page .entry form .usertext-edit.md-container textarea {
-	width: 100% !important
-}
-
-.commentarea .usertext-edit {
-	max-width: none;
+	width: 100% !important;
 }
 
 .commentarea .usertext-edit.md-container .md {
@@ -4790,33 +4793,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-transform: uppercase;
 }
 
-.commentarea .panestack-title {
-	margin-top: 14px;
-}
-
-.commentarea .panestack-title .title {
-	color: #555;
-	font-size: 13px;
-	font-weight: bold;
-	letter-spacing: -.5px;
-	text-transform: uppercase;
-}
-
 .panestack-title a.title-button {
 	text-transform: uppercase;
-}
-
-.commentarea .menuarea {
-	margin-top: 8px;
-	text-transform: uppercase;
-}
-
-.comment-permalink-page .commentarea .menuarea {
-	margin-top: 14px;
-}
-
-body:not(.loggedin) .commentarea .menuarea {
-	margin: 0 0 8px;
 }
 
 .commentarea .menuarea form.toggle {
@@ -4833,10 +4811,6 @@ body:not(.loggedin) .commentarea .menuarea {
 
 .res .commentarea .panestack-title {
 	padding-top: 10px;
-}
-
-.res .commentarea>.usertext {
-	margin-top: -90px;
 }
 
 /* Comment page buttons */
@@ -4899,13 +4873,6 @@ body:not(.loggedin) .commentarea .menuarea {
 
 RESUserTag a {
 	vertical-align: middle;
-}
-
-.comments-page .link .usertext .md {
-	background: none;
-	border: none;
-	margin-top: 12px;
-	padding: 0 16px;
 }
 
 .comments-page #header .tabmenu li:first-child {
@@ -5022,10 +4989,6 @@ body:not(.res) .comments-page .side .titlebox {
 	text-decoration: underline;
 }
 
-.submit-page #newlink.submit.content {
-	width: 700px;
-}
-
 .required-roundfield:before {
 	color: rgba(255,0,0,.9);
 	margin-right: 2px;
@@ -5096,11 +5059,6 @@ body #newlink-with-image-upload .image-upload-drop-target {
 	cursor: default;
 }
 
-.usertext .bottom-area {
-	text-transform: uppercase;
-	width: 100%;
-}
-
 .submit-page .usertext .bottom-area {
 	position: absolute;
 	right: 18px;
@@ -5122,40 +5080,9 @@ body.submit-page .content input, .submit-page .content textarea {
 }
 
 /* Search Page */
-.search-page #header {
-	height: 238px;
-}
-
 .search-page #header-img.default-header, .search-page #header-img {
 	left: 16px;
 	top: 126px;
-}
-
-.search-page #header .pagename a {
-	display: block;
-	top: 26px;
-}
-
-.search-page #search {
-	left: 16px;
-	top: -56px;
-	width: 100%;
-}
-
-.search-page #search input[type=text] {
-	font: 16px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	max-width: none;
-	padding-right: 38px;
-	width: 100%;
-}
-
-#previoussearch #moresearchinfo {
-	padding: 10px 16px;
-}
-
-.search-page #previoussearch p a#search_showmore {
-	background-position: -47px -163px;
-	left: 100.6%;
 }
 
 #previoussearch p:first-letter {
@@ -5200,11 +5127,6 @@ body.res.search-page .content {
 	font-size: .9em;
 }
 
-.search-page .searchpane {
-	top: -29px;
-	z-index: 2;
-}
-
 .search-page .searchpane.raisedbox label {
 	background: #F2F2F3;
 	color: #555;
@@ -5244,15 +5166,6 @@ dt {
 
 .combined-search-page .search-result-subreddit .search-subscribe-button a {
 	color: #FFF;
-}
-
-.search-result-subreddit .search-result-meta span.search-time{
-	display: inline-block;
-}
-
-.combined-search-page .search-result-group footer .nav-buttons {
-	box-shadow: none;
-	margin: -24px 0 16px;
 }
 
 .search-result-group footer .info {
@@ -5539,8 +5452,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
   0%    { transform:translateY(76px); opacity: 0; }
   20%   { transform:translateY(76px); opacity: 0; }
   25%   { transform:translateY(-8px); opacity: 1; }
-  27%   { transform:translateY(00px); opacity: 1; }
-  92%   { transform:translateY(00px); opacity: 1; }
+  27%   { transform:translateY(0); opacity: 1; }
+  92%   { transform:translateY(0); opacity: 1; }
   97%   { transform:translateY(16px); opacity: 1; }
   100%  { transform:translateY(76px); opacity: 0; }
 }
