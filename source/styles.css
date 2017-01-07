@@ -918,6 +918,15 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 
 .link .entry .tagline .userattrs a.moderator {background: #27B062}
 
+.tagline .userattrs .cakeday, .search-result-meta .userattrs .cakeday {
+	background: none;
+	display: inline;
+	height: auto;
+	text-indent: 0;
+	vertical-align: baseline;
+	width: auto;
+}
+
 .stickied-tagline {
 	display: none;
 }
