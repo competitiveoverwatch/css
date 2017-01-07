@@ -799,8 +799,8 @@ body:not(.res) .expando-button {
 }
 
 .expando-button:hover {
-	background-color: #0079D3;
-	border-color: #0079D3;
+	background-color: #98ABBA;
+	border-color: #98ABBA;
 }
 
 .expando-button.selftext.collapsed                  {background-position: 0 -47px}
