@@ -775,15 +775,16 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 }
 
 /* Expando Button */
-.expando-button {
+body:not(.res) .expando-button {
 	display: none;
 }
-/*.expando-button, .expando-button.image, .expando-button.video-muted {
-	/* Must split color and image to allow background-position to take effect
+.expando-button, .expando-button.image, .expando-button.video-muted {
+	/*Must split color and image to allow background-position to take effect*/
 	background-color: transparent;
 	background-image: url(%%spritesheet%%) !important; 
-	border: 1px solid #EBEBEB;
+	background-size: 264px 224px !important;
 	border-radius: 2px;
+	border: 1px solid #EBEBEB;
 	cursor: default;
 	display: inline-block;
 	float: none;
@@ -802,11 +803,14 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 	border-color: #0079D3;
 }
 
-.expando-button.selftext.collapsed                  {background-position: 0 -47px !important}
-.expando-button.selftext.collapsed:hover            {background-position: -16px -47px !important}
+.expando-button.selftext.collapsed                  {background-position: 0 -47px}
+.expando-button.selftext.collapsed:hover            {background-position: -16px -47px}
 
-.expando-button.selftext.expanded                   {background-position: -32px -47px !important}
-.expando-button.selftext.expanded:hover             {background-position: -48px -47px !important}
+.expando-button.selftext.expanded {
+	background-position: -32px -47px;
+	margin-bottom: 0;
+}
+.expando-button.selftext.expanded:hover             {background-position: -48px -47px}
 
 .expando-button.video.collapsed                     {background-position: -64px -47px !important}
 .expando-button.video.collapsed:hover               {background-position: -80px -47px !important}
@@ -832,16 +836,14 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 .expando-button.video-muted.expanded                {background-position: -32px -48px !important}
 .expando-button.video-muted.expanded:hover          {background-position: -48px -48px !important}
 
-/* Expando Text
+/*Expando Text*/
 .link .usertext .md {
-	margin-bottom: -12px;
-	padding-left: 0;
-	background-color: transparent;
-	border: 0 solid;
-	border-top: 1px solid #EDF1F3;
-	border-radius: 0;
-	color: #292F34;
-}*/
+	background: #FCFCFC;
+	border-radius: 1px;
+	border: none;
+	margin-bottom: -14px;
+	padding: 16px;
+}
 
 /* Submitted X ago by.. */
 .entry .tagline {
@@ -852,7 +854,7 @@ body .content .sitetable .link .title a:hover {color: #057ED6;}
 	overflow: hidden;
 }
 
-.entry .tagline:first-letter {
+.listing-page .entry .tagline:first-letter {
     text-transform: uppercase;
 }
 
