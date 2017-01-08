@@ -559,8 +559,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: none !important;
 }
 
-
-
 /* Body Content - Frontpage */
 body:not(.submit-page)>.content {
 	animation: 0.6s content-fadein 0.1s;
@@ -570,7 +568,7 @@ body:not(.submit-page)>.content {
 }
 
 @keyframes content-fadein {
-  0%   {opacity:0;transform:translateY(48px);}
+  0%   {opacity:0;transform:translateY(52px);}
   100% {opacity:1;transform:translateY(0);}
 }
 
@@ -781,7 +779,7 @@ body:not(.res) .expando-button {
 	background-image: url(%%spritesheet%%) !important; 
 	background-size: 264px 224px !important;
 	border-radius: 2px;
-	border: 1px solid #EBEBEB;
+	border: 1px solid #EEE;
 	cursor: default;
 	display: inline-block;
 	float: none;
@@ -2448,7 +2446,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select {
 	border: none;
 	color: #333;
-	font-weight: bold;
 }
 
 .gold-accent.comment-visits-box {
@@ -2458,6 +2455,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .gold-accent.comment-visits-box .title {
+	font-weight: normal;
 	position: relative;
 }
 
@@ -2742,9 +2740,15 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	66.66% { content: ".."; opacity: .5; }
 	100% { content: "..."; opacity: .1; }
 }
+.comment .flat-list li a[onclick*="reply"]:after {
+	content: "";
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	backface-visibility: hidden;
+	transform: scale(1);
+}
 .comment .flat-list li a[onclick*="reply"]:hover:after {
 	animation: 1s reply-button .1s ease-out;
-	content: "";
 }
 
 .thing .entry .buttons .approve-button a:hover {
