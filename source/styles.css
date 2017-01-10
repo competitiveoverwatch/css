@@ -2742,6 +2742,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .comment .flat-list li a[onclick*="reply"]:after {
 	content: "";
+	opacity: 1;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: scale(1);
 	backface-visibility: hidden;
