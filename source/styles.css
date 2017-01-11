@@ -275,7 +275,6 @@ a.random.choice {
 	max-width: 300px;
 	right: 12px;
 	top: 3px;
-	width: auto;
 }
 
 body:not(.loggedin) #header-bottom-right {
@@ -406,7 +405,6 @@ body:not(.loggedin) #header-bottom-right {
 	display: inline-block;
 	height: 14px;
 	margin: 0;
-	overflow: hidden;
 	position: relative;
 	text-indent: 100%;
 	top: -1px;
@@ -3855,6 +3853,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 body.res #header-bottom-right {
 	top: 3px;
+	max-width: none;
 }
 
 .res #userbarToggle {
@@ -3866,7 +3865,15 @@ body.res #header-bottom-right {
 
 .res a.beta-link {top: 4px;}
 
-.res #header-bottom-right .user .userkarma {display: none;}
+.res #header-bottom-right .user .userkarma {
+	background: none;
+	padding: 0;
+	transition: none;
+}
+.res #header-bottom-right .user .userkarma a {
+	margin-left: 6px;
+}
+
 .res #header-bottom-right .user {font-size: 0 !important;}
 .res #header-bottom-right .user a {font-size: 11px}
 
