@@ -185,6 +185,8 @@ body:not(.loggedin) #sr-header-area .width-clip {
 	color: rgba(255, 255, 255, .3);
 	display: inline-block;
 	font-size: 11px;
+	text-overflow: ellipsis;
+	width: 100%;
 }
 .res #RESShortcuts:first-letter {
 	text-transform: uppercase;
@@ -3832,12 +3834,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .res #RESShortcutsViewport {margin-right:370px;}
 
-.res #RESShortcutsEditContainer {margin-right:295px;}
+.res #RESShortcutsEditContainer {margin-right:272px;}
 
 .res #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
-	background-color: transparent!important;
-	color: rgba(255, 255, 255, 0.45)!important;
-	top: 1px !important;
+	background: none !important;
+	color: rgba(255, 255, 255, 0.4) !important;
+	top: 2px !important;
 }
 
 /* Pinheader */
@@ -3856,11 +3858,10 @@ body.res #header-bottom-right {
 }
 
 .res #userbarToggle {
-	background-color: transparent;
-	color: rgba(255, 255, 255, 0.45);
-	border-radius: 0;
+	background: none;
+	color: rgba(255, 255, 255, 0.4);
 	border: none;
-	left: -32px;
+	left: 8px;
 }
 
 .res a.beta-link {top: 4px;}
