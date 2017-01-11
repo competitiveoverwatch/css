@@ -3540,12 +3540,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: 0 -22px;
 	width: 31px;
 }
-.flair-reunited, .md a[href*="reunited"] {
+.flair-team-celestial, .md a[href*="team-celestial"] {
 	background-position: 0 -44px;
 }
 .flair-misfits, .md a[href*="misfits"] {
 	background-position: 0 -66px;
-	width: 20px;
+	width: 19px;
 }
 .flair-dignitas, .md a[href*="dignitas"] {
 	background-position: -22px 0;
