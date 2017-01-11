@@ -2487,6 +2487,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 /* Gilding */
 .gilded-icon {
 	margin-left: 4px;
+	opacity: 1;
 }
 
 .gilded-icon:before {
@@ -4585,8 +4586,11 @@ body.listing-page>.content {
 /* Spoiler tags */
 .md a[href="/s"] {
 	background: #333;
+	border-radius: 1px;
     color: transparent !important;
     cursor: default;
+    display: inline-block;
+    padding: 0 4px;
     transition: all 0s 9999s;
     /* Entire spoiler tag hinges on delayed transition.
     Without it, as soon as the left click button is released,
@@ -4598,11 +4602,11 @@ body.listing-page>.content {
 .md a[href="/s"]:active {
 	background: none;
     color: inherit !important;
-    cursor: default;
-    display: inline;
+    cursor: default; /* Has to be default, as `pointer-events: none` anyway. */
     padding: 0;
-    pointer-events: none;
+    pointer-events: none; /* To stop users clicking through to `reddit.com/s` */
     transition: all 0s 0s;
+    min-width: 0;
 }
 
 /* Hero tags */
