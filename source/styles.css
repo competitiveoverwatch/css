@@ -1759,21 +1759,18 @@ div.titlebox span.number:after {
 	color:#B3B3B3;
 	font-size: 14px;
 	text-transform: capitalize;
-	top: 1px;
 	position: relative;
 }
-#search input[type=text]:-webkit-input-placeholder {
+#search input[type=text]::-webkit-input-placeholder {
 	color:#B3B3B3;
 	font-size: 14px;
 	text-transform: capitalize;
-	top: 1px;
 	position: relative;
 }
 #search input[type=text]:-ms-input-placeholder {
 	color:#B3B3B3;
 	font-size: 14px;
 	text-transform: capitalize;
-	top: 1px;
 	position: relative;
 }
 
@@ -4585,7 +4582,7 @@ body.listing-page>.content {
 }
 
 /* Spoiler tags */
-.md a[href="/s"] {
+.md a[href^="/s"] {
 	background: #333;
 	border-radius: 1px;
     color: transparent !important;
@@ -4597,10 +4594,10 @@ body.listing-page>.content {
     Without it, as soon as the left click button is released,
     it's back to being hidden. */
 }
-.md a[href="/s"]:hover {
+.md a[href^="/s"]:hover {
 	text-decoration: none !important;
 }
-.md a[href="/s"]:active {
+.md a[href^="/s"]:active {
 	background: none;
     color: inherit !important;
     cursor: default; /* Has to be default, as `pointer-events: none` anyway. */
@@ -4608,6 +4605,15 @@ body.listing-page>.content {
     pointer-events: none; /* To stop users clicking through to `reddit.com/s` */
     transition: all 0s 0s;
     min-width: 0;
+}
+.md a[href="/s-small"] {
+	min-width: 120px;
+}
+.md a[href="/s-medium"] {
+	min-width: 204px;
+}
+.md a[href="/s-large"] {
+	min-width: 320px;
 }
 
 /* Hero tags */
