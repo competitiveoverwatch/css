@@ -3832,7 +3832,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .res #RESShortcutsViewport {margin-right:370px;}
 
-.res #RESShortcutsEditContainer {margin-right:272px;}
+.res #RESShortcutsEditContainer {margin-right:308px;}
 
 .res #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
 	background: none !important;
@@ -3860,7 +3860,7 @@ body.res #header-bottom-right {
 	background: none;
 	color: rgba(255, 255, 255, 0.4);
 	border: none;
-	left: 8px;
+	left: 12px;
 }
 
 .res a.beta-link {top: 4px;}
