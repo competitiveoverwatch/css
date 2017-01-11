@@ -1758,20 +1758,23 @@ div.titlebox span.number:after {
 #search input[type=text]:-moz-placeholder {
 	color:#B3B3B3;
 	font-size: 14px;
-	text-transform: capitalize;
 	position: relative;
+	text-transform: capitalize;
+	top: -1px;
 }
 #search input[type=text]::-webkit-input-placeholder {
 	color:#B3B3B3;
 	font-size: 14px;
-	text-transform: capitalize;
 	position: relative;
+	text-transform: capitalize;
+	top: -1px;
 }
 #search input[type=text]:-ms-input-placeholder {
 	color:#B3B3B3;
 	font-size: 14px;
-	text-transform: capitalize;
 	position: relative;
+	text-transform: capitalize;
+	top: -1px;
 }
 
 #search input[type=submit] {
