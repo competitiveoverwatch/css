@@ -4747,6 +4747,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .md a[href="#flag-mx"] {background-position: -126px -225px; display: inline-block;}
 .md a[href="#flag-nl"] {background-position: -105px -240px; display: inline-block;}
 .md a[href="#flag-no"] {background-position: -126px -240px; display: inline-block;}
+.md a[href="#flag-pr"] {background-position: -21px -270px; display: inline-block;}
 .md a[href="#flag-pt"] {background-position: -63px -270px; display: inline-block;}
 .md a[href="#flag-ro"] {background-position: -168px -270px; display: inline-block;}
 .md a[href="#flag-ru"] {background-position: 0 -285px; display: inline-block;}
@@ -4754,6 +4755,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .md a[href="#flag-th"] {background-position: -21px -330px; display: inline-block;}
 .md a[href="#flag-ua"] {background-position: -84px -345px; display: inline-block;}
 .md a[href="#flag-us"] {background-position: -126px -345px; display: inline-block;}
+/* Not an official ISO code, but close enough (ISO 3166-2:GB defines `GB-WLS`) */
+.md a[href="#flag-wls"] {background-position: -105px -105px; display: inline-block;}
 .md a[href="#flag-ww"] {background-position: -189px -360px; display: inline-block;}
 .md a[href="#flag-?-ow"] {background-position: -42px -390px; display: inline-block;}
 
