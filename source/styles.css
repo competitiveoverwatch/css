@@ -2024,11 +2024,22 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	position: absolute;
 	right: 0;
 }
+
+.side .md h4 a strong {
+	color: #E53935;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+}
+
+
 .side .md h4 a:hover {
 	text-decoration: underline;
 }
 .side .md h4 a:hover:after {
 	animation: 0.35s event-link-arrow ease-in-out;
+}
+.side .md h4 a:hover strong {
+	color: #057ED6;
 }
 
 .side .md h4+p {
