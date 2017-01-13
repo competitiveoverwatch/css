@@ -1823,7 +1823,7 @@ div.titlebox span.number:after {
 	color: rgba(255, 255, 255, .7);
 	font: normal 13px/36px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 36px;
-	letter-spacing: 0;
+	letter-spacing: 0.5px;
 	transition: background .12s ease-in-out, color .12s ease-in-out;
 	width: 159px;
 }
@@ -2370,8 +2370,10 @@ body:not(.loggedin) .commentarea .menuarea {
 	padding-left: 0;
 }
 
-.commentarea .menuarea .dropdown.lightdrop .selected:hover {color: #4F8EF7;}
-.commentarea .menuarea .dropdown.lightdrop .selected:after {content: "▼"}
+.commentarea .menuarea .dropdown.lightdrop .selected:hover {
+	background: none;
+	color: #4F8EF7;
+}
 
 .drop-choices a.choice {
 	padding: 12px 24px 12px 12px;
@@ -3548,7 +3550,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .flair-cloud-9, .md a[href*="cloud-9"] {
-	background-position: 0 -22px;
+	background-position: 0 -21px;
+	height: 23px;
 	width: 31px;
 }
 .flair-team-celestial, .md a[href*="team-celestial"] {
@@ -4603,7 +4606,7 @@ body.listing-page>.content {
 }
 
 /* Spoiler tags */
-.md a[href^="/s"] {
+.md a[href^="#s"] {
 	background: #333;
 	border-radius: 1px;
     color: transparent !important;
@@ -4615,25 +4618,23 @@ body.listing-page>.content {
     Without it, as soon as the left click button is released,
     it's back to being hidden. */
 }
-.md a[href^="/s"]:hover {
+.md a[href^="#s"]:hover {
 	text-decoration: none !important;
 }
-.md a[href^="/s"]:active {
+.md a[href^="#s"]:active {
 	background: none;
     color: inherit !important;
-    cursor: default; /* Has to be default, as `pointer-events: none` anyway. */
     padding: 0;
-    pointer-events: none; /* To stop users clicking through to `reddit.com/s` */
     transition: all 0s 0s;
     min-width: 0;
 }
-.md a[href="/s-small"] {
+.md a[href="#s-small"] {
 	min-width: 120px;
 }
-.md a[href="/s-medium"] {
+.md a[href="#s-medium"] {
 	min-width: 204px;
 }
-.md a[href="/s-large"] {
+.md a[href="#s-large"] {
 	min-width: 320px;
 }
 
@@ -4718,6 +4719,7 @@ body.listing-page>.content {
 /* Flag tags */
 .md a[href*="#flag-"] {
 	background: url(%%flags-all%%);
+	border-radius: 1px;
 	cursor: default;
 	display: none;
 	font-size: 0;
