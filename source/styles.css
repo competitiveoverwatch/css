@@ -361,38 +361,33 @@ body:not(.loggedin) #header-bottom-right {
 	color: #FFF !important;
 }
 
+@keyframes modmail-fadein {
+	0% {opacity:0}
+	100% {opacity:1}
+}
+
 #mail.havemail:before {
-	animation: 8s ease toast;
-	background: #E53935 url(%%spritesheet%%) 269px -120px no-repeat;
+	animation: .25s ease-in-out modmail-fadein;
+	background: rgba(67, 155, 218, .85);
 	border-radius: 1px;
-	bottom: 24px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 	color: #FFF;
 	content: "NEW MESSAGES";
-	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	height: 48px;
-	left: 32px;
-	line-height: 1;
-	padding: 16px 24px;
+	font: 13px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	left: calc(50% - 120px);
+	padding: 12px;
 	position: fixed;
+	text-align: center;
 	text-indent: 0;
+	top: -86px;
 	transform:translateY(112px);
-	transition: background 0.25s ease, box-shadow 0.25s ease-in-out;
-	width: 300px;
+	transition: background .18s ease;
+	width: 240px;
 	z-index: 100;
 }
 
-#mail.havemail:hover:before {
-	animation-play-state: paused;
-	background-color: #EC5B5B;
-	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.24);
+#mail.havemail:hover:before, #mail.havemail:active:before {
+	background-color: #439BDA;
 }
-
-#mail.havemail:active:before {
-	background-color: #C73D3D;
-	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.36);
-}
-
 
 #modmail {
 	top: -3px;
@@ -1178,6 +1173,10 @@ ul.report-reasons {
 	margin-bottom: 16px;
 }
 
+.organic-listing .domain {
+	display: none;
+}
+
 .organic-listing .thumbnail img {
 	top: 0;
 	transform: none;
@@ -1205,6 +1204,12 @@ ul.report-reasons {
 	font-weight: normal;
 	margin-bottom: 16px;
 	margin-right: -52px;
+	text-transform: capitalize;
+}
+
+.entry .buttons .promoted-tag {
+	font-size: 12px;
+	font-weight: normal;
 	text-transform: capitalize;
 }
 
@@ -2587,10 +2592,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding: 10px 16px 16px;
 }
 
-.comment.collapsed .score, .comments-page .comment.collapsed time {
-	vertical-align: bottom;
-}
-
 .comment.collapsed .tagline :not(.expand), .comment.collapsed .tagline a :not(.expand), .comment.collapsed .search-result-meta :not(.expand), .comment.collapsed .search-result-meta a :not(.expand) {
 	font-style: normal;
 }
@@ -3550,8 +3551,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .flair-cloud-9, .md a[href*="cloud-9"] {
-	background-position: 0 -21px;
-	height: 23px;
+	background-position: 0 -22px;
 	width: 31px;
 }
 .flair-team-celestial, .md a[href*="team-celestial"] {
@@ -5489,17 +5489,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .wiki-page .wiki-page-content>em, .wiki-page .wiki-page-content>em *:not(.author):not(.flair) {
 	text-transform: uppercase;
-}
-
-/* Animations from Naut */
-@keyframes toast {
-  0%    { transform:translateY(76px); opacity: 0; }
-  20%   { transform:translateY(76px); opacity: 0; }
-  25%   { transform:translateY(-8px); opacity: 1; }
-  27%   { transform:translateY(0); opacity: 1; }
-  92%   { transform:translateY(0); opacity: 1; }
-  97%   { transform:translateY(16px); opacity: 1; }
-  100%  { transform:translateY(76px); opacity: 0; }
 }
 
 @keyframes upvote {
