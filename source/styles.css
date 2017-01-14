@@ -2450,10 +2450,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-top: 5.5px;
 }
 
-.usertext .bottom-area a.reddiquette:hover {
-	color: #24A0F0;
-}
-
 .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select {
 	border: none;
 	color: #333;
@@ -2750,8 +2746,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .comment .flat-list li a[onclick*="reply"]:after {
 	content: "";
-	-webkit-backface-visibility: hidden;
-	-webkit-transform: scale(1);
 	backface-visibility: hidden;
 	transform: scale(1);
 }
@@ -2790,7 +2784,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-top: 275px;
 }
 .res.comments-page .side {
-	margin-top: 304px;
+	margin-top: 281px;
 }
 
 .linkinfo {
@@ -3728,8 +3722,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 28px;
 }
 .flair-master {
-	background-position: -93px -24px;
-	height: 25px;
+	background-position: -93px -23px;
+	height: 26px;
 	width: 30px;
 }
 .flair-grandmaster {
@@ -3925,6 +3919,9 @@ body.res #header-bottom-right {
 	line-height: inherit;
 	margin-left: 6px;
 	padding: 0;
+}
+.res .content .RESBigEditorPop:hover {
+	color: #057ED6;
 }
 
 html.res-commentBoxes .comment {
