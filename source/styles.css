@@ -367,6 +367,7 @@ body:not(.loggedin) #header-bottom-right {
 	font: 13px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	left: calc(50% - 120px);
 	padding: 12px;
+	pointer-events: none;
 	position: fixed;
 	text-align: center;
 	text-indent: 0;
@@ -377,7 +378,7 @@ body:not(.loggedin) #header-bottom-right {
 	z-index: 100;
 }
 
-#mail.havemail:hover:before, #mail.havemail:active:before {
+#mail.havemail:active:before {
 	background-color: #439BDA;
 }
 
