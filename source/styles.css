@@ -2750,14 +2750,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 @keyframes reply-button {
-	0% { content: "" }
-	33.33% { content: "."; opacity: 1; }
-	66.66% { content: ".."; opacity: .5; }
-	100% { content: "..."; opacity: .1; }
+	0% { content: ""; opacity: 1; }
+	33.33% { content: "."; }
+	66.66% { content: ".."; opacity: .6; }
+	100% { content: "..."; opacity: .2; }
 }
 .comment .flat-list li a[onclick*="reply"]:after {
 	content: "";
-	opacity: 1;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: scale(1);
 	backface-visibility: hidden;
