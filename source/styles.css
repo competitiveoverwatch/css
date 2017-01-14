@@ -567,7 +567,6 @@ body:not(.submit-page)>.content {
 	position: relative;
 }
 
-/* Objects on the link from left to right */
 body >.content .link .rank, .rank-spacer {
 	display: none;
 }
@@ -3837,9 +3836,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .res .srSep {color: rgba(255,255,255,0.45);}
 
-.res #RESShortcutsViewport {margin-right:370px;}
+.res #RESShortcutsViewport {margin-right:386x;}
 
-.res #RESShortcutsEditContainer {margin-right:308px;}
+.res #RESShortcutsEditContainer {margin-right:316px;}
 
 .res #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
 	background: none !important;
@@ -3867,7 +3866,7 @@ body.res #header-bottom-right {
 	background: none;
 	color: rgba(255, 255, 255, 0.4);
 	border: none;
-	left: 12px;
+	left: 8px;
 }
 
 .res a.beta-link {top: 4px;}
