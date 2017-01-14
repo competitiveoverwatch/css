@@ -343,23 +343,26 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 #header-bottom-right .havemail {
-	opacity: 1 !important;
+	opacity: 1;
 }
 
 .message-count {
-	background: #F50;
+	background: #FFF;
+	color: #000 !important;
 	position: relative;
 	top: -1px;
-	color: #FFF !important;
 }
 
 @keyframes modmail-fadein {
-	0% {opacity:0}
-	100% {opacity:1}
+	0%    { opacity: 0 }
+	20%   { opacity: 0 }
+	25%   { opacity: 1 }
+	97%   { opacity: 1 }
+	100%  { display: none; opacity: 0; }
 }
 
 #mail.havemail:before {
-	animation: .25s ease-in-out modmail-fadein;
+	animation: 8s ease-in-out modmail-fadein forwards;
 	background: rgba(67, 155, 218, .85);
 	border-radius: 1px;
 	color: #FFF;
@@ -371,9 +374,7 @@ body:not(.loggedin) #header-bottom-right {
 	position: fixed;
 	text-align: center;
 	text-indent: 0;
-	top: -86px;
-	transform:translateY(112px);
-	transition: background .18s ease;
+	top: 25px;
 	width: 240px;
 	z-index: 100;
 }
@@ -838,12 +839,12 @@ body:not(.res) .expando-button {
 }
 
 .listing-page .entry .tagline:first-letter {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 /* For English languages (en-gb/en-us/en) */
 [lang^=en] .link .entry .tagline {
-    margin-left: -57px;
+	margin-left: -57px;
 	visibility: hidden;
 }
 [lang^=en] .link .entry .tagline * {
@@ -2839,10 +2840,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .comments-page .side .linkinfo .shortlink:before {
 	bottom: 10px;
 	color: #98ABBA;
-    content: "Share: ";
-    font-size: 13px;
-    position: absolute;
-    visibility: visible;
+	content: "Share: ";
+	font-size: 13px;
+	position: absolute;
+	visibility: visible;
 }
 
 .comments-page .side .linkinfo .shortlink input {
@@ -4601,24 +4602,24 @@ body.listing-page>.content {
 .md a[href^="#s"] {
 	background: #333;
 	border-radius: 1px;
-    color: transparent !important;
-    cursor: default;
-    display: inline-block;
-    padding: 0 4px;
-    transition: all 0s 9999s;
-    /* Entire spoiler tag hinges on delayed transition.
-    Without it, as soon as the left click button is released,
-    it's back to being hidden. */
+	color: transparent !important;
+	cursor: default;
+	display: inline-block;
+	padding: 0 4px;
+	transition: all 0s 9999s;
+	/* Entire spoiler tag hinges on delayed transition.
+	Without it, as soon as the left click button is released,
+	it's back to being hidden. */
 }
 .md a[href^="#s"]:hover {
 	text-decoration: none !important;
 }
 .md a[href^="#s"]:active {
 	background: none;
-    color: inherit !important;
-    padding: 0;
-    transition: all 0s 0s;
-    min-width: 0;
+	color: inherit !important;
+	padding: 0;
+	transition: all 0s 0s;
+	min-width: 0;
 }
 .md a[href="#s-small"] {
 	min-width: 120px;
