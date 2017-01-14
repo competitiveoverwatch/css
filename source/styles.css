@@ -323,12 +323,10 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 #mail, #modmail {
-	width: 16px;
-	height: 14px;
 	background-image: url(%%spritesheet%%) !important;
-	background-repeat: no-repeat !important;
-	background-color: transparent;
-	transition: all .2s ease-in-out;
+	height: 14px;
+	transition: all .18s ease-in-out;
+	width: 16px;
 }
 
 #mail {
@@ -336,18 +334,12 @@ body:not(.loggedin) #header-bottom-right {
 	overflow: visible;
 }
 
-#mail.nohavemail {
+#mail.nohavemail, #mail.havemail  {
 	background-position: 0 0;
 }
-#mail.havemail {
-	background-position: 0 -17px;
-}
 
-#modmail.nohavemail {
+#modmail.nohavemail, #modmail.havemail {
 	background-position: -16px -1px;
-}
-#modmail.havemail {
-	background-position: -16px -17px;
 }
 
 #header-bottom-right .havemail {
@@ -490,7 +482,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: block;
 	text-align: center;
 }
-.res:not(.comments-page) #header .tabmenu {
+body.res:not(.comments-page) #header .tabmenu {
 	margin-top: -4px;
 	margin-left: -64px;
 }
