@@ -2783,9 +2783,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .comments-page .side {
 	margin-top: 275px;
 }
-.res.comments-page .side {
-	margin-top: 281px;
-}
 
 .linkinfo {
 	background: #FFF;
@@ -2854,12 +2851,15 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* For RES */
 body.res.comments-page .side .linkinfo .score {
-	margin-bottom: 6px;
+	display: inline-block;
+	margin-right: 4px;
 }
-.side .linkinfo .totalvotes, .side .linkinfo .upvotes, .side .linkinfo .downvotes {
-	font-size: 100%;
+.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes, 
+.res-voteEnhancements-estimatePostVotes .linkinfo .upvotes, 
+.res-voteEnhancements-estimatePostVotes .linkinfo .downvotes {
+	color: #555;
+	font-size: 100% !important;
 	margin-right: 6px;
-	opacity: .8;
 }
 
 /* That new blog-like next-post thing */
@@ -2871,10 +2871,10 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .read-next .read-next-header {
-	border-bottom: 1px solid #edf1f3;
+	background-color: #f2f7fa;
+	border-bottom: 1px solid #EDF1F3;
 	color: #738491;
 	padding: 8px 16px;
-	background-color: #f2f7fa;
 }
 
 .read-next .read-next-nav {top: 8px;}
@@ -3823,7 +3823,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: none;
 }
 
-/* Bunch of RES (Reddit Enhancement Suite) Fixes */
+/* RES (Reddit Enhancement Suite) Fixes */
 .res .link .tagline a.voteWeight {background-color: transparent !important;}
 .res .thing .tagline .author.moderator {background-color: #27b062 !important;padding: 1px 4px;border-radius: 1px;}
 #header-bottom-right #userbarToggle + * {margin-left: 0 !important;}
@@ -3930,6 +3930,10 @@ html.res-commentBoxes .comment {
 }
 
 .res .titlebox .tagline {margin-top: 6px;}
+
+.res-commentBoxes.res-commentBoxes-rounded .comment {
+	border-radius: 1px !important;
+}
 
 .res .RESshortcutside, .res .RESDashboardToggle {
 	background: none;
@@ -4838,10 +4842,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	font-size: 12px;
 }
 
-.res.comments-page .thing {
-	border-radius: 3px !important;
-}
-
 .res .commentarea .panestack-title {
 	padding-top: 10px;
 }
@@ -4918,7 +4918,7 @@ RESUserTag a {
 
 .comment-permalink-page .infobar {
 	background: #FFF;
-	border-radius: 3px;
+	border-radius: 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.14);
 	color: #333;
 	font-size: 14px;
