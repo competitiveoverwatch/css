@@ -658,7 +658,7 @@ body >.content .link .rank, .rank-spacer {
 .thumbnail {
 	border-radius: 28px;
 	height: 56px;
-	margin: 0 25px 0 7px;
+	margin: 0 25px 0 13px;
 	width: 56px;
 }
 .thumbnail.self {
@@ -2046,12 +2046,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Announcement/stickied links */
 @keyframes header-stickies {
-	0% { opacity: 0; right: -320px; }
+	0% { opacity: 0; right: -304px; }
 	100% { opacity: 1; right: 16px; }
 }
 
 .side .md blockquote {
-	animation: .55s ease-in-out header-stickies .2s;
+	animation: .55s ease-in-out header-stickies .15s;
 	border: 0;
 	padding: 0;
 	position: absolute;
