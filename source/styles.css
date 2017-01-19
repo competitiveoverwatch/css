@@ -100,17 +100,15 @@ body .content .text:focus, body .content textarea:focus, body .content input[typ
 body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_button {
 	margin: 4px 16px 4px 0;
 	padding: 2px 18px;
-	background: #0079d3;
+	background: #0079D3;
 	border: none;
 	border-radius: 2px;
-	color: #fff;
+	color: #FFF;
 	text-transform: uppercase;
-	font-weight: bold;
 	cursor: default;
 	height: 32px;
 	font-size: 12px;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
-	transition: box-shadow .2s ease-in-out, background .2s ease-in-out, color .2s ease-in-out;
+	transition: background .2s ease-in-out, color .2s ease-in-out;
 }
 
 .btn:hover, button:hover, .c-btn-primary:hover, .wiki-page .wiki-page-content .wiki_button {
@@ -131,7 +129,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 #header {
 	background: url(%%header%%) 30% 0 / cover no-repeat;
 	border: none;
-	height: 238px;
+	height: 242px;
 	margin: 0;
 	z-index: 1;
 }
@@ -480,13 +478,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 #header .tabmenu {
-	margin: 12px 0 0;
+	margin: 12px 0 0 94px;
 	display: block;
-	text-align: center;
 }
 body.res:not(.comments-page) #header .tabmenu {
 	margin-top: -4px;
-	margin-left: -64px;
 }
 
 #header .tabmenu li {
@@ -655,13 +651,13 @@ body >.content .link .rank, .rank-spacer {
 
 
 /* Post Thumbnails */
-.thumbnail {
+.thumbnail, .thumbnail.spoiler {
 	border-radius: 28px;
 	height: 56px;
 	margin: 0 25px 0 13px;
 	width: 56px;
 }
-.thumbnail.self {
+.thumbnail.self, .thumbnail.spoiler {
 	background: #24A0ED url(%%spritesheet%%) -97px -112px;
 	height: 56px; /* To override Reddit setting height */
 }
@@ -689,16 +685,15 @@ body >.content .link .rank, .rank-spacer {
 
 .over18.link .thumbnail { background: #757575 url(%%spritesheet%%) -162 -98px }
 
-.linkflair-Question .thumbnail { background: #738491 url(%%spritesheet%%) -153px -113px }
-.linkflair-AdviceTips .thumbnail { background: #FFAB19 url(%%spritesheet%%) -153px -169px }
-.linkflair-PSA .thumbnail { background: #E53935 url(%%spritesheet%%) -153px -56px }
-.linkflair-Event .thumbnail { background: #DC143C url(%%spritesheet%%) -209px 0 no-repeat }
-.linkflair-Guide .thumbnail { background: #B338C2 url(%%spritesheet%%) -209px -56px }
-.linkflair-Video .thumbnail { background: #FF5500 url(%%spritesheet%%) -207px -112px }
-.linkflair-SubredditMeta .thumbnail { background-color: #738491 }
-.linkflair-Casting .thumbnail { background: #673AB7 url(%%spritesheet%%) -209px -169px }
-.linkflair-eSports .thumbnail { background-color: #3949AB }
-.linkflair-eSports.linkflair-Spoiler .thumbnail { background: #3949AB url(%%spritesheet%%) -153px -56px }
+.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #738491 url(%%spritesheet%%) -153px -113px }
+.linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler { background: #FFAB19 url(%%spritesheet%%) -153px -169px }
+.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #E53935 url(%%spritesheet%%) -153px -56px }
+.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #DC143C url(%%spritesheet%%) -209px 0 no-repeat }
+.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #B338C2 url(%%spritesheet%%) -209px -56px }
+.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #FF5500 url(%%spritesheet%%) -207px -112px }
+.linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #738491 }
+.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #673AB7 url(%%spritesheet%%) -209px -169px }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-color: #3949AB }
 
 .linkflair-Megathread .thumbnail, .stickied .thumbnail { background: transparent url(%%spritesheet%%) -121px 0 !important }
 
@@ -826,6 +821,35 @@ body:not(.res) .expando-button {
 	border: none;
 	margin-bottom: -14px;
 	padding: 16px;
+}
+
+/* Most of these expando/interstitial rules only apply to spoilers/NSFW */
+.expando--with-interstitial {
+	margin: 0;
+}
+.expando-gate {
+	cursor: default;
+	display: block;
+	min-height: 0;
+	pointer-events: none;
+}
+.link.self .expando-gate {
+	border-radius: 0;
+}
+.expando-gate.expando-gate--interstitial {
+	background: none;
+}
+.expando-gate .expando-gate__controls {
+	text-align: left;
+}
+.expando-gate .expando-gate__show-once {
+	background: #222;
+	border: none;
+	font-weight: normal;
+	letter-spacing: 0.2px;
+	margin: 8px 0 0;
+	padding: 8px 16px;
+	pointer-events: auto;
 }
 
 /* Submitted X ago by.. */
@@ -975,7 +999,7 @@ body:not(.res) .expando-button {
 	padding: 0;
 }
 
-.nsfw-stamp {
+.stamp {
 	border-radius: 0;
 	border: 0;
 	margin-right: 8px;
@@ -989,6 +1013,10 @@ body:not(.res) .expando-button {
 	padding: 2px 3px;
 	position: relative;
 	top: -1px;
+}
+
+.spoiler-stamp {
+	display: none;
 }
 
 .link .entry .buttons li a.comments:hover {
@@ -1115,7 +1143,7 @@ ul.report-reasons {
 }
 
 .thing.stickied.link a.title {
-	font-weight: 600;
+	font-weight: normal;
 }
 
 .thing.link.stickied a.title, .thing.link.stickied .entry li .comments {
@@ -1625,7 +1653,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background: #FFF;
 	border-radius: 1px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
-	margin: 166px 16px 156px 0;
+	margin: 110px 16px 156px 0;
 	padding: 0 16px;
 	width: 320px;
 }
@@ -1725,86 +1753,97 @@ div.titlebox span.number:after {
 
 /* Search */
 #search {
-	margin-left: -16px;
+	margin: 0;
 	position: absolute;
-	top: 254px;
+	right: 149px;
+	top: 186px;
+	width: 187px;
 	z-index: 1;
+}
+
+.comments-page #search {
+	right: 16px;
 	width: 320px;
 }
 
 #search input[type=text] {
-	background: #fff;
-	border: 0 solid;
+	background: rgba(67, 155, 218, .1);
+	border: none;
 	border-radius: 1px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
+	color: #FFF;
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	height: 38px;
+	height: 40px;
 	padding: 0 42px 0 16px;
-	top: 254px;
 	transition: box-shadow .2s ease-in-out,background .2s ease-in-out,color .2s ease-in-out;
-	width: 320px;
+	width: 100%;
 }
 
 #search input[type=text]:focus {
-	background: #FFF;
+	background: #439BDA;
 	border-radius: 1px 1px 0 0;
-	box-shadow: none;
 }
 
 #search input[type=text]:-moz-placeholder {
-	color:#B3B3B3;
-	font-size: 14px;
+	color:#4399DE;
+	font-size: 12px;
+	letter-spacing: .5px;
 	position: relative;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	top: -1px;
 }
+/* Apparently webkit requires the double colon */
 #search input[type=text]::-webkit-input-placeholder {
-	color:#B3B3B3;
-	font-size: 14px;
+	color:#4399DE;
+	font-size: 12px;
+	letter-spacing: .5px;
 	position: relative;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	top: -1px;
 }
 #search input[type=text]:-ms-input-placeholder {
-	color:#B3B3B3;
-	font-size: 14px;
+	color:#4399DE;
+	font-size: 12px;
+	letter-spacing: .5px;
 	position: relative;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	top: -1px;
 }
 
 #search input[type=submit] {
-	height: 32px;
-	width: 32px;
-	margin-left: -38px;
-	background: url(%%spritesheet%%) -64px -96px no-repeat;
-	border:none !important;
+	background: url(%%spritesheet%%) -64px -96px;
 	border-radius: 16px;
-	transition: background .2s ease-in-out;
+	border:none !important;
+	height: 32px;
+	margin-left: -38px;
+	opacity: 0.5;
+	transition: opacity .2s ease-in-out;
+	width: 32px;
 }
 
 #search input[type=submit]:hover {
-	background: rgba(158,158,158,.2) url(%%spritesheet%%) -64px -96px no-repeat;
+	background: url(%%spritesheet%%) -64px -96px;
+	opacity: 1;
 }
 
 /* Expando */
 #search #searchexpando {
-	background: #FFF;
+	background: #439BDA;
 	border: none;
 	border-radius: 0 0 1px 1px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
-	color: #444;
-	font-size: 11px;
-	height: auto;
+	color: #FFF;
+	font-size: 12px;
 	margin-top: 0;
-	padding: 8px 0 0 0;
-}
-
-#search #searchexpando label {
-	padding: 21px 8px 17px 8px;
+	padding: 8px 0 0;
+	text-align: center;
 }
 
 #search #searchexpando p {display: none !important;}
+
+.comments-page #search #searchexpando {
+	padding-left: 16px;
+	text-align: left;
+}
 
 
 /* Submit Button */
@@ -1812,8 +1851,11 @@ div.titlebox span.number:after {
 	background: none !important;
 	border: none;
 	position: absolute;
-	top: 352px;
+	top: 300px;
 	transition: background .12s ease-in-out;
+}
+.comments-page .morelink {
+	top: 409px;
 }
 .morelink a {
 	background: #439BDA;
@@ -1849,8 +1891,11 @@ div.titlebox span.number:after {
 	content: "SUBMIT CONTENT";
 	font-size: 16px;
 	position: absolute;
-	top: 319px;
+	top: 269px;
 	width: 320px;
+}
+.comments-page .side .submit-link:before {
+	top: 380px;
 }
 
 .submit-link:after {
@@ -1858,11 +1903,14 @@ div.titlebox span.number:after {
 	border-radius: 1px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,.14);
 	content: "";
-	height: 80px;
+	height: 78px;
 	position: absolute;
-	top: 308px;
+	top: 258px;
 	width: 320px;
 	z-index: -1;
+}
+.comments-page .submit-link:after {
+	top: 367px;
 }
 
 /* Login form */
@@ -2112,15 +2160,18 @@ body:not(.listing-page) .side .md>ol {
 	cursor: default;
 	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
-	left: 78%;
-	left: calc(100% - 336px);
 	letter-spacing: .5px;
 	list-style-type: none;
 	padding: 12px 18px;
 	position: absolute;
+	right: 16px;
 	top: 181px;
 	transition: background .18s ease-in-out, color .18s ease-in-out;
 	z-index: 1;
+}
+
+.side .md>ol>li {
+	line-height: normal;
 }
 
 .side .md>ol>li:after {
@@ -2134,7 +2185,7 @@ body:not(.listing-page) .side .md>ol {
 	font-size: 13px;
 	font-weight: normal;
 	list-style-type: none;
-	margin: 6px 0 0 -18px;
+	margin: 9px 0 0 -45px;
 	opacity: 0;
 	padding: 0;
 	position: absolute;
@@ -2158,36 +2209,28 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li a {
-	background: #FFF;
-	color: #777;
+	background: #439BDA;
+	color: #FFF;
 	display: block;
 	padding: 5px 16px;
+	transition-property: background .1s ease-in-out, color .1s ease-in-out;
 	width: 100%;
 }
 
-@media only screen and (max-width: 1302px) {
-	.side .md>ol {
-		left: initial;
-		right: 16px;
-	}
-
-	.side .md>ol li ol {right: -1px}
-}
-
 .side .md>ol:hover {
-	background: #FFF;
-	color: rgba(0,0,0,.9);
+	background: #439BDA;
+	color: #FFF;
 	text-shadow: none;
 }
 
 .side .md>ol:hover ol {
-	margin-top: 14px;
+	margin-top: 13px;
 	opacity: 1;
 	visibility: visible;
 }
 
 .side .md>ol li a:hover {
-	background: #EEE;
+	background: #FFF;
 	color: #222;
 }
 
@@ -2458,7 +2501,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .gold-accent.comment-visits-box {
 	background: none;
 	border-radius: 2px;
-	margin: 0 0 12px 0;
+	margin: -7px 0 9px 0;
 }
 
 .gold-accent.comment-visits-box .title {
@@ -2764,6 +2807,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	color: #E53935;
 }
 
+.thing .entry .buttons .spoiler-button a:hover {
+	color: #222;
+}
+
 .thing .entry .buttons .give-gold-button a:hover {
 	color: #FA9F29;
 }
@@ -2781,7 +2828,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 275px;
+	margin-top: 219px;
 }
 
 .linkinfo {
@@ -2792,7 +2839,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-left: -16px;
 	padding: 16px 16px 0;
 	position: absolute;
-	top: 404px;
+	top: 258px;
 	width: 320px;
 }
 
@@ -2896,7 +2943,7 @@ body.res.comments-page .side .linkinfo .score {
 
 /* Submission Page */
 .submit-page #header {
-	height: 238px;
+	height: 242px;
 }
 
 .submit-page #header-bottom-left {
@@ -3103,7 +3150,7 @@ body #newlink-with-image-upload .file-upload-button {
 	top: 26px;
 }
 .search-page #header {
-	height: 238px;
+	height: 242px;
 }
 .search-page #header-bottom-left {
 	top: 56px;
@@ -4535,10 +4582,6 @@ body.listing-page>.content {
 	content: ": ";
 }
 
-.stickied .title .linkflairlabel {
-	display: none;
-}
-
 .linkflair-mod .linkflairlabel {		
 	background: #27B062;		
 	color: #FFF;		
@@ -4598,39 +4641,6 @@ body.listing-page>.content {
 	padding: 8px 12px;
 }
 
-/* Spoiler tags */
-.md a[href^="#s"] {
-	background: #333;
-	border-radius: 1px;
-	color: transparent !important;
-	cursor: default;
-	display: inline-block;
-	padding: 0 4px;
-	transition: all 0s 9999s;
-	/* Entire spoiler tag hinges on delayed transition.
-	Without it, as soon as the left click button is released,
-	it's back to being hidden. */
-}
-.md a[href^="#s"]:hover {
-	text-decoration: none !important;
-}
-.md a[href^="#s"]:active {
-	background: none;
-	color: inherit !important;
-	padding: 0;
-	transition: all 0s 0s;
-	min-width: 0;
-}
-.md a[href="#s-small"] {
-	min-width: 120px;
-}
-.md a[href="#s-medium"] {
-	min-width: 204px;
-}
-.md a[href="#s-large"] {
-	min-width: 320px;
-}
-
 /* Hero tags */
 .md a[href^="#hero-"] {
 	background: url(%%tags-heroes%%);
@@ -4667,7 +4677,7 @@ body.listing-page>.content {
 
 /* Map tags */
 .md a[href*="#map-"] {
-	background: url(%%tags-maps%%);
+	background: #F5F5F5 url(%%tags-maps%%) -330px -237px no-repeat;
 	border-radius: 1px;
 	cursor: default;
 	display: inline-block;
@@ -4675,7 +4685,7 @@ body.listing-page>.content {
 	height: 79px;
 	pointer-events: none;
 	width: 110px;
-}
+} 
 .md a[href="#map-hanamura"] {background-position: 0 0}
 .md a[href="#map-temple-of-anubis"] {background-position: -110px 0}
 .md a[href="#map-volskaya-industries"] {background-position: -220px 0}
