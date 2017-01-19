@@ -4677,30 +4677,40 @@ body.listing-page>.content {
 
 /* Map tags */
 .md a[href*="#map-"] {
-	background: #F5F5F5 url(%%tags-maps%%) -330px -237px no-repeat;
-	border-radius: 1px;
+	background: #F5F5F5 url(%%tags-maps%%) no-repeat;
 	cursor: default;
 	display: inline-block;
 	font-size: 0;
-	height: 79px;
+	height: 60px;
 	pointer-events: none;
-	width: 110px;
+	width: 180px;
 } 
-.md a[href="#map-hanamura"] {background-position: 0 0}
-.md a[href="#map-temple-of-anubis"] {background-position: -110px 0}
-.md a[href="#map-volskaya-industries"] {background-position: -220px 0}
-.md a[href="#map-dorado"] {background-position: 0 -79px}
-.md a[href="#map-route-66"] {background-position: -110px -79px}
-.md a[href="#map-watchpoint-gibraltar"] {background-position: -220px -79px}
-.md a[href="#map-hollywood"] {background-position: 0 -158px}
-.md a[href="#map-kings-row"] {background-position: -110px -158px}
-.md a[href="#map-numbani"] {background-position: -220px -158px}
-.md a[href="#map-eichenwalde"] {background-position: -330px 0}
-.md a[href="#map-ilios"] {background-position: 0 -237px}
-.md a[href="#map-lijiang-tower"] {background-position: -110px -237px}
-.md a[href="#map-nepal"] {background-position: -220px -237px}
-.md a[href="#map-ecopoint-antarctica"] {background-position: -330px -79px}
-.md a[href="#map-oasis"] {background-position: -330px -158px}
+
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.md a[href*="#map-"] {
+		background:url(%%tags-maps-2x%%);
+		background-size: 720px 240px;
+	}
+}
+
+.md a[href="#map-temple-of-anubis"] {background-position: -180px 0}
+.md a[href="#map-dorado"] {background-position: -360px 0}
+.md a[href="#map-hanamura"] {background-position: -540px 0}
+.md a[href="#map-hollywood"] {background-position: 0 -60px}
+.md a[href="#map-ilios"] {background-position: -180px -60px}
+.md a[href="#map-kings-row"] {background-position: -360px -60px}
+.md a[href="#map-lijiang-tower"] {background-position: -540px -60px}
+.md a[href="#map-nepal"] {background-position: 0 -120px}
+.md a[href="#map-numbani"] {background-position: -180px -120px}
+.md a[href="#map-route-66"] {background-position: -360px -120px}
+.md a[href="#map-volskaya-industries"] {background-position: -540px -120px}
+.md a[href="#map-watchpoint-gibraltar"] {background-position: 0 -180px}
+.md a[href="#map-eichenwalde"] {background-position: -180px -180px}
+.md a[href="#map-ecopoint-antarctica"] {background-position: -360px -180px}
+.md a[href="#map-oasis"] {background-position: -540px -180px}
 
 /* Checkmark tags */
 .md a[href*="#check-"] {
