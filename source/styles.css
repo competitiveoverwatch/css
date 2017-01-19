@@ -4643,7 +4643,8 @@ body.listing-page>.content {
 
 /* Hero tags */
 .md a[href^="#hero-"] {
-	background: url(%%tags-heroes%%);
+	background: #EEE url(%%tags-heroes%%);
+	border-radius: 1px;
 	cursor: default;
 	display: inline-block;
 	font-size: 0;
@@ -4651,29 +4652,40 @@ body.listing-page>.content {
 	pointer-events: none;
 	width: 28px;
 }
-.md a[href="#hero-genji"] {background-position: 0 0}
-.md a[href="#hero-mccree"] {background-position: -28px 0}
-.md a[href="#hero-pharah"] {background-position: -56px 0}
-.md a[href="#hero-reaper"] {background-position: -84px 0}
-.md a[href="#hero-soldier-76"] {background-position: -112px 0}
-.md a[href="#hero-tracer"] {background-position: -140px 0}
-.md a[href="#hero-bastion"] {background-position: 0 -28px}
-.md a[href="#hero-hanzo"] {background-position: -28px -28px}
-.md a[href="#hero-junkrat"] {background-position: -56px -28px}
-.md a[href="#hero-mei"] {background-position: -84px -28px}
-.md a[href="#hero-torbjorn"] {background-position: -112px -28px}
-.md a[href="#hero-widowmaker"] {background-position: -140px -28px}
-.md a[href="#hero-dva"] {background-position: 0 -56px}
-.md a[href="#hero-reinhardt"] {background-position: -28px -56px}
-.md a[href="#hero-roadhog"] {background-position: -56px -56px}
-.md a[href="#hero-winston"] {background-position: -84px -56px}
-.md a[href="#hero-zarya"] {background-position: -112px -56px}
-.md a[href="#hero-ana"] {background-position: 0 -84px}
-.md a[href="#hero-lucio"] {background-position: -28px -84px}
-.md a[href="#hero-mercy"] {background-position: -56px -84px}
-.md a[href="#hero-symmetra"] {background-position: -84px -84px}
-.md a[href="#hero-zenyatta"] {background-position: -112px -84px}
-.md a[href="#hero-sombra"] {background-position: -140px -56px}
+
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.md a[href^="#hero-"] {
+		background: #EEE url(%%tags-heroes-2x%%);
+		background-size: 168px 112px;
+	}
+}
+
+.md a[href="#hero-bastion"] {background-position: 0 0}
+.md a[href="#hero-dva"] {background-position: -28px 0}
+.md a[href="#hero-genji"] {background-position: -56px 0}
+.md a[href="#hero-hanzo"] {background-position: -84px 0}
+.md a[href="#hero-junkrat"] {background-position: -112px 0}
+.md a[href="#hero-lucio"] {background-position: -140px 0}
+.md a[href="#hero-mccree"] {background-position: 0 -28px}
+.md a[href="#hero-mei"] {background-position: -28px -28px}
+.md a[href="#hero-mercy"] {background-position: -56px -28px}
+.md a[href="#hero-pharah"] {background-position: -84px 0}
+.md a[href="#hero-reaper"] {background-position: -112px 0}
+.md a[href="#hero-reinhardt"] {background-position: -140px 0}
+.md a[href="#hero-roadhog"] {background-position: 0 -56px}
+.md a[href="#hero-soldier-76"] {background-position: -28px -56px}
+.md a[href="#hero-symmetra"] {background-position: -56px -56px}
+.md a[href="#hero-torbjorn"] {background-position: -84px -56px}
+.md a[href="#hero-tracer"] {background-position: -112px -56px}
+.md a[href="#hero-widowmaker"] {background-position: -140px -56px}
+.md a[href="#hero-winston"] {background-position: 0 -84px}
+.md a[href="#hero-zarya"] {background-position: -28px -84px}
+.md a[href="#hero-zenyatta"] {background-position: -56px -84px}
+.md a[href="#hero-ana"] {background-position: -84px -84px}
+.md a[href="#hero-sombra"] {background-position: -112px -84px}
 
 /* Map tags */
 .md a[href*="#map-"] {
