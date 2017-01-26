@@ -642,6 +642,29 @@ body >.content .link .rank, .rank-spacer {
 	background-position: -64px -80px;
 	transition: background-color 0.2s ease-in-out;
 }
+
+body:not(.subscriber) .arrow:after {
+	background: #999;
+	border-radius:2px;
+	color: #FFF;
+	content: "Thanks for voting, consider sticking around by subscribing!";
+	display: block;
+	font-weight: normal;
+	opacity: 0;
+	padding: 4px 8px;
+	position: absolute;
+	transform: translateX(8px);
+	transition-property: opacity, transform;
+	transition: all .25s .05s ease-in-out;
+	width: 226px;
+	z-index: 1;
+}
+
+body:not(.subscriber) .arrow:hover:after {
+	opacity: 1;
+	transform: translateX(32px);
+}
+
 .arrow.downmod {
 	height: 20px;
 	background-position: 0 -100px;
@@ -1722,18 +1745,16 @@ div.titlebox span.number:after {
 
 /* Subscribe */
 .titlebox .fancy-toggle-button .active.add {
-	background: #FFCA4F;
+	background: #FFA328;
 	border-radius: 3px;
 	box-shadow: none;
 	color: rgba(0,0,0,.86);
-	font-size: 13px;
 	text-align: center;
-	text-transform: uppercase;
 	transition: opacity .08s ease-in-out;
 }
 
 .titlebox .fancy-toggle-button .active.add:hover {
-	background: #FFCA4E;
+	background: #FFA328;
 	box-shadow: 0 0 8px rgba(255,202,78,.2);
 	color: #000;
 	opacity: .9;
