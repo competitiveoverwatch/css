@@ -378,7 +378,7 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 #mail.havemail:active:before {
-	background-color: #439BDA;
+	background-color: #4399DE;
 }
 
 #modmail {
@@ -534,7 +534,7 @@ body.res:not(.comments-page) #header .tabmenu {
 }
 
 #header .tabmenu li.selected a {
-	background: #439BDA;
+	background: #4399DE;
 	border-bottom: 2px solid #5AEAFF;
 	color: #FFF;
 	height: 40px;
@@ -1761,7 +1761,7 @@ div.titlebox span.number:after {
 	z-index: 1;
 }
 
-.comments-page #search {
+.comments-page #search, .wiki-page #search {
 	right: 16px;
 	width: 320px;
 }
@@ -1779,7 +1779,7 @@ div.titlebox span.number:after {
 }
 
 #search input[type=text]:focus {
-	background: #439BDA;
+	background: #4399DE;
 	border-radius: 1px 1px 0 0;
 }
 
@@ -1827,7 +1827,7 @@ div.titlebox span.number:after {
 
 /* Expando */
 #search #searchexpando {
-	background: #439BDA;
+	background: #4399DE;
 	border: none;
 	border-radius: 0 0 1px 1px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
@@ -1858,7 +1858,7 @@ div.titlebox span.number:after {
 	top: 409px;
 }
 .morelink a {
-	background: #439BDA;
+	background: #4399DE;
 	border-radius: 0 0 0 1px;
 	color: rgba(255, 255, 255, .7);
 	font: normal 13px/36px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -1975,8 +1975,8 @@ div.titlebox span.number:after {
 	font-size: 14px;
 }
 
-/* First and last rules items */
-.side .md ul li:last-child {
+/* Last rule items */
+.side .md ul:last-of-type li:last-child {
 	list-style: none;
 	margin-left: -16px;
 }
@@ -2209,7 +2209,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li a {
-	background: #439BDA;
+	background: #4399DE;
 	color: #FFF;
 	display: block;
 	padding: 5px 16px;
@@ -2218,7 +2218,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol:hover {
-	background: #439BDA;
+	background: #4399DE;
 	color: #FFF;
 	text-shadow: none;
 }
@@ -3039,7 +3039,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a {
-	background: #439BDA;
+	background: #4399DE;
 	border-bottom: 2px solid #5AEAFF;
 	color: #FFF;
 	font-size: 16px;
@@ -3096,7 +3096,7 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content .btn {
-	background: #439BDA;
+	background: #4399DE;
 	cursor: pointer;
 	font: 17px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: auto;
@@ -4100,7 +4100,7 @@ html.res-commentBoxes .comment {
 /* Toggle on */
 .res .moduleToggle.enabled .toggleOn, .res .toggleButton.enabled .toggleOn,
 .res .moduleToggle:not(.enabled) .toggleOff, .res .toggleButton:not(.enabled) .toggleOff {
-	background-color: #439BDA;
+	background-color: #4399DE;
 	color: #FFF;
 	font-weight: bolder;
 	border: none;
@@ -4216,7 +4216,7 @@ button {
 
 /* Background colour for most buttons (matches navigation item selected state) */
 .submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
-	background: #439BDA;
+	background: #4399DE;
 }
 
 body .btn, body button, .btn:hover, button:hover {
@@ -4611,7 +4611,7 @@ body.listing-page>.content {
 
 /* Table inside a post */
 .md thead tr {
-	background: #6F6F6F;
+	background: #888;
 	border: none;
 	color: #FFF;
 }
@@ -4623,14 +4623,30 @@ body.listing-page>.content {
 	background: rgba(0,0,0,.02);
 }
 
+/* This is gross, but we don't care */
+.self.linkflair-eSports[data-author="Jawoll"] blockquote {
+	background: none;
+}
+
+.md blockquote table thead {
+	display: none;
+}
+
+.md table thead tr {
+	border-bottom: none;
+}
+
 .md thead tr th {
-	padding: 8px 16px;
+	padding: 4px 12px;
+}
+.md thead tr th a {
+	color: #FFF;
 }
 .md thead tr th:first-child {
-	border-radius: 2px 0 0 0;
+	border-radius: 1px 0 0 0;
 }
 .md thead tr th:last-child {
-	border-radius: 0 2px 0 0;
+	border-radius: 0 1px 0 0;
 }
 
 .md td, .md th {
@@ -4750,6 +4766,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	font-size: 0;
 	height: 15px;
 	pointer-events: none;
+	vertical-align: middle;
 	width: 21px;
 }
 /* Retina/HiDPI */
@@ -5451,14 +5468,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .wiki-page .pageactions .wikiaction {
 	border-radius: 0;
-	color: #439BDA;
+	color: #4399DE;
 	font-weight: bold;
 	margin: 0;
 	padding: 0 22px;
 }
 
 .wiki-page .pageactions .wikiaction-current {
-	background: #439BDA;
+	background: #4399DE;
 	color: #FFF;
 }
 
@@ -5468,7 +5485,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .wiki-page .pageactions .wikiaction:hover {
 	background: none;
-	border-bottom: 2px solid #439BDA;
+	border-bottom: 2px solid #4399DE;
 	line-height: 34px;
 }
 
