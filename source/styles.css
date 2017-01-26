@@ -2598,7 +2598,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comments-page .comment .expand {
-	background: rgba(0, 0, 0, .02);
+	background: rgba(0, 0, 0, .04);
 	border-radius: 1px 0 0 1px;
 	bottom: 0;
 	cursor: default;
