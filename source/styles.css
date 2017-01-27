@@ -2092,6 +2092,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	right: 0;
 }
 
+/* Live badge in event title link */
 .side .md h4 a strong {
 	color: #E53935;
 	font-size: 15px;
@@ -4479,8 +4480,15 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	color: #AAA;
 	display: inline-block;
 	line-height: 32px;
+	text-transform: capitalize;
 	transition: opacity .1s ease-in-out;
 	width: 100%;
+}
+.side .account-activity-box a:before {
+	content: "Reddit ";
+}
+.side .account-activity-box a:after {
+	content: "...";
 }
 
 .side .account-activity-box a:hover {
