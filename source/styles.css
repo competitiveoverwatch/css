@@ -4807,6 +4807,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 		background-size: 210px 406px;
 	}
 }
+.md a[href="#flag-at"] {background-position: 0 -15px; display: inline-block;} /* Austria*/
 .md a[href="#flag-au"] {background-position: -21px -15px; display: inline-block;}
 .md a[href="#flag-be"] {background-position: -168px -15px; display: inline-block;}
 .md a[href="#flag-br"] {background-position: -168px -30px; display: inline-block;}
@@ -4822,7 +4823,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .md a[href="#flag-fr"] {background-position: -189px -90px; display: inline-block;}
 .md a[href="#flag-gb"] {background-position: -21px -105px; display: inline-block;}
 .md a[href="#flag-hu"] {background-position: -189px -135px; display: inline-block;}
-.md a[href="#flag-is"] {background-position: -168px -150px; display: inline-block;}
+.md a[href="#flag-il"] {background-position: -42px -150px; display: inline-block;} /* Israel */
+.md a[href="#flag-is"] {background-position: -168px -150px; display: inline-block;} /* Iceland */
 .md a[href="#flag-it"] {background-position: -189px -150px; display: inline-block;}
 .md a[href="#flag-jp"] {background-position: -63px -165px; display: inline-block;}
 .md a[href="#flag-kr"] {background-position: -21px -180px; display: inline-block;}
