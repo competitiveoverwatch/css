@@ -1599,8 +1599,8 @@ div.commentarea div.RES-keyNav-activeElement .md {
 .reddit-infobar.with-icon {
 	background: #FFF;
 	border: none;
-	border-radius: 3px;
-	box-shadow: 0 2px 1.5px 0 rgba(0,0,0,.12),0 0 4px 0 rgba(0,0,0,.12);
+	border-radius: 1px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .14);
 	margin: 0 0 8px;
 
 }
@@ -2620,7 +2620,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comments-page .comment .expand {
-	background: rgba(0, 0, 0, .04);
+	background: rgba(0, 0, 0, .05);
 	border-radius: 1px 0 0 1px;
 	bottom: 0;
 	cursor: default;
@@ -2846,6 +2846,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .morecomments a {
 	color: #738491;
+	font-weight: normal !important;
+	text-transform: capitalize;
 }
 
 /* Sidebar stuff */
