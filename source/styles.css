@@ -1857,10 +1857,9 @@ div.titlebox span.number:after {
 	border-radius: 0 0 1px 1px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
 	color: #FFF;
-	font-size: 12px;
+	font-size: 11px;
 	margin-top: 0;
-	padding: 8px 0 0;
-	text-align: center;
+	padding: 8px 16px;
 }
 
 #search #searchexpando p {display: none !important;}
