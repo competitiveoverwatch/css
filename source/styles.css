@@ -912,6 +912,10 @@ body:not(.res) .expando-button {
 	text-transform: uppercase;
 }
 
+.edited-timestamp {
+	margin-left: -1px;
+}
+
 .edited-timestamp[title]:after {font-size: 100%}
 
 .res .res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]:after {
@@ -1660,6 +1664,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .nav-buttons .nextprev {
 	color: #738491;
 	font-size: 14px;
+	margin-left: 16px;
 }
 
 .nav-buttons .nextprev a {
