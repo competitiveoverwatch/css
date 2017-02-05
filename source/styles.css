@@ -4827,6 +4827,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .md a[href="#flag-cn"] {background-position: -105px -60px; display: inline-block;}
 .md a[href="#flag-de"] {background-position: -84px -75px; display: inline-block;}
 .md a[href="#flag-dk"] {background-position: -126px -75px; display: inline-block;}
+.md a[href="#flag-ee"] {background-position: -21px -89px; display: inline-block;} /* Estonia */
 .md a[href="#flag-es"] {background-position: -84px -390px; display: inline-block;}
 .md a[href="#flag-eu"] {background-position: -63px -90px; display: inline-block;}
 .md a[href="#flag-fi"] {background-position: -84px -90px; display: inline-block;}
