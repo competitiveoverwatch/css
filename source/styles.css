@@ -271,6 +271,7 @@ a.random.choice {
 	background: none;
 	height: 24px;
 	max-width: 300px;
+	overflow-x: hidden;
 	right: 12px;
 	top: 3px;
 }
