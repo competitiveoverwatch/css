@@ -13,7 +13,7 @@
 * Exported image files (JPG/PNG): `src/images-export`
 
 ###Notes
-* The CSS was originally based on [Naut](https://github.com/Axel--/Naut-for-reddit), but is now in the process of being merged in to free up file space (based on Reddit's CSS size limit of 100 KB) and remove reliance on that dependency
+* The CSS was originally based on [Naut](https://github.com/Axel--/Naut-for-reddit), which has since been mostly merged in to free up file space (based on Reddit's CSS size limit of 100 KB)
 
 ###3rd Party Image Sources
 * Main spritesheet – [Naut](https://github.com/Axel--/Naut-for-reddit/blob/master/PSD/spritesheet.psd) with heavy customisations
