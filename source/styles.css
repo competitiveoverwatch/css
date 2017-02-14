@@ -102,7 +102,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 	padding: 2px 18px;
 	background: #0079D3;
 	border: none;
-	border-radius: 2px;
+	border-radius: 1px;
 	color: #FFF;
 	text-transform: uppercase;
 	cursor: default;
@@ -490,7 +490,8 @@ body.res:not(.comments-page) #header .tabmenu {
 	color: rgba(255,255,255,.3);
 	display: inline-block;
 	font: normal 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding: 0 16px;
+	margin: 0 8px;
+	padding: 0 8px;
 	text-transform: uppercase;
 }
 
@@ -533,7 +534,7 @@ body >.content .link .rank, .rank-spacer {
 .link .midcol {
 	height: 56px;
 	overflow: visible;
-	margin: 0 10px 0 0;
+	margin: -4px 10px 0 0;
 	width: 32px !important;
 
 }
@@ -641,27 +642,27 @@ body:not(.subscriber) .arrow:hover:after {
 
 /* Post Thumbnails */
 .thumbnail, .thumbnail.spoiler {
-	border-radius: 28px;
-	height: 56px;
-	margin: 0 25px 0 13px;
-	width: 56px;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	width: 102px;
 }
 .thumbnail.self, .thumbnail.spoiler {
-	background: #24A0ED url(%%spritesheet%%) -97px -112px;
-	height: 56px; /* To override Reddit setting height */
+	background: #0097D2 /*url(%%spritesheet%%) -97px -112px*/;
+	height: 100%; /* To override Reddit setting height */
 }
 
 .thing:not(.stickied) .thumbnail.outbound {
 	background: none !important;
-	border-radius: 0;
 	margin: 2px 6px 0;
 	width: 80px;
 }
 
 .thumbnail img {
-	border-radius: 3px;
 	min-height: 56px;
-	max-width: 80px;
+	max-width: 102px;
 }
 
 .stickied .thumbnail img {
@@ -682,12 +683,12 @@ body:not(.subscriber) .arrow:hover:after {
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #FF5500 url(%%spritesheet%%) -207px -112px }
 .linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #738491 }
 .linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #673AB7 url(%%spritesheet%%) -209px -169px }
-.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-color: #3949AB }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-color: #03426D }
 
-.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: transparent url(%%spritesheet%%) -121px 0 !important }
+.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%spritesheet%%) -121px 0 !important }
 
 /*Generic link */
-.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: transparent url(%%spritesheet%%) -97px -56px }
+.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: #0097D2 url(%%spritesheet%%) -97px -56px }
 
 /* Inner Post Area */
 .link .entry {
@@ -708,11 +709,6 @@ body .content .sitetable .link .title a:hover {color: #042E54;}
 /*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#042E54;}
 /*Visited  */   .content .thing .title:visited, .content .thing.visited .title {color: #738491}
 /*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#042E54}
-
-.thing .title {
-	position: relative;
-	top: -1px;
-}
 
 /* Domain */
 .link .domain {
@@ -827,11 +823,14 @@ body:not(.res) .expando-button {
 
 /* Submitted X ago by.. */
 .entry .tagline {
-	color: #98ABBA;
+	bottom: 14px;
+	color: rgba(4,46,84,.5);
 	display: inline-block;
 	font-size: 12px;
+	left: 276px;
 	margin-top: 3px;
 	overflow: hidden;
+	position: absolute;
 }
 
 .listing-page .entry .tagline:first-letter {
@@ -848,7 +847,7 @@ body:not(.res) .expando-button {
 }
 
 .link .entry .tagline a {
-	color: #4B5A63
+	color: rgba(4,46,84,.5);
 }
 
 .link .entry .tagline time {
@@ -940,16 +939,20 @@ body:not(.res) .expando-button {
 
 /* Comment / Share / Report */
 .link .flat-list {
+	height: 20px;
+	margin-top: 16px;
 	padding: 0;
-	margin-top: 8px;
+	text-align: right;
+	width: 100%;
 }
 
 .entry .buttons li {
 	line-height: normal;
+	vertical-align: middle;
 }
 
 .entry .buttons li a {
-	color: rgba(152, 171, 186, .3);
+	color: rgba(4, 46, 84, .5);
 	font-size: 12px;
 	font-weight: normal;
 	margin: 2px 8px;
@@ -994,6 +997,132 @@ body:not(.res) .expando-button {
 
 .spoiler-stamp {
 	display: none;
+}
+
+/* Post action button icons */
+.link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
+.link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
+.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .lock-button a,
+.link .entry .marknsfw-button a, .link .entry .spoiler-button a, .link .entry .flairselectbtn {
+	background: url(%%actions%%) no-repeat;
+	display: inline-block;
+	opacity: .25;
+	overflow: hidden;
+	text-indent: 100%;
+	transition: .1s ease-in-out opacity;
+	white-space: nowrap;
+}
+
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+
+	.link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
+	.link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
+	.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .lock-button a,
+	.link .entry .marknsfw-button a, .link .entry .spoiler-button a, .link .entry .flairselectbtn {
+		background: url(%%actions-2x%%);
+		background-size: 146px 36px;
+	}
+}
+
+.link .entry .edit-usertext:hover, .link .entry .share a:hover, .link .entry .save-button a:hover,
+.link .entry .hide-button a:hover, .link .entry .del-button a:hover, .link .entry .remove-button a:hover,
+.link .entry a[data-event-action="spam"]:hover, .link .entry .lock-button a:hover,
+.link .entry .marknsfw-button a:hover, .link .entry .spoiler-button a:hover, .link .entry .flairselectbtn:hover {
+	opacity: .8;
+}
+
+.link .entry li .comments {
+	color: #042E54;
+	opacity: .5;
+	transition: .1s ease-in-out opacity;
+}
+
+.link .entry li .comments:before {
+	content: "";
+	display: inline-block;
+	height: 11px;
+	margin-right: 6px;
+	opacity: 1;
+	position: relative;
+	top: 1px;
+	width: 12px;
+}
+
+.link .entry li .comments:hover {
+	opacity: 1;
+}
+
+.link .entry .edit-usertext {
+	background-position: -10px 0;
+	height: 18px;
+	width: 18px;
+}
+
+.link .entry .share a {
+	background-position: -29px 0;
+	height: 15px;
+	width: 13px;
+}
+.link .entry .save-button a {
+	background-position: -42px 0;
+	height: 15px;
+	width: 10px;
+}
+.link .entry .hide-button a {
+	background-position: -52px 0;
+	height: 14px;
+	width: 14px;
+}
+
+.link .entry .del-button a, .link .entry .remove-button a {
+	background-position: -66px 0;
+	height: 16px;
+	width: 11px;
+}
+.link .entry .del-button a, {
+	transition: none;
+}
+.link .entry .del-button a:hover {
+	background-position: -66px -16px;
+}
+
+.link .entry a[data-event-action="spam"] {
+	background-position: -77px 0;
+	height: 18px;
+	width: 20px;
+}
+.link .entry a[data-event-action="spam"]:hover {
+	background-position: -77px -18px;
+}
+
+.link .entry .lock-button a {
+	background-position: -97px 0;
+	height: 16px;
+	width: 14px;
+}
+
+.link .entry .marknsfw-button a {
+	background-position: -111px 0;
+	height: 18px;
+	transition: none;
+	width: 18px;
+}
+.link .entry .marknsfw-button a:hover {
+	background-position: -111px -18px;
+}
+
+.link .entry .spoiler-button a {
+	background-position: -129px 0;
+	height: 16px;
+	width: 16px;
+}
+.link .entry .flairselectbtn {
+	background-position: -145px 0;
+	height: 10px;
+	width: 19px;
 }
 
 .link .entry li .comments:hover {
@@ -1631,7 +1760,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 /* Subscibers & Here right now */
 .titlebox span.subscribers {
 	color: #042E54;
-	font-size: 14px;
+	font-size: 13px;
 	margin: 10px 0 0;
 	order: 0;
 	width: auto;
@@ -1675,10 +1804,10 @@ div.titlebox span.number:after {
 
 .titlebox .fancy-toggle-button .active {
 	background: none;
-	border-radius: 2px;
+	border-radius: 1px;
 	border: none;
 	display: block;
-	font-size: 11px;
+	font-size: 13px;
 	font-weight: normal;
 	height: auto;
 	line-height: 22px;
@@ -1721,7 +1850,7 @@ div.titlebox span.number:after {
 	margin: 0;
 	position: absolute;
 	right: 149px;
-	top: 186px;
+	top: 170px;
 	width: 187px;
 	z-index: 1;
 }
@@ -1750,8 +1879,7 @@ div.titlebox span.number:after {
 
 #search input[type=text]:-moz-placeholder {
 	color: rgba(255,255,255,.4);
-	font-size: 12px;
-	letter-spacing: .5px;
+	font-size: 14px;
 	position: relative;
 	text-transform: uppercase;
 	top: -1px;
@@ -1759,16 +1887,14 @@ div.titlebox span.number:after {
 /* Apparently webkit requires the double colon */
 #search input[type=text]::-webkit-input-placeholder {
 	color: rgba(255,255,255,.4);
-	font-size: 12px;
-	letter-spacing: .5px;
+	font-size: 14px;
 	position: relative;
 	text-transform: uppercase;
 	top: -1px;
 }
 #search input[type=text]:-ms-input-placeholder {
 	color: rgba(255,255,255,.4);
-	font-size: 12px;
-	letter-spacing: .5px;
+	font-size: 14px;
 	position: relative;
 	text-transform: uppercase;
 	top: -1px;
@@ -1920,6 +2046,10 @@ div.titlebox span.number:after {
 	visibility: visible;
 }
 
+.titlebox form.toggle {
+	background: none;
+}
+
 .leavemoderator, .titlebox .tagline a.author, .titlebox form.toggle.leavecontributor-button {display: none;}
 .titlebox form.flairtoggle {line-height: 2;}
 .titlebox form.toggle.sr_style_toggle {padding-bottom: 0;display: block;background-color: transparent;}
@@ -1949,12 +2079,12 @@ div.titlebox span.number:after {
 }
 
 .side .md h2 a, .side .md h3 a {
-	border-radius: 2px;
+	border-radius: 1px;
 	box-shadow: none;
 	color: #FFF;
 	display: inline-block;
-	font: normal bold 13px/32px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	height: 32px;
+	font: normal bold 13px/30px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	height: 30px;
 	margin: 0;
 	padding-left: 16px;
 	transition: opacity .1s ease-in-out;
@@ -1984,9 +2114,9 @@ div.titlebox span.number:after {
 }
 .side .md h3 a:before {
 	background: url(%%sidebar-twitter-1x%%);
-	height: 18px;
+	height: 13px;
 	margin: -3px 8px 0 -2px;
-	width: 22px;
+	width: 16px;
 }
 
 /* Retina/HiDPI */
@@ -1995,7 +2125,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.side .md h3 a:before {
 		background: url(%%sidebar-twitter-2x%%);
-		background-size: 22px 18px;
+		background-size: 16px 13px;
 	}
 }
 
@@ -2119,16 +2249,16 @@ body:not(.listing-page) .side .md>ol {
 .side .md>ol {
 	background: transparent;
 	border-radius: 1px;
-	color: #4399DE;
+	color: rgba(255,255,255,.4);
 	cursor: default;
-	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
 	letter-spacing: .5px;
 	list-style-type: none;
 	padding: 12px 18px;
 	position: absolute;
 	right: 16px;
-	top: 181px;
+	top: 165px;
 	transition: background .18s ease-in-out, color .18s ease-in-out;
 	z-index: 1;
 }
@@ -3519,7 +3649,7 @@ pre {
 }
 
 .flair-moderator {
-	background: rgba(39, 176, 98, .8);
+	background: #00C934;
 	border-radius: 1px;
 	color: #FFF;
 	font-family: inherit;
@@ -3825,10 +3955,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Footer */
 .footer-parent {
-	background: #011736;
 	height: auto;
-	margin-top: 128px;
-	padding: 32px 0;
+	padding: 0;
 }
 
 .res-nightmode .footer-parent {
@@ -3843,7 +3971,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin: 0 auto 16px auto;
 	padding: 0;
 	max-width: 640px;
-	text-transform: uppercase;
 }
 
 .footer .col {
@@ -3852,14 +3979,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .footer .flat-vert.title {
-	color: #FFF;
+	color: rgba(12,20,30,.5);
 	font-size: 16px;
-	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .footer a {
-	color: rgba(255,255,255,.3);
-	font-size: 10px;
+	color: rgba(12,20,30,.5);
+	font-size: 13px;
 	font-weight: normal;
 }
 
@@ -3867,20 +3994,18 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	color: rgba(255,255,255,0.7);
 }
 .bottommenu {
-	color: rgba(255,255,255,.22);
-	font-size: 9px;
-	letter-spacing: 1px;
-	line-height: 1.8;
-	text-transform: uppercase;
+	color: rgba(12, 20, 30, .2);
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	line-height: 1.6;
 }
 
 .bottommenu a, .bottommenu .updated {
-	color: rgba(255,255,255,.24);
+	color: inherit;
 }
 
 .bottommenu a:hover, .bottommenu .updated:hover, .footer a:hover {
-	color: #FFF;
-	text-decoration: none;
+	color: #0C141E;
 }
 
 .debuginfo, #hsts_pixel {
@@ -3905,14 +4030,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Pinheader */
-.pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%header%%);background-position: 50% 0%;}
+/*.pinHeader-sub #sr-header-area, .pinHeader-subanduser #sr-header-area {background-image: url(%%header%%);background-position: 50% 0%;}*/
 .pinHeader-sub #header-bottom-left, .pinHeader-subanduser #header-bottom-left {margin-top: 0;}
 
 .pinHeader-header:before {display: none !important;}
 .pinHeader-header .content {margin-top: 12px !important;}
 .pinHeader-header .side {margin-top: 164px;}
 .pinHeader-header.res.comments-page .side {margin-top: 290px;}
-.pinHeader-header #header {top: 0;background-image: url(%%header%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}
+/*.pinHeader-header #header {top: 0;background-image: url(%%header%%);height: 84px;box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);}*/
 .res.search-page #header .tabmenu {display: none !important;}
 
 body.res #header-bottom-right {
@@ -4352,7 +4477,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 
 /* Subscribed to subreddit */
 .subscriber .titlebox .fancy-toggle-button {
-	background: #F4F4F4;
+	background: rgba(255,255,255,.5);
 	transition: background .08s ease-in-out;
 }
 .res .subscriber .titlebox .fancy-toggle-button {
@@ -4360,7 +4485,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
-	color: #555;
+	color: rgba(4,46,84,.5);
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove:hover {
@@ -4460,15 +4585,13 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 .side .account-activity-box {
 	background: none;
 	box-shadow: none;
-	font-weight: bold;
 	padding: 0;
-	text-transform: uppercase;
 }
 
 .side .account-activity-box a {
-	background: rgba(0,0,0,.03);
+	background: rgba(255,255,255,.5);
 	border-radius: 3px;
-	color: #AAA;
+	color: rgba(4,46,84,.5);
 	display: inline-block;
 	line-height: 32px;
 	text-transform: capitalize;
@@ -4540,13 +4663,18 @@ body.listing-page>.content {
 }
 
 .listing-page .link:hover {
-	background: rgba(255,255,255,.8);
+	background: #FAFAFA;
 	box-shadow: inset 0 0 0 2px #FFF;
 }
 
+.listing-page .link:hover .thumbnail {
+	border: 2px solid rgba(255,255,255,.6);
+	border-right: none;
+}
+
 .listing-page .link, .listing-page .comment {
-	background: rgba(255,255,255,.7);
-	padding: 16px 16px 12px;
+	background: #F8F8F8;
+	padding: 16px 16px 12px 118px;
 }
 
 .listing-page .link:nth-of-type(1), .listing-page .comment:nth-of-type(1) {
@@ -4871,12 +4999,20 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .entry .buttons .first {
-	margin-left: -7px;
+	bottom: 14px;
+	left: 154px;
+	margin: 0;
+	position: absolute;
 }
 
 .entry .buttons li, .entry .buttons li+li {
-	margin: 0 0 2px 0;
+	margin: 0 2px 2px 2px;
 	padding: 0;
+}
+
+/* To cram in Spam, Remove, Lock */
+.moderator .entry .buttons li, .moderator .entry .buttons li+li  {
+
 }
 
 .comments-page .entry form .usertext-edit.md-container, .comments-page .entry form .usertext-edit.md-container textarea {
@@ -5038,15 +5174,14 @@ RESUserTag a {
 }
 
 .side .titlebox .tagline a.flairselectbtn {
-	background: #F4F4F4;
-	border-radius: 2px;
-	color: #555;
+	background: rgba(255,255,255,.5);
+	border-radius: 1px;
+	color: rgba(4,46,84,.5);
 	cursor: default;
 	font-size: 11px;
-	font-weight: bold;
 	padding: 2px 8px;
 	position: absolute;
-	right: 32px;
+	right: 48px;
 	text-transform: capitalize;
 	transition: opacity .09s ease-in-out;
 }
