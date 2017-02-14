@@ -2129,7 +2129,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	100% { opacity: 1; right: 16px; }
 }
 
-.side .md blockquote {
+.side .md>blockquote:first-of-type {
 	animation: .55s ease-in-out header-stickies .15s;
 	border: 0;
 	padding: 0;
@@ -2140,27 +2140,27 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	z-index: 100;
 }
 
-.side .md blockquote a {
+.side .md>blockquote:first-of-type a {
 	display: block;
 	padding: 10px 16px;
 	transition: all .1s ease-in-out;
 	transition-property: background, color;
 }
 
-.side .md blockquote a, .side .md blockquote a:visited {
+.side .md>blockquote:first-of-type a, .side .md>blockquote:first-of-type a:visited {
 	background: rgba(30, 54, 98, 0.68);
 	color: rgba(255, 255, 255, 0.9);
 }
 
-.side .md blockquote a:first-child {
+.side .md>blockquote:first-of-type a:first-child {
 	border-radius: 1px 1px 0 0;
 }
-.side .md blockquote a:last-child {
+.side .md>blockquote:first-of-type a:last-child {
 	border-radius: 0 0 1px 1px;
 }
 
 /* Higher specificity due to existing text decoration rule on `.side .md p a:hover` */
-.side .md blockquote p a:hover {
+.side .md>blockquote:first-of-type p a:hover {
 	background: #FFF;
 	color: rgba(0,0,0,.9);
 	text-decoration: none;
@@ -2298,7 +2298,64 @@ body:not(.listing-page) .side .md>ol {
 	border-radius: 0;
 }
 
-.md hr {border: solid 1px #E5E5E5;}
+/* Events ticker */
+
+body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
+	display: none;
+}
+
+.side .md>blockquote:nth-of-type(2) {
+	background: #FFF;
+	border: none;
+	border-radius: 1px;
+	box-shadow:0 1px 2px rgba(0,0,0,.14);
+	display: inline-flex;
+	left: 16px;
+	margin: 0;
+	min-width: 552px;
+	overflow: scroll;
+	padding: 16px;
+	position: absolute;
+	top: 258px;
+	width: calc(100% - 368px);
+	z-index: 99999; /* Temporary */
+}
+
+.side .md>blockquote:nth-of-type(2) blockquote {
+	background: none;
+	border: none;
+	display: inline-flex;
+	height: 36px;
+	margin: 0;
+	padding: 0;
+}
+
+/* Individual event */
+.side .md>blockquote:nth-of-type(2) blockquote p {
+	flex: none;
+	margin: 0 16px 0 0;
+	padding: 0;
+	position: relative;
+}
+
+.side .md>blockquote:nth-of-type(2) strong {
+	bottom: 0;
+	color: #555; /* TODO: Actual text colour */
+	display: block;
+	font-weight: normal;
+	margin: 0 2px;
+	position: absolute;
+}
+
+.side .md>blockquote:nth-of-type(2) blockquote em {
+	color: #999;
+	font-style: normal;
+	font-weight: normal;
+}
+
+.md hr {
+	border: solid 1px #E5E5E5;
+}
 
 /* Mod Box */
 
@@ -4529,7 +4586,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 body.listing-page>.content {
 	background: none;
 	box-shadow: none;
-	margin-top: 8px;
+	margin-top: 92px;
 	padding: 0;
 }
 
