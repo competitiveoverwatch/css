@@ -1136,6 +1136,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 16px;
 	width: 14px;
 }
+.link .entry .lock-button a:hover {
+	animation: shake .4s cubic-bezier(.36,.07,.19,.97);
+}
+
+@keyframes shake {
+  0%, 50% { transform: translate3d(-1px, 0, 0); transform:rotateZ(-10deg); }
+  25%, 75% { transform: translate3d(1px, 0, 0); transform:rotateZ(10deg); }
+}
 
 .link .entry .marknsfw-button a {
 	background-position: -109px 0;
@@ -3186,9 +3194,9 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab a {
-	background: rgba(67, 155, 218, .1);
+	background: none;
 	border: none;
-	color: #4399DE;
+	color: rgba(255,255,255,.4);
 	display: inline-block;
 	font-size: 16px;
 	line-height: 42px;
@@ -3196,27 +3204,6 @@ body.res.comments-page .side .linkinfo .score {
 	text-transform: uppercase;
 	transition: all 0.12s ease-in-out;
 	width: 50%;
-}
-
-.submit-page #newlink.submit.content .tabmenu.formtab a:before {
-	border-bottom: 2px solid #4399de;
-	bottom: 0;
-	content: "";
-	display: block;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	right: 0;
-	transform: scaleX(.45);
-	transition: transform .14s ease-in-out, opacity .14s ease-in-out
-}
-.submit-page #newlink.submit.content .tabmenu.formtab li:last-child a:before {
-	left: 50%;
-}
-
-.submit-page #newlink.submit.content .tabmenu.formtab li:not(.selected) a:hover:before {
-	opacity: 1;
-	transform: scaleX(1);
 }
 
 .res-nightmode .submit-page #newlink.submit.content .tabmenu.formtab a {
@@ -3232,8 +3219,6 @@ body.res.comments-page .side .linkinfo .score {
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a {
-	background: #4399DE;
-	border-bottom: 2px solid #5AEAFF;
 	color: #FFF;
 	font-size: 16px;
 	line-height: 40px;
