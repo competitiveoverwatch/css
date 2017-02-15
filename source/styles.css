@@ -561,13 +561,8 @@ body >.content .link .rank, .rank-spacer {
 	border-radius: 2px;
 	cursor: default;
 	margin: 0;
-	opacity: .8;
 	transition: background-color 0.2s ease-in-out;
 	width: 33px;
-}
-
-.arrow:hover {
-	opacity: 1;
 }
 
 /* Upvotes */
@@ -647,6 +642,7 @@ body:not(.subscriber) .arrow:hover:after {
 	margin: 0;
 	position: absolute;
 	top: 0;
+	transition: .1s ease-in-out border;
 	width: 102px;
 }
 .thumbnail.self, .thumbnail.spoiler {
@@ -823,7 +819,7 @@ body:not(.res) .expando-button {
 
 /* Submitted X ago by.. */
 .entry .tagline {
-	bottom: 14px;
+	bottom: 13px;
 	color: rgba(4,46,84,.5);
 	display: inline-block;
 	font-size: 12px;
@@ -848,10 +844,12 @@ body:not(.res) .expando-button {
 
 .link .entry .tagline a {
 	color: rgba(4,46,84,.5);
+	vertical-align: bottom;
 }
 
 .link .entry .tagline time {
 	display: inline-block;
+	vertical-align: bottom;
 }
 [lang^=en] .link .entry .tagline time:first-letter {
 	text-transform: uppercase;
@@ -880,6 +878,7 @@ body:not(.res) .expando-button {
 	content: "by ";
 	color: rgba(4,46,84,.5) !important;
 	font-weight: normal;
+	vertical-align: bottom;
 }
 [lang^=en] .res .link .entry .tagline a.author.moderator:before {
 	display: none;
@@ -1006,24 +1005,36 @@ body:not(.res) .expando-button {
 .link .entry .marknsfw-button a, .link .entry .spoiler-button a, .link .entry .flairselectbtn {
 	background: url(%%actions%%) no-repeat;
 	display: inline-block;
-	opacity: .25;
+	opacity: .15;
 	overflow: hidden;
 	text-indent: 100%;
 	transition: .1s ease-in-out opacity;
 	white-space: nowrap;
 }
 
+/* Fade regular/non-moderator actions for moderators */
+.moderator .link .entry .edit-usertext, .moderator .link .entry .share a,
+.moderator .link .entry .save-button a, .moderator .link .entry .hide-button a, .moderator .link .entry .del-button a {
+	opacity: .1;
+}
+
+.link:hover .entry .edit-usertext, .link:hover .entry .share a,
+.link:hover .entry .save-button a, .link:hover .entry .hide-button a, .link:hover .entry .del-button a,
+.link:hover .entry .remove-button a, .link:hover .entry a[data-event-action="spam"], .link:hover .entry .lock-button a,
+.link:hover .entry .marknsfw-button a, .link:hover .entry .spoiler-button a, .link:hover .entry .flairselectbtn {
+	opacity: .25;
+}
+
 /* Retina/HiDPI */
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-
 	.link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
 	.link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
 	.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .lock-button a,
 	.link .entry .marknsfw-button a, .link .entry .spoiler-button a, .link .entry .flairselectbtn {
 		background: url(%%actions-2x%%);
-		background-size: 146px 36px;
+		background-size: 162px 36px;
 	}
 }
 
@@ -1031,7 +1042,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .link .entry .hide-button a:hover, .link .entry .del-button a:hover, .link .entry .remove-button a:hover,
 .link .entry a[data-event-action="spam"]:hover, .link .entry .lock-button a:hover,
 .link .entry .marknsfw-button a:hover, .link .entry .spoiler-button a:hover, .link .entry .flairselectbtn:hover {
-	opacity: .8;
+	opacity: 1;
 }
 
 .link .entry li .comments {
@@ -1056,9 +1067,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .link .entry .edit-usertext {
-	background-position: -10px 0;
+	background-position: -12px 0;
 	height: 18px;
-	width: 18px;
+	width: 17px;
 }
 
 .link .entry .share a {
@@ -1066,11 +1077,21 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 15px;
 	width: 13px;
 }
+
 .link .entry .save-button a {
 	background-position: -42px 0;
 	height: 15px;
 	width: 10px;
 }
+.link .entry .save-button a:hover {
+	animation: .4s action-save ease;
+}
+
+@keyframes action-save {
+	0% { background-position: -42px -12px; }
+	100% { background-position: -42px 0; }
+}
+
 .link .entry .hide-button a {
 	background-position: -52px 0;
 	height: 14px;
@@ -1082,47 +1103,71 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 16px;
 	width: 11px;
 }
-.link .entry .del-button a, {
+
+.link .entry .del-button a {
 	transition: none;
 }
+
+.link .entry .del-button a:hover, .link .entry .remove-button a:hover {
+	height: 18px;
+}
+
+/* Red when deleting self-post */
 .link .entry .del-button a:hover {
+	background-position: -55px -16px;
+}
+/* Regular when removing */
+.link .entry .remove-button a:hover {
 	background-position: -66px -16px;
 }
 
 .link .entry a[data-event-action="spam"] {
 	background-position: -77px 0;
-	height: 18px;
-	width: 20px;
+	height: 15px;
+	width: 18px;
 }
 .link .entry a[data-event-action="spam"]:hover {
-	background-position: -77px -18px;
+	background-position: -77px -15px;
+	height: 16px;
 }
 
 .link .entry .lock-button a {
-	background-position: -97px 0;
+	background-position: -95px 0;
 	height: 16px;
 	width: 14px;
 }
 
 .link .entry .marknsfw-button a {
-	background-position: -111px 0;
+	background-position: -109px 0;
 	height: 18px;
 	transition: none;
 	width: 18px;
 }
 .link .entry .marknsfw-button a:hover {
-	background-position: -111px -18px;
+	background-position: -109px -18px;
 }
 
 .link .entry .spoiler-button a {
-	background-position: -129px 0;
+	background-position: -127px 0;
 	height: 16px;
 	width: 16px;
 }
 .link .entry .flairselectbtn {
-	background-position: -145px 0;
+	background-position: -143px 0;
 	height: 10px;
 	width: 19px;
+}
+.link .entry .flairselectbtn:hover {
+	animation: flair-blink 5s steps(1, end) infinite;
+}
+
+@keyframes flair-blink {
+	0% { background-position: -143px 0; height: 10px; }
+	15% { background-position: -143px -10px; height: 9px; }
+	18% { background-position: -143px 0; height: 10px; }
+	82% { background-position: -143px -10px; height: 9px; }
+	85% { background-position: -143px 0; height: 10px; }
+	100% { background-position: -143px 0; height: 10px; }
 }
 
 .link .entry li .comments:hover {
@@ -1811,7 +1856,7 @@ div.titlebox span.number:after {
 	font-weight: normal;
 	height: auto;
 	line-height: 22px;
-	padding: 0 12px;
+	padding: 0 6px;
 	text-transform: capitalize;
 	transition: background .08s ease-in-out,color .08s ease-in-out, padding .08s ease-in-out, margin 0.2s ease-in-out;
 }
@@ -4675,6 +4720,7 @@ body.listing-page>.content {
 .listing-page .link, .listing-page .comment {
 	background: #F8F8F8;
 	padding: 16px 16px 12px 118px;
+	transition: .1s ease-in-out box-shadow;
 }
 
 .listing-page .link:nth-of-type(1), .listing-page .comment:nth-of-type(1) {
@@ -4999,7 +5045,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .entry .buttons .first {
-	bottom: 14px;
+	bottom: 13px;
 	left: 154px;
 	margin: 0;
 	position: absolute;
