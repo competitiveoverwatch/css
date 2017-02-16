@@ -2248,10 +2248,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Dates */
-.side .md p+p a {
+.side .md h4+p+p a {
 	color: #042E54;
 }
-.side .md p+p strong {
+.side .md h4+p+p strong {
 	font-weight: normal;
 }
 
@@ -2357,19 +2357,16 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol {
-	background: transparent;
-	border-radius: 1px;
 	color: rgba(255,255,255,.4);
 	cursor: default;
 	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
-	letter-spacing: .5px;
 	list-style-type: none;
 	padding: 12px 18px;
 	position: absolute;
-	right: 16px;
+	right: 32px;
 	top: 165px;
-	transition: background .18s ease-in-out, color .18s ease-in-out;
+	transition: color .18s ease-in-out;
 	z-index: 1;
 }
 
@@ -2421,9 +2418,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol:hover {
-	background: #4399DE;
-	color: #FFF;
-	text-shadow: none;
+	color: #00E9E8;
 }
 
 .side .md>ol:hover ol {
@@ -4614,6 +4609,9 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	padding: 8px;
 	transition: background .1s ease-in-out
 }
+.sidecontentbox a.helplink:after {
+	content: "...";
+}
 .sidecontentbox a.helplink:first-letter {
 	text-transform: capitalize;
 }
@@ -4623,10 +4621,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 }
 
 .sidecontentbox .more {
-	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	text-transform: uppercase;
-	margin-top: 8px;
-	text-align: left;
+	display: none;
 }
 
 .sidecontentbox .content .gadget .right {
@@ -4636,7 +4631,7 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 	text-transform: uppercase;
 }
 
-.sidecontentbox .content .gadget .right a, .sidecontentbox .more a {
+.sidecontentbox .content .gadget .right a {
 	color: #888;
 	letter-spacing: 0;
 }
