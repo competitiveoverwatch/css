@@ -818,14 +818,17 @@ body:not(.res) .expando-button {
 }
 
 /* Submitted X ago by.. */
+.link:not(.promoted) .entry .tagline {
+	left: 276px;
+	overflow: hidden;
+}
+
 .entry .tagline {
 	bottom: 13px;
 	color: rgba(4,46,84,.5);
 	display: inline-block;
 	font-size: 12px;
-	left: 276px;
 	margin-top: 3px;
-	overflow: hidden;
 	position: absolute;
 }
 
@@ -834,11 +837,11 @@ body:not(.res) .expando-button {
 }
 
 /* For English languages (en-gb/en-us/en) */
-[lang^=en] .link .entry .tagline {
+[lang^=en] .link:not(.promoted) .entry .tagline {
 	margin-left: -57px;
 	visibility: hidden;
 }
-[lang^=en] .link .entry .tagline * {
+[lang^=en] .link:not(.promoted) .entry .tagline * {
 	visibility: visible;
 }
 
@@ -851,7 +854,7 @@ body:not(.res) .expando-button {
 	display: inline-block;
 	vertical-align: bottom;
 }
-[lang^=en] .link .entry .tagline time:first-letter {
+[lang^=en] .link:not(.promoted) .entry .tagline time:first-letter {
 	text-transform: uppercase;
 }
 
@@ -1001,8 +1004,9 @@ body:not(.res) .expando-button {
 /* Post action button icons */
 .link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
 .link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
-.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .lock-button a,
-.link .entry .marknsfw-button a, .link .entry .spoiler-button a, .link .entry .flairselectbtn {
+.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .report-button a,
+.link .entry .lock-button a, .link .entry .marknsfw-button a, .link .entry .spoiler-button a,
+.link .entry .unspoiler-button a, .link .entry .flairselectbtn {
 	background: url(%%actions%%) no-repeat;
 	display: inline-block;
 	opacity: .15;
@@ -1014,14 +1018,16 @@ body:not(.res) .expando-button {
 
 /* Fade regular/non-moderator actions for moderators */
 .moderator .link .entry .edit-usertext, .moderator .link .entry .share a,
-.moderator .link .entry .save-button a, .moderator .link .entry .hide-button a, .moderator .link .entry .del-button a {
+.moderator .link .entry .save-button a, .moderator .link .entry .hide-button a,
+.moderator .link .entry .del-button a, .moderator .link .entry .report-button a  {
 	opacity: .1;
 }
 
 .link:hover .entry .edit-usertext, .link:hover .entry .share a,
 .link:hover .entry .save-button a, .link:hover .entry .hide-button a, .link:hover .entry .del-button a,
-.link:hover .entry .remove-button a, .link:hover .entry a[data-event-action="spam"], .link:hover .entry .lock-button a,
-.link:hover .entry .marknsfw-button a, .link:hover .entry .spoiler-button a, .link:hover .entry .flairselectbtn {
+.link:hover .entry .remove-button a, .link:hover .entry a[data-event-action="spam"], .link:hover .entry .report-button a,
+.link:hover .entry .lock-button a, .link:hover .entry .marknsfw-button a, .link:hover .entry .spoiler-button a,
+.link:hover .entry .unspoiler-button a, .link:hover .entry .flairselectbtn {
 	opacity: .25;
 }
 
@@ -1031,17 +1037,20 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
 	.link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
-	.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .lock-button a,
-	.link .entry .marknsfw-button a, .link .entry .spoiler-button a, .link .entry .flairselectbtn {
+	.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .report-button a,
+	.link .entry .lock-button a, .link .entry .marknsfw-button a, .link .entry .spoiler-button a,
+	.link .entry .unspoiler-button a, .link .entry .flairselectbtn {
 		background: url(%%actions-2x%%);
-		background-size: 162px 36px;
+		background-size: 175px 36px;
 	}
 }
 
 .link .entry .edit-usertext:hover, .link .entry .share a:hover, .link .entry .save-button a:hover,
 .link .entry .hide-button a:hover, .link .entry .del-button a:hover, .link .entry .remove-button a:hover,
-.link .entry a[data-event-action="spam"]:hover, .link .entry .lock-button a:hover,
-.link .entry .marknsfw-button a:hover, .link .entry .spoiler-button a:hover, .link .entry .flairselectbtn:hover {
+.link .entry a[data-event-action="spam"]:hover, .link .entry .report-button a:hover,
+.link .entry .lock-button a:hover, .link .entry .marknsfw-button a:hover,
+.link .entry .spoiler-button a:hover, .link .entry .unspoiler-button a:hover, 
+.link .entry .flairselectbtn:hover {
 	opacity: 1;
 }
 
@@ -1131,8 +1140,17 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 16px;
 }
 
-.link .entry .lock-button a {
+.link .entry .report-button a {
 	background-position: -95px 0;
+	height: 14px;
+	width: 13px;
+}
+.link .entry .report-button a:hover {
+	background-position: -95px -14px;
+}
+
+.link .entry .lock-button a {
+	background-position: -108px 0;
 	height: 16px;
 	width: 14px;
 }
@@ -1146,22 +1164,25 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .link .entry .marknsfw-button a {
-	background-position: -109px 0;
+	background-position: -122px 0;
 	height: 18px;
 	transition: none;
 	width: 18px;
 }
 .link .entry .marknsfw-button a:hover {
-	background-position: -109px -18px;
+	background-position: -122px -18px;
 }
 
-.link .entry .spoiler-button a {
-	background-position: -127px 0;
+.link .entry .spoiler-button a, .link .entry .unspoiler-button a {
+	background-position: -140px 0;
 	height: 16px;
 	width: 16px;
 }
+.link .entry .unspoiler-button a {
+	background-position: -140px -16px;
+}
 .link .entry .flairselectbtn {
-	background-position: -143px 0;
+	background-position: -156px 0;
 	height: 10px;
 	width: 19px;
 }
@@ -1170,12 +1191,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 @keyframes flair-blink {
-	0% { background-position: -143px 0; height: 10px; }
-	15% { background-position: -143px -10px; height: 9px; }
-	18% { background-position: -143px 0; height: 10px; }
-	82% { background-position: -143px -10px; height: 9px; }
-	85% { background-position: -143px 0; height: 10px; }
-	100% { background-position: -143px 0; height: 10px; }
+	0% { background-position: -156px 0; height: 10px; }
+	15% { background-position: -156px -10px; height: 9px; }
+	18% { background-position: -156px 0; height: 10px; }
+	82% { background-position: -156px -10px; height: 9px; }
+	85% { background-position: -156px 0; height: 10px; }
+	100% { background-position: -156px 0; height: 10px; }
 }
 
 .link .entry li .comments:hover {
@@ -1806,6 +1827,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 320px;
 }
 
+/* Hide "Recently Viewed Links" */
+.side div:nth-last-child(2) {
+
+}
+
 .side .spacer {
 	margin: 0 0 20px;
 }
@@ -1905,7 +1931,7 @@ div.titlebox span.number:after {
 	right: 149px;
 	top: 170px;
 	width: 187px;
-	z-index: 1;
+	z-index: 2;
 }
 
 .comments-page #search, .wiki-page #search {
@@ -1921,14 +1947,16 @@ div.titlebox span.number:after {
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
 	padding: 0 42px 0 16px;
-	transition: box-shadow .2s ease-in-out,background .2s ease-in-out,color .2s ease-in-out;
+	transition: background .2s ease-in-out, width .15s ease-in-out;
+	width: 110px;
+}
+
+#search input[type=text]:focus, #search input[type=text]:active {
+	background: rgba(255,255,255,.1);
+	border-radius: 1px 1px 0 0;
 	width: 100%;
 }
 
-#search input[type=text]:focus {
-	background: #4399DE;
-	border-radius: 1px 1px 0 0;
-}
 
 #search input[type=text]:-moz-placeholder {
 	color: rgba(255,255,255,.4);
@@ -1959,7 +1987,7 @@ div.titlebox span.number:after {
 	border:none !important;
 	height: 32px;
 	margin-left: -38px;
-	opacity: 0.5;
+	opacity: 0.3;
 	transition: opacity .2s ease-in-out;
 	width: 32px;
 }
@@ -2111,13 +2139,14 @@ div.titlebox span.number:after {
 
 /* Sidebar Description */
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul, .side .md ol {
-	color: #292F34;
+	color: #042E54;
 	font: 13px/1.45 Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 /* For rules items */
 .side .md ul strong {
 	font-size: 14px;
+	font-weight: normal;
 }
 
 /* Last rule items */
@@ -2136,7 +2165,7 @@ div.titlebox span.number:after {
 	box-shadow: none;
 	color: #FFF;
 	display: inline-block;
-	font: normal bold 13px/30px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 13px/30px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 30px;
 	margin: 0;
 	padding-left: 16px;
@@ -2187,9 +2216,22 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-decoration: underline;
 }
 
+/* Events attribution */
+.side .md h1 em {
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	margin-left: 2px;
+	text-transform: none;
+}
+.side .md h1 em a {
+	color: rgba(4,46,84,.5);
+}
+
 .side .md h4 {
 	display: block;
-	font-size: 16px;
+	font-size: 15px;
+	font-weight: normal;
 	position: relative;
 }
 
@@ -2198,10 +2240,19 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .side .md h4 a {
+	color: #042E54;
 	display: block;
 	height: auto;
 	padding-right: 24px;
 	width: 100%;
+}
+
+/* Dates */
+.side .md p+p a {
+	color: #042E54;
+}
+.side .md p+p strong {
+	font-weight: normal;
 }
 
 @keyframes event-link-arrow {
@@ -2218,9 +2269,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Live badge in event title link */
 .side .md h4 a strong {
-	color: #E53935;
-	font-size: 15px;
-	letter-spacing: 0.5px;
+	color: #FF000F;
+	font-size: 14px;
+	font-weight: normal;
 }
 
 
@@ -2234,8 +2285,14 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	color: #057ED6;
 }
 
+/* Event description or prize pool info */
 .side .md h4+p {
-	margin-top: -6px;
+	color: rgba(4,46,84,.5);
+	margin-top: -4px;
+}
+
+.side .md h4+p+p {
+	margin-top: -2px;
 }
 
 /* Announcement/stickied links */
@@ -2540,22 +2597,6 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 .gadget .reddit-entry {
 	margin-left: 29px;
 	padding-top: 2px;
-}
-
-/* Credits */
-.side:after {
-	color: #BBB;
-	content: "CSS THEME BASED ON /R/NAUT";
-	display: block;
-	font: 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	margin: 14px auto 0 -16px;
-	padding: 0;
-	position: absolute;
-	width: 320px;
-}
-
-.res-nightmode .side:after {
-	color: #555;
 }
 
 /* Comments Page */
@@ -2936,13 +2977,15 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .side .md h1, .submit-link:before, .sidecontentbox .title h1 {
 	color: #042E54;
-	font: 500 18px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	letter-spacing: .8px;
+	font: 500 16px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-transform: uppercase;
 }
 
 .side .md h1 {
 	margin-top: 1em;
+}
+.side .md h1 a {
+	color: #042E54;
 }
 
 .md h3 {
@@ -2998,17 +3041,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .thing .entry .buttons .approve-button a:hover {
 	color: #27B062;
-}
-.thing .entry .buttons .remove-button a:hover,
-.thing .entry .buttons .del-button a:hover,
-.thing .entry .buttons .report-button a:hover,
-.thing .entry .buttons .lock-button a:hover,
-.thing .entry .buttons .marknsfw-button a:hover {
-	color: #E53935;
-}
-
-.thing .entry .buttons .spoiler-button a:hover {
-	color: #222;
 }
 
 .thing .entry .buttons .give-gold-button a:hover {
@@ -3998,7 +4030,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	border: none;
 	border-radius: 2px;
 	line-height: 1.6;
-	margin: 0 auto 16px auto;
+	margin: 0 auto 32px auto;
 	padding: 0;
 	max-width: 640px;
 }
@@ -4018,6 +4050,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	color: rgba(12,20,30,.5);
 	font-size: 13px;
 	font-weight: normal;
+	text-transform: capitalize;
 }
 
 .flat-vert.title, .bottommenu a {
@@ -4026,8 +4059,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .bottommenu {
 	color: rgba(12, 20, 30, .2);
 	font-size: 12px;
-	letter-spacing: 0.5px;
-	line-height: 1.6;
+	line-height: 1.4;
 }
 
 .bottommenu a, .bottommenu .updated {
@@ -4036,6 +4068,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .bottommenu a:hover, .bottommenu .updated:hover, .footer a:hover {
 	color: #0C141E;
+}
+
+.footer-parent p:last-child {
+	padding-bottom: 32px;
 }
 
 .debuginfo, #hsts_pixel {
@@ -4568,30 +4604,27 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 }
 
 .sidecontentbox a.helplink {
-	background: #057ED6;
-	border-radius: 2px;
-	color: #FFF;
+	background: rgba(255, 255, 255, .5);
+	border-radius: 1px;
+	color: rgba(4,46,84,.5);
 	display: block;
 	float: none;
-	font-size: 11px;
-	font-weight: bold;
+	font-size: 12px;
 	margin: -4px 0 14px 0;
-	padding: 8px 16px;
-	text-align: center;
-	transition: opacity .1s ease-in-out;
+	padding: 8px;
+	transition: background .1s ease-in-out
 }
 .sidecontentbox a.helplink:first-letter {
 	text-transform: capitalize;
 }
 
 .sidecontentbox a.helplink:hover {
-	opacity: .9;
+	background: #FFF;
 }
 
 .sidecontentbox .more {
-	font: bold 11px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-transform: uppercase;
-	letter-spacing: -.5px;
 	margin-top: 8px;
 	text-align: left;
 }
@@ -4620,10 +4653,13 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 
 .side .account-activity-box a {
 	background: rgba(255,255,255,.5);
-	border-radius: 3px;
+	border-radius: 1px;
 	color: rgba(4,46,84,.5);
 	display: inline-block;
+	font-size: 12px;
 	line-height: 32px;
+	padding-left: 8px;
+	text-align: left;
 	text-transform: capitalize;
 	transition: opacity .1s ease-in-out;
 	width: 100%;
