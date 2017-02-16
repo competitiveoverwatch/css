@@ -1828,8 +1828,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Hide "Recently Viewed Links" */
-.side div:nth-last-child(2) {
-
+.side>div:nth-last-child(2) {
+	display: none;
 }
 
 .side .spacer {
@@ -2574,24 +2574,8 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 .sidebox.create {
 	display: none;
 }
-
 .sidebox .spacer {
 	display: none;
-}
-
-/* Recently viewed links */
-.gadget .midcol {
-	margin-left: -8px;
-	width: 33px;
-}
-
-.gadget .reddit-entry .linkflairlabel {
-	display: none;
-}
-
-.gadget .reddit-entry {
-	margin-left: 29px;
-	padding-top: 2px;
 }
 
 /* Comments Page */
@@ -4574,20 +4558,6 @@ body.listing-page>.content, body.other-discussions-page>.content, .comments-page
 
 .titlebox form.toggle, .leavemoderator {
 	padding: 0;
-}
-
-
-.side .gadget .score {
-	margin-left: 0;
-}
-
-.side .entry {
-	overflow: visible;
-}
-
-.side .entry .gadget small {
-	display: inline-block;
-	margin-top: 4px;
 }
 
 .sidecontentbox {
