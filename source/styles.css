@@ -232,7 +232,7 @@ a.random.choice {
 
 #sr-header-area .drop-choices a.choice {
 	border: 0;
-	color: #777;
+	cursor: pointer;
 	padding: 3px 12px;
 	transition: none;
 }
@@ -2454,8 +2454,8 @@ body:not(.listing-page) .side .md>ol {
 	background: #FFF;
 	color: #042E54;
 	display: block;
-	padding: 5px 16px;
-	transition: background .1s ease-in-out, color .1s ease-in-out;
+	padding: 6px 16px;
+	transition: none;
 	width: 100%;
 }
 
@@ -2470,8 +2470,8 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li a:hover {
-	background: #FFF;
-	color: #222;
+	background: #8196A9;
+	color: #FFF;
 }
 
 [lang$="0"] .listing-page .linkflair-AdviceTips,
