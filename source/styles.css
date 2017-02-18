@@ -991,9 +991,9 @@ body:not(.res) .expando-button {
 
 /* Comment reply link + post action button icons */
 .comment .flat-list li a[onclick*="reply"]:before, li .comments:before, .edit-usertext, .share a,
-.save-button a, .hide-button a, .del-button a,
-.remove-button a, a[data-event-action="spam"], .report-button a,
-.lock-button a, .marknsfw-button a, .spoiler-button a,
+.save-button a, .hide-button a, .give-gold-button a, .del-button a,
+.remove-button a, a[data-event-action="spam"], .approve-button a,
+.report-button a,  .lock-button a, .marknsfw-button a, .spoiler-button a,
 .unspoiler-button a, .entry .flairselectbtn {
 	background: url(%%actions%%) no-repeat;
 	display: inline-block;
@@ -1007,7 +1007,8 @@ body:not(.res) .expando-button {
 /* Fade regular/non-moderator actions for moderators */
 .moderator .edit-usertext, .moderator .share a,
 .moderator .save-button a, .moderator .hide-button a,
-.moderator .del-button a, .moderator .report-button a  {
+.moderator .give-gold-button a, .moderator .del-button a,
+.moderator .report-button a  {
 	opacity: .1;
 }
 
@@ -1024,9 +1025,9 @@ body:not(.res) .expando-button {
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	li .comments:before, .edit-usertext, .share a,
-	.save-button a, .hide-button a, .del-button a,
-	.remove-button a, a[data-event-action="spam"], .report-button a,
-	.lock-button a, .marknsfw-button a, .spoiler-button a,
+	.save-button a, .hide-button a,  .give-gold-button a, .del-button a,
+	.remove-button a, a[data-event-action="spam"], .approve-button a,
+	.report-button a, .lock-button a, .marknsfw-button a, .spoiler-button a,
 	.unspoiler-button a, .entry .flairselectbtn {
 		background: url(%%actions-2x%%);
 		background-size: 175px 36px;
@@ -1036,6 +1037,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .entry .buttons li .comments {
 	color: #042E54;
 	opacity: .5;
+	text-transform: capitalize;
 	transition: .1s ease-in-out opacity;
 }
 
@@ -1065,12 +1067,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 13px;
 }
 
-.entry .save-button a {
+.save-button a {
 	background-position: -42px 0;
 	height: 15px;
 	width: 10px;
 }
-.entry .save-button a:hover {
+.save-button a:hover {
 	animation: .4s action-save ease;
 }
 
@@ -1079,32 +1081,41 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	100% { background-position: -42px 0; }
 }
 
-.entry .hide-button a {
+.hide-button a {
 	background-position: -52px 0;
 	height: 14px;
 	width: 14px;
 }
 
-.entry .del-button a, .entry .remove-button a {
+.give-gold-button a {
+	background-position: -175px 0;
+	height: 18px;
+	width: 18px;
+}
+.give-gold-button a:hover {
+	background-position: -176px -18px;
+}
+
+.del-button a, .remove-button a {
 	background-position: -66px 0;
 	height: 16px;
 	width: 11px;
 }
 
-.entry .del-button a {
+.del-button a {
 	transition: none;
 }
 
-.entry .del-button a:hover, .entry .remove-button a:hover {
+.del-button a:hover, .remove-button a:hover {
 	height: 18px;
 }
 
 /* Red when deleting self-post */
-.entry .del-button a:hover {
+.del-button a:hover {
 	background-position: -55px -16px;
 }
 /* Regular when removing */
-.entry .remove-button a:hover {
+.remove-button a:hover {
 	background-position: -66px -16px;
 }
 
@@ -1118,21 +1129,30 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 16px;
 }
 
-.entry .report-button a {
+.approve-button a {
+	background-position: -195px 0;
+	height: 16px;
+	width: 16px;
+}
+.approve-button a:hover {
+	background-position: -195px -16px;
+}
+
+.report-button a {
 	background-position: -95px 0;
 	height: 14px;
 	width: 13px;
 }
-.entry .report-button a:hover {
+.report-button a:hover {
 	background-position: -95px -14px;
 }
 
-.entry .lock-button a {
+.lock-button a {
 	background-position: -108px 0;
 	height: 16px;
 	width: 14px;
 }
-.entry .lock-button a:hover {
+.lock-button a:hover {
 	animation: shake .4s cubic-bezier(.36,.07,.19,.97);
 }
 
@@ -1141,22 +1161,22 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
   25%, 75% { transform: translate3d(1px, 0, 0); transform:rotateZ(10deg); }
 }
 
-.entry .marknsfw-button a {
+.marknsfw-button a {
 	background-position: -122px 0;
 	height: 18px;
 	transition: none;
 	width: 18px;
 }
-.entry .marknsfw-button a:hover {
+.marknsfw-button a:hover {
 	background-position: -122px -18px;
 }
 
-.entry .spoiler-button a, .entry .unspoiler-button a {
+.spoiler-button a, .unspoiler-button a {
 	background-position: -140px 0;
 	height: 16px;
 	width: 16px;
 }
-.entry .unspoiler-button a {
+.unspoiler-button a {
 	background-position: -140px -16px;
 }
 .entry .flairselectbtn {
@@ -1182,42 +1202,17 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Reporting Comment */
-.action-form {
-	position: fixed;
-	top: 35%;
-	left: 40%;
-	margin: 0;
-	padding: 24px;
-	background: #FFF;
-	z-index: 100;
-	box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
+.subreddit-report-form {
+	background: #f5f5f6;
+	border-radius: 1px;
 	border: none;
-	border-radius: 2px;
+	box-shadow: 0 0 3840px 3840px rgba(0, 0, 0, .4);
+	padding: 16px;
+	position: fixed;
+	right: 352px;
+	top: 221px;
+	z-index: 1;
 }
-
-.action-form .reason-prompt {
-	font-size: 16px;
-	color: #4D5763;
-	padding-bottom: 8px;
-	display: block;
-}
-
-.action-form .reason-prompt:first-letter {text-transform: capitalize;}
-
-.action-form .reason-prompt li {
-	padding: 4px 4px 4px 0;
-	display: block;
-}
-.action-form li label {
-	padding: 4px 4px 4px 0;
-	cursor: pointer;
-	display: block;
-	color: #4D5763;
-	text-transform: capitalize;
-}
-
-.action-form li label:hover {background-color: rgba(0, 0, 0, .05);}
-.action-form input[name="other_reason"] {padding: 8px;}
 
 /* RES L+C */
 .res .redditSingleClick:after {
@@ -1431,12 +1426,18 @@ body>.content .link.compressed .midcol {
 	visibility: hidden !important;
 }
 
-[lang^=en] .flairselector h2:before {
-	content: "My Flair";
+.flairselector h2:before {
 	visibility: visible;
 }
 
-[lang^=en] .flairselector h2:after {
+[lang^=en] .entry .flairselector h2:before {
+	content: "Post Flair";
+}
+[lang^=en] .side .flairselector h2:before {
+	content: "My Flair";
+}
+
+[lang^=en] .side .flairselector h2:after {
 	color: rgba(4, 46, 84, .5);
 	content: "Choose an icon to display next to your username on posts and comments.";
 	display: block;
@@ -1510,15 +1511,19 @@ body>.content .link.compressed .midcol {
 .flairselector form .flairselection {
 	background: #FFF;
 	margin: 0 -16px;
+	min-height: 52px;
 	padding: 16px 0;
 	text-align: center;
 }
+.entry .flairselector form .flairselection {
+	padding: 16px 0 0;
+}
 
-.flairselector form .flairselection .flairremove {
+.flairselector .flairselection .flairremove {
 	visibility: hidden;
 }
 
-.flairselector .flairremove:before {
+.side .flairselector .flairremove:before {
 	color: rgba(4, 46, 84, .5);
 	content: "1 point • 5 minutes ago";
 	font-size: 12px;
@@ -1537,12 +1542,28 @@ body>.content .link.compressed .midcol {
 }
 
 .flairselector button {
+	bottom: 32px;
 	margin: 16px 0 0;
+	position: absolute;
+	right: 16px;
 	text-transform: capitalize;
 }
 
-.flairselector .title {
+.flairoptionpane .title {
 	display: none;
+}
+
+.flairselection .linkflair {
+	padding-left: 16px;
+	pointer-events: none;
+	text-align: left;
+}
+.flairselection .linkflair .linkflairlabel {
+	color: rgba(4,46,84,.5);
+}
+.flairselector .flairselection .linkflair a.title{
+	color: #042E54;
+	font-size: 16px;
 }
 
 .flairselector .status {
@@ -1891,7 +1912,7 @@ div.titlebox span.number:after {
 	background: none;
 	border-radius: 1px;
 	border: none;
-	display: block
+	display: block;
 	font-size: 12px;
 	font-weight: normal;
 	height: auto;
@@ -2983,14 +3004,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .comment .flat-list li a:hover {
 	color: #042E54;
 	text-decoration: none;
-}
-
-.thing .entry .buttons .approve-button a:hover {
-	color: #27B062;
-}
-
-.thing .entry .buttons .give-gold-button a:hover {
-	color: #FA9F29;
 }
 
 .deepthread a {
