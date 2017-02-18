@@ -60,18 +60,6 @@ a {
 	transition: color .1s ease-in-out;
 }
 
-::-moz-selection {
-	background: #0079D3;
-	text-shadow: none;
-	color: #fff;
-}
-
-::selection {
-	background: #0079D3;
-	text-shadow: none;
-	color: #FFF;
-}
-
 :focus {
 	outline: none !important;
 }
@@ -247,11 +235,6 @@ a.random.choice {
 	color: #777;
 	padding: 3px 12px;
 	transition: none;
-}
-
-#sr-header-area .drop-choices a.choice:hover {
-	background: #EEE;
-	color: #222;
 }
 
 #sr-header-area .drop-choices .choice.bottom-option {
@@ -706,13 +689,6 @@ body:not(.subscriber) .arrow:hover:after {
 /*Generic link */
 .thumbnail.default, a.thumbnail[href*="reddit.com"] { background: #0097D2 url(%%spritesheet%%) -97px -56px }
 
-/* Inner Post Area */
-.link .entry {
-	padding: 0;
-	margin: 0;
-	max-width: none;
-}
-
 /* Submission Title */
 .link .title {
 	font-size: 16px;
@@ -720,11 +696,13 @@ body:not(.subscriber) .arrow:hover:after {
 	overflow: visible;
 }
 
-body .content .sitetable .link .title a:hover {color: #042E54;}
+body .content .sitetable .link .title a:hover {color: #0097D2;}
 
-/*Unvisited*/   .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#042E54;}
-/*Visited  */   .content .thing .title:visited, .content .thing.visited .title {color: #738491}
-/*Clicking */   .thing .title.loggedin.click:visited, .thing .title.click:visited {color:#042E54}
+.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title, .thing .title:visited {color:#042E54;}
+
+.thing .title:visited, .thing.visited .title {
+	color: rgba(4,46,84,.5);
+}
 
 /* Domain */
 .link .domain {
@@ -843,11 +821,14 @@ body:not(.res) .expando-button {
 }
 
 .entry .tagline {
-	bottom: 13px;
 	color: rgba(4,46,84,.5);
 	display: inline-block;
 	font-size: 12px;
 	margin-top: 3px;
+}
+
+.link .entry .tagline {
+	bottom: 13px;
 	position: absolute;
 }
 
@@ -898,8 +879,6 @@ body:not(.res) .expando-button {
 
 [lang^=en] .link:not(.promotedlink) .entry .tagline a.author:before {
 	content: "by ";
-	color: rgba(4,46,84,.5) !important;
-	font-weight: normal;
 	vertical-align: bottom;
 }
 [lang^=en] .res .link .entry .tagline a.author.moderator:before {
@@ -978,20 +957,10 @@ body:not(.res) .expando-button {
 	font-weight: normal;
 	margin: 2px 8px;
 	padding: 0;
-	text-transform: capitalize;
-	transition: color .08s ease-in-out;
 }
 
 .entry .buttons li:not(.first) a {
 	cursor: default;
-}
-
-.link .entry .buttons li a:hover {
-	text-decoration: none;
-}
-
-.thing .buttons li .marknsfw-button a {
-	text-transform: uppercase;
 }
 
 .entry .buttons li.nsfw-stamp {
@@ -1021,11 +990,11 @@ body:not(.res) .expando-button {
 }
 
 /* Comment reply link + post action button icons */
-.comment .flat-list li a[onclick*="reply"]:before, .link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
-.link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
-.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .report-button a,
-.link .entry .lock-button a, .link .entry .marknsfw-button a, .link .entry .spoiler-button a,
-.link .entry .unspoiler-button a, .link .entry .flairselectbtn {
+.comment .flat-list li a[onclick*="reply"]:before, li .comments:before, .edit-usertext, .share a,
+.save-button a, .hide-button a, .del-button a,
+.remove-button a, a[data-event-action="spam"], .report-button a,
+.lock-button a, .marknsfw-button a, .spoiler-button a,
+.unspoiler-button a, .entry .flairselectbtn {
 	background: url(%%actions%%) no-repeat;
 	display: inline-block;
 	opacity: .15;
@@ -1036,82 +1005,72 @@ body:not(.res) .expando-button {
 }
 
 /* Fade regular/non-moderator actions for moderators */
-.moderator .link .entry .edit-usertext, .moderator .link .entry .share a,
-.moderator .link .entry .save-button a, .moderator .link .entry .hide-button a,
-.moderator .link .entry .del-button a, .moderator .link .entry .report-button a  {
+.moderator .edit-usertext, .moderator .share a,
+.moderator .save-button a, .moderator .hide-button a,
+.moderator .del-button a, .moderator .report-button a  {
 	opacity: .1;
 }
 
-.link:hover .entry .edit-usertext, .link:hover .entry .share a,
-.link:hover .entry .save-button a, .link:hover .entry .hide-button a, .link:hover .entry .del-button a,
-.link:hover .entry .remove-button a, .link:hover .entry a[data-event-action="spam"], .link:hover .entry .report-button a,
-.link:hover .entry .lock-button a, .link:hover .entry .marknsfw-button a, .link:hover .entry .spoiler-button a,
-.link:hover .entry .unspoiler-button a, .link:hover .entry .flairselectbtn {
+.link:hover .entry li a:not(.comments) {
 	opacity: .25;
+}
+
+.link .entry .buttons li a:hover {
+	opacity: 1;
 }
 
 /* Retina/HiDPI */
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-	.link .entry li .comments:before, .link .entry .edit-usertext, .link .entry .share a,
-	.link .entry .save-button a, .link .entry .hide-button a, .link .entry .del-button a,
-	.link .entry .remove-button a, .link .entry a[data-event-action="spam"], .link .entry .report-button a,
-	.link .entry .lock-button a, .link .entry .marknsfw-button a, .link .entry .spoiler-button a,
-	.link .entry .unspoiler-button a, .link .entry .flairselectbtn {
+	li .comments:before, .edit-usertext, .share a,
+	.save-button a, .hide-button a, .del-button a,
+	.remove-button a, a[data-event-action="spam"], .report-button a,
+	.lock-button a, .marknsfw-button a, .spoiler-button a,
+	.unspoiler-button a, .entry .flairselectbtn {
 		background: url(%%actions-2x%%);
 		background-size: 175px 36px;
 	}
 }
 
-.link .entry .edit-usertext:hover, .link .entry .share a:hover, .link .entry .save-button a:hover,
-.link .entry .hide-button a:hover, .link .entry .del-button a:hover, .link .entry .remove-button a:hover,
-.link .entry a[data-event-action="spam"]:hover, .link .entry .report-button a:hover,
-.link .entry .lock-button a:hover, .link .entry .marknsfw-button a:hover,
-.link .entry .spoiler-button a:hover, .link .entry .unspoiler-button a:hover, 
-.link .entry .flairselectbtn:hover {
-	opacity: 1;
-}
-
-.link .entry li .comments {
+.entry .buttons li .comments {
 	color: #042E54;
 	opacity: .5;
 	transition: .1s ease-in-out opacity;
 }
 
-.link .entry li .comments:before, .comment .flat-list li a[onclick*="reply"]:before {
+.entry li .comments:before, .comment .flat-list li a[onclick*="reply"]:before {
 	content: "";
 	display: inline-block;
 	height: 11px;
 	margin-right: 6px;
-	opacity: 1;
 	position: relative;
 	top: 1px;
 	width: 12px;
 }
 
-.link .entry li .comments:hover{
+.entry li .comments:before, .entry li .comments:hover {
 	opacity: 1;
 }
 
-.link .entry .edit-usertext {
+.entry .edit-usertext {
 	background-position: -12px 0;
 	height: 18px;
 	width: 17px;
 }
 
-.link .entry .share a {
+.entry .share a {
 	background-position: -29px 0;
 	height: 15px;
 	width: 13px;
 }
 
-.link .entry .save-button a {
+.entry .save-button a {
 	background-position: -42px 0;
 	height: 15px;
 	width: 10px;
 }
-.link .entry .save-button a:hover {
+.entry .save-button a:hover {
 	animation: .4s action-save ease;
 }
 
@@ -1120,60 +1079,60 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	100% { background-position: -42px 0; }
 }
 
-.link .entry .hide-button a {
+.entry .hide-button a {
 	background-position: -52px 0;
 	height: 14px;
 	width: 14px;
 }
 
-.link .entry .del-button a, .link .entry .remove-button a {
+.entry .del-button a, .entry .remove-button a {
 	background-position: -66px 0;
 	height: 16px;
 	width: 11px;
 }
 
-.link .entry .del-button a {
+.entry .del-button a {
 	transition: none;
 }
 
-.link .entry .del-button a:hover, .link .entry .remove-button a:hover {
+.entry .del-button a:hover, .entry .remove-button a:hover {
 	height: 18px;
 }
 
 /* Red when deleting self-post */
-.link .entry .del-button a:hover {
+.entry .del-button a:hover {
 	background-position: -55px -16px;
 }
 /* Regular when removing */
-.link .entry .remove-button a:hover {
+.entry .remove-button a:hover {
 	background-position: -66px -16px;
 }
 
-.link .entry a[data-event-action="spam"] {
+.entry a[data-event-action="spam"] {
 	background-position: -77px 0;
 	height: 15px;
 	width: 18px;
 }
-.link .entry a[data-event-action="spam"]:hover {
+.entry a[data-event-action="spam"]:hover {
 	background-position: -77px -15px;
 	height: 16px;
 }
 
-.link .entry .report-button a {
+.entry .report-button a {
 	background-position: -95px 0;
 	height: 14px;
 	width: 13px;
 }
-.link .entry .report-button a:hover {
+.entry .report-button a:hover {
 	background-position: -95px -14px;
 }
 
-.link .entry .lock-button a {
+.entry .lock-button a {
 	background-position: -108px 0;
 	height: 16px;
 	width: 14px;
 }
-.link .entry .lock-button a:hover {
+.entry .lock-button a:hover {
 	animation: shake .4s cubic-bezier(.36,.07,.19,.97);
 }
 
@@ -1182,30 +1141,30 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
   25%, 75% { transform: translate3d(1px, 0, 0); transform:rotateZ(10deg); }
 }
 
-.link .entry .marknsfw-button a {
+.entry .marknsfw-button a {
 	background-position: -122px 0;
 	height: 18px;
 	transition: none;
 	width: 18px;
 }
-.link .entry .marknsfw-button a:hover {
+.entry .marknsfw-button a:hover {
 	background-position: -122px -18px;
 }
 
-.link .entry .spoiler-button a, .link .entry .unspoiler-button a {
+.entry .spoiler-button a, .entry .unspoiler-button a {
 	background-position: -140px 0;
 	height: 16px;
 	width: 16px;
 }
-.link .entry .unspoiler-button a {
+.entry .unspoiler-button a {
 	background-position: -140px -16px;
 }
-.link .entry .flairselectbtn {
+.entry .flairselectbtn {
 	background-position: -156px 0;
 	height: 10px;
 	width: 19px;
 }
-.link .entry .flairselectbtn:hover {
+.entry .flairselectbtn:hover {
 	animation: flair-blink 5s steps(1, end) infinite;
 }
 
@@ -1218,7 +1177,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	100% { background-position: -156px 0; height: 10px; }
 }
 
-.link .entry li .comments:hover {
+.entry li .comments:hover {
 	text-decoration: none;
 }
 
@@ -1721,12 +1680,16 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	background-image: none;
 }
 
-.dropdown.lightdrop .selected:hover {background-color: rgba(0,0,0,0.05);}
-.dropdown.lightdrop .selected:after {content: " ▼";}
+.dropdown.lightdrop .selected:hover {
+	background-color: rgba(0,0,0,.05);
+}
+.dropdown.lightdrop .selected:after {
+	content: " ▼";
+}
 .drop-choices.lightdrop {
 	border: none;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.14);
-	margin-top: 8px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.12);
+	margin-top: 4px;
 	z-index: 1001;
 }
 
@@ -1928,8 +1891,8 @@ div.titlebox span.number:after {
 	background: none;
 	border-radius: 1px;
 	border: none;
-	display: block;
-	font-size: 13px;
+	display: block
+	font-size: 12px;
 	font-weight: normal;
 	height: auto;
 	line-height: 22px;
@@ -2579,7 +2542,7 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 }
 
 .md hr {
-	border: solid 1px #E5E5E5;
+	border: solid 1px #E8E8E9;
 }
 
 /* Mod Box */
@@ -2641,17 +2604,15 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 }
 
 .commentarea .panestack-title .title {
-	color: #555;
-	font-size: 13px;
-	font-weight: bold;
-	letter-spacing: -.5px;
-	text-transform: uppercase;
+	color: #042E54;
+	font-size: 14px;
+	text-transform: capitalize;
 }
 
 .commentarea .menuarea {
 	margin: 8px 0 0;
 	padding-left: 16px;
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .comment-permalink-page .commentarea .menuarea {
@@ -2662,36 +2623,33 @@ body:not(.loggedin) .commentarea .menuarea {
 	margin: 0 0 8px;
 }
 
-.commentarea .menuarea span.dropdown-title.lightdrop {color: #98ABBA;}
-.commentarea .menuarea span.dropdown-title.lightdrop:first-letter {text-transform: capitalize;}
+.commentarea .menuarea span.dropdown-title.lightdrop {color: #8196A9;}
 
 .commentarea .menuarea .dropdown.lightdrop .selected {
-	cursor: pointer;
-	text-decoration: none;
-	background-image: none;
-	padding-right: 0;
+	color: #8196A9;
 	font-weight: normal;
-	color: #98ABBA;
-	border: none;
-	padding-left: 0;
+	padding: 0;
 }
 
 .commentarea .menuarea .dropdown.lightdrop .selected:hover {
 	background: none;
-	color: #4F8EF7;
+	color: #042E54;
 }
 
 .drop-choices a.choice {
-	padding: 12px 24px 12px 12px;
-	transition: all 0.1s ease-in-out;
+	color: #8196A9;
+	cursor: default;
+	padding: 8px 16px;
+	transition: all .1s ease-in-out;
 	transition-property: background, color;
-	border-bottom: 1px solid #EDF1F3;
 }
 
-.drop-choices form:last-of-type a.choice {border-bottom: none;}
+.drop-choices form:last-of-type a.choice {
+	border-bottom: none;
+}
 
 .drop-choices a.choice:hover {
-	background-color: #0079D3;
+	background-color: #8196A9;
 	color: #FFF;
 }
 
@@ -2700,11 +2658,13 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .commentarea .menuarea .toggle a {
-	color: #98ABBA;
+	color: #8196A9;
 	font-weight: normal;
 }
 
-.commentarea .menuarea .toggle a:hover {color: #057ED6;}
+.commentarea .menuarea .toggle a:hover {
+	color: #042E54;
+}
 
 .commentarea>.usertext {
 	background: #FAFAFA;
@@ -2750,7 +2710,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .usertext .bottom-area {
-	text-transform: uppercase;
+	text-transform: capitalize;
 	width: 100%;
 }
 .usertext .bottom-area a.reddiquette {
@@ -2760,13 +2720,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select {
 	border: none;
-	color: #333;
+	color: #042E54;
 }
 
 .gold-accent.comment-visits-box {
 	background: none;
-	border-radius: 2px;
-	margin: -7px 0 9px 0;
+	margin: -7px 0 1px 0;
 }
 
 .gold-accent.comment-visits-box .title {
@@ -2785,10 +2744,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: #EFEFEF;
-	border-radius: 2px;
-	box-shadow: none;
-	display: inline-block;
+	background: rgba(255,255,255,.5);
+	border-radius: 1px;
 	font-size: 12px;
 	margin: 0 0 0 2px;
 	padding: 4px 20px 4px 12px;
@@ -2854,11 +2811,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .comment .midcol .arrow:hover {
 	opacity: 1;
-}
-
-.comment .entry .tagline {
-	color: rgba(4,46,84,.5);
-	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .comments-page .comment .expand {
@@ -3029,13 +2981,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comment .flat-list li a:hover {
-	color: #057ED6;
+	color: #042E54;
 	text-decoration: none;
-}
-
-.comment .flat-list li a[onclick*="reply"] {
-	color: #057ED6;
-	font-size: 11px;
 }
 
 .thing .entry .buttons .approve-button a:hover {
@@ -3047,7 +2994,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .deepthread a {
-	color: #057ED6;
+	color: #042E54;
 	display: inline-block;
 }
 .deepthread a:first-letter {
@@ -4773,13 +4720,13 @@ body.listing-page>.content {
 
 .md ol {
 	background: rgba(0,0,0,.03);
-	border-radius: 2px;
+	border-radius: 1px;
 	padding: 6px 16px 6px 32px;
 }
 
 /* Table inside a post */
 .md thead tr {
-	background: #888;
+	background: #85898E;
 	border: none;
 	color: #FFF;
 }
@@ -4822,6 +4769,7 @@ body.listing-page>.content {
 }
 
 .md th {
+	font-weight: normal;
 	padding: 8px 12px;
 }
 
@@ -5018,11 +4966,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-transform: uppercase;
 }
 
-.comments-page .link .flat-list {
-	margin-top: 15px;
+.comment .flat-list {
+	margin-left: -8px;
 }
 
-.entry .buttons .first {
+.link .entry .buttons .first {
 	bottom: 13px;
 	left: 154px;
 	margin: 0;
@@ -5081,8 +5029,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .usertext button.save {
-	font-size: 11px;
-	transition: opacity .1s ease-in-out;
+	font-size: 12px;
+	text-transform: capitalize;
 }
 
 .usertext button.cancel {
@@ -5118,12 +5066,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .comments-page .sitetable .link .title {
 	margin-top: 4px;
-}
-.comments-page .sitetable .entry .tagline {
-	margin-top: 6px;
-}
-.comments-page .link .entry .tagline a {
-	color: #98ABBA;
 }
 
 .comments-page #header .tabmenu li:first-child {
