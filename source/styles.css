@@ -952,7 +952,7 @@ body:not(.res) .expando-button {
 }
 
 .entry .buttons li a {
-	color: rgba(4, 46, 84, .5);
+	color: #8196A9;
 	font-size: 12px;
 	font-weight: normal;
 	margin: 2px 8px;
@@ -1438,7 +1438,7 @@ body>.content .link.compressed .midcol {
 }
 
 [lang^=en] .side .flairselector h2:after {
-	color: rgba(4, 46, 84, .5);
+	color: #8196A9;
 	content: "Choose an icon to display next to your username on posts and comments.";
 	display: block;
 	font-size: 13px;
@@ -1982,8 +1982,9 @@ div.titlebox span.number:after {
 }
 
 #search input[type=text]:focus, #search input[type=text]:active {
-	background: rgba(255,255,255,.1);
+	background: #FFF;
 	border-radius: 1px 1px 0 0;
+	color: #042E54;
 	width: 100%;
 }
 
@@ -3731,12 +3732,9 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.flair-fan, .md a[href*="#team-"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 118px 145px;
+		background-size: 123px 160px;
 	}
-	.flair-faze {
-		width: 21px;
-	}
-	.flair-col {
+	.flair-complexity {
 		width: 23px;
 	}
 }
@@ -3747,18 +3745,23 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .flair-cloud-9, .md a[href*="cloud-9"] {
 	background-position: 0 -22px;
+	height: 22px;
 	width: 31px;
 }
 .flair-team-celestial, .md a[href*="team-celestial"] {
 	background-position: 0 -44px;
+	height: 21px;
+	width: 21px;
 }
 .flair-misfits, .md a[href*="misfits"] {
-	background-position: 0 -66px;
+	background-position: 0 -65px;
+	height: 23px;
 	width: 19px;
 }
 .flair-dignitas, .md a[href*="dignitas"] {
 	background-position: -22px 0;
 	width: 19px;
+	
 }
 .flair-rogue, .md a[href*="rogue"] {
 	background-position: -31px -22px;
@@ -3771,45 +3774,46 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 23px;
 }
 .flair-fnatic, .md a[href*="fnatic"] {
-	background-position: -22px -60px;
-	width: 22px;
+	background-position: -21px -60px;
+	height: 18px;
 }
 .flair-nrg, .md a[href*="nrg"] {
 	background-position: -41px 0;
 	width: 30px;
 }
-.flair-luminosity, .md a[href*="luminosity"] {
-	background-position: -50px -22px;
-	height: 21px;
+.flair-lg-loyal, .md a[href*="lg-loyal"] {
+	background-position: -51px -22px;
+	width: 21px;
 }
 .flair-invictus, .md a[href*="invictus"] {
-	background-position: -48px -44px;
-	width: 23px;
+	background-position: -49px -44px;
 }
 .flair-tempo-storm, .md a[href*="tempo-storm"] {
 	background-position: -44px -66px;
-	height: 19px;
-	width: 26px;
+	height: 17px;
+	width: 24px;
 }
 .flair-ninjas-in-pyjamas, .md a[href*="ninjas-in-pyjamas"] {
 	background-position: -71px 0;
 }
 .flair-liquid, .md a[href*="liquid"] {
-	background-position: -77px -66px;
+	background-position: -68px -63px;
 }
 .flair-lunatic-hai, .md a[href*="lunatic-hai"] {
 	background-position: 0 -89px;
-	height: 21px;
+	height: 20px;
 }
 .flair-faze, .md a[href*="faze"] {
-	background-position: -44px -84px;
+	background-position: -21px -79px;
 	height: 15px;
+	width: 22px;
 }
 .flair-freecs-blue, .md a[href*="freecs-blue"] {
 	background-position: -66px -90px;
+	height: 24px;
 }
 .flair-immortals, .md a[href*="immortals"] {
-	background-position: -89px -88px;
+	background-position: -89px -83px;
 	height:  21px;
 	width: 21px;
 }
@@ -3819,16 +3823,17 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 21px;
 }
 .flair-luxury-watch-red, .md a[href*="luxury-watch-red"] {
-	background-position: 0 -109px;
-	height: 21px;
+	background-position: 0 -110px;
+	height: 20px;
 }
 .flair-vici-gaming, .md a[href*="vici-gaming"] {
-	background-position: -23px -97px;
-	height: 19px;
+	background-position: -23px -95px;
+	height: 21px;
 }
 .flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] {
-	background-position: -44px -104px;
+	background-position: -45px -104px;
 	height: 17px;
+	width: 22px;
 }
 .flair-ldlc, .md a[href*="ldlc"] {
 	background-position: -67px -114px;
@@ -3836,23 +3841,63 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 21px;
 }
 .flair-rise, .md a[href*="rise"] {
-	background-position: -88px -109px;
+	background-position: -88px -104px;
+	border-radius: 0 0 0 50%;
 	height: 19px;
 	width: 30px;
 }
 .flair-kongdoo-uncia, .md a[href*="kongdoo-uncia"] {
 	background-position: -94px -22px;
 	height: 17px;
+	width: 22px;
 }
 .flair-renegades, .md a[href*="renegades"] {
-	background-position: -22px -117px;
-	width: 21px;
-	height: 20px;
+	background-position: -22px -116px;
 }
 .flair-world-elite-white, .md a[href*="world-elite-white"] {
-	background-position: -88px -130px;
-	height: 14px;
+	background-position: -88px -123px;
+	height: 15px;
+	width: 25px;
+}
+.flair-meta-athena, .md a[href*="meta-athena"] {
+	background-position: -72px -22px;
+	height: 21px;
+	width: 21px;
+}
+.flair-lg-evil, .md a[href*="lg-evil"] {
+	background-position: -71px -43px;
+	height: 20px;
+	width: 21px;
+}
+.flair-selfless, .md a[href*="selfless"] {
+	background-position: -92px -41px;
+	height: 20px;
 	width: 24px;
+}
+.flair-runaway, .md a[href*="runaway"] {
+	background-position: -90px -63px;
+	height: 20px;
+	width: 32px;
+}
+.flair-eunited, .md a[href*="eunited"] {
+	background-position: -34px -138px;
+	height: 15px;
+	width: 36px
+}
+.flair-blank, .md a[href*="blank"] {
+	background-position: -89px -138px;
+	height: 21px;
+	width: 18px;
+}
+.flair-hammers, .md a[href*="hammers"] {
+	background-position: -70px -138px;
+	height: 21px;
+	width: 19px;
+}
+.flair-laser-kittenz, .md a[href*="laser-kittenz"] {
+	background-position: -45px -84px;
+	height: 19px;
+	width: 21px;
 }
 
 /* User flairs for ranks */
@@ -4589,6 +4634,7 @@ body.res #search #searchexpando {
 	border: none;
 	border-radius: 1px;
 	margin: 0 0 16px;
+	overflow-y: visible;
 	padding: 13px 16px;
 	position: relative;
 }
