@@ -86,7 +86,7 @@ body .content .text:focus, body .content textarea:focus, body .content input[typ
 }
 
 body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_button {
-	background: rgba(4,46,84,.5);
+	background: #8196A9;
 	border-radius: 1px !important;
 	border: none;
 	color: #FFF;
@@ -389,18 +389,9 @@ body:not(.loggedin) #header-bottom-right {
 
 /* Header Start */
 
-/* Snoo */
+/* Hide snoo */
 #header-img.default-header, #header-img {
-	background: url(%%spritesheet%%) -78px 0;
-	bottom: -3px;
-	font-size: 0;
-	height: 20px;
-	left: 68px;
-	position: absolute;
-	width: 21px;
-}
-#header-img.default-header:hover, #header-img:hover {
-	background: url(%%spritesheet%%) -99px 0;
+	display: none;
 }
 
 #header-img.default-header:hover:after, #header-img:hover:after {
@@ -455,7 +446,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 #header .tabmenu {
 	display: block;
-	margin: 4px 0 0 155px;
+	margin: 4px 0 0 64px;
 }
 
 #header .tabmenu li {
@@ -496,13 +487,33 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-right: 6px;
 	vertical-align: bottom;
 }
+/* Retina/HiDPI */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.tabmenu .choice:before {
+		background: url(%%sorts-2x%%);
+		background-size: 82px 33px;
+	}
+}
 
+/* /new/ */
 .tabmenu a[href$="new/"]:before {
 	height: 17px;
 	width: 16px;
 }
 .tabmenu a[href$="new/"]:hover:before, .tabmenu .selected a[href$="new/"]:before {
 	background-position: -16px 0;
+}
+
+/* /rising/ */
+.tabmenu a[href$="g/"]:before {
+	background-position: -54px 0;
+	height: 15px;
+	width: 21px;
+}
+.tabmenu a[href$="g/"]:hover:before, .tabmenu .selected a[href$="g/"]:before {
+	background-position: -61px 16px;
 }
 
 /* /controversial/ */
@@ -560,7 +571,7 @@ body >.content .link .rank, .rank-spacer {
 
 }
 .link .score {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	font-size: 12px;
 	line-height: 16px;
 	margin: 1px -100% 2px -100%;
@@ -693,7 +704,9 @@ body:not(.subscriber) .arrow:hover:after {
 .link .title {
 	font-size: 16px;
 	margin: 0;
-	overflow: visible;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 body .content .sitetable .link .title a:hover {color: #0097D2;}
@@ -701,7 +714,7 @@ body .content .sitetable .link .title a:hover {color: #0097D2;}
 .thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title, .thing .title:visited {color:#042E54;}
 
 .thing .title:visited, .thing.visited .title {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 }
 
 /* Domain */
@@ -821,7 +834,7 @@ body:not(.res) .expando-button {
 }
 
 .entry .tagline {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	display: inline-block;
 	font-size: 12px;
 	margin-top: 3px;
@@ -841,12 +854,12 @@ body:not(.res) .expando-button {
 	margin-left: -57px;
 	visibility: hidden;
 }
-[lang^=en] .link:not(.promoted) .entry .tagline * {
+[lang^=en] .link:not(.promoted) .entry .tagline *:not(.userattrs) {
 	visibility: visible;
 }
 
 .link .entry .tagline a {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	vertical-align: bottom;
 }
 
@@ -1032,6 +1045,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 		background: url(%%actions-2x%%);
 		background-size: 211px 36px;
 	}
+}
+
+.comments-page .entry .comments {
+	display: none;
 }
 
 .entry .buttons li .comments {
@@ -1524,7 +1541,7 @@ body>.content .link.compressed .midcol {
 }
 
 .side .flairselector .flairremove:before {
-	color: rgba(4, 46, 84, .5);
+	color: #8196A9;
 	content: "1 point • 5 minutes ago";
 	font-size: 12px;
 	margin: 0 8px 0 24px;
@@ -1559,7 +1576,7 @@ body>.content .link.compressed .midcol {
 	text-align: left;
 }
 .flairselection .linkflair .linkflairlabel {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 }
 .flairselector .flairselection .linkflair a.title{
 	color: #042E54;
@@ -1817,6 +1834,10 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	}
 }
 
+.listing-page #noresults {
+	margin-top: 32px;
+}
+
 /* Next Page */
 .nav-buttons {
 	background: rgba(255,255,255,.82);
@@ -1955,13 +1976,8 @@ div.titlebox span.number:after {
 	position: absolute;
 	right: 186px;
 	top: 170px;
-	width: 134px;
+	width: 166px;
 	z-index: 2;
-}
-
-#search:hover input[type=submit] {
-	opacity: .3;
-	visibility: visible;
 }
 
 .comments-page #search, .wiki-page #search {
@@ -1969,16 +1985,17 @@ div.titlebox span.number:after {
 	width: 320px;
 }
 
+/* Main header search box */
 #search input[type=text] {
-	background: transparent;
+	background: rgba(255,255,255,.1);
 	border: none;
 	border-radius: 1px;
 	color: #FFF;
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
 	padding: 0 42px 0 16px;
-	transition: background .2s ease-in-out, width .15s ease-in-out;
-	width: 110px;
+	transition: background .2s ease-in-out;
+	width: 100%;
 }
 
 #search input[type=text]:focus, #search input[type=text]:active {
@@ -1987,7 +2004,6 @@ div.titlebox span.number:after {
 	color: #042E54;
 	width: 100%;
 }
-
 
 #search input[type=text]:-moz-placeholder {
 	color: rgba(255,255,255,.3);
@@ -2014,13 +2030,10 @@ div.titlebox span.number:after {
 
 #search input[type=submit] {
 	background: url(%%spritesheet%%) -64px -96px;
-	border-radius: 16px;
-	border:none !important;
 	height: 32px;
 	margin-left: -38px;
-	opacity: 0;
-	transition: opacity .2s ease-in-out;
-	visibility: hidden;
+	opacity: .3;
+	transition: opacity .1s ease-in-out;
 	width: 32px;
 }
 
@@ -2148,7 +2161,7 @@ div.titlebox span.number:after {
 	visibility: hidden
 }
 
-.side .author, .side .flair {
+.side .tagline .author, .side .flair {
 	display: none;
 }
 
@@ -2268,7 +2281,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-transform: none;
 }
 .side .md h1 em a {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 }
 
 .side .md h4 {
@@ -2330,7 +2343,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Event description or prize pool info */
 .side .md h4+p {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	margin-top: -4px;
 }
 
@@ -2352,7 +2365,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	right: 32px;
 	top: 54px;
 	width: 320px;
-	z-index: 100;
 }
 
 .side .md>blockquote:first-of-type a {
@@ -2400,6 +2412,8 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol {
+	background: rgba(255,255,255,.1);
+	border-radius: 1px;
 	color: rgba(255,255,255,.3);
 	cursor: default;
 	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -2409,7 +2423,7 @@ body:not(.listing-page) .side .md>ol {
 	right: 32px;
 	top: 165px;
 	transition: all .1s ease-in-out;
-	width: 144px;
+	width: 138px;
 	z-index: 1;
 }
 
@@ -2428,7 +2442,7 @@ body:not(.listing-page) .side .md>ol {
 	font-size: 13px;
 	font-weight: normal;
 	list-style-type: none;
-	margin: -4px 0 0 -18px;
+	margin: 12px 0 0 -18px;
 	max-height: 0;
 	opacity: 0;
 	padding: 0;
@@ -2436,8 +2450,7 @@ body:not(.listing-page) .side .md>ol {
 	text-shadow: none;
 	transition: all .2s ease-in-out .1s;
 	visibility: hidden;
-	width: 144px;
-	z-index: 1;
+	width: 138px;
 }
 
 .side .md>ol ol li:first-child a {
@@ -2459,6 +2472,7 @@ body:not(.listing-page) .side .md>ol {
 
 .side .md>ol:hover {
 	background: #FFF;
+	border-radius: 1px 1px 0 0;
 	color: #042E54;
 }
 
@@ -4072,7 +4086,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .res-filterline > * {
-	color:rgba(4,46,84,.5);
+	color:#8196A9;
 }
 
 .res .res-filterline-filter {
@@ -4198,7 +4212,7 @@ html.res-commentBoxes .comment {
 .res .RESshortcutside, .res .RESDashboardToggle {
 	background: none;
 	border: none;
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	cursor: default;
 	font-size: 13px;
 	font-weight: normal;
@@ -4425,7 +4439,7 @@ button {
 
 /* Background colour for most buttons */
 .submit_text.enabled.roundfield, .content .infobar {
-	background: rgba(4,46,84,.5);
+	background: #8196A9;
 }
 
 body .btn, body button, .btn:hover, button:hover {
@@ -4541,7 +4555,7 @@ body.res #search #searchexpando {
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove:hover {
@@ -4550,7 +4564,7 @@ body.res #search #searchexpando {
 }
 
 .side .titlebox .toggle {
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	font-size: 12px;
 	order: 2;
 }
@@ -4570,7 +4584,7 @@ body.res #search #searchexpando {
 .sidecontentbox a.helplink {
 	background: rgba(255, 255, 255, .5);
 	border-radius: 1px;
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	display: block;
 	float: none;
 	font-size: 12px;
@@ -4618,7 +4632,7 @@ body.res #search #searchexpando {
 .side .account-activity-box a {
 	background: rgba(255,255,255,.5);
 	border-radius: 1px;
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	display: inline-block;
 	font-size: 12px;
 	line-height: 32px;
@@ -4635,14 +4649,17 @@ body.res #search #searchexpando {
 	content: "...";
 }
 
-.controversial-page .menuarea {
+.listing-page .menuarea {
 	background: #f8f8f8;
 	border: none;
 	border-radius: 1px;
 	margin: 0 0 16px;
-	overflow-y: visible;
-	padding: 13px 16px;
+	overflow: visible;
 	position: relative;
+}
+
+.controversial-page .menuarea {
+	padding: 13px 16px;
 }
 
 .listing-page .dropdown-title.lightdrop, .listing-page .dropdown.lightdrop {
@@ -4694,7 +4711,7 @@ body.listing-page>.content {
 .listing-page .link, .listing-page .comment {
 	background: #F8F8F8;
 	padding: 16px 16px 12px 118px;
-	transition: .1s ease-in-out box-shadow;
+	transition: box-shadow .1s ease-in-out;
 }
 
 .listing-page .link:nth-of-type(1), .listing-page .comment:nth-of-type(1) {
@@ -4731,7 +4748,7 @@ body.listing-page>.content {
 .linkflairlabel {
 	background: none;
 	border: none;
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	font-size: 16px;
 	font-weight: normal;
 	margin-right: 4px;
@@ -4844,29 +4861,29 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	}
 }
 
-.md a[href="#hero-bastion"] {background-position: 0 0}
-.md a[href="#hero-dva"] {background-position: -28px 0}
-.md a[href="#hero-genji"] {background-position: -56px 0}
-.md a[href="#hero-hanzo"] {background-position: -84px 0}
-.md a[href="#hero-junkrat"] {background-position: -112px 0}
-.md a[href="#hero-lucio"] {background-position: -140px 0}
-.md a[href="#hero-mccree"] {background-position: 0 -28px}
-.md a[href="#hero-mei"] {background-position: -56px -28px}
-.md a[href="#hero-mercy"] {background-position: -84px -28px}
-.md a[href="#hero-pharah"] {background-position: -28px -28px}
-.md a[href="#hero-reaper"] {background-position: -112px -28px}
-.md a[href="#hero-reinhardt"] {background-position: -140px -28px}
-.md a[href="#hero-roadhog"] {background-position: 0 -56px}
-.md a[href="#hero-soldier-76"] {background-position: -28px -56px}
-.md a[href="#hero-symmetra"] {background-position: -56px -56px}
-.md a[href="#hero-torbjorn"] {background-position: -112px -56px}
-.md a[href="#hero-tracer"] {background-position: -84px -56px}
-.md a[href="#hero-widowmaker"] {background-position: -140px -56px}
-.md a[href="#hero-winston"] {background-position: 0 -84px}
-.md a[href="#hero-zarya"] {background-position: -28px -84px}
-.md a[href="#hero-zenyatta"] {background-position: -56px -84px}
-.md a[href="#hero-ana"] {background-position: -84px -84px}
-.md a[href="#hero-sombra"] {background-position: -112px -84px}
+.md a[href$="-bastion"] {background-position: 0 0}
+.md a[href$="-dva"] {background-position: -28px 0}
+.md a[href$="-genji"] {background-position: -56px 0}
+.md a[href$="-hanzo"] {background-position: -84px 0}
+.md a[href$="-junkrat"] {background-position: -112px 0}
+.md a[href$="-lucio"] {background-position: -140px 0}
+.md a[href$="-mccree"] {background-position: 0 -28px}
+.md a[href$="-mei"] {background-position: -56px -28px}
+.md a[href$="-mercy"] {background-position: -84px -28px}
+.md a[href$="-pharah"] {background-position: -28px -28px}
+.md a[href$="-reaper"] {background-position: -112px -28px}
+.md a[href$="-reinhardt"] {background-position: -140px -28px}
+.md a[href$="-roadhog"] {background-position: 0 -56px}
+.md a[href$="-soldier-76"] {background-position: -28px -56px}
+.md a[href$="-symmetra"] {background-position: -56px -56px}
+.md a[href$="-torbjorn"] {background-position: -112px -56px}
+.md a[href$="-tracer"] {background-position: -84px -56px}
+.md a[href$="-widowmaker"] {background-position: -140px -56px}
+.md a[href$="-winston"] {background-position: 0 -84px}
+.md a[href$="-zarya"] {background-position: -28px -84px}
+.md a[href$="-zenyatta"] {background-position: -56px -84px}
+.md a[href$="-ana"] {background-position: -84px -84px}
+.md a[href$="-sombra"] {background-position: -112px -84px}
 
 /* Map tags */
 .md a[href^="#map-"] {
@@ -4889,21 +4906,21 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	}
 }
 
-.md a[href="#map-temple-of-anubis"] {background-position: -180px 0}
-.md a[href="#map-dorado"] {background-position: -360px 0}
-.md a[href="#map-hanamura"] {background-position: -540px 0}
-.md a[href="#map-hollywood"] {background-position: 0 -60px}
-.md a[href="#map-ilios"] {background-position: -180px -60px}
-.md a[href="#map-kings-row"] {background-position: -360px -60px}
-.md a[href="#map-lijiang-tower"] {background-position: -540px -60px}
-.md a[href="#map-nepal"] {background-position: 0 -120px}
-.md a[href="#map-numbani"] {background-position: -180px -120px}
-.md a[href="#map-route-66"] {background-position: -360px -120px}
-.md a[href="#map-volskaya-industries"] {background-position: -540px -120px}
-.md a[href="#map-watchpoint-gibraltar"] {background-position: 0 -180px}
-.md a[href="#map-eichenwalde"] {background-position: -180px -180px}
-.md a[href="#map-ecopoint-antarctica"] {background-position: -360px -180px}
-.md a[href="#map-oasis"] {background-position: -540px -180px}
+.md a[href$="-temple-of-anubis"] {background-position: -180px 0}
+.md a[href$="-dorado"] {background-position: -360px 0}
+.md a[href$="-hanamura"] {background-position: -540px 0}
+.md a[href$="-hollywood"] {background-position: 0 -60px}
+.md a[href$="-ilios"] {background-position: -180px -60px}
+.md a[href$="-kings-row"] {background-position: -360px -60px}
+.md a[href$="-lijiang-tower"] {background-position: -540px -60px}
+.md a[href$="-nepal"] {background-position: 0 -120px}
+.md a[href$="-numbani"] {background-position: -180px -120px}
+.md a[href$="-route-66"] {background-position: -360px -120px}
+.md a[href$="-volskaya-industries"] {background-position: -540px -120px}
+.md a[href$="-watchpoint-gibraltar"] {background-position: 0 -180px}
+.md a[href$="-eichenwalde"] {background-position: -180px -180px}
+.md a[href$="-ecopoint-antarctica"] {background-position: -360px -180px}
+.md a[href$="-oasis"] {background-position: -540px -180px}
 
 /* Checkmark tags */
 .md a[href*="#check-"] {
@@ -4919,11 +4936,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	pointer-events: none;
 	width: 12px;
 }
-.md a[href="#check-yes"] {background-position: 0 0; border-color: #00C934}
-.md a[href="#check-no"] {background-position: -12px 0; border-color: #FF000F}
+.md a[href$="-yes"] {background-position: 0 0; border-color: #00C934}
+.md a[href$="-no"] {background-position: -12px 0; border-color: #FF000F}
 
 /* Flag tags */
-.md a[href*="#flag-"] {
+.md a[href^="#flag-"] {
 	background: url(%%flags-all%%);
 	border-radius: 1px;
 	cursor: default;
@@ -4938,7 +4955,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-	.md a[href*="#flag-"] {
+	.md a[href^="#flag-"] {
 		background:url(%%flags-all-2x%%);
 		background-size: 210px 406px;
 	}
@@ -5001,13 +5018,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Top page bar */
 .top-page .menuarea {
-	background: #FFF;
-	border: 0;
-	border-radius: 3px;
 	color: #738491;
-	margin: 0 0 16px 0;
-	overflow: visible;
-	padding: 14px 16px 12px;
+	padding: 13px 15px 13px;
 }
 
 /* Gilded page infobar ('Gildings in this subreddit have paid for..') */
@@ -5124,8 +5136,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding-bottom: 8px !important;
 }
 
-.comments-page .sitetable .link .title {
-	margin-top: 4px;
+.comments-page .link .title {
+	font-size: 18px;
+}
+
+.comments-page .thumbnail {
+	display: none;
 }
 
 .comments-page #header .tabmenu li:first-child {
@@ -5194,7 +5210,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .side .titlebox .tagline a.flairselectbtn {
 	background: rgba(255,255,255,.5);
 	border-radius: 1px;
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	cursor: default;
 	font-size: 12px;
 	padding: 2px 8px;
@@ -5527,57 +5543,6 @@ dt {
 }
 
 /* RES night mode */
-
-.res-nightmode body {
-	background: #242729;
-}
-
-.res-nightmode .submit-link:after, .res-nightmode #sr-header-area,
-.res-nightmode #header-bottom-right, .res-nightmode .side .linkinfo,
-.res-nightmode .comments-page .link, .res-nightmode #search input[type=text],
-.res-nightmode .listing-page .link, .res-nightmode #header .tabmenu li a, .res-nightmode .commentarea>.sitetable>.comment,
-.res-nightmode .commentarea>.usertext, .res-nightmode #REScommentNavToggle {
-	background: none !important;
-}
-
-.res-nightmode .listing-page .sitetable>.thing:after {
-	display:none;
-}
-.res-nightmode .arrow.up, .res-nightmode .arrow.up:hover {
-	background-position: 0 -80px;
-}
-.res-nightmode .arrow.upmod {
-	background-position: -32px -78px;
-}
-.res-nightmode .arrow.down, .res-nightmode .arrow.down:hover {
-	background-position: -64px -80px;
-}
-.res-nightmode .arrow.downmod {
-	background-position: 0 -100px;
-}
-
-.res-nightmode .submit-link:before, .res-nightmode .morelink a,
-.res-nightmode .side .md h1, .res-nightmode .sidecontentbox .title h1,
-.res-nightmode .side h1.redditname a, .res-nightmode .side #moderation_tools .title h1, .res-nightmode .linkflairlabel, .res-nightmode .md h1,
-.res-nightmode .combined-search-page .search-result-group .search-header-label,
-.res-nightmode .submit-page .roundfield .title, .res-nightmode .gold-accent.comment-visits-box,
-.res-nightmode .commentarea .panestack-title .title, .res-nightmode .link .entry .tagline a {
-	color: #FFF;
-}
-
-.res-nightmode .side .md>ol {
-	background: none !important;
-	border: none;
-}
-
-.res-nightmode .search-page .search-result {
-	border: none;
-}
-
-.res-nightmode #search #searchexpando {
-	background-color:#444;
-}
-
 .res-nightmode textarea, .res-nightmode .commentarea>.usertext textarea, .res-nightmode body .content textarea:focus {
 	color: #FFF;
 }
@@ -5626,7 +5591,7 @@ body.wiki-page>.content {
 }
 .wiki-page .pageactions .wikiaction {
 	border-radius: 0;
-	color: rgba(4,46,84,.5);
+	color: #8196A9;
 	margin: 0;
 	padding: 0 24px;
 }
