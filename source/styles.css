@@ -4769,6 +4769,10 @@ body.listing-page>.content {
 	padding: 6px 16px 6px 32px;
 }
 
+.md p {
+	margin-top: 0.75em;
+}
+
 /* Table inside a post */
 .md thead tr {
 	background: #85898E;
