@@ -156,12 +156,12 @@ body:not(.loggedin) #sr-header-area .width-clip {
 
 #sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .separator, #sr-header-area .dropdown.srdrop .selected {
 	background: none;
-	color: rgba(255, 255, 255, .3);
+	color: rgba(255, 255, 255, .2);
 	transition: color .08s ease-in-out;
 }
 
 .res #RESShortcuts {
-	color: rgba(255, 255, 255, .3);
+	color: rgba(255, 255, 255, .2);
 	display: inline-block;
 	font-size: 11px;
 	text-overflow: ellipsis;
@@ -901,7 +901,7 @@ body:not(.res) .expando-button {
 	visibility: visible;
 }
 
-.link .entry .tagline .userattrs a.moderator {background: #27B062}
+.link .entry .tagline .userattrs a.moderator {background: #00C934}
 
 .tagline .userattrs .cakeday, .search-result-meta .userattrs .cakeday {
 	background: none;
@@ -1297,21 +1297,21 @@ ul.report-reasons {
 }
 
 .thing.link.stickied a.title, .thing.link.stickied .entry li .comments {
-	color: #27B062 !important;
+	color: #00C934 !important;
 }
 
 .thing.link.stickied .buttons li a:hover {
-	color: #27B062 !important;
+	color: #00C934 !important;
 }
 
 .thing.link.stickied .expando-button:hover {
-	background-color: #27B062 !important;
-	border-color: #27B062 !important;
+	background-color: #00C934 !important;
+	border-color: #00C934 !important;
 }
 
 /* Sticky Comment */
 .stickied.comment>.entry a {
-	color: #27B062 !important;
+	color: #00C934 !important;
 }
 
 /* Ad */
@@ -1490,7 +1490,7 @@ body>.content .link.compressed .midcol {
 .flairselector .linkflair-Discussion .linkflairlabel { color: #24A0ED }
 .flairselector .linkflair-PSA .linkflairlabel { color: #E53935 }
 .flairselector .linkflair-eSports .linkflairlabel { color: #3949AB }
-.flairselector .linkflair-Megathread .linkflairlabel { color: #27B062 }
+.flairselector .linkflair-Megathread .linkflairlabel { color: #00C934 }
 .flairselector .linkflair-Event .linkflairlabel { color: #DC143C }
 .flairselector .linkflair-Guide .linkflairlabel { color: #B338C2 }
 .flairselector .linkflair-Question .linkflairlabel,
@@ -1783,12 +1783,12 @@ div.commentarea div.RES-keyNav-activeElement .md {
 .reddit-infobar.with-icon .md {color: #000;font-size: 14px;}
 
 /* Locked Post */
-.reddit-infobar.with-icon.locked-infobar {background:#27B062 }
+.reddit-infobar.with-icon.locked-infobar {background:#00C934 }
 .reddit-infobar.with-icon.locked-infobar .md {color: #fff;}
 
 .reddit-infobar.with-icon.locked-infobar p:after {content: " Sort comments by new to find out more."}
 .reddit-infobar.with-icon.locked-infobar:before {
-	background-color: #27B062;
+	background-color: #00C934;
 	border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -2402,13 +2402,13 @@ body:not(.listing-page) .side .md>ol {
 	color: rgba(255,255,255,.3);
 	cursor: default;
 	font: 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	height: 40px;
 	list-style-type: none;
 	padding: 12px 18px;
 	position: absolute;
 	right: 32px;
 	top: 165px;
-	transition: color .18s ease-in-out;
+	transition: all .1s ease-in-out;
+	width: 144px;
 	z-index: 1;
 }
 
@@ -2422,17 +2422,18 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li ol {
-	border-radius: 1px;
+	border-radius: 0 0 1px 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.12);
 	font-size: 13px;
 	font-weight: normal;
 	list-style-type: none;
-	margin: 9px 0 0 -45px;
+	margin: -4px 0 0 -18px;
+	max-height: 0;
 	opacity: 0;
 	padding: 0;
 	position: absolute;
 	text-shadow: none;
-	transition: all .24s ease-in-out .1s;
+	transition: all .2s ease-in-out .1s;
 	visibility: hidden;
 	width: 144px;
 	z-index: 1;
@@ -2442,17 +2443,13 @@ body:not(.listing-page) .side .md>ol {
 	display: none;
 }
 
-.side .md>ol ol li:nth-child(2) a {
-	border-radius: 1px 1px 0 0;
-}
-
 .side .md>ol ol li:last-child a {
 	border-radius: 0 0 1px 1px;
 }
 
 .side .md>ol li a {
 	background: #FFF;
-	color: #042E54;
+	color: #85898E;
 	display: block;
 	padding: 6px 16px;
 	transition: none;
@@ -2460,17 +2457,18 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol:hover {
-	color: #00E9E8;
+	background: #FFF;
+	color: #042E54;
 }
 
 .side .md>ol:hover ol {
-	margin-top: 13px;
+	max-height: 290px;
 	opacity: 1;
 	visibility: visible;
 }
 
 .side .md>ol li a:hover {
-	background: #8196A9;
+	background: #85898E;
 	color: #FFF;
 }
 
@@ -2899,7 +2897,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .tagline .moderator, .green {
-	color: #27B062 !important;
+	color: #00C934 !important;
 }
 
 .tagline .submitter {
@@ -4038,7 +4036,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .res .link .tagline a.voteWeight {background-color: transparent !important;}
-.res .thing .tagline .author.moderator {background-color: #27b062 !important;padding: 1px 4px;border-radius: 1px;}
+.res .thing .tagline .author.moderator {background-color: #00C934 !important;padding: 1px 4px;border-radius: 1px;}
 #header-bottom-right #userbarToggle + * {margin-left: 0 !important;}
 
 .res .srSep {color: rgba(255,255,255,0.45);}
@@ -4697,7 +4695,7 @@ body.listing-page>.content {
 	color: #FFF;		
 }
 .linkflair-mod a {
-	color: #27B062 !important;
+	color: #00C934 !important;
 }	
 
 .linkflair-mod .thumbnail.default, .linkflair-mod .thumbnail.self {
@@ -5404,7 +5402,7 @@ dt {
 }
 
 .search-result .userattrs a.moderator {
-	background: #27B062;
+	background: #00C934;
 	border-radius: 2px;
 	color: #FFF;
 	font-weight: bold;
