@@ -501,7 +501,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 17px;
 	width: 16px;
 }
-.tabmenu a[href$="new/"]:hover:before {
+.tabmenu a[href$="new/"]:hover:before, .tabmenu .selected a[href$="new/"]:before {
 	background-position: -16px 0;
 }
 
@@ -511,7 +511,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 16px;
 	width: 11px;
 }
-.tabmenu a[href$="l/"]:hover:before {
+.tabmenu a[href$="l/"]:hover:before, .tabmenu .selected a[href$="l/"]:before {
 	background-position: -43px 0;
 }
 
@@ -521,7 +521,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 16px;
 	width: 16px;
 }
-.tabmenu a[href$="p/"]:hover:before {
+.tabmenu a[href$="p/"]:hover:before, .tabmenu .selected a[href$="p/"]:before {
 	background-position: -16px -17px;
 }
 
@@ -531,7 +531,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	height: 15px;
 	width: 14px;
 }
-.tabmenu a[href$="d/"]:hover:before {
+.tabmenu a[href$="d/"]:hover:before, .tabmenu .selected a[href$="d/"]:before  {
 	background-position: -47px -16px;
 }
 
@@ -1697,7 +1697,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	text-decoration: none;
 	padding: 8px 12px;
 	border: 1px solid #edf1f3;
-	border-radius: 2px;
+	border-radius: 1px;
 	background-image: none;
 }
 
@@ -3796,15 +3796,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .flair-ninjas-in-pyjamas, .md a[href*="ninjas-in-pyjamas"] {
 	background-position: -71px 0;
 }
-.flair-anox, .md a[href*="anox"] {
-	background-position: -72px -22px;
-	width: 21px;
-}
-.flair-nga, .md a[href*="nga"] {
-	background-position: -73px -44px;
-	height: 22px;
-	width: 36px;
-}
 .flair-liquid, .md a[href*="liquid"] {
 	background-position: -77px -66px;
 }
@@ -3815,10 +3806,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .flair-faze, .md a[href*="faze"] {
 	background-position: -44px -84px;
 	height: 15px;
-}
-.flair-freecs-red, .md a[href*="freecs-red"] {
-	background-position: -22px -82px;
-	height: 12px;
 }
 .flair-freecs-blue, .md a[href*="freecs-blue"] {
 	background-position: -66px -90px;
@@ -4600,22 +4587,21 @@ body.res #search #searchexpando {
 }
 
 .controversial-page .menuarea {
-	background: #FFF;
+	background: #f8f8f8;
 	border: none;
-	border-radius: 3px;
+	border-radius: 1px;
 	margin: 0 0 16px;
-	padding: 16px;
+	padding: 13px 16px;
+	position: relative;
 }
 
-.listing-page .dropdown-title.lightdrop {
+.listing-page .dropdown-title.lightdrop, .listing-page .dropdown.lightdrop {
 	text-transform: uppercase;
-}
-.listing-page .dropdown.lightdrop {
-	text-transform: capitalize;
 }
 
 .dropdown.lightdrop .selected {
 	border: none;
+	font-weight: normal;
 }
 
 body.listing-page>.content {
