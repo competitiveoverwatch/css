@@ -1030,7 +1030,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	.report-button a, .lock-button a, .marknsfw-button a, .spoiler-button a,
 	.unspoiler-button a, .entry .flairselectbtn {
 		background: url(%%actions-2x%%);
-		background-size: 175px 36px;
+		background-size: 211px 36px;
 	}
 }
 
@@ -1563,7 +1563,7 @@ body>.content .link.compressed .midcol {
 }
 .flairselector .flairselection .linkflair a.title{
 	color: #042E54;
-	font-size: 16px;
+	font-size: 16px !important;
 }
 
 .flairselector .status {
@@ -1900,7 +1900,7 @@ div.titlebox span.number:after {
 	border-radius: 2px;
 	margin: 8px 0 0 auto;
 	width: auto;
-	z-index: 100;
+	z-index: 1;
 }
 
 .titlebox .fancy-toggle-button a {
@@ -3700,7 +3700,7 @@ pre {
 }
 
 /* User flairs for teams and in-post tags for team icons */
-.flair-fan, .md a[href*="#team-"] {
+.flair-fan, .md a[href^="#team-"] {
 	background: url(%%flairs-teams%%) no-repeat;
 	font-size: 0;
 	height: 22px;
@@ -3709,7 +3709,7 @@ pre {
 }
 
 /* Team tags */
-.md a[href*="#team-"] {
+.md a[href^="#team-"] {
 	cursor: default;
 	display: inline-block;
 	pointer-events: none;
@@ -3970,10 +3970,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .footer-parent {
 	height: auto;
 	padding: 0;
-}
-
-.res-nightmode .footer-parent {
-	background: #000;
 }
 
 .footer {
@@ -4833,7 +4829,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .md a[href="#hero-sombra"] {background-position: -112px -84px}
 
 /* Map tags */
-.md a[href*="#map-"] {
+.md a[href^="#map-"] {
 	background: #F5F5F5 url(%%tags-maps%%) no-repeat;
 	cursor: default;
 	display: inline-block;
@@ -4847,7 +4843,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-	.md a[href*="#map-"] {
+	.md a[href^="#map-"] {
 		background:url(%%tags-maps-2x%%);
 		background-size: 720px 240px;
 	}
