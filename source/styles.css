@@ -2221,7 +2221,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-decoration: underline;
 }
 
-/* Events attribution */
+/* Events attribution ("by Liquipedia") */
 .side .md h1 em {
 	font-size: 14px;
 	font-style: normal;
@@ -2230,7 +2230,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-transform: none;
 }
 .side .md h1 em a {
-	color: #9B9EA2;
+	color: #758A9E;
 }
 
 .side .md h4 {
@@ -2292,7 +2292,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Event description or prize pool info */
 .side .md h4+p {
-	color: #9B9EA2;
+	color: #315371;
 	margin-top: -4px;
 }
 
@@ -3060,7 +3060,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Main content container */
 .submit-page>.content {
-	margin: -124px 0 64px 32px;
+	margin: -124px 0 64px calc(50% - 532px);
 	width: 700px;
 }
 
@@ -5148,7 +5148,7 @@ body.submit-page .roundfield input:not([type=checkbox]),
 	.submit-page .submit_text.enabled.roundfield {
 		background: #FFF;
 		border-radius: 1px;
-		left: 764px;
+		left: calc(50% + 195px);
 		position: absolute;
 		top: 245px;
 		width: 336px;
