@@ -111,7 +111,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 #header {
 	background: #06233E /*url(%%header%%) 30% 0 / cover no-repeat*/;
 	border: none;
-	height: 254px;
+	height: 213px;
 	z-index: 0;
 }
 /* Retina/HiDPI */
@@ -156,7 +156,7 @@ body:not(.loggedin) #sr-header-area .width-clip {
 
 #sr-header-area .sr-bar a, #sr-more-link, #sr-header-area .separator, #sr-header-area .dropdown.srdrop .selected {
 	background: none;
-	color: rgba(255, 255, 255, .2);
+	color: rgba(255, 255, 255, .15);
 	transition: color .08s ease-in-out;
 }
 
@@ -391,20 +391,23 @@ body:not(.loggedin) #header-bottom-right {
 
 /* Hide snoo */
 #header-img.default-header, #header-img {
-	display: none;
+	background: none;
+	font-size: 0;
+	height: auto;
+	margin: 0 0 0 32px;
+	padding: 0;
+	width: auto;
 }
 
 #header-img.default-header:hover:after, #header-img:hover:after {
-	color: #FFF;
+	color: #0C141E;
 }
 
 #header-img.default-header:after, #header-img:after {
-	color: rgba(255, 255, 255, .4);
+	color: #85898E;
 	content: "REDDIT";
 	display: block;
 	font-size: 14px;
-	margin-left: 37px;
-	margin-top: 4px;
 	text-indent: 0;
 	visibility: visible;
 }
@@ -439,14 +442,17 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Tabmenu (hot/new/top) */
 #header-bottom-left {
+	background: #FFF;
+	height: 48px;
 	left: 0;
 	position: absolute;
-	top: 160px;
+	right: 0;
+	top: 165px;
 }
 
 #header .tabmenu {
 	display: block;
-	margin: 4px 0 0 64px;
+	margin: 0 0 0 96px;
 }
 
 #header .tabmenu li {
@@ -458,7 +464,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 #header .tabmenu li a {
 	background: none;
 	border: none;
-	color: rgba(255,255,255,.3);
+	color: #85898E;
 	display: inline-block;
 	font: normal 14px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: 0 8px;
@@ -468,11 +474,11 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 #header .tabmenu li.selected a {
-	color: #00E9E8;
+	color: #0C141E;
 }
 
 #header .tabmenu a:hover {
-	color: #00E9E8;
+	color: #0C141E;
 }
 
 /* /ads/ */
@@ -480,75 +486,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	display: none;
 }
 
-.tabmenu .choice:before {
-	background: url(%%sorts%%);
-	content: "";
-	display: inline-block;
-	margin-right: 6px;
-	vertical-align: bottom;
-}
-/* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-	.tabmenu .choice:before {
-		background: url(%%sorts-2x%%);
-		background-size: 82px 33px;
-	}
-}
-
-/* /new/ */
-.tabmenu a[href$="new/"]:before {
-	height: 17px;
-	width: 16px;
-}
-.tabmenu a[href$="new/"]:hover:before, .tabmenu .selected a[href$="new/"]:before {
-	background-position: -16px 0;
-}
-
-/* /rising/ */
-.tabmenu a[href$="g/"]:before {
-	background-position: -54px 0;
-	height: 15px;
-	width: 21px;
-}
-.tabmenu a[href$="g/"]:hover:before, .tabmenu .selected a[href$="g/"]:before {
-	background-position: -61px 16px;
-}
-
-/* /controversial/ */
-.tabmenu a[href$="l/"]:before {
-	background-position: -32px 0;
-	height: 16px;
-	width: 11px;
-}
-.tabmenu a[href$="l/"]:hover:before, .tabmenu .selected a[href$="l/"]:before {
-	background-position: -43px 0;
-}
-
-/* /top/ */
-.tabmenu a[href$="p/"]:before {
-	background-position: 0 -17px;
-	height: 16px;
-	width: 16px;
-}
-.tabmenu a[href$="p/"]:hover:before, .tabmenu .selected a[href$="p/"]:before {
-	background-position: -16px -17px;
-}
-
-/* /gilded/ */
-.tabmenu a[href$="d/"]:before {
-	background-position: -32px -16px;
-	height: 15px;
-	width: 14px;
-}
-.tabmenu a[href$="d/"]:hover:before, .tabmenu .selected a[href$="d/"]:before  {
-	background-position: -47px -16px;
-}
-
 /* Body Content - Frontpage */
 body:not(.submit-page)>.content {
-	margin: -32px 368px 64px 32px;
+	margin: 16px 368px 64px 32px;
 	padding: 0;
 }
 
@@ -834,7 +774,7 @@ body:not(.res) .expando-button {
 }
 
 .entry .tagline {
-	color: #8196A9;
+	color: #85898E;
 	display: inline-block;
 	font-size: 12px;
 	margin-top: 3px;
@@ -891,7 +831,7 @@ body:not(.res) .expando-button {
 }
 
 [lang^=en] .link:not(.promotedlink) .entry .tagline a.author:before {
-	content: "by ";
+	content: "from ";
 	vertical-align: bottom;
 }
 [lang^=en] .res .link .entry .tagline a.author.moderator:before {
@@ -965,7 +905,7 @@ body:not(.res) .expando-button {
 }
 
 .entry .buttons li a {
-	color: #8196A9;
+	color: #85898E;
 	font-size: 12px;
 	font-weight: normal;
 	margin: 2px 8px;
@@ -1058,7 +998,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	transition: .1s ease-in-out opacity;
 }
 
-.entry li .comments:before, .comment .flat-list li a[onclick*="reply"]:before {
+.comment .flat-list li a[onclick*="reply"]:before {
 	content: "";
 	display: inline-block;
 	height: 11px;
@@ -1068,7 +1008,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 12px;
 }
 
-.entry li .comments:before, .entry li .comments:hover {
+.entry li .comments:hover {
 	opacity: 1;
 }
 
@@ -1577,6 +1517,8 @@ body>.content .link.compressed .midcol {
 }
 .flairselection .linkflair .linkflairlabel {
 	color: #8196A9;
+	font-size: 16px;
+	margin: 0;
 }
 .flairselector .flairselection .linkflair a.title{
 	color: #042E54;
@@ -1981,32 +1923,34 @@ div.titlebox span.number:after {
 }
 
 .comments-page #search, .wiki-page #search {
-	right: 16px;
+	right: 32px;
 	width: 320px;
 }
 
 /* Main header search box */
 #search input[type=text] {
-	background: rgba(255,255,255,.1);
+	background: transparent;
 	border: none;
 	border-radius: 1px;
 	color: #FFF;
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 40px;
-	padding: 0 42px 0 16px;
-	transition: background .2s ease-in-out;
-	width: 100%;
+	padding: 0;
+	transition: all .2s ease-in-out;
+	width: 32px;
 }
 
 #search input[type=text]:focus, #search input[type=text]:active {
 	background: #FFF;
 	border-radius: 1px 1px 0 0;
 	color: #042E54;
+	padding: 0 42px 0 16px;
 	width: 100%;
 }
 
+/* Placeholders */
 #search input[type=text]:-moz-placeholder {
-	color: rgba(255,255,255,.3);
+	color: transparent;
 	font-size: 14px;
 	position: relative;
 	text-transform: uppercase;
@@ -2014,18 +1958,30 @@ div.titlebox span.number:after {
 }
 /* Apparently webkit requires the double colon */
 #search input[type=text]::-webkit-input-placeholder {
-	color: rgba(255,255,255,.3);
+	color: transparent;
 	font-size: 14px;
 	position: relative;
 	text-transform: uppercase;
 	top: -1px;
 }
 #search input[type=text]:-ms-input-placeholder {
-	color: rgba(255,255,255,.3);
+	color: transparent;
 	font-size: 14px;
 	position: relative;
 	text-transform: uppercase;
 	top: -1px;
+}
+
+/* Placeholders when clicked */
+#search input[type=text]:active:-moz-placeholder {
+	color: #85898E;
+}
+/* Apparently webkit requires the double colon */
+#search input[type=text]:active::-webkit-input-placeholder {
+	color: #85898E;
+}
+#search input[type=text]:active:-ms-input-placeholder {
+	color: #85898E;
 }
 
 #search input[type=submit] {
@@ -2033,8 +1989,13 @@ div.titlebox span.number:after {
 	height: 32px;
 	margin-left: -38px;
 	opacity: .3;
+	pointer-events: none;
 	transition: opacity .1s ease-in-out;
 	width: 32px;
+}
+
+#search input[type=text]:focus + input[type=submit], #search input[type=text]:active + input[type=submit] {
+	pointer-events: all;
 }
 
 #search input[type=submit]:hover {
@@ -2072,8 +2033,6 @@ div.titlebox span.number:after {
 	top: 380px;
 }
 .morelink a {
-	background: rgba(255,255,255,.5);
-	border-radius: 0 0 0 1px;
 	color: #042E54;
 	font: normal 14px/42px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	letter-spacing: 0;
@@ -2082,6 +2041,7 @@ div.titlebox span.number:after {
 }
 .morelink:hover a {
 	background: #042E54;
+	border-radius: 0 0 0 1px;
 	color: #FFF;
 }
 
@@ -2101,7 +2061,7 @@ div.titlebox span.number:after {
 /* Higher specificity to override */
 .side .submit-link:before {
 	color: #042E54;
-	content: "NEW";
+	content: "NEW POST";
 	font-size: 15px;
 	position: absolute;
 	text-align: center;
@@ -2115,7 +2075,7 @@ div.titlebox span.number:after {
 
 /* The containing box */
 .submit-link:after {
-	background: #F3F3F4;
+	background: #FFF;
 	border-radius: 1px;
 	content: "";
 	height: 91px;
@@ -2483,7 +2443,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li a:hover {
-	background: #85898E;
+	background: #8196A9;
 	color: #FFF;
 }
 
@@ -2701,10 +2661,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .commentarea>.usertext {
-	background: #FAFAFA;
-	margin: -60px 0 16px;
-	padding: 64px 16px 16px !important;
-	overflow: visible;
+
 }
 
 .commentarea .usertext-edit {
@@ -4426,12 +4383,6 @@ body,
 	visibility: hidden;
 }
 
-#header-bottom-left {
-	left: 0;
-	right: 0;
-	top: 160px;
-}
-
 /* Styles for most buttons */
 button {
 	border-radius: 2px !important;
@@ -4692,20 +4643,7 @@ body.listing-page>.content {
 }
 
 .content .thing .title:visited, .content .thing.visited .title {
-	color: #4B5A63;
-}
-.res-nightmode .content .thing .title:visited, .res-nightmode .content .thing.visited .title {
-	color: #CCC;
-}
-
-.listing-page .link:hover {
-	background: #FAFAFA;
-	box-shadow: inset 0 0 0 2px #FFF;
-}
-
-.listing-page .link:hover .thumbnail {
-	border: 2px solid rgba(255,255,255,.6);
-	border-right: none;
+	color: #85898E;
 }
 
 .listing-page .link, .listing-page .comment {
@@ -4748,8 +4686,7 @@ body.listing-page>.content {
 .linkflairlabel {
 	background: none;
 	border: none;
-	color: #8196A9;
-	font-size: 16px;
+	font-size: inherit;
 	font-weight: normal;
 	margin-right: 4px;
 	max-width: none;
@@ -5119,7 +5056,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .comments-page .error {
-	color: #EF0101;
+	color: #FF000F;
 	font-size: 12px;
 }
 
@@ -5140,6 +5077,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	font-size: 18px;
 }
 
+/* Hide post thumbnails on comments pages */
 .comments-page .thumbnail {
 	display: none;
 }
