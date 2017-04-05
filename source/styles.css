@@ -112,6 +112,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 /* Header */
 #header {
 	background: #06233E /*url(%%header%%) 30% 0 / cover no-repeat*/;
+	background: linear-gradient(90deg, #07364F 0%, #062541 100%);
 	border: none;
 	height: 213px;
 	z-index: 0;
@@ -122,6 +123,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	#header {
 		background: #06233E /*url(%%header-2x%%) 30% 0 / cover no-repeat*/;
+		background: linear-gradient(90deg, #07364F 0%, #062541 100%);
 	}
 }
 
@@ -142,7 +144,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 #sr-header-area .width-clip {
-	right: 302px;
+	left: 16px;
+	right: 320px;
 }
 body:not(.loggedin) #sr-header-area .width-clip {
 	right: 340px;
@@ -187,9 +190,8 @@ body:not(.loggedin) #sr-header-area .width-clip {
 
 #sr-header-area .dropdown.srdrop .selected {
 	cursor: default !important;
-	margin: 0 12px 0 8px;
+	margin: 0 26px 0 8px;
 	padding: 0;
-	background: none;
 	visibility: hidden;
 	width: 13px;
 }
@@ -206,10 +208,12 @@ body:not(.loggedin) #sr-header-area .width-clip {
 #sr-header-area .drop-choices.srdrop {
 	border: none;
 	border-radius: 1px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .24);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
 	cursor: default;
+	display: block;
+	left: 8px !important;
 	opacity: 0;
-	transform: translateY(-8px);
+	transform: translateY(-12px);
 	transition: .3s cubic-bezier(.175, .885, .32, 1.275);
 	visibility: hidden;
 }
@@ -218,10 +222,6 @@ body:not(.loggedin) #sr-header-area .width-clip {
 	opacity: 1;
 	transform: translateY(-2px);
 	visibility: visible;
-}
-
-#sr-header-area .drop-choices.srdrop.inuse a:first-child {
-	border-radius: 1px 1px 0 0;
 }
 
 #sr-header-area .drop-choices a.choice {
@@ -502,7 +502,7 @@ body >.content .link .rank, .rank-spacer {
 .link .midcol {
 	height: 56px;
 	overflow: visible;
-	margin: -4px 10px 0 0;
+	margin: -4px 22px 0 -10px;
 	width: 32px !important;
 
 }
@@ -511,14 +511,12 @@ body >.content .link .rank, .rank-spacer {
 	font-size: 12px;
 	line-height: 16px;
 	margin: 1px -100% 2px -100%;
+	pointer-events: none;
 	text-align: center;
 }
 
-.link .score.likes {
-	color: #FF9E3A;
-}
-.link .score.dislikes {
-	color: #0097D2;
+.link .score.likes, .link .score.dislikes {
+	color: #0C141E;
 }
 
 .arrow {
@@ -529,29 +527,32 @@ body >.content .link .rank, .rank-spacer {
 	width: 33px;
 }
 
-/* Upvotes */
-.arrow.up {
+/* Upvote */
+.arrow.up, .arrow.down, .arrow.upmod, .arrow.downmod {
 	height: 20px;
-	background-position: 0 -80px;
+	background-position: 0 -76px;
+}
+/* Downvote */
+.arrow.down, .arrow.downmod {
+	transform: rotateZ(180deg);
+}
+/* Unvoted arrows */
+.arrow.up, .arrow.down {
+	opacity: .4;
+}
+/* Voted arrows */
+.arrow.upmod, .arrow.downmod {
+	opacity: 1;
 }
 
 .arrow.upmod {
-	height: 20px;
-	background-position: -32px -78px;
-	opacity: 1 !important;
 	position: relative;
 	width: 32px;
 }
 
-/* downvotes */
-.arrow.down {
-	height: 20px;
-	background-position: -64px -80px;
-}
-
 body:not(.subscriber) .arrow:after {
 	background: #999;
-	border-radius:2px;
+	border-radius: 1px;
 	color: #FFF;
 	content: "Thanks for voting, consider sticking around by subscribing!";
 	display: block;
@@ -590,10 +591,10 @@ body:not(.subscriber) .arrow:hover:after {
 	max-height: 84px;
 	position: absolute;
 	top: 0;
-	width: 102px;
+	width: 82px;
 }
 .thumbnail.self, .thumbnail.spoiler {
-	background: #0097D2 /*url(%%spritesheet%%) -97px -112px*/;
+	background: #85898E /*url(%%spritesheet%%) -97px -112px*/;
 	height: 100%; /* To override Reddit setting height */
 }
 
@@ -626,7 +627,7 @@ body:not(.subscriber) .arrow:hover:after {
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #FF5500 url(%%spritesheet%%) -207px -112px }
 .linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #738491 }
 .linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #673AB7 url(%%spritesheet%%) -209px -169px }
-.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-color: #03426D }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-color: #0097D2 }
 
 .linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%spritesheet%%) -121px 0 !important }
 
@@ -785,11 +786,11 @@ body:not(.res) .expando-button {
 }
 
 /* For English languages (en-gb/en-us/en) */
-[lang^=en] .link:not(.promoted) .entry .tagline {
-	margin-left: -57px;
+[lang^=en] .listing-page .link:not(.promoted) .entry .tagline {
+	margin-left: -61px;
 	visibility: hidden;
 }
-[lang^=en] .link:not(.promoted) .entry .tagline *:not(.userattrs) {
+[lang^=en] .listing-page .link:not(.promoted) .entry .tagline *:not(.userattrs) {
 	visibility: visible;
 }
 
@@ -1068,12 +1069,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	background-position: -66px -16px;
 }
 
-#sitetable a[data-event-action="spam"] {
+#siteTable a[data-event-action="spam"] {
 	background-position: -77px 0;
 	height: 15px;
 	width: 18px;
 }
-#sitetable a[data-event-action="spam"]:hover {
+#siteTable a[data-event-action="spam"]:hover {
 	background-position: -77px -15px;
 	height: 16px;
 }
@@ -2370,7 +2371,6 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li ol {
-	border-radius: 0 0 1px 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.12);
 	font-size: 13px;
 	font-weight: normal;
@@ -2380,7 +2380,7 @@ body:not(.listing-page) .side .md>ol {
 	padding: 0;
 	position: absolute;
 	text-shadow: none;
-	transition: .5s cubic-bezier(.175, .885, .32, 1.275) .1s;
+	transition: .3s cubic-bezier(.175, .885, .32, 1.275) .08s;
 	transform: translateY(0);
 	visibility: hidden;
 	width: 138px;
@@ -2388,10 +2388,6 @@ body:not(.listing-page) .side .md>ol {
 
 .side .md>ol ol li:first-child a {
 	display: none;
-}
-
-.side .md>ol ol li:last-child a {
-	border-radius: 0 0 1px 1px;
 }
 
 .side .md>ol li a {
@@ -4534,6 +4530,10 @@ body.listing-page>.content {
 	padding: 16px 16px 12px 118px;
 }
 
+.listing-page .link:hover, .listing-page .comment:hover {
+	background: #FFF;
+}
+
 .listing-page .sitetable .usertext .md {
 	max-width: none;
 }
@@ -4843,13 +4843,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .link .entry .buttons .first {
 	bottom: 13px;
-	left: 154px;
+	left: 155px;
 	margin: 0;
 	position: absolute;
 }
 
 .entry .buttons li, .entry .buttons li+li {
-	margin: 0 2px 2px 2px;
+	margin: 0 2px;
 	padding: 0;
 }
 
