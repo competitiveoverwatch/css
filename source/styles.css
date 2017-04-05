@@ -118,9 +118,8 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 	z-index: 0;
 }
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	#header {
 		background: #06233E /*url(%%header-2x%%) 30% 0 / cover no-repeat*/;
 		background: linear-gradient(90deg, #07364F 0%, #062541 100%);
@@ -166,7 +165,7 @@ body:not(.loggedin) #sr-header-area .width-clip {
 }
 
 .res #RESShortcuts {
-	color: rgba(255, 255, 255, .2);
+	color: rgba(255, 255, 255, .15);
 	display: inline-block;
 	font-size: 11px;
 	text-overflow: ellipsis;
@@ -384,21 +383,25 @@ body:not(.loggedin) #header-bottom-right {
 /* Header Start */
 
 /* Hide snoo */
-#header-img.default-header, #header-img {
+#header-img-a  {
 	background: 0;
 	display: inline-block;
-	line-height: 16px;
+	line-height: 48px;
 	margin: 0 0 0 -16px;
 	padding: 0 16px;
 	vertical-align: top;
 	width: auto;
 }
 
-#header-img.default-header:hover:after, #header-img:hover:after {
+#header-img {
+	display: none;
+}
+
+#header-img-a:hover:after, #header-img-a:hover:after {
 	color: #0C141E;
 }
 
-#header-img.default-header:after, #header-img:after {
+#header-img-a:after, #header-img-a:after {
 	color: #85898E;
 	content: "REDDIT";
 	display: block;
@@ -427,9 +430,8 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	#header .pagename a {
 		background: url(%%logo-2x%%) no-repeat center / contain;
 	}
@@ -509,6 +511,7 @@ body >.content .link .rank, .rank-spacer {
 .link .score {
 	color: #9B9EA2;
 	font-size: 12px;
+	font-weight: normal;
 	line-height: 16px;
 	margin: 1px -100% 2px -100%;
 	pointer-events: none;
@@ -594,7 +597,7 @@ body:not(.subscriber) .arrow:hover:after {
 	width: 82px;
 }
 .thumbnail.self, .thumbnail.spoiler {
-	background: #85898E /*url(%%spritesheet%%) -97px -112px*/;
+	background: #85898E url(%%spritesheet%%) -105px -57px;
 	height: 100%; /* To override Reddit setting height */
 }
 
@@ -627,12 +630,11 @@ body:not(.subscriber) .arrow:hover:after {
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #FF5500 url(%%spritesheet%%) -207px -112px }
 .linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #738491 }
 .linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #673AB7 url(%%spritesheet%%) -209px -169px }
-.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-color: #0097D2 }
-
-.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%spritesheet%%) -121px 0 !important }
+.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%spritesheet%%) -105px 0 !important }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097D2 url(%%spritesheet%%) -105px -57px }
 
 /*Generic link */
-.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: #0097D2 url(%%spritesheet%%) -97px -56px }
+.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: #85898E url(%%spritesheet%%) -105px -57px }
 
 /* Submission Title */
 .link .title {
@@ -641,6 +643,7 @@ body:not(.subscriber) .arrow:hover:after {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	width: 98%;
 }
 
 body .content .sitetable .link .title a:hover {
@@ -764,7 +767,7 @@ body:not(.res) .expando-button {
 }
 
 /* Submitted X ago by.. */
-.link:not(.promoted) .entry .tagline {
+.listing-page .link:not(.promoted) .entry .tagline {
 	left: 276px;
 	overflow: hidden;
 }
@@ -781,7 +784,7 @@ body:not(.res) .expando-button {
 	position: absolute;
 }
 
-.listing-page .entry .tagline:first-letter {
+.entry .tagline:first-letter {
 	text-transform: uppercase;
 }
 
@@ -822,7 +825,7 @@ body:not(.res) .expando-button {
 
 .link .entry .tagline a:hover {text-decoration: none}
 
-[lang^=en] .link:not(.promotedlink) .entry .tagline a.author:before {
+[lang^=en] .listing-page .link:not(.promotedlink) .entry .tagline a.author:before {
 	color: #85898E;
 	content: "from ";
 	vertical-align: bottom;
@@ -830,7 +833,7 @@ body:not(.res) .expando-button {
 [lang^=en] .res .link .entry .tagline a.author.moderator:before {
 	display: none;
 }
-[lang^=en] .link:not(.promotedlink) .entry .tagline a.author {
+[lang^=en] .listing-page .link:not(.promotedlink) .entry .tagline a.author {
 	margin-left: -15px;
 	margin-right: inherit;
 }
@@ -867,14 +870,12 @@ body:not(.res) .expando-button {
 }
 
 .RESUserTagImage {
-	background-image: url(%%spritesheet%%);
-	background-position: -32px -99px;
+	background-image: url(%%spritesheet%%) -32px -99px;
 	display: inline-block;
 	height: 10px;
 	margin-left: 2px;
-	margin-top: 2px;
 	opacity: .25;
-	transition: opacity .15s ease-in-out;
+	transition: opacity .1s ease-in-out;
 	vertical-align: top;
 	width: 16px;
 }
@@ -967,9 +968,8 @@ body:not(.res) .expando-button {
 }
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	li .comments:before, .edit-usertext, .share a,
 	.thing:not(.saved) .save-button a, .hide-button a,  .give-gold-button a, .del-button a,
 	.remove-button a:not(.yes):not(.no), a[data-event-action="spam"], .approve-button a,
@@ -1754,9 +1754,8 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	width: 100%;
 }
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	#noresults {
 		background: url(%%noresults-2x%%) no-repeat 50% 50% / 184px 219px;
 	}
@@ -2006,7 +2005,7 @@ div.titlebox span.number:after {
 	background: none;
 }
 .comments-page .morelink {
-	top: 380px;
+	top: 361px;
 }
 .morelink a {
 	color: #042E54;
@@ -2047,7 +2046,7 @@ div.titlebox span.number:after {
 	z-index: 1;
 }
 .comments-page .submit-link:before {
-	top: 344px;
+	top: 325px;
 }
 
 /* The containing box */
@@ -2061,7 +2060,7 @@ div.titlebox span.number:after {
 	width: 320px;
 }
 .comments-page .submit-link:after {
-	top: 331px;
+	top: 312px;
 }
 
 /* Login form */
@@ -2078,7 +2077,6 @@ div.titlebox span.number:after {
 /* Titlebox "Info" */
 .titlebox {
 	display: flex;
-	flex-flow: row;
 	flex-wrap: wrap;
 	margin-top: -16px;
 }
@@ -2195,9 +2193,8 @@ div.titlebox span.number:after {
 }
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.side .md h3 a:before {
 		background: url(%%sidebar-twitter-2x%%);
 		background-size: 16px 13px;
@@ -2556,22 +2553,38 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 	padding: 0 16px 0 0;
 }
 
+.commentarea {
+	background: #FFF;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 16px;
+}
+
+.commentarea>* {
+	order: 4;
+	width: 100%;
+}
+
+.commentarea>.usertext {
+	order: 1;
+}
+
 .commentarea .panestack-title {
-	margin: 10px 0 0 0;
 	border-bottom: 0;
 	margin-top: 14px;
-	padding-left: 16px;
+	margin: 10px 0 0;
+	order: 2;
 }
 
 .commentarea .panestack-title .title {
 	color: #042E54;
-	font-size: 14px;
+	font-size: 16px;
 	text-transform: capitalize;
 }
 
 .commentarea .menuarea {
 	margin: 8px 0 0;
-	padding-left: 16px;
+	order: 3;
 	text-transform: capitalize;
 }
 
@@ -2627,8 +2640,8 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .commentarea .usertext-edit {
-	width: 100%;
 	max-width: none;
+	width: 100%;
 }
 
 .commentarea>.usertext textarea {
@@ -2648,9 +2661,8 @@ body:not(.loggedin) .commentarea .menuarea {
 	border: 1px solid rgba(0,0,0,.05);
 }
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.commentarea>.usertext textarea:not(:focus) {
 		background: #FFF url(%%commentbox-2x%%) no-repeat 0 0;
 		background-size: 300px 102px;
@@ -2678,7 +2690,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .gold-accent.comment-visits-box {
 	background: none;
-	margin: -7px 0 1px 0;
+	margin: 0;
+	padding: 0;
 }
 
 .gold-accent.comment-visits-box .title {
@@ -2716,26 +2729,25 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .gilded-icon:before {
-	background: url(%%spritesheet%%) -177px 0;
+	background: url(%%spritesheet%%) -78px 0;
 	height: 16px;
 	width: 16px;
 	vertical-align: bottom;
 }
 
-/* Comments */
+/* Container for comments */
 .commentarea .sitetable {
 	margin: 0;
-	box-shadow: none;
 }
 
 .commentarea .thing {
-	margin: 0 0 12px 0;
+	margin: 0 0 12px;
 }
 
 .commentarea .child .thing {
 	box-shadow: none;
 	padding: 4px 4px 4px 16px;
-	margin: 8px 0 0 0;
+	margin: 8px 0 0;
 	position: relative;
 }
 
@@ -2962,7 +2974,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 215px;
+	margin-top: 206px;
 }
 
 .linkinfo {
@@ -2970,71 +2982,46 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	border-radius: 1px;
 	border: none;
 	margin-left: -16px;
-	padding: 16px 16px 0;
+	padding: 16px;
 	position: absolute;
-	top: 258px;
+	top: 229px;
 	width: 320px;
 }
 
-.comments-page .linkinfo {
-	top: 222px;
-}
-
-.comments-page .side .linkinfo .date {
+.comments-page .linkinfo .date {
 	color: #9B9EA2;
 	font-size: 13px;
 }
-.comments-page .side .linkinfo .date:first-letter {
+.comments-page .linkinfo .date:first-letter {
 	text-transform: capitalize;
 }
 
-.comments-page .side .linkinfo .score {
-	color: #555;
+.comments-page .linkinfo .score {
+	color: #85898E;
 	font-size: 13px;
 	margin-top: 5px;
 }
 
 .linkinfo .score .number, .linkinfo .score .word {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: normal;
 }
 
 .comments-page .side .linkinfo .shortlink {
-	margin-top: -6px;
-	visibility: hidden;
-}
-
-.comments-page .side .linkinfo .shortlink:before {
-	bottom: 10px;
-	color: #9B9EA2;
-	content: "Share: ";
-	font-size: 13px;
-	position: absolute;
-	visibility: visible
-}
-
-.comments-page .side .linkinfo .shortlink input {
-	border: 0;
-	color: #9B9EA2;
-	font-family: inherit;
-	font-size: 13px;
-	margin: 0 -16px;
-	padding: 10px 16px 10px 56px;
-	visibility: visible;
-	width: 320px
+	display: none;
 }
 
 /* Submission Page */
 
 /* Main content container */
 .submit-page>.content {
-	margin: -124px auto 64px auto;
+	margin: 25px auto 64px auto;
 	width: 700px;
 }
 
 @media (min-width: 1062px) {
 	.submit-page>.content {
-		margin: -124px 0 64px calc(50% - 532px);
+		margin: 25px 0 64px calc(50% - 532px);
 	}
 
 	.submit-page .submit_text.enabled.roundfield {
@@ -3117,10 +3104,6 @@ form .spacer+.spacer {
 
 #newlink-with-image-upload #new-link-preview {
 	background: #F8F8F8;
-}
-
-.submit_text.enabled.roundfield {
-	background: #0079D3;
 }
 
 .submit_text ol, .submit_text ul {margin-left: -1em;}
@@ -3589,9 +3572,8 @@ pre {
 }
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href*="#team-"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
 		background-size: 123px 160px;
@@ -3782,9 +3764,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-rank {
 		background: url(%%flairs-ranks-2x%%) no-repeat;
 		background-size: 122px 51px;
@@ -4211,7 +4192,7 @@ body.other-discussions-page>.content, .comments-page .link, .commentarea>.siteta
 .stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo,
 .wiki-page .wiki-page-content, .linefield {
 	background: #FFF;
-	border-radius: 1px;
+	border-radius: 0;
 	padding: 16px;
 }
 
@@ -4277,11 +4258,6 @@ body,
 /* Styles for most buttons */
 button {
 	border-radius: 2px !important;
-}
-
-/* Background colour for most buttons */
-.submit_text.enabled.roundfield, .content .infobar {
-	background: #9B9EA2;
 }
 
 /* Link color */
@@ -4571,7 +4547,7 @@ body.listing-page>.content {
 }
 
 .expando {
-	margin: 6px 0 4px;
+	margin: 24px 0;
 }
 
 .md ul {
@@ -4651,9 +4627,8 @@ body.listing-page>.content {
 }
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.md a[href^="#hero-"] {
 		background: #EEE url(%%tags-heroes-2x%%);
 		background-size: 168px 112px;
@@ -4696,9 +4671,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 } 
 
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.md a[href^="#map-"] {
 		background:url(%%tags-maps-2x%%);
 		background-size: 720px 240px;
@@ -4751,9 +4725,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 21px;
 }
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.md a[href^="#flag-"] {
 		background:url(%%flags-all-2x%%);
 		background-size: 210px 406px;
@@ -4873,6 +4846,36 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding-top: 10px;
 }
 
+/* Container for the post title/text etc itself.
+Reddit create two #siteTable elements for some reason (unique id tags & names anyone?!) so use the first */
+.comments-page .content>.sitetable .thing {
+	position: relative;
+}
+
+.comments-page .content>.sitetable .thing .midcol {
+	position: absolute;
+}
+
+.comments-page .content>.sitetable .thing .entry {
+	overflow: visible;
+}
+
+/* Once again, reddit structure a post title as:
+	p.title
+		span.linkflairlabel
+		a.title Lorem ipsum...
+		..
+
+	for some reason. Repeating class names on different nested (but similar) elements.
+
+	Anyway.. Move title & tagline to the right so they don't collide with the score/voting arrows: */
+.comments-page .content>.sitetable .thing p.title {
+	margin-left: 48px;
+}
+.comments-page .content>.sitetable .thing .tagline {
+	margin: 18px 0 0 48px;
+}
+
 /* Comment page buttons */
 .usertext button {
 	box-shadow: none;
@@ -4911,10 +4914,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .usertext .bottom-area a {
 	color: #AEBFCC;
 	font-size: 10px;
-}
-
-.comments-page:not(.comment-permalink-page) .thing:not(.comment) {
-	border-radius: 1px 1px 0 0;
 }
 
 .commentarea>.usertext {
@@ -5359,9 +5358,8 @@ dt {
 	background: #333 url(%%commentbox-night%%) no-repeat;
 }
 /* Retina/HiDPI */
-@media (min--moz-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+@media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.res-nightmode .commentarea>.usertext textarea:not(:focus) {
 		background: #333 url(%%commentbox-night-2x%%) no-repeat 0 0;
 		background-size: 300px 102px;
