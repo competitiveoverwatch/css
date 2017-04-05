@@ -64,25 +64,27 @@ a {
 	outline: none !important;
 }
 
+/* Text boxes */
 body .content .text, body .content textarea, body .content input[type=text], body .content input[type=password],
  .side .spacer input, body .content input[type=url] {
 	background: #fff;
-	border: 1px solid #C3CFD6;
-	box-shadow: none;
-	color: #738491;
+	border: 1px solid #E8E8E9;
+	box-shadow: none; /* Needed for all `.pretty-form` inputs, which Reddit puts a gross inset box-shadow on */
 	padding: 4px 8px;
-	transition: border-color .1s ease-in-out, color .1s ease-in-out;
+	transition: border-color .1s ease-in-out;
 }
 
+/* Text boxes on hover */
 body .content .text:hover, body .content textarea:hover, body .content input[type=text]:hover, body .content input[type=password]:hover,
 .side .spacer input:hover, body .content input[type=url]:hover {
-	border-color: #738491;
+	border-color: #9B9EA2;
 }
 
+/* Text boxes when typing (focused) */
 body .content .text:focus, body .content textarea:focus, body .content input[type=text]:focus, body .content input[type=password]:focus,
 .side .spacer input:active, body .content input[type=url]:focus {
-	border-color: #0097D2;
-	color: #292F34;
+	border-color: #85898E;
+	color: #0C141E;
 }
 
 body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_button {
@@ -95,8 +97,8 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 	height: 28px;
 	margin: 4px 16px 4px 0;
 	padding: 2px 18px;
-	text-transform: uppercase;
-	transition: background .1s ease-in-out, color .1s ease-in-out;
+	text-transform: capitalize;
+	transition: background .08s ease-in-out, color .08s ease-in-out;
 }
 
 .btn:hover, button:hover, .c-btn-primary:hover, .wiki-page .wiki-page-content .wiki_button,
@@ -115,7 +117,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 	z-index: 0;
 }
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	#header {
@@ -176,18 +178,11 @@ body:not(.loggedin) #sr-header-area .width-clip {
 	border: none;
 	color: #FFF;
 	cursor: pointer;
-	transition: color 0.14s ease-in-out;
+	transition: color .14s ease-in-out;
 }
 
 #sr-more-link:hover {
 	text-decoration: none;
-}
-
-a.random.choice {
-	padding-top: 2px;
-	position: relative;
-	display: inline-block;
-	margin-top: -2px;
 }
 
 #sr-header-area .dropdown.srdrop .selected {
@@ -211,18 +206,17 @@ a.random.choice {
 #sr-header-area .drop-choices.srdrop {
 	border: none;
 	border-radius: 1px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, .24);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .24);
 	cursor: default;
 	opacity: 0;
-	top: 15px !important;
-	transition: .2s ease-in-out;
+	transform: translateY(-8px);
+	transition: .3s cubic-bezier(.175, .885, .32, 1.275);
 	visibility: hidden;
 }
 
 #sr-header-area .drop-choices.srdrop.inuse {
 	opacity: 1;
-	left: -4px !important;
-	top: 24px !important;
+	transform: translateY(-2px);
 	visibility: visible;
 }
 
@@ -338,8 +332,8 @@ body:not(.loggedin) #header-bottom-right {
 
 #mail.havemail:before {
 	animation: 8s ease-in-out modmail-fadein forwards;
-	background: rgba(67, 155, 218, .85);
-	border-radius: 1px;
+	background: #0097D2;
+	border-radius: 2px;
 	color: #FFF;
 	content: "NEW MESSAGES";
 	font: 13px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -372,7 +366,7 @@ body:not(.loggedin) #header-bottom-right {
 	position: relative;
 	text-indent: 100%;
 	top: -1px;
-	transition: 0.25s ease-in-out;
+	transition: .25s ease-in-out;
 	white-space: nowrap;
 	width: 16px;
 }
@@ -433,7 +427,7 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	#header .pagename a {
@@ -469,7 +463,7 @@ body:not(.submit-page) #header-bottom-left {
 #header .tabmenu li a {
 	background: none;
 	border: none;
-	color: #85898E;
+	color: #B6B8BB;
 	display: block;
 	font: 400 14px/48px Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0;
@@ -481,10 +475,6 @@ body:not(.submit-page) #header-bottom-left {
 
 #header .tabmenu li.selected a, #header .tabmenu a:hover {
 	color: #0C141E;
-}
-
-#header .tabmenu a:hover {
-	background: #F8F8F8;
 }
 
 /* /ads/ */
@@ -766,7 +756,7 @@ body:not(.res) .expando-button {
 	background: #222;
 	border: none;
 	font-weight: normal;
-	letter-spacing: 0.2px;
+	letter-spacing: .2px;
 	margin: 8px 0 0;
 	padding: 8px 16px;
 	pointer-events: auto;
@@ -785,7 +775,7 @@ body:not(.res) .expando-button {
 	margin-top: 3px;
 }
 
-.link .entry .tagline {
+.listing-page .link .entry .tagline {
 	bottom: 13px;
 	position: absolute;
 }
@@ -882,8 +872,8 @@ body:not(.res) .expando-button {
 	height: 10px;
 	margin-left: 2px;
 	margin-top: 2px;
-	opacity: 0.25;
-	transition: opacity 0.15s ease-in-out;
+	opacity: .25;
+	transition: opacity .15s ease-in-out;
 	vertical-align: top;
 	width: 16px;
 }
@@ -976,7 +966,7 @@ body:not(.res) .expando-button {
 }
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	li .comments:before, .edit-usertext, .share a,
@@ -1203,7 +1193,7 @@ a.pretty-button[class] {
 	border: none;
 	color: #fff;
 	line-height: 16px;
-	transition: background-color 0.25s ease-in-out;
+	transition: background-color .25s ease-in-out;
 	border-radius: 0;
 	text-transform: uppercase;
 }
@@ -1252,15 +1242,8 @@ ul.report-reasons {
 }
 
 .thing.stickied.link a.title {
+	color: #0C141E;
 	font-weight: normal;
-}
-
-.thing.link.stickied a.title, .thing.link.stickied .entry li .comments {
-	color: #00C934 !important;
-}
-
-.thing.link.stickied .buttons li a:hover {
-	color: #00C934 !important;
 }
 
 .thing.link.stickied .expando-button:hover {
@@ -1540,7 +1523,7 @@ body>.content .link.compressed .midcol {
 	position: relative;
 	left: 50%;
 	margin-left: -9px;
-	opacity: 0.5;
+	opacity: .5;
 }
 
 .flairselector li.selected {
@@ -1598,7 +1581,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 
 .RESDialogSmall {
 	border: none;
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .12);
 	margin-top: 8px;
 }
 
@@ -1619,7 +1602,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	line-height: 19px;
 	height: 22px;
 	width: 22px;
-	transition: border 0.15s ease-in-out;
+	transition: border .15s ease-in-out;
 }
 
 .RESCloseButton:hover {
@@ -1633,7 +1616,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 }
 
 .toggleButton {
-	line-height: 0.8;
+	line-height: .8;
 }
 
 .toggleButton .toggleOn {
@@ -1688,10 +1671,10 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	border: none;
 	background-image: none;
 	background-color: #4F8EF7;
-	transition: background 0.15s ease-in-out;
+	transition: background .15s ease-in-out;
 }
 
-.guider_button:hover {background-color: rgba(79, 142, 247, 0.75);}
+.guider_button:hover {background-color: rgba(79, 142, 247, .75);}
 
 .x_button {
 	transition: box-shadow .2s ease-in-out;
@@ -1770,7 +1753,7 @@ div.commentarea div.RES-keyNav-activeElement .md {
 	width: 100%;
 }
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	#noresults {
@@ -1803,7 +1786,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	margin-left: 6px;
 	padding: 8px 16px;
 	background-color: transparent;
-	transition: background-color 0.15s ease-in-out;
+	transition: background-color .15s ease-in-out;
 }
 
 .nav-buttons .nextprev a:hover {
@@ -1884,7 +1867,7 @@ div.titlebox span.number:after {
 	line-height: 22px;
 	padding: 0 6px;
 	text-transform: capitalize;
-	transition: background .08s ease-in-out,color .08s ease-in-out, padding .08s ease-in-out, margin 0.2s ease-in-out;
+	transition: background .08s ease-in-out,color .08s ease-in-out, padding .08s ease-in-out, margin .2s ease-in-out;
 }
 
 /* Subscribe */
@@ -2009,14 +1992,17 @@ div.titlebox span.number:after {
 	text-align: left;
 }
 
-/* Submit Button */
+/* Submit Buttons */
 .morelink {
-	background: none !important;
+	background: #F9F9F9;
 	border: none;
 	height: 42px;
 	position: absolute;
 	top: 278px;
 	z-index: 1;
+}
+.morelink:hover {
+	background: none;
 }
 .comments-page .morelink {
 	top: 380px;
@@ -2025,7 +2011,7 @@ div.titlebox span.number:after {
 	color: #042E54;
 	font: normal 14px/42px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	letter-spacing: 0;
-	transition: background .08s ease-in-out, color .08s ease-in-out;
+	transition: background .06s ease-in-out, color .06s ease-in-out;
 	width: 160px;
 }
 .morelink:hover a {
@@ -2051,7 +2037,8 @@ div.titlebox span.number:after {
 .side .submit-link:before {
 	color: #042E54;
 	content: "NEW POST";
-	font-size: 15px;
+	font-size: 14px;
+	font-weight: normal;
 	position: absolute;
 	text-align: center;
 	top: 242px;
@@ -2138,7 +2125,7 @@ div.titlebox span.number:after {
 	content: "Show my flair on this subreddit";
 	display: block;
 	font-size: 12px;
-	margin-left: 24px;
+	margin-left: 20px;
 	width: 190px;
 }
 
@@ -2207,7 +2194,7 @@ div.titlebox span.number:after {
 }
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.side .md h3 a:before {
@@ -2284,7 +2271,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	text-decoration: underline;
 }
 .side .md h4 a:hover:after {
-	animation: 0.35s event-link-arrow ease-in-out;
+	animation: .35s event-link-arrow ease-in-out;
 }
 .side .md h4 a:hover strong {
 	color: #057ED6;
@@ -2324,8 +2311,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .side .md>blockquote:first-of-type a, .side .md>blockquote:first-of-type a:visited {
-	background: rgba(30, 54, 98, 0.68);
-	color: rgba(255, 255, 255, 0.9);
+	background: rgba(30, 54, 98, .68);
+	color: rgba(255, 255, 255, .9);
 }
 
 .side .md>blockquote:first-of-type a:first-child {
@@ -2341,7 +2328,6 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	color: rgba(0,0,0,.9);
 	text-decoration: none;
 }
-
 
 .side .md>ul {
 	font-size: 12px;
@@ -2394,7 +2380,7 @@ body:not(.listing-page) .side .md>ol {
 	padding: 0;
 	position: absolute;
 	text-shadow: none;
-	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
+	transition: .5s cubic-bezier(.175, .885, .32, 1.275) .1s;
 	transform: translateY(0);
 	visibility: hidden;
 	width: 138px;
@@ -2569,10 +2555,9 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 /* Comments Page */
 .comments-page .link .usertext .md {
 	background: none;
-	border: none;
 	margin-bottom: 0;
 	margin-top: 12px;
-	padding: 0 16px;
+	padding: 0 16px 0 0;
 }
 
 .commentarea .panestack-title {
@@ -2645,10 +2630,6 @@ body:not(.loggedin) .commentarea .menuarea {
 	color: #042E54;
 }
 
-.commentarea>.usertext {
-
-}
-
 .commentarea .usertext-edit {
 	width: 100%;
 	max-width: none;
@@ -2671,7 +2652,7 @@ body:not(.loggedin) .commentarea .menuarea {
 	border: 1px solid rgba(0,0,0,.05);
 }
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.commentarea>.usertext textarea:not(:focus) {
@@ -2867,7 +2848,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 .res .thing .tagline .author.submitter:hover {
 	background-color: #4F8EF7 !important;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 
 .comment .score {
@@ -2915,7 +2896,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .md h1, .md h2 {
-	margin: 0.5em 0 0.25em 0;
+	margin: .5em 0 .25em 0;
 	border: none;
 	color: #292F34;
 }
@@ -2985,7 +2966,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 164px;
+	margin-top: 215px;
 }
 
 .linkinfo {
@@ -3003,19 +2984,12 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	top: 222px;
 }
 
-.comments-page .side .linkinfo .date span {
-	display: none;
-}
-
 .comments-page .side .linkinfo .date {
-	color: #98ABBA;
+	color: #9B9EA2;
+	font-size: 13px;
 }
 .comments-page .side .linkinfo .date:first-letter {
 	text-transform: capitalize;
-}
-
-.comments-page .side .linkinfo time:before {
-	content: "Submitted ";
 }
 
 .comments-page .side .linkinfo .score {
@@ -3036,32 +3010,45 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .comments-page .side .linkinfo .shortlink:before {
 	bottom: 10px;
-	color: #98ABBA;
+	color: #9B9EA2;
 	content: "Share: ";
 	font-size: 13px;
 	position: absolute;
-	visibility: visible;
+	visibility: visible
 }
 
 .comments-page .side .linkinfo .shortlink input {
-	background: rgba(0,0,0,.03);
-	border: none;
-	border-radius: 0 0 3px 3px;
-	color: #98ABBA;
+	border: 0;
+	color: #9B9EA2;
 	font-family: inherit;
 	font-size: 13px;
 	margin: 0 -16px;
 	padding: 10px 16px 10px 56px;
 	visibility: visible;
-	width: 320px;
+	width: 320px
 }
 
 /* Submission Page */
 
 /* Main content container */
 .submit-page>.content {
-	margin: -124px 0 64px calc(50% - 532px);
+	margin: -124px auto 64px auto;
 	width: 700px;
+}
+
+@media (min-width: 1062px) {
+	.submit-page>.content {
+		margin: -124px 0 64px calc(50% - 532px);
+	}
+
+	.submit-page .submit_text.enabled.roundfield {
+		background: #FFF;
+		border-radius: 1px;
+		right: calc(50% - 530px);
+		position: absolute;
+		top: 245px;
+		width: 336px;
+	}
 }
 
 /* Adjust logo position */
@@ -3106,26 +3093,14 @@ form .spacer+.spacer {
 .submit-page #newlink.submit.content .tabmenu.formtab a {
 	background: none;
 	border: none;
-	color: rgba(255,255,255,.4);
+	color: #CED0D2;
 	display: inline-block;
 	font-size: 16px;
 	line-height: 42px;
 	text-align: center;
 	text-transform: uppercase;
-	transition: 0.12s ease-in-out;
+	transition: color .06s ease-in-out;
 	width: 50%;
-}
-
-.res-nightmode .submit-page #newlink.submit.content .tabmenu.formtab a {
-	background: #333;
-	color: #EEE;
-}
-
-.submit-page .tabmenu li:first-child a {
-	border-radius: 1px 0 0 0;
-}
-.submit-page .tabmenu li:last-child a {
-	border-radius: 0 1px 0 0;
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a {
@@ -3196,11 +3171,6 @@ form .spacer+.spacer {
 .submit-page #newlink.submit.content .btn:after {
 	content: " this post";
 	text-transform: none;
-}
-
-body #newlink-with-image-upload .file-upload-button {
-	padding-right: 18px;
-	line-height: 29px;
 }
 
 #new-link-image-input {
@@ -3482,8 +3452,6 @@ search-result.search-result-subreddit:nth-of-type(3n) {
 
 /* Stylesheet page */
 .stylesheet-customize-container .pretty-form {
-	padding-top: 0;
-	padding: 8px 0;
 	margin-bottom: 16px;
 }
 
@@ -3508,20 +3476,6 @@ pre {
 	position: relative;
 	overflow: auto;
 	height: inherit;
-}
-
-#images #image-upload {
-	margin: 0 0 4em;
-}
-
-#images:after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 800px;
-	left: 0;
-	bottom: -1200px;
-	z-index: 100;
 }
 
 /* Rules Page */
@@ -3639,7 +3593,7 @@ pre {
 }
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.flair-fan, .md a[href*="#team-"] {
@@ -3814,7 +3768,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
-	transform: scale(0.75);
+	transform: scale(.75);
 }
 
 /* User flairs for ranks */
@@ -3832,7 +3786,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.flair-rank {
@@ -3949,7 +3903,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .flat-vert.title, .bottommenu a {
-	color: rgba(255,255,255,0.7);
+	color: rgba(255,255,255,.7);
 }
 .bottommenu {
 	color: rgba(12, 20, 30, .2);
@@ -4002,7 +3956,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 .res .thing .tagline .author.moderator {background-color: #00C934 !important;padding: 1px 4px;border-radius: 1px;}
 #header-bottom-right #userbarToggle + * {margin-left: 0 !important;}
 
-.res .srSep {color: rgba(255,255,255,0.45);}
+.res .srSep {color: rgba(255,255,255,.45);}
 
 .res #RESShortcutsViewport {margin-right:386px;}
 
@@ -4010,7 +3964,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 
 .res #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
 	background: none !important;
-	color: rgba(255, 255, 255, 0.4) !important;
+	color: rgba(255, 255, 255, .4) !important;
 	top: 2px !important;
 }
 
@@ -4032,7 +3986,7 @@ body.res #header-bottom-right {
 
 .res #userbarToggle {
 	background: none;
-	color: rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, .4);
 	border: none;
 	left: 8px;
 }
@@ -4064,7 +4018,7 @@ body.res #header-bottom-right {
 	margin: 24px 0 7px;
 	max-width: 98px;
 	overflow: hidden;
-	transition: max-width 0.35s ease-in-out;
+	transition: max-width .35s ease-in-out;
 }
 
 .res #REScommentNavToggle:hover {
@@ -4334,10 +4288,6 @@ button {
 	background: #9B9EA2;
 }
 
-body .btn, body button, .btn:hover, button:hover {
-	box-shadow: none;
-}
-
 /* Link color */
 .thing .title.loggedin.click, .thing .title.click, .md a, .wiki-page .wiki-page-content .md.wiki h4, a, 
 .wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title, 
@@ -4439,7 +4389,7 @@ body.res #search #searchexpando {
 
 /* Subscribed to subreddit */
 .subscriber .titlebox .fancy-toggle-button {
-	background: rgba(255,255,255,.5);
+	background: #F3F3F4;
 	transition: background .08s ease-in-out;
 }
 .res .subscriber .titlebox .fancy-toggle-button {
@@ -4447,7 +4397,7 @@ body.res #search #searchexpando {
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove {
-	color: #9B9EA2;
+	color: #7B90A3;
 }
 
 .subscriber .titlebox .fancy-toggle-button .active.remove:hover {
@@ -4568,10 +4518,6 @@ body.listing-page>.content {
 	padding: 0;
 }
 
-.hot-page.listing-page .stickied+.clearleft+.link:not(.stickied) {
-	border-radius: 1px 1px 0 0;
-}
-
 /* Set post flair */
 .flairselector {
 	background: #F5F5F6;
@@ -4586,32 +4532,10 @@ body.listing-page>.content {
 .listing-page .link, .listing-page .comment {
 	background: #F8F8F8;
 	padding: 16px 16px 12px 118px;
-	transition: box-shadow .1s ease-in-out;
-}
-
-.listing-page .link:nth-of-type(1), .listing-page .comment:nth-of-type(1) {
-	border-radius: 1px 1px 0 0;
 }
 
 .listing-page .sitetable .usertext .md {
 	max-width: none;
-}
-
-.listing-page .sitetable>.thing:nth-last-child(2) {
-	border-radius: 0 0 1px 1px;
-}
-
-.hot-page .stickied {
-	margin-bottom: 16px !important;
-}
-
-.hot-page .stickied+div+.stickied {
-	border-radius: 0 0 1px 1px;
-	margin-top: -16px;
-}
-
-.hot-page .stickied+div+.stickied:after {
-	display: none !important;
 }
 
 .thing.stickied.link .entry .tagline .userattrs {
@@ -4662,7 +4586,7 @@ body.listing-page>.content {
 }
 
 .md p {
-	margin-top: 0.75em;
+	margin-top: .75em;
 }
 
 /* Table inside a post */
@@ -4727,7 +4651,7 @@ body.listing-page>.content {
 }
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.md a[href^="#hero-"] {
@@ -4772,7 +4696,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 } 
 
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.md a[href^="#map-"] {
@@ -4827,7 +4751,7 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	width: 21px;
 }
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.md a[href^="#flag-"] {
@@ -4929,26 +4853,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding: 0;
 }
 
-/* To cram in Spam, Remove, Lock */
-.moderator .entry .buttons li, .moderator .entry .buttons li+li  {
-
-}
-
 .comments-page .entry form .usertext-edit.md-container, .comments-page .entry form .usertext-edit.md-container textarea {
 	width: 100% !important;
-}
-
-.commentarea .usertext-edit.md-container .md {
-	margin-top: 7px;
-}
-
-.res .RESSubscriptionButton {
-	background: none;
-	border: none;
-	color: #333;
-	cursor: default;
-	padding: 2px 4px;
-	text-transform: uppercase;
 }
 
 .panestack-title a.title-button {
@@ -4975,9 +4881,13 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	padding: 0 16px;
 }
 
+/* Change "Save" button to "Comment" */
 .usertext button.save {
-	font-size: 12px;
-	text-transform: capitalize;
+	font-size: 0;
+}
+.usertext button.save:before {
+	content: "Comment";
+	font-size: 13px;
 }
 
 .usertext button.cancel {
@@ -5007,8 +4917,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	border-radius: 1px 1px 0 0;
 }
 
-.comments-page .commentarea>.usertext {
-	padding-bottom: 8px !important;
+.commentarea>.usertext {
+	margin: 0;
 }
 
 .comments-page .link .title {
@@ -5084,9 +4994,9 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 }
 
 .side .titlebox .tagline a.flairselectbtn {
-	background: rgba(255,255,255,.5);
+	background: #F3F3F4;
 	border-radius: 1px;
-	color: #9B9EA2;
+	color: #7B90A3;
 	cursor: default;
 	font-size: 12px;
 	padding: 2px 8px;
@@ -5099,7 +5009,8 @@ only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2d
 	content: " Flair";
 }
 .side .titlebox .tagline a.flairselectbtn:hover {
-	opacity: .7;
+	background: #042E54;
+	color: #FFF;
 	text-decoration: none;
 }
 
@@ -5134,6 +5045,7 @@ body:not(.res) .comments-page .side .titlebox {
 .submit-page .roundfield, .submit-page .formtabs-content,
 body.submit-page .roundfield input:not([type=checkbox]),
 .submit-page .roundfield textarea {
+	max-width: 100%;
 	width: 100%
 }
 
@@ -5142,21 +5054,6 @@ body.submit-page .roundfield input:not([type=checkbox]),
 }
 .submit-page label[for=sendreplies]:first-letter {
 	text-transform: uppercase;
-}
-
-@media only screen and (min-device-width: 737px) {
-	.submit-page .submit_text.enabled.roundfield {
-		background: #FFF;
-		border-radius: 1px;
-		left: calc(50% + 195px);
-		position: absolute;
-		top: 245px;
-		width: 336px;
-	}
-
-	.submit-page .formtabs-content {
-		margin-top: 156px;
-	}
 }
 
 .submit-page .roundfield-content {
@@ -5194,18 +5091,44 @@ body.submit-page .roundfield input:not([type=checkbox]),
 }
 
 body #newlink-with-image-upload .image-upload-drop-target {
-	border: none;
-	border-radius: 2px;
+	background: #fdfdfd;
+	border: 1px solid #E8E8E9;
 }
 
-#newlink-with-image-upload .file-upload-button, #newlink-with-image-upload .file-upload-button:hover {
-	background: #555;
-	border-radius: 3px;
-	box-shadow: none;
+/* Submit page Choose file button */
+body #newlink-with-image-upload .file-upload-button {
+	font-size: 14px;
+	font-weight: normal;
+	padding-right: 18px;
+	text-transform: capitalize;
+	line-height: 24px;
+}
+
+#newlink-with-image-upload .file-upload-button {
+	cursor: default;
+}
+
+#newlink-with-image-upload .file-upload-button {
+	background: #B6B8BB;
+}
+#newlink-with-image-upload .file-upload-button:hover {
+	background: #042E54;
 }
 
 #newlink-with-image-upload .file-drop-label {
-	cursor: default;
+	color: #B6B8BB;
+	padding-left: 0;
+	pointer-events: none;
+}
+
+/* Icon on submit page Choose file button */
+#newlink-with-image-upload .file-upload-button .file-upload-icon {
+	transform: translateY(-2px);
+}
+
+/* Hide the tree image before to "Drop image here" on submit page.*/
+#new-link-image-input>div:first-of-type {
+	display: none;
 }
 
 .submit-page .usertext .bottom-area {
@@ -5216,6 +5139,10 @@ body #newlink-with-image-upload .image-upload-drop-target {
 
 body.submit-page .content input, .submit-page .content textarea {
 	padding-left: 16px;
+}
+
+body.submit-page .content input:not(:active), .submit-page .content textarea:not(:active) {
+	background: #F3F3F4;
 }
 
 .submit-page .roundfield label {
@@ -5432,7 +5359,7 @@ dt {
 	background: #333 url(%%commentbox-night%%) no-repeat;
 }
 /* Retina/HiDPI */
-@media only screen and (min--moz-device-pixel-ratio: 2),
+@media (min--moz-device-pixel-ratio: 2),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
 	.res-nightmode .commentarea>.usertext textarea:not(:focus) {
