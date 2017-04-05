@@ -799,13 +799,18 @@ body:not(.res) .expando-button {
 
 .link .entry .tagline a {
 	color: #85898E;
+}
+.listing-page .link .entry .tagline a {
 	vertical-align: bottom;
 }
 
 .link .entry .tagline time {
 	display: inline-block;
+}
+.listing-page .link .entry .tagline time {
 	vertical-align: bottom;
 }
+
 [lang^=en] .link:not(.promoted) .entry .tagline time:first-letter {
 	text-transform: uppercase;
 }
@@ -904,6 +909,7 @@ body:not(.res) .expando-button {
 	font-weight: normal;
 	margin: 2px 8px;
 	padding: 0;
+	text-transform: capitalize;
 }
 
 .entry .buttons li:not(.first) a {
@@ -951,19 +957,11 @@ body:not(.res) .expando-button {
 	white-space: nowrap;
 }
 
-/* Fade regular/non-moderator actions for moderators */
-.moderator .edit-usertext, .moderator .share a,
-.moderator .thing:not(.saved) .save-button a, .moderator .hide-button a,
-.moderator .give-gold-button a, .moderator .del-button a,
-.moderator .report-button a  {
-	opacity: .1;
-}
-
-.link:hover .entry li a:not(.comments) {
+.thing:hover .entry .buttons li a:not(.comments) {
 	opacity: .25;
 }
 
-.link .entry .buttons li a:hover {
+.thing .entry .buttons li a:hover {
 	opacity: 1;
 }
 
@@ -2005,7 +2003,7 @@ div.titlebox span.number:after {
 	background: none;
 }
 .comments-page .morelink {
-	top: 361px;
+	top: 364px;
 }
 .morelink a {
 	color: #042E54;
@@ -2046,7 +2044,7 @@ div.titlebox span.number:after {
 	z-index: 1;
 }
 .comments-page .submit-link:before {
-	top: 325px;
+	top: 328px;
 }
 
 /* The containing box */
@@ -2060,7 +2058,7 @@ div.titlebox span.number:after {
 	width: 320px;
 }
 .comments-page .submit-link:after {
-	top: 312px;
+	top: 315px;
 }
 
 /* Login form */
@@ -2671,7 +2669,6 @@ body:not(.loggedin) .commentarea .menuarea {
 
 .commentarea>.usertext textarea:focus {
 	background: #FFF;
-	border: 1px solid #1CBEF0;
 }
 
 .usertext .bottom-area {
@@ -2867,6 +2864,9 @@ body:not(.loggedin) .commentarea .menuarea {
 
 .comment .score, .comments-page .comment time {
 	margin-left: 2px;
+}
+
+.comment .score {
 	vertical-align: middle;
 }
 
@@ -2974,7 +2974,7 @@ body:not(.loggedin) .commentarea .menuarea {
 
 /* Sidebar stuff */
 .comments-page .side {
-	margin-top: 206px;
+	margin-top: 209px;
 }
 
 .linkinfo {
@@ -2989,7 +2989,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .comments-page .linkinfo .date {
-	color: #9B9EA2;
+	color: #85898e;
 	font-size: 13px;
 }
 .comments-page .linkinfo .date:first-letter {
@@ -2999,7 +2999,7 @@ body:not(.loggedin) .commentarea .menuarea {
 .comments-page .linkinfo .score {
 	color: #85898E;
 	font-size: 13px;
-	margin-top: 5px;
+	margin-top: 8px;
 }
 
 .linkinfo .score .number, .linkinfo .score .word {
@@ -4567,16 +4567,13 @@ body.listing-page>.content {
 
 /* Table inside a post */
 .md thead tr {
-	background: #85898E;
+	background: #9B9EA2;
 	border: none;
 	color: #FFF;
 }
 
-.md table tr {
-	border-bottom: 1px solid #F0F0F0;
-}
 .md table tr:nth-child(even) {
-	background: rgba(0,0,0,.02);
+	background: rgba(0,0,0,.03);
 }
 
 /* This is gross, but we don't care */
@@ -4853,6 +4850,8 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 }
 
 .comments-page .content>.sitetable .thing .midcol {
+	margin-left: 8px;
+	margin-top: -6px;
 	position: absolute;
 }
 
@@ -4871,6 +4870,7 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 	Anyway.. Move title & tagline to the right so they don't collide with the score/voting arrows: */
 .comments-page .content>.sitetable .thing p.title {
 	margin-left: 48px;
+	margin-top: -3px;
 }
 .comments-page .content>.sitetable .thing .tagline {
 	margin: 18px 0 0 48px;
