@@ -301,7 +301,7 @@ body:not(.loggedin) #header-bottom-right {
 	transition: background .12s ease-in-out;
 }
 .user .userkarma:hover {
-	background: rgba(255, 255, 255, .8);
+	background: #FFF;
 }
 
 #new_modmail {
@@ -3030,7 +3030,7 @@ body:not(.loggedin) .commentarea .menuarea {
 		border-radius: 1px;
 		right: calc(50% - 530px);
 		position: absolute;
-		top: 245px;
+		top: 238px;
 		width: 336px;
 	}
 }
@@ -3087,7 +3087,7 @@ form .spacer+.spacer {
 	width: 50%;
 }
 
-.submit-page #newlink.submit.content .tabmenu.formtab .selected a {
+.submit-page #newlink.submit.content .tabmenu.formtab .selected a, .submit-page #newlink.submit.content .tabmenu.formtab a:hover {
 	color: #0C141E;
 	line-height: 40px;
 }
@@ -3559,6 +3559,18 @@ pre {
 	pointer-events: none;
 }
 
+.md a[href="#team"] {
+	background: url(%%flairs-teams%%) no-repeat;
+	background-position: 0 -146px !important;
+	cursor: default;
+	display: inline-block;
+	font-size: 0;
+	height: 22px;
+	pointer-events: none;
+	vertical-align: middle;
+	width: 22px;
+}
+
 /* Individual team tags share same background-position/height/width as team flair icons below*/
 
 /* Team flairs */
@@ -3574,9 +3586,9 @@ pre {
 
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair-fan, .md a[href*="#team-"] {
+	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 123px 160px;
+		background-size: 123px 170px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -3729,14 +3741,14 @@ pre {
 	width: 36px
 }
 .flair-blank, .md a[href*="blank"] {
-	background-position: -89px -138px;
+	background-position: -88px -138px;
 	height: 21px;
 	width: 18px;
 }
 .flair-hammers, .md a[href*="hammers"] {
 	background-position: -70px -138px;
 	height: 21px;
-	width: 19px;
+	width: 18px;
 }
 .flair-laser-kittenz, .md a[href*="laser-kittenz"] {
 	background-position: -45px -84px;
@@ -4874,6 +4886,9 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 
 /* Comment page buttons */
 .usertext button {
+	background: none;
+	border: 1px solid #e8e8e9;
+	color: #0C141E;
 	font-size: 11px;
 	margin: 0 8px 8px 0;
 	padding: 0 16px;
@@ -4881,9 +4896,6 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 
 /* Change "Save" button to "Comment" */
 .usertext button.save {
-	background: none;
-	border: 1px solid #e8e8e9;
-	color: #0C141E;
 	font-size: 0;
 }
 .usertext button.save:before {
@@ -4891,19 +4903,10 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 	font-size: 13px;
 }
 
-.usertext button.save:hover {
+.usertext button:hover {
 	background: #042E54;
 	border-color: transparent;
 	color: #fff;
-}
-
-.usertext button.cancel {
-	background: #A9A9A9;
-	transition: background .1s ease-in-out;
-}
-
-.usertext button.cancel:hover {
-	background: #BBB;
 }
 
 .siteTable .usertext button {
@@ -5158,7 +5161,7 @@ body.submit-page .content input, .submit-page .content textarea {
 }
 
 body.submit-page .content input:not(:active), .submit-page .content textarea:not(:active) {
-	background: #F3F3F4;
+	background: #FDFDFD;
 }
 
 .submit-page .roundfield label {

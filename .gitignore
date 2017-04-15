@@ -2,6 +2,7 @@
 
 compiled
 dist
+build
 yarn.lock
 
 # Created by https://www.gitignore.io/api/osx,node
