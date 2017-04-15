@@ -284,10 +284,10 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 .beta-hint a {
+	background: url(%%spritesheet%%) -32px -18px no-repeat;
+	height: 16px;
 	margin-left: -16px;
 	width: 16px;
-	height: 16px;
-	background: url(%%spritesheet%%) -32px -18px no-repeat;
 }
 
 .user .userkarma {
@@ -614,7 +614,7 @@ body:not(.subscriber) .arrow:hover:after {
 	width: 82px;
 }
 .thumbnail.self, .thumbnail.spoiler {
-	background: #85898E url(%%spritesheet%%) -105px -57px;
+	background: #85898E url(%%thumbnails%%) -82px 0;
 	height: 100%; /* To override Reddit setting height */
 }
 
@@ -637,21 +637,21 @@ body:not(.subscriber) .arrow:hover:after {
 	display: none;
 }
 
-.over18.link .thumbnail { background: #757575 url(%%spritesheet%%) -162 -98px }
+.over18.link .thumbnail { background: #fb0b19 url(%%thumbnails%%) -164px -164px }
 
-.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #738491 url(%%spritesheet%%) -153px -113px }
-.linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler { background: #FFAB19 url(%%spritesheet%%) -153px -169px }
-.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #E53935 url(%%spritesheet%%) -153px -56px }
-.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #DC143C url(%%spritesheet%%) -209px 0 no-repeat }
-.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #B338C2 url(%%spritesheet%%) -209px -56px }
-.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #FF5500 url(%%spritesheet%%) -207px -112px }
-.linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #738491 }
-.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #673AB7 url(%%spritesheet%%) -209px -169px }
-.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%spritesheet%%) -105px 0 !important }
-.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097D2 url(%%spritesheet%%) -105px -57px }
+.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #85898e url(%%thumbnails%%) -82px -82px }
+.linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) 0 -82px }
+.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -164px 0 }
+.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) 0 -164px }
+.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) -82px -164px }
+.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -164px -82px }
+.linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #85898e }
+.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -82px -246px }
+.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%thumbnails%%) 0 0 !important }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -82px 0 }
 
 /*Generic link */
-.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: #85898E url(%%spritesheet%%) -105px -57px }
+.thumbnail.default, a.thumbnail[href*="reddit.com"] { background: #85898e url(%%thumbnails%%) 0 -82px }
 
 /* Submission Title */
 .link .title {
@@ -695,7 +695,7 @@ body:not(.res) .expando-button {
 	/*Must split color and image to allow background-position to take effect*/
 	background-color: transparent;
 	background-image: url(%%spritesheet%%) !important; 
-	background-size: 264px 224px !important;
+	background-size: 92px 203px !important;
 	cursor: default;
 	display: inline-block;
 	float: none;
@@ -2691,13 +2691,13 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select {
-	border: none;
 	color: #042E54;
 	order: 3;
 }
 
 .gold-accent.comment-visits-box {
 	background: none;
+	border: none;
 	margin: 6px 0 0;
 	padding: 0;
 }
@@ -2713,7 +2713,9 @@ body:not(.loggedin) .commentarea .menuarea {
 	-moz-appearance: none;
 	appearance: none;
 	background: #F5F6F6;
+	border-radius: 1px;background: none;
 	border-radius: 1px;
+	border: 1px solid #f5f6f6;
 	font-size: 12px;
 	margin: 0 0 0 2px;
 	padding: 2px 8px 4px;
@@ -3216,16 +3218,16 @@ form .spacer+.spacer {
 }
 
 .combined-search-page .search-submit-button {
-	position: relative;
-	left: -42px;
-	width: 32px;
+	background: url(%%spritesheet%%) -64px -96px;
+	border-radius: 50%;
+	box-shadow: none;
 	height: 32px;
+	left: -42px;
 	margin: 0;
 	padding: 0;
-	background: url(%%spritesheet%%) -64px -96px;
-	box-shadow: none;
-	border-radius: 50%;
-	transition: background-color .2s ease-in-out;
+	position: relative;
+	transition: background-color .1s ease-in-out;
+	width: 32px;
 }
 
 .combined-search-page .search-submit-button:hover {background-color: rgba(158,158,158,.2)}
