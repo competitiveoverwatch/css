@@ -115,7 +115,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 
 /* Header */
 #header {
-	background: #06233E /*url(%%header%%) 30% 0 / cover no-repeat*/;
+	background: #06233E; /*url(%%header%%) 30% 0 / cover no-repeat*/
 	background: linear-gradient(90deg, #07364F 0%, #062541 100%);
 	border: none;
 	height: 213px;
@@ -124,7 +124,7 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	#header {
-		background: #06233E /*url(%%header-2x%%) 30% 0 / cover no-repeat*/;
+		background: #06233E; /*url(%%header-2x%%) 30% 0 / cover no-repeat*/
 		background: linear-gradient(90deg, #07364F 0%, #062541 100%);
 	}
 }
@@ -643,7 +643,7 @@ body:not(.subscriber) .arrow:hover:after {
 
 .linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #85898e url(%%thumbnails%%) -82px -82px }
 .linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) 0 -82px }
-.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -164px 0 }
+.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -163px 0 }
 .linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) 0 -164px }
 .linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) -82px -164px }
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -164px -82px }
@@ -717,14 +717,14 @@ body:not(.res) .expando-button {
 	background-color: #98ABBA;
 }
 
-.expando-button.selftext.collapsed                  {background-position: 0 -46px}
-.expando-button.selftext.collapsed:hover            {background-position: -15px -46px}
+.expando-button.selftext.collapsed                  {background-position: .5px -46px}
+.expando-button.selftext.collapsed:hover            {background-position: -14.5px -46px}
 
 .expando-button.selftext.expanded {
-	background-position: -32px -46px;
+	background-position: -30px -46px;
 	margin-bottom: 0;
 }
-.expando-button.selftext.expanded:hover             {background-position: -48px -46px}
+.expando-button.selftext.expanded:hover             {background-position: -46px -46px}
 
 .expando-button.video.collapsed                     {background-position: -64px -46px !important}
 .expando-button.video.collapsed:hover               {background-position: -80px -46px !important}
@@ -909,7 +909,7 @@ body:not(.res) .expando-button {
 }
 
 .RESUserTagImage {
-	background-image: url(%%spritesheet%%) -32px -99px;
+	background: url(%%spritesheet%%) -32px -99px;
 	display: inline-block;
 	height: 10px;
 	margin-left: 2px;
@@ -946,6 +946,16 @@ body:not(.res) .expando-button {
 	text-transform: capitalize;
 }
 
+.entry .buttons li a {
+	color: #0c141e;
+	opacity: .15;
+	transition: .1s ease-in-out opacity;
+}
+.entry .buttons li a:hover {
+	opacity: .25;
+	text-decoration: none;
+}
+
 .entry .buttons li:not(.first) a {
 	cursor: default;
 }
@@ -979,9 +989,9 @@ body:not(.res) .expando-button {
 /* Comment reply link + post action button icons */
 .comment .flat-list li a[onclick*="reply"]:before, li .comments:before, .edit-usertext, .share a,
 .thing:not(.saved) .save-button a, .hide-button a, .give-gold-button a, .del-button a,
-.remove-button a:not(.yes):not(.no), a[data-event-action="spam"], .approve-button a,
-.report-button a,  .lock-button a, .marknsfw-button a, .spoiler-button a,
-.unspoiler-button a, .entry .flairselectbtn {
+body:not(.moderator) a[data-event-action="spam"], .approve-button a,
+.report-button a,  .lock-button a, body:not(.moderator) .marknsfw-button a, body:not(.moderator) .spoiler-button a,
+body:not(.moderator) .unspoiler-button a, .entry .flairselectbtn {
 	background: url(%%actions%%) no-repeat;
 	display: inline-block;
 	opacity: .15;
@@ -1003,9 +1013,9 @@ body:not(.res) .expando-button {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	li .comments:before, .edit-usertext, .share a,
 	.thing:not(.saved) .save-button a, .hide-button a,  .give-gold-button a, .del-button a,
-	.remove-button a:not(.yes):not(.no), a[data-event-action="spam"], .approve-button a,
-	.report-button a, .lock-button a, .marknsfw-button a, .spoiler-button a,
-	.unspoiler-button a, .entry .flairselectbtn {
+	body:not(.moderator) a[data-event-action="spam"], .approve-button a,
+	.report-button a, .lock-button a, body:not(.moderator) body:not(.moderator) .marknsfw-button a, body:not(.moderator) .spoiler-button a,
+	body:not(.moderator) .unspoiler-button a, .entry .flairselectbtn {
 		background: url(%%actions-2x%%);
 		background-size: 211px 36px;
 	}
@@ -1077,7 +1087,7 @@ body:not(.res) .expando-button {
 	background-position: -176px -18px;
 }
 
-.del-button a, .remove-button a:not(.yes):not(.no) {
+.del-button a {
 	background-position: -66px 0;
 	height: 16px;
 	width: 11px;
@@ -1087,7 +1097,7 @@ body:not(.res) .expando-button {
 	transition: none;
 }
 
-.del-button a:hover, .remove-button a:not(.yes):not(.no):hover {
+.del-button a:hover {
 	height: 18px;
 }
 
@@ -1095,19 +1105,15 @@ body:not(.res) .expando-button {
 .del-button a:hover {
 	background-position: -55px -16px;
 }
-/* Regular when removing */
-.remove-button a:not(.yes):not(.no):hover {
-	background-position: -66px -16px;
-}
 
-a[data-event-action="spam"] {
-	background-position: -77px 0;
-	height: 15px;
-	width: 18px;
+body:not(.moderator) a[data-event-action="spam"] {
+	background-position: -77px 0 !important;
+	height: 15px !important;
+	width: 18px !important;
 }
-a[data-event-action="spam"]:hover {
-	background-position: -77px -15px;
-	height: 16px;
+body:not(.moderator) a[data-event-action="spam"]:hover {
+	background-position: -77px -15px !important;
+	height: 16px !important;
 }
 
 .approve-button a {
@@ -1142,22 +1148,22 @@ a[data-event-action="spam"]:hover {
   25%, 75% { transform: translate3d(1px, 0, 0); transform:rotateZ(10deg); }
 }
 
-.marknsfw-button a {
+body:not(.moderator) .marknsfw-button a {
 	background-position: -122px 0;
 	height: 18px;
 	transition: none;
 	width: 18px;
 }
-.marknsfw-button a:hover {
+body:not(.moderator) .marknsfw-button a:hover {
 	background-position: -122px -18px;
 }
 
-.spoiler-button a, .unspoiler-button a {
+body:not(.moderator) .spoiler-button a, body:not(.moderator) .unspoiler-button a {
 	background-position: -140px 0;
 	height: 16px;
 	width: 16px;
 }
-.unspoiler-button a {
+body:not(.moderator) .unspoiler-button a {
 	background-position: -140px -16px;
 }
 .entry .flairselectbtn {
@@ -1279,13 +1285,7 @@ ul.report-reasons {
 }
 
 .thing.link.stickied .expando-button:hover {
-	background-color: #00C934 !important;
-	border-color: #00C934 !important;
-}
-
-/* Sticky Comment */
-.stickied.comment>.entry a {
-	color: #00C934 !important;
+	background-color: #00C934;
 }
 
 /* Ad */
@@ -1579,11 +1579,14 @@ body>.content .link.compressed .midcol {
 	transition: .25s ease-in-out;
 }
 
+.RES-keyNav-activeThing {
+	background: #FFF !important;
+}
+
+/* Highlight the entire post instead of just post's .entry */
 div.RES-keyNav-activeElement,
 div.commentarea div.RES-keyNav-activeElement.entry div.noncollapsed {
-	background: none;
-	padding-left: 8px !important;
-	border-left: 2px solid rgba(152, 171, 186, .3);
+	background: none !important;
 }
 
 div.commentarea div.RES-keyNav-activeElement .md {
@@ -2047,6 +2050,9 @@ div.titlebox span.number:after {
 .comments-page .morelink {
 	top: 364px;
 }
+.res .comments-page .morelink {
+	top: 387px;
+}
 .morelink a {
 	color: #042E54;
 	font: normal 14px/42px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -2088,6 +2094,9 @@ div.titlebox span.number:after {
 .comments-page .submit-link:before {
 	top: 328px;
 }
+.res .comments-page .submit-link:before {
+	top: 351px;
+}
 
 /* The containing box */
 .submit-link:after {
@@ -2101,6 +2110,9 @@ div.titlebox span.number:after {
 }
 .comments-page .submit-link:after {
 	top: 315px;
+}
+.res .comments-page .submit-link:after {
+	top: 338px;
 }
 
 /* Login form */
@@ -2595,10 +2607,8 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 
 .commentarea .panestack-title {
 	border-bottom: 0;
-	flex-grow: 1;
 	margin: 20px 0 0;
 	order: 2;
-	width: auto;
 }
 
 .commentarea .panestack-title .title {
@@ -2607,12 +2617,25 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 	text-transform: capitalize;
 }
 
+/* Increased specificity to override */
+body .RESSubscriptionButton {
+	border-radius: 1px;
+	color:#85898e;
+	cursor:default;
+	text-transform: capitalize ;
+}
+.RESSubscriptionButton .res-icon {
+	top: 0;
+}
+.RESSubscriptionButton:hover {
+	color: #0c141e;
+}
+
 .commentarea .menuarea {
 	font-size: 13px;
-	margin: 20px 0 0;
+	margin: 8px 0 4px;
 	order: 3;
 	text-transform: capitalize;
-	width: auto;
 }
 
 .comment-permalink-page .commentarea .menuarea {
@@ -2641,7 +2664,6 @@ body:not(.loggedin) .commentarea .menuarea {
 
 .drop-choices a.choice {
 	color: #9B9EA2;
-	display: inline-block;
 	padding: 8px 16px;
 	transition: none;
 }
@@ -2913,12 +2935,10 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .md blockquote {
-	background: rgba(0,0,0,.04);
-	border-radius: 1px;
-	border-left: 2px solid #EDF1F3;
-	color: #738491;
-	margin-left: 1px;
-	padding: 8px;
+	border-left: 2px solid #042e54;
+	color: inherit;
+	margin-left: 0;
+	padding: 4px 16px;
 }
 
 .md h1, .md h2 {
@@ -3973,7 +3993,12 @@ pre {
 }
 
 .res .link .tagline a.voteWeight {background-color: transparent !important;}
-.res .thing .tagline .author.moderator {background-color: #00C934 !important;padding: 1px 4px;border-radius: 1px;}
+.res .thing .tagline .author.moderator {
+	background-color: #00C934 !important;
+	border-radius: 1px;
+	font-weight: normal;
+	padding: 1px 4px;
+}
 #header-bottom-right #userbarToggle + * {margin-left: 0 !important;}
 
 .res .srSep {color: rgba(255,255,255,.45);}
@@ -4015,6 +4040,7 @@ body.res #header-bottom-right {
 
 .res #header-bottom-right .user .userkarma {
 	background: none;
+	font-weight: normal;
 	padding: 0;
 	transition: none;
 }
@@ -4033,11 +4059,10 @@ body.res #header-bottom-right {
 }
 
 .res #REScommentNavToggle {
-	color: #98ABBA;
+	color: #85898e;
 	height: 16px;
-	margin: 24px 0 7px;
+	margin: 24px 0 0;
 	max-width: 98px;
-	overflow: hidden;
 	transition: max-width .35s ease-in-out;
 }
 
@@ -4061,15 +4086,15 @@ body.res #header-bottom-right {
 .res .content .RESBigEditorPop {
 	background: none;
 	color: #AEBFCC;
-	font-weight: normal;
 	font: 10px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: inherit;
-	line-height: inherit;
-	margin-left: 6px;
 	padding: 0;
 }
 .res .content .RESBigEditorPop:hover {
-	color: #057ED6;
+	color: #0c141e;
+}
+.RESBigEditorPop .res-icon {
+	top: 0;
 }
 
 html.res-commentBoxes .comment {
@@ -4084,9 +4109,9 @@ html.res-commentBoxes .comment {
 .res .RESshortcutside, .res .RESDashboardToggle {
 	background: none;
 	border: none;
-	color: #9B9EA2;
+	color: #7b90a3;
 	cursor: default;
-	font-size: 13px;
+	font-size: inherit;
 	font-weight: normal;
 	margin: 0;
 	padding: 0 8px;
@@ -4094,7 +4119,7 @@ html.res-commentBoxes .comment {
 }
 
 .res .RESshortcutside:hover, .res .RESDashboardToggle:hover {
-	color: #057ED6;
+	color: #0097D2;
 }
 
 .res #progressIndicator {
@@ -4425,7 +4450,17 @@ body.res #search #searchexpando {
 }
 
 .side .titlebox .toggle {
+	color: #042e54;
+	font-size: 12px;
 	order: 2;
+}
+
+.res-sr-style-toggle {
+	padding: 0;
+}
+
+#res-style-checkbox + label {
+	margin-top: 2px;
 }
 
 .side .md .-blocks, .side .md .-lists, .side .md pre, .side .md blockquote, .side .md table, .side .md p, .side .md ul {
@@ -4574,6 +4609,7 @@ body.listing-page>.content {
 	margin-right: 4px;
 	max-width: none;
 	padding: 0;
+	vertical-align: top;
 }
 .content .linkflairlabel:after {
 	content: ": ";
@@ -4591,7 +4627,7 @@ body.listing-page>.content {
 	background: url(%%spritesheet%%) -96px -48px !important;
 }
 
-.expando {
+.listing-page .expando {
 	margin: 24px 0;
 }
 
@@ -5030,7 +5066,7 @@ body:not(.res) .comments-page .side .titlebox {
 	margin-top: -100px;
 }
 .res .comments-page .side .titlebox {
-	margin-top: -55px;
+	margin-top: 10px;
 }
 
 .comments-page .side .titlebox h1.redditname {
@@ -5039,6 +5075,14 @@ body:not(.res) .comments-page .side .titlebox {
 
 .linkinfo .shortlink {
 	font-size: 90%;
+	margin-top: 8px;
+}
+
+/* Add 'body' to increase specificity */
+body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
+	color: #85898e;
+	display: inline-block;
+	font-size: 13px;
 	margin-top: 8px;
 }
 

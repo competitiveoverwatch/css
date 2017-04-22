@@ -7,15 +7,18 @@
         "cssmin": "latest",
         "imagemin-cli": "latest",
         "npm-run-all": "latest",
+        "onchange": "latest",
         "shx": "latest"
     },
     "scripts": {
-        "css": "cssmin source/styles.css > build/build.css",
-        "postcss": "du -h build/build.css && shx cat build/build.css | copy-paste copy && shx echo",
+        "css": "cssmin src/styles.css > dist/main.css",
+        "postcss": "du -h dist/main.css && shx cat dist/main.css | copy-paste copy && shx echo",
 
-        "preimg": "shx rm -rf build/images && shx mkdir -p build/images",
-        "img": "imagemin 'source/images exported'/* -o build/images/",
-        "postimg": "du -h build/images",
+        "watch:css": "onchange 'src/styles.css' -- npm run css",
+
+        "preimg": "shx rm -rf dist/images && shx mkdir -p dist/images",
+        "img": "imagemin 'src/images exported'/* -o dist/images/",
+        "postimg": "du -h dist/images",
         
         "prebuild": "shx mkdir -p build",
         "build": "run-s -s css img && shx echo && chalk green '✔ Build complete'"
