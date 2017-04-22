@@ -109,6 +109,10 @@ body .btn, body button, .c-btn-primary, .wiki-page .wiki-page-content .wiki_butt
 
 .c-btn-primary:active { margin-top: 4px }
 
+.error {
+	color: #fb0b19;
+}
+
 /* Header */
 #header {
 	background: #06233E /*url(%%header%%) 30% 0 / cover no-repeat*/;
@@ -531,7 +535,7 @@ body >.content .link .rank, .rank-spacer {
 	font-size: 12px;
 	font-weight: normal;
 	line-height: 16px;
-	margin: 1px -100% 2px -100%;
+	margin: 2px -100% 1px -100%;
 	pointer-events: none;
 	text-align: center;
 }
@@ -620,13 +624,11 @@ body:not(.subscriber) .arrow:hover:after {
 
 .thing:not(.stickied) .thumbnail.outbound {
 	background: none !important;
-	margin: 2px 6px 0;
-	width: 80px;
 }
 
 .thumbnail img {
-	min-height: 56px;
-	max-width: 102px;
+	min-height: 100%;
+	width: auto;
 }
 
 .stickied .thumbnail img {
@@ -817,6 +819,13 @@ body:not(.res) .expando-button {
 	visibility: visible;
 }
 
+.userattrs {
+	visibility: hidden;
+}
+.userattrs * {
+	visibility: visible;
+}
+
 .link .entry .tagline a {
 	color: #85898E;
 }
@@ -866,10 +875,7 @@ body:not(.res) .expando-button {
 	margin-right: inherit;
 }
 
-.link .entry .tagline .userattrs {
-	visibility: hidden
-}
-.link .entry .tagline .userattrs a {
+.userattrs a {
 	border-radius: 1px;
 	color: #FFF !important;
 	cursor: help;
@@ -880,11 +886,12 @@ body:not(.res) .expando-button {
 	visibility: visible;
 }
 
-.link .entry .tagline .userattrs a.moderator {
-	background: #00C934
+.userattrs a.moderator {
+	background: #00C934;
+	color: #FFF;
 }
 
-.tagline .userattrs .cakeday, .search-result-meta .userattrs .cakeday {
+.userattrs .cakeday {
 	background: none;
 	display: inline;
 	height: auto;
@@ -1093,12 +1100,12 @@ body:not(.res) .expando-button {
 	background-position: -66px -16px;
 }
 
-#siteTable a[data-event-action="spam"] {
+a[data-event-action="spam"] {
 	background-position: -77px 0;
 	height: 15px;
 	width: 18px;
 }
-#siteTable a[data-event-action="spam"]:hover {
+a[data-event-action="spam"]:hover {
 	background-position: -77px -15px;
 	height: 16px;
 }
@@ -1453,17 +1460,21 @@ body>.content .link.compressed .midcol {
 	display: none;
 }
 
-.flairselector .linkflair-Discussion .linkflairlabel { color: #24A0ED }
-.flairselector .linkflair-PSA .linkflairlabel { color: #E53935 }
-.flairselector .linkflair-eSports .linkflairlabel { color: #3949AB }
-.flairselector .linkflair-Megathread .linkflairlabel { color: #00C934 }
-.flairselector .linkflair-Event .linkflairlabel { color: #DC143C }
-.flairselector .linkflair-Guide .linkflairlabel { color: #B338C2 }
 .flairselector .linkflair-Question .linkflairlabel,
-.flairselector .linkflair-SubredditMeta .linkflairlabel { color: #738491 }
-.flairselector .linkflair-Casting .linkflairlabel { color: #673AB7 }
-.flairselector .linkflair-Video .linkflairlabel { color: #FF5500 }
-.flairselector .linkflair-AdviceTips .linkflairlabel { color: #FFAB19 }
+.flairselector .linkflair-SubredditMeta .linkflairlabel,
+.flairselector .linkflair-Discussion .linkflairlabel { color: #85898e }
+
+.flairselector .linkflair-PSA .linkflairlabel { color: #fb0b19 }
+
+.flairselector .linkflair-eSports .linkflairlabel,
+.flairselector .linkflair-Video .linkflairlabel,
+.flairselector .linkflair-Event .linkflairlabel { color: #0097d2 }
+
+.flairselector .linkflair-Megathread .linkflairlabel { color: #00c934 }
+.flairselector .linkflair-Casting .linkflairlabel { color: #042e54 }
+
+.flairselector .linkflair-Guide .linkflairlabel,
+.flairselector .linkflair-AdviceTips .linkflairlabel { color: #fd972f }
 
 .flairselector form {
 	border: none;
@@ -2177,54 +2188,47 @@ div.titlebox span.number:after {
 	margin-left: -16px;
 }
 
-/* Links for Twitter and Discord */
-.side .md h2, .side .md h3 {
+/* Twitter link */
+.side .md h2 {
 	margin: 0 0 2px;
 }
 
-.side .md h2 a, .side .md h3 a {
+.side .md h2 a {
+	background: #1CBEF0;
 	border-radius: 1px;
-	box-shadow: none;
 	color: #FFF;
 	display: inline-block;
 	font: 13px/30px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 30px;
 	margin: 0;
 	padding-left: 16px;
-	transition: opacity .1s ease-in-out;
+	transition: background .08s ease-in-out;
 	width: 100%;
 }
 
-.side .md h2 a:hover, .side .md h3 a:hover {
+.side .md h2 a:hover {
+	background: #042e54;
 	text-decoration: none;
 }
 
-.side .md h2 a:visited, .side .md h3 a:visited {
+.side .md h2 a:visited {
 	color: #FFF !important;
 }
 
-.side .md h2 a:before, .side .md h3 a:before {
+.side .md h2 a:before {
+	background: url(%%sidebar-twitter-1x%%);
 	content: "";
 	display: inline-block;
-	margin-right: 10px;
-	vertical-align: middle;
-}
-
-/* Twitter */
-.side .md h3 a {
-	background: #1CBEF0;
-	transition: none;
-}
-.side .md h3 a:before {
-	background: url(%%sidebar-twitter-1x%%);
 	height: 13px;
+	margin-right: 10px;
 	margin: -3px 8px 0 -2px;
+	vertical-align: middle;
 	width: 16px;
 }
 
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.side .md h3 a:before {
+	.side .md h2 a:before {
 		background: url(%%sidebar-twitter-2x%%);
 		background-size: 16px 13px;
 	}
@@ -2288,7 +2292,7 @@ div.titlebox span.number:after {
 
 /* Live badge in event title link */
 .side .md h4 a strong {
-	color: #FF000F;
+	color: #FF000F !important; /* Make sure colour doesn't change on hover */
 	font-size: 14px;
 	font-weight: normal;
 }
@@ -2605,7 +2609,7 @@ body:not(.listing-page) .side .md>blockquote:nth-of-type(2)  {
 
 .commentarea .menuarea {
 	font-size: 13px;
-	margin: 12px 0 0;
+	margin: 20px 0 0;
 	order: 3;
 	text-transform: capitalize;
 	width: auto;
@@ -2637,8 +2641,13 @@ body:not(.loggedin) .commentarea .menuarea {
 
 .drop-choices a.choice {
 	color: #9B9EA2;
+	display: inline-block;
 	padding: 8px 16px;
 	transition: none;
+}
+
+.drop-choices a.choice:first-letter {
+	text-transform: uppercase;
 }
 
 .drop-choices form:last-of-type a.choice {
@@ -2675,6 +2684,7 @@ body:not(.loggedin) .commentarea .menuarea {
 	height: auto;
 	max-width: 100%;
 	transition: min-height .1s ease-in-out;
+	width: 100% !important;
 }
 
 .commentarea>.usertext textarea:focus {
@@ -2691,7 +2701,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select {
-	color: #042E54;
+	color: #85898e;
 	order: 3;
 }
 
@@ -2745,7 +2755,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .commentarea .thing {
-	margin: 0 0 12px;
+	margin: 16px 0;
 }
 
 .commentarea .child .thing {
@@ -2783,7 +2793,7 @@ body:not(.loggedin) .commentarea .menuarea {
 }
 
 .comments-page .comment .expand {
-	background: rgba(0, 0, 0, .05);
+	background: #F0F0F1;
 	border-radius: 1px 0 0 1px;
 	bottom: 0;
 	cursor: default;
@@ -2791,17 +2801,18 @@ body:not(.loggedin) .commentarea .menuarea {
 	left: 0;
 	position: absolute;
 	top: 0;
-	transition: background .06s ease-in-out;
-	width: 16px;
+	transition: background .04s ease-in-out;
+	width: 8px;
 }
 
 .comments-page .comment .expand:hover {
-	background: #555;
+	background: #85898E;
 	color: #FFF;
 	text-decoration: none;
 }
 
 .commentarea>.sitetable>.comment {
+	padding-left: 12px;
 	position: relative;
 }
 
@@ -2846,7 +2857,11 @@ body:not(.loggedin) .commentarea .menuarea {
 	text-decoration: none;
 }
 
-.tagline .moderator, .green {
+.submitter {
+	font-weight: bold;
+}
+
+.author.moderator, .green {
 	color: #00C934 !important;
 }
 
@@ -2961,9 +2976,12 @@ body:not(.loggedin) .commentarea .menuarea {
 	text-transform: capitalize;
 }
 .morecomments a {
-	color: #738491;
+	color: #85898E;
 	font-weight: normal !important;
 	text-transform: capitalize;
+}
+.morecomments .gray {
+	color: #85898E;
 }
 
 /* Post sharing */
@@ -3590,7 +3608,7 @@ pre {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 123px 170px;
+		background-size: 123px 182px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -3656,6 +3674,7 @@ pre {
 }
 .flair-liquid, .md a[href*="liquid"] {
 	background-position: -68px -63px;
+	height: 24px;
 }
 .flair-lunatic-hai, .md a[href*="lunatic-hai"] {
 	background-position: 0 -89px;
@@ -3664,7 +3683,6 @@ pre {
 .flair-faze, .md a[href*="faze"] {
 	background-position: -21px -79px;
 	height: 15px;
-	width: 22px;
 }
 .flair-freecs-blue, .md a[href*="freecs-blue"] {
 	background-position: -66px -90px;
@@ -3691,7 +3709,6 @@ pre {
 .flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] {
 	background-position: -45px -104px;
 	height: 17px;
-	width: 22px;
 }
 .flair-ldlc, .md a[href*="ldlc"] {
 	background-position: -67px -114px;
@@ -3743,7 +3760,7 @@ pre {
 	width: 36px
 }
 .flair-blank, .md a[href*="blank"] {
-	background-position: -88px -138px;
+	background-position: -89px -138px;
 	height: 21px;
 	width: 18px;
 }
@@ -3755,6 +3772,19 @@ pre {
 .flair-laser-kittenz, .md a[href*="laser-kittenz"] {
 	background-position: -45px -84px;
 	height: 19px;
+	width: 21px;
+}
+.flair-movistar-riders, .md a[href*="movistar-riders"] {
+	background-position: -22px -155px;
+	height: 26px;
+}
+.flair-gamersorigin, .md a[href*="gamersorigin"] {
+	background-position: -45px -154px;
+	width: 21px;
+}
+.flair-brasil-gaming-house, .md a[href*="brasil-gaming-house"] {
+	background-position: -67px -160px;
+	height: 21px;
 	width: 21px;
 }
 
@@ -4201,7 +4231,7 @@ html.res-commentBoxes .comment {
 }
 
 /* Common backgrounds */
-body.other-discussions-page>.content, .comments-page .link, .commentarea>.sitetable>.comment, #images, .combined-search-page>.content, 
+body.other-discussions-page>.content, .comments-page .link, #images, .combined-search-page>.content, 
 .stylesheet-customize-container .pretty-form, .side .sidecontentbox, .account-activity-box, .side .titlebox, #previoussearch #moresearchinfo,
 .wiki-page .wiki-page-content, .linefield {
 	background: #FFF;
@@ -4479,7 +4509,7 @@ body.res #search #searchexpando {
 }
 
 .listing-page .menuarea {
-	background: #f8f8f8;
+	background: #FFF;
 	border: none;
 	border-radius: 1px;
 	margin: 0 0 16px;
@@ -4841,6 +4871,7 @@ body.listing-page>.content {
 }
 
 .panestack-title a.title-button {
+	font-size: 13px;
 	text-transform: uppercase;
 }
 
@@ -4916,7 +4947,6 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 }
 
 .comments-page .error {
-	color: #FF000F;
 	font-size: 12px;
 }
 
@@ -5005,6 +5035,7 @@ Reddit create two #siteTable elements for some reason (unique id tags & names an
 }
 
 .new-comment .usertext-body {
+	background: rgba(0, 144, 201, .12);
 	border: none;
 	border-radius: 1px;
 	margin: 0;
@@ -5307,20 +5338,6 @@ dt {
 
 .combined-search-page .search-result a.author {
 	margin-right: 0;
-}
-
-.search-result .userattrs {
-	visibility: hidden;
-}
-
-.search-result .userattrs a.moderator {
-	background: #00C934;
-	border-radius: 2px;
-	color: #FFF;
-	font-weight: bold;
-	font-size: 11px;
-	padding: 0 3px;
-	visibility: visible;
 }
 
 .combined-search-page .search-result .search-result-meta span:last-of-type {
