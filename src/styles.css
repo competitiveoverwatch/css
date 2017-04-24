@@ -56,6 +56,10 @@ button {
 	color: #FF000F;
 }
 
+.error:first-letter, .status:first-letter {
+	text-transform: uppercase;
+}
+
 /* Header */
 #header {
 	background: #06233E; /*url(%%header%%) 30% 0 / cover no-repeat*/
@@ -457,8 +461,8 @@ a#sr-more-link {
 
 /* Sidebar */
 .side {
-	background: none;
-	margin: 110px 32px 0 0; /* Top margin to account for submit box absolute position */
+	background: #FAFAFA;
+	margin: 123px 32px 0 0; /* Top margin to account for submit box absolute position */
 	padding: 0 16px;
 	width: 320px;
 }
@@ -1129,7 +1133,7 @@ body:not(.listing-page) .side .md>ol {
 
 /* Message the moderators */
 .sidecontentbox a.helplink {
-	background: #F3F3F4;
+	background: #FFF;
 	border-radius: 1px;
 	color: #9B9EA2;
 	display: block;
@@ -1164,7 +1168,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .account-activity-box a {
-	background: #F3F3F4;
+	background: #FFF;
 	border-radius: 1px;
 	color: #9B9EA2;
 	display: inline-block;
@@ -2499,10 +2503,75 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 }
 
 /* Submit */
+.submit-page #header {
+	height: 160px;
+}
+
+.submit-page #header-bottom-left {
+	background: none;
+}
+
+/* Hide the "REDDIT" navigation bar item */
+.submit-page #header-img-a {
+	display: none;
+}
 
 /* Apparently Reddit nest <form class="content".. inside <div class="content" */
 .submit-page>.content {
-	margin: 0 auto;
+	margin: 0 auto 64px;
+}
+
+ul.tabmenu.formtab {
+	background: #FFF;
+	font-size: 18px;
+	padding: 0;
+	width: 60%;
+}
+
+ul.tabmenu.formtab:before, ul.tabmenu.formtab:after {
+	color: #0C141E;
+	text-transform: none;
+}
+ul.tabmenu.formtab:before {
+	content: "Submit a ";
+	margin-left: 16px;
+}
+
+ul.tabmenu.formtab li {
+	display: inline;
+}
+
+ul.tabmenu.formtab li:first-child:after {
+	content: " / ";
+}
+
+ul.tabmenu.formtab:after {
+	content: " Post";
+}
+
+.tabmenu.formtab a {
+	border: none;
+	color: #8196A9;
+	opacity: 1;
+	padding: 0;
+	text-transform: capitalize;
+	vertical-align: baseline;
+}
+
+.tabmenu.formtab a:hover {
+	color: #0097D2;
+}
+
+.tabmenu.formtab .selected a {
+	background: none;
+	color: inherit;
+	font-size: inherit;
+}
+
+.submit-page>.content>.content {
+	margin: 16px auto;
+	position: relative; /* To position requirements text box at top right */
+	width: 1000px;
 }
 
 .submit-page .side {
@@ -2510,18 +2579,47 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 }
 
 /* Hide "Submit to.." heading */
-.submit-page h1 {
+.submit-page>.content>h1  {
 	display: none;
 }
 
 .formtabs-content {
 	border: none;
 	padding: 0;
+	width: 100%;
+}
+
+.submit-page .title {
+	font-size: 16px;
+	text-transform: capitalize;
+}
+.submit-page .title:after {
+	content: ":";
+}
+
+/* Make sure URL is uppercased */
+#url-field .title {
+	text-transform: uppercase;
+}
+
+#image-field .title {
+	display: none;
 }
 
 .roundfield {
 	background: none;
 	padding: 0;
+	width: 100%;
+}
+
+/* Copy and override Reddit's exact selectors */
+.roundfield textarea,
+.roundfield input[type=text],
+.roundfield input[type=url],
+.roundfield input[type=password],
+.roundfield input[type=number],
+#compose-message .roundfield select {
+	border: 1px solid #E8E8E9;
 	width: 100%;
 }
 
@@ -2540,6 +2638,48 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 	transform: translateY(-2px);
 }
 
+body #newlink-with-image-upload .image-upload-drop-target {
+	background: #fdfdfd;
+	border: 1px solid #E8E8E9;
+}
+
+/* Submit page Choose file button */
+body #newlink-with-image-upload .file-upload-button {
+	border-bottom: none;
+	border-radius: 1px;
+	font-size: 14px;
+	font-weight: normal;
+	padding-right: 18px;
+	text-transform: capitalize;
+	line-height: 24px;
+}
+
+#newlink-with-image-upload .file-upload-button {
+	cursor: default;
+}
+
+#newlink-with-image-upload .file-upload-button {
+	background: #B6B8BB;
+}
+#newlink-with-image-upload .file-upload-button:hover {
+	background: #042E54;
+}
+
+.submit-page .c-btn-primary:active, .submit-page .c-btn-primary.active {
+	margin: 0;
+}
+
+#newlink-with-image-upload .file-drop-label {
+	color: #B6B8BB;
+	padding-left: 0;
+	pointer-events: none;
+}
+
+/* Icon on submit page Choose file button */
+#newlink-with-image-upload .file-upload-button .file-upload-icon {
+	transform: translateY(-2px);
+}
+
 /* Hide the tree image before to "Drop image here" on submit page.*/
 #new-link-image-input>div:first-of-type {
 	display: none;
@@ -2550,13 +2690,99 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 	display: none;
 }
 
+.submit-page form .spacer+.spacer {
+	margin: 0;
+}
+
+.formtabs-content>div {
+	display: inline-block;
+}
+
+#newlink-with-image-upload {
+	background: #FFF;
+	padding: 16px;
+	width: 60%;
+}
+
+/* Submission requirements text */
+.submit_text h1 {
+	display: none;
+}
+
+#newlink-with-image-upload + div + div {
+	background: #FFF;
+	margin-left: 16px;
+	padding: 16px;
+	position: absolute;
+	top: 0;
+	width: calc(40% - 16px);
+}
+
+#newlink-with-image-upload + div + div ul {
+	padding-left: 0;
+}
+
+/* Send replies to my inbox container */
+.formtabs-content>div:nth-last-of-type(2) {
+	background: #FFF;
+	border-radius: 0;
+	display: block;
+	padding: 0 16px 16px;
+	width: 60%;
+}
+
 /* Hide the title of the box which has 'Send replies to my inbox' */
 .formtabs-content>div:nth-last-of-type(2) .title {
 	display: none;
 }
 /* ..and shuffle checkbox up */
 .formtabs-content>div:nth-last-of-type(2) .roundfield-content {
+	font-size: 15px;
 	margin: -6px 0 -2px;
+}
+
+label[for="sendreplies"] {
+	display: inline-block;
+}
+
+label[for="sendreplies"]:first-letter {
+	text-transform: uppercase;
+}
+
+#items-required {
+	display: none;
+}
+
+.content.submit .info-notice {
+	background: #FFF;
+	border-radius: 0;
+	border: 0;
+	margin-top: -16px;
+	padding-left: 16px;
+	width: 60%;
+}
+
+.content.submit .info-notice:first-letter {
+	text-transform: uppercase;
+}
+
+.content.submit .info-notice a {
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.content.submit .info-notice a:hover {
+	text-decoration: underline;
+}
+
+.submit-page button {
+	border-radius: 1px;
+	font-size: 15px;
+	padding: 8px 32px;
+}
+
+.submit-page button:after {
+	content: " Post";
 }
 
 /* Footer */
