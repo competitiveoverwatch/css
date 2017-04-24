@@ -166,7 +166,8 @@ button {
 }
 
 #sr-header-area .drop-choices a.choice:hover {
-	color: #OC141E;
+	background: #042E54;
+	color: #FFF;
 }
 
 #sr-header-area .drop-choices .choice.bottom-option {
@@ -1049,7 +1050,7 @@ body:not(.listing-page) .side .md>ol {
 }
 
 .side .md>ol li a:hover {
-	background: #85898E;
+	background: #042E54;
 	color: #FFF;
 	text-decoration: none;
 }
@@ -1294,6 +1295,7 @@ body:not(.res) .expando-button {
 	height: 100%;
 	left: 0;
 	margin: 0;
+	max-height: 84px;
 	position: absolute;
 	top: 0;
 	width: 82px;
@@ -1502,12 +1504,13 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 .linkflairlabel {
 	background: none;
 	border: none;
-	color: inherit;
+	color: #6A6F75; /* 0C141E, 60% opacity */
 	font-size: inherit;
 	font-weight: normal;
 	margin-right: 4px;
 	max-width: none;
 	padding: 0;
+	pointer-events: none;
 	vertical-align: top;
 }
 .content .linkflairlabel:after {
@@ -2253,11 +2256,6 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 	padding-top: 14px;
 }
 
-/* Hide post thumbnails on comments pages */
-.comments-page .thumbnail {
-	display: none;
-}
-
 .comments-page .expando {
 	margin: 32px 0 0 -82px;
 	padding: 0;
@@ -2551,21 +2549,47 @@ ul.tabmenu.formtab:after {
 
 .tabmenu.formtab a {
 	border: none;
-	color: #8196A9;
+	color: #B6B8BB;
 	opacity: 1;
 	padding: 0;
+	position: relative;
 	text-transform: capitalize;
 	vertical-align: baseline;
 }
 
+.tabmenu.formtab a:before {
+	background: #B6B8BB;
+	content: "";
+	display: inline-block;
+	height: 2px;
+	left: 0;
+	opacity: 1;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: scaleX(1);
+	transform-origin: left center;
+	transition: background .3s ease-in-out, opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+
 .tabmenu.formtab a:hover {
-	color: #0097D2;
+	color: #042E54;
+}
+
+.tabmenu.formtab a:hover:before {
+	background: #042E54;
+	opacity: 0;
+	transform: scaleX(0);
 }
 
 .tabmenu.formtab .selected a {
 	background: none;
 	color: inherit;
 	font-size: inherit;
+}
+
+.tabmenu.formtab .selected a:before {
+	display: none;
 }
 
 .submit-page>.content>.content {
