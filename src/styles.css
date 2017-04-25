@@ -1327,10 +1327,15 @@ body:not(.res) .expando-button {
 	display: none;
 }
 .expando-button {
-	opacity: .15;
+	opacity: 0;
 	transition: .1s opacity ease-in-out;
 }
-.expando-button:hover {
+
+.thing:hover .expando-button {
+	opacity: .6;
+}
+
+.thing:hover .expando-butto:hover, .expando-button:hover {
 	cursor: default !important;
 	opacity: 1;
 }
@@ -1405,6 +1410,14 @@ body:not(.res) .expando-button {
 
 .tagline .moderator, .green, .search-result-meta .moderator, .tagline .stickied-tagline, .search-result-meta .stickied-tagline {
 	color: #00C934;
+}
+
+/* `body` and `!important` required, 'cause RES. */
+body.res-userHighlight .tagline .author.moderator {
+	background: #00C934 !important;
+	border-radius: 1px;
+	font-weight: normal;
+	padding: 0 3px;
 }
 
 /* "Announcement" text */
@@ -2290,13 +2303,17 @@ body .flairselector li:hover {
 
 /* RES L+C */
 .res .redditSingleClick:after {
-	color: #042E54;
+	color: #81858a;
 	font-weight: normal;
-	opacity: .15;
+	opacity: 0;
 	transition: opacity .1s ease-in-out;
 }
 
-.res .redditSingleClick:hover:after {
+.thing:hover .redditSingleClick:after {
+	opacity: .15;
+}
+
+.res .redditSingleClick:hover:after, .thing:hover .redditSingleClick:hover:after {
 	opacity: 1;
 }
 
@@ -2319,6 +2336,14 @@ body .flairselector li:hover {
 	background: #FFF;
 	border-radius: 1px;
 	padding-bottom: 32px;
+}
+
+body .RES-keyNav-activeThing {
+	background: #F0F3FC;
+}
+
+body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
+	background: none !important;
 }
 
 .comments-page>.content>#siteTable .thing {
@@ -2513,6 +2538,19 @@ body .flairselector li:hover {
 	text-transform: capitalize;
 }
 
+/* RES subscribe button, `body` to increase specificity */
+body.RESSubscriptionButton {
+	border-color: #9b9ea2;
+	border-radius: 1px;
+	color: #9b9ea2;
+	cursor: default;
+}
+
+body.RESSubscriptionButton:hover {
+	border-color: #042E54;
+	color: #042E54;
+}
+
 .commentarea .menuarea {
 	color: #9B9EA2;
 	font-size: 13px;
@@ -2552,6 +2590,14 @@ body .flairselector li:hover {
 	text-decoration: none;
 }
 
+/* RES Navigate by.. */
+#REScommentNavToggle>span {
+	margin-right: 8px;
+}
+
+body .commentNavSortType {
+	font-weight: normal;
+}
 
 /* Main comment box */
 .commentarea .usertext-edit {
@@ -2721,6 +2767,10 @@ body .flairselector li:hover {
 	margin-top: 209px;
 }
 
+.res .comments-page .side {
+	margin-top: 232px;
+}
+
 .linkinfo {
 	background: #FFF;
 	border-radius: 1px;
@@ -2732,15 +2782,15 @@ body .flairselector li:hover {
 	width: 320px;
 }
 
-.comments-page .linkinfo .date {
+.linkinfo .date {
 	color: #85898e;
 	font-size: 13px;
 }
-.comments-page .linkinfo .date:first-letter {
+.linkinfo .date:first-letter {
 	text-transform: capitalize;
 }
 
-.comments-page .linkinfo .score {
+.linkinfo .score {
 	color: #85898E;
 	font-size: 13px;
 	margin-top: 8px;
@@ -2751,8 +2801,19 @@ body .flairselector li:hover {
 	font-weight: normal;
 }
 
-.comments-page .side .linkinfo .shortlink {
+.comments-page .linkinfo .shortlink {
 	display: none;
+}
+
+.res-voteEnhancements-estimatePostVotes .linkinfo .score {
+	margin-bottom: 8px;
+}
+
+/* Add 'body' to increase specificity */
+body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
+	color: #85898e;
+	display: inline-block;
+	font-size: 13px;
 }
 
 /* Reporting Comment */
