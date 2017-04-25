@@ -1877,7 +1877,7 @@ body .flairselector li:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 123px 182px;
+		background-size: 156px 182px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -1967,7 +1967,7 @@ body .flairselector li:hover {
 	height: 21px;
 	width: 21px;
 }
-.flair-luxury-watch-red, .md a[href*="luxury-watch-red"] {
+.flair-luxury-watch-red, .md a[href*="luxury-watch-red"], .flair-luxury-watch-blue, .md a[href*="luxury-watch-blue"] {
 	background-position: 0 -110px;
 	height: 20px;
 }
@@ -2055,6 +2055,53 @@ body .flairselector li:hover {
 	background-position: -67px -160px;
 	height: 21px;
 	width: 21px;
+}
+.flair-denial, .md a[href*="denial"] {
+	background-position: -115px 0;
+	height: 16px;
+	width: 25px;
+}
+.flair-evil-geniuses, .md a[href*="evilgeniuses"] {
+	background-position: -117px -17px;
+	height: 16px;
+	width: 24px;
+}
+.flair-wnv, .md a[href*="wnv"] {
+	background-position: -118px -35px;
+	height: 15px;
+	width: 35px;
+}
+.flair-splyce, .md a[href*="splyce"] {
+	background-position: -67px -160px;
+}
+.flair-scylla, .md a[href*="scylla"] {
+	background-position: -123px -73px;
+	height: 24px;
+	width: 20px;
+}
+.flair-red-reserve, .md a[href*="red-reserve"] {
+	background-position: -89px -159px;
+	height: 11px;
+	width: 45px;
+}
+.flair-vivis-adventure, .md a[href*="vivis-adventure"] {
+	background-position: -107px -141px;
+	height: 18px;
+	width: 42px;
+}
+.flair-singularity-ninjas, .md a[href*="singularity-ninjas"] {
+	background-position: -119px -97px;
+	height: 23px;
+	width: 23px;
+}
+.flair-envision, .md a[href*="envision"] {
+	background-position: -113px -121px;
+	height: 15px;
+	width: 28px;
+}
+.flair-east-wind, .md a[href*="east-wind"] {
+	background-position: -135px -160px;
+	width: 20px;
 }
 
 /* Small team and flag icons */
@@ -2350,47 +2397,29 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	position: relative;
 }
 
-/* Coloured bar */
-.comments-page>.content>#siteTable .thing.self:before {
-	animation: .8s ease-in-out .05s comments-page-bar forwards;
-	/* background: linear-gradient(90deg, #00c934 12%, #FFF 300%); */
-	border-radius: 1px 1px 0 0;
-	content: "";
-	height: 92px;
-	position: absolute;
-	top: 0;
-	z-index: 0;
-}
-
-@keyframes comments-page-bar {
-	0% { width: 84px; }
-	100% { width: 100%; }
-}
-
-.thing.self:before,
-.linkflair-Question.thing.self:before,
-.linkflair-SubredditMeta.thing.self:before { background: #85898e;}
-
-.over18.thing.self:before,
-.linkflair-PSA.thing.self:before { background: #fb0b19 }
-
-.linkflair-AdviceTips.thing.self:before,
-.linkflair-Guide.thing.self:before { background: #fd972f }
-
-.linkflair-Event.thing.self:before,
-.linkflair-Video.thing.self:before,
-.linkflair-eSports.thing.self:before { background: #0097d2 }
-
-.linkflair-Casting.thing.self:before { background: #042e54 }
-.linkflair-Megathread.thing.self:before { background: #00C934 }
-
-.comments-page .thumbnail {
+.comments-page>.content>#siteTable .thumbnail {
 	left: 16px;
-	top: 4px;
+	top: 16px;
 }
 
-.comments-page .self .title .linkflairlabel {
-	color: rgba(255,255,255,.8);
+.linkflair-Question p.title,
+.linkflair-SubredditMeta p.title { color: #85898e;}
+
+.over18 p.title,
+.linkflair-PSA p.title { color: #fb0b19 }
+
+.linkflair-AdviceTips p.title,
+.linkflair-Guide p.title { color: #fd972f }
+
+.linkflair-Event p.title,
+.linkflair-Video p.title,
+.linkflair-eSports p.title { color: #0097d2 }
+
+.linkflair-Casting p.title { color: #042e54 }
+.comments-page .linkflair-Megathread p.title { color: #00C934 }
+
+.comments-page .title .linkflairlabel {
+	color: inherit;
 }
 
 .comments-page .title {
@@ -2398,12 +2427,8 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	position: relative;
 }
 
-.comments-page>.content>#siteTable .self a.title {
-	color: #FFF;
-}
-
-.comments-page>.content>#siteTable .self .tagline {
-	color: rgba(255,255,255,.9);
+.comments-page>.content>#siteTable a.title {
+	color: inherit;
 }
 
 .comments-page>.content>#siteTable .thing .tagline {
@@ -2412,12 +2437,8 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	position: relative;
 }
 
-.comments-page>.content>#siteTable .self .tagline .moderator {
-	color: #FFF;
-}
-
 .comments-page>.content>#siteTable .midcol {
-	margin: 14px 22px 0 106px;
+	margin: 26px 22px 0 118px;
 }
 
 .comments-page>.content>#siteTable .score {
@@ -2425,11 +2446,10 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	position: relative; /* For correct z-index */
 }
 
-
 .comments-page>.content>#siteTable .entry {
 	margin-left: 98px;
 	overflow: visible;
-	padding-top: 20px;
+	padding-top: 32px;
 }
 
 /* Most of these expando/interstitial rules only apply to spoilers/NSFW */

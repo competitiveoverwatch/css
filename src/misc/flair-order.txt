@@ -37,6 +37,17 @@ fan laser-kittenz
 fan tempo-storm
 fan invictus
 
+fan denial
+fan evil-geniuses
+fan wnv
+fan splyce
+fan scylla
+fan red-reserve
+fan vivis-adventure
+fan singularity-ninjas
+fan envision
+fan east-wind
+
 rank bronze
 rank silver
 rank gold
