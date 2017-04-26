@@ -1482,7 +1482,7 @@ body:not(.res) .expando-button {
 }
 
 .expanded.expando-button {
-	opacity: 1 !important;
+	opacity: .5 !important;
 }
 
 /* Expando contents */
@@ -2319,10 +2319,6 @@ body .flairselector li:hover {
 	height: 15px;
 	width: 28px;
 }
-.flair-east-wind, .md a[href*="east-wind"] {
-	background-position: -135px -160px;
-	width: 20px;
-}
 .flair-bk-stars, .md a[href*="bk-stars"] {
 	background-position: -143px 0;
 	height: 24px;
@@ -2408,7 +2404,6 @@ body .flairselector li:hover {
 .flairselector .flair-vivis-adventure+span:after { content:"Vivi's Adventure" }
 .flairselector .flair-singularity-ninjas+span:after { content:"Singularity Ninjas" }
 .flairselector .flair-envision+span:after { content:"Envision" }
-.flairselector .flair-east-wind+span:after { content:"East Wind" }
 .flairselector .flair-bk-stars+span:after { content:"BK Stars" }
 .flairselector .flair-x6-gaming+span:after { content:"X6 Gaming" }
 .flairselector .flair-conbox-spirit+span:after { content:"Conbox Spirit" }
