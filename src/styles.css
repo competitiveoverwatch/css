@@ -67,7 +67,7 @@ button {
 	background: linear-gradient(90deg, #07364F 0%, #062541 100%);
 	border: none;
 	color: #FFF;
-	height: 213px;
+	height: 235px;
 	z-index: 0;
 }
 /* Retina/HiDPI */
@@ -250,14 +250,10 @@ a#sr-more-link {
 	background: url(%%logo%%) no-repeat center / contain;
 	color: #FFF;
 	height: 52px;
-	left: 60px;
+	left: 32px;
 	margin: 0 auto;
-	opacity: 1; /* Due to #header a setting opacity */
-	overflow: hidden;
 	position: absolute;
-	text-indent: 100%;
-	top: -110px; /* Negative top due to #header-bottom-left container's position absolute + top */
-	white-space: nowrap;
+	top: -136px; /* Negative top due to #header-bottom-left container's position absolute + top */
 	width: 505px;
 }
 
@@ -268,12 +264,32 @@ a#sr-more-link {
 	}
 }
 
+#header .pagename a:hover {
+	text-decoration: none;
+}
+
+#header .pagename a:after {
+	color: rgba(0,255,252,.5);
+	content: "Esports and competitive news, discussion & tips";
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 2.5px;
+	margin-top: 74px;
+	text-transform: uppercase;
+	font-variant: none;
+}
+
 /* User bar */
 #header-bottom-right {
 	background: none;
 	margin: 0;
 	padding: 0;
 	right: 16px;
+	top: 9px;
+}
+
+.res-navTop #header-bottom-right {
 	top: 9px;
 }
 
@@ -447,7 +463,7 @@ body #userbarToggle {
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 173px;
+	top: 195px;
 }
 
 .tabmenu {
@@ -484,6 +500,15 @@ body #userbarToggle {
 	opacity: 1;
 }
 
+/* RES filter item */
+.tabmenu .res-toggle-filterline-visibility {
+	margin-left: -12px;
+}
+
+.tabmenu .res-show-images {
+	margin-left: 6px; /* Instead of 8px from .tabmenu li */
+}
+
 /* Sidebar */
 .side {
 	background: #FAFAFA;
@@ -515,10 +540,17 @@ body #userbarToggle {
 #search {
 	margin: 0;
 	position: absolute;
-	right: 186px;
-	top: 173px;
-	width: 166px;
+	right: 32px;
+	top: 195px;
+	width: 320px;
 	z-index: 2;
+}
+
+@media (max-width: 1210px) {
+	#search {
+		right: 32px;
+		width: 286px;
+	}
 }
 
 .comments-page #search, .wiki-page #search {
@@ -611,7 +643,7 @@ body #userbarToggle {
 	height: 42px;
 	margin-left: -16px;
 	position: absolute;
-	top: 278px;
+	top: 300px;
 	z-index: 1;
 }
 .morelink:hover {
@@ -659,7 +691,7 @@ body #userbarToggle {
 	position: absolute;
 	right: 32px;
 	text-align: center;
-	top: 246px;
+	top: 268px;
 	width: 320px;
 	z-index: 1;
 }
@@ -678,7 +710,7 @@ body #userbarToggle {
 	height: 91px;
 	position: absolute;
 	right: 32px;
-	top: 229px;
+	top: 251px;
 	width: 320px;
 }
 .comments-page .submit-link:after {
@@ -1059,8 +1091,14 @@ body:not(.listing-page) .side .md>ol {
 	padding: 0;
 	position: absolute;
 	right: 368px;
-	top: 170px;
+	top: 192px;
 	z-index: 99; /* Needed to allow submenu to float above rest of sidebar */
+}
+
+@media (max-width: 1210px) {
+	.side .md>ol {
+		right: 326px;
+	}
 }
 
 .side .md>ol:before {
@@ -1087,6 +1125,12 @@ body:not(.listing-page) .side .md>ol {
 	transform: translateY(0);
 	visibility: hidden;
 	width: 138px;
+}
+
+@media (max-width: 1210px) {
+	.side .md>ol li ol {
+		margin-left: 6px;
+	}
 }
 
 .side .md>ol ol li:first-child a {
@@ -1166,6 +1210,10 @@ body:not(.listing-page) .side .md>ol {
 /* Moderation item */
 .sidecontentbox .collapse-button {
 	display: none;
+}
+
+#moderation_tools h1 {
+	font-weight: 500;
 }
 
 #moderation_tools li {
@@ -1309,7 +1357,7 @@ body .res-filterline-dropdown > span:hover {
 }
 
 .listing-page .link.stickied + .clearleft + .link.stickied {
-	margin-top: -16px;
+	margin-top: -15px;
 }
 
 .link {
@@ -1336,6 +1384,9 @@ body .res-filterline-dropdown > span:hover {
 	background: #F8F8F8;
 	font-size: 12px;
 }
+.listing-page .thing {
+	margin-top: 1px;
+}
 .listing-page .thing:hover {
 	background: #FFF;
 }
@@ -1349,7 +1400,7 @@ body .res-filterline-dropdown > span:hover {
 	margin-left: 0; /* Reddit defaults to 3px */
 }
 
-.thing .title, .thing .title:visited {
+.thing .title, .thing .title:visited, .res .thing .title.visited {
 	color: #0C141E;
 }
 
@@ -1398,17 +1449,18 @@ body:not(.res) .expando-button {
 	opacity: .6;
 }
 
-.thing:hover .expando-butto:hover, .expando-button:hover {
+.thing:hover .expando-button:hover, .expando-button:hover {
 	cursor: default !important;
 	opacity: 1;
 }
 
 .expando-button, .expando-button.image, .expando-button.video-muted {
-	display: inline-block;
-	float: none;
+	background: #0c141e !important;
+	height: 100%;
+	left: 82px;
 	position: absolute;
-	top: 16px;
-	right: 16px;
+	top: -2px;
+	width: 10px;
 }
 
 /* Expando contents */
@@ -2655,26 +2707,6 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	top: 16px;
 }
 
-.linkflair-Question p.title,
-.linkflair-SubredditMeta p.title { color: #85898e;}
-
-.over18 p.title,
-.linkflair-PSA p.title { color: #fb0b19 }
-
-.linkflair-AdviceTips p.title,
-.linkflair-Guide p.title { color: #fd972f }
-
-.linkflair-Event p.title,
-.linkflair-Video p.title,
-.linkflair-eSports p.title { color: #0097d2 }
-
-.linkflair-Casting p.title { color: #042e54 }
-.linkflair-Megathread p.title { color: #00C934 }
-
-.listing-page .stickied p.title {
-	color: #0c141e;
-}
-
 .comments-page .title .linkflairlabel {
 	color: inherit;
 }
@@ -2999,6 +3031,13 @@ body .commentNavSortType:hover {
 	text-transform: uppercase;
 }
 
+/* Contest mode */
+.infobar.mellow {
+	border-radius: 1px;
+	margin-top: 16px;
+	padding: 16px;
+}
+
 /* Individual comments */
 .comment {
 	margin-left: 0; /* Reddit defaults to 10px */
@@ -3158,6 +3197,12 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 
 .comments-page .md a:hover {
 	text-decoration: underline;
+}
+
+.md td, .md th {
+	border: 1px solid #CED0D2;
+	border-right: none;
+	border-left: none;
 }
 
 /* Submit page */
