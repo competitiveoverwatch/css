@@ -333,7 +333,7 @@ body #userbarToggle {
 	background: rgba(255, 255, 255, .15);
 	border: none;
 	border-radius: 2px;
-	color: #042E45;
+	color: #042E54;
 	cursor: default;
 	margin-right: 2px;
 	padding: 1px 4px;
@@ -341,6 +341,10 @@ body #userbarToggle {
 }
 .user .userkarma:hover {
 	background: #FFF;
+}
+
+.userkarma .karma {
+	opacity: 1;
 }
 
 #new_modmail {
@@ -1284,6 +1288,22 @@ body .res-filterline-dropdown > span:hover {
 	color: #0C141E;
 }
 
+.menuarea {
+	border-bottom: none;
+}
+
+.listing-page .menuarea {
+	background: #FFF;
+	border-radius: 1px;
+	font-size: 13px;
+	margin: 0 0 16px;
+	padding: 12px 16px;
+}
+
+.listing-page .menuarea .dropdown-title:first-letter {
+	text-transform: uppercase;
+}
+
 .listing-page .link.stickied {
 	margin-bottom: 16px;
 }
@@ -1466,6 +1486,11 @@ body.res-userHighlight .tagline .author.moderator {
 /* "Announcement" text */
 .tagline .stickied-tagline {
 	display: none;
+}
+
+/* Edited timestamp */
+body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
+	font-size: 100%;
 }
 
 .userattrs {
@@ -1744,7 +1769,8 @@ body .flairselector li:hover {
 }
 
 @media (min-width: 900px) {
-	.flairoptionpane:before {
+	/* Only fade user flair picker */
+	.side .flairoptionpane:before {
 		background: linear-gradient(rgba(230, 230, 230, 0) 80%, #e6e6e6);
 		content: "";
 		height: 200px;
@@ -1867,7 +1893,9 @@ body .flairselector li:hover {
 .flairselector form .flairselection .flairremove a {
 	font-size: 12px;
 	margin-right: 16px;
+	opacity: 1;
 	text-transform: capitalize;
+	visibility: visible;
 }
 
 .flairselector form .flairselection .flairremove a:hover {
@@ -1901,6 +1929,8 @@ body .flairselector li:hover {
 .flairselector .flairselection .linkflair a.title{
 	color: #042E54;
 	font-size: 16px !important;
+	opacity: 1;
+	visibility: visible;
 }
 
 .flairselector .status {
@@ -2000,7 +2030,7 @@ body .flairselector li:hover {
 	}
 }
 
-.comments-page .flair-fan, .flairselector .flair-fan {
+.comments-page .content .flair-fan, .flairselector .flair-fan {
 	display: inline-block;
 }
 
@@ -2346,7 +2376,7 @@ body .flairselector li:hover {
 .comments-page .flair-rank {
 	font-size: 0;
 }
-.comments-page .flair-rank, .flairselector .flair-rank {
+.comments-page .content .flair-rank, .flairselector .flair-rank {
 	display: inline-block;
 }
 
@@ -2608,6 +2638,10 @@ body .RES-keyNav-activeThing {
 	background: #F0F3FC;
 }
 
+.comments-page .RES-keyNav-activeThing {
+	min-height: 116px;
+}
+
 body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	background: none !important;
 }
@@ -2646,7 +2680,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 }
 
 .comments-page .title {
-	font-size: 18px;
+	font-size: 16px;
 	position: relative;
 }
 
@@ -2656,23 +2690,21 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 .comments-page>.content>#siteTable .thing .tagline {
 	font-size: 13px;
-	margin: 20px 0 16px;
-	position: relative;
+	margin: 16px 0 16px 72px;
 }
 
 .comments-page>.content>#siteTable .midcol {
-	margin: 26px 22px 0 118px;
+	margin: 12px 22px 0 118px;
 }
 
 .comments-page>.content>#siteTable .score {
 	color: rgba(0, 0, 0, .4);
-	position: relative; /* For correct z-index */
 }
 
 .comments-page>.content>#siteTable .entry {
 	margin-left: 98px;
 	overflow: visible;
-	padding-top: 32px;
+	padding-top: 18px;
 }
 
 /* Most of these expando/interstitial rules only apply to spoilers/NSFW */
@@ -2706,7 +2738,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 
 .comments-page .expando {
-	margin: 32px 0 0 -82px; /* Values <= 16px have no effect, so top margin actually 16px */
+	margin: 48px 0 0 -82px; /* Values <= 16px have no effect, so top margin actually 16px */
 	padding: 0;
 }
 
@@ -2916,6 +2948,10 @@ body .commentNavSortType:hover {
 	display: none;
 }
 
+.commentarea>.siteTable {
+	margin-top: 16px;
+}
+
 /* Vote arrows */
 .comment .midcol {
 	width: 24px;
@@ -2966,7 +3002,7 @@ body .commentNavSortType:hover {
 /* Individual comments */
 .comment {
 	margin-left: 0; /* Reddit defaults to 10px */
-	padding: 8px 0 8px 14px;
+	padding: 2px 0 0 14px;
 	position: relative;
 }
 
@@ -2993,6 +3029,15 @@ body .commentNavSortType:hover {
 	margin-left: 40px; /* Values <= 24px not accepted (?), so actual is 16px */
 }
 
+/* Reddit's 'highlight new comments' feature */
+.new-comment .usertext-body {
+	background: rgba(4, 127, 201, 0.1);
+	border: none;
+	border-radius: 1px;
+	margin: 0;
+	padding: 0;
+}
+
 .comment .tagline {
 	font-size: 12px;
 }
@@ -3007,6 +3052,30 @@ body .commentNavSortType:hover {
 
 .comment .flat-list {
 	font-size: 11px;
+}
+
+/* 'load more comments' */
+.comment .child, .comment .showreplies {
+	border-left: none;
+	margin-left: 0; /* Reddit defaults to 15px */
+}
+
+.morecomments a {
+	background: #fafafa;
+	border-radius: 1px;
+	color: #0C141E;
+	display: inline-block;
+	font-size: 11px !important; /* Ugly, but overrides Reddit's inline styles*/
+	font-weight: normal !important;
+	padding: 6px 12px;
+	text-transform: capitalize;
+	transition: none;
+}
+
+.morecomments a:hover {
+	background: #042e54;
+	color: #FFF;
+	text-decoration: none;
 }
 
 /* Comments page sidebar */
@@ -3085,6 +3154,10 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 	border-left-color: #e5e5e5;
 	padding: 2px 16px;
 	margin-left: 0; /* Reddit defaults to 5px */
+}
+
+.comments-page .md a:hover {
+	text-decoration: underline;
 }
 
 /* Submit page */
@@ -3534,6 +3607,7 @@ label[for="sendreplies"]:first-letter {
 
 /* Footer */
 .footer-parent {
+	background: #FFF;
 	height: auto;
 	padding: 16px 0 0;
 }
