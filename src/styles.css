@@ -272,9 +272,9 @@ a#sr-more-link {
 	color: rgba(0,255,252,.5);
 	content: "Esports and competitive news, discussion & tips";
 	display: block;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 300;
-	letter-spacing: 2.5px;
+	letter-spacing: 2.4px;
 	margin-top: 74px;
 	text-transform: uppercase;
 	font-variant: none;
@@ -1046,7 +1046,7 @@ div.titlebox span.number:after {
 .side .md>blockquote:first-of-type {
 	animation: .55s ease-in-out header-stickies .15s;
 	border: 0;
-	font-size: 13.5px;
+	font-size: 13px;
 	padding: 0;
 	position: absolute;
 	right: 32px;
@@ -1238,9 +1238,27 @@ body:not(.listing-page) .side .md>ol {
 	background: none;
 }
 
-/* Hide "Recently Viewed Links" and "About moderation team" link */
-.side>div:nth-last-child(2), .sidecontentbox .more {
-	display: none;
+.side .more {
+	font-size: 12px;
+	text-align: left;
+	text-transform: capitalize;
+}
+
+/* About Moderation Team button */
+.side .more a {
+	background: #FFF;
+	border-radius: 1px;
+	color: #9b9ea2;
+	display: inline-block;
+	line-height: 32px;
+	padding-left: 8px;
+	transition: all .08s ease-in-out;
+	width: 100%;
+}
+.side .more a:hover {
+	background: #042E54;
+	color: #FFF;
+	text-decoration: none;
 }
 
 /* Message the moderators */
@@ -1454,13 +1472,17 @@ body:not(.res) .expando-button {
 	opacity: 1;
 }
 
-.expando-button, .expando-button.image, .expando-button.video-muted {
+.entry>.expando-button, .entry>.expando-button.image, .entry>.expando-button.video-muted {
 	background: #0c141e !important;
 	height: 100%;
 	left: 82px;
 	position: absolute;
 	top: -2px;
 	width: 10px;
+}
+
+.expanded.expando-button {
+	opacity: 1 !important;
 }
 
 /* Expando contents */
