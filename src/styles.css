@@ -213,11 +213,11 @@ a#sr-more-link {
 	width: 100%;
 }
 
-/* Hide snoo */
+/* Replace snoo */
 #header-img-a  {
 	background: 0;
 	display: inline-block;
-	line-height: 48px;
+	line-height: 40px;
 	margin-left: 16px;
 	padding: 0 16px;
 	vertical-align: top;
@@ -277,6 +277,25 @@ a#sr-more-link {
 	top: 9px;
 }
 
+/* Add `body` to increase specificity */
+body #userbarToggle {
+	background: none;
+	border: none;
+	color: inherit;
+	height: auto;
+	line-height: 0;
+	margin: 0 -8px 0 0;
+	min-height: 0;
+	opacity: .15; /* To match #header-bottom-right a */
+	padding: 2px 4px;
+	position: static;
+	width: auto;
+}
+
+#userbarToggle:hover {
+	opacity: 1;
+}
+
 #header-bottom-right>* {
 	margin-right: 8px;
 }
@@ -325,7 +344,6 @@ a#sr-more-link {
 }
 
 #new_modmail {
-	margin-right: 1px;
 	top: -3px;
 }
 
@@ -425,7 +443,7 @@ a#sr-more-link {
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 165px;
+	top: 173px;
 }
 
 .tabmenu {
@@ -442,7 +460,7 @@ a#sr-more-link {
 
 .tabmenu li a {
 	background: none;
-	line-height: 48px;
+	line-height: 40px;
 	padding: 0 8px;
 	opacity: .3;
 }
@@ -494,7 +512,7 @@ a#sr-more-link {
 	margin: 0;
 	position: absolute;
 	right: 186px;
-	top: 170px;
+	top: 173px;
 	width: 166px;
 	z-index: 2;
 }
@@ -1037,7 +1055,7 @@ body:not(.listing-page) .side .md>ol {
 	padding: 0;
 	position: absolute;
 	right: 368px;
-	top: 167px;
+	top: 170px;
 	z-index: 99; /* Needed to allow submenu to float above rest of sidebar */
 }
 
@@ -1086,7 +1104,7 @@ body:not(.listing-page) .side .md>ol {
 
 .side .md>ol:hover ol {
 	opacity: 1;
-	transform:translateY(13px);
+	transform:translateY(10px);
 	visibility: visible;
 }
 
@@ -1237,15 +1255,40 @@ body:not(.listing-page) .side .md>ol {
 
 /* Listing */
 body .res-filterline {
+	border-radius: 1px;
 	margin-bottom: 16px;
 	padding: 16px;
+}
+
+body .res-filterline > * {
+	color: #85898E;
+	font-family: inherit;
+}
+
+body .res-filterline-filter {
+	border: none;
+	cursor: default;
+	text-transform: capitalize;
+}
+
+body .res-filterline-dropdown > span {
+	cursor: default;
+	text-transform: capitalize;
+}
+
+body .res-filterline-filter:hover,
+body .res-filterline-filter-active, 
+body .res-filterline-filter-active:hover,
+body .res-filterline-dropdown > span:hover {
+	border: none;
+	color: #0C141E;
 }
 
 .listing-page .link.stickied {
 	margin-bottom: 16px;
 }
 
-.listing-page .link.stickied+.link.stickied {
+.listing-page .link.stickied + .clearleft + .link.stickied {
 	margin-top: -16px;
 }
 
@@ -1502,7 +1545,6 @@ body.res-userHighlight .tagline .author.moderator {
 	font-weight: normal;
 	padding: 0;
 	text-transform: capitalize;
-	transition: opacity .12s ease-in-out, color .06s ease-in-out;
 }
 
 .listing-page .entry .buttons li a {
@@ -1627,7 +1669,7 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 	box-shadow: 0 0 3840px 3840px rgba(0, 0, 0, .3);
 	left: unset !important;
 	right: 368px;
-	width: 500px !important;
+	width: 640px !important;
 }
 
 .flairselector.drop-choices.active:after {
@@ -1685,6 +1727,7 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 	float: none !important;
 	margin: 16px 0;
 	max-width: none;
+	width: auto !important;
 }
 
 .flairselector li {
@@ -1832,6 +1875,30 @@ body .flairselector li:hover {
 	background-color: transparent;
 }
 
+/* Verified flair */
+.flair {
+	background: none;
+}
+
+.flair-verified {
+	cursor: help;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.flair-verified:before {
+	bottom: -2px;
+	color: #FA9F29;
+	content: "✔";
+	font: 900 15px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	position: relative;
+}
+
+.comment .flair-verified {
+	margin: 0 4px;
+}
+
 /* User flairs for teams and in-post tags for team icons */
 .flair-fan, .md a[href^="#team-"] {
 	background: url(%%flairs-teams%%) no-repeat;
@@ -1877,7 +1944,7 @@ body .flairselector li:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 156px 182px;
+		background-size: 190px 182px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -1986,7 +2053,7 @@ body .flairselector li:hover {
 }
 .flair-rise, .md a[href*="rise"] {
 	background-position: -88px -104px;
-	border-radius: 0 0 0 50%;
+	border-radius: 0 0 50% 50%;
 	height: 19px;
 	width: 30px;
 }
@@ -2102,6 +2169,41 @@ body .flairselector li:hover {
 .flair-east-wind, .md a[href*="east-wind"] {
 	background-position: -135px -160px;
 	width: 20px;
+}
+.flair-bk-stars, .md a[href*="bk-stars"] {
+	background-position: -143px 0;
+	height: 24px;
+	width: 20px;
+}
+.flair-x6-gaming, .md a[href*="x6-gaming"] {
+	background-position: -142px -119px;
+	height: 20px;
+	width: 34px;
+}
+.flair-conbox-spirit, .md a[href*="conbox-spirit"] {
+	background-position: -144px -94px;
+	height: 24px;
+	width: 37px;
+}
+.flair-flash-lux, .md a[href*="flash-lux"] {
+	background-position: -153px -25px;
+	height: 20px;
+	width: 32px;
+}
+.flair-mighty, .md a[href*="mighty"] {
+	background-position: -145px -50px;
+	height: 26px;
+	width: 24px;
+}
+.flair-rhinos-gaming-wings, .md a[href*="rhinos-gaming-wings"] {
+	background-position: -157px -140px;
+	height: 26px;
+	width: 24px;
+}
+.flair-mvp-space, .md a[href*="mvp-space"] {
+	background-position: -164px 0px;
+	height: 24px;
+	width: 25px;
 }
 
 /* Small team and flag icons */
@@ -2617,6 +2719,10 @@ body.RESSubscriptionButton:hover {
 
 body .commentNavSortType {
 	font-weight: normal;
+}
+
+body .commentNavSortType:hover {
+	color: #0C141E;
 }
 
 /* Main comment box */

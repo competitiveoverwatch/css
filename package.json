@@ -20,7 +20,7 @@
         "img": "imagemin 'src/images exported'/* -o dist/images/",
         "postimg": "du -h dist/images",
         
-        "prebuild": "shx mkdir -p build",
+        "prebuild": "shx mkdir -p dist",
         "build": "run-s -s css img && shx echo && chalk green '✔ Build complete'"
     }
 }
