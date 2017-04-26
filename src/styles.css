@@ -1568,7 +1568,7 @@ body .entry .buttons .first a {
 	opacity: 1;
 	visibility: visible;
 }
-.entry .buttons li a:hover {
+.entry .buttons li>a:hover {
 	color: #0C141E;
 	text-decoration: none;
 }
@@ -1669,7 +1669,8 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 	box-shadow: 0 0 3840px 3840px rgba(0, 0, 0, .3);
 	left: unset !important;
 	right: 368px;
-	width: 640px !important;
+	top: 172px !important;
+	width: 510px !important;
 }
 
 .flairselector.drop-choices.active:after {
@@ -1723,10 +1724,9 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 }
 
 .flairselector ul {
-	display: flex;
-	float: none !important;
 	margin: 16px 0;
 	max-width: none;
+	padding-right: 16px;
 	width: auto !important;
 }
 
@@ -1739,11 +1739,29 @@ body .flairselector li:hover {
 	background: none;
 }
 
+.flairoptionpane {
+	padding-bottom: 16px;
+}
+
+@media (min-width: 900px) {
+	.flairoptionpane:before {
+		background: linear-gradient(rgba(230, 230, 230, 0) 80%, #e6e6e6);
+		content: "";
+		height: 200px;
+		pointer-events: none;
+		position: fixed;
+
+		/* Same right, top and width as .flairselector.drop-choices.active */
+		right: 368px;
+		top: 242px;
+		width: 510px;
+	}
+}
+
 .flairselector .flairoptionpane ul li {
 	border: none;
-	display: inline-block !important;
-	flex-grow: 1;
-	padding: 0;
+	display: block !important;
+	padding: 4px 0;
 	width: auto !important;
 }
 
@@ -1751,8 +1769,6 @@ body .flairselector li:hover {
 	text-align: left;
 	padding: 0;
 }
-
-.flairoptionpane ul li .linkflair:hover, .flairselector li:hover {background-color: #F5F8F9;border: 0 solid;}
 
 .flairoptionpane ul li .linkflair span.linkflairlabel {
 	font-size: 15px;
@@ -1784,24 +1800,56 @@ body .flairselector li:hover {
 .flairselector .linkflair-Guide .linkflairlabel,
 .flairselector .linkflair-AdviceTips .linkflairlabel { color: #fd972f }
 
+/* Text after user flairs */
+.flairselector .flair+span:after {
+	font-size: 12px;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
 .flairselector form {
 	border: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -16px;
 	text-align: right;
 }
 
 .flairselector .customizer {
-	display: none;
+	width: 100%;
+}
+
+.flairselector .customizer input {
+	border: none;
+	display: block;
+	font-size: 12px;
+	padding: 8px 16px;
+	width: 100%;
 }
 
 .flairselector form .flairselection {
 	background: #FFF;
-	margin: 0 -16px;
+	margin: 0;
 	min-height: 52px;
+	order: 2;
 	padding: 16px 0;
 	text-align: center;
+	width: 100%;
 }
+
+.flairselector form .flairselection .author {
+	display: inline-block;
+	font-size: 12px;
+}
+
+/* Hide the flair name text in the preview box */
+.flairselector form .flairselection .userattrs:after {
+	display: none;
+}
+
 .entry .flairselector form .flairselection {
 	padding: 16px 0 0;
+	width: 100%;
 }
 
 .flairselector .flairselection .flairremove {
@@ -1812,12 +1860,13 @@ body .flairselector li:hover {
 	color: #9B9EA2;
 	content: "1 point • 5 minutes ago";
 	font-size: 12px;
-	margin: 0 8px 0 24px;
+	margin: 0 8px;
 	visibility: visible;
 }
 
 .flairselector form .flairselection .flairremove a {
-	font-size:12px;
+	font-size: 12px;
+	margin-right: 16px;
 	text-transform: capitalize;
 }
 
@@ -2139,7 +2188,7 @@ body .flairselector li:hover {
 	width: 35px;
 }
 .flair-splyce, .md a[href*="splyce"] {
-	background-position: -67px -160px;
+	background-position: -122px -50px;
 }
 .flair-scylla, .md a[href*="scylla"] {
 	background-position: -123px -73px;
@@ -2205,6 +2254,64 @@ body .flairselector li:hover {
 	height: 24px;
 	width: 25px;
 }
+
+/* Flair picker team names */
+.flairselector .flair-envyus+span:after { content:"EnVyUs" }
+.flairselector .flair-cloud-9+span:after { content:"Cloud9" }
+.flairselector .flair-team-celestial+span:after { content:"Team Celestial" }
+.flairselector .flair-misfits+span:after { content:"Misfits" }
+.flairselector .flair-dignitas+span:after { content:"Dignitas" }
+.flairselector .flair-rogue+span:after { content:"Rogue" }
+.flairselector .flair-complexity+span:after { content:"Complexity" }
+.flairselector .flair-fnatic+span:after { content:"Fnatic" }
+.flairselector .flair-nrg+span:after { content:"NRG" }
+.flairselector .flair-lg-loyal+span:after { content:"LG Loyal" }
+.flairselector .flair-invictus+span:after { content:"Invictus" }
+.flairselector .flair-tempo-storm+span:after { content:"Tempo Storm" }
+.flairselector .flair-ninjas-in-pyjamas+span:after { content:"Ninjas in Pyjamas" }
+.flairselector .flair-liquid+span:after { content:"Liquid" }
+.flairselector .flair-lunatic-hai+span:after { content:"Lunatic Hai" }
+.flairselector .flair-faze+span:after { content:"FaZe" }
+.flairselector .flair-freecs-blue+span:after { content:"Afreeca Freecs Blue" }
+.flairselector .flair-immortals+span:after { content:"Immortals" }
+.flairselector .flair-method+span:after { content:"Method" }
+.flairselector .flair-luxury-watch-red+span:after { content:"LuxuryWatch Red" }
+.flairselector .flair-luxury-watch-blue+span:after { content:"LuxuryWatch Blue" }
+.flairselector .flair-vici-gaming+span:after { content:"Vici Gaming" }
+.flairselector .flair-kongdoo-panthera+span:after { content:"Kongdoo Panthera" }
+.flairselector .flair-ldlc+span:after { content:"LDLC" }
+.flairselector .flair-rise+span:after { content:"Rise Nation" }
+.flairselector .flair-kongdoo-uncia+span:after { content:"Kongdoo Uncia" }
+.flairselector .flair-renegades+span:after { content:"Renegades" }
+.flairselector .flair-world-elite-white+span:after { content:"World Elite White" }
+.flairselector .flair-meta-athena+span:after { content:"Meta Athena" }
+.flairselector .flair-lg-evil+span:after { content:"LG Evil" }
+.flairselector .flair-selfless+span:after { content:"Selfless" }
+.flairselector .flair-runaway+span:after { content:"Runaway" }
+.flairselector .flair-eunited+span:after { content:"eUnited" }
+.flairselector .flair-blank+span:after { content:"Blank" }
+.flairselector .flair-hammers+span:after { content:"Hammers Esports" }
+.flairselector .flair-laser-kittenz+span:after { content:"Laser Kittenz" }
+.flairselector .flair-movistar-riders+span:after { content:"Movistar Riders" }
+.flairselector .flair-gamersorigin+span:after { content:"GamersOrigin" }
+.flairselector .flair-brasil-gaming-house+span:after { content:"Brasil Gaming House" }
+.flairselector .flair-denial+span:after { content:"Denial" }
+.flairselector .flair-evil-geniuses+span:after { content:"Evil Geniuses" }
+.flairselector .flair-wnv+span:after { content:"wNv" }
+.flairselector .flair-splyce+span:after { content:"Splyce" }
+.flairselector .flair-scylla+span:after { content:"Scylla" }
+.flairselector .flair-red-reserve+span:after { content:"Red Reserve" }
+.flairselector .flair-vivis-adventure+span:after { content:"Vivi's Adventure" }
+.flairselector .flair-singularity-ninjas+span:after { content:"Singularity Ninjas" }
+.flairselector .flair-envision+span:after { content:"Envision" }
+.flairselector .flair-east-wind+span:after { content:"East Wind" }
+.flairselector .flair-bk-stars+span:after { content:"BK Stars" }
+.flairselector .flair-x6-gaming+span:after { content:"X6 Gaming" }
+.flairselector .flair-conbox-spirit+span:after { content:"Conbox Spirit" }
+.flairselector .flair-flash-lux+span:after { content:"Flash Lux" }
+.flairselector .flair-mighty+span:after { content:"Mighty" }
+.flairselector .flair-rhinos-gaming-wings+span:after { content:"Rhinos Gaming Wings" }
+.flairselector .flair-mvp-space+span:after { content:"MVP Space" }
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
@@ -2282,6 +2389,16 @@ body .flairselector li:hover {
 	height: 25px;
 	width: 32px;
 }
+
+/* Flair picker rank names */
+.flairselector .flair-bronze+span:after { content:"Bronze" }
+.flairselector .flair-silver+span:after { content:"Silver" }
+.flairselector .flair-gold+span:after { content:"Gold" }
+.flairselector .flair-platinum+span:after { content:"Platinum" }
+.flairselector .flair-diamond+span:after { content:"Diamond" }
+.flairselector .flair-master+span:after { content:"Master" }
+.flairselector .flair-grandmaster+span:after { content:"Grandmaster" }
+.flairselector .flair-top+span:after { content:"Top" }
 
 /* Hero tags */
 .md a[href^="#hero-"] {
@@ -2518,7 +2635,11 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 .linkflair-eSports p.title { color: #0097d2 }
 
 .linkflair-Casting p.title { color: #042e54 }
-.comments-page .linkflair-Megathread p.title { color: #00C934 }
+.linkflair-Megathread p.title { color: #00C934 }
+
+.listing-page .stickied p.title {
+	color: #0c141e;
+}
 
 .comments-page .title .linkflairlabel {
 	color: inherit;
