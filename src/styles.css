@@ -110,14 +110,13 @@ button {
 
 #RESShortcuts {
 	opacity: .15; /* To match #header a */
-	pointer-events: none;
 }
 
 #RESShortcuts:first-letter {
 	text-transform: uppercase;
 }
 
-/* "My Subreddits" dropdown */
+/* "My Subreddits" dropdown icon */
 #sr-header-area .dropdown.srdrop .selected {
 	color: inherit;
 	cursor: default;
@@ -138,11 +137,15 @@ button {
 	visibility: visible;
 }
 
+body.comments-page:not(.res) #sr-header-area .dropdown.srdrop .selected:after {
+	margin-left: -116px;
+}
+
 #sr-header-area .dropdown.srdrop .selected:hover {
 	opacity: 1;
 }
 
-/* My Subreddits Dropdown */
+/* My Subreddits dropdown menu itself */
 #sr-header-area .drop-choices.srdrop {
 	border: none;
 	border-radius: 1px;
@@ -213,6 +216,29 @@ a#sr-more-link {
 	width: 100%;
 }
 
+#RESShortcutsViewport {
+	max-width: 540px;
+}
+
+body #RESShortcutsEditContainer {
+	background: none;
+	top: 9px;
+	right: 352px;
+}
+
+body #RESShortcutsSort, body #RESShortcutsRight, body #RESShortcutsLeft, body #RESShortcutsAdd {
+	background: none;
+	color: #FFF;
+	cursor: default;
+	opacity: .15;  /* Same as #sr-header-area a */
+	transition: .08s opacity ease-in-out;
+}
+
+body #RESShortcutsSort:hover, body #RESShortcutsRight:hover,
+body #RESShortcutsLeft:hover, body #RESShortcutsAdd:hover {
+	opacity: 1;
+}
+
 /* Replace snoo */
 #header-img-a  {
 	background: 0;
@@ -264,20 +290,36 @@ a#sr-more-link {
 	}
 }
 
-#header .pagename a:hover {
-	text-decoration: none;
-}
-
 #header .pagename a:after {
 	color: rgba(0,255,252,.5);
 	content: "Esports and competitive news, discussion & tips";
 	display: block;
 	font-size: 13px;
+	font-variant: none;
 	font-weight: 300;
 	letter-spacing: 2.4px;
 	margin-top: 74px;
 	text-transform: uppercase;
-	font-variant: none;
+}
+
+#header .pagename a:hover {
+	text-decoration: none;
+}
+
+#header .pagename a:hover:after {
+	background: linear-gradient(90deg,rgba(0,255,252,0),rgba(0,255,252,.4),rgba(0,255,252,0));
+	background-size: 175px 100%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	animation: 1.6s ease-in-out logo-text-shimmer;
+	background-repeat: no-repeat;
+	background-position: -50% 50%;
+	background-color: rgba(0,255,252,.1); /* Brings base colour to rgba(0,255,252,.6) */
+}
+
+@keyframes logo-text-shimmer {
+	0% { background-position: -50% 50% }
+	100% { background-position: 120% 50% }
 }
 
 /* User bar */
@@ -289,7 +331,7 @@ a#sr-more-link {
 	top: 9px;
 }
 
-.res-navTop #header-bottom-right {
+body.res-navTop #header-bottom-right {
 	top: 9px;
 }
 
@@ -338,6 +380,10 @@ body #userbarToggle {
 	visibility: visible;
 }
 
+.res .beta-hint {
+	margin-top: -16px;
+}
+
 .beta-hint a {
 	background: url(%%spritesheet%%) 0 -14px no-repeat;
 	height: 16px;
@@ -359,7 +405,7 @@ body #userbarToggle {
 	background: #FFF;
 }
 
-.userkarma .karma {
+#header-bottom-right .userkarma a {
 	opacity: 1;
 }
 
@@ -451,6 +497,10 @@ body #userbarToggle {
 .loggedin .logout a {
 	background-position: -48px -1px;
 	top: -2px;
+}
+
+#header-bottom-right .gearIcon {
+	opacity: .15;
 }
 
 #header-bottom-right a:hover, #header-bottom-right .gearIcon:hover {
@@ -640,24 +690,24 @@ body #userbarToggle {
 .morelink {
 	background: #F9F9F9;
 	border: none;
-	height: 42px;
+	height: 48px;
 	margin-left: -16px;
 	position: absolute;
-	top: 300px;
+	top: 294px;
 	z-index: 1;
 }
 .morelink:hover {
 	background: none;
 }
 .comments-page .morelink {
-	top: 364px;
+	top: 380px;
 }
 .res .comments-page .morelink {
-	top: 387px;
+	top: 403px;
 }
 .morelink a {
 	color: #042E54;
-	font: normal 14px/42px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: normal 14px/48px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	letter-spacing: 0;
 	transition: background .06s ease-in-out, color .06s ease-in-out;
 	width: 160px;
@@ -691,15 +741,15 @@ body #userbarToggle {
 	position: absolute;
 	right: 32px;
 	text-align: center;
-	top: 268px;
+	top: 264px;
 	width: 320px;
 	z-index: 1;
 }
 .comments-page .submit-link:before {
-	top: 328px;
+	top: 350px;
 }
 .res .comments-page .submit-link:before {
-	top: 351px;
+	top: 373px;
 }
 
 /* The containing box */
@@ -714,10 +764,10 @@ body #userbarToggle {
 	width: 320px;
 }
 .comments-page .submit-link:after {
-	top: 315px;
+	top: 337px;
 }
 .res .comments-page .submit-link:after {
-	top: 338px;
+	top: 360px;
 }
 
 /* Hide subreddit name in sidebar */
@@ -792,6 +842,10 @@ body #userbarToggle {
 	margin-top: 16px;
 }
 
+.res .titlebox form.flairtoggle {
+	margin-top: 8px;
+}
+
 form.flairtoggle input {
 	font-family: inherit;
 	font-size: inherit;
@@ -843,26 +897,35 @@ div.titlebox span.number:after {
 
 /* RES buttons to add shortcut and add to dashboard */
 .subButtons {
+	margin-top: 8px;
 	order: 1 !important;
 	text-align: center;
 }
 
+body:not(.res) .titlebox .fancy-toggle-button {
+	order: 2;
+	margin-left: auto;
+	margin-top: 8px;
+	width: auto;
+}
+
 /* Subscribe button, use `.titlebox` and `body` to increase specificity */
 .titlebox .fancy-toggle-button a, body .res-fancy-toggle-button {
-	background: none;
+	color: #7b90a3;
+	background: #f3f3f4;
 	border: none;
-	color: #81858A; /* #OC141E, 50% opacity */
+	border-radius: 1px;
+	cursor: default;
 	font-size: inherit;
 	font-weight: normal;
-	padding: 0 4px;
+	padding: 2px 8px;
 	text-transform: capitalize;
+	transition: none;
 }
 
-.res-fancy-toggle-button {
-	cursor: default;
-}
-
-.titlebox .fancy-toggle-button a:hover {
+.titlebox .fancy-toggle-button a:hover, body .res-fancy-toggle-button:hover {
+	background: #042E54;
+	color: #FFF;
 	text-decoration: none;
 }
 
@@ -1238,6 +1301,11 @@ body:not(.listing-page) .side .md>ol {
 	background: none;
 }
 
+/* Hide "Recently Viewed Links" */
+.side>div:nth-last-child(2) {
+	display: none;
+}
+
 .side .more {
 	font-size: 12px;
 	text-align: left;
@@ -1352,6 +1420,12 @@ body .res-filterline-filter-active:hover,
 body .res-filterline-dropdown > span:hover {
 	border: none;
 	color: #0C141E;
+}
+
+body .res-filterline-dropdown-container {
+	background: #FFF;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.12);
 }
 
 .menuarea {
@@ -2863,14 +2937,15 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 }
 
 /* RES subscribe button, `body` to increase specificity */
-body.RESSubscriptionButton {
+body .RESSubscriptionButton {
 	border-color: #9b9ea2;
 	border-radius: 1px;
 	color: #9b9ea2;
 	cursor: default;
+	text-transform: capitalize;
 }
 
-body.RESSubscriptionButton:hover {
+body .RESSubscriptionButton:hover {
 	border-color: #042E54;
 	color: #042E54;
 }
@@ -3150,7 +3225,7 @@ body .commentNavSortType:hover {
 	padding: 16px;
 	position: absolute;
 	right: 32px;
-	top: 229px;
+	top: 251px;
 	width: 320px;
 }
 
@@ -3202,6 +3277,12 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 }
 
 /* General formatting */
+
+.md p {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
 .md hr {
 	border: solid 1px #e5e5e5;
 }
@@ -3216,10 +3297,18 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 	text-decoration: underline;
 }
 
+/* Tables */
+
 .md td, .md th {
-	border: 1px solid #CED0D2;
-	border-right: none;
-	border-left: none;
+	border: none;
+}
+
+.md table tr {
+	border-bottom: 1px solid rgba(0,0,0,.04);
+}
+
+.md table tr:nth-child(even) {
+	background: rgba(0,0,0,.02);
 }
 
 /* Submit page */
@@ -3236,7 +3325,7 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 }
 
 .submit-page #header {
-	height: 160px;
+	height: 200px;
 }
 
 .submit-page #header-bottom-left {
