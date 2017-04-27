@@ -26,7 +26,7 @@ SOFTWARE.*/
 
 body {
 	background: #E8E8E9;
-	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	min-width: 920px;
 	overflow-x: hidden;
 }
@@ -53,7 +53,7 @@ button {
 	text-transform: capitalize;
 }
 
-.error {
+.error, .newComments {
 	color: #FF000F;
 }
 
@@ -89,7 +89,7 @@ button {
 #sr-header-area a {
 	color: inherit;
 	margin-left: .5rem;
-	opacity: .15;
+	opacity: .2;
 	transition: opacity .06s ease-in-out;
 }
 
@@ -109,11 +109,25 @@ button {
 }
 
 #RESShortcuts {
-	opacity: .15; /* To match #header a */
+	opacity: .2; /* To match #header a */
 }
 
 #RESShortcuts:first-letter {
 	text-transform: uppercase;
+}
+
+body #RESShortcuts .subbarlink {
+	color: #FFF;
+	opacity: 1 !important;
+}
+
+body #sr-header-area a.RESShortcutsCurrentSub, body #RESSubredditGroupDropdown .RESShortcutsCurrentSub a {
+	color: inherit !important;
+	font-weight: normal;
+}
+
+body #sr-header-area a.RESShortcutsCurrentSub:hover, body #RESSubredditGroupDropdown .RESShortcutsCurrentSub a:hover {
+	opacity: 1;
 }
 
 /* "My Subreddits" dropdown icon */
@@ -121,7 +135,7 @@ button {
 	color: inherit;
 	cursor: default;
 	margin: 0 16px 0 8px;
-	opacity: .15;  /* Same as #sr-header-area a */
+	opacity: .2;  /* Same as #sr-header-area a */
 	padding: 0;
 	transition: opacity .06s ease-in-out; /* Same as #sr-header-area a */
 	visibility: hidden;
@@ -230,7 +244,7 @@ body #RESShortcutsSort, body #RESShortcutsRight, body #RESShortcutsLeft, body #R
 	background: none;
 	color: #FFF;
 	cursor: default;
-	opacity: .15;  /* Same as #sr-header-area a */
+	opacity: .2;  /* Same as #sr-header-area a */
 	transition: .08s opacity ease-in-out;
 }
 
@@ -344,7 +358,7 @@ body #userbarToggle {
 	line-height: 0;
 	margin: 0 -8px 0 0;
 	min-height: 0;
-	opacity: .15; /* To match #header-bottom-right a */
+	opacity: .2; /* To match #header-bottom-right a */
 	padding: 2px 4px;
 	position: static;
 	width: auto;
@@ -360,7 +374,7 @@ body #userbarToggle {
 
 #header-bottom-right a {
 	color: inherit;
-	opacity: .15;
+	opacity: .2;
 }
 
 #userbarToggle {
@@ -439,6 +453,7 @@ body #userbarToggle {
 
 .message-count {
 	background: #FFF;
+	border-radius: 1px;
 	color: #000 !important;
 	position: relative;
 	top: -1px;
@@ -458,7 +473,7 @@ body #userbarToggle {
 	border-radius: 2px;
 	color: #FFF;
 	content: "NEW MESSAGES";
-	font: 13px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 13px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	left: calc(50% - 120px);
 	padding: 12px;
 	pointer-events: none;
@@ -500,7 +515,7 @@ body #userbarToggle {
 }
 
 #header-bottom-right .gearIcon {
-	opacity: .15;
+	opacity: .2;
 }
 
 #header-bottom-right a:hover, #header-bottom-right .gearIcon:hover {
@@ -612,7 +627,7 @@ body #userbarToggle {
 #search input[type=text] {
 	border: none;
 	color: transparent;
-	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 0;
 	height: 40px;
 	padding: 0;
@@ -707,7 +722,7 @@ body #userbarToggle {
 }
 .morelink a {
 	color: #042E54;
-	font: normal 14px/48px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: normal 14px/48px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	letter-spacing: 0;
 	transition: background .06s ease-in-out, color .06s ease-in-out;
 	width: 160px;
@@ -787,12 +802,7 @@ body #userbarToggle {
 
 .titlebox .tagline {
 	font-size: 12px;
-	margin: -16px 0 8px;
 	visibility: hidden
-}
-
-.side .tagline .author, .side .flair {
-	display: none;
 }
 
 .titlebox .tagline * {
@@ -834,7 +844,7 @@ body #userbarToggle {
 
 .titlebox form.toggle {
 	color: #042E54;
-	font: 12px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 12px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	order: 2;
 }
 
@@ -862,6 +872,11 @@ form.flairtoggle input {
 	display: block;
 	margin-left: 20px;
 	width: 190px;
+}
+
+.titlebox>.author:hover {
+	color: #042E54;
+	text-decoration: none;
 }
 
 /* Subscibers & Here right now */
@@ -910,7 +925,7 @@ body:not(.res) .titlebox .fancy-toggle-button {
 }
 
 /* Subscribe button, use `.titlebox` and `body` to increase specificity */
-.titlebox .fancy-toggle-button a, body .res-fancy-toggle-button {
+.titlebox .fancy-toggle-button a, body .res-fancy-toggle-button, body .res-fancy-toggle-button.remove {
 	color: #7b90a3;
 	background: #f3f3f4;
 	border: none;
@@ -971,7 +986,7 @@ body:not(.res) .titlebox .fancy-toggle-button {
 	border-radius: 1px;
 	color: #FFF;
 	display: inline-block;
-	font: 13px/30px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 13px/30px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	height: 30px;
 	margin: 0;
 	padding-left: 16px;
@@ -1492,8 +1507,16 @@ body .res-filterline-dropdown-container {
 	margin-left: 0; /* Reddit defaults to 3px */
 }
 
-.thing .title, .thing .title:visited, .res .thing .title.visited {
-	color: #0C141E;
+.thing .title {
+	color: #042E54;
+}
+
+.thing .title:visited, .thing .title.visited {
+	color: #6a6f75 !important;
+}
+
+.listing-page a.title:hover {
+	text-decoration: underline;
 }
 
 .thing .title {
@@ -1537,6 +1560,10 @@ body:not(.res) .expando-button {
 	transition: .1s opacity ease-in-out;
 }
 
+.comment-permalink-page .expando-button {
+	display: none;
+}
+
 .thing:hover .expando-button {
 	opacity: .6;
 }
@@ -1557,6 +1584,10 @@ body:not(.res) .expando-button {
 
 .expanded.expando-button {
 	opacity: .5 !important;
+}
+
+.comment .expando-button {
+	opacity: 1 !important;
 }
 
 /* Expando contents */
@@ -1584,6 +1615,7 @@ body:not(.res) .expando-button {
 
 .thumbnail img {
 	min-height: 100%;
+	/*transform: translateX(-25%);*/
 	width: auto;
 }
 
@@ -1611,7 +1643,7 @@ body:not(.res) .expando-button {
 	margin-top: 5px;
 }
 
-.tagline:first-letter {
+.listing-page .tagline:first-letter {
 	text-transform: uppercase;
 }
 
@@ -1619,8 +1651,16 @@ body:not(.res) .expando-button {
 	color: inherit;
 }
 
+.res a.voteWeight {
+	margin-right: 4px;
+}
+
 .tagline .moderator, .green, .search-result-meta .moderator, .tagline .stickied-tagline, .search-result-meta .stickied-tagline {
 	color: #00C934;
+}
+
+.res-voteEnhancements-highlightScores span.score {
+	font-weight: normal;
 }
 
 /* `body` and `!important` required, 'cause RES. */
@@ -1655,7 +1695,7 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 	display: inline-block;
 	font-size: 11px;
 	line-height: 13px;
-	padding: 0 2px;
+	padding: 0 3px;
 	visibility: visible;
 }
 
@@ -1669,6 +1709,12 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 .userattrs a.moderator:hover {
 	background: #0C141E;
 	text-decoration: none;
+}
+
+.tagline .userattrs .submitter, .search-result-meta .submitter {
+	background: #85898E;
+	color: #FFF;
+	cursor: default;
 }
 
 .rank {
@@ -1838,23 +1884,13 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 
 /* Flair Selector */
 .flairselector.drop-choices.active {
+	background: #F3F3F4;
 	border: none;
 	box-shadow: 0 0 3840px 3840px rgba(0, 0, 0, .3);
 	left: unset !important;
 	right: 368px;
 	top: 172px !important;
 	width: 510px !important;
-}
-
-.flairselector.drop-choices.active:after {
-	background: rgba(0, 0, 0, .1);
-	bottom: 0;
-	content: "";
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: -1;
 }
 
 .flairselector h2 {
@@ -1898,6 +1934,7 @@ li .marknsfw-button a[data-event-action="marknsfw"] {
 
 .flairselector ul {
 	margin: 16px 0;
+	float: none !important;
 	max-width: none;
 	padding-right: 16px;
 	width: auto !important;
@@ -1916,10 +1953,14 @@ body .flairselector li:hover {
 	padding-bottom: 16px;
 }
 
+.flairoptionpane .author {
+	display: none;
+}
+
 @media (min-width: 900px) {
 	/* Only fade user flair picker */
 	.side .flairoptionpane:before {
-		background: linear-gradient(rgba(230, 230, 230, 0) 80%, #e6e6e6);
+		background: linear-gradient(rgba(243, 243, 244, 0) 80%, #F3F3F4);
 		content: "";
 		height: 200px;
 		pointer-events: none;
@@ -2102,6 +2143,10 @@ body .flairselector li:hover {
 	background-color: transparent;
 }
 
+.link .flair {
+	font-size: 11px;
+}
+
 /* Verified flair */
 .flair {
 	background: none;
@@ -2109,7 +2154,7 @@ body .flairselector li:hover {
 
 .flair-verified {
 	cursor: help;
-	font-size: 0;
+	font-size: 0 !important;
 	margin: 0;
 	padding: 0;
 }
@@ -2118,7 +2163,7 @@ body .flairselector li:hover {
 	bottom: -2px;
 	color: #FA9F29;
 	content: "✔";
-	font: 900 15px Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 900 15px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	position: relative;
 }
 
@@ -2178,7 +2223,7 @@ body .flairselector li:hover {
 	}
 }
 
-.comments-page .content .flair-fan, .flairselector .flair-fan {
+.comments-page .content .flair-fan, .side .flair-fan {
 	display: inline-block;
 }
 
@@ -2519,7 +2564,7 @@ body .flairselector li:hover {
 .comments-page .flair-rank {
 	font-size: 0;
 }
-.comments-page .content .flair-rank, .flairselector .flair-rank {
+.comments-page .content .flair-rank, .side .flair-rank {
 	display: inline-block;
 }
 
@@ -2749,7 +2794,7 @@ body .flairselector li:hover {
 }
 
 .thing:hover .redditSingleClick:after {
-	opacity: .15;
+	opacity: 1;
 }
 
 .res .redditSingleClick:hover:after, .thing:hover .redditSingleClick:hover:after {
@@ -2781,7 +2826,8 @@ body .RES-keyNav-activeThing {
 	background: #F0F3FC;
 }
 
-.comments-page .RES-keyNav-activeThing {
+/* Main post itself, not comments */
+.comments-page #siteTable .RES-keyNav-activeThing {
 	min-height: 116px;
 }
 
@@ -2912,16 +2958,16 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 /* Save comment button */
 .usertext button.save {
-	font-size: 13px;
+	font-size: 11px;
 }
 
-/* Change "Save" button to "Comment" */
-[lang^=en] .usertext button.save {
+/* Change "Save" button to "Comment" for main post box */
+[lang^=en] .commentarea>.usertext button.save {
 	font-size: 0;
 }
-[lang^=en] .usertext button.save:before {
+[lang^=en] .commentarea>.usertext button.save:before {
 	content: "Comment";
-	font-size: 13px;
+	font-size: 11px;
 }
 
 .commentarea .panestack-title {
@@ -2990,6 +3036,10 @@ body .RESSubscriptionButton:hover {
 }
 
 /* RES Navigate by.. */
+body #REScommentNavToggle {
+	margin-top: 8px;
+}
+
 #REScommentNavToggle>span {
 	margin-right: 8px;
 }
@@ -3072,7 +3122,7 @@ body .commentNavSortType:hover {
 	display: none;
 }
 
-.commentarea>.siteTable {
+.commentarea>.sitetable {
 	margin-top: 16px;
 }
 
@@ -3084,7 +3134,7 @@ body .commentNavSortType:hover {
 
 .comment .midcol .arrow {
 	margin: 0 0 4px;
-	opacity: .4;
+	opacity: .3;
 	transition: opacity .1s ease-in-out;
 }
 .comment .midcol .arrow:hover {
@@ -3108,7 +3158,7 @@ body .commentNavSortType:hover {
 .comment-permalink-page .infobar a {
 	display: inline-block;
 }
-.comment-permalink-page .infobar a:first-letter {
+.comment-permalink-page .infobar:first-letter, .comment-permalink-page .infobar a:first-letter {
 	text-transform: uppercase;
 }
 .comment-permalink-page .infobar a:hover {
@@ -3135,6 +3185,16 @@ body .commentNavSortType:hover {
 	margin-left: 0; /* Reddit defaults to 10px */
 	padding: 2px 0 0 14px;
 	position: relative;
+}
+
+body.res-commentBoxes.res-commentBoxes-rounded .comment {
+	border-radius: 1px !important;
+}
+
+.usertext.grayed .usertext-body {
+	background: none;
+	padding: 0;
+	text-transform: uppercase;
 }
 
 .comment .expand {
@@ -3185,8 +3245,14 @@ body .commentNavSortType:hover {
 	font-size: 11px;
 }
 
+.res .comment .child {
+	margin-left: 0;
+}
+.comment .child {
+	border-left: none;
+}
 /* 'load more comments' */
-.comment .child, .comment .showreplies {
+.comment .showreplies {
 	border-left: none;
 	margin-left: 0; /* Reddit defaults to 15px */
 }
@@ -3293,7 +3359,11 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 	margin-left: 0; /* Reddit defaults to 5px */
 }
 
-.comments-page .md a:hover {
+.comments-page .content .md a {
+	color: #0097D2;
+}
+
+.comments-page .content .md a:hover {
 	text-decoration: underline;
 }
 
