@@ -1902,6 +1902,30 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 	content: ": ";
 }
 
+/* Make flair red with dot before for esports posts with "LIVE" contained within the flair text */
+.linkflair-eSports .title>.linkflairlabel[title*="LIVE"]:before {
+	background: #FF000F;
+	border-radius: 50%;
+	content: "";
+	display: inline-block;
+	height: 6px;
+	margin-right: 4px;
+	position: relative;
+	top: -1px;
+	vertical-align: middle;
+	width: 6px;
+}
+
+.linkflair-eSports .title>.linkflairlabel[title*="LIVE"] {
+	color: #FF000F;
+}
+
+/* The other visited selector fades titles. Don't fade the title of a live match */
+.linkflair-eSports .linkflairlabel[title*="LIVE"]+.title:visited,
+.linkflair-eSports .linkflairlabel[title*="LIVE"]+.title.visited {
+	color: #042e54 !important;
+}
+
 /* Post flair picker */
 .flairselector {
 	background: #FFF;
@@ -2879,8 +2903,10 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 }
 
 .comments-page>.content>#siteTable .thumbnail {
+	height: 82px;
 	left: 16px;
 	top: 16px;
+	width: 82px;
 }
 
 .comments-page .title .linkflairlabel {
@@ -2942,7 +2968,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 
 .comments-page .expando {
-	margin: 48px 0 0 -82px; /* Values <= 16px have no effect, so top margin actually 16px */
+	margin: 32px 0 0 -82px; /* Values <= 16px have no effect, so top margin actually 16px */
 	padding: 0;
 }
 
@@ -3236,6 +3262,14 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 	border-radius: 1px !important;
 }
 
+/* Duplicate of Reddit's selector making elements italic */
+.comment.collapsed .tagline :not(.expand),
+.comment.collapsed .tagline a :not(.expand),
+.comment.collapsed .search-result-meta :not(.expand),
+.comment.collapsed .search-result-meta a :not(.expand) {
+	font-style: normal;
+}
+
 .usertext.grayed .usertext-body {
 	background: none;
 	padding: 0;
@@ -3243,7 +3277,7 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 }
 
 .comment .expand {
-	background: #F0F0F1;
+	background: #f3f3f4;
 	border-radius: 1px 0 0 1px;
 	bottom: 0;
 	cursor: default;
@@ -3252,7 +3286,7 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 	position: absolute;
 	top: 0;
 	transition: background .04s ease-in-out;
-	width: 12px;
+	width: 10px;
 }
 
 .comment .expand:hover {
@@ -3562,11 +3596,11 @@ ul.tabmenu.formtab li:first-child:after {
 	width: 100%;
 }
 
-.submit-page .title {
+.submit-page .roundfield>.title {
 	font-size: 16px;
 	text-transform: capitalize;
 }
-.submit-page .title:after {
+.submit-page .roundfield>.title:after {
 	content: ":";
 }
 
