@@ -2575,7 +2575,7 @@ body .flairselector li:hover {
 	width: 21px;
 }
 .flair-oh-my-god, .md a[href*="oh-my-god"] {
-	background-position: -222px -25px;
+	background-position: -222px -0px;
 	height: 25px;
 	width: 21px;
 }
