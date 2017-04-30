@@ -2589,9 +2589,8 @@ body .flairselector li:hover {
 	width: 21px;
 }
 .flair-oh-my-god, .md a[href*="oh-my-god"] {
-	background-position: -222px -25px;
+	background-position: -221px 0;
 	height: 25px;
-	width: 21px;
 }
 .flair-lgd-gaming, .md a[href*="lgd-gaming"] {
 	background-position: -200px -125px;
@@ -2614,17 +2613,15 @@ body .flairselector li:hover {
 	width: 21px;
 }
 .flair-jhg-gold, .md a[href*="jhg-gold"] {
-	background-position: -217px -45px;
+	background-position: -216px -45px;
 	height: 21px;
-	width: 25px;
+	width: 27px;
 }
 .flair-miraculous-youngsters, .md a[href*="miraculous-youngsters"] {
 	background-position: -216px -68px;
 	height: 21px;
 	width: 28px;
 }
-
-
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
