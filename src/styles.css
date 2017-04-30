@@ -2535,6 +2535,88 @@ body .flairselector li:hover {
 	height: 22px;
 	width: 21px;
 }
+.flair-ahq-esports-club, .md a[href*="ahq-esports-club"] {
+	background-position: -169px -46px;
+	height: 24px;
+	width: 26px;
+}
+.flair-detonator-gold, .md a[href*="detonator-gold"] {
+	background-position: -190px 0;
+	height: 21px;
+	width: 25px;
+}
+.flair-flash-wolves, .md a[href*="flash-wolves"] {
+	background-position: -186px -22px;
+	height: 21px;
+	width: 35px;
+}
+.flair-fireball, .md a[href*="fireball"] {
+	background-position: -196px -44px;
+	height: 24px;
+	width: 20px;
+}
+.flair-hong-kong-attitude, .md a[href*="hong-kong-attitude"] {
+	background-position: -191px -71px;
+	height: 21px;
+	width: 24px;
+}
+.flair-machi-esports, .md a[href*="machi-esports"] {
+	background-position: -181px -94px;
+	height: 22px;
+	width: 22px;
+}
+.flair-sunsister, .md a[href*="sunsister"] {
+	background-position: -177px -117px;
+	height: 22px;
+	width: 22px;
+}
+.flair-1246, .md a[href*="1246"] {
+	background-position: -183px -140px;
+	height: 21px;
+	width: 28px;
+}
+.flair-invictus-gaming-ice, .md a[href*="invictus-gaming-ice"] {
+	background-position: -183px -162px;
+	height: 21px;
+	width: 21px;
+}
+.flair-oh-my-god, .md a[href*="oh-my-god"] {
+	background-position: -222px -25px;
+	height: 25px;
+	width: 21px;
+}
+.flair-lgd-gaming, .md a[href*="lgd-gaming"] {
+	background-position: -200px -125px;
+	height: 14px;
+	width: 40px;
+}
+.flair-black-ananas, .md a[href*="black-ananas"] {
+	background-position: -204px -100px;
+	height: 24px;
+	width: 16px;
+}
+.flair-ftd-club, .md a[href*="ftd-club"] {
+	background-position: -205px -162px;
+	height: 20px;
+	width: 35px;
+}
+.flair-lucky-future, .md a[href*="lucky-future"] {
+	background-position: -212px -140px;
+	height: 21px;
+	width: 21px;
+}
+.flair-jhg-gold, .md a[href*="jhg-gold"] {
+	background-position: -217px -45px;
+	height: 21px;
+	width: 25px;
+}
+.flair-miraculous-youngsters, .md a[href*="miraculous-youngsters"] {
+	background-position: -216px -68px;
+	height: 21px;
+	width: 28px;
+}
+
+
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
@@ -2593,6 +2675,22 @@ body .flairselector li:hover {
 .flairselector .flair-rhinos-gaming-wings+span:after { content:"Rhinos Gaming Wings" }
 .flairselector .flair-mvp-space+span:after { content:"MVP Space" }
 .flairselector .flair-you-guys-get-paid+span:after { content:"You Guys Get Paid?" }
+.flairselector .flair-ahq-esports-club+span:after { content:"ahq eSports Club" }
+.flairselector .flair-detonator-gold+span:after { content:"Detonator Gold" }
+.flairselector .flair-flash-wolves+span:after { content:"Flash wolves" }
+.flairselector .flair-fireball+span:after { content:"FireBall" }
+.flairselector .flair-hong-kong-attitude+span:after { content:"Hong Kong Attitude" }
+.flairselector .flair-machi-esports+span:after { content:"Machi Esports" }
+.flairselector .flair-sunsister+span:after { content:"SunSister" }
+.flairselector .flair-1246+span:after { content:"1246" }
+.flairselector .flair-invictus-gaming-ice+span:after { content:"Invictus Gaming Ice" }
+.flairselector .flair-oh-my-god+span:after { content:"Oh My God" }
+.flairselector .flair-lgd-gaming+span:after { content:"LGD Gaming" }
+.flairselector .flair-black-ananas+span:after { content:"Black Ananas" }
+.flairselector .flair-ftd-club+span:after { content:"FTD Club" }
+.flairselector .flair-lucky-future+span:after { content:"Lucky Future" }
+.flairselector .flair-jhg-gold+span:after { content:"JHG Gold" }
+.flairselector .flair-miraculous-youngsters+span:after { content:"Miraculous Youngsters" }
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
