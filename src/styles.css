@@ -2273,7 +2273,7 @@ body .flairselector li:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 192px 182px;
+		background-size: 246px 185px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -2562,13 +2562,9 @@ body .flairselector li:hover {
 }
 .flair-machi-esports, .md a[href*="machi-esports"] {
 	background-position: -181px -94px;
-	height: 22px;
-	width: 22px;
 }
 .flair-sunsister, .md a[href*="sunsister"] {
 	background-position: -177px -117px;
-	height: 22px;
-	width: 22px;
 }
 .flair-1246, .md a[href*="1246"] {
 	background-position: -183px -140px;
