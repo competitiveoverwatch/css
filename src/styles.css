@@ -2286,7 +2286,6 @@ body .flairselector li:hover {
 
 .flair-cloud-9, .md a[href*="cloud-9"] {
 	background-position: 0 -22px;
-	height: 22px;
 	width: 31px;
 }
 .flair-team-celestial, .md a[href*="team-celestial"] {
@@ -2532,7 +2531,6 @@ body .flairselector li:hover {
 }
 .flair-you-guys-get-paid, .md a[href*="you-guys-get-paid"] {
 	background-position: -169px -71px;
-	height: 22px;
 	width: 21px;
 }
 .flair-ahq-esports-club, .md a[href*="ahq-esports-club"] {
