@@ -1,28 +1,28 @@
 # [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS & Images
 
-###Building
+### Building
 * Clone the repo
 * `npm install`
 * `npm run build` to minify images and CSS
     - Alternatively, `npm run build-css`/`npm run build-img` individually
 * Find minified CSS in `dist/final.css` and compressed images in `dist/images`
 
-###Structure
+### Structure
 * CSS: `src/main.css`
 * Raw image files (PSDs): `src/images-psd`
 * Exported image files (JPG/PNG): `src/images-export`
 
-###Notes
+### Notes
 * The CSS was originally based on [Naut](https://github.com/Axel--/Naut-for-reddit), which has since been mostly merged in to free up file space (based on Reddit's CSS size limit of 100 KB)
 
-###3rd Party Image Sources
+### 3rd Party Image Sources
 * Main spritesheet – [Naut](https://github.com/Axel--/Naut-for-reddit/blob/master/PSD/spritesheet.psd) with heavy customisations
 * Flag spritesheet assembled from [FlagKit flag images](https://github.com/madebybowtie/FlagKit/tree/master/Images)
 * Sidebar:
     - [Twitch](https://www.twitch.tv/p/brand-assets)
     - [Twitter](https://brand.twitter.com/en.html)
 
-###License
+### License
 * The following are licensed under the MIT License – see [LICENSE](LICENSE):
     * CSS in `src/main.css`
     * PSD files and PNG files with the following names (not including file extension):
@@ -38,7 +38,7 @@
         + `tags-heroes`
         + `tags-maps`
 
-####3rd Party Licenses
+#### 3rd Party Licenses
 
 **Portions of `main.css` and `spritesheet` are licensed under the MIT License:**
 
