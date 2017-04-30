@@ -1126,6 +1126,9 @@ body:not(.res-nightmode) .side .md h4 a {
 	margin-top: -4px;
 }
 
+.side .md>h4+p>a>strong {
+	font-weight: normal;
+}
 
 /* Rules in sidebar */
 .side .md ul {
@@ -1601,6 +1604,11 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	padding: 0;
 }
 
+/* Image uploaded via Reddit itself */
+.media-preview .media-preview-content {
+	margin-top: 32px;
+}
+
 /* Post Thumbnails */
 .thumbnail, .thumbnail.spoiler {
 	height: 100%;
@@ -1648,6 +1656,12 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	color: #81858A; /* #OC141E, 50% opacity */
 	font-size: inherit;
 	margin-top: 5px;
+}
+
+@media (max-device-width: 800px) {
+	.tagline, .search-result-meta {
+		font-size: 5px;
+	}
 }
 
 .listing-page .tagline:first-letter {
@@ -3157,6 +3171,24 @@ body .RESSubscriptionButton {
 body .RESSubscriptionButton:hover {
 	border-color: #042E54;
 	color: #042E54;
+}
+
+.panestack-title .title-button {
+	display: inline-block;
+	text-transform: capitalize;
+}
+
+/* Show all x comments button */
+.panestack-title a.title-button.gold {
+	background: none;
+	border-color: #042e54;
+	border-radius: 1px;
+	color: #042e54;
+}
+
+/* For some reason, previous `text-transform: capitalize` has no effect */
+.panestack-title a.title-button.gold:first-letter {
+	text-transform: uppercase;
 }
 
 .commentarea .menuarea {
