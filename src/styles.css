@@ -1738,6 +1738,7 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 
 .tagline .userattrs .submitter, .search-result-meta .submitter {
 	background: #85898E;
+	border-radius: 1px;
 	color: #FFF;
 	cursor: default;
 }
@@ -2218,11 +2219,11 @@ body .flairselector li:hover {
 	font-size: 11px;
 }
 
-/* Verified flair */
 .flair {
 	background: none;
 }
 
+/* Verified flair */
 .flair-verified {
 	cursor: help;
 	font-size: 0 !important;
@@ -2240,6 +2241,14 @@ body .flairselector li:hover {
 
 .comment .flair-verified {
 	margin: 0 4px;
+}
+
+/* Blizzard */
+.flair-blizzard {
+	background: #0097D2;
+	color: #FFF;
+	display: inline-block;
+	padding: 0 4px;
 }
 
 /* User flairs for teams and in-post tags for team icons */
@@ -3060,13 +3069,21 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	text-align: left;
 }
 .expando-gate .expando-gate__show-once {
-	background: #222;
-	border: none;
+	background: #b6b8bb;
+	border-radius: 1px;
+	color: #FFF;
+	font-size: 12px;
 	font-weight: normal;
-	letter-spacing: .2px;
 	margin: 8px 0 0;
-	padding: 8px 16px;
+	padding: 8px 0;
 	pointer-events: auto;
+	text-transform: none;
+	width: 98%;
+	width: calc(100% - 16px);
+}
+.expando-gate .expando-gate__show-once:hover {
+	background: #85898E;
+	color: #FFF;
 }
 
 
@@ -3121,7 +3138,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 }
 
 .usertext button {
-	border-radius: 2px;
+	border-radius: 1px;
 }
 
 /* Save comment button */
@@ -3542,7 +3559,7 @@ body.res-voteEnhancements-estimatePostVotes .linkinfo .totalvotes {
 	position: fixed;
 	right: 352px;
 	top: 221px;
-	z-index: 1;
+	z-index: 2;
 }
 
 /* General formatting */
