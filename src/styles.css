@@ -1485,11 +1485,11 @@ body .res-filterline-dropdown-container {
 	text-transform: uppercase;
 }
 
-.listing-page .link.stickied {
+.hot-page .link.stickied {
 	margin-bottom: 16px;
 }
 
-.listing-page .link.stickied + .clearleft + .link.stickied {
+.hot-page .link.stickied + .clearleft + .link.stickied {
 	margin-top: -15px;
 }
 
