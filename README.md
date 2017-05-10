@@ -1,35 +1,32 @@
-# [/r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS & Images
+# [r/CompetitiveOverwatch](https://reddit.com/r/competitiveoverwatch) CSS & Images
 
 ### Building
 * Clone the repo
 * `yarn`
 * `yarn build` to minify images and CSS
-    - Alternatively, `yarn build-css`/`yarn build-img` individually
+    - Alternatively, `yarn css`/`yarn img` individually
 * Find minified CSS in `dist/final.css` and compressed images in `dist/images`
 
 ### Structure
-* CSS: `src/main.css`
-* Raw image files (PSDs): `src/images-psd`
-* Exported image files (JPG/PNG): `src/images-export`
-
-### Notes
-* The CSS was originally based on [Naut](https://github.com/Axel--/Naut-for-reddit), which has since been mostly merged in to free up file space (based on Reddit's CSS size limit of 100 KB)
+* CSS: `src/styles.css`
+* Raw image files (PSDs): `src/images`
+* Exported image files (JPG/PNG): `src/images exported`
 
 ### 3rd Party Image Sources
 * Main spritesheet – [Naut](https://github.com/Axel--/Naut-for-reddit/blob/master/PSD/spritesheet.psd) with heavy customisations
 * Flag spritesheet assembled from [FlagKit flag images](https://github.com/madebybowtie/FlagKit/tree/master/Images)
-* Sidebar:
-    - [Twitter](https://brand.twitter.com/en.html)
+* [Sidebar Twitter image](https://brand.twitter.com/en.html)
 
 ### License
 * The following are licensed under the MIT License – see [LICENSE](LICENSE):
-    * CSS in `src/main.css`
+    * CSS in `src/styles.css`
     * PSD files and PNG files with the following names (not including file extension):
         + `redditname-2x`
         + `redditname`
         + `tags-check`
         + `tags-heroes`
         + `tags-maps`
+        + `thumbnails`
 
 #### 3rd Party Licenses
 
