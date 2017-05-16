@@ -68,7 +68,7 @@ button {
 	border: none;
 	color: #FFF;
 	height: 235px;
-	z-index: 0;
+	z-index: initial;
 }
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
@@ -1499,7 +1499,7 @@ body .res-filterline-dropdown-container {
 
 .listing-page .link {
 	margin: 0;
-	padding: 14px 16px 12px 118px;
+	padding: 14px 16px 10px 118px;
 	position: relative;
 }
 /* Remove dashed border for last clicked link */
@@ -1562,10 +1562,6 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	width: 99%;
 }
 
-.spoiler a.title:before {
-	content: "[Spoiler] ";
-}
-
 /* Stickied link title */
 .thing.stickied.link a.title {
 	color: inherit;
@@ -1573,7 +1569,11 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 }
 
 .domain {
-	display: none;
+	color: #ccc;
+}
+
+.domain a {
+	color: #ccc;
 }
 
 .approval-checkmark {
@@ -1684,6 +1684,10 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	font-weight: normal;
 }
 
+.link.compressed .tagline {
+	display: block;
+}
+
 /* `body` and `!important` required, 'cause RES. */
 body.res-userHighlight .tagline .author.moderator {
 	background: #00C934 !important;
@@ -1761,6 +1765,10 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 	font-size: 12px;
 	margin-top: 5px;
 	padding: 0; /* Reddit defaults to 1px 0; */
+}
+
+.pretty-button {
+	margin-bottom: 0px;
 }
 
 .comments-page .link .flat-list {
@@ -2217,6 +2225,7 @@ body .flairselector li:hover {
 
 .link .flair {
 	font-size: 0px;
+	margin-top: -5px;
 }
 
 .flair {
@@ -3080,7 +3089,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	color: #FFF;
 	font-size: 12px;
 	font-weight: normal;
-	margin: 8px 0 0;
+	margin: 30px 0 0;
 	padding: 8px 0;
 	pointer-events: auto;
 	text-transform: none;
@@ -3271,6 +3280,7 @@ body .commentNavSortType:hover {
 .commentarea .usertext-edit {
 	max-width: none;
 	width: 100%;
+	padding: 10px;
 }
 
 .commentarea>.usertext {
@@ -3345,6 +3355,7 @@ body .commentNavSortType:hover {
 .comment .midcol {
 	width: 24px;
 	margin-right: 0;
+	margin-left: 5px;
 }
 
 .comment .midcol .arrow {
@@ -3430,7 +3441,7 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 	position: absolute;
 	top: 0;
 	transition: background .04s ease-in-out;
-	width: 10px;
+	width: 12px;
 }
 
 .comment .expand:hover {
@@ -3529,13 +3540,13 @@ body:not(.res-nightmode) .linkinfo {
 	text-transform: capitalize;
 }
 
-.linkinfo .score {
+.linkinfo .score, .linkinfo .views {
 	color: #85898E;
 	font-size: 13px;
 	margin-top: 8px;
 }
 
-.linkinfo .score .number, .linkinfo .score .word {
+.linkinfo .score .number, .linkinfo .score .word, .linkinfo .views .view-count, .linkinfo .views .unit {
 	font-size: 13px;
 	font-weight: normal;
 }
