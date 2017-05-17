@@ -3103,8 +3103,12 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 
 .comments-page .expando {
-	margin: 32px 0 0 -82px; /* Values <= 16px have no effect, so top margin actually 16px */
+	margin: 50px 0 0 -82px; /* Values <= 16px have no effect, so top margin actually 16px */
 	padding: 0;
+}
+
+.res-expando-box {
+	margin: 55px 0 0 -82px;
 }
 
 /* Twitch embeds etc. */
