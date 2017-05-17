@@ -1591,10 +1591,18 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	display: none;
 }
 
+.comments-page .expando-button {
+	margin-top: 11px;
+}
+
 .entry>.expando-button, .entry>.expando-button.image, .entry>.expando-button.video-muted {
 	margin-left: -2px;
 	margin-top: -1px;
 	transform: scale(.75);
+}
+
+.comments-page .expando-button {
+	margin-top: 11px;
 }
 
 /* Expando contents */
@@ -3055,7 +3063,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 }
 
 .comments-page>.content>#siteTable .midcol {
-	margin: 12px 22px 0 118px;
+	margin: 28px 22px 0 118px;
 }
 
 .comments-page>.content>#siteTable .entry {
