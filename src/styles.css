@@ -2496,7 +2496,7 @@ body .flairselector li:hover {
 	height: 16px;
 	width: 25px;
 }
-.flair-evil-geniuses, .md a[href*="evilgeniuses"] {
+.flair-evil-geniuses, .md a[href*="evil-geniuses"] {
 	background-position: -117px -17px;
 	height: 16px;
 	width: 24px;
@@ -2653,6 +2653,11 @@ body .flairselector li:hover {
 	height: 15px;
 	width: 21px;
 }
+.flair-gale-force, .md a[href*="gale-force"] {
+	background-position: -222px -27px;
+	height: 17px;
+	width: 21px;
+}
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
@@ -2728,6 +2733,7 @@ body .flairselector li:hover {
 .flairselector .flair-jhg-gold+span:after { content:"JHG Gold" }
 .flairselector .flair-miraculous-youngsters+span:after { content:"Miraculous Youngsters" }
 .flairselector .flair-counter-logic-gaming+span:after { content:"Counter Logic Gaming" }
+.flairselector .flair-cgale-force+span:after { content:"Gale Force" }
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
