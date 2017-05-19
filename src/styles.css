@@ -1782,8 +1782,8 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 .comments-page .link .flat-list {
 	font-size: 12px;
 	left: 0;
-	margin-top: 16px;
-	position: absolute;
+	margin: 36px 0 0 -98px;
+	padding-bottom: 10px;
 }
 
 .entry .buttons li {
@@ -3015,7 +3015,6 @@ body .flairselector li:hover {
 }
 
 .comments-page>.content {
-	background: #FFF;
 	border-radius: 1px;
 	padding-bottom: 32px;
 }
@@ -3035,6 +3034,8 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 .comments-page>.content>#siteTable .thing {
 	position: relative;
+	background: #fff;
+	margin-bottom: 0;
 }
 
 .comments-page>.content>#siteTable .thumbnail {
@@ -3115,6 +3116,14 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	padding: 0;
 }
 
+.expando .res-expando-box {
+	margin: 0;
+}
+
+.comment .res-expando-box {
+	margin: 0;
+}
+
 .res-expando-box {
 	margin: 55px 0 0 -82px;
 }
@@ -3127,8 +3136,6 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 .commentarea {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 56px;
-	padding: 0 16px;
 }
 
 .commentarea>* {
@@ -3190,7 +3197,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 
 .commentarea .panestack-title {
 	border-bottom: 0;
-	margin: 20px 0 0;
+	margin: 10px 0 0;
 	order: 2;
 }
 
@@ -3233,9 +3240,8 @@ body .RESSubscriptionButton:hover {
 }
 
 .commentarea .menuarea {
-	color: #9B9EA2;
 	font-size: 13px;
-	margin: 8px 0 4px;
+	margin: 4px 0 4px;
 	order: 3;
 	text-transform: capitalize;
 }
@@ -3297,6 +3303,7 @@ body .commentNavSortType:hover {
 
 .commentarea>.usertext {
 	margin: 0;
+	background: #fff;
 }
 
 .commentarea>.usertext textarea {
@@ -3320,14 +3327,14 @@ body .commentNavSortType:hover {
 
 /* Highlight comments box */
 .gold-accent.comment-visits-box, .gold-accent.comment-visits-box select {
-	color: #9b9ea2;
+	color: gray;
 	order: 3;
 }
 
 .gold-accent.comment-visits-box {
 	background: none;
 	border: none;
-	margin: 6px 0 0;
+	margin: 2px 0 0;
 	padding: 0;
 }
 
@@ -3360,7 +3367,7 @@ body .commentNavSortType:hover {
 }
 
 .commentarea>.sitetable {
-	margin-top: 16px;
+	margin-top: 10px;
 }
 
 /* Vote arrows */
@@ -3420,13 +3427,16 @@ body .commentNavSortType:hover {
 
 /* Individual comments */
 .comment {
-	margin-left: 0; /* Reddit defaults to 10px */
+	margin: 0 0 10px 0;
 	padding: 2px 0 0 14px;
 	position: relative;
+	background: #fff;
 }
 
 body.res-commentBoxes.res-commentBoxes-rounded .comment {
 	border-radius: 1px !important;
+	margin: 0 0 10px 0 !important;
+	padding: 5px 8px 5px 16px !important;
 }
 
 /* Duplicate of Reddit's selector making elements italic */
@@ -3444,7 +3454,7 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 }
 
 .comment .expand {
-	background: #f3f3f4;
+	background: #d8d8d8;
 	border-radius: 1px 0 0 1px;
 	bottom: 0;
 	cursor: default;
@@ -3464,6 +3474,7 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 
 .comment .entry {
 	margin-left: 40px; /* Values <= 24px not accepted (?), so actual is 16px */
+	padding-bottom: 4px;
 }
 
 /* Reddit's 'highlight new comments' feature */
