@@ -3044,6 +3044,10 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	margin-bottom: 0;
 }
 
+.comments-page>.content>#siteTable .spam {
+	background-color: #fa8072;
+}
+
 .comments-page>.content>#siteTable .thumbnail {
 	height: 82px;
 	left: 16px;
