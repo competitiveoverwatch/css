@@ -2733,7 +2733,7 @@ body .flairselector li:hover {
 .flairselector .flair-jhg-gold+span:after { content:"JHG Gold" }
 .flairselector .flair-miraculous-youngsters+span:after { content:"Miraculous Youngsters" }
 .flairselector .flair-counter-logic-gaming+span:after { content:"Counter Logic Gaming" }
-.flairselector .flair-cgale-force+span:after { content:"Gale Force" }
+.flairselector .flair-gale-force+span:after { content:"Gale Force" }
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
