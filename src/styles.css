@@ -2658,6 +2658,11 @@ body .flairselector li:hover {
 	height: 17px;
 	width: 21px;
 }
+.flair-cyclowns, .md a[href*="cyclowns"] {
+	background-position: -222px -91px;
+	height: 23px;
+	width: 19px;
+}
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
@@ -2734,6 +2739,7 @@ body .flairselector li:hover {
 .flairselector .flair-miraculous-youngsters+span:after { content:"Miraculous Youngsters" }
 .flairselector .flair-counter-logic-gaming+span:after { content:"Counter Logic Gaming" }
 .flairselector .flair-gale-force+span:after { content:"Gale Force" }
+.flairselector .flair-cyclowns+span:after { content:"Cyclowns" }
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
@@ -3134,7 +3140,7 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	margin: 0;
 }
 
-.res-expando-box {
+.comments-page .res-expando-box {
 	margin: 55px 0 0 -82px;
 }
 
