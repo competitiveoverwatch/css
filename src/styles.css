@@ -1556,9 +1556,6 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 }
 
 .listing-page .thing p.title {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 	width: 99%;
 }
 
@@ -1622,41 +1619,39 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	height: 100%;
 	left: 0;
 	margin: 0;
-	max-height: 86px;
 	position: absolute;
 	top: 0;
 	width: 82px;
 }
 
 .thumbnail.self, .thumbnail.spoiler, .thumbnail.default, a.thumbnail[href*="reddit.com"] {
-	background: #85898E url(%%thumbnails%%) -82px 0;
+	background: #85898E url(%%thumbnails%%) -82px 0 no-repeat;
 	height: 100%; /* To override Reddit setting a specific height */
 }
 
 .thumbnail img {
-	min-height: 100%;
+	height: 100%;
 	position: absolute;
-	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 0);
 	width: auto;
+	max-height: 194px
 }
 
-.over18.link .thumbnail { background: #fb0b19 url(%%thumbnails%%) -82px -164px }
+.over18.link .thumbnail { background: #fb0b19 url(%%thumbnails%%) -574px 0 no-repeat }
 
-.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #85898e url(%%thumbnails%%) -82px -82px }
-
+.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%thumbnails%%) 0 0 no-repeat !important }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -82px 0 no-repeat}
+.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -164px 0 no-repeat }
 .linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler,
-.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) 0 -82px }
-
-.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -163px 0 }
-.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) 0 -164px }
-.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -164px -82px }
-.linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #85898e }
-.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) 0 -246px }
-.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%thumbnails%%) 0 0 !important }
-.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -82px 0 }
+.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) -246px 0 no-repeat }
+.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #85898e url(%%thumbnails%%) -328px 0 no-repeat }
+.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -410px 0 no-repeat }
+.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -492px 0 no-repeat }
+.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -738px 0 no-repeat }
 .linkflair-WorldCup .thumbnail, .linkflair-WorldCup .thumbnail.spoiler { background: ; }
+.linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #85898e }
+
 
 /* Tagline */
 
@@ -2132,8 +2127,8 @@ body .flairselector li:hover {
 	margin: 0;
 	min-height: 52px;
 	order: 2;
-	padding: 16px 0;
-	text-align: center;
+	padding: 16px 16px;
+	text-align: left;
 	width: 100%;
 }
 
@@ -2313,7 +2308,7 @@ body .flairselector li:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 251px 187px;
+		background-size: 253px 185px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -2324,345 +2319,101 @@ body .flairselector li:hover {
 	display: inline-block;
 }
 
-.flair-cloud-9, .md a[href*="cloud-9"] {
-	background-position: 0 -22px;
-	width: 31px;
-}
-.flair-team-celestial, .md a[href*="team-celestial"] {
-	background-position: 0 -44px;
-	height: 21px;
-	width: 21px;
-}
-.flair-misfits, .md a[href*="misfits"] {
-	background-position: 0 -65px;
-	height: 23px;
-	width: 19px;
-}
-.flair-dignitas, .md a[href*="dignitas"] {
-	background-position: -22px 0;
-	width: 19px;
-	
-}
-.flair-rogue, .md a[href*="rogue"] {
-	background-position: -31px -22px;
-	height: 24px;
-	width: 19px;
-}
-.flair-complexity, .md a[href*="complexity"] {
-	background-position: -23px -46px;
-	height: 14px;
-	width: 23px;
-}
-.flair-fnatic, .md a[href*="fnatic"] {
-	background-position: -21px -60px;
-	height: 18px;
-}
-.flair-nrg, .md a[href*="nrg"] {
-	background-position: -41px 0;
-	width: 30px;
-}
-.flair-lg-loyal, .md a[href*="lg-loyal"] {
-	background-position: -51px -22px;
-	width: 21px;
-}
-.flair-invictus, .md a[href*="invictus"] {
-	background-position: -49px -44px;
-}
-.flair-tempo-storm, .md a[href*="tempo-storm"] {
-	background-position: -44px -66px;
-	height: 17px;
-	width: 24px;
-}
-.flair-ninjas-in-pyjamas, .md a[href*="ninjas-in-pyjamas"] {
-	background-position: -71px 0;
-}
-.flair-liquid, .md a[href*="liquid"] {
-	background-position: -68px -63px;
-	height: 24px;
-}
-.flair-lunatic-hai, .md a[href*="lunatic-hai"] {
-	background-position: 0 -89px;
-	height: 20px;
-}
-.flair-faze, .md a[href*="faze"] {
-	background-position: -21px -79px;
-	height: 15px;
-}
-.flair-freecs-blue, .md a[href*="freecs-blue"] {
-	background-position: -66px -90px;
-	height: 24px;
-}
-.flair-immortals, .md a[href*="immortals"] {
-	background-position: -89px -83px;
-	height:  21px;
-	width: 21px;
-}
-.flair-method, .md a[href*="method"] {
-	background-position: -93px 0;
-	height: 21px;
-	width: 21px;
-}
-.flair-luxury-watch-red, .md a[href*="luxury-watch-red"], .flair-luxury-watch-blue, .md a[href*="luxury-watch-blue"] {
-	background-position: 0 -110px;
-	height: 20px;
-}
-.flair-vici-gaming, .md a[href*="vici-gaming"] {
-	background-position: -23px -95px;
-	height: 21px;
-}
-.flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] {
-	background-position: -45px -104px;
-	height: 17px;
-}
-.flair-ldlc, .md a[href*="ldlc"] {
-	background-position: -67px -114px;
-	height: 23px;
-	width: 21px;
-}
-.flair-rise, .md a[href*="rise"] {
-	background-position: -88px -104px;
-	border-radius: 0 0 50% 50%;
-	height: 19px;
-	width: 30px;
-}
-.flair-kongdoo-uncia, .md a[href*="kongdoo-uncia"] {
-	background-position: -94px -22px;
-	height: 17px;
-	width: 22px;
-}
-.flair-renegades, .md a[href*="renegades"] {
-	background-position: -22px -116px;
-}
-.flair-world-elite-white, .md a[href*="world-elite-white"] {
-	background-position: -88px -123px;
-	height: 15px;
-	width: 25px;
-}
-.flair-meta-athena, .md a[href*="meta-athena"] {
-	background-position: -72px -22px;
-	height: 21px;
-	width: 21px;
-}
-.flair-lg-evil, .md a[href*="lg-evil"] {
-	background-position: -71px -43px;
-	height: 20px;
-	width: 21px;
-}
-.flair-selfless, .md a[href*="selfless"] {
-	background-position: -92px -41px;
-	height: 20px;
-	width: 24px;
-}
-.flair-runaway, .md a[href*="runaway"] {
-	background-position: -90px -63px;
-	height: 20px;
-	width: 32px;
-}
-.flair-eunited, .md a[href*="eunited"] {
-	background-position: -34px -138px;
-	height: 15px;
-	width: 36px
-}
-.flair-blank, .md a[href*="blank"] {
-	background-position: -92px -172px;
-	height: 14px;
-	width: 40px;
-}
-.flair-hammers, .md a[href*="hammers"] {
-	background-position: -70px -138px;
-	height: 21px;
-	width: 18px;
-}
-.flair-laser-kittenz, .md a[href*="laser-kittenz"] {
-	background-position: -45px -84px;
-	height: 19px;
-	width: 21px;
-}
-.flair-movistar-riders, .md a[href*="movistar-riders"] {
-	background-position: -22px -155px;
-	height: 26px;
-}
-.flair-gamersorigin, .md a[href*="gamersorigin"] {
-	background-position: -45px -154px;
-	width: 21px;
-}
-.flair-brasil-gaming-house, .md a[href*="brasil-gaming-house"] {
-	background-position: -67px -160px;
-	height: 21px;
-	width: 21px;
-}
-.flair-denial, .md a[href*="denial"] {
-	background-position: -115px 0;
-	height: 16px;
-	width: 25px;
-}
-.flair-evil-geniuses, .md a[href*="evil-geniuses"] {
-	background-position: -117px -17px;
-	height: 16px;
-	width: 24px;
-}
-.flair-wnv, .md a[href*="wnv"] {
-	background-position: -118px -35px;
-	height: 15px;
-	width: 35px;
-}
-.flair-splyce, .md a[href*="splyce"] {
-	background-position: -122px -50px;
-}
-.flair-scylla, .md a[href*="scylla"] {
-	background-position: -123px -73px;
-	height: 24px;
-	width: 20px;
-}
-.flair-red-reserve, .md a[href*="red-reserve"] {
-	background-position: -89px -159px;
-	height: 11px;
-	width: 45px;
-}
-.flair-vivis-adventure, .md a[href*="vivis-adventure"] {
-	background-position: -107px -141px;
-	height: 18px;
-	width: 42px;
-}
-.flair-singularity-ninjas, .md a[href*="singularity-ninjas"] {
-	background-position: -119px -97px;
-	height: 23px;
-	width: 23px;
-}
-.flair-envision, .md a[href*="envision"] {
-	background-position: -113px -121px;
-	height: 15px;
-	width: 28px;
-}
-.flair-bk-stars, .md a[href*="bk-stars"] {
-	background-position: -143px 0;
-	height: 24px;
-	width: 20px;
-}
-.flair-x6-gaming, .md a[href*="x6-gaming"] {
-	background-position: -142px -119px;
-	height: 20px;
-	width: 34px;
-}
-.flair-conbox-spirit, .md a[href*="conbox-spirit"] {
-	background-position: -144px -94px;
-	height: 24px;
-	width: 37px;
-}
-.flair-flash-lux, .md a[href*="flash-lux"] {
-	background-position: -153px -25px;
-	height: 20px;
-	width: 32px;
-}
-.flair-mighty, .md a[href*="mighty"] {
-	background-position: -145px -50px;
-	height: 26px;
-	width: 24px;
-}
-.flair-rhinos-gaming-wings, .md a[href*="rhinos-gaming-wings"] {
-	background-position: -157px -140px;
-	height: 26px;
-	width: 24px;
-}
-.flair-mvp-space, .md a[href*="mvp-space"] {
-	background-position: -164px 0;
-	height: 24px;
-	width: 25px;
-}
-.flair-you-guys-get-paid, .md a[href*="you-guys-get-paid"] {
-	background-position: -169px -71px;
-	width: 21px;
-}
-.flair-ahq-esports-club, .md a[href*="ahq-esports-club"] {
-	background-position: -169px -46px;
-	height: 24px;
-	width: 26px;
-}
-.flair-detonator-gold, .md a[href*="detonator-gold"] {
-	background-position: -190px 0;
-	height: 21px;
-	width: 25px;
-}
-.flair-flash-wolves, .md a[href*="flash-wolves"] {
-	background-position: -186px -22px;
-	height: 21px;
-	width: 35px;
-}
-.flair-fireball, .md a[href*="fireball"] {
-	background-position: -196px -44px;
-	height: 24px;
-	width: 20px;
-}
-.flair-hong-kong-attitude, .md a[href*="hong-kong-attitude"] {
-	background-position: -191px -71px;
-	height: 21px;
-	width: 24px;
-}
-.flair-machi-esports, .md a[href*="machi-esports"] {
-	background-position: -181px -94px;
-}
-.flair-sunsister, .md a[href*="sunsister"] {
-	background-position: -177px -117px;
-}
-.flair-1246, .md a[href*="1246"] {
-	background-position: -183px -140px;
-	height: 21px;
-	width: 28px;
-}
-.flair-invictus-gaming-ice, .md a[href*="invictus-gaming-ice"] {
-	background-position: -183px -162px;
-	height: 21px;
-	width: 21px;
-}
-.flair-oh-my-god, .md a[href*="oh-my-god"] {
-	background-position: -221px 0;
-	height: 25px;
-}
-.flair-lgd-gaming, .md a[href*="lgd-gaming"] {
-	background-position: -200px -125px;
-	height: 14px;
-	width: 40px;
-}
-.flair-black-ananas, .md a[href*="black-ananas"] {
-	background-position: -204px -100px;
-	height: 24px;
-	width: 16px;
-}
-.flair-ftd-club, .md a[href*="ftd-club"] {
-	background-position: -205px -162px;
-	height: 20px;
-	width: 35px;
-}
-.flair-lucky-future, .md a[href*="lucky-future"] {
-	background-position: -212px -140px;
-	height: 21px;
-	width: 21px;
-}
-.flair-jhg-gold, .md a[href*="jhg-gold"] {
-	background-position: -216px -45px;
-	height: 21px;
-	width: 27px;
-}
-.flair-miraculous-youngsters, .md a[href*="miraculous-youngsters"] {
-	background-position: -216px -68px;
-	height: 21px;
-	width: 28px;
-}
-.flair-counter-logic-gaming, .md a[href*="counter-logic-gaming"] {
-	background-position: 0 -130px;
-	height: 15px;
-	width: 21px;
-}
-.flair-gale-force, .md a[href*="gale-force"] {
-	background-position: -222px -27px;
-	height: 17px;
-	width: 21px;
-}
-.flair-cyclowns, .md a[href*="cyclowns"] {
-	background-position: -222px -91px;
-	height: 23px;
-	width: 19px;
-}
+.flair-cloud-9, .md a[href*="cloud-9"] { background-position: -23px 0; }
+.flair-rogue, .md a[href*="rogue"] { background-position: -46px 0; }
+.flair-complexity, .md a[href*="complexity"] {background-position: -69px 0; }
+.flair-fnatic, .md a[href*="fnatic"] { background-position: -92px 0; }
+.flair-envyus, .md a[href*="envyus"] { background-position: -115px 0; }
+.flair-celestial, .md a[href*="celestial"] { background-position: -138px 0; }
+.flair-misfits, .md a[href*="misfits"] { background-position: -161px 0; }
+.flair-dignitas, .md a[href*="dignitas"] { background-position: -184px 0; }
+.flair-nrg, .md a[href*="nrg"] { background-position: -207px 0; }
+.flair-lg-loyal, .md a[href*="lg-loyal"] { background-position: -230px 0; }
+
+.flair-invictus, .md a[href*="invictus"] { background-position: 0 -23px; }
+.flair-method, .md a[href*="method"] { background-position: -23px -23px; }
+.flair-tempo-storm, .md a[href*="tempo-storm"] { background-position: -46px -23px; }
+.flair-ninjas-in-pyjamas, .md a[href*="ninjas-in-pyjamas"] {background-position: -69px -23px; }
+.flair-faze, .md a[href*="faze"] { background-position: -92px -23px; }
+.flair-liquid, .md a[href*="liquid"] { background-position: -115px -23px; }
+.flair-lunatic-hai, .md a[href*="lunatic-hai"] { background-position: -138px -23px; }
+.flair-freecs-blue, .md a[href*="freecs-blue"] { background-position: -161px -23px; }
+.flair-immortals, .md a[href*="immortals"]{ background-position: -184px -23px; }
+.flair-luxury-watch-red, .md a[href*="luxury-watch-red"] { background-position: -207px -23px; }
+.flair-luxury-watch-blue, .md a[href*="luxury-watch-blue"] { background-position: -207px -23px; }
+.flair-vici-gaming, .md a[href*="vici-gaming"] { background-position: -230px -23px; }
+
+.flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] { background-position: 0 -46px; }
+.flair-ldlc, .md a[href*="ldlc"]{ background-position: -23px -46px; }
+.flair-kongdoo-uncia, .md a[href*="kongdoo-uncia"] { background-position: -46px -46px; }
+.flair-world-elite-white, .md a[href*="world-elite-white"] {background-position: -69px -46px; }
+.flair-renegades, .md a[href*="renegades"] { background-position: -92px -46px; }
+.flair-counter-logic-gaming, .md a[href*="counter-logic-gaming"] { background-position: -115px -46px; }
+.flair-meta-athena, .md a[href*="meta-athena"] { background-position: -138px -46px; }
+.flair-lg-evil, .md a[href*="lg-evil"] { background-position: -161px -46px; }
+.flair-selfless, .md a[href*="selfless"] { background-position: -184px -46px; }
+.flair-runaway, .md a[href*="runaway"] { background-position: -207px -46px; }
+.flair-eunited, .md a[href*="eunited"] { background-position: -230px -46px; }
+
+.flair-hammers, .md a[href*="hammers"]  { background-position: 0 -69px; }
+.flair-laser-kittenz, .md a[href*="laser-kittenz"] { background-position: -23px -69px; }
+.flair-movistar-riders, .md a[href*="movistar-riders"] { background-position: -46px -69px; }
+.flair-gamersorigin, .md a[href*="gamersorigin"] {background-position: -69px -69px; }
+.flair-brasil-gaming-house, .md a[href*="brasil-gaming-house"] { background-position: -92px -69px; }
+.flair-denial, .md a[href*="denial"] { background-position: -115px -69px; }
+.flair-evil-geniuses, .md a[href*="evil-geniuses"] { background-position: -138px -69px; }
+.flair-wnv, .md a[href*="wnv"] { background-position: -161px -69px; }
+.flair-splyce, .md a[href*="splyce"] { background-position: -184px -69px; }
+.flair-scylla, .md a[href*="scylla"] { background-position: -207px -69px; }
+.flair-red-reserve, .md a[href*="red-reserve"] { background-position: -230px -69px; }
+
+.flair-vivis-adventure, .md a[href*="vivis-adventure"] { background-position: 0 -92px; }
+.flair-singularity-ninjas, .md a[href*="singularity-ninjas"] { background-position: -23px -92px; }
+.flair-envision, .md a[href*="envision"] { background-position: -46px -92px; }
+/*.flair-east-wind, .md a[href*="east-wind"] {background-position: -69px -92px; }*/
+.flair-bk-stars, .md a[href*="bk-stars"] { background-position: -92px -92px; }
+.flair-x6-gaming, .md a[href*="x6-gaming"] { background-position: -115px -92px; }
+.flair-conbox-spirit, .md a[href*="conbox-spirit"] { background-position: -138px -92px; }
+.flair-flash-lux, .md a[href*="flash-lux"] { background-position: -161px -92px; }
+.flair-mighty, .md a[href*="mighty"]{ background-position: -184px -92px; }
+.flair-rhinos-gaming-wings, .md a[href*="rhinos-gaming-wings"] { background-position: -207px -92px; }
+.flair-mvp-space, .md a[href*="mvp-space"] { background-position: -230px -92px; }
+
+.flair-detonator-gold, .md a[href*="detonator-gold"] { background-position: 0 -115px; }
+.flair-ahq-esports-club, .md a[href*="ahq-esports-club"] { background-position: -23px -115px; }
+.flair-flash-wolves, .md a[href*="flash-wolves"] { background-position: -46px -115px; }
+.flair-fireball, .md a[href*="fireball"]{background-position: -69px -115px; }
+.flair-hong-kong-attitude, .md a[href*="hong-kong-attitude"] { background-position: -92px -115px; }
+.flair-machi-esports, .md a[href*="machi-esports"] { background-position: -115px -115px; }
+.flair-sunsister, .md a[href*="sunsister"] { background-position: -138px -115px; }
+.flair-1246, .md a[href*="1246"] { background-position: -161px -115px; }
+.flair-invictus-gaming-ice, .md a[href*="invictus-gaming-ice"] { background-position: -184px -115px; }
+.flair-oh-my-god, .md a[href*="oh-my-god"] { background-position: -207px -115px; }
+.flair-lgd-gaming, .md a[href*="lgd-gaming"] { background-position: -230px -115px; }
+
+.flair-miraculous-youngsters, .md a[href*="miraculous-youngsters"]{ background-position: 0 -138px; }
+.flair-jhg-gold, .md a[href*="jhg-gold"] { background-position: -23px -138px; }
+.flair-lucky-future, .md a[href*="lucky-future"] { background-position: -46px -138px; }
+.flair-ftd-club, .md a[href*="ftd-club"] {background-position: -69px -138px; }
+.flair-black-ananas, .md a[href*="black-ananas"]  { background-position: -92px -138px; }
+.flair-gale-force, .md a[href*="gale-force"] { background-position: -115px -138px; }
+.flair-blank, .md a[href*="blank"] { background-position: -138px -138px; }
+.flair-cyclowns, .md a[href*="cyclowns"] { background-position: -161px -138px; }
+.flair-rise, .md a[href*="rise"] { background-position: -184px -138px; }
+.flair-alfa-squad, .md a[href*="alfa-squad"] { background-position: -207px -138px; }
+.flair-team-expert, .md a[href*="team-expert"] { background-position: -230px -138px; }
+
+.flair-bazooka-puppiez, .md a[href*="bazooka-puppiez"]{ background-position: 0 -161px; }
+.flair-123, .md a[href*="123"] { background-position: -23px -161px; }
+.flair-ninjas-with-attitude, .md a[href*="ninjas-with-attitude"] { background-position: -46px -161px; }
+.flair-esporati, .md a[href*="esporati"] {background-position: -69px -161px; }
+.flair-esporters-cyberathletes, .md a[href*="esporters-cyberathletes"]  { background-position: -92px -161px; }
+.flair-you-guys-get-paid, .md a[href*="you-guys-get-paid"] { background-position: -115px -161px; }
+.flair-toronto-esports, .md a[href*="toronto-esports"] { background-position: -138px -161px; }
+.flair-yikes, .md a[href*="yikes"] { background-position: -161px -161px; }
+.flair-kungarna, .md a[href*="kungarna"] { background-position: -184px -161px; }
+.flair-fnrgfe, .md a[href*="fnrgfe"] { background-position: -207px -161px; }
+
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
@@ -2740,6 +2491,19 @@ body .flairselector li:hover {
 .flairselector .flair-counter-logic-gaming+span:after { content:"Counter Logic Gaming" }
 .flairselector .flair-gale-force+span:after { content:"Gale Force" }
 .flairselector .flair-cyclowns+span:after { content:"Cyclowns" }
+.flairselector .flair-alfa-squad+span:after { content:"Alfa Squad" }
+.flairselector .flair-team-expert+span:after { content:"Team expert" }
+.flairselector .flair-bazooka-puppiez+span:after { content:"Bazooka Puppiez" }
+.flairselector .flair-123+span:after { content:"123" }
+.flairselector .flair-ninjas-with-attitude+span:after { content:"Ninjas with Attitude" }
+.flairselector .flair-esporati+span:after { content:"Esporati" }
+.flairselector .flair-esporters-cyberathletes+span:after { content:"Team eSporters Cyberathletes" }
+.flairselector .flair-toronto-esports+span:after { content:"Toronto Esports" }
+.flairselector .flair-yikes+span:after { content:"YIKES!" }
+.flairselector .flair-kungarna+span:after { content:"Kungarna" }
+.flairselector .flair-fnrgfe+span:after { content:"FNRGFE" }
+
+
 
 /* Small team and flag icons */
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
@@ -3140,8 +2904,12 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	margin: 0;
 }
 
-.comments-page .res-expando-box {
+.comments-page .linklisting .res-expando-box {
 	margin: 55px 0 0 -82px;
+}
+
+.comments-page .usertext-body .res-expando-box {
+	margin: 55px 0 0 0;
 }
 
 /* Twitch embeds etc. */
