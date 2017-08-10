@@ -103,6 +103,11 @@ button {
 	right: 346px;
 }
 
+body.res-nightmode #sr-header-area {
+	background: none;
+	color: inherit;
+}
+
 /* - separators between subreddits, and vertical bar | between subreddits and shortcuts (RES) */
 .sr-bar .separator, .srSep {
 	display: none;
@@ -128,6 +133,10 @@ body #sr-header-area a.RESShortcutsCurrentSub, body #RESSubredditGroupDropdown .
 
 body #sr-header-area a.RESShortcutsCurrentSub:hover, body #RESSubredditGroupDropdown .RESShortcutsCurrentSub a:hover {
 	opacity: 1;
+}
+
+.res #RESShortcutsViewport {
+	margin-right: 440px;
 }
 
 /* "My Subreddits" dropdown icon */
@@ -228,10 +237,6 @@ a#sr-more-link {
 	top: 0;
 	visibility: visible;
 	width: 100%;
-}
-
-#RESShortcutsViewport {
-	max-width: 540px;
 }
 
 body #RESShortcutsEditContainer {
@@ -1615,7 +1620,7 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 }
 
 /* Post Thumbnails */
-.thumbnail, .thumbnail.spoiler {
+.comments-page .thumbnail, .listing-page .thumbnail, .comments-page .thumbnail.spoiler, .listing-page .thumbnail.spoiler{
 	height: 100%;
 	left: 0;
 	margin: 0;
@@ -1629,29 +1634,33 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	height: 100%; /* To override Reddit setting a specific height */
 }
 
-.thumbnail img {
+.comments-page .thumbnail img, .listing-page .thumbnail img{
 	height: 100%;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
 	width: auto;
-	max-height: 194px
+	max-height: 100px;
 }
 
 .over18.link .thumbnail { background: #fb0b19 url(%%thumbnails%%) -574px 0 no-repeat }
 
 .linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%thumbnails%%) 0 0 no-repeat !important }
 .linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -82px 0 no-repeat}
+.linkflair-Matchthread .thumbnail, .linkflair-Matchthread .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) -902px 0 no-repeat !important}
 .linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -164px 0 no-repeat }
 .linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler,
-.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) -246px 0 no-repeat }
+.linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -246px 0 no-repeat }
 .linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #85898e url(%%thumbnails%%) -328px 0 no-repeat }
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -410px 0 no-repeat }
 .linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -492px 0 no-repeat }
-.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -738px 0 no-repeat }
-.linkflair-WorldCup .thumbnail, .linkflair-WorldCup .thumbnail.spoiler { background: ; }
+.linkflair-Casting .thumbnail, .linkflair-Casting .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -574px 0 no-repeat }
+.linkflair-WorldCup .thumbnail, .linkflair-WorldCup .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -656px 0 no-repeat }
 .linkflair-SubredditMeta .thumbnail, .linkflair-SubredditMeta .thumbnail.spoiler { background-color: #85898e }
 
+.search-result.has-thumbnail > .thumbnail {
+	display: none;
+}
 
 /* Tagline */
 
@@ -1928,8 +1937,8 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 	content: ": ";
 }
 
-/* Make flair red with dot before for esports posts with "LIVE" contained within the flair text */
-.linkflair-eSports .title>.linkflairlabel[title*="LIVE"]:before {
+/* Make flair red with dot before for matchthread posts with "LIVE" contained within the flair text */
+.linkflair-Matchthread .title>.linkflairlabel[title*="LIVE"]:before {
 	background: #FF000F;
 	border-radius: 50%;
 	content: "";
@@ -1942,13 +1951,13 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 	width: 6px;
 }
 
-.linkflair-eSports .title>.linkflairlabel[title*="LIVE"] {
+.linkflair-Matchthread .title>.linkflairlabel[title*="LIVE"] {
 	color: #FF000F;
 }
 
 /* The other visited selector fades titles. Don't fade the title of a live match */
-.linkflair-eSports .linkflairlabel[title*="LIVE"]+.title:visited,
-.linkflair-eSports .linkflairlabel[title*="LIVE"]+.title.visited {
+.linkflair-Matchthread .linkflairlabel[title*="LIVE"]+.title:visited,
+.linkflair-Matchthread .linkflairlabel[title*="LIVE"]+.title.visited {
 	color: #042e54 !important;
 }
 
@@ -2090,10 +2099,11 @@ body .flairselector li:hover {
 .flairselector .linkflair-Event .linkflairlabel { color: #0097d2 }
 
 .flairselector .linkflair-Megathread .linkflairlabel { color: #00c934 }
+.flairselector .linkflair-AdviceTips .linkflairlabel ,
+.flairselector .linkflair-Guide .linkflairlabel,
 .flairselector .linkflair-Casting .linkflairlabel { color: #042e54 }
 
-.flairselector .linkflair-Guide .linkflairlabel,
-.flairselector .linkflair-AdviceTips .linkflairlabel { color: #fd972f }
+.flairselector .linkflair-Matchthread .linkflairlabel { color: #fd972f }
 
 /* Text after user flairs */
 .flairselector .flair+span:after {
@@ -2308,7 +2318,7 @@ body .flairselector li:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
 		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 253px 185px;
+		background-size: 253px 208px;
 	}
 	.flair-complexity {
 		width: 23px;
@@ -2413,6 +2423,9 @@ body .flairselector li:hover {
 .flair-yikes, .md a[href*="yikes"] { background-position: -161px -161px; }
 .flair-kungarna, .md a[href*="kungarna"] { background-position: -184px -161px; }
 .flair-fnrgfe, .md a[href*="fnrgfe"] { background-position: -207px -161px; }
+.flair-arc-6, .md a[href*="arc-6"] { background-position: -230px -161px; }
+
+.flair-rest-in-pyjamas, .md a[href*="rest-in-pyjamas"] { background-position: 0 -184px; }
 
 
 /* Flair picker team names */
@@ -2497,11 +2510,13 @@ body .flairselector li:hover {
 .flairselector .flair-123+span:after { content:"123" }
 .flairselector .flair-ninjas-with-attitude+span:after { content:"Ninjas with Attitude" }
 .flairselector .flair-esporati+span:after { content:"Esporati" }
-.flairselector .flair-esporters-cyberathletes+span:after { content:"Team eSporters Cyberathletes" }
+.flairselector .flair-esporters-cyberathletes+span:after { content:"Team eSporters" }
 .flairselector .flair-toronto-esports+span:after { content:"Toronto Esports" }
 .flairselector .flair-yikes+span:after { content:"YIKES!" }
 .flairselector .flair-kungarna+span:after { content:"Kungarna" }
 .flairselector .flair-fnrgfe+span:after { content:"FNRGFE" }
+.flairselector .flair-arc-6+span:after { content:"ARC 6" }
+.flairselector .flair-rest-in-pyjamas+span:after { content:"Rest in Pyjamas" }
 
 
 
@@ -2509,6 +2524,108 @@ body .flairselector li:hover {
 .md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
 	transform: scale(.75);
 }
+
+/* User flairs for world cup flags */
+.flair-flag {
+	background: url(%%flairs-flags%%) no-repeat;
+	font-size: 0;
+	height: 22px;
+	width: 22px;
+	vertical-align: middle;
+	display: none;
+}
+.flair-flag:not([title=""]):hover {
+	background: none;
+	font-size: 12px;
+	line-height: 12px;
+	width: auto;
+}
+
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.flair-flag {
+		background: url(%%flairs-flags-2x%%) no-repeat;
+		background-size: 253px 185px;
+	}
+	.flair-cn {
+		width: 22px;
+	}
+}
+
+.comments-page .flair-flag {
+	font-size: 0;
+}
+.comments-page .content .flair-flag, .side .flair-flag {
+	display: inline-block;
+}
+
+.flair-kr { background-position: -23px 0; }
+.flair-us { background-position: -46px 0; }
+.flair-se {background-position: -69px 0; }
+.flair-fi { background-position: -92px 0; }
+.flair-gb { background-position: -115px 0; }
+.flair-ca { background-position: -138px 0; }
+.flair-fr { background-position: -161px 0; }
+.flair-dk { background-position: -184px 0; }
+.flair-ru { background-position: -207px 0; }
+.flair-de { background-position: -230px 0; }
+
+.flair-jp { background-position: 0 -23px; }
+.flair-au { background-position: -23px -23px; }
+.flair-tw { background-position: -46px -23px; }
+.flair-nl {background-position: -69px -23px; }
+.flair-hk { background-position: -92px -23px; }
+.flair-no { background-position: -115px -23px; }
+.flair-pl { background-position: -138px -23px; }
+.flair-br { background-position: -161px -23px; }
+.flair-it { background-position: -184px -23px; }
+.flair-es { background-position: -207px -23px; }
+.flair-il { background-position: -230px -23px; }
+
+.flair-sg { background-position: 0 -46px; }
+.flair-th { background-position: -23px -46px; }
+.flair-ar { background-position: -46px -46px; }
+.flair-tr {background-position: -69px -46px; }
+.flair-be { background-position: -92px -46px; }
+.flair-vn { background-position: -115px -46px; }
+.flair-pt { background-position: -138px -46px; }
+.flair-nz { background-position: -161px -46px; }
+.flair-at { background-position: -184px -46px; }
+.flair-ro { background-position: -207px -46px; }
+
+/* Flair picker rank names */
+.flairselector .flair-ar+span:after { content:"Argentina" }
+.flairselector .flair-au+span:after { content:"Australia" }
+.flairselector .flair-at+span:after { content:"Austria" }
+.flairselector .flair-be+span:after { content:"Belgium" }
+.flairselector .flair-br+span:after { content:"Brazil" }
+.flairselector .flair-ca+span:after { content:"Canada" }
+.flairselector .flair-cn+span:after { content:"China" }
+.flairselector .flair-tw+span:after { content:"Chinese Taipei" }
+.flairselector .flair-dk+span:after { content:"Denmark" }
+.flairselector .flair-fi+span:after { content:"Finland" }
+.flairselector .flair-fr+span:after { content:"France" }
+.flairselector .flair-de+span:after { content:"Germany" }
+.flairselector .flair-hk+span:after { content:"Hong Kong" }
+.flairselector .flair-il+span:after { content:"Israel" }
+.flairselector .flair-it+span:after { content:"Italy" }
+.flairselector .flair-jp+span:after { content:"Japan" }
+.flairselector .flair-nl+span:after { content:"Netherlands" }
+.flairselector .flair-nz+span:after { content:"New Zealand" }
+.flairselector .flair-no+span:after { content:"Norway" }
+.flairselector .flair-pl+span:after { content:"Poland" }
+.flairselector .flair-pt+span:after { content:"Portugal" }
+.flairselector .flair-ro+span:after { content:"Romania" }
+.flairselector .flair-ru+span:after { content:"Russia" }
+.flairselector .flair-sg+span:after { content:"Singapore" }
+.flairselector .flair-es+span:after { content:"Spain" }
+.flairselector .flair-se+span:after { content:"Sweden" }
+.flairselector .flair-kr+span:after { content:"South Korea" }
+.flairselector .flair-th+span:after { content:"Thailand" }
+.flairselector .flair-tr+span:after { content:"Turkey" }
+.flairselector .flair-gb+span:after { content:"United Kingdom" }
+.flairselector .flair-us+span:after { content:"United States" }
+.flairselector .flair-vn+span:after { content:"Vietnam" }
 
 /* User flairs for ranks */
 .flair-rank {
@@ -2642,34 +2759,34 @@ body .flairselector li:hover {
 	cursor: default;
 	display: inline-block;
 	font-size: 0;
-	height: 60px;
+	height: 28px;
 	pointer-events: none;
-	width: 180px;
+	width: 120px;
 } 
 
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.md a[href^="#map-"] {
 		background:url(%%tags-maps-2x%%);
-		background-size: 720px 240px;
+		background-size: 480px 112px;
 	}
 }
 
-.md a[href$="-temple-of-anubis"] {background-position: -180px 0}
-.md a[href$="-dorado"] {background-position: -360px 0}
-.md a[href$="-hanamura"] {background-position: -540px 0}
-.md a[href$="-hollywood"] {background-position: 0 -60px}
-.md a[href$="-ilios"] {background-position: -180px -60px}
-.md a[href$="-kings-row"] {background-position: -360px -60px}
-.md a[href$="-lijiang-tower"] {background-position: -540px -60px}
-.md a[href$="-nepal"] {background-position: 0 -120px}
-.md a[href$="-numbani"] {background-position: -180px -120px}
-.md a[href$="-route-66"] {background-position: -360px -120px}
-.md a[href$="-volskaya-industries"] {background-position: -540px -120px}
-.md a[href$="-watchpoint-gibraltar"] {background-position: 0 -180px}
-.md a[href$="-eichenwalde"] {background-position: -180px -180px}
-.md a[href$="-ecopoint-antarctica"] {background-position: -360px -180px}
-.md a[href$="-oasis"] {background-position: -540px -180px}
+.md a[href$="-temple-of-anubis"] {background-position: -120px 0}
+.md a[href$="-dorado"] {background-position: -240px 0}
+.md a[href$="-hanamura"] {background-position: -360px 0}
+.md a[href$="-hollywood"] {background-position: 0 -28px}
+.md a[href$="-ilios"] {background-position: -120px -28px}
+.md a[href$="-kings-row"] {background-position: -240px -28px}
+.md a[href$="-lijiang-tower"] {background-position: -360px -28px}
+.md a[href$="-nepal"] {background-position: 0 -56px}
+.md a[href$="-numbani"] {background-position: -120px -56px}
+.md a[href$="-route-66"] {background-position: -240px -56px}
+.md a[href$="-volskaya-industries"] {background-position: -360px -56px}
+.md a[href$="-watchpoint-gibraltar"] {background-position: 0 -84px}
+.md a[href$="-eichenwalde"] {background-position: -120px -84px}
+.md a[href$="-ecopoint-antarctica"] {background-position: -240px -84px}
+.md a[href$="-oasis"] {background-position: -360px -84px}
 
 /* Checkmark tags */
 .md a[href*="#check-"] {
@@ -2683,6 +2800,7 @@ body .flairselector li:hover {
 	font-size: 0;
 	height: 12px;
 	pointer-events: none;
+	margin-bottom: -4px;
 	width: 12px;
 }
 .md a[href$="-yes"] {background-position: 0 0; border-color: #00C934}
@@ -2709,6 +2827,7 @@ body .flairselector li:hover {
 }
 .md a[href$="-at"] {background-position: 0 -15px} /* Austria*/
 .md a[href$="-au"] {background-position: -21px -15px}
+.md a[href$="-ar"] {background-position: -168px 0}
 .md a[href$="-be"] {background-position: -168px -15px}
 .md a[href$="-br"] {background-position: -168px -30px}
 .md a[href$="-bs"] {background-position: -189px -30px}
@@ -2724,6 +2843,7 @@ body .flairselector li:hover {
 .md a[href$="-fr"] {background-position: -189px -90px}
 .md a[href$="-gb"] {background-position: -21px -105px}
 .md a[href$="-hu"] {background-position: -189px -135px}
+.md a[href$="-hk"] {background-position: -84px -135px}
 .md a[href$="-il"] {background-position: -42px -150px} /* Israel */
 .md a[href$="-is"] {background-position: -168px -150px} /* Iceland */
 .md a[href$="-it"] {background-position: -189px -150px}
@@ -2737,25 +2857,30 @@ body .flairselector li:hover {
 .md a[href$="g-no"] {background-position: -126px -240px}
 .md a[href$="-pr"] {background-position: -21px -270px}
 .md a[href$="-pt"] {background-position: -63px -270px}
+.md a[href$="-pl"] {background-position: -168px -255px}
 .md a[href$="-ro"] {background-position: -168px -270px}
 .md a[href$="-ru"] {background-position: 0 -285px}
 .md a[href$="-se"] {background-position: -147px -285px}
+.md a[href$="-sg"] {background-position: -42px -300px}
 .md a[href$="-th"] {background-position: -21px -330px}
+.md a[href$="-tw"] {background-position: -42px -345px}
+.md a[href$="-tr"] {background-position: -189px -330px}
 .md a[href$="-ua"] {background-position: -84px -345px}
 .md a[href$="-us"] {background-position: -126px -345px}
+.md a[href$="-vn"] {background-position: -105px -360px}
 /* Not an official ISO code, but close enough (ISO 3166-2:GB defines `GB-WLS`) */
 .md a[href$="-wls"] {background-position: -105px -105px}
 .md a[href$="-ww"] {background-position: -189px -360px}
 .md a[href$="-?-ow"] {background-position: -42px -390px}
 
-.md a[href$="-at"],.md a[href$="-au"],.md a[href$="-be"],.md a[href$="-br"],.md a[href$="-bs"],
+.md a[href$="-at"],.md a[href$="-au"],.md a[href$="-ar"],.md a[href$="-be"],.md a[href$="-br"],.md a[href$="-bs"],
 .md a[href$="-by"],.md a[href$="-ca"],.md a[href$="-cn"],.md a[href$="-de"],.md a[href$="-dk"],
 .md a[href$="-ee"],.md a[href$="-es"],.md a[href$="-eu"],.md a[href$="-fi"],.md a[href$="-fr"],
-.md a[href$="-gb"],.md a[href$="-hu"],.md a[href$="-il"],.md a[href$="-is"],.md a[href$="-it"],
+.md a[href$="-gb"],.md a[href$="-hu"],.md a[href$="-hk"],.md a[href$="-il"],.md a[href$="-is"],.md a[href$="-it"],
 .md a[href$="-jp"],.md a[href$="-kr"],.md a[href$="-lt"],.md a[href$="-lv"],.md a[href$="-mx"],
-.md a[href$="-nl"],.md a[href$="-no"],.md a[href$="-pr"],.md a[href$="-pt"],.md a[href$="-ro"],
-.md a[href$="-ru"],.md a[href$="-se"],.md a[href$="-th"],.md a[href$="-ua"],.md a[href$="-us"],
-.md a[href$="-wls"],.md a[href$="-ww"],.md a[href$="-?-ow"] {
+.md a[href$="-nl"],.md a[href$="-no"],.md a[href$="-pr"],.md a[href$="-pl"],.md a[href$="-pt"],.md a[href$="-ro"],
+.md a[href$="-ru"],.md a[href$="-se"],.md a[href$="-sg"],.md a[href$="-th"],.md a[href$="-tw"],.md a[href$="-tr"],.md a[href$="-ua"],.md a[href$="-us"],
+.md a[href$="-vn"],.md a[href$="-wls"],.md a[href$="-ww"],.md a[href$="-?-ow"] {
 	display: inline-block;
 }
 
@@ -2812,6 +2937,10 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 	position: relative;
 	background: #fff;
 	margin-bottom: 0;
+}
+
+.res-nightmode .comments-page>.content>#siteTable .thing {
+	background: #373737;
 }
 
 .comments-page>.content>#siteTable .spam {
@@ -2920,6 +3049,17 @@ body .RES-keyNav-activeElement, .RES-keyNav-activeElement .md-container {
 .commentarea {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+/* Hide more from r/ stuff */
+.commentarea div#siteTable.sitetable.linklisting {
+    display: none;
+}
+.commentarea div.seo-comments.spacer {
+    display: none;
+}
+.commentarea h1.seo-comments {
+    display: none;
 }
 
 .commentarea>* {
@@ -3090,6 +3230,10 @@ body .commentNavSortType:hover {
 	background: #fff;
 }
 
+.res-nightmode .commentarea>.usertext {
+	background: #373737;
+}
+
 .commentarea>.usertext textarea {
 	border-color: #B6B8BB;
 	border-radius: 1px;
@@ -3256,6 +3400,14 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 	text-decoration: none;
 }
 
+.res-nightmode .comment .expand {
+	background: #373737;
+}
+
+.res-nightmode .comment .expand:hover {
+	background: #85898E;
+}
+
 .comment .entry {
 	margin-left: 40px; /* Values <= 24px not accepted (?), so actual is 16px */
 	padding-bottom: 4px;
@@ -3308,6 +3460,10 @@ body.res-commentBoxes.res-commentBoxes-rounded .comment {
 	padding: 6px 12px;
 	text-transform: capitalize;
 	transition: none;
+}
+
+.res-nightmode .morecomments a {
+	background: #373737;
 }
 
 .morecomments a:hover {
