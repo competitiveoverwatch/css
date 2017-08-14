@@ -888,10 +888,6 @@ form.flairtoggle input {
 	color: inherit;
 }
 
-.titlebox .flairtoggle label {
-	display: none;
-}
-
 /* Custom flair toggle text */
 .titlebox .flairtoggle input:after {
 	content: "Show my flair in this subreddit";
@@ -2426,6 +2422,7 @@ body .flairselector li:hover {
 .flair-arc-6, .md a[href*="arc-6"] { background-position: -230px -161px; }
 
 .flair-rest-in-pyjamas, .md a[href*="rest-in-pyjamas"] { background-position: 0 -184px; }
+.flair-gc-busan, .md a[href*="gc-busan"] { background-position: -23px -184px; }
 
 
 /* Flair picker team names */
@@ -2517,6 +2514,7 @@ body .flairselector li:hover {
 .flairselector .flair-fnrgfe+span:after { content:"FNRGFE" }
 .flairselector .flair-arc-6+span:after { content:"ARC 6" }
 .flairselector .flair-rest-in-pyjamas+span:after { content:"Rest in Pyjamas" }
+.flairselector .flair-gc-busan+span:after { content:"GC Busan" }
 
 
 
@@ -2853,6 +2851,7 @@ body .flairselector li:hover {
 .md a[href$="-lv"] {background-position: -105px -195px}
 .md a[href$="-mx"] {background-position: -126px -225px}
 .md a[href$="-nl"] {background-position: -105px -240px}
+.md a[href$="-nz"] {background-position: 0 -255px}
 /* Add in last character of flag (keep character count low) as otherwise "-no" would conflict with check-no */
 .md a[href$="g-no"] {background-position: -126px -240px}
 .md a[href$="-pr"] {background-position: -21px -270px}
@@ -2878,7 +2877,7 @@ body .flairselector li:hover {
 .md a[href$="-ee"],.md a[href$="-es"],.md a[href$="-eu"],.md a[href$="-fi"],.md a[href$="-fr"],
 .md a[href$="-gb"],.md a[href$="-hu"],.md a[href$="-hk"],.md a[href$="-il"],.md a[href$="-is"],.md a[href$="-it"],
 .md a[href$="-jp"],.md a[href$="-kr"],.md a[href$="-lt"],.md a[href$="-lv"],.md a[href$="-mx"],
-.md a[href$="-nl"],.md a[href$="-no"],.md a[href$="-pr"],.md a[href$="-pl"],.md a[href$="-pt"],.md a[href$="-ro"],
+.md a[href$="-nl"],.md a[href$="-nz"],.md a[href$="-no"],.md a[href$="-pr"],.md a[href$="-pl"],.md a[href$="-pt"],.md a[href$="-ro"],
 .md a[href$="-ru"],.md a[href$="-se"],.md a[href$="-sg"],.md a[href$="-th"],.md a[href$="-tw"],.md a[href$="-tr"],.md a[href$="-ua"],.md a[href$="-us"],
 .md a[href$="-vn"],.md a[href$="-wls"],.md a[href$="-ww"],.md a[href$="-?-ow"] {
 	display: inline-block;
