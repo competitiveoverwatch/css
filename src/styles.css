@@ -888,13 +888,20 @@ form.flairtoggle input {
 	color: inherit;
 }
 
+/*
+.titlebox .flairtoggle label {
+	display: none;
+}
+*/
 /* Custom flair toggle text */
+/*
 .titlebox .flairtoggle input:after {
 	content: "Show my flair in this subreddit";
 	display: block;
 	margin-left: 20px;
 	width: 190px;
 }
+*/
 
 .titlebox>.author:hover {
 	color: #042E54;
@@ -2423,7 +2430,9 @@ body .flairselector li:hover {
 
 .flair-rest-in-pyjamas, .md a[href*="rest-in-pyjamas"] { background-position: 0 -184px; }
 .flair-gc-busan, .md a[href*="gc-busan"] { background-position: -23px -184px; }
-
+.flair-nc-foxes, .md a[href*="gc-busan"] { background-position: -46px -184px; }
+.flair-rox-orcas, .md a[href*="gc-busan"] { background-position: -69px -184px; }
+.flair-gigantti, .md a[href*="gigantti"] { background-position: -92px -184px; }
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
@@ -2515,6 +2524,9 @@ body .flairselector li:hover {
 .flairselector .flair-arc-6+span:after { content:"ARC 6" }
 .flairselector .flair-rest-in-pyjamas+span:after { content:"Rest in Pyjamas" }
 .flairselector .flair-gc-busan+span:after { content:"GC Busan" }
+.flairselector .flair-nc-foxes+span:after { content:"NC Foxes" }
+.flairselector .flair-rox-orcas+span:after { content:"ROX Orcas" }
+.flairselector .flair-gigantti+span:after { content:"Team Gigantti" }
 
 
 
