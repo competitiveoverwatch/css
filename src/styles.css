@@ -1006,49 +1006,74 @@ body:not(.res-nightmode) .hover-bubble.multi-selector .create-multi input[type="
 }
 
 /* Twitter link */
+
 .side .md h2 {
-	margin: 16px 0;
+    margin: 16px 0
 }
-
 .side .md h2 a {
-	background: #1CBEF0;
-	border-radius: 1px;
-	color: #FFF;
-	display: inline-block;
-	font: 13px/30px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	height: 30px;
-	margin: 0;
-	padding-left: 16px;
-	transition: background .08s ease-in-out;
-	width: 100%;
+    border-radius: 1px;
+    color: #FFF;
+    display: inline-block;
+    font: 13px/30px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 30px;
+    margin: 0;
+    padding-left: 16px;
+    transition: background .08s ease-in-out;
+    width: 100%
 }
-
-.side .md h2 a:hover {
-	background: #042e54;
-	text-decoration: none;
-}
-
-.side .md h2 a:visited {
-	color: #FFF !important;
-}
-
 .side .md h2 a:before {
-	background: url(%%sidebar-twitter-1x%%);
-	content: "";
-	display: inline-block;
-	height: 13px;
-	margin-right: 10px;
-	margin: -3px 8px 0 -2px;
-	vertical-align: middle;
-	width: 16px;
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle
 }
-
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.side .md h2 a:before {
-		background: url(%%sidebar-twitter-2x%%);
-		background-size: 16px 13px;
-	}
+.side .md h2 a:hover {
+    background: #042e54!important;
+    text-decoration: none;
+    color: #FFF!important
+}
+.side .md h2 a:visited {
+    color: #FFF
+}
+.side .md h2:nth-of-type(1) a {
+    background: #F3F3F4;
+    color: #7B90A3
+}
+.side .md h2:nth-of-type(2) a {
+    background: #1CBEF0;
+    color: #FFF
+}
+.side .md h2:nth-of-type(2) a:before {
+    background: url(%%sidebar-twitter-1x%%);
+    height: 13px;
+    width: 16px;
+    margin: -3px 8px 0 -2px
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
+    .side .md h2:nth-of-type(2) a:before {
+        background: url(%%sidebar-twitter-2x%%);
+        background-size: 16px 13px
+    }
+}
+.side .md h2:nth-of-type(3) a {
+    background: #7289DA;
+    color: #FFF
+}
+.side .md h2:nth-of-type(3) a:before {
+    background: url(%%sidebar-discord-1x%%);
+    height: 16px;
+    width: 14px;
+    margin: -1px 8px 0 -2px
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
+    .side .md h2:nth-of-type(3) a:before {
+        background: url(%%sidebar-discord-2x%%);
+        background-size: 16px 13px
+    }
 }
 
 /* Events */
@@ -2430,14 +2455,18 @@ body .flairselector li:hover {
 
 .flair-rest-in-pyjamas, .md a[href*="rest-in-pyjamas"] { background-position: 0 -184px; }
 .flair-gc-busan, .md a[href*="gc-busan"] { background-position: -23px -184px; }
-.flair-nc-foxes, .md a[href*="gc-busan"] { background-position: -46px -184px; }
-.flair-rox-orcas, .md a[href*="gc-busan"] { background-position: -69px -184px; }
+.flair-nc-foxes, .md a[href*="nc-foxes"] { background-position: -46px -184px; }
+.flair-rox-orcas, .md a[href*="rox-orcas"] { background-position: -69px -184px; }
 .flair-gigantti, .md a[href*="gigantti"] { background-position: -92px -184px; }
+.flair-mega-thunder, .md a[href*="mega-thunder"] { background-position: -115px -184px; }
+.flair-ardeont, .md a[href*="ardeont"] { background-position: -138px -184px; }
+.flair-libalent-supreme, .md a[href*="libalent-supreme"] { background-position: -161px -184px; }
+
 
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
 .flairselector .flair-cloud-9+span:after { content:"Cloud9" }
-.flairselector .flair-team-celestial+span:after { content:"Team Celestial" }
+.flairselector .flair-celestial+span:after { content:"Team Celestial" }
 .flairselector .flair-misfits+span:after { content:"Misfits" }
 .flairselector .flair-dignitas+span:after { content:"Dignitas" }
 .flairselector .flair-rogue+span:after { content:"Rogue" }
@@ -2451,7 +2480,7 @@ body .flairselector li:hover {
 .flairselector .flair-liquid+span:after { content:"Liquid" }
 .flairselector .flair-lunatic-hai+span:after { content:"Lunatic Hai" }
 .flairselector .flair-faze+span:after { content:"FaZe" }
-.flairselector .flair-freecs-blue+span:after { content:"Afreeca Freecs Blue" }
+.flairselector .flair-freecs-blue+span:after { content:"Afreeca Freecs" }
 .flairselector .flair-immortals+span:after { content:"Immortals" }
 .flairselector .flair-method+span:after { content:"Method" }
 .flairselector .flair-luxury-watch-red+span:after { content:"LuxuryWatch Red" }
@@ -2481,11 +2510,11 @@ body .flairselector li:hover {
 .flairselector .flair-scylla+span:after { content:"Scylla" }
 .flairselector .flair-red-reserve+span:after { content:"Red Reserve" }
 .flairselector .flair-vivis-adventure+span:after { content:"Vivi's Adventure" }
-.flairselector .flair-singularity-ninjas+span:after { content:"Singularity Ninjas" }
+.flairselector .flair-singularity-ninjas+span:after { content:"Singularity" }
 .flairselector .flair-envision+span:after { content:"Envision" }
 .flairselector .flair-bk-stars+span:after { content:"BK Stars" }
 .flairselector .flair-x6-gaming+span:after { content:"X6 Gaming" }
-.flairselector .flair-conbox-spirit+span:after { content:"Conbox Spirit" }
+.flairselector .flair-conbox-spirit+span:after { content:"CONBOX" }
 .flairselector .flair-flash-lux+span:after { content:"Flash Lux" }
 .flairselector .flair-mighty+span:after { content:"Mighty" }
 .flairselector .flair-rhinos-gaming-wings+span:after { content:"Rhinos Gaming Wings" }
@@ -2527,7 +2556,9 @@ body .flairselector li:hover {
 .flairselector .flair-nc-foxes+span:after { content:"NC Foxes" }
 .flairselector .flair-rox-orcas+span:after { content:"ROX Orcas" }
 .flairselector .flair-gigantti+span:after { content:"Team Gigantti" }
-
+.flairselector .flair-mega-thunder+span:after { content: "MEGA Thunder" }
+.flairselector .flair-ardeont+span:after { content: "Ardeont" }
+.flairselector .flair-libalent-supreme+span:after { content: "Libalent Supreme" }
 
 
 /* Small team and flag icons */
@@ -2642,6 +2673,8 @@ body .flairselector li:hover {
 	background: url(%%flairs-ranks%%) no-repeat;
 	display: none;
 	font-size: 0;
+	height: 22px;
+	width: 22px;	
 	vertical-align: middle;
 }
 .flair-rank:not([title=""]):hover {
@@ -2655,10 +2688,10 @@ body .flairselector li:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 	.flair-rank {
 		background: url(%%flairs-ranks-2x%%) no-repeat;
-		background-size: 122px 51px;
+		background-size: 184px 23px;
 	}
 	.flair-platinum {
-		width: 24px;
+		width: 22px;
 	}
 }
 
@@ -2670,43 +2703,27 @@ body .flairselector li:hover {
 }
 
 .flair-bronze {
-	height: 18px;
-	width: 24px;
 }
 .flair-silver {
-	background-position: -24px 0;
-	height: 22px;
-	width: 24px;
+	background-position: -23px 0;
 }
 .flair-gold {
-	background-position: -48px 0;
-	height: 24px;
-	width: 24px;
+	background-position: -46px 0;
 }
 .flair-platinum {
-	background-position: -72px 0;
-	height: 23px;
-	width: 23px;
+	background-position: -69px 0;
 }
 .flair-diamond {
-	background-position: 0 -24px;
-	height: 22px;
-	width: 28px;
+	background-position: -92px 0;
 }
 .flair-master {
-	background-position: -93px -23px;
-	height: 26px;
-	width: 30px;
+	background-position: -115px 0;
 }
 .flair-grandmaster {
-	background-position: -61px -25px;
-	height: 24px;
-	width: 32px;
+	background-position: -138px 0;
 }
 .flair-top {
-	background-position: -28px -25px;
-	height: 25px;
-	width: 32px;
+	background-position: -161px 0;
 }
 
 /* Flair picker rank names */
