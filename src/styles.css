@@ -837,24 +837,7 @@ body:not(.res-nightmode) .submit-link:after {
 
 /* Edit flair sidebar button */
 .side .titlebox .tagline a.flairselectbtn {
-	background: #F3F3F4;
-	border-radius: 1px;
-	color: #7B90A3;
-	cursor: default;
-	font-size: 12px;
-	padding: 2px 8px;
-	position: absolute;
-	right: 48px;
-	text-transform: capitalize;
-	transition: opacity .09s ease-in-out;
-}
-.side .titlebox .tagline a.flairselectbtn:after {
-	content: " Flair";
-}
-.side .titlebox .tagline a.flairselectbtn:hover {
-	background: #042E54;
-	color: #FFF;
-	text-decoration: none;
+	display: none;
 }
 
 .titlebox form.toggle, .leavemoderator {
@@ -1005,76 +988,90 @@ body:not(.res-nightmode) .hover-bubble.multi-selector .create-multi input[type="
 	border-color: #B6B8BB;
 }
 
-/* Twitter link */
-
+/* Sidebar twitter/discord link */
 .side .md h2 {
-    margin: 16px 0
+	margin: 16px 0;
 }
+
 .side .md h2 a {
-    border-radius: 1px;
-    color: #FFF;
-    display: inline-block;
-    font: 13px/30px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    height: 30px;
-    margin: 0;
-    padding-left: 16px;
-    transition: background .08s ease-in-out;
-    width: 100%
+	border-radius: 1px;
+	color: #FFF;
+	display: inline-block;
+	font: 13px/30px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	height: 30px;
+	margin: 0;
+	padding-left: 16px;
+	transition: background .08s ease-in-out;
+	width: 100%;
 }
+
 .side .md h2 a:before {
-    content: "";
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: middle
+	content: "";
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
 }
+
 .side .md h2 a:hover {
-    background: #042e54!important;
-    text-decoration: none;
-    color: #FFF!important
+	background: #042e54 !important;
+	text-decoration: none;
+	color: #FFF !important;
 }
+
 .side .md h2 a:visited {
-    color: #FFF
+	color: #FFF;
 }
+
+/* Sidebar verify rank */
+
 .side .md h2:nth-of-type(1) a {
-    background: #F3F3F4;
-    color: #7B90A3
+	background: #F3F3F4;
+	color: #7B90A3;
 }
+
+/* Sidebar twitter */
+
 .side .md h2:nth-of-type(2) a {
-    background: #1CBEF0;
-    color: #FFF
+	background: #1CBEF0;
+	color: #FFF;
 }
 .side .md h2:nth-of-type(2) a:before {
-    background: url(%%sidebar-twitter-1x%%);
-    height: 13px;
-    width: 16px;
-    margin: -3px 8px 0 -2px
+	background: url(%%sidebar-twitter-1x%%);
+	height: 13px;
+	width: 16px;
+	margin: -3px 8px 0 -2px;
 }
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-device-pixel-ratio: 2),
-(min-resolution: 2dppx) {
-    .side .md h2:nth-of-type(2) a:before {
-        background: url(%%sidebar-twitter-2x%%);
-        background-size: 16px 13px
-    }
+
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.side .md h2:nth-of-type(2) a:before {
+		background: url(%%sidebar-twitter-2x%%);
+		background-size: 16px 13px;
+	}
 }
+
+/* Sidebar discord */
+
 .side .md h2:nth-of-type(3) a {
-    background: #7289DA;
-    color: #FFF
+	background: #7289DA;
+	color: #FFF;
 }
+
 .side .md h2:nth-of-type(3) a:before {
-    background: url(%%sidebar-discord-1x%%);
-    height: 16px;
-    width: 14px;
-    margin: -1px 8px 0 -2px
+	background: url(%%sidebar-discord-1x%%);
+	height: 16px;
+	width: 14px;
+	margin: -1px 8px 0 -2px;
 }
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-device-pixel-ratio: 2),
-(min-resolution: 2dppx) {
-    .side .md h2:nth-of-type(3) a:before {
-        background: url(%%sidebar-discord-2x%%);
-        background-size: 16px 13px
-    }
+
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.side .md h2:nth-of-type(3) a:before {
+		background: url(%%sidebar-discord-2x%%);
+		background-size: 16px 13px;
+	}
 }
+
 
 /* Events */
 .side .md h1 a:hover {
@@ -1696,6 +1693,7 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	color: #81858A; /* #OC141E, 50% opacity */
 	font-size: inherit;
 	margin-top: 5px;
+	margin-bottom: 8px;
 }
 
 @media (max-device-width: 800px) {
@@ -1711,6 +1709,16 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 .tagline a, .search-result-meta a {
 	color: inherit;
 }
+
+.side .tagline {
+	height: 0;
+	font-size: 0;
+	margin: 0;
+}
+.side .tagline a {
+	display: none;
+}
+
 
 .res a.voteWeight {
 	margin-right: 4px;
@@ -1989,796 +1997,248 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 	color: #042e54 !important;
 }
 
-/* Post flair picker */
-.flairselector {
-	background: #FFF;
-	border-radius: 1px;
-	padding: 16px !important;
-	position: fixed;
-	top: 221px !important;
-	width: 430px !important;
-}
 
-/* Flair Selector */
-.flairselector.drop-choices.active {
-	background: #F3F3F4;
-	border: none;
-	box-shadow: 0 0 3840px 3840px rgba(0, 0, 0, .3);
-	left: unset !important;
-	right: 368px;
-	top: 172px !important;
-	width: 510px !important;
-}
 
-.flairselector h2 {
-	color: #0C141E;
-	font-size: 16px;
-	font-weight: normal;
-	text-align: left;
-}
 
-[lang^=en] .flairselector h2 {
-	margin: 0;
-	padding: 0;
-	visibility: hidden !important;
-}
 
-.flairselector h2:before {
-	visibility: visible;
-}
 
-/* Change "Select flair" in post flair dialog and user flair dialog */
-[lang^=en] .entry .flairselector h2:before {
-	content: "Choose Post Flair";
-}
-[lang^=en] .side .flairselector h2:before {
-	content: "My Flair";
-}
-
-[lang^=en] .side .flairselector h2:after {
-	color: #9B9EA2;
-	content: "Choose an icon to display next to your username on posts and comments.";
-	display: block;
-	font-size: 13px;
-	margin: 8px 0;
-	text-transform: none;
-	visibility: visible;
-}
-
-.flair, .linkflairlabel {
-	border: none;
-}
-
-.flairselector ul {
-	margin: 16px 0;
-	float: none !important;
-	max-width: none;
-	padding-right: 16px;
-	width: auto !important;
-}
-
-.flairselector li {
-	cursor: default;
-}
-
-/* Increase specificity */
-body .flairselector li:hover {
-	background: none;
-}
-
-.flairoptionpane {
-	padding-bottom: 16px;
-}
-
-.flairoptionpane .author {
-	display: none;
-}
-
-@media (min-width: 900px) {
-	/* Only fade user flair picker */
-	.side .flairoptionpane:before {
-		background: linear-gradient(rgba(243, 243, 244, 0) 80%, #F3F3F4);
-		content: "";
-		height: 200px;
-		pointer-events: none;
-		position: fixed;
-
-		/* Same right, top and width as .flairselector.drop-choices.active */
-		right: 368px;
-		top: 242px;
-		width: 510px;
-	}
-}
-
-.flairselector .flairoptionpane ul li {
-	border: none;
-	display: block !important;
-	padding: 4px 0;
-	width: auto !important;
-}
-
-.flairoptionpane ul li .linkflair {
-	text-align: left;
-	padding: 0;
-}
-
-.flairoptionpane ul li .linkflair span.linkflairlabel {
-	font-size: 15px;
-	line-height: 1.35;
-	margin: 0;
-	vertical-align: initial;
-}
-.flairselector ul li .linkflair .linkflairlabel:after {
-	display: none;
-}
-
-.flairoptionpane ul li .linkflair a.title {
-	display: none;
-}
-
-.flairselector .linkflair-Question .linkflairlabel,
-.flairselector .linkflair-SubredditMeta .linkflairlabel,
-.flairselector .linkflair-Discussion .linkflairlabel { color: #85898e }
-
-.flairselector .linkflair-PSA .linkflairlabel { color: #fb0b19 }
-
-.flairselector .linkflair-eSports .linkflairlabel,
-.flairselector .linkflair-Video .linkflairlabel,
-.flairselector .linkflair-Event .linkflairlabel { color: #0097d2 }
-
-.flairselector .linkflair-Megathread .linkflairlabel { color: #00c934 }
-.flairselector .linkflair-AdviceTips .linkflairlabel ,
-.flairselector .linkflair-Guide .linkflairlabel,
-.flairselector .linkflair-Casting .linkflairlabel { color: #042e54 }
-
-.flairselector .linkflair-Matchthread .linkflairlabel { color: #fd972f }
-
-/* Text after user flairs */
-.flairselector .flair+span:after {
-	font-size: 12px;
-	margin-left: 8px;
-	vertical-align: middle;
-}
-
-.flairselector form {
-	border: none;
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 -16px;
-	text-align: right;
-}
-
-.flairselector .customizer {
-	width: 100%;
-}
-
-.flairselector .customizer input {
-	border: none;
-	display: block;
-	font-size: 12px;
-	padding: 8px 16px;
-	width: 100%;
-}
-
-.flairselector form .flairselection {
-	background: #FFF;
-	margin: 0;
-	min-height: 52px;
-	order: 2;
-	padding: 16px 16px;
-	text-align: left;
-	width: 100%;
-}
-
-.flairselector form .flairselection .author {
-	display: inline-block;
-	font-size: 12px;
-}
-
-/* Hide the flair name text in the preview box */
-.flairselector form .flairselection .userattrs:after {
-	display: none;
-}
-
-.entry .flairselector form .flairselection {
-	padding: 16px 0 0;
-	width: 100%;
-}
-
-.flairselector .flairselection .flairremove {
-	visibility: hidden;
-}
-
-.side .flairselector .flairremove:before {
-	color: #9B9EA2;
-	content: "1 point • 5 minutes ago";
-	font-size: 12px;
-	margin: 0 8px;
-	visibility: visible;
-}
-
-.flairselector form .flairselection .flairremove a {
-	bottom: 40px;
-	font-size: 12px;
-	margin-right: 16px;
-	opacity: 1;
-	position: absolute;
-	right: 76px;
-	text-transform: capitalize;
-	visibility: visible;
-}
-
-.flairselector form .flairselection .flairremove a:hover {
-	color: #042E54;
-	text-decoration: none;
-}
-
-.flairselector button {
-	bottom: 36px;
-	margin: 16px 0 0;
-	padding: 6px 16px;
-	position: absolute;
-	right: 16px;
-	text-transform: capitalize;
-}
-
-.flairoptionpane .title {
-	display: none;
-}
-
-.flairselection .linkflair {
-	padding-left: 16px;
-	pointer-events: none;
-	text-align: left;
-}
-.flairselection .linkflair .linkflairlabel {
-	color: #9B9EA2;
-	font-size: 16px;
-	margin: 0;
-}
-.flairselector .flairselection .linkflair a.title{
-	color: #042E54;
-	font-size: 16px !important;
-	opacity: 1;
-	visibility: visible;
-}
-
-.flairselector .status {
-	display: block;
-	margin: 4px;
-	text-transform: capitalize;
-}
-
-.flairselector .error {text-align: left;}
-.flairselector .error:first-letter {text-transform: capitalize;}
-
-.flairselector img {
-	position: relative;
-	left: 50%;
-	margin-left: -9px;
-	opacity: .5;
-}
-
-.flairselector li.selected {
-	border: none;
-	background-color: transparent;
-}
-
-.link .flair {
-	font-size: 0px;
-	margin-top: -5px;
-}
 
 .flair {
-	background: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    vertical-align: middle;
+    display: inline-block;
+    color: transparent;
+    height: 23px;
+    margin: 0;
+    width: 0;
+    background: transparent
+}
+.flair:before,
+.flair:after {
+    width: 23px;
+    height: 23px
+}
+.flair,
+.link .flair {
+    position: absolute;
+    width: auto;
+    background: transparent
+}
+/*Rows*/
+.flair[class*="-r02"]:before,
+.flair[class*="-2r02"]:after {
+    background: 0 -23px
+}
+.flair[class*="-r03"]:before,
+.flair[class*="-2r03"]:after {
+    background: 0 -46px
+}
+.flair[class*="-r04"]:before,
+.flair[class*="-2r04"]:after {
+    background: 0 -69px
+}
+.flair[class*="-r05"]:before,
+.flair[class*="-2r05"]:after {
+    background: 0 -92px
+}
+.flair[class*="-r06"]:before,
+.flair[class*="-2r06"]:after {
+    background: 0 -115px
+}
+.flair[class*="-r07"]:before,
+.flair[class*="-2r07"]:after {
+    background: 0 -138px
+}
+.flair[class*="-r08"]:before,
+.flair[class*="-2r08"]:after {
+    background: 0 -161px
+}
+.flair[class*="-r09"]:before,
+.flair[class*="-2r09"]:after {
+    background: 0 -184px
+}
+/*columns*/
+.flair[class*="-c01"]:before,
+.flair[class*="-2c01"]:after {
+    width: 23px;
+    clip: rect(0, 23px, 23px, 0px);
+    margin-left: 0
+}
+.flair[class*="-c02"]:before,
+.flair[class*="-2c02"]:after {
+    width: 46px;
+    clip: rect(0, 46px, 23px, 23px);
+    margin-left: -23px;
+}
+.flair[class*="-c03"]:before,
+.flair[class*="-2c03"]:after {
+    width: 69px;
+    clip: rect(0, 69px, 23px, 46px);
+    margin-left: -46px;
+}
+.flair[class*="-c04"]:before,
+.flair[class*="-2c04"]:after {
+    width: 92px;
+    clip: rect(0, 92px, 23px, 69px);
+    margin-left: -69px;
+}
+.flair[class*="-c05"]:before,
+.flair[class*="-2c05"]:after {
+    width: 115px;
+    clip: rect(0, 115px, 23px, 92px);
+    margin-left: -92px;
+}
+.flair[class*="-c06"]:before,
+.flair[class*="-2c06"]:after {
+    width: 138px;
+    clip: rect(0, 138px, 23px, 115px);
+    margin-left: -115px;
+}
+.flair[class*="-c07"]:before,
+.flair[class*="-2c07"]:after {
+    width: 161px;
+    clip: rect(0, 161px, 23px, 138px);
+    margin-left: -138px;
+}
+.flair[class*="-c08"]:before,
+.flair[class*="-2c08"]:after {
+    width: 184px;
+    clip: rect(0, 184px, 23px, 161px);
+    margin-left: -161px;
+}
+.flair[class*="-c09"]:before,
+.flair[class*="-2c09"]:after {
+    width: 207px;
+    clip: rect(0, 207px, 23px, 184px);
+    margin-left: -184px;
+}
+.flair[class*="-c10"]:before,
+.flair[class*="-2c10"]:after {
+    width: 230px;
+    clip: rect(0, 230px, 23px, 207px);
+    margin-left: -207px;
+}
+.flair[class*="-c11"]:before,
+.flair[class*="-2c11"]:after {
+    width: 253px;
+    clip: rect(0, 253px, 23px, 230px);
+    margin-left: -230px;
+}
+/* Team flair sheet */
+.flair[class*="-st"]:before,
+.flair[class*="-2st"]:after,
+.flair:before,
+.flair:after {
+    content: "";
+    background-image: url(%%flairs-teams%%);
+    height: 23px;
+    position: absolute;
+    color: transparent;
+	background-size: 253px 208px;
+}
+/* Rank flair sheet */
+.flair[class*="-sr"]:before,
+.flair[class*="-2sr"]:after {
+    content: "";
+    background-image: url(%%flairs-ranks%%);
+    height: 23px;
+    position: absolute;
+    color: transparent;
+	background-size: 184px 23px;
+}
+/* Special flair sheet */
+.flair[class*="-sx"]:before,
+.flair[class*="-2sx"]:after {
+    content: "";
+    background-image: url(%%flairs-special%%);
+    height: 23px;
+    position: absolute;
+    color: transparent;
+	background-size: 184px 23px;
 }
 
-/* Verified flair */
-.flair-verified {
-	cursor: help;
-	font-size: 0 !important;
-	margin: 0;
-	padding: 0;
-}
 
-.flair-verified:before {
-	bottom: -2px;
-	color: #FA9F29;
-	content: "✔";
-	font: 900 15px -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	position: relative;
-}
 
-.comment .flair-verified {
-	margin: 0 4px;
+.listing-page .entry .flair {
+	display: none
 }
-
-/* Blizzard */
-.flair-blizzard {
-	background: #0097D2;
-	color: #FFF;
+.listing-page .entry .flair + .author{
+	margin-left: 0
+}
+.flair {
+    margin-top: -18px
+}
+.flair:before,
+.flair:after {
+    margin-top: 15px
+}
+.commentarea .entry .flair {
+    margin-top: -9px
+}
+.commentarea .entry .flair:hover {
+    margin-top: -18px
+}
+.commentarea .entry .flair:before,
+.commentarea .entry .flair:after {
+    margin-top: 4px
+}
+.commentarea .entry .flair:hover:before,
+.commentarea .entry .flair:hover:after {
+    margin-top: 13px
+}
+.flair:after {
+    left: 28px
+}
+.flair:after {
+    display: none
+}
+.commentarea .entry .flair[class*="-2s"]:after,
+.link .entry .flair[class*="-2s"]:after,
+.titlebox .tagline .flair[class*="-2s"]:after {
+    display: inline-block
+}
+.commentarea .entry .flair {
+    font-size: 3px
+}
+.commentarea .entry .flair:hover {
+    color: #0C0F0B;
+    font-size: 12px
+}
+.comment .author,
+.wiki-page-content em .author {
+    margin-left: 0
+}
+.comment .flair + .author,
+.comments-page .link .flair + .author,
+.wiki-page-content em .flair + .author {
+    margin-left: 32px
+}
+.comment .flair[class*="-2s"] + .author,
+.comments-page .link .flair[class*="-2s"] + .author,
+.wiki-page-content em .flair[class*="-2s"] + .author {
+    margin-left: 62px
+}
+.link .flair,
+.search-result .flair {
+    margin: -19px 0 0 2px;
+    font-size: 0
+}
+.side .tagline .flair {
 	display: inline-block;
-	padding: 0 4px;
+	margin-top: 4px;
+	margin-left: 200px;
 }
-
-/* User flairs for teams and in-post tags for team icons */
-.flair-fan, .md a[href^="#team-"] {
-	background: url(%%flairs-teams%%) no-repeat;
-	font-size: 0;
-	height: 22px;
-	width: 22px;
-	vertical-align: middle;
-}
-
-/* Team tags */
-.md a[href^="#team-"] {
-	cursor: default;
-	display: inline-block;
-	pointer-events: none;
-}
-
-.md a[href="#team"] {
-	background: url(%%flairs-teams%%) no-repeat;
-	background-position: 0 -146px !important;
-	cursor: default;
-	display: inline-block;
-	font-size: 0;
-	height: 22px;
-	pointer-events: none;
-	vertical-align: middle;
-	width: 22px;
-}
-
-/* Individual team tags share same background-position/height/width as team flair icons below*/
-
-/* Team flairs */
-.flair-fan {
+.side .flair {
 	display: none;
 }
-.flair-fan:not([title=""]):hover {
-	background: none;
-	font-size: 12px;
-	line-height: 12px;
-	width: auto;
-}
-
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair-fan, .md a[href^="#team-"], .md a[href="#team"] {
-		background: url(%%flairs-teams-2x%%) no-repeat;
-		background-size: 253px 208px;
-	}
-	.flair-complexity {
-		width: 23px;
-	}
-}
-
-.comments-page .content .flair-fan, .side .flair-fan {
-	display: inline-block;
-}
-
-.flair-cloud-9, .md a[href*="cloud-9"] { background-position: -23px 0; }
-.flair-rogue, .md a[href*="rogue"] { background-position: -46px 0; }
-.flair-complexity, .md a[href*="complexity"] {background-position: -69px 0; }
-.flair-fnatic, .md a[href*="fnatic"] { background-position: -92px 0; }
-.flair-envyus, .md a[href*="envyus"] { background-position: -115px 0; }
-.flair-celestial, .md a[href*="celestial"] { background-position: -138px 0; }
-.flair-misfits, .md a[href*="misfits"] { background-position: -161px 0; }
-.flair-dignitas, .md a[href*="dignitas"] { background-position: -184px 0; }
-.flair-nrg, .md a[href*="nrg"] { background-position: -207px 0; }
-.flair-lg-loyal, .md a[href*="lg-loyal"] { background-position: -230px 0; }
-
-.flair-invictus, .md a[href*="invictus"] { background-position: 0 -23px; }
-.flair-method, .md a[href*="method"] { background-position: -23px -23px; }
-.flair-tempo-storm, .md a[href*="tempo-storm"] { background-position: -46px -23px; }
-.flair-ninjas-in-pyjamas, .md a[href*="ninjas-in-pyjamas"] {background-position: -69px -23px; }
-.flair-faze, .md a[href*="faze"] { background-position: -92px -23px; }
-.flair-liquid, .md a[href*="liquid"] { background-position: -115px -23px; }
-.flair-lunatic-hai, .md a[href*="lunatic-hai"] { background-position: -138px -23px; }
-.flair-freecs-blue, .md a[href*="freecs-blue"] { background-position: -161px -23px; }
-.flair-immortals, .md a[href*="immortals"]{ background-position: -184px -23px; }
-.flair-luxury-watch-red, .md a[href*="luxury-watch-red"] { background-position: -207px -23px; }
-.flair-luxury-watch-blue, .md a[href*="luxury-watch-blue"] { background-position: -207px -23px; }
-.flair-vici-gaming, .md a[href*="vici-gaming"] { background-position: -230px -23px; }
-
-.flair-kongdoo-panthera, .md a[href*="kongdoo-panthera"] { background-position: 0 -46px; }
-.flair-ldlc, .md a[href*="ldlc"]{ background-position: -23px -46px; }
-.flair-kongdoo-uncia, .md a[href*="kongdoo-uncia"] { background-position: -46px -46px; }
-.flair-world-elite-white, .md a[href*="world-elite-white"] {background-position: -69px -46px; }
-.flair-renegades, .md a[href*="renegades"] { background-position: -92px -46px; }
-.flair-counter-logic-gaming, .md a[href*="counter-logic-gaming"] { background-position: -115px -46px; }
-.flair-meta-athena, .md a[href*="meta-athena"] { background-position: -138px -46px; }
-.flair-lg-evil, .md a[href*="lg-evil"] { background-position: -161px -46px; }
-.flair-selfless, .md a[href*="selfless"] { background-position: -184px -46px; }
-.flair-runaway, .md a[href*="runaway"] { background-position: -207px -46px; }
-.flair-eunited, .md a[href*="eunited"] { background-position: -230px -46px; }
-
-.flair-hammers, .md a[href*="hammers"]  { background-position: 0 -69px; }
-.flair-laser-kittenz, .md a[href*="laser-kittenz"] { background-position: -23px -69px; }
-.flair-movistar-riders, .md a[href*="movistar-riders"] { background-position: -46px -69px; }
-.flair-gamersorigin, .md a[href*="gamersorigin"] {background-position: -69px -69px; }
-.flair-brasil-gaming-house, .md a[href*="brasil-gaming-house"] { background-position: -92px -69px; }
-.flair-denial, .md a[href*="denial"] { background-position: -115px -69px; }
-.flair-evil-geniuses, .md a[href*="evil-geniuses"] { background-position: -138px -69px; }
-.flair-wnv, .md a[href*="wnv"] { background-position: -161px -69px; }
-.flair-splyce, .md a[href*="splyce"] { background-position: -184px -69px; }
-.flair-scylla, .md a[href*="scylla"] { background-position: -207px -69px; }
-.flair-red-reserve, .md a[href*="red-reserve"] { background-position: -230px -69px; }
-
-.flair-vivis-adventure, .md a[href*="vivis-adventure"] { background-position: 0 -92px; }
-.flair-singularity-ninjas, .md a[href*="singularity-ninjas"] { background-position: -23px -92px; }
-.flair-envision, .md a[href*="envision"] { background-position: -46px -92px; }
-/*.flair-east-wind, .md a[href*="east-wind"] {background-position: -69px -92px; }*/
-.flair-bk-stars, .md a[href*="bk-stars"] { background-position: -92px -92px; }
-.flair-x6-gaming, .md a[href*="x6-gaming"] { background-position: -115px -92px; }
-.flair-conbox-spirit, .md a[href*="conbox-spirit"] { background-position: -138px -92px; }
-.flair-flash-lux, .md a[href*="flash-lux"] { background-position: -161px -92px; }
-.flair-mighty, .md a[href*="mighty"]{ background-position: -184px -92px; }
-.flair-rhinos-gaming-wings, .md a[href*="rhinos-gaming-wings"] { background-position: -207px -92px; }
-.flair-mvp-space, .md a[href*="mvp-space"] { background-position: -230px -92px; }
-
-.flair-detonator-gold, .md a[href*="detonator-gold"] { background-position: 0 -115px; }
-.flair-ahq-esports-club, .md a[href*="ahq-esports-club"] { background-position: -23px -115px; }
-.flair-flash-wolves, .md a[href*="flash-wolves"] { background-position: -46px -115px; }
-.flair-fireball, .md a[href*="fireball"]{background-position: -69px -115px; }
-.flair-hong-kong-attitude, .md a[href*="hong-kong-attitude"] { background-position: -92px -115px; }
-.flair-machi-esports, .md a[href*="machi-esports"] { background-position: -115px -115px; }
-.flair-sunsister, .md a[href*="sunsister"] { background-position: -138px -115px; }
-.flair-1246, .md a[href*="1246"] { background-position: -161px -115px; }
-.flair-invictus-gaming-ice, .md a[href*="invictus-gaming-ice"] { background-position: -184px -115px; }
-.flair-oh-my-god, .md a[href*="oh-my-god"] { background-position: -207px -115px; }
-.flair-lgd-gaming, .md a[href*="lgd-gaming"] { background-position: -230px -115px; }
-
-.flair-miraculous-youngsters, .md a[href*="miraculous-youngsters"]{ background-position: 0 -138px; }
-.flair-jhg-gold, .md a[href*="jhg-gold"] { background-position: -23px -138px; }
-.flair-lucky-future, .md a[href*="lucky-future"] { background-position: -46px -138px; }
-.flair-ftd-club, .md a[href*="ftd-club"] {background-position: -69px -138px; }
-.flair-black-ananas, .md a[href*="black-ananas"]  { background-position: -92px -138px; }
-.flair-gale-force, .md a[href*="gale-force"] { background-position: -115px -138px; }
-.flair-blank, .md a[href*="blank"] { background-position: -138px -138px; }
-.flair-cyclowns, .md a[href*="cyclowns"] { background-position: -161px -138px; }
-.flair-rise, .md a[href*="rise"] { background-position: -184px -138px; }
-.flair-alfa-squad, .md a[href*="alfa-squad"] { background-position: -207px -138px; }
-.flair-team-expert, .md a[href*="team-expert"] { background-position: -230px -138px; }
-
-.flair-bazooka-puppiez, .md a[href*="bazooka-puppiez"]{ background-position: 0 -161px; }
-.flair-123, .md a[href*="123"] { background-position: -23px -161px; }
-.flair-ninjas-with-attitude, .md a[href*="ninjas-with-attitude"] { background-position: -46px -161px; }
-.flair-esporati, .md a[href*="esporati"] {background-position: -69px -161px; }
-.flair-esporters-cyberathletes, .md a[href*="esporters-cyberathletes"]  { background-position: -92px -161px; }
-.flair-you-guys-get-paid, .md a[href*="you-guys-get-paid"] { background-position: -115px -161px; }
-.flair-toronto-esports, .md a[href*="toronto-esports"] { background-position: -138px -161px; }
-.flair-yikes, .md a[href*="yikes"] { background-position: -161px -161px; }
-.flair-kungarna, .md a[href*="kungarna"] { background-position: -184px -161px; }
-.flair-fnrgfe, .md a[href*="fnrgfe"] { background-position: -207px -161px; }
-.flair-arc-6, .md a[href*="arc-6"] { background-position: -230px -161px; }
-
-.flair-rest-in-pyjamas, .md a[href*="rest-in-pyjamas"] { background-position: 0 -184px; }
-.flair-gc-busan, .md a[href*="gc-busan"] { background-position: -23px -184px; }
-.flair-nc-foxes, .md a[href*="nc-foxes"] { background-position: -46px -184px; }
-.flair-rox-orcas, .md a[href*="rox-orcas"] { background-position: -69px -184px; }
-.flair-gigantti, .md a[href*="gigantti"] { background-position: -92px -184px; }
-.flair-mega-thunder, .md a[href*="mega-thunder"] { background-position: -115px -184px; }
-.flair-ardeont, .md a[href*="ardeont"] { background-position: -138px -184px; }
-.flair-libalent-supreme, .md a[href*="libalent-supreme"] { background-position: -161px -184px; }
 
 
-/* Flair picker team names */
-.flairselector .flair-envyus+span:after { content:"EnVyUs" }
-.flairselector .flair-cloud-9+span:after { content:"Cloud9" }
-.flairselector .flair-celestial+span:after { content:"Team Celestial" }
-.flairselector .flair-misfits+span:after { content:"Misfits" }
-.flairselector .flair-dignitas+span:after { content:"Dignitas" }
-.flairselector .flair-rogue+span:after { content:"Rogue" }
-.flairselector .flair-complexity+span:after { content:"Complexity" }
-.flairselector .flair-fnatic+span:after { content:"Fnatic" }
-.flairselector .flair-nrg+span:after { content:"NRG" }
-.flairselector .flair-lg-loyal+span:after { content:"LG Loyal" }
-.flairselector .flair-invictus+span:after { content:"Invictus" }
-.flairselector .flair-tempo-storm+span:after { content:"Tempo Storm" }
-.flairselector .flair-ninjas-in-pyjamas+span:after { content:"Ninjas in Pyjamas" }
-.flairselector .flair-liquid+span:after { content:"Liquid" }
-.flairselector .flair-lunatic-hai+span:after { content:"Lunatic Hai" }
-.flairselector .flair-faze+span:after { content:"FaZe" }
-.flairselector .flair-freecs-blue+span:after { content:"Afreeca Freecs" }
-.flairselector .flair-immortals+span:after { content:"Immortals" }
-.flairselector .flair-method+span:after { content:"Method" }
-.flairselector .flair-luxury-watch-red+span:after { content:"LuxuryWatch Red" }
-.flairselector .flair-luxury-watch-blue+span:after { content:"LuxuryWatch Blue" }
-.flairselector .flair-vici-gaming+span:after { content:"Vici Gaming" }
-.flairselector .flair-kongdoo-panthera+span:after { content:"Kongdoo Panthera" }
-.flairselector .flair-ldlc+span:after { content:"LDLC" }
-.flairselector .flair-rise+span:after { content:"Rise Nation" }
-.flairselector .flair-kongdoo-uncia+span:after { content:"Kongdoo Uncia" }
-.flairselector .flair-renegades+span:after { content:"Renegades" }
-.flairselector .flair-world-elite-white+span:after { content:"World Elite White" }
-.flairselector .flair-meta-athena+span:after { content:"Meta Athena" }
-.flairselector .flair-lg-evil+span:after { content:"LG Evil" }
-.flairselector .flair-selfless+span:after { content:"Selfless" }
-.flairselector .flair-runaway+span:after { content:"Runaway" }
-.flairselector .flair-eunited+span:after { content:"eUnited" }
-.flairselector .flair-blank+span:after { content:"Blank" }
-.flairselector .flair-hammers+span:after { content:"Hammers Esports" }
-.flairselector .flair-laser-kittenz+span:after { content:"Laser Kittenz" }
-.flairselector .flair-movistar-riders+span:after { content:"Movistar Riders" }
-.flairselector .flair-gamersorigin+span:after { content:"GamersOrigin" }
-.flairselector .flair-brasil-gaming-house+span:after { content:"Brasil Gaming House" }
-.flairselector .flair-denial+span:after { content:"Denial" }
-.flairselector .flair-evil-geniuses+span:after { content:"Evil Geniuses" }
-.flairselector .flair-wnv+span:after { content:"wNv" }
-.flairselector .flair-splyce+span:after { content:"Splyce" }
-.flairselector .flair-scylla+span:after { content:"Scylla" }
-.flairselector .flair-red-reserve+span:after { content:"Red Reserve" }
-.flairselector .flair-vivis-adventure+span:after { content:"Vivi's Adventure" }
-.flairselector .flair-singularity-ninjas+span:after { content:"Singularity" }
-.flairselector .flair-envision+span:after { content:"Envision" }
-.flairselector .flair-bk-stars+span:after { content:"BK Stars" }
-.flairselector .flair-x6-gaming+span:after { content:"X6 Gaming" }
-.flairselector .flair-conbox-spirit+span:after { content:"CONBOX" }
-.flairselector .flair-flash-lux+span:after { content:"Flash Lux" }
-.flairselector .flair-mighty+span:after { content:"Mighty" }
-.flairselector .flair-rhinos-gaming-wings+span:after { content:"Rhinos Gaming Wings" }
-.flairselector .flair-mvp-space+span:after { content:"MVP Space" }
-.flairselector .flair-you-guys-get-paid+span:after { content:"You Guys Get Paid?" }
-.flairselector .flair-ahq-esports-club+span:after { content:"ahq eSports Club" }
-.flairselector .flair-detonator-gold+span:after { content:"Detonator Gold" }
-.flairselector .flair-flash-wolves+span:after { content:"Flash wolves" }
-.flairselector .flair-fireball+span:after { content:"FireBall" }
-.flairselector .flair-hong-kong-attitude+span:after { content:"Hong Kong Attitude" }
-.flairselector .flair-machi-esports+span:after { content:"Machi Esports" }
-.flairselector .flair-sunsister+span:after { content:"SunSister" }
-.flairselector .flair-1246+span:after { content:"1246" }
-.flairselector .flair-invictus-gaming-ice+span:after { content:"Invictus Gaming Ice" }
-.flairselector .flair-oh-my-god+span:after { content:"Oh My God" }
-.flairselector .flair-lgd-gaming+span:after { content:"LGD Gaming" }
-.flairselector .flair-black-ananas+span:after { content:"Black Ananas" }
-.flairselector .flair-ftd-club+span:after { content:"FTD Club" }
-.flairselector .flair-lucky-future+span:after { content:"Lucky Future" }
-.flairselector .flair-jhg-gold+span:after { content:"JHG Gold" }
-.flairselector .flair-miraculous-youngsters+span:after { content:"Miraculous Youngsters" }
-.flairselector .flair-counter-logic-gaming+span:after { content:"Counter Logic Gaming" }
-.flairselector .flair-gale-force+span:after { content:"Gale Force" }
-.flairselector .flair-cyclowns+span:after { content:"Cyclowns" }
-.flairselector .flair-alfa-squad+span:after { content:"Alfa Squad" }
-.flairselector .flair-team-expert+span:after { content:"Team expert" }
-.flairselector .flair-bazooka-puppiez+span:after { content:"Bazooka Puppiez" }
-.flairselector .flair-123+span:after { content:"123" }
-.flairselector .flair-ninjas-with-attitude+span:after { content:"Ninjas with Attitude" }
-.flairselector .flair-esporati+span:after { content:"Esporati" }
-.flairselector .flair-esporters-cyberathletes+span:after { content:"Team eSporters" }
-.flairselector .flair-toronto-esports+span:after { content:"Toronto Esports" }
-.flairselector .flair-yikes+span:after { content:"YIKES!" }
-.flairselector .flair-kungarna+span:after { content:"Kungarna" }
-.flairselector .flair-fnrgfe+span:after { content:"FNRGFE" }
-.flairselector .flair-arc-6+span:after { content:"ARC 6" }
-.flairselector .flair-rest-in-pyjamas+span:after { content:"Rest in Pyjamas" }
-.flairselector .flair-gc-busan+span:after { content:"GC Busan" }
-.flairselector .flair-nc-foxes+span:after { content:"NC Foxes" }
-.flairselector .flair-rox-orcas+span:after { content:"ROX Orcas" }
-.flairselector .flair-gigantti+span:after { content:"Team Gigantti" }
-.flairselector .flair-mega-thunder+span:after { content: "MEGA Thunder" }
-.flairselector .flair-ardeont+span:after { content: "Ardeont" }
-.flairselector .flair-libalent-supreme+span:after { content: "Libalent Supreme" }
 
 
-/* Small team and flag icons */
-.md a[href^="#team-small-"], .md a[href^="#flag-small-"] {
-	transform: scale(.75);
-}
 
-/* User flairs for world cup flags */
-.flair-flag {
-	background: url(%%flairs-flags%%) no-repeat;
-	font-size: 0;
-	height: 22px;
-	width: 22px;
-	vertical-align: middle;
-	display: none;
-}
-.flair-flag:not([title=""]):hover {
-	background: none;
-	font-size: 12px;
-	line-height: 12px;
-	width: auto;
-}
 
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair-flag {
-		background: url(%%flairs-flags-2x%%) no-repeat;
-		background-size: 253px 185px;
-	}
-	.flair-cn {
-		width: 22px;
-	}
-}
-
-.comments-page .flair-flag {
-	font-size: 0;
-}
-.comments-page .content .flair-flag, .side .flair-flag {
-	display: inline-block;
-}
-
-.flair-kr { background-position: -23px 0; }
-.flair-us { background-position: -46px 0; }
-.flair-se {background-position: -69px 0; }
-.flair-fi { background-position: -92px 0; }
-.flair-gb { background-position: -115px 0; }
-.flair-ca { background-position: -138px 0; }
-.flair-fr { background-position: -161px 0; }
-.flair-dk { background-position: -184px 0; }
-.flair-ru { background-position: -207px 0; }
-.flair-de { background-position: -230px 0; }
-
-.flair-jp { background-position: 0 -23px; }
-.flair-au { background-position: -23px -23px; }
-.flair-tw { background-position: -46px -23px; }
-.flair-nl {background-position: -69px -23px; }
-.flair-hk { background-position: -92px -23px; }
-.flair-no { background-position: -115px -23px; }
-.flair-pl { background-position: -138px -23px; }
-.flair-br { background-position: -161px -23px; }
-.flair-it { background-position: -184px -23px; }
-.flair-es { background-position: -207px -23px; }
-.flair-il { background-position: -230px -23px; }
-
-.flair-sg { background-position: 0 -46px; }
-.flair-th { background-position: -23px -46px; }
-.flair-ar { background-position: -46px -46px; }
-.flair-tr {background-position: -69px -46px; }
-.flair-be { background-position: -92px -46px; }
-.flair-vn { background-position: -115px -46px; }
-.flair-pt { background-position: -138px -46px; }
-.flair-nz { background-position: -161px -46px; }
-.flair-at { background-position: -184px -46px; }
-.flair-ro { background-position: -207px -46px; }
-
-/* Flair picker rank names */
-.flairselector .flair-ar+span:after { content:"Argentina" }
-.flairselector .flair-au+span:after { content:"Australia" }
-.flairselector .flair-at+span:after { content:"Austria" }
-.flairselector .flair-be+span:after { content:"Belgium" }
-.flairselector .flair-br+span:after { content:"Brazil" }
-.flairselector .flair-ca+span:after { content:"Canada" }
-.flairselector .flair-cn+span:after { content:"China" }
-.flairselector .flair-tw+span:after { content:"Chinese Taipei" }
-.flairselector .flair-dk+span:after { content:"Denmark" }
-.flairselector .flair-fi+span:after { content:"Finland" }
-.flairselector .flair-fr+span:after { content:"France" }
-.flairselector .flair-de+span:after { content:"Germany" }
-.flairselector .flair-hk+span:after { content:"Hong Kong" }
-.flairselector .flair-il+span:after { content:"Israel" }
-.flairselector .flair-it+span:after { content:"Italy" }
-.flairselector .flair-jp+span:after { content:"Japan" }
-.flairselector .flair-nl+span:after { content:"Netherlands" }
-.flairselector .flair-nz+span:after { content:"New Zealand" }
-.flairselector .flair-no+span:after { content:"Norway" }
-.flairselector .flair-pl+span:after { content:"Poland" }
-.flairselector .flair-pt+span:after { content:"Portugal" }
-.flairselector .flair-ro+span:after { content:"Romania" }
-.flairselector .flair-ru+span:after { content:"Russia" }
-.flairselector .flair-sg+span:after { content:"Singapore" }
-.flairselector .flair-es+span:after { content:"Spain" }
-.flairselector .flair-se+span:after { content:"Sweden" }
-.flairselector .flair-kr+span:after { content:"South Korea" }
-.flairselector .flair-th+span:after { content:"Thailand" }
-.flairselector .flair-tr+span:after { content:"Turkey" }
-.flairselector .flair-gb+span:after { content:"United Kingdom" }
-.flairselector .flair-us+span:after { content:"United States" }
-.flairselector .flair-vn+span:after { content:"Vietnam" }
-
-/* User flairs for ranks */
-.flair-rank {
-	background: url(%%flairs-ranks%%) no-repeat;
-	display: none;
-	font-size: 0;
-	height: 22px;
-	width: 22px;	
-	vertical-align: middle;
-}
-.flair-rank:not([title=""]):hover {
-	background: none;
-	font-size: 12px;
-	line-height: 19px;
-	width: auto;
-}
-
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair-rank {
-		background: url(%%flairs-ranks-2x%%) no-repeat;
-		background-size: 184px 23px;
-	}
-	.flair-platinum {
-		width: 22px;
-	}
-}
-
-.comments-page .flair-rank {
-	font-size: 0;
-}
-.comments-page .content .flair-rank, .side .flair-rank {
-	display: inline-block;
-}
-
-.flair-bronze {
-}
-.flair-silver {
-	background-position: -23px 0;
-}
-.flair-gold {
-	background-position: -46px 0;
-}
-.flair-platinum {
-	background-position: -69px 0;
-}
-.flair-diamond {
-	background-position: -92px 0;
-}
-.flair-master {
-	background-position: -115px 0;
-}
-.flair-grandmaster {
-	background-position: -138px 0;
-}
-.flair-top {
-	background-position: -161px 0;
-}
-
-/* Flair picker rank names */
-.flairselector .flair-bronze+span:after { content:"Bronze" }
-.flairselector .flair-silver+span:after { content:"Silver" }
-.flairselector .flair-gold+span:after { content:"Gold" }
-.flairselector .flair-platinum+span:after { content:"Platinum" }
-.flairselector .flair-diamond+span:after { content:"Diamond" }
-.flairselector .flair-master+span:after { content:"Master" }
-.flairselector .flair-grandmaster+span:after { content:"Grandmaster" }
-.flairselector .flair-top+span:after { content:"Top" }
-
-/* Hero tags */
-.md a[href^="#hero-"] {
-	background: #EEE url(%%tags-heroes%%);
-	border-radius: 1px;
-	cursor: default;
-	display: inline-block;
-	font-size: 0;
-	height: 28px;
-	pointer-events: none;
-	width: 28px;
-}
-
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.md a[href^="#hero-"] {
-		background: #EEE url(%%tags-heroes-2x%%);
-		background-size: 168px 112px;
-	}
-}
-
-.md a[href$="-bastion"] {background-position: 0 0}
-.md a[href$="-dva"] {background-position: -28px 0}
-.md a[href$="-genji"] {background-position: -56px 0}
-.md a[href$="-hanzo"] {background-position: -84px 0}
-.md a[href$="-junkrat"] {background-position: -112px 0}
-.md a[href$="-lucio"] {background-position: -140px 0}
-.md a[href$="-mccree"] {background-position: 0 -28px}
-.md a[href$="-mei"] {background-position: -56px -28px}
-.md a[href$="-mercy"] {background-position: -84px -28px}
-.md a[href$="-pharah"] {background-position: -28px -28px}
-.md a[href$="-reaper"] {background-position: -112px -28px}
-.md a[href$="-reinhardt"] {background-position: -140px -28px}
-.md a[href$="-roadhog"] {background-position: 0 -56px}
-.md a[href$="-soldier-76"] {background-position: -28px -56px}
-.md a[href$="-symmetra"] {background-position: -56px -56px}
-.md a[href$="-torbjorn"] {background-position: -112px -56px}
-.md a[href$="-tracer"] {background-position: -84px -56px}
-.md a[href$="-widowmaker"] {background-position: -140px -56px}
-.md a[href$="-winston"] {background-position: 0 -84px}
-.md a[href$="-zarya"] {background-position: -28px -84px}
-.md a[href$="-zenyatta"] {background-position: -56px -84px}
-.md a[href$="-ana"] {background-position: -84px -84px}
-.md a[href$="-sombra"] {background-position: -112px -84px}
 
 /* Map tags */
 .md a[href^="#map-"] {
