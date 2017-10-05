@@ -1997,13 +1997,11 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 	color: #042e54 !important;
 }
 
+/* User flairs */
 
-
-
-
-
-
-.flair {
+.flair,
+a[href^="#team"],
+a[href^="#rank"] {
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -2016,7 +2014,9 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
     background: transparent
 }
 .flair:before,
-.flair:after {
+.flair:after,
+a[href^="#team"],
+a[href^="#rank"] {
     width: 23px;
     height: 23px
 }
@@ -2028,109 +2028,130 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 }
 /*Rows*/
 .flair[class*="-r02"]:before,
-.flair[class*="-2r02"]:after {
+.flair[class*="-2r02"]:after,
+a[href*="-r02"]:before {
     background: 0 -23px
 }
 .flair[class*="-r03"]:before,
-.flair[class*="-2r03"]:after {
+.flair[class*="-2r03"]:after,
+a[href*="-r03"]:before {
     background: 0 -46px
 }
 .flair[class*="-r04"]:before,
-.flair[class*="-2r04"]:after {
+.flair[class*="-2r04"]:after,
+a[href*="-r04"]:before {
     background: 0 -69px
 }
 .flair[class*="-r05"]:before,
-.flair[class*="-2r05"]:after {
+.flair[class*="-2r05"]:after,
+a[href*="-r05"]:before {
     background: 0 -92px
 }
 .flair[class*="-r06"]:before,
-.flair[class*="-2r06"]:after {
+.flair[class*="-2r06"]:after,
+a[href*="-r06"]:before {
     background: 0 -115px
 }
 .flair[class*="-r07"]:before,
-.flair[class*="-2r07"]:after {
+.flair[class*="-2r07"]:after,
+a[href*="-r07"]:before {
     background: 0 -138px
 }
 .flair[class*="-r08"]:before,
-.flair[class*="-2r08"]:after {
+.flair[class*="-2r08"]:after,
+a[href*="-r08"]:before {
     background: 0 -161px
 }
 .flair[class*="-r09"]:before,
-.flair[class*="-2r09"]:after {
+.flair[class*="-2r09"]:after,
+a[href*="-r09"]:before {
     background: 0 -184px
 }
 /*columns*/
 .flair[class*="-c01"]:before,
-.flair[class*="-2c01"]:after {
+.flair[class*="-2c01"]:after,
+a[href*="-c01"]:before {
     width: 23px;
     clip: rect(0, 23px, 23px, 0px);
     margin-left: 0
 }
 .flair[class*="-c02"]:before,
-.flair[class*="-2c02"]:after {
+.flair[class*="-2c02"]:after,
+a[href*="-c02"]:before {
     width: 46px;
     clip: rect(0, 46px, 23px, 23px);
     margin-left: -23px;
 }
 .flair[class*="-c03"]:before,
-.flair[class*="-2c03"]:after {
+.flair[class*="-2c03"]:after,
+a[href*="-c03"]:before {
     width: 69px;
     clip: rect(0, 69px, 23px, 46px);
     margin-left: -46px;
 }
 .flair[class*="-c04"]:before,
-.flair[class*="-2c04"]:after {
+.flair[class*="-2c04"]:after,
+a[href*="-c04"]:before {
     width: 92px;
     clip: rect(0, 92px, 23px, 69px);
     margin-left: -69px;
 }
 .flair[class*="-c05"]:before,
-.flair[class*="-2c05"]:after {
+.flair[class*="-2c05"]:after,
+a[href*="-c05"]:before {
     width: 115px;
     clip: rect(0, 115px, 23px, 92px);
     margin-left: -92px;
 }
 .flair[class*="-c06"]:before,
-.flair[class*="-2c06"]:after {
+.flair[class*="-2c06"]:after,
+a[href*="-c06"]:before {
     width: 138px;
     clip: rect(0, 138px, 23px, 115px);
     margin-left: -115px;
 }
 .flair[class*="-c07"]:before,
-.flair[class*="-2c07"]:after {
+.flair[class*="-2c07"]:after,
+a[href*="-c07"]:before {
     width: 161px;
     clip: rect(0, 161px, 23px, 138px);
     margin-left: -138px;
 }
 .flair[class*="-c08"]:before,
-.flair[class*="-2c08"]:after {
+.flair[class*="-2c08"]:after,
+a[href*="-c08"]:before {
     width: 184px;
     clip: rect(0, 184px, 23px, 161px);
     margin-left: -161px;
 }
 .flair[class*="-c09"]:before,
-.flair[class*="-2c09"]:after {
+.flair[class*="-2c09"]:after,
+a[href*="-c09"]:before {
     width: 207px;
     clip: rect(0, 207px, 23px, 184px);
     margin-left: -184px;
 }
 .flair[class*="-c10"]:before,
-.flair[class*="-2c10"]:after {
+.flair[class*="-2c10"]:after,
+a[href*="-c10"]:before {
     width: 230px;
     clip: rect(0, 230px, 23px, 207px);
     margin-left: -207px;
 }
 .flair[class*="-c11"]:before,
-.flair[class*="-2c11"]:after {
+.flair[class*="-2c11"]:after,
+a[href*="-c11"]:before {
     width: 253px;
     clip: rect(0, 253px, 23px, 230px);
     margin-left: -230px;
 }
+
 /* Team flair sheet */
 .flair[class*="-st"]:before,
 .flair[class*="-2st"]:after,
 .flair:before,
-.flair:after {
+.flair:after,
+a[href^="#team"]:before {
     content: "";
     background-image: url(%%flairs-teams%%);
     height: 23px;
@@ -2138,9 +2159,22 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
     color: transparent;
 	background-size: 253px 208px;
 }
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.flair[class*="-st"]:before,
+	.flair[class*="-2st"]:after,
+	.flair:before,
+	.flair:after,
+	a[href^="#team"]:before {
+		background-image:url(%%flairs-teams-2x%%);
+		background-size: 253px 208px;
+	}
+}
+
 /* Rank flair sheet */
 .flair[class*="-sr"]:before,
-.flair[class*="-2sr"]:after {
+.flair[class*="-2sr"]:after,
+a[href^="#rank"]:before {
     content: "";
     background-image: url(%%flairs-ranks%%);
     height: 23px;
@@ -2148,6 +2182,35 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
     color: transparent;
 	background-size: 184px 23px;
 }
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.flair[class*="-sr"]:before,
+	.flair[class*="-2sr"]:after,
+	a[href^="#rank"]:before {
+		background-image:url(%%flairs-ranks-2x%%);
+	background-size: 184px 23px;
+	}
+}
+
+/* Flag flair sheet */
+.flair[class*="-sf"]:before,
+.flair[class*="-2sf"]:after {
+    content: "";
+    background-image: url(%%flairs-flags%%);
+    height: 23px;
+    position: absolute;
+    color: transparent;
+	background-size: 253px 185;
+}
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.flair[class*="-sf"]:before,
+	.flair[class*="-2sf"]:after {
+		background-image:url(%%flairs-flags-2x%%);
+	background-size: 253px 185;
+	}
+}
+
 /* Special flair sheet */
 .flair[class*="-sx"]:before,
 .flair[class*="-2sx"]:after {
@@ -2157,6 +2220,14 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
     position: absolute;
     color: transparent;
 	background-size: 184px 23px;
+}
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	.flair[class*="-sx"]:before,
+	.flair[class*="-2sx"]:after {
+		background-image:url(%%flairs-special-2x%%);
+	background-size: 184px 23px;
+	}
 }
 
 
@@ -2177,16 +2248,13 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 .commentarea .entry .flair {
     margin-top: -9px
 }
-.commentarea .entry .flair:hover {
-    margin-top: -18px
-}
 .commentarea .entry .flair:before,
 .commentarea .entry .flair:after {
     margin-top: 4px
 }
-.commentarea .entry .flair:hover:before,
-.commentarea .entry .flair:hover:after {
-    margin-top: 13px
+.commentarea .entry .flair:hover:not([title=""]):before,
+.commentarea .entry .flair:hover:not([title=""]):after {
+    background: none;
 }
 .flair:after {
     left: 28px
@@ -2202,14 +2270,18 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 .commentarea .entry .flair {
     font-size: 3px
 }
-.commentarea .entry .flair:hover {
-    color: #0C0F0B;
-    font-size: 12px
+.commentarea .entry .flair:hover:not([title=""]) {
+    color: #000;
+    font-size: 12px;
+	position: relative;
+	vertical-align: baseline;
+	height: 12px
 }
 .comment .author,
 .wiki-page-content em .author {
     margin-left: 0
 }
+
 .comment .flair + .author,
 .comments-page .link .flair + .author,
 .wiki-page-content em .flair + .author {
@@ -2220,6 +2292,11 @@ body.res-nightmode .arrow.upmod, body.res-nightmode .arrow.downmod {
 .wiki-page-content em .flair[class*="-2s"] + .author {
     margin-left: 62px
 }
+
+.comment .flair:hover:not([title=""]) + .author {
+	margin-left: 8px
+}
+
 .link .flair,
 .search-result .flair {
     margin: -19px 0 0 2px;
