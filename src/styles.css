@@ -2463,6 +2463,12 @@ body .flairselector li:hover {
 .flair-libalent-supreme, .md a[href*="libalent-supreme"] { background-position: -161px -184px; }
 
 
+.flair-dallas-fuel, .md a[href*="dallas-fuel"] { background-position: -184px -184px; }
+.flair-shanghai-dragons, .md a[href*="shanghai-dragons"] { background-position: -207px -184px; }
+.flair-c9-kongdoo, .md a[href*="c9-kongdoo"] { background-position: -230px -184px; }
+
+
+
 /* Flair picker team names */
 .flairselector .flair-envyus+span:after { content:"EnVyUs" }
 .flairselector .flair-cloud-9+span:after { content:"Cloud9" }
@@ -2559,6 +2565,9 @@ body .flairselector li:hover {
 .flairselector .flair-mega-thunder+span:after { content: "MEGA Thunder" }
 .flairselector .flair-ardeont+span:after { content: "Ardeont" }
 .flairselector .flair-libalent-supreme+span:after { content: "Libalent Supreme" }
+.flairselector .flair-shanghai-dragons+span:after { content: "Shanghai Dragons" }
+.flairselector .flair-dallas-fuel+span:after { content: "Dallas Fuel" }
+.flairselector .flair-c9-kongdoo+span:after { content: "Cloud9 Kongdoo" }
 
 
 /* Small team and flag icons */
