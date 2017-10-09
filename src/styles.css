@@ -2022,10 +2022,15 @@ a[href^="#rank"] {
 }
 .flair,
 .link .flair {
-    position: absolute;
-    width: auto;
-    background: transparent
+    background: transparent;
+	position: relative;
+	width: 26px;
 }
+.commentarea .entry .flair[class*="-2s"],
+.link .entry .flair[class*="-2s"] {
+	width: 56px;
+}
+
 /*Rows*/
 .flair[class*="-r02"]:before,
 .flair[class*="-2r02"]:after,
@@ -2268,14 +2273,15 @@ a[href^="#rank"]:before {
     display: inline-block
 }
 .commentarea .entry .flair {
-    font-size: 3px
+    font-size: 0
 }
 .commentarea .entry .flair:hover:not([title=""]) {
     color: #000;
     font-size: 12px;
 	position: relative;
 	vertical-align: baseline;
-	height: 12px
+	height: 12px;
+	width: auto;
 }
 .comment .author,
 .wiki-page-content em .author {
@@ -2299,13 +2305,13 @@ a[href^="#rank"]:before {
 
 .link .flair,
 .search-result .flair {
-    margin: -19px 0 0 2px;
+    margin: -30px 0 0 2px;
     font-size: 0
 }
 .side .tagline .flair {
 	display: inline-block;
 	margin-top: 4px;
-	margin-left: 200px;
+	margin-left: 215px;
 }
 .side .flair {
 	display: none;
