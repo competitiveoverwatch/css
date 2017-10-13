@@ -1676,6 +1676,7 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 .linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #00C934 url(%%thumbnails%%) 0 0 no-repeat !important }
 .linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -82px 0 no-repeat}
 .linkflair-Matchthread .thumbnail, .linkflair-Matchthread .thumbnail.spoiler { background: #fd972f url(%%thumbnails%%) -902px 0 no-repeat !important}
+.linkflair-OWL .thumbnail, .linkflair-OWL .thumbnail.spoiler { background: #35393c url(%%thumbnails%%) -984px 0 no-repeat !important}
 .linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -164px 0 no-repeat }
 .linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler,
 .linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -246px 0 no-repeat }
@@ -2132,6 +2133,7 @@ body .flairselector li:hover {
 .flairselector .linkflair-Casting .linkflairlabel { color: #042e54 }
 
 .flairselector .linkflair-Matchthread .linkflairlabel { color: #fd972f }
+.flairselector .linkflair-OWL .linkflairlabel { color: #35393c }
 
 /* Text after user flairs */
 .flairselector .flair+span:after {
