@@ -1676,6 +1676,7 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 .linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #fb0b19 url(%%thumbnails%%) -164px 0 no-repeat }
 .linkflair-AdviceTips .thumbnail, .linkflair-AdviceTips .thumbnail.spoiler,
 .linkflair-Guide .thumbnail, .linkflair-Guide .thumbnail.spoiler { background: #042e54 url(%%thumbnails%%) -246px 0 no-repeat }
+.linkflair-OWL .thumbnail, .linkflair-OWL .thumbnail.spoiler { background: #35393c url(%%thumbnails%%) -984px 0 no-repeat !important}
 .linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #85898e url(%%thumbnails%%) -328px 0 no-repeat }
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -410px 0 no-repeat }
 .linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #0097d2 url(%%thumbnails%%) -492px 0 no-repeat }
@@ -2035,203 +2036,201 @@ a[href^="#rank"] {
 .flair[class*="-r02"]:before,
 .flair[class*="-2r02"]:after,
 a[href*="-r02"]:before {
-    background: 0 -23px
+    background: 0 -22px
 }
 .flair[class*="-r03"]:before,
 .flair[class*="-2r03"]:after,
 a[href*="-r03"]:before {
-    background: 0 -46px
+    background: 0 -44px
 }
 .flair[class*="-r04"]:before,
 .flair[class*="-2r04"]:after,
 a[href*="-r04"]:before {
-    background: 0 -69px
+    background: 0 -66px
 }
 .flair[class*="-r05"]:before,
 .flair[class*="-2r05"]:after,
 a[href*="-r05"]:before {
-    background: 0 -92px
+    background: 0 -88px
 }
 .flair[class*="-r06"]:before,
 .flair[class*="-2r06"]:after,
 a[href*="-r06"]:before {
-    background: 0 -115px
+    background: 0 -110px
 }
 .flair[class*="-r07"]:before,
 .flair[class*="-2r07"]:after,
 a[href*="-r07"]:before {
-    background: 0 -138px
+    background: 0 -132px
 }
 .flair[class*="-r08"]:before,
 .flair[class*="-2r08"]:after,
 a[href*="-r08"]:before {
-    background: 0 -161px
+    background: 0 -154px
 }
 .flair[class*="-r09"]:before,
 .flair[class*="-2r09"]:after,
 a[href*="-r09"]:before {
-    background: 0 -184px
+    background: 0 -176px
+}
+.flair[class*="-r10"]:before,
+.flair[class*="-2r10"]:after,
+a[href*="-r10"]:before {
+    background: 0 -198px
 }
 /*columns*/
 .flair[class*="-c01"]:before,
 .flair[class*="-2c01"]:after,
 a[href*="-c01"]:before {
-    width: 23px;
-    clip: rect(0, 23px, 23px, 0px);
+    width: 22px;
+    clip: rect(0, 22px, 22px, 0px);
     margin-left: 0
 }
 .flair[class*="-c02"]:before,
 .flair[class*="-2c02"]:after,
 a[href*="-c02"]:before {
-    width: 46px;
-    clip: rect(0, 46px, 23px, 23px);
-    margin-left: -23px;
+    width: 44px;
+    clip: rect(0, 44px, 22px, 22px);
+    margin-left: -22px;
 }
 .flair[class*="-c03"]:before,
 .flair[class*="-2c03"]:after,
 a[href*="-c03"]:before {
-    width: 69px;
-    clip: rect(0, 69px, 23px, 46px);
-    margin-left: -46px;
+    width: 66px;
+    clip: rect(0, 66px, 22px, 44px);
+    margin-left: -44px;
 }
 .flair[class*="-c04"]:before,
 .flair[class*="-2c04"]:after,
 a[href*="-c04"]:before {
-    width: 92px;
-    clip: rect(0, 92px, 23px, 69px);
-    margin-left: -69px;
+    width: 88px;
+    clip: rect(0, 88px, 22px, 66px);
+    margin-left: -66px;
 }
 .flair[class*="-c05"]:before,
 .flair[class*="-2c05"]:after,
 a[href*="-c05"]:before {
-    width: 115px;
-    clip: rect(0, 115px, 23px, 92px);
-    margin-left: -92px;
+    width: 110px;
+    clip: rect(0, 110px, 22px, 88px);
+    margin-left: -88px;
 }
 .flair[class*="-c06"]:before,
 .flair[class*="-2c06"]:after,
 a[href*="-c06"]:before {
-    width: 138px;
-    clip: rect(0, 138px, 23px, 115px);
-    margin-left: -115px;
+    width: 132px;
+    clip: rect(0, 132px, 22px, 110px);
+    margin-left: -110px;
 }
 .flair[class*="-c07"]:before,
 .flair[class*="-2c07"]:after,
 a[href*="-c07"]:before {
-    width: 161px;
-    clip: rect(0, 161px, 23px, 138px);
-    margin-left: -138px;
+    width: 154px;
+    clip: rect(0, 154px, 22px, 132px);
+    margin-left: -132px;
 }
 .flair[class*="-c08"]:before,
 .flair[class*="-2c08"]:after,
 a[href*="-c08"]:before {
-    width: 184px;
-    clip: rect(0, 184px, 23px, 161px);
-    margin-left: -161px;
+    width: 176px;
+    clip: rect(0, 176px, 22px, 154px);
+    margin-left: -154px;
 }
 .flair[class*="-c09"]:before,
 .flair[class*="-2c09"]:after,
 a[href*="-c09"]:before {
-    width: 207px;
-    clip: rect(0, 207px, 23px, 184px);
-    margin-left: -184px;
+    width: 198px;
+    clip: rect(0, 198px, 22px, 176px);
+    margin-left: -176px;
 }
 .flair[class*="-c10"]:before,
 .flair[class*="-2c10"]:after,
 a[href*="-c10"]:before {
-    width: 230px;
-    clip: rect(0, 230px, 23px, 207px);
-    margin-left: -207px;
-}
-.flair[class*="-c11"]:before,
-.flair[class*="-2c11"]:after,
-a[href*="-c11"]:before {
-    width: 253px;
-    clip: rect(0, 253px, 23px, 230px);
-    margin-left: -230px;
+    width: 220px;
+    clip: rect(0, 220px, 22px, 198px);
+    margin-left: -198px;
 }
 
 /* Team flair sheet */
-.flair[class*="-st"]:before,
-.flair[class*="-2st"]:after,
+.flair[class*="-steams"]:before,
+.flair[class*="-2steams"]:after,
 .flair:before,
 .flair:after,
 a[href^="#team"]:before {
     content: "";
     background-image: url(%%flairs-teams%%);
-    height: 23px;
+    height: 22px;
     position: absolute;
     color: transparent;
-	background-size: 253px 208px;
+	background-size: 220px 176px;
 }
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair[class*="-st"]:before,
-	.flair[class*="-2st"]:after,
+	.flair[class*="-steams"]:before,
+	.flair[class*="-2steams"]:after,
 	.flair:before,
 	.flair:after,
 	a[href^="#team"]:before {
 		background-image:url(%%flairs-teams-2x%%);
-		background-size: 253px 208px;
+		background-size: 220px 176px;
 	}
 }
 
 /* Rank flair sheet */
-.flair[class*="-sr"]:before,
-.flair[class*="-2sr"]:after,
+.flair[class*="-sranks"]:before,
+.flair[class*="-2sranks"]:after,
 a[href^="#rank"]:before {
     content: "";
     background-image: url(%%flairs-ranks%%);
-    height: 23px;
+    height: 22px;
     position: absolute;
     color: transparent;
-	background-size: 184px 23px;
+	background-size: 220px 22px;
 }
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair[class*="-sr"]:before,
-	.flair[class*="-2sr"]:after,
+	.flair[class*="-sranks"]:before,
+	.flair[class*="-2sranks"]:after,
 	a[href^="#rank"]:before {
 		background-image:url(%%flairs-ranks-2x%%);
-	background-size: 184px 23px;
+	background-size: 220px 22px;
 	}
 }
 
 /* Flag flair sheet */
-.flair[class*="-sf"]:before,
-.flair[class*="-2sf"]:after {
+.flair[class*="-sflags"]:before,
+.flair[class*="-2sflags"]:after {
     content: "";
     background-image: url(%%flairs-flags%%);
-    height: 23px;
+    height: 22px;
     position: absolute;
     color: transparent;
-	background-size: 253px 185;
+	background-size: 220px 88px;
 }
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair[class*="-sf"]:before,
-	.flair[class*="-2sf"]:after {
+	.flair[class*="-sflags"]:before,
+	.flair[class*="-2sflags"]:after {
 		background-image:url(%%flairs-flags-2x%%);
-	background-size: 253px 185;
+	background-size: 220px 88px;
 	}
 }
 
 /* Special flair sheet */
-.flair[class*="-sx"]:before,
-.flair[class*="-2sx"]:after {
+.flair[class*="-sspecial"]:before,
+.flair[class*="-2sspecial"]:after {
     content: "";
     background-image: url(%%flairs-special%%);
     height: 23px;
     position: absolute;
     color: transparent;
-	background-size: 184px 23px;
+	background-size: 220px 22px;
 }
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair[class*="-sx"]:before,
-	.flair[class*="-2sx"]:after {
+	.flair[class*="-sspecial"]:before,
+	.flair[class*="-2sspecial"]:after {
 		background-image:url(%%flairs-special-2x%%);
-	background-size: 184px 23px;
+	background-size: 220px 22px;
 	}
 }
 
