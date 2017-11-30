@@ -27,7 +27,6 @@ SOFTWARE.*/
 body {
 	background: #E8E8E9;
 	font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	min-width: 920px;
 	overflow-x: hidden;
 }
 html.res-nightmode body {
@@ -679,6 +678,7 @@ body #userbarToggle {
 	box-sizing: border-box;
 	font-weight: normal;
 	transition: 0.15s background ease-in-out;
+	overflow: hidden;
 }
 .res-nightmode .side .md > h6:first-of-type > strong a {
 	border-color: #191919;
@@ -1309,7 +1309,7 @@ body.res-nightmode .side .md h2:nth-of-type(1) a {
 .side .md blockquote h3:nth-of-type(2) {
 	top: 0;
 	left: 0;
-	width: 32px;
+	width: 36px;
 	height: 20px;
 	line-height: 20px;
 	font-size: 14px;
@@ -1319,8 +1319,13 @@ body.res-nightmode .side .md h2:nth-of-type(1) a {
 }
 .res-nightmode .side .md blockquote h3:nth-of-type(2) {
 	background: #505050;
-	
 }
+.side .md blockquote h3:nth-of-type(2) strong {
+	color: #f64e44;
+}
+
+
+
 .side .md blockquote h3:nth-of-type(3) {
 	width: 120px;
 	text-align: left;
@@ -1790,6 +1795,13 @@ body .res-filterline-dropdown-container {
 	width: 2px;
 	background-color: #5194c4;
 }
+
+/* promoted link */
+
+.link.promotedlink {
+	padding: 0;
+}
+
 /* Remove dashed border for last clicked link */
 .link.last-clicked {
 	border: none;
@@ -1822,11 +1834,6 @@ body:not(.res-nightmode) .listing-page .thing:hover {
 	background: #FFF;
 }
 
-/* Left margin for promoted post */
-#siteTable_organic .entry {
-	margin-left: 180px;
-}
-
 body .entry {
 	margin-left: 0; /* Reddit defaults to 3px */
 	flex: 1 0;
@@ -1836,11 +1843,11 @@ body .entry {
 }
 
 .thing .title {
-	color: #042E54;
+	color: #00183E;
 }
 
 .thing .title:visited, .thing .title.visited {
-	color: #6a6f75 !important;
+	color: #888d93 !important;
 }
 
 .listing-page a.title:hover {
@@ -1932,10 +1939,6 @@ body.res-nightmode .expando-button.collapsed::after, body.res-nightmode .expando
 
 .listing-page .expando-button {
 	margin-top: 13px;
-}
-
-.comment-permalink-page .expando-button {
-	display: none;
 }
 
 .comments-page .expando-button {
@@ -2273,10 +2276,6 @@ body.res-nightmode .link .midcol {
 	background: #313131;
 }
 
-#siteTable_organic .link .midcol {
-	margin-left: 128px;
-}
-
 .link .score {
 	color: #9B9EA2;
 	font-size: 13px;
@@ -2493,6 +2492,16 @@ a[href*="-r09"]:before {
 a[href*="-r10"]:before {
     background: 0 -198px
 }
+.flair[class*="-r11"]:before,
+.flair[class*="-2r11"]:after,
+a[href*="-r11"]:before {
+    background: 0 -220px
+}
+.flair[class*="-r12"]:before,
+.flair[class*="-2r12"]:after,
+a[href*="-r12"]:before {
+    background: 0 -242px
+}
 /*columns*/
 .flair[class*="-c01"]:before,
 .flair[class*="-2c01"]:after,
@@ -2576,7 +2585,7 @@ a[href^="#teams"]:before {
     height: 22px;
     position: absolute;
     color: transparent;
-	background-size: 220px 198px;
+	background-size: 220px 220px;
 }
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
@@ -2586,7 +2595,7 @@ a[href^="#teams"]:before {
 	.flair:after,
 	a[href^="#teams"]:before {
 		background-image:url(%%flairs-teams-2x%%);
-		background-size: 220px 198px;
+		background-size: 220px 220px;
 	}
 }
 
