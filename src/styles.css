@@ -1060,6 +1060,10 @@ form.flairtoggle input {
 	margin-bottom: -23px;
 }
 
+.gold .side form.res-sr-style-toggle {
+	margin-bottom: -48px;
+}
+
 /*
 .titlebox .flairtoggle label {
 	display: none;
@@ -1976,10 +1980,13 @@ body.res-nightmode .expando-button.collapsed::after, body.res-nightmode .expando
 }
 
 .link .thumbnail {
-	background: #efefef url(%%thumbnails%%) -130px 0 no-repeat;
+	background: #efefef url(%%thumbnails%%) no-repeat;
+	background-position: -130px 0;
 }
 body.res-nightmode .link .thumbnail {
-	background: #313131 url(%%thumbnails-dark%%) -130px 0 no-repeat;
+	background-color: #313131;
+	background-image: url(%%thumbnails-dark%%);
+	background-repeat: no-repeat;
 }
 
 .comments-page .thumbnail img, .listing-page .thumbnail img{
@@ -1997,34 +2004,19 @@ body.res-nightmode .link .thumbnail {
 	margin-left: 24px;
 }
 
-
-body.res-nightmode .linkflair-Megathread .thumbnail, body.res-nightmode .stickied .thumbnail { background: #313131 url(%%thumbnails-dark%%) -10px 0 no-repeat !important }
-body.res-nightmode .linkflair-Discussion .thumbnail, body.res-nightmode .linkflair-Discussion .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -130px 0 no-repeat }
-body.res-nightmode .linkflair-Video .thumbnail, body.res-nightmode .linkflair-Video .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -250px 0 no-repeat }
-body.res-nightmode .linkflair-Highlight .thumbnail, body.res-nightmode .linkflair-Highlight .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -370px 0 no-repeat }
-body.res-nightmode .linkflair-eSports .thumbnail, body.res-nightmode .linkflair-eSports .thumbnail.spoiler { background: #313131  url(%%thumbnails-dark%%) -490px 0 no-repeat}
-body.res-nightmode .linkflair-OWL .thumbnail, body.res-nightmode .linkflair-OWL .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -610px 0 no-repeat}
-body.res-nightmode .linkflair-Matchthread .thumbnail, body.res-nightmode .linkflair-Matchthread .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -730px 0 no-repeat !important}
-body.res-nightmode .linkflair-Advice .thumbnail, body.res-nightmode .linkflair-Advice .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -850px 0 no-repeat}
-body.res-nightmode .linkflair-Event .thumbnail, body.res-nightmode .linkflair-Event .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -970px 0 no-repeat}
-body.res-nightmode .linkflair-FanArt .thumbnail, body.res-nightmode .linkflair-FanArt .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -1090px 0 no-repeat}
-body.res-nightmode .linkflair-Drama .thumbnail, body.res-nightmode .linkflair-Drama .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -1210px 0 no-repeat}
-body.res-nightmode .linkflair-Question .thumbnail, body.res-nightmode .linkflair-Question .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -1330px 0 no-repeat}
-body.res-nightmode .linkflair-PSA .thumbnail, body.res-nightmode .linkflair-PSA .thumbnail.spoiler { background: #313131 url(%%thumbnails-dark%%) -1450px 0 no-repeat}
-
-.linkflair-Megathread .thumbnail, .stickied .thumbnail { background: #efefef url(%%thumbnails%%) -10px 0 no-repeat !important }
-.linkflair-Discussion .thumbnail, .linkflair-Discussion .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -130px 0 no-repeat }
-.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -250px 0 no-repeat }
-.linkflair-Highlight .thumbnail, .linkflair-Highlight .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -370px 0 no-repeat }
-.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background: #efefef  url(%%thumbnails%%) -490px 0 no-repeat}
-.linkflair-OWL .thumbnail, .linkflair-OWL .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -610px 0 no-repeat}
-.linkflair-Matchthread .thumbnail, .linkflair-Matchthread .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -730px 0 no-repeat !important}
-.linkflair-Advice .thumbnail, .linkflair-Advice .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -850px 0 no-repeat}
-.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -970px 0 no-repeat}
-.linkflair-FanArt .thumbnail, .linkflair-FanArt .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -1090px 0 no-repeat}
-.linkflair-Drama .thumbnail, .linkflair-Drama .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -1210px 0 no-repeat}
-.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -1330px 0 no-repeat}
-.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background: #efefef url(%%thumbnails%%) -1450px 0 no-repeat}
+.linkflair-Megathread .thumbnail, .stickied .thumbnail { background-position: -10px 0 !important}
+.linkflair-Discussion .thumbnail, .linkflair-Discussion .thumbnail.spoiler {  background-position: -130px 0  }
+.linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler {  background-position: -250px 0  }
+.linkflair-Highlight .thumbnail, .linkflair-Highlight .thumbnail.spoiler { background-position:  -370px 0  }
+.linkflair-eSports .thumbnail, .linkflair-eSports .thumbnail.spoiler { background-position: -490px 0 }
+.linkflair-OWL .thumbnail, .linkflair-OWL .thumbnail.spoiler { background-position: -610px 0 }
+.linkflair-Match .thumbnail, .linkflair-Match .thumbnail.spoiler { background-position: -730px 0  !important}
+.linkflair-Advice .thumbnail, .linkflair-Advice .thumbnail.spoiler { background-position: -850px 0 }
+.linkflair-Event .thumbnail, .linkflair-Event .thumbnail.spoiler { background-position: -970px 0 }
+.linkflair-FanArt .thumbnail, .linkflair-FanArt .thumbnail.spoiler { background-position: -1090px 0 }
+.linkflair-Drama .thumbnail, .linkflair-Drama .thumbnail.spoiler { background-position: -1210px 0 }
+.linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background-position: -1330px 0 }
+.linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background-position: -1450px 0 }
 
 .linkflair-Megathread:hover .linkflairlabel{ color: #2ecc40; }
 .linkflair-Discussion:hover .linkflairlabel{ color: #5194c4; }
@@ -2032,7 +2024,7 @@ body.res-nightmode .linkflair-PSA .thumbnail, body.res-nightmode .linkflair-PSA 
 .linkflair-Highlight:hover .linkflairlabel{ color: #f64e44; }
 .linkflair-eSports:hover .linkflairlabel{ color: #ffa73c; }
 .linkflair-OWL:hover .linkflairlabel{ color: #313131; }
-.linkflair-Matchthread:hover .linkflairlabel{ color: #3fb55e; }
+.linkflair-Match:hover .linkflairlabel{ color: #3fb55e; }
 .linkflair-Advice:hover .linkflairlabel{ color: #8c2155; }
 .linkflair-Event:hover .linkflairlabel{ color: #3d9989; }
 .linkflair-FanArt:hover .linkflairlabel{ color: #524c77; }
@@ -2047,7 +2039,7 @@ body.res-nightmode .linkflair-PSA .thumbnail, body.res-nightmode .linkflair-PSA 
 .listing-page .linkflair-eSports.link:before, .comments-page .linkflair-eSports.link:before { background-color: #ffa73c; }
 .listing-page .linkflair-OWL.link:before, .comments-page .linkflair-OWL.link:before { background-color: #313131; }
 .res-nightmode .listing-page .linkflair-OWL.link:before, .res-nightmode .comments-page .linkflair-OWL.link:before { background-color: #ccc; }
-.listing-page .linkflair-Matchthread.link:before, .comments-page .linkflair-Matchthread.link:before { background-color: #3fb55e; }
+.listing-page .linkflair-Match.link:before, .comments-page .linkflair-Match.link:before { background-color: #3fb55e; }
 .listing-page .linkflair-Advice.link:before, .comments-page .linkflair-Advice.link:before { background-color: #8c2155; }
 .listing-page .linkflair-Event.link:before, .comments-page .linkflair-Event.link:before { background-color: #3d9989; }
 .listing-page .linkflair-FanArt.link:before, .comments-page .linkflair-FanArt.link:before { background-color: #524c77; }
@@ -2383,7 +2375,7 @@ body.res-nightmode .arrow.down:before {
 }
 
 /* Make flair red with dot before for matchthread posts with "LIVE" contained within the flair text */
-.linkflair-Matchthread .title>.linkflairlabel[title*="LIVE"]:before {
+.linkflair-Match .title>.linkflairlabel[title*="LIVE"]:before {
 	background: #FF000F;
 	border-radius: 50%;
 	content: "";
@@ -2396,17 +2388,17 @@ body.res-nightmode .arrow.down:before {
 	width: 6px;
 }
 
-.linkflair-Matchthread .title>.linkflairlabel[title*="LIVE"] {
+.linkflair-Match .title>.linkflairlabel[title*="LIVE"] {
 	color: #FF000F;
 }
 
 /* The other visited selector fades titles. Don't fade the title of a live match */
-.linkflair-Matchthread .linkflairlabel[title*="LIVE"]+.title:visited,
-.linkflair-Matchthread .linkflairlabel[title*="LIVE"]+.title.visited {
+.linkflair-Match .linkflairlabel[title*="LIVE"]+.title:visited,
+.linkflair-Match .linkflairlabel[title*="LIVE"]+.title.visited {
 	color: #042e54 !important;
 }
-body.res-nightmode .linkflair-Matchthread .linkflairlabel[title*="LIVE"]+.title:visited,
-body.res-nightmode .linkflair-Matchthread .linkflairlabel[title*="LIVE"]+.title.visited {
+body.res-nightmode .linkflair-Match .linkflairlabel[title*="LIVE"]+.title:visited,
+body.res-nightmode .linkflair-Match .linkflairlabel[title*="LIVE"]+.title.visited {
 	color: #dedede !important;
 }
 
@@ -2587,16 +2579,11 @@ a[href^="#teams"]:before {
     color: transparent;
 	background-size: 220px 220px;
 }
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair[class*="-steams"]:before,
-	.flair[class*="-2steams"]:after,
-	.flair:before,
-	.flair:after,
-	a[href^="#teams"]:before {
-		background-image:url(%%flairs-teams-2x%%);
-		background-size: 220px 220px;
-	}
+a[href^="#teams"]:before {
+	left: 0;
+}
+a[href^="#teams"] {
+	position: relative;
 }
 
 /* Rank flair sheet */
@@ -2649,18 +2636,20 @@ a[href^="#flags"]:before {
     height: 23px;
     position: absolute;
     color: transparent;
-	background-size: 220px 22px;
-}
-/* Retina/HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.flair[class*="-sspecial"]:before,
-	.flair[class*="-2sspecial"]:after {
-		background-image:url(%%flairs-special-2x%%);
-	background-size: 220px 22px;
-	}
+	background-size: 66px 66px;
 }
 
 
+/* Miscellaneous flair sheet */
+.flair[class*="-smiscellaneous"]:before,
+.flair[class*="-2smiscellaneous"]:after {
+    content: "";
+    background-image: url(%%flairs-miscellaneous%%);
+    height: 23px;
+    position: absolute;
+    color: transparent;
+	background-size: 132px 132px;
+}
 
 .listing-page .entry .flair {
 	display: none
@@ -2741,39 +2730,41 @@ a[href^="#flags"]:before {
 
 
 /* Map tags */
-.md a[href^="#map-"] {
-	background: #F5F5F5 url(%%tags-maps%%) no-repeat;
+.md a[href^="#mapbg-"] {
+	background: url(%%tags-maps%%) no-repeat;
 	cursor: default;
 	display: inline-block;
 	font-size: 0;
-	height: 28px;
+	height: 32px;
 	pointer-events: none;
-	width: 120px;
+	width: 600px;
+	background-size: 600px 1024px;
 } 
 
 /* Retina/HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-	.md a[href^="#map-"] {
+	.md a[href^="#mapbg-"] {
 		background:url(%%tags-maps-2x%%);
-		background-size: 480px 112px;
+		background-size: 600px 1024px;
 	}
 }
 
-.md a[href$="-temple-of-anubis"] {background-position: -120px 0}
-.md a[href$="-dorado"] {background-position: -240px 0}
-.md a[href$="-hanamura"] {background-position: -360px 0}
-.md a[href$="-hollywood"] {background-position: 0 -28px}
-.md a[href$="-ilios"] {background-position: -120px -28px}
-.md a[href$="-kings-row"] {background-position: -240px -28px}
-.md a[href$="-lijiang-tower"] {background-position: -360px -28px}
-.md a[href$="-nepal"] {background-position: 0 -56px}
-.md a[href$="-numbani"] {background-position: -120px -56px}
-.md a[href$="-route-66"] {background-position: -240px -56px}
-.md a[href$="-volskaya-industries"] {background-position: -360px -56px}
-.md a[href$="-watchpoint-gibraltar"] {background-position: 0 -84px}
-.md a[href$="-eichenwalde"] {background-position: -120px -84px}
-.md a[href$="-ecopoint-antarctica"] {background-position: -240px -84px}
-.md a[href$="-oasis"] {background-position: -360px -84px}
+.md a[href$="-temple-of-anubis"] {background-position: 0 0}
+.md a[href$="-dorado"] {background-position: 0 -32px}
+.md a[href$="-hanamura"] {background-position: 0 -64px}
+.md a[href$="-hollywood"] {background-position: 0 -96px}
+.md a[href$="-ilios"] {background-position: 0 -128px}
+.md a[href$="-kings-row"] {background-position: 0 -160px}
+.md a[href$="-lijiang-tower"] {background-position: 0 -192px}
+.md a[href$="-nepal"] {background-position: 0 -224px}
+.md a[href$="-numbani"] {background-position: 0 -256px}
+.md a[href$="-route-66"] {background-position: 0 -288px}
+.md a[href$="-volskaya-industries"] {background-position: 0 -320px}
+.md a[href$="-watchpoint-gibraltar"] {background-position: 0 -352px}
+.md a[href$="-eichenwalde"] {background-position: 0 -384px}
+.md a[href$="-ecopoint-antarctica"] {background-position: 0 -416x}
+.md a[href$="-oasis"] {background-position: 0 -448px}
+.md a[href$="-junkertown"] {background-position: 0 -480px}
 
 /* Checkmark tags */
 .md a[href*="#check-"] {
@@ -2873,13 +2864,487 @@ a[href^="#flags"]:before {
 }
 
 
-
-/* Matchthread Tags */
-.linkflair-Matchthread .md thead {
+/* Match & Event Thread Tags */
+.linkflair-Match .md blockquote {
+	position: relative;
+	background: #efefef;
+	border: 0;
+	padding: 0;
+	width: 600px;
+	margin: 0;
+}
+.res-nightmode .linkflair-Match .md blockquote {
+	background: #313131;
+}
+.linkflair-Match .md blockquote hr {
+	display: none;
+}
+.linkflair-Match .md blockquote td {
+	padding: 0;
+}
+.linkflair-Match .md blockquote thead {
 	display: none;
 }	
+.linkflair-Match .md blockquote .keyNavAnnotation {
+	display: none;
+}
+/* Header */
+.linkflair-Match .md blockquote h1, .linkflair-Match .md blockquote h2 {
+	width: 100%;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: normal;
+	padding-top: 4px;
+	background: #072E49;
+	color: #fff;
+	margin: 0;
+}
 
+.linkflair-Match .md blockquote h5 {
+	width: 100%;
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	background: #072E49;
+	color: #fff;
+	margin: 0;
+	padding-bottom: 4px;
+}
 
+/* Match */
+/* Score */
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) {
+	width: 100%;
+	background: #e2e2e2;
+	border-top: 1px solid #072E49;
+	margin: 0;
+}
+.res-nightmode .linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) {
+	background: #505050;
+}
+
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) tr {
+	height: 62px;
+	border: 0;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) a {
+	transform-origin: left;
+	transform: scale(2);
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) td:nth-of-type(1) {
+	width: 220px;
+	padding-right: 16px;
+	font-size: 16px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) td:nth-of-type(2) {
+	width: 46px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) td:nth-of-type(3) {
+	font-size: 28px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) td:nth-of-type(4) {
+	width: 46px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(1) td:nth-of-type(5) {
+	width: 220px;
+	padding-left: 16px;
+	font-size: 16px;
+}
+
+/* Players */
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) {
+	width: 100%;
+	margin: 8px 0;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) tr {
+	background: #efefef;
+	border: 0;
+}
+.res-nightmode .linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) tr {
+	background: #313131;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) td:nth-of-type(1) {
+	padding-left: 16px;
+	width: 22px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) td:nth-of-type(2) {
+	padding-left: 8px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) td:nth-of-type(3) {
+	padding-right: 8px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(2) td:nth-of-type(4) {
+	padding-right: 16px;
+	width: 22px;
+}
+
+/* Maps */
+.linkflair-Match .md blockquote h1 ~ h4 {
+	width: 100%;
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	background: #072E49;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	line-height: 32px;
+	position: relative;	
+}
+.linkflair-Match .md blockquote h1 ~ h4 a {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) {
+	width: 100%;
+	margin: 0;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) tr {
+	background: #efefef;
+	border: 0;
+	height: 40px;
+	font-size: 11px;
+}
+.res-nightmode .linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) tr {
+	background: #313131;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) tr:nth-of-type(1) {
+	background: #e2e2e2;
+	border: 0;
+	height: 28px;
+	text-transform: uppercase;
+}
+.res-nightmode .linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) tr:nth-of-type(1) {
+	background: #505050;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) tr:nth-of-type(1) strong {
+	font-weight: normal;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(1) {
+	padding-left: 16px;
+	width: 44px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(1) strong {
+	border-left: 2px #3fb55e solid;
+	line-height: 40px;
+	display: block;
+	position: relative;
+	left: -16px;
+	padding-left: 14px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(1) em {
+	border-left: 2px #f64e44 solid;
+	line-height: 40px;
+	display: block;
+	position: relative;
+	left: -16px;
+	padding-left: 14px;
+}
+
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(2) {
+	width: 180px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(3) {
+	width: 32px;
+	font-size:18px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(3) strong {
+	font-weight: normal;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-of-type(n+4) {
+	width: 64px;
+}
+.linkflair-Match .md blockquote h1 ~ table:nth-of-type(n+3) td:nth-last-of-type(1) {
+	width: unset;
+}
+
+/* Event */
+.linkflair-Match .md blockquote h4 {
+	width: 100%;
+	font-size: 11px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	background: #072E49;
+	color: #fff;
+	margin: 0;
+	padding: 6px 0;
+}
+/* Information */
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) {
+	height: 172px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p {
+	position: absolute;
+	margin: 0;
+	width: 300px;
+	text-align: center;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) em {
+	position: absolute;
+	left: 0;
+	width: 300px;
+	top: -14px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-style: normal;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(1) {
+	top: 46px;
+	left: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(2) {
+	top: 88px;
+	left: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(3) {
+	top: 46px;
+	left: 300px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(4) {
+	top: 88px;
+	left: 300px;
+}
+/* Streams */
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-last-of-type(1) {
+	top: 138px;
+	left: 0;
+	width: 600px;
+	font-size: 14px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-last-of-type(1) em {
+	width: 600px;
+	font-size: 11px;
+	top: -16px;
+}
+
+/* Schedule */
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table {
+	width: 100%;
+	margin: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr {
+	background: #efefef;
+	border: 0;
+	font-size: 12px;
+	height: 40px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr {
+	background: #313131;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr:nth-of-type(1) {
+	background: #e2e2e2;
+	border: 0;
+	height: 28px;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr:nth-of-type(1) {
+	background: #505050;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr:nth-of-type(1) strong {
+	font-weight: normal;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(1) {
+	padding-left: 16px;
+	width: 80px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(2) {
+	width: 174px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(3) {
+	width: 30px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(4) {
+	width: 32px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(5) {
+	width: 30px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(6) {
+	width: 174px;
+}
+
+/* *Groups */
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table {
+	width: 100%;
+	margin: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr {
+	background: #efefef;
+	border: 0;
+	font-size: 11px;
+	height: 28px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr {
+	background: #313131;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr:nth-of-type(1) {
+	background: #e2e2e2;
+	border: 0;
+	height: 28px;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr:nth-of-type(1) {
+	background: #505050;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr:nth-of-type(1) strong {
+	font-weight: normal;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+1) {
+	width: 0px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+2) {
+	width: 150px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+3) {
+	width: 50px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+4) {
+	width: 50px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5) {
+	width: 68px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(1) {
+	width: 16px;
+	padding-left: 16px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-last-of-type(1) {
+	width: 66px;
+	padding-right: 16px;
+}
+
+/* Brackets */
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table {
+    width: 568px;
+    table-layout: fixed;
+	margin: 16px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td {
+    padding: 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr {
+	background: #efefef;
+	border: 0;
+	font-size: 11px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr {
+	background: #313131;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(3n+1) {
+	width: auto;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(3n+2) {
+	width: 16px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(3n+3) {
+	width: 20px;
+    font-size: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href^="#b"]:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid #7B90A3;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#btl"]:before {
+    border-right: 0;
+    border-bottom: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#btr"]:before {
+    border-left: 0;
+    border-bottom: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#bbl"]:before {
+    border-right: 0;
+    border-top: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#bbr"]:before {
+    border-left: 0;
+    border-top: 0;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href^="#l"]:before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border: 0px solid #7B90A3;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lhh"]:before {
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    border-top-width: 1px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lhd"]:before {
+    left: 0;
+    top: 50%;
+    width: 10px;
+    height: 50%;
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#ldh"]:before {
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 50%;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lhu"]:before {
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 50%;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#luh"]:before {
+    right: 0;
+    top: 50%;
+    width: 11px;
+    height: 50%;
+    border-top-width: 1px;
+    border-left-width: 1px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lvv"]:before {
+    left: 9px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-left-width: 1px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table em {
+    display: inline-block;
+    line-height: 10px;
+    font-size: 8px;
+    text-transform: uppercase;
+    font-style: normal;
+    white-space: normal;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table strong {
+    color: #3fb55e;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table del {
+    text-decoration: none;
+    color: #f64e44;
+}
 
 
 
@@ -2952,6 +3417,7 @@ body.res-nightmode .RES-keyNav-activeElement, body.res-nightmode .RES-keyNav-act
 	height: auto;
 	left: 0px;
 	top: 0px;
+	pointer-events: none;
 }
 
 .comments-page .title .linkflairlabel {
@@ -3422,8 +3888,11 @@ html.res-nightmode body .commentarea .comment .comment .comment .comment .commen
 	background: #212121 !important;
 }
 
-
-
+/* Blizzard Employee border */
+html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="NateNanzer"] > .entry, .commentarea .comment[data-author="NateNanzer"] > .entry{
+	border: #5194c4 4px solid !important;
+	padding-left: 8px;
+}
 
 
 
@@ -3484,17 +3953,17 @@ body .comment .expand:hover {
 .res-nightmode .RES-keyNav-activeThing > .entry .expand {
 	background: #555;
 }
-html body .comment .spam > .entry .expand {
+html body .comment.spam > .entry .expand {
 	background: #ff4136 !important;
 }
 html body .new-comment > .entry .expand {
 	background: #5194c4;
 }
 
-.res .comment .spam > .child {
+.res .comment.spam > .child {
 	padding-left: 0;
 }
-.comment .spam > .child {
+.comment.spam > .child {
 	background: 0;
 }
 
