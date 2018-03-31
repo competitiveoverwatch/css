@@ -2415,7 +2415,8 @@ a[href^="#rank"] {
     vertical-align: middle;
     display: inline-block;
     color: transparent;
-    height: 23px;
+    height: 20px;
+	line-height: 30px;
     margin: 0;
     width: 0;
     background: transparent
@@ -2666,11 +2667,11 @@ a[href^="#flags"]:before {
     margin-top: 15px
 }
 .commentarea .entry .flair {
-    margin-top: -9px
+    margin-top: -10px
 }
 .commentarea .entry .flair:before,
 .commentarea .entry .flair:after {
-    margin-top: 4px
+    margin-top: 0px
 }
 .commentarea .entry .flair:hover:not([title=""]):before,
 .commentarea .entry .flair:hover:not([title=""]):after {
