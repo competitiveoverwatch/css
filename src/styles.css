@@ -484,7 +484,6 @@ body #userbarToggle {
 	left: calc(50% - 120px);
 	letter-spacing: .5px;
 	padding: 12px;
-	pointer-events: none;
 	position: fixed;
 	text-align: center;
 	text-indent: 0;
@@ -751,7 +750,7 @@ body:not(.search-page) #search input[type=text] {
 	transition: .3s ease-in-out;
 	transition-property: color, font-size, padding, width;
 	width: 332px;
-	background: #072E49;
+	background: #144263;
 	font-size: 11px;
 }
 .res-nightmode body:not(.search-page) #search input[type=text] {
