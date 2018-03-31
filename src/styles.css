@@ -75,6 +75,7 @@ button {
 	height: 200px;
 	z-index: initial;
 }
+
 .res-nightmode #header {
 	background: url(%%banner-dark%%);
 }
@@ -483,6 +484,7 @@ body #userbarToggle {
 	left: calc(50% - 120px);
 	letter-spacing: .5px;
 	padding: 12px;
+	pointer-events: none;
 	position: fixed;
 	text-align: center;
 	text-indent: 0;
@@ -749,14 +751,12 @@ body:not(.search-page) #search input[type=text] {
 	transition: .3s ease-in-out;
 	transition-property: color, font-size, padding, width;
 	width: 332px;
-	background: #144263;
+	background: #072E49;
 	font-size: 11px;
 }
-
 .res-nightmode body:not(.search-page) #search input[type=text] {
     background: #072E49;
 }
-
 #search input[type=text]:focus {
 	background: #fafafa;
 	color: #042e54;
@@ -767,7 +767,7 @@ body:not(.search-page) #search input[type=text] {
 }
 
 #search input[type=submit] {
-	opacity: 0.6;
+	opacity: 0.7;
 }
 
 #search input[type=text]:focus + input[type=submit], #search input[type=text]:active + input[type=submit] {
@@ -2007,6 +2007,17 @@ body.res-nightmode .link .thumbnail {
 	margin-left: 24px;
 }
 
+/* Youtube thumbnails */
+.linkflair-Video .thumbnail[href*="youtube.com"] img {
+    display: block;
+    margin-left: 19px;
+    margin-top: 13px;
+    width: 64px;
+    height: auto;
+    max-height: 48px;
+    border-radius: 8px;
+}
+
 .linkflair-Megathread .thumbnail, .stickied .thumbnail { background-position: -10px 0 !important}
 .linkflair-Discussion .thumbnail, .linkflair-Discussion .thumbnail.spoiler {  background-position: -130px 0  }
 .linkflair-Video .thumbnail, .linkflair-Video .thumbnail.spoiler {  background-position: -250px 0  }
@@ -2020,6 +2031,8 @@ body.res-nightmode .link .thumbnail {
 .linkflair-Drama .thumbnail, .linkflair-Drama .thumbnail.spoiler { background-position: -1210px 0 }
 .linkflair-Question .thumbnail, .linkflair-Question .thumbnail.spoiler { background-position: -1330px 0 }
 .linkflair-PSA .thumbnail, .linkflair-PSA .thumbnail.spoiler { background-position: -1450px 0 }
+.linkflair-Fluff .thumbnail, .linkflair-Fluff .thumbnail.spoiler { background-position: -1570px 0 }
+.linkflair-Contenders .thumbnail, .linkflair-Contenders .thumbnail.spoiler { background-position: -1690px 0 }
 
 .linkflair-Megathread:hover .linkflairlabel{ color: #2ecc40; }
 .linkflair-Discussion:hover .linkflairlabel{ color: #5194c4; }
@@ -2027,6 +2040,7 @@ body.res-nightmode .link .thumbnail {
 .linkflair-Highlight:hover .linkflairlabel{ color: #f64e44; }
 .linkflair-eSports:hover .linkflairlabel{ color: #ffa73c; }
 .linkflair-OWL:hover .linkflairlabel{ color: #313131; }
+.res-nightmode .linkflair-OWL:hover .linkflairlabel{ color: #ccc; }
 .linkflair-Match:hover .linkflairlabel{ color: #3fb55e; }
 .linkflair-Advice:hover .linkflairlabel{ color: #8c2155; }
 .linkflair-Event:hover .linkflairlabel{ color: #3d9989; }
@@ -2034,6 +2048,10 @@ body.res-nightmode .link .thumbnail {
 .linkflair-Drama:hover .linkflairlabel{ color: #888888; }
 .linkflair-Question:hover .linkflairlabel{ color: #346592; }
 .linkflair-PSA:hover .linkflairlabel{ color: #d02828; }
+.linkflair-Fluff:hover .linkflairlabel{ color: #fda5c6; }
+.linkflair-Contenders:hover .linkflairlabel{ color: #313131; }
+.res-nightmode .linkflair-Contenders:hover .linkflairlabel{ color: #ccc; }
+
 
 .listing-page .linkflair-Megathread.link:before, .comments-page .linkflair-Megathread.link:before { background-color: #2ecc40; }
 .listing-page .linkflair-Discussion.link:before, .comments-page .linkflair-Discussion.link:before { background-color: #5194c4; }
@@ -2049,6 +2067,9 @@ body.res-nightmode .link .thumbnail {
 .listing-page .linkflair-Drama.link:before, .comments-page .linkflair-Drama.link:before { background-color: #888888; }
 .listing-page .linkflair-Question.link:before, .comments-page .linkflair-Question.link:before { background-color: #346592; }
 .listing-page .linkflair-PSA.link:before, .comments-page .linkflair-PSA.link:before { background-color: #d02828; }
+.listing-page .linkflair-Fluff.link:before, .comments-page .linkflair-Fluff.link:before { background-color: #fda5c6; }
+.listing-page .linkflair-Contenders.link:before, .comments-page .linkflair-Contenders.link:before { background-color: #313131; }
+.res-nightmode .listing-page .linkflair-Contenders.link:before, .res-nightmode .comments-page .linkflair-Contenders.link:before { background-color: #ccc; }
 
 
 
@@ -2411,7 +2432,8 @@ body.res-nightmode .linkflair-Match .linkflairlabel[title*="LIVE"]+.title.visite
 
 .flair,
 a[href^="#team"],
-a[href^="#rank"] {
+a[href^="#rank"],
+a[href^="#logos"] {
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -2426,9 +2448,11 @@ a[href^="#rank"] {
 .flair:before,
 .flair:after,
 a[href^="#team"],
-a[href^="#rank"] {
+a[href^="#rank"],
+a[href^="#logos"] {
     width: 23px;
-    height: 23px
+    height: 23px;
+    pointer-events: none;
 }
 .flair,
 .link .flair {
@@ -2568,6 +2592,20 @@ a[href*="-c10"]:before {
     clip: rect(0, 220px, 22px, 198px);
     margin-left: -198px;
 }
+.flair[class*="-c11"]:before,
+.flair[class*="-2c11"]:after,
+a[href*="-c11"]:before {
+    width: 242px;
+    clip: rect(0, 242px, 22px, 220px);
+    margin-left: -220px;
+}
+.flair[class*="-c12"]:before,
+.flair[class*="-2c12"]:after,
+a[href*="-c12"]:before {
+    width: 264px;
+    clip: rect(0, 264px, 22px, 242px);
+    margin-left: -242px;
+}
 
 /* Team flair sheet */
 .flair[class*="-steams"]:before,
@@ -2580,7 +2618,7 @@ a[href^="#teams"]:before {
     height: 22px;
     position: absolute;
     color: transparent;
-	background-size: 220px 220px;
+	background-size: 242px 242px;
 }
 a[href^="#teams"]:before {
 	left: 0;
@@ -2631,6 +2669,24 @@ a[href^="#flags"]:before {
 	}
 }
 
+/* Logos flair sheet */
+a[href^="#logos"]:before {
+    content: "";
+    background-image: url(%%flairs-logos%%);
+    height: 22px;
+    position: absolute;
+    color: transparent;
+	background-size: 66px 66px;
+}
+/* Retina/HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+	a[href^="#rank"]:before {
+		background-image:url(%%flairs-logos%%);
+        background-size: 66px 66px;
+	}
+}
+
+
 /* Special flair sheet */
 .flair[class*="-sspecial"]:before,
 .flair[class*="-2sspecial"]:after {
@@ -2654,6 +2710,9 @@ a[href^="#flags"]:before {
 	background-size: 132px 132px;
 }
 
+
+
+
 .listing-page .entry .flair {
 	display: none
 }
@@ -2669,11 +2728,11 @@ a[href^="#flags"]:before {
     margin-top: 15px
 }
 .commentarea .entry .flair {
-    margin-top: -9px
+    margin-top: -10px
 }
 .commentarea .entry .flair:before,
 .commentarea .entry .flair:after {
-    margin-top: 4px
+    margin-top: 5px
 }
 .commentarea .entry .flair:hover:not([title=""]):before,
 .commentarea .entry .flair:hover:not([title=""]):after {
@@ -2698,11 +2757,12 @@ a[href^="#flags"]:before {
     font-size: 12px;
 	position: relative;
 	vertical-align: baseline;
-	height: 12px;
+	height: 14px;
+	line-height: 32px;
 	width: auto;
 }
 .res-nightmode .commentarea .entry .flair:hover:not([title=""]) {
-    color: #DDD;
+	color: #DDD;
 }
 .comment .author,
 .wiki-page-content em .author {
@@ -2894,6 +2954,10 @@ a[href^="#flags"]:before {
 .linkflair-Match .md blockquote .keyNavAnnotation {
 	display: none;
 }
+.linkflair-Match .md blockquote .res-expando-box, .linkflair-Match .md blockquote .res-freetext-expando {
+    display: none;
+}
+
 /* Header */
 .linkflair-Match .md blockquote h1, .linkflair-Match .md blockquote h2 {
 	width: 100%;
@@ -3082,55 +3146,28 @@ a[href^="#flags"]:before {
 	padding: 6px 0;
 }
 /* Information */
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) {
-	height: 172px;
-}
+
 .linkflair-Match .md blockquote h2 ~ :nth-child(3) p {
-	position: absolute;
+	position: relative;
 	margin: 0;
-	width: 300px;
-	text-align: center;
+	width: 600px;
+    line-height: 36px;
+    margin-left: 16px;
+    font-size: 13px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(1) {
+    font-size: 15px;
+    padding-top: 6px;
 }
 .linkflair-Match .md blockquote h2 ~ :nth-child(3) em {
-	position: absolute;
-	left: 0;
-	width: 300px;
-	top: -14px;
-	text-align: center;
 	text-transform: uppercase;
 	font-size: 11px;
 	font-style: normal;
+    display: inline-block;
+    width: 78px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(1) {
-	top: 46px;
-	left: 0;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(2) {
-	top: 88px;
-	left: 0;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(3) {
-	top: 46px;
-	left: 300px;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-of-type(4) {
-	top: 88px;
-	left: 300px;
-}
-/* Streams */
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-last-of-type(1) {
-	top: 138px;
-	left: 0;
-	width: 600px;
-	font-size: 14px;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(3) p:nth-last-of-type(1) em {
-	width: 600px;
-	font-size: 11px;
-	top: -16px;
-}
+/* Teams */
 
-/* Schedule */
 .linkflair-Match .md blockquote h2 ~ :nth-child(5) table {
 	width: 100%;
 	margin: 0;
@@ -3139,45 +3176,26 @@ a[href^="#flags"]:before {
 	background: #efefef;
 	border: 0;
 	font-size: 12px;
-	height: 40px;
+	height: 32px;
 }
 .res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr {
 	background: #313131;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr:nth-of-type(1) {
-	background: #e2e2e2;
-	border: 0;
-	height: 28px;
-	text-transform: uppercase;
-	font-size: 11px;
-}
-.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr:nth-of-type(1) {
-	background: #505050;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table tr:nth-of-type(1) strong {
-	font-weight: normal;
-}
 .linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(1) {
-	padding-left: 16px;
-	width: 80px;
+    padding-left: 16px;
+	width: 46px !important;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(2) {
-	width: 174px;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(3) {
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(2n+1) {
 	width: 30px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(4) {
-	width: 32px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(2n) {
+	width: 164px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(5) {
-	width: 30px;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-of-type(6) {
-	width: 174px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(5) table td:nth-last-of-type(1) {
+	width: unset;
 }
 
-/* *Groups */
+/* Schedule */
 .linkflair-Match .md blockquote h2 ~ :nth-child(7) table {
 	width: 100%;
 	margin: 0;
@@ -3185,8 +3203,8 @@ a[href^="#flags"]:before {
 .linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr {
 	background: #efefef;
 	border: 0;
-	font-size: 11px;
-	height: 28px;
+	font-size: 12px;
+	height: 40px;
 }
 .res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr {
 	background: #313131;
@@ -3204,61 +3222,115 @@ a[href^="#flags"]:before {
 .linkflair-Match .md blockquote h2 ~ :nth-child(7) table tr:nth-of-type(1) strong {
 	font-weight: normal;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+1) {
-	width: 0px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(1) {
+	padding-left: 16px;
+	width: 80px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+2) {
-	width: 150px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(2) {
+	width: 174px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+3) {
-	width: 50px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(3) {
+	width: 30px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5n+4) {
-	width: 50px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(4) {
+	width: 32px;
 }
 .linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(5) {
-	width: 68px;
+	width: 30px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(1) {
-	width: 16px;
-	padding-left: 16px;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-last-of-type(1) {
-	width: 66px;
-	padding-right: 16px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(7) table td:nth-of-type(6) {
+	width: 174px;
 }
 
-/* Brackets */
+/* *Groups */
 .linkflair-Match .md blockquote h2 ~ :nth-child(9) table {
-    width: 568px;
-    table-layout: fixed;
-	margin: 16px;
-}
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td {
-    padding: 0 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
+	width: 100%;
+	margin: 0;
 }
 .linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr {
 	background: #efefef;
 	border: 0;
 	font-size: 11px;
+	height: 28px;
 }
 .res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr {
 	background: #313131;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(3n+1) {
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr:nth-of-type(1) {
+	background: #e2e2e2;
+	border: 0;
+	height: 28px;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr:nth-of-type(1) {
+	background: #505050;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table tr:nth-of-type(1) strong {
+	font-weight: normal;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7n+1) {
+	width: 30px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7n+2) {
+	width: 140px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7n+3) {
+	width: 20px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7n+4) {
+	width: 20px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7n+5) {
+	width: 20px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7n+6) {
+	width: 40px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(1) {
+	padding-left: 16px;
+    width: 46px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(7) {
+    width: 16px;
+    border-right: solid 1px #ccc;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-last-of-type(1) {
+	width: unset;
+	padding-right: 16px;
+}
+
+/* Brackets */
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table {
+    width: 568px;
+    table-layout: fixed;
+	margin: 16px;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table td {
+    padding: 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table tr {
+	background: #efefef;
+	border: 0;
+	font-size: 11px;
+}
+.res-nightmode .linkflair-Match .md blockquote h2 ~ :nth-child(11) table tr {
+	background: #313131;
+}
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table td:nth-of-type(3n+1) {
 	width: auto;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(3n+2) {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table td:nth-of-type(3n+2) {
 	width: 16px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table td:nth-of-type(3n+3) {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table td:nth-of-type(3n+3) {
 	width: 20px;
     font-size: 0;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href^="#b"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href^="#b"]:before {
     content: "";
     width: 100%;
     height: 100%;
@@ -3268,36 +3340,36 @@ a[href^="#flags"]:before {
     pointer-events: none;
     border: 1px solid #7B90A3;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#btl"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#btl"]:before {
     border-right: 0;
     border-bottom: 0;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#btr"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#btr"]:before {
     border-left: 0;
     border-bottom: 0;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#bbl"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#bbl"]:before {
     border-right: 0;
     border-top: 0;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#bbr"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#bbr"]:before {
     border-left: 0;
     border-top: 0;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href^="#l"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href^="#l"]:before {
     content: "";
     position: absolute;
     pointer-events: none;
     border: 0px solid #7B90A3;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lhh"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#lhh"]:before {
     left: 0;
     top: 50%;
     width: 100%;
     height: 1px;
     border-top-width: 1px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lhd"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#lhd"]:before {
     left: 0;
     top: 50%;
     width: 10px;
@@ -3305,7 +3377,7 @@ a[href^="#flags"]:before {
     border-top-width: 1px;
     border-right-width: 1px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#ldh"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#ldh"]:before {
     right: 0;
     top: 0;
     width: 11px;
@@ -3313,7 +3385,7 @@ a[href^="#flags"]:before {
     border-bottom-width: 1px;
     border-left-width: 1px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lhu"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#lhu"]:before {
     left: 0;
     top: 0;
     width: 10px;
@@ -3321,7 +3393,7 @@ a[href^="#flags"]:before {
     border-bottom-width: 1px;
     border-right-width: 1px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#luh"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#luh"]:before {
     right: 0;
     top: 50%;
     width: 11px;
@@ -3329,28 +3401,27 @@ a[href^="#flags"]:before {
     border-top-width: 1px;
     border-left-width: 1px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table a[href="#lvv"]:before {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table a[href="#lvv"]:before {
     left: 9px;
     top: 0;
     width: 1px;
     height: 100%;
     border-left-width: 1px;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table em {
-    display: inline-block;
-    line-height: 10px;
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table em {
     font-size: 8px;
     text-transform: uppercase;
     font-style: normal;
     white-space: normal;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table strong {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table strong {
     color: #3fb55e;
 }
-.linkflair-Match .md blockquote h2 ~ :nth-child(9) table del {
+.linkflair-Match .md blockquote h2 ~ :nth-child(11) table del {
     text-decoration: none;
     color: #f64e44;
 }
+
 
 
 
@@ -3472,23 +3543,31 @@ body.res-nightmode .RES-keyNav-activeElement, body.res-nightmode .RES-keyNav-act
 	text-align: left;
 }
 .expando-gate .expando-gate__show-once {
-	background: #b6b8bb;
+	background: #072E49;
 	border-radius: 1px;
+    border-color: #072E49;
 	color: #FFF;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: normal;
-	margin: 30px 0 0;
-	padding: 8px 0;
+	margin: 10px 0;
+	padding: 12px 0;
 	pointer-events: auto;
-	text-transform: none;
 	width: 98%;
 	width: calc(100% - 16px);
+    transition: 0.08s background ease-in-out;
+}
+.res-nightmode .expando-gate .expando-gate__show-once {
+    background: #041D2D !important;
+    border-color: #041D2D !important;
 }
 .expando-gate .expando-gate__show-once:hover {
-	background: #85898E;
-	color: #FFF;
+	background: none;
+	color: #072E49;
 }
-
+.res-nightmode .expando-gate .expando-gate__show-once:hover {
+	background: none !important;
+	color: #ccc;
+}
 
 .comments-page .expando {
 	margin: 24px 0 0 0; /* Values <= 16px have no effect, so top margin actually 16px */
@@ -4696,4 +4775,25 @@ body.res-nightmode {
 
 .debuginfo, #hsts_pixel {
 	display: none;
+}
+
+/** Toolbox Nightmode stuff **/
+.res-nightmode .tb-bracket-button {
+    background: none !important;
+    border: 1px #666 solid !important;
+    color: #666 !important;
+}
+.res-nightmode .pretty-button {
+    background: none !important;
+}
+.res-nightmode .pretty-button.negative {
+    color: #f64e44 !important;
+}
+.res-nightmode .pretty-button.positive {
+    color: #3fb55e !important;
+}
+.res-nightmode .buttons li.reported-stamp {
+    border: 1px #f6e69f solid !important;
+    background: none;
+    color: #f6e69f !important;
 }
