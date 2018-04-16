@@ -286,7 +286,7 @@ body #RESShortcutsLeft:hover, body #RESShortcutsAdd:hover {
 
 #header-img-a:after, #header-img-a:after {
 	color: #fff;
-	opacity: .3;
+	opacity: .7;
 	content: "REDDIT";
 	display: block;
 	font-size: 11px;
@@ -483,7 +483,6 @@ body #userbarToggle {
 	left: calc(50% - 120px);
 	letter-spacing: .5px;
 	padding: 12px;
-	pointer-events: none;
 	position: fixed;
 	text-align: center;
 	text-indent: 0;
@@ -565,7 +564,7 @@ body #userbarToggle {
 .tabmenu li a, .res-nightmode .tabmenu li a {
 	background: none;
 	padding: 0 8px;
-	opacity: .3;
+	opacity: .7;
 	color: #fff;
 }
 
@@ -581,7 +580,7 @@ body #userbarToggle {
 	background: none;
 }
 
-.tabmenu li a:hover, .tabmenu li.selected a {
+.tabmenu li a:hover, .tabmenu li.selected a, .res-nightmode .tabmenu li a:hover, .res-nightmode .tabmenu li.selected a {
 	opacity: 1;
 }
 
@@ -737,7 +736,7 @@ body:not(.search-page) #search {
 	position: absolute;
 	right: 0;
 	top: 200px;
-	width: 320px;
+	width: 332px;
 	z-index: 2;
 }
 
@@ -749,9 +748,13 @@ body:not(.search-page) #search input[type=text] {
 	height: 29px;
 	transition: .3s ease-in-out;
 	transition-property: color, font-size, padding, width;
-	width: 320px;
-	background: #072E49;
+	width: 332px;
+	background: #144263;
 	font-size: 11px;
+}
+
+.res-nightmode body:not(.search-page) #search input[type=text] {
+    background: #072E49;
 }
 
 #search input[type=text]:focus {
@@ -778,22 +781,22 @@ body:not(.search-page) #search input[type=text] {
 
 .side form input[type=text]::-webkit-input-placeholder {
     color: #fff;
-	opacity: 0.3;
+	opacity: 0.7;
 	text-transform: uppercase;
 }
 .side form input[type=text]:-moz-placeholder {
     color: #fff;
-	opacity: 0.3;
+	opacity: 0.7;
 	text-transform: uppercase;
 }
 .side form input[type=text]::-moz-placeholder {
     color: #fff;
-	opacity: 0.3;
+	opacity: 0.7;
 	text-transform: uppercase;
 }
 .side form input[type=text]:-ms-input-placeholder {
     color: #fff;
-	opacity: 0.3;
+	opacity: 0.7;
 	text-transform: uppercase;
 }
 
@@ -2768,6 +2771,9 @@ a[href^="#logos"]:before {
 	vertical-align: baseline;
 	height: 12px;
 	width: auto;
+}
+.res-nightmode .commentarea .entry .flair:hover:not([title=""]) {
+    color: #DDD;
 }
 .comment .author,
 .wiki-page-content em .author {
