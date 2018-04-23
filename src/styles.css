@@ -767,7 +767,7 @@ body:not(.search-page) #search input[type=text] {
 }
 
 #search input[type=submit] {
-	opacity: 0.6;
+	opacity: 0.7;
 }
 
 #search input[type=text]:focus + input[type=submit], #search input[type=text]:active + input[type=submit] {
@@ -2230,7 +2230,7 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 }
 
 .entry .buttons li a {
-	color: #81858A; /* #OC141E, 50% opacity */
+	color: #232323; /* #OC141E, 50% opacity */
 	cursor: default;
 	font-weight: normal;
 	padding: 0;
@@ -2383,7 +2383,7 @@ body.res-nightmode .arrow.down:before {
 .linkflairlabel {
 	background: none;
 	border: none;
-	color: #6A6F75; /* 0C141E, 60% opacity */
+	color: #232323; /* 0C141E, 60% opacity */
 	font-size: inherit;
 	font-weight: normal;
 	margin-right: 4px;
@@ -2740,11 +2740,11 @@ a[href^="#logos"]:before {
     margin-top: 15px
 }
 .commentarea .entry .flair {
-    margin-top: -9px
+    margin-top: -10px
 }
 .commentarea .entry .flair:before,
 .commentarea .entry .flair:after {
-    margin-top: 4px
+    margin-top: 5px
 }
 .commentarea .entry .flair:hover:not([title=""]):before,
 .commentarea .entry .flair:hover:not([title=""]):after {
@@ -2769,7 +2769,8 @@ a[href^="#logos"]:before {
     font-size: 12px;
 	position: relative;
 	vertical-align: baseline;
-	height: 12px;
+	height: 14px;
+	line-height: 32px;
 	width: auto;
 }
 .res-nightmode .commentarea .entry .flair:hover:not([title=""]) {
@@ -4816,4 +4817,11 @@ body.res-nightmode {
     border: 1px #f6e69f solid !important;
     background: none;
     color: #f6e69f !important;
+}
+.res-nightmode .pretty-form {
+    background: #191919; /*Don't remember what this one did but it was a good fix for something. */
+}
+
+.comment .entry .md a:visited {
+    color: #3f6dbf!important; /* Fixes links not changing color */
 }
