@@ -3985,19 +3985,15 @@ html.res-nightmode body .commentarea .comment .comment .comment .comment .commen
 	background: #212121 !important;
 }
 
-/* Blizzard Employee border */
+/* Blizzard Employee border 
 html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="NateNanzer"] > .entry, .commentarea .comment[data-author="NateNanzer"] > .entry{
 	border: #5194c4 4px solid !important;
 	padding-left: 8px;
 }
-/* Sinatraa AMA border */
-html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="sinatraaOW"] > .entry, .commentarea .comment[data-author="sinatraaOW"] > .entry{
-	border: #fc4c01 4px solid !important;
-	padding-left: 8px;
-}
-/* hastr0 AMA border */
-html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="hastr0"] > .entry, .commentarea .comment[data-author="hastr0"] > .entry{
-	border: #0B233F 4px solid !important;
+*/
+/* Uber AMA border */
+html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="UberShouts"] > .entry, .commentarea .comment[data-author="UberShouts"] > .entry{
+	border: #fc9300 4px solid !important;
 	padding-left: 8px;
 }
 
