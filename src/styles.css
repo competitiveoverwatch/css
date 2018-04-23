@@ -3994,6 +3994,11 @@ html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="sinatr
 	border: #fc4c01 4px solid !important;
 	padding-left: 8px;
 }
+/* hastr0 AMA border */
+html body.res-commentBoxes.res-commentBoxes-rounded .comment[data-author="hastr0"] > .entry, .commentarea .comment[data-author="hastr0"] > .entry{
+	border: #0B233F 4px solid !important;
+	padding-left: 8px;
+}
 
 
 
